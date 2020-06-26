@@ -19,13 +19,25 @@ struct StatusBarView: View {
     func loadStatusBar() {
         usage = cpu.usage
         temp = cpu.temp
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.loadStatusBar()
         }
     }
 
     var body: some View {
-        HStack {
+        HStack(spacing: 6) {
+            Image("Arrows")
+                .resizable()
+                .frame(width: 15, height: 15)
+            VStack(alignment: .leading, spacing: 0) {
+                Text("148Kb/s")
+                    .compact()
+                Text("1.3Mb/s")
+                    .compact()
+            }
+            Image("CPU")
+                .resizable()
+                .frame(width: 15, height: 15)
             VStack(alignment: .leading, spacing: 0) {
                 Text(usage)
                     .compact()

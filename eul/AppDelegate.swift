@@ -30,14 +30,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
         let statusBar = NSStatusBar.system
-        statusBarItem = statusBar.statusItem(withLength: 120)
+        statusBarItem = statusBar.statusItem(withLength: 200)
         let statusBarMenu = NSMenu()
         statusBarMenu.addItem(
         withTitle: "Exit",
         action: #selector(AppDelegate.exit),
         keyEquivalent: "")
         statusBarItem.menu = statusBarMenu
-        statusView.frame = NSMakeRect(0, 0, CGFloat(120), StatusBarView.statusBarHeight)
+        statusView.frame = NSMakeRect(0, 0, CGFloat(200), StatusBarView.statusBarHeight)
         statusBarItem.button?.addSubview(statusView)
     }
 
