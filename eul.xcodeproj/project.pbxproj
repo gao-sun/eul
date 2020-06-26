@@ -19,6 +19,9 @@
 		6CAEED5724A5E75B00C39597 /* StatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED5624A5E75B00C39597 /* StatusItem.swift */; };
 		6CAEED5A24A5E8B900C39597 /* CPUStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED5924A5E8B900C39597 /* CPUStatus.swift */; };
 		6CAEED5C24A5E8E000C39597 /* CpuUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED5B24A5E8E000C39597 /* CpuUsage.swift */; };
+		6CAEED5E24A5EECA00C39597 /* StatusItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED5D24A5EECA00C39597 /* StatusItemView.swift */; };
+		6CAEED6024A5F43E00C39597 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED5F24A5F43E00C39597 /* StatusBarView.swift */; };
+		6CAEED6224A5F51600C39597 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED6124A5F51600C39597 /* Text.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		6CAEED5624A5E75B00C39597 /* StatusItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItem.swift; sourceTree = "<group>"; };
 		6CAEED5924A5E8B900C39597 /* CPUStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUStatus.swift; sourceTree = "<group>"; };
 		6CAEED5B24A5E8E000C39597 /* CpuUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuUsage.swift; sourceTree = "<group>"; };
+		6CAEED5D24A5EECA00C39597 /* StatusItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemView.swift; sourceTree = "<group>"; };
+		6CAEED5F24A5F43E00C39597 /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		6CAEED6124A5F51600C39597 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,8 @@
 			children = (
 				6C5F8540249FACE000CF0EF8 /* ContentView.swift */,
 				6C5F855B24A5DA1300CF0EF8 /* MenuItemView.swift */,
+				6CAEED5D24A5EECA00C39597 /* StatusItemView.swift */,
+				6CAEED5F24A5F43E00C39597 /* StatusBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				6CAEED5324A5DE4700C39597 /* Color.swift */,
+				6CAEED6124A5F51600C39597 /* Text.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -218,9 +227,12 @@
 				6C5F8541249FACE000CF0EF8 /* ContentView.swift in Sources */,
 				6C5F853F249FACE000CF0EF8 /* AppDelegate.swift in Sources */,
 				6CAEED5724A5E75B00C39597 /* StatusItem.swift in Sources */,
+				6CAEED5E24A5EECA00C39597 /* StatusItemView.swift in Sources */,
+				6CAEED6024A5F43E00C39597 /* StatusBarView.swift in Sources */,
 				6CAEED5C24A5E8E000C39597 /* CpuUsage.swift in Sources */,
 				6C5F855C24A5DA1300CF0EF8 /* MenuItemView.swift in Sources */,
 				6CAEED5A24A5E8B900C39597 /* CPUStatus.swift in Sources */,
+				6CAEED6224A5F51600C39597 /* Text.swift in Sources */,
 				6CAEED5424A5DE4700C39597 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

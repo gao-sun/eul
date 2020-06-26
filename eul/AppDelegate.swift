@@ -12,9 +12,9 @@ import SwiftUI
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    let statusView = NSHostingView(rootView: StatusBarView())
     var window: NSWindow!
     var statusBarItem: NSStatusItem!
-    let cpu = CPUStatus()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
@@ -30,15 +30,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
         let statusBar = NSStatusBar.system
-        statusBarItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
+        statusBarItem = statusBar.statusItem(withLength: 120)
         let statusBarMenu = NSMenu()
         statusBarMenu.addItem(
         withTitle: "Exit",
         action: #selector(AppDelegate.exit),
         keyEquivalent: "")
         statusBarItem.menu = statusBarMenu
-        statusBarItem.button?.title = "..."
-        loadStatusBar()
+        statusView.frame = NSMakeRect(0, 0, CGFloat(120), StatusBarView.statusBarHeight)
+        statusBarItem.button?.addSubview(statusView)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -47,30 +47,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func exit() {
         NSApplication.shared.terminate(self)
-    }
-
-    func loadStatusBar() {
-        statusBarItem.button?.title = cpu.title
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.loadStatusBar()
-        }
-    }
-
-    func hostCPULoadInfo() -> host_cpu_load_info? {
-        let HOST_CPU_LOAD_INFO_COUNT = MemoryLayout<host_cpu_load_info>.stride/MemoryLayout<integer_t>.stride
-        var size = mach_msg_type_number_t(HOST_CPU_LOAD_INFO_COUNT)
-        var cpuLoadInfo = host_cpu_load_info()
-
-        let result = withUnsafeMutablePointer(to: &cpuLoadInfo) {
-            $0.withMemoryRebound(to: integer_t.self, capacity: HOST_CPU_LOAD_INFO_COUNT) {
-                host_statistics(mach_host_self(), HOST_CPU_LOAD_INFO, $0, &size)
-            }
-        }
-        if result != KERN_SUCCESS{
-            print("Error  - \(#file): \(#function) - kern_result_t = \(result)")
-            return nil
-        }
-        return cpuLoadInfo
     }
 }
 
