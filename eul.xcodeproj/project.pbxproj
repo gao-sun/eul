@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C4E880C24A6545E00766E15 /* SystemKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4E880B24A6545E00766E15 /* SystemKit.framework */; };
+		6C4E880D24A6545E00766E15 /* SystemKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4E880B24A6545E00766E15 /* SystemKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C4E881124A6548E00766E15 /* SystemKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6C4E881024A6548D00766E15 /* SystemKit.framework.dSYM */; };
 		6C5F853F249FACE000CF0EF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5F853E249FACE000CF0EF8 /* AppDelegate.swift */; };
 		6C5F8541249FACE000CF0EF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5F8540249FACE000CF0EF8 /* ContentView.swift */; };
 		6C5F8543249FACE200CF0EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8542249FACE200CF0EF8 /* Assets.xcassets */; };
@@ -21,7 +24,34 @@
 		6CAEED6524A62DF800C39597 /* SMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED6424A62DF800C39597 /* SMC.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6C4E880E24A6545E00766E15 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6C4E880D24A6545E00766E15 /* SystemKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4E880F24A6547000766E15 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				6C4E881124A6548E00766E15 /* SystemKit.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6C4E880824A649BC00766E15 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		6C4E880B24A6545E00766E15 /* SystemKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemKit.framework; path = Carthage/Build/Mac/SystemKit.framework; sourceTree = "<group>"; };
+		6C4E881024A6548D00766E15 /* SystemKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SystemKit.framework.dSYM; path = Carthage/Build/Mac/SystemKit.framework.dSYM; sourceTree = "<group>"; };
 		6C5F853B249FACE000CF0EF8 /* eul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eul.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5F853E249FACE000CF0EF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C5F8540249FACE000CF0EF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,17 +75,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C4E880C24A6545E00766E15 /* SystemKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C4E880A24A6545E00766E15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C4E881024A6548D00766E15 /* SystemKit.framework.dSYM */,
+				6C4E880B24A6545E00766E15 /* SystemKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6C5F8532249FACE000CF0EF8 = {
 			isa = PBXGroup;
 			children = (
 				6C5F853D249FACE000CF0EF8 /* eul */,
 				6C5F853C249FACE000CF0EF8 /* Products */,
+				6C4E880824A649BC00766E15 /* Cartfile */,
+				6C4E880A24A6545E00766E15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +181,8 @@
 				6C5F8537249FACE000CF0EF8 /* Sources */,
 				6C5F8538249FACE000CF0EF8 /* Frameworks */,
 				6C5F8539249FACE000CF0EF8 /* Resources */,
+				6C4E880E24A6545E00766E15 /* Embed Frameworks */,
+				6C4E880F24A6547000766E15 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -350,6 +394,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"eul/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = eul/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -374,6 +422,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"eul/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = eul/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

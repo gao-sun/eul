@@ -7,6 +7,9 @@
 //
 
 import SwiftUI
+import SystemKit
+
+var system = System()
 
 struct StatusBarView: View {
     static var statusBarHeight: CGFloat {
@@ -24,9 +27,9 @@ struct StatusBarView: View {
             }
             let fans = try SMCKit.fanCount()
             print("??? count", fans)
-            for i in 0..<fans {
-                try print("???", SMCKit.fanCurrentSpeed(i))
-            }
+            let cpu = system.usageCPU()
+            print(cpu.system, cpu.user, cpu.idle, cpu.nice)
+            self.usage = String(format: "%.1f%%", cpu.system + cpu.user)
 //            try fans.forEach {
 //                try print("???", $0.name, $0.minSpeed, $0.maxSpeed, SMCKit.fanCurrentSpeed($0.id))
 //            }
@@ -67,6 +70,9 @@ struct StatusBarView: View {
             }
         }
         .onAppear {
+            // will have fake info first time
+            _ = system.usageCPU()
+            // TODO: delay usage loading
             self.loadStatusBar()
         }
     }
