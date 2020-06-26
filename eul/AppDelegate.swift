@@ -13,6 +13,7 @@ import SwiftUI
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
+    var statusBarItem: NSStatusItem!
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -28,12 +29,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
+        let statusBar = NSStatusBar.system
+        statusBarItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
+        let statusBarMenu = NSMenu()
+        statusBarMenu.addItem(
+        withTitle: "Exit",
+        action: #selector(AppDelegate.exit),
+        keyEquivalent: "")
+        statusBarItem.menu = statusBarMenu
+        statusBarItem.button?.title = "..."
+        getTemp()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
+    @objc func exit() {
+        NSApplication.shared.terminate(self)
+    }
 
+    func getTemp() {
+        statusBarItem.button?.title = String(format: "%.1f °C", SMCObjC.calculateTemp())
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.getTemp()
+        }
+    }
 }
 
