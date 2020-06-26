@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
     var statusBarItem: NSStatusItem!
-
+    let cpu = CPUStatus()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         keyEquivalent: "")
         statusBarItem.menu = statusBarMenu
         statusBarItem.button?.title = "..."
-        getTemp()
+        loadStatusBar()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -49,11 +49,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApplication.shared.terminate(self)
     }
 
-    func getTemp() {
-        statusBarItem.button?.title = String(format: "%.1f °C", SMCObjC.calculateTemp())
+    func loadStatusBar() {
+        statusBarItem.button?.title = cpu.title
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.getTemp()
+            self.loadStatusBar()
         }
+    }
+
+    func hostCPULoadInfo() -> host_cpu_load_info? {
+        let HOST_CPU_LOAD_INFO_COUNT = MemoryLayout<host_cpu_load_info>.stride/MemoryLayout<integer_t>.stride
+        var size = mach_msg_type_number_t(HOST_CPU_LOAD_INFO_COUNT)
+        var cpuLoadInfo = host_cpu_load_info()
+
+        let result = withUnsafeMutablePointer(to: &cpuLoadInfo) {
+            $0.withMemoryRebound(to: integer_t.self, capacity: HOST_CPU_LOAD_INFO_COUNT) {
+                host_statistics(mach_host_self(), HOST_CPU_LOAD_INFO, $0, &size)
+            }
+        }
+        if result != KERN_SUCCESS{
+            print("Error  - \(#file): \(#function) - kern_result_t = \(result)")
+            return nil
+        }
+        return cpuLoadInfo
     }
 }
 
