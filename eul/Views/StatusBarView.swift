@@ -12,13 +12,34 @@ struct StatusBarView: View {
     static var statusBarHeight: CGFloat {
         NSStatusBar.system.thickness
     }
-    let cpu = CPUStatus()
     @State var usage = ""
     @State var temp = ""
 
     func loadStatusBar() {
-        usage = cpu.usage
-        temp = cpu.temp
+        do {
+            try SMCKit.open()
+            let temps = try SMCKit.allKnownTemperatureSensors()
+            try temps.forEach {
+                try print("!!!", $0.name, $0.code, SMCKit.temperature($0.code))
+            }
+            let fans = try SMCKit.fanCount()
+            print("??? count", fans)
+            for i in 0..<fans {
+                try print("???", SMCKit.fanCurrentSpeed(i))
+            }
+//            try fans.forEach {
+//                try print("???", $0.name, $0.minSpeed, $0.maxSpeed, SMCKit.fanCurrentSpeed($0.id))
+//            }
+        } catch SMCKit.SMCError.keyNotFound {
+            print("SMCKey to read the current fan speed was not found")
+        } catch SMCKit.SMCError.notPrivileged {
+            print("Not privileged to read the current fan speed")
+        } catch let error {
+            print("error", error)
+        }
+        SMCKit.close()
+//        usage = cpu.usage
+//        temp = cpu.temp
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.loadStatusBar()
         }
