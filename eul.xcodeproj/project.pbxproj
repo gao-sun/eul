@@ -12,6 +12,7 @@
 		6C1FA3FE24A7118000CA7F71 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA3FD24A7118000CA7F71 /* Info.swift */; };
 		6C1FA40024A712AA00CA7F71 /* SmcControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA3FF24A712AA00CA7F71 /* SmcControl.swift */; };
 		6C1FA40224A716F600CA7F71 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA40124A716F600CA7F71 /* StatusBarView.swift */; };
+		6C1FA40424A7187F00CA7F71 /* FanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA40324A7187F00CA7F71 /* FanView.swift */; };
 		6C4E880C24A6545E00766E15 /* SystemKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4E880B24A6545E00766E15 /* SystemKit.framework */; };
 		6C4E880D24A6545E00766E15 /* SystemKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4E880B24A6545E00766E15 /* SystemKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C4E881124A6548E00766E15 /* SystemKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6C4E881024A6548D00766E15 /* SystemKit.framework.dSYM */; };
@@ -56,6 +57,7 @@
 		6C1FA3FD24A7118000CA7F71 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		6C1FA3FF24A712AA00CA7F71 /* SmcControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmcControl.swift; sourceTree = "<group>"; };
 		6C1FA40124A716F600CA7F71 /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		6C1FA40324A7187F00CA7F71 /* FanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanView.swift; sourceTree = "<group>"; };
 		6C4E880824A649BC00766E15 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		6C4E880B24A6545E00766E15 /* SystemKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemKit.framework; path = Carthage/Build/Mac/SystemKit.framework; sourceTree = "<group>"; };
 		6C4E881024A6548D00766E15 /* SystemKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SystemKit.framework.dSYM; path = Carthage/Build/Mac/SystemKit.framework.dSYM; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				6C5F855B24A5DA1300CF0EF8 /* MenuItemView.swift */,
 				6C1FA3F724A70DF300CA7F71 /* CpuView.swift */,
 				6C1FA40124A716F600CA7F71 /* StatusBarView.swift */,
+				6C1FA40324A7187F00CA7F71 /* FanView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C1FA40424A7187F00CA7F71 /* FanView.swift in Sources */,
 				6CAEED6524A62DF800C39597 /* SMC.swift in Sources */,
 				6C5F8541249FACE000CF0EF8 /* ContentView.swift in Sources */,
 				6C5F853F249FACE000CF0EF8 /* AppDelegate.swift in Sources */,

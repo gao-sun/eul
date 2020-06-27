@@ -713,27 +713,15 @@ extension SMCKit {
     }
 
     public static func fanCurrentSpeed(_ id: Int) throws -> Int {
-        let key = SMCKey(code: FourCharCode(fromString: "F\(id)Ac"),
-                                            info: DataTypes.FPE2)
-
-        let data = try readData(key)
-        return Int(fromFPE2: (data.0, data.1))
+        try decodeData(with: "F\(id)Ac")
     }
 
     public static func fanMinSpeed(_ id: Int) throws -> Int {
-        let key = SMCKey(code: FourCharCode(fromString: "F\(id)Mn"),
-                                            info: DataTypes.FPE2)
-
-        let data = try readData(key)
-        return Int(fromFPE2: (data.0, data.1))
+        try decodeData(with: "F\(id)Mn")
     }
 
     public static func fanMaxSpeed(_ id: Int) throws -> Int {
-        let key = SMCKey(code: FourCharCode(fromString: "F\(id)Mx"),
-                                            info: DataTypes.FPE2)
-
-        let data = try readData(key)
-        return Int(fromFPE2: (data.0, data.1))
+        try decodeData(with: "F\(id)Mx")
     }
 
     /// Requires root privileges. By minimum we mean that OS X can interject and

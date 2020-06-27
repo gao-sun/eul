@@ -13,7 +13,7 @@ class CpuStore: ObservableObject {
 
     @Published var usage = ""
     @Published var temp = ""
-    @Published var fans: [Fan] = []
+    @Published var fans: [SmcControl.FanData] = []
 
     private func getUsage() {
         let cpu = Info.system.usageCPU()
@@ -21,13 +21,18 @@ class CpuStore: ObservableObject {
     }
 
     private func getTemp() {
-        SmcControl.shared.refresh()
         temp = String(format: "%.1f°C", SmcControl.shared.cpuProximityTemperature)
     }
 
+    private func getFanSpeed() {
+        fans = SmcControl.shared.fans
+    }
+
     func getRepeatedly() {
+        SmcControl.shared.refresh()
         getUsage()
         getTemp()
+        getFanSpeed()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.getRepeatedly()
         }

@@ -21,16 +21,37 @@ struct SmcControl {
         }
     }
 
+    class FanData {
+        let fan: Fan
+        var speed: Int
+
+        init(fan: Fan, speed: Int = 0) {
+            self.fan = fan
+            self.speed = speed
+        }
+    }
+
     var sensors: [TemperatureData]
+    var fans: [FanData]
     var cpuProximityTemperature: Double {
         sensors.first(where: { $0.sensor.name == "CPU_0_PROXIMITY" })?.temp ?? 0
     }
 
     init() {
         sensors = []
+        fans = []
         do {
             try SMCKit.open()
             sensors = try SMCKit.allKnownTemperatureSensors().map { .init(sensor: $0) }
+            fans = try (0..<SMCKit.fanCount()).map { .init(
+                fan: Fan(
+                    id: $0,
+                    name: $0.description,
+                    minSpeed: try SMCKit.fanMinSpeed($0),
+                    maxSpeed: try SMCKit.fanMaxSpeed($0)
+                )
+            ) }
+            print("fans", fans.map { "\($0.fan.id) \($0.fan.minSpeed) \($0.fan.maxSpeed)" })
         } catch let error {
             print("SMC init error", error)
         }
@@ -51,6 +72,14 @@ struct SmcControl {
             } catch let error {
                 sensor.temp = 0
                 print("error while getting temperature", error)
+            }
+        }
+        for fan in fans {
+            do {
+                fan.speed = try SMCKit.fanCurrentSpeed(fan.fan.id)
+            } catch let error {
+                fan.speed = 0
+                print("error while getting fan speed", error)
             }
         }
         SMCKit.close()

@@ -13,7 +13,10 @@ struct StatusBarView: View {
         NSStatusBar.system.thickness
     }
     var body: some View {
-        CpuView()
-            .environmentObject(CpuStore.shared)
+        HStack {
+            CpuView()
+            FanView()
+        }
+        .environmentObject(CpuStore.shared)
     }
 }
