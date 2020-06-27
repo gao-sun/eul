@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         action: #selector(AppDelegate.exit),
         keyEquivalent: "")
         statusBarItem.menu = statusBarMenu
-        statusView.frame = NSMakeRect(0, 0, CGFloat(200), StatusBarView.statusBarHeight)
+        statusView.frame = NSMakeRect(0, 0, CGFloat(200), StatusBarView.height)
         statusBarItem.button?.addSubview(statusView)
     }
 
