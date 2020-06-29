@@ -24,9 +24,11 @@ struct StatusBarView: View {
         HStack {
             CpuView()
             FanView()
+            MemoryView()
         }
         .environmentObject(CpuStore.shared)
         .environmentObject(FanStore.shared)
+        .environmentObject(MemoryStore.shared)
         .onAppear {
             SmcControl.shared.start()
             self.refreshRepeatedly()

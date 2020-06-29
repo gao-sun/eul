@@ -50,7 +50,6 @@ class SmcControl: Refreshable {
                     maxSpeed: try SMCKit.fanMaxSpeed($0)
                 )
             ) }
-            print("fans", fans.map { "\($0.fan.id) \($0.fan.minSpeed) \($0.fan.maxSpeed)" })
         } catch let error {
             print("SMC init error", error)
         }

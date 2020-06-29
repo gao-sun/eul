@@ -9,17 +9,17 @@
 import SwiftUI
 
 struct MemoryView: View {
-    @EnvironmentObject var cpuStore: CpuStore
+    @EnvironmentObject var memoryStore: MemoryStore
 
     var body: some View {
         HStack(spacing: 6) {
-            Image("CPU")
+            Image("Memory")
                 .resizable()
                 .frame(width: 15, height: 15)
             VStack(alignment: .leading, spacing: 0) {
-                Text(cpuStore.temp)
+                Text(memoryStore.freeString)
                     .compact()
-                Text(cpuStore.usage)
+                Text(memoryStore.usedString)
                     .compact()
             }
         }

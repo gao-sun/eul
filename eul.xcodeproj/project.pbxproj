@@ -17,6 +17,7 @@
 		6C1FA40B24AA139300CA7F71 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA40A24AA139300CA7F71 /* NSNotification.swift */; };
 		6C1FA40E24AA162800CA7F71 /* Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA40D24AA162800CA7F71 /* Refreshable.swift */; };
 		6C1FA41024AA1D4400CA7F71 /* FanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA40F24AA1D4400CA7F71 /* FanStore.swift */; };
+		6C1FA41224AA1DC100CA7F71 /* MemoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA41124AA1DC100CA7F71 /* MemoryStore.swift */; };
 		6C4E880C24A6545E00766E15 /* SystemKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4E880B24A6545E00766E15 /* SystemKit.framework */; };
 		6C4E880D24A6545E00766E15 /* SystemKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4E880B24A6545E00766E15 /* SystemKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C4E881124A6548E00766E15 /* SystemKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6C4E881024A6548D00766E15 /* SystemKit.framework.dSYM */; };
@@ -66,6 +67,7 @@
 		6C1FA40A24AA139300CA7F71 /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
 		6C1FA40D24AA162800CA7F71 /* Refreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
 		6C1FA40F24AA1D4400CA7F71 /* FanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanStore.swift; sourceTree = "<group>"; };
+		6C1FA41124AA1DC100CA7F71 /* MemoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStore.swift; sourceTree = "<group>"; };
 		6C4E880824A649BC00766E15 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		6C4E880B24A6545E00766E15 /* SystemKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemKit.framework; path = Carthage/Build/Mac/SystemKit.framework; sourceTree = "<group>"; };
 		6C4E881024A6548D00766E15 /* SystemKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SystemKit.framework.dSYM; path = Carthage/Build/Mac/SystemKit.framework.dSYM; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				6C1FA3F924A70E6700CA7F71 /* CpuStore.swift */,
 				6C1FA40F24AA1D4400CA7F71 /* FanStore.swift */,
+				6C1FA41124AA1DC100CA7F71 /* MemoryStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				6CAEED5424A5DE4700C39597 /* Color.swift in Sources */,
 				6C1FA40B24AA139300CA7F71 /* NSNotification.swift in Sources */,
 				6C1FA40724AA127E00CA7F71 /* MemoryView.swift in Sources */,
+				6C1FA41224AA1DC100CA7F71 /* MemoryStore.swift in Sources */,
 				6C1FA3FE24A7118000CA7F71 /* Info.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
