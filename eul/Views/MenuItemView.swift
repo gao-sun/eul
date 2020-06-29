@@ -15,6 +15,7 @@ enum MenuItem: String, CaseIterable, Identifiable {
 
     case General
     case CPU
+    case Memory
     case Battery
     case Network
     case Disk

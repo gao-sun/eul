@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SmcControl {
+class SmcControl: Refreshable {
     static var shared = SmcControl()
 
     class TemperatureData {
@@ -31,15 +31,14 @@ struct SmcControl {
         }
     }
 
-    var sensors: [TemperatureData]
-    var fans: [FanData]
+    var sensors: [TemperatureData] = []
+    var fans: [FanData] = []
     var cpuProximityTemperature: Double {
         sensors.first(where: { $0.sensor.name == "CPU_0_PROXIMITY" })?.temp ?? 0
     }
 
-    init() {
-        sensors = []
-        fans = []
+    // must call a function explicitly to init shared instance
+    func start() {
         do {
             try SMCKit.open()
             sensors = try SMCKit.allKnownTemperatureSensors().map { .init(sensor: $0) }
@@ -56,9 +55,10 @@ struct SmcControl {
             print("SMC init error", error)
         }
         SMCKit.close()
+        initObserver(for: .SMCShouldRefresh)
     }
 
-    func refresh() {
+    @objc func refresh() {
         do {
             try SMCKit.open()
         } catch let error {
@@ -83,5 +83,6 @@ struct SmcControl {
             }
         }
         SMCKit.close()
+        NotificationCenter.default.post(name: .StoreShouldRefresh, object: nil)
     }
 }

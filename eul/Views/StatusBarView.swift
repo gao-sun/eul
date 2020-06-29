@@ -12,11 +12,24 @@ struct StatusBarView: View {
     static var height: CGFloat {
         NSStatusBar.system.thickness
     }
+
+    func refreshRepeatedly() {
+        NotificationCenter.default.post(name: .SMCShouldRefresh, object: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.refreshRepeatedly()
+        }
+    }
+
     var body: some View {
         HStack {
             CpuView()
             FanView()
         }
         .environmentObject(CpuStore.shared)
+        .environmentObject(FanStore.shared)
+        .onAppear {
+            SmcControl.shared.start()
+            self.refreshRepeatedly()
+        }
     }
 }

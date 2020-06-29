@@ -8,12 +8,11 @@
 
 import Foundation
 
-class CpuStore: ObservableObject {
+class CpuStore: ObservableObject, Refreshable {
     static let shared = CpuStore()
 
     @Published var usage = ""
     @Published var temp = ""
-    @Published var fans: [SmcControl.FanData] = []
 
     private func getUsage() {
         let cpu = Info.system.usageCPU()
@@ -24,21 +23,12 @@ class CpuStore: ObservableObject {
         temp = String(format: "%.1f°C", SmcControl.shared.cpuProximityTemperature)
     }
 
-    private func getFanSpeed() {
-        fans = SmcControl.shared.fans
-    }
-
-    func getRepeatedly() {
-        SmcControl.shared.refresh()
+    @objc func refresh() {
         getUsage()
         getTemp()
-        getFanSpeed()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.getRepeatedly()
-        }
     }
 
     init() {
-        getRepeatedly()
+        initObserver(for: .StoreShouldRefresh)
     }
 }
