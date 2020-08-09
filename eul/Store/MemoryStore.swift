@@ -21,16 +21,26 @@ class MemoryStore: ObservableObject, Refreshable {
     @Published var inactive: Double = 0
     @Published var wired: Double = 0
     @Published var compressed: Double = 0
+    @Published var appMemory: Double = 0
+    @Published var cachedFiles: Double = 0
+
+    var used: Double {
+        appMemory + wired + compressed
+    }
+
+    var total: Double {
+        free + inactive + active + wired + compressed
+    }
 
     var freeString: String {
-        MemoryStore.memoryUnit(free + inactive)
+        MemoryStore.memoryUnit(total - used)
     }
     var usedString: String {
-        MemoryStore.memoryUnit(active + wired + compressed)
+        MemoryStore.memoryUnit(used)
     }
 
     @objc func refresh() {
-        (free, active, inactive, wired, compressed) = System.memoryUsage()
+        (free, active, inactive, wired, compressed, appMemory, cachedFiles) = System.memoryUsage()
     }
 
     init() {
