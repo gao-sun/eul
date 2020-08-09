@@ -25,10 +25,12 @@ struct StatusBarView: View {
             CpuView()
             FanView()
             MemoryView()
+            BatteryView()
         }
         .environmentObject(CpuStore.shared)
         .environmentObject(FanStore.shared)
         .environmentObject(MemoryStore.shared)
+        .environmentObject(BatteryStore.shared)
         .onAppear {
             SmcControl.shared.start()
             self.refreshRepeatedly()

@@ -13,4 +13,9 @@ extension Text {
         self
             .font(.system(size: 8, weight: .regular))
     }
+
+    func normal() -> some View {
+        self
+            .font(.system(size: 12, weight: .regular))
+    }
 }
