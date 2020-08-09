@@ -31,6 +31,7 @@ struct StatusBarView: View {
         .environmentObject(FanStore.shared)
         .environmentObject(MemoryStore.shared)
         .environmentObject(BatteryStore.shared)
+        .environmentObject(NetworkStore.shared)
         .onAppear {
             SmcControl.shared.start()
             self.refreshRepeatedly()
