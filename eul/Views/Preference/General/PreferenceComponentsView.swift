@@ -1,5 +1,5 @@
 //
-//  PreferenceGeneralView.swift
+//  PreferenceComponentsView.swift
 //  eul
 //
 //  Created by Gao Sun on 2020/8/15.
@@ -9,18 +9,6 @@
 import SwiftUI
 
 extension Preference {
-    struct GeneralView: View {
-        var body: some View {
-            VStack(alignment: .leading) {
-                Text("Display")
-                    .section()
-                Text("Components")
-                    .section()
-                ComponentsView()
-            }
-        }
-    }
-
     struct ComponentsView: View {
         @State var updated = false
         @EnvironmentObject var preference: PreferenceStore
@@ -58,7 +46,7 @@ extension Preference {
                                 Image("X")
                                     .resizable()
                                     .frame(width: 8, height: 8)
-                                    .padding(4)
+                                    .padding(.horizontal, 4)
                                     .contentShape(Rectangle())
                                     .foregroundColor(Color.gray)
                                     .onHover {

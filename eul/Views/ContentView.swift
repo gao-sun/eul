@@ -8,7 +8,16 @@
 
 import SwiftUI
 
-struct Preference {}
+struct Preference {
+    enum TemperatureUnit: String, CaseIterable, Identifiable {
+        var id: String {
+            rawValue
+        }
+
+        case celsius
+        case fahrenheit
+    }
+}
 
 struct ContentView: View {
     @State var selected: MenuItem = .General
@@ -31,9 +40,10 @@ struct ContentView: View {
             .padding(.bottom, 32)
             VStack {
                 Preference.GeneralView()
+                Spacer()
             }
-            .padding(12)
-            .frame(width: 600, alignment: .leading)
+            .padding(20)
+            .frame(minWidth: 610)
         }
         .environmentObject(PreferenceStore.shared)
     }

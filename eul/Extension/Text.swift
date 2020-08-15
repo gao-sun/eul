@@ -31,4 +31,9 @@ extension Text {
             .font(.system(size: 12, weight: .regular))
             .padding(.top, 8)
     }
+
+    func inlineSection() -> some View {
+        self
+            .font(.system(size: 12, weight: .regular))
+    }
 }

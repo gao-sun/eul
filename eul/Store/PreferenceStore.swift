@@ -11,6 +11,7 @@ import Foundation
 class PreferenceStore: ObservableObject {
     static let shared = PreferenceStore()
 
+    @Published var temperatureUnit = Preference.TemperatureUnit.celsius
     @Published var isActiveComponentToggling = false
     @Published var activeComponents: [MenuItem] = MenuItem.components
     @Published var availableComponents: [MenuItem] = []
