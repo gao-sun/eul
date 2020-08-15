@@ -30,6 +30,8 @@
 		6C7DB6CF24E02F0600133B06 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6CE24E02F0600133B06 /* Shell.swift */; };
 		6C7DB6D124E0300E00133B06 /* NetworkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6D024E0300E00133B06 /* NetworkStore.swift */; };
 		6C7DB6D324E0350700133B06 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6D224E0350700133B06 /* String.swift */; };
+		6C7DB6D524E7A75E00133B06 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6D424E7A75E00133B06 /* NetworkView.swift */; };
+		6C7DB6D724E7A85C00133B06 /* ByteUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6D624E7A85C00133B06 /* ByteUnit.swift */; };
 		6CAEED5424A5DE4700C39597 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED5324A5DE4700C39597 /* Color.swift */; };
 		6CAEED6224A5F51600C39597 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED6124A5F51600C39597 /* Text.swift */; };
 		6CAEED6524A62DF800C39597 /* SMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED6424A62DF800C39597 /* SMC.swift */; };
@@ -89,6 +91,8 @@
 		6C7DB6CE24E02F0600133B06 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		6C7DB6D024E0300E00133B06 /* NetworkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStore.swift; sourceTree = "<group>"; };
 		6C7DB6D224E0350700133B06 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		6C7DB6D424E7A75E00133B06 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
+		6C7DB6D624E7A85C00133B06 /* ByteUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteUnit.swift; sourceTree = "<group>"; };
 		6CAEED5324A5DE4700C39597 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6CAEED6124A5F51600C39597 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		6CAEED6424A62DF800C39597 /* SMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMC.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				6C1FA40324A7187F00CA7F71 /* FanView.swift */,
 				6C1FA40624AA127E00CA7F71 /* MemoryView.swift */,
 				6CEF771324DD95D7007C3640 /* BatteryView.swift */,
+				6C7DB6D424E7A75E00133B06 /* NetworkView.swift */,
 			);
 			path = StatusBar;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				6C1FA3FD24A7118000CA7F71 /* Info.swift */,
 				6C7DB6CE24E02F0600133B06 /* Shell.swift */,
 				6C7DB6D224E0350700133B06 /* String.swift */,
+				6C7DB6D624E7A85C00133B06 /* ByteUnit.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -318,8 +324,10 @@
 				6C1FA41024AA1D4400CA7F71 /* FanStore.swift in Sources */,
 				6CAEED5424A5DE4700C39597 /* Color.swift in Sources */,
 				6C1FA40B24AA139300CA7F71 /* NSNotification.swift in Sources */,
+				6C7DB6D524E7A75E00133B06 /* NetworkView.swift in Sources */,
 				6C1FA40724AA127E00CA7F71 /* MemoryView.swift in Sources */,
 				6C1FA41224AA1DC100CA7F71 /* MemoryStore.swift in Sources */,
+				6C7DB6D724E7A85C00133B06 /* ByteUnit.swift in Sources */,
 				6C1FA3FE24A7118000CA7F71 /* Info.swift in Sources */,
 				6C7DB6D124E0300E00133B06 /* NetworkStore.swift in Sources */,
 			);

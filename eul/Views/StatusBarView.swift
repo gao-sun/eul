@@ -26,6 +26,7 @@ struct StatusBarView: View {
             FanView()
             MemoryView()
             BatteryView()
+            NetworkView()
         }
         .environmentObject(CpuStore.shared)
         .environmentObject(FanStore.shared)

@@ -36,8 +36,8 @@ struct Info {
 
     struct Network {
         var interface: String
-        var inBytes: UInt
-        var outBytes: UInt
+        var inBytes: UInt64
+        var outBytes: UInt64
 
         init() {
             interface = shell("route get 0.0.0.0 | grep interface | awk '{print $2}'")?
@@ -52,11 +52,11 @@ struct Info {
                 let headers = rows[0].splittedByWhitespace
                 let values = rows[1].splittedByWhitespace
 
-                if let raw = String.getValue(of: "ibytes", in: values, of: headers), let bytes = UInt(raw) {
+                if let raw = String.getValue(of: "ibytes", in: values, of: headers), let bytes = UInt64(raw) {
                     inBytes = bytes
                 }
 
-                if let raw = String.getValue(of: "obytes", in: values, of: headers), let bytes = UInt(raw) {
+                if let raw = String.getValue(of: "obytes", in: values, of: headers), let bytes = UInt64(raw) {
                     outBytes = bytes
                 }
             }
