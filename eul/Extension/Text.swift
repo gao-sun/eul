@@ -22,12 +22,13 @@ extension Text {
     func section() -> some View {
         self
             .font(.headline)
-            .padding(.vertical, 8)
+            .padding(.top, 8)
+            .padding(.bottom, 4)
     }
 
     func subsection() -> some View {
         self
             .font(.system(size: 12, weight: .regular))
-            .padding(.vertical, 4)
+            .padding(.top, 8)
     }
 }

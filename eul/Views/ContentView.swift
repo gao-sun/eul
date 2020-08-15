@@ -35,5 +35,6 @@ struct ContentView: View {
             .padding(12)
             .frame(width: 600, alignment: .leading)
         }
+        .environmentObject(PreferenceStore.shared)
     }
 }
