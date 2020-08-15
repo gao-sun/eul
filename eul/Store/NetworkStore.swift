@@ -18,11 +18,11 @@ class NetworkStore: ObservableObject, Refreshable {
     @Published var outSpeedInByte: Double = 0
 
     var inSpeed: String {
-        ByteUnit(inSpeedInByte).readable
+        ByteUnit(inSpeedInByte).readable + "/s"
     }
 
     var outSpeed: String {
-        ByteUnit(outSpeedInByte).readable
+        ByteUnit(outSpeedInByte).readable + "/s"
     }
 
     @objc func refresh() {
@@ -42,6 +42,7 @@ class NetworkStore: ObservableObject, Refreshable {
         }
 
         lastTimestamp = time
+        network = current
     }
 
     init() {
