@@ -13,12 +13,16 @@ enum MenuItem: String, CaseIterable, Identifiable {
         rawValue
     }
 
+    static var components: [MenuItem] {
+        allCases.filter { $0 != .General }
+    }
+
     case General
     case CPU
+    case Fan
     case Memory
     case Battery
     case Network
-    case Disk
 }
 
 struct MenuItemView: View {
@@ -26,7 +30,10 @@ struct MenuItemView: View {
     var active = false
 
     var body: some View {
-        HStack {
+        HStack(spacing: 8) {
+            Image(item.rawValue)
+                .resizable()
+                .frame(width: 16, height: 16)
             Text(item.rawValue)
                 .font(.body)
             Spacer()
@@ -34,7 +41,6 @@ struct MenuItemView: View {
         .padding(.vertical, 8)
         .padding(.horizontal, 20)
         .background(active ? Color.selectedBackground : Color.clear)
-        .padding(.vertical, 2)
         .contentShape(Rectangle())
     }
 }

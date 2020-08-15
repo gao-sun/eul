@@ -18,4 +18,16 @@ extension Text {
         self
             .font(.system(size: 12, weight: .regular))
     }
+
+    func section() -> some View {
+        self
+            .font(.headline)
+            .padding(.vertical, 8)
+    }
+
+    func subsection() -> some View {
+        self
+            .font(.system(size: 12, weight: .regular))
+            .padding(.vertical, 4)
+    }
 }

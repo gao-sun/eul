@@ -8,12 +8,14 @@
 
 import SwiftUI
 
+struct Preference {}
+
 struct ContentView: View {
     @State var selected: MenuItem = .General
 
     var body: some View {
         HSplitView {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text("eul")
                     .font(.largeTitle)
                     .fontWeight(.bold)
@@ -28,9 +30,10 @@ struct ContentView: View {
             .frame(width: 200, alignment: .leading)
             .padding(.bottom, 32)
             VStack {
-                Text("Test")
+                Preference.GeneralView()
             }
-            .frame(width: 200, alignment: .leading)
+            .padding(12)
+            .frame(width: 600, alignment: .leading)
         }
     }
 }

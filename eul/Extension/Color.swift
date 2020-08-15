@@ -9,8 +9,8 @@
 import SwiftUI
 
 extension Color {
-    init(hexString: String) {
-        let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+    init(hex: String) {
+        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt64()
         Scanner(string: hex).scanHexInt64(&int)
 
@@ -32,6 +32,13 @@ extension Color {
     static private var isDark: Bool { NSApp.effectiveAppearance.name == NSAppearance.Name.darkAqua }
 
     static var selectedBackground: Color {
-        isDark ? Color(hexString: "#555") : Color(hexString: "#eee")
+        isDark ? Color(hex: "#555") : Color(hex: "#eee")
     }
+
+    static var border: Color {
+        isDark ? Color(hex: "#777") : Color(hex: "#ccc")
+    }
+
+    static let text = Color(NSColor.textColor)
+    static let textBackground = Color(NSColor.textBackgroundColor)
 }

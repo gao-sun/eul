@@ -13,7 +13,7 @@ struct NetworkView: View {
 
     var body: some View {
         HStack(spacing: 6) {
-            Image("Arrows")
+            Image("Network")
                 .resizable()
                 .frame(width: 15, height: 15)
             VStack(alignment: .leading, spacing: 0) {
