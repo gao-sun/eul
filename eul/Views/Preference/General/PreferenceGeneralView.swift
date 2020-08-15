@@ -15,6 +15,7 @@ extension Preference {
                 Text("Display")
                     .section()
                 DisplayView()
+                Color.clear.frame(height: 4)
                 Text("Components")
                     .section()
                 ComponentsView()

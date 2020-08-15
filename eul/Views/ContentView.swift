@@ -8,17 +8,6 @@
 
 import SwiftUI
 
-struct Preference {
-    enum TemperatureUnit: String, CaseIterable, Identifiable {
-        var id: String {
-            rawValue
-        }
-
-        case celsius
-        case fahrenheit
-    }
-}
-
 struct ContentView: View {
     @State var selected: MenuItem = .General
 

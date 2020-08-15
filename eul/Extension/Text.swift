@@ -35,5 +35,6 @@ extension Text {
     func inlineSection() -> some View {
         self
             .font(.system(size: 12, weight: .regular))
+            .frame(width: 80, alignment: .leading)
     }
 }
