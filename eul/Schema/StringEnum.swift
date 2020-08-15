@@ -1,5 +1,5 @@
 //
-//  RawIdentifiable.swift
+//  StringEnum.swift
 //  eul
 //
 //  Created by Gao Sun on 2020/8/15.
