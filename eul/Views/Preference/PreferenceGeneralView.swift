@@ -23,7 +23,7 @@ extension Preference {
 
     struct ComponentsView: View {
         @State var dragging: MenuItem?
-        @State var offsetWidth: CGFloat = 0
+        @GestureState var offsetWidth: CGFloat = 0
 
         var body: some View {
             VStack(alignment: .leading, spacing: 4) {
@@ -42,11 +42,14 @@ extension Preference {
                         .padding(.horizontal, 12)
                         .background(Color.selectedBackground)
                         .cornerRadius(4)
-                        .offset(x: self.dragging?.rawValue == item.rawValue ? self.offsetWidth : 0)
+                        .offset(x: self.dragging == item ? self.offsetWidth : 0)
+                        .zIndex(self.dragging == item ? 1 : 0)
                         .gesture(DragGesture()
+                        .updating(self.$offsetWidth, body: { (value, state, _) in
+                                state = value.translation.width
+                            })
                             .onChanged { value in
                                 self.dragging = item
-                                self.offsetWidth = value.translation.width
                             }
                             .onEnded { _ in
                                 self.dragging = nil
@@ -58,6 +61,7 @@ extension Preference {
                 .padding(.vertical, 8)
                 .padding(.horizontal, 12)
                 .border(Color.border)
+                .clipped()
                 Text("Available")
                     .subsection()
             }
