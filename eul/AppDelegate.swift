@@ -11,10 +11,8 @@ import SwiftUI
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-    let statusView = NSHostingView(rootView: StatusBarView())
     var window: NSWindow!
-    var statusBarItem: NSStatusItem!
+    let barItem = StatusBarItem { StatusBarView(onSizeChange: $0) }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
@@ -29,16 +27,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
-        let statusBar = NSStatusBar.system
-        statusBarItem = statusBar.statusItem(withLength: 400)
-        let statusBarMenu = NSMenu()
-        statusBarMenu.addItem(
-        withTitle: "Exit",
-        action: #selector(AppDelegate.exit),
-        keyEquivalent: "")
-        statusBarItem.menu = statusBarMenu
-        statusView.frame = NSMakeRect(0, 0, CGFloat(400), StatusBarView.height)
-        statusBarItem.button?.addSubview(statusView)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

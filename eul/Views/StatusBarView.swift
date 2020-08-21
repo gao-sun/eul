@@ -8,7 +8,9 @@
 
 import SwiftUI
 
-struct StatusBarView: View {
+struct StatusBarView: SizeChangeView {
+    let onSizeChange: ((CGSize) -> Void)?
+
     static var height: CGFloat {
         NSStatusBar.system.thickness
     }
@@ -20,6 +22,11 @@ struct StatusBarView: View {
         }
     }
 
+    func reportSize(_ geometry: GeometryProxy) -> some View {
+        onSizeChange?(geometry.size)
+        return Color.clear
+    }
+
     var body: some View {
         HStack {
             CpuView()
@@ -28,6 +35,7 @@ struct StatusBarView: View {
             BatteryView()
             NetworkView()
         }
+        .fixedSize()
         .environmentObject(CpuStore.shared)
         .environmentObject(FanStore.shared)
         .environmentObject(MemoryStore.shared)
@@ -37,5 +45,6 @@ struct StatusBarView: View {
             SmcControl.shared.start()
             self.refreshRepeatedly()
         }
+        .background(GeometryReader { self.reportSize($0) })
     }
 }
