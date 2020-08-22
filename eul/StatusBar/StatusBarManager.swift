@@ -6,12 +6,38 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+import Combine
 
 class StatusBarManager {
-    let cpu = StatusBarItem(with: .CPU)
-    let fan = StatusBarItem(with: .Fan)
-    let memory = StatusBarItem(with: .Memory)
-    let battery = StatusBarItem(with: .Battery)
-    let Network = StatusBarItem(with: .Network)
+    @ObservedObject var preferenceStore = PreferenceStore.shared
+    var cancellable: AnyCancellable?
+    var itemDict: [EulComponent: StatusBarItem] = [:]
+
+    init() {
+        EulComponent.allCases.forEach {
+            self.itemDict[$0] = StatusBarItem(with: $0)
+        }
+
+        // w/o the delay items will have a chance of not appearing
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.subscribe()
+        }
+    }
+
+    func subscribe() {
+        cancellable = preferenceStore.$activeComponents.sink {
+            self.render(components: $0)
+        }
+    }
+
+    func render(components: [EulComponent]) {
+        EulComponent.allCases.forEach {
+            self.itemDict[$0]?.isVisible = false
+        }
+
+        components.reversed().forEach {
+            self.itemDict[$0]?.isVisible = true
+        }
+    }
 }

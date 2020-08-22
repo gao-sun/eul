@@ -11,8 +11,14 @@ import SwiftUI
 
 
 class StatusBarItem {
+    let component: EulComponent
     private let item: NSStatusItem
     private var statusView: NSHostingView<AnyView>?
+
+    var isVisible: Bool {
+        get { item.isVisible }
+        set { item.isVisible = newValue }
+    }
 
     func onSizeChange(size: CGSize) {
         let width = size.width + 12
@@ -22,7 +28,9 @@ class StatusBarItem {
 
     init(with component: EulComponent) {
         let config = getComponentConfig(component)
+        self.component = component
         item = NSStatusBar.system.statusItem(withLength: 0)
+        item.isVisible = false
         statusView = NSHostingView(rootView: config.viewBuilder(onSizeChange))
 
         let statusBarMenu = NSMenu()
