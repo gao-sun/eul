@@ -8,8 +8,9 @@
 
 import SwiftUI
 
-struct MemoryView: View {
-    @EnvironmentObject var memoryStore: MemoryStore
+struct MemoryView: SizeChangeView {
+    var onSizeChange: ((CGSize) -> Void)?
+    @ObservedObject var memoryStore = MemoryStore.shared
 
     var body: some View {
         HStack(spacing: 6) {
@@ -23,5 +24,7 @@ struct MemoryView: View {
                     .compact()
             }
         }
+        .fixedSize()
+        .background(GeometryReader { self.reportSize($0) })
     }
 }

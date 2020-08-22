@@ -14,9 +14,9 @@ class StatusBarItem<Content: SizeChangeView> {
     var statusView: NSHostingView<Content>?
 
     func onSizeChange(size: CGSize) {
-        let width = size.width + 20
+        let width = size.width + 12
         item.length = width
-        statusView?.frame = NSMakeRect(0, 0, width, StatusBarView.height)
+        statusView?.frame = NSMakeRect(0, 0, width, AppDelegate.statusBarHeight)
     }
 
     init(with builder: (SizeChange) -> Content) {
@@ -32,7 +32,7 @@ class StatusBarItem<Content: SizeChangeView> {
         item.menu = statusBarMenu
 
         if let statusView = statusView {
-            statusView.frame = NSMakeRect(0, 0, 0, StatusBarView.height)
+            statusView.frame = NSMakeRect(0, 0, 0, AppDelegate.statusBarHeight)
             item.button?.addSubview(statusView)
         }
     }

@@ -8,8 +8,9 @@
 
 import SwiftUI
 
-struct CpuView: View {
-    @EnvironmentObject var cpuStore: CpuStore
+struct CpuView: SizeChangeView {
+    var onSizeChange: ((CGSize) -> Void)?
+    @ObservedObject var cpuStore = CpuStore.shared
 
     var body: some View {
         HStack(spacing: 6) {
@@ -23,5 +24,7 @@ struct CpuView: View {
                     .compact()
             }
         }
+        .fixedSize()
+        .background(GeometryReader { self.reportSize($0) })
     }
 }

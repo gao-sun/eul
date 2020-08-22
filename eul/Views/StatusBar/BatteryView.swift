@@ -8,9 +8,10 @@
 
 import SwiftUI
 
-struct BatteryView: View {
+struct BatteryView: SizeChangeView {
     private let lengthUnit: CGFloat = 15.0 / 100
-    @EnvironmentObject var batteryStore: BatteryStore
+    var onSizeChange: ((CGSize) -> Void)?
+    @ObservedObject var batteryStore = BatteryStore.shared
 
     var body: some View {
         HStack(spacing: 6) {
@@ -26,5 +27,7 @@ struct BatteryView: View {
             Text("\(batteryStore.charge)%")
                 .normal()
         }
+        .fixedSize()
+        .background(GeometryReader { self.reportSize($0) })
     }
 }

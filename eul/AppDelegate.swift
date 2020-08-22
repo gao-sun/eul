@@ -12,7 +12,18 @@ import SwiftUI
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
-    let barItem = StatusBarItem { StatusBarView(onSizeChange: $0) }
+    let statusBarManager = StatusBarManager()
+
+    static var statusBarHeight: CGFloat {
+        NSStatusBar.system.thickness
+    }
+
+    func refreshRepeatedly() {
+        NotificationCenter.default.post(name: .SMCShouldRefresh, object: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.refreshRepeatedly()
+        }
+    }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
@@ -27,6 +38,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
+        SmcControl.shared.start()
+        self.refreshRepeatedly()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

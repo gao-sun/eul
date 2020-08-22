@@ -12,4 +12,12 @@ typealias SizeChange = ((CGSize) -> Void)?
 
 protocol SizeChangeView: View {
     var onSizeChange: SizeChange { get }
+    func reportSize(_ geometry: GeometryProxy) -> Color
+}
+
+extension SizeChangeView {
+    func reportSize(_ geometry: GeometryProxy) -> Color {
+        onSizeChange?(geometry.size)
+        return Color.clear
+    }
 }

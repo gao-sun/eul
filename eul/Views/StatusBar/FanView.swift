@@ -8,8 +8,9 @@
 
 import SwiftUI
 
-struct FanView: View {
-    @EnvironmentObject var fanStore: FanStore
+struct FanView: SizeChangeView {
+    var onSizeChange: ((CGSize) -> Void)?
+    @ObservedObject var fanStore = FanStore.shared
 
     var body: some View {
         HStack(spacing: 6) {
@@ -23,5 +24,7 @@ struct FanView: View {
                 }
             }
         }
+        .fixedSize()
+        .background(GeometryReader { self.reportSize($0) })
     }
 }

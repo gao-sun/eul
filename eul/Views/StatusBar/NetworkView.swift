@@ -8,8 +8,9 @@
 
 import SwiftUI
 
-struct NetworkView: View {
-    @EnvironmentObject var networkStore: NetworkStore
+struct NetworkView: SizeChangeView {
+    var onSizeChange: ((CGSize) -> Void)?
+    @ObservedObject var networkStore = NetworkStore.shared
 
     var body: some View {
         HStack(spacing: 6) {
@@ -23,6 +24,8 @@ struct NetworkView: View {
                     .compact()
             }
         }
+        .fixedSize()
+        .background(GeometryReader { self.reportSize($0) })
     }
 }
 
