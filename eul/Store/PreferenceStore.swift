@@ -14,8 +14,8 @@ class PreferenceStore: ObservableObject {
     @Published var temperatureUnit = Preference.TemperatureUnit.celsius
     @Published var textDisplay = Preference.TextDisplay.compact
     @Published var isActiveComponentToggling = false
-    @Published var activeComponents: [MenuItem] = MenuItem.components
-    @Published var availableComponents: [MenuItem] = []
+    @Published var activeComponents = EulComponent.allCases
+    @Published var availableComponents: [EulComponent] = []
 
     func toggleActiveComponent(at index: Int) {
         isActiveComponentToggling = true

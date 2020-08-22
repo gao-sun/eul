@@ -12,8 +12,8 @@ extension Preference {
     struct ComponentsView: View {
         @State var updated = false
         @EnvironmentObject var preference: PreferenceStore
-        @State var dragging: MenuItem?
-        @State var frames: [CGRect] = .init(repeating: .zero, count: MenuItem.components.count)
+        @State var dragging: EulComponent?
+        @State var frames: [CGRect] = .init(repeating: .zero, count: EulComponent.allCases.count)
         @GestureState var offsetWidth: CGFloat = 0
 
         func updateFrame(geometry: GeometryProxy, index: Int) -> some View {

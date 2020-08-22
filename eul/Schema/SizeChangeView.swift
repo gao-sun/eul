@@ -10,6 +10,8 @@ import SwiftUI
 
 typealias SizeChange = ((CGSize) -> Void)?
 
+typealias SizeChangeViewBuilder = (SizeChange) -> AnyView
+
 protocol SizeChangeView: View {
     var onSizeChange: SizeChange { get }
     func reportSize(_ geometry: GeometryProxy) -> Color

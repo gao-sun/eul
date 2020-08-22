@@ -9,9 +9,9 @@
 import Foundation
 
 class StatusBarManager {
-    let cpu = StatusBarItem { CpuView(onSizeChange: $0) }
-    let fan = StatusBarItem { FanView(onSizeChange: $0) }
-    let memory = StatusBarItem { MemoryView(onSizeChange: $0) }
-    let battery = StatusBarItem { BatteryView(onSizeChange: $0) }
-    let Network = StatusBarItem { NetworkView(onSizeChange: $0) }
+    let cpu = StatusBarItem(with: .CPU)
+    let fan = StatusBarItem(with: .Fan)
+    let memory = StatusBarItem(with: .Memory)
+    let battery = StatusBarItem(with: .Battery)
+    let Network = StatusBarItem(with: .Network)
 }

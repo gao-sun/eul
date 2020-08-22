@@ -9,9 +9,10 @@
 import Cocoa
 import SwiftUI
 
-class StatusBarItem<Content: SizeChangeView> {
-    let item: NSStatusItem
-    var statusView: NSHostingView<Content>?
+
+class StatusBarItem {
+    private let item: NSStatusItem
+    private var statusView: NSHostingView<AnyView>?
 
     func onSizeChange(size: CGSize) {
         let width = size.width + 12
@@ -19,13 +20,14 @@ class StatusBarItem<Content: SizeChangeView> {
         statusView?.frame = NSMakeRect(0, 0, width, AppDelegate.statusBarHeight)
     }
 
-    init(with builder: (SizeChange) -> Content) {
+    init(with component: EulComponent) {
+        let config = getComponentConfig(component)
         item = NSStatusBar.system.statusItem(withLength: 0)
-        statusView = NSHostingView(rootView: builder(onSizeChange))
+        statusView = NSHostingView(rootView: config.viewBuilder(onSizeChange))
 
         let statusBarMenu = NSMenu()
         statusBarMenu.addItem(
-            withTitle: "Exit",
+            withTitle: "Exit eul",
             action: #selector(AppDelegate.exit),
             keyEquivalent: ""
         )
