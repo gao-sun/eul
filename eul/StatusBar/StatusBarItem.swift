@@ -12,6 +12,7 @@ import SwiftUI
 
 class StatusBarItem {
     let component: EulComponent
+    private let menu: EulComponentMenu?
     private let item: NSStatusItem
     private var statusView: NSHostingView<AnyView>?
 
@@ -29,6 +30,7 @@ class StatusBarItem {
     init(with component: EulComponent) {
         let config = getComponentConfig(component)
         self.component = component
+        menu = config.menuBuilder?()
         item = NSStatusBar.system.statusItem(withLength: 0)
         item.isVisible = false
         statusView = NSHostingView(rootView: config.viewBuilder(onSizeChange))
@@ -48,6 +50,9 @@ class StatusBarItem {
         quitItem.keyEquivalentModifierMask = .command
 
         let statusBarMenu = NSMenu()
+        menu?.items.forEach {
+            statusBarMenu.addItem($0)
+        }
         statusBarMenu.addItem(NSMenuItem.separator())
         statusBarMenu.addItem(preferencesItem)
         statusBarMenu.addItem(quitItem)

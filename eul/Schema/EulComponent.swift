@@ -21,21 +21,28 @@ enum EulComponent: String, CaseIterable, Identifiable {
     case Network
 }
 
+protocol EulComponentMenu {
+    var items: [NSMenuItem] { get }
+}
+
+typealias EulComponentMenuBuilder = () -> EulComponentMenu
+
 struct ComponentConfig {
     let viewBuilder: SizeChangeViewBuilder
+    let menuBuilder: EulComponentMenuBuilder?
 }
 
 func getComponentConfig(_ component: EulComponent) -> ComponentConfig {
     switch component {
     case .CPU:
-        return ComponentConfig(viewBuilder: { AnyView(CpuView(onSizeChange: $0)) })
+        return ComponentConfig(viewBuilder: { AnyView(CpuView(onSizeChange: $0)) }, menuBuilder: { CpuMenu() })
     case .Fan:
-        return ComponentConfig(viewBuilder: { AnyView(FanView(onSizeChange: $0)) })
+        return ComponentConfig(viewBuilder: { AnyView(FanView(onSizeChange: $0)) }, menuBuilder: nil)
     case .Memory:
-        return ComponentConfig(viewBuilder: { AnyView(MemoryView(onSizeChange: $0)) })
+        return ComponentConfig(viewBuilder: { AnyView(MemoryView(onSizeChange: $0)) }, menuBuilder: nil)
     case .Battery:
-        return ComponentConfig(viewBuilder: { AnyView(BatteryView(onSizeChange: $0)) })
+        return ComponentConfig(viewBuilder: { AnyView(BatteryView(onSizeChange: $0)) }, menuBuilder: nil)
     case .Network:
-        return ComponentConfig(viewBuilder: { AnyView(NetworkView(onSizeChange: $0)) })
+        return ComponentConfig(viewBuilder: { AnyView(NetworkView(onSizeChange: $0)) }, menuBuilder: nil)
     }
 }

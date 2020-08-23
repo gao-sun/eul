@@ -13,10 +13,11 @@ class CpuStore: ObservableObject, Refreshable {
 
     @Published var usage = ""
     @Published var temp = ""
+    @Published var usageCPU: (system: Double, user: Double, idle: Double, nice: Double)?
 
     private func getUsage() {
-        let cpu = Info.system.usageCPU()
-        usage = String(format: "%.1f%%", cpu.system + cpu.user)
+        usageCPU = Info.system.usageCPU()
+        usage = String(format: "%.1f%%", (usageCPU?.system ?? 0) + (usageCPU?.user ?? 0))
     }
 
     private func getTemp() {

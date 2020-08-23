@@ -11,7 +11,7 @@ import Combine
 
 class StatusBarManager {
     @ObservedObject var preferenceStore = PreferenceStore.shared
-    var cancellable: AnyCancellable?
+    private var cancellable: AnyCancellable?
     var itemDict: [EulComponent: StatusBarItem] = [:]
 
     init() {
