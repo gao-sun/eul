@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>LSUIElement</key>
-	<false/>
+	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

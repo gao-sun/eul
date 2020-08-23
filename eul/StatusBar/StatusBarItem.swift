@@ -33,12 +33,24 @@ class StatusBarItem {
         item.isVisible = false
         statusView = NSHostingView(rootView: config.viewBuilder(onSizeChange))
 
-        let statusBarMenu = NSMenu()
-        statusBarMenu.addItem(
-            withTitle: "Exit eul",
-            action: #selector(AppDelegate.exit),
-            keyEquivalent: ""
+        let preferencesItem = NSMenuItem(
+            title: "Preferences",
+            action: #selector(AppDelegate.open),
+            keyEquivalent: ","
         )
+        preferencesItem.keyEquivalentModifierMask = .command
+
+        let quitItem = NSMenuItem(
+            title: "Quit eul",
+            action: #selector(AppDelegate.exit),
+            keyEquivalent: "q"
+        )
+        quitItem.keyEquivalentModifierMask = .command
+
+        let statusBarMenu = NSMenu()
+        statusBarMenu.addItem(NSMenuItem.separator())
+        statusBarMenu.addItem(preferencesItem)
+        statusBarMenu.addItem(quitItem)
         item.menu = statusBarMenu
 
         if let statusView = statusView {
