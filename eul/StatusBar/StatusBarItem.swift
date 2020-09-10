@@ -12,9 +12,9 @@ import SwiftUI
 
 class StatusBarItem {
     let component: EulComponent
-    private let menu: EulComponentMenu?
     private let item: NSStatusItem
     private var statusView: NSHostingView<AnyView>?
+    private var menuView: NSHostingView<AnyView>?
 
     var isVisible: Bool {
         get { item.isVisible }
@@ -27,10 +27,13 @@ class StatusBarItem {
         statusView?.frame = NSMakeRect(0, 0, width, AppDelegate.statusBarHeight)
     }
 
+    func onMenuSizeChange(size: CGSize) {
+        menuView?.frame = NSMakeRect(0, 0, size.width, size.height)
+    }
+
     init(with component: EulComponent) {
         let config = getComponentConfig(component)
         self.component = component
-        menu = config.menuBuilder?()
         item = NSStatusBar.system.statusItem(withLength: 0)
         item.isVisible = false
         statusView = NSHostingView(rootView: config.viewBuilder(onSizeChange))
@@ -50,10 +53,16 @@ class StatusBarItem {
         quitItem.keyEquivalentModifierMask = .command
 
         let statusBarMenu = NSMenu()
-        menu?.items.forEach {
-            statusBarMenu.addItem($0)
+
+
+        if let menuBuilder = config.menuBuilder {
+            let customItem = NSMenuItem()
+            menuView = NSHostingView(rootView: menuBuilder(onMenuSizeChange))
+            customItem.view = menuView
+            statusBarMenu.addItem(customItem)
+            statusBarMenu.addItem(NSMenuItem.separator())
         }
-        statusBarMenu.addItem(NSMenuItem.separator())
+
         statusBarMenu.addItem(preferencesItem)
         statusBarMenu.addItem(quitItem)
         item.menu = statusBarMenu

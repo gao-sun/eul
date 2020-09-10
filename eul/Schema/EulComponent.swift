@@ -29,13 +29,13 @@ typealias EulComponentMenuBuilder = () -> EulComponentMenu
 
 struct ComponentConfig {
     let viewBuilder: SizeChangeViewBuilder
-    let menuBuilder: EulComponentMenuBuilder?
+    let menuBuilder: SizeChangeViewBuilder?
 }
 
 func getComponentConfig(_ component: EulComponent) -> ComponentConfig {
     switch component {
     case .CPU:
-        return ComponentConfig(viewBuilder: { AnyView(CpuView(onSizeChange: $0)) }, menuBuilder: { CpuMenu() })
+        return ComponentConfig(viewBuilder: { AnyView(CpuView(onSizeChange: $0)) }, menuBuilder: { AnyView(CpuMenuView(onSizeChange: $0)) })
     case .Fan:
         return ComponentConfig(viewBuilder: { AnyView(FanView(onSizeChange: $0)) }, menuBuilder: nil)
     case .Memory:
