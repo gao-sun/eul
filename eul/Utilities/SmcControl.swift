@@ -21,9 +21,13 @@ class SmcControl: Refreshable {
         }
     }
 
-    class FanData {
+    class FanData: Identifiable {
         let fan: Fan
         var speed: Int
+
+        var id: Int {
+            fan.id
+        }
 
         init(fan: Fan, speed: Int = 0) {
             self.fan = fan
@@ -33,8 +37,14 @@ class SmcControl: Refreshable {
 
     var sensors: [TemperatureData] = []
     var fans: [FanData] = []
-    var cpuProximityTemperature: Double {
-        sensors.first(where: { $0.sensor.name == "CPU_0_PROXIMITY" })?.temp ?? 0
+    var cpuProximityTemperature: Double? {
+        sensors.first(where: { $0.sensor.name == "CPU_0_PROXIMITY" })?.temp
+    }
+    var gpuProximityTemperature: Double? {
+        sensors.first(where: { $0.sensor.name == "GPU_0_PROXIMITY" })?.temp
+    }
+    var memoryProximityTemperature: Double? {
+        sensors.first(where: { $0.sensor.name == "MEM_SLOTS_PROXIMITY" })?.temp
     }
 
     // must call a function explicitly to init shared instance

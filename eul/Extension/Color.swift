@@ -41,4 +41,5 @@ extension Color {
 
     static let text = Color(NSColor.textColor)
     static let textBackground = Color(NSColor.textBackgroundColor)
+    static let info = Color(NSColor.disabledControlTextColor)
 }

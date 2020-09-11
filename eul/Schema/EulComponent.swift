@@ -35,13 +35,25 @@ struct ComponentConfig {
 func getComponentConfig(_ component: EulComponent) -> ComponentConfig {
     switch component {
     case .CPU:
-        return ComponentConfig(viewBuilder: { AnyView(CpuView(onSizeChange: $0)) }, menuBuilder: { AnyView(CpuMenuView(onSizeChange: $0)) })
+        return ComponentConfig(
+            viewBuilder: { AnyView(CpuView(onSizeChange: $0)) },
+            menuBuilder: { AnyView(CpuMenuView(onSizeChange: $0)) }
+        )
     case .Fan:
-        return ComponentConfig(viewBuilder: { AnyView(FanView(onSizeChange: $0)) }, menuBuilder: nil)
+        return ComponentConfig(
+            viewBuilder: { AnyView(FanView(onSizeChange: $0)) },
+            menuBuilder: { AnyView(FanMenuView(onSizeChange: $0)) }
+        )
     case .Memory:
-        return ComponentConfig(viewBuilder: { AnyView(MemoryView(onSizeChange: $0)) }, menuBuilder: nil)
+        return ComponentConfig(
+            viewBuilder: { AnyView(MemoryView(onSizeChange: $0)) },
+            menuBuilder: { AnyView(MemoryMenuView(onSizeChange: $0)) }
+        )
     case .Battery:
-        return ComponentConfig(viewBuilder: { AnyView(BatteryView(onSizeChange: $0)) }, menuBuilder: nil)
+        return ComponentConfig(
+            viewBuilder: { AnyView(BatteryView(onSizeChange: $0)) },
+            menuBuilder: { AnyView(BatteryMenuView(onSizeChange: $0)) }
+        )
     case .Network:
         return ComponentConfig(viewBuilder: { AnyView(NetworkView(onSizeChange: $0)) }, menuBuilder: nil)
     }

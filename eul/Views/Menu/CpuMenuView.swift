@@ -20,7 +20,9 @@ struct CpuMenuView: SizeChangeView {
     }
 
     var body: some View {
-        VStack {
+        VStack(spacing: 2) {
+            Text("Summary")
+                .menuSection()
             HStack {
                 Text("Usage")
                 Spacer()
@@ -31,10 +33,51 @@ struct CpuMenuView: SizeChangeView {
                 Spacer()
                 Text(String(format: "%.1f%%", 100 - usage))
             }
+            cpuStore.temp.map { temp in
+                HStack {
+                    Text("Temp")
+                    Spacer()
+                    Text(String(format: "%.0f°C", temp))
+                }
+            }
+            cpuStore.gpuTemp.map { temp in
+                HStack {
+                    Text("GPU Temp")
+                    Spacer()
+                    Text(String(format: "%.0f°C", temp))
+                }
+            }
+            Text("Info")
+                .menuSection()
+            HStack {
+                Text("Physical Cores")
+                Spacer()
+                Text(cpuStore.physicalCores.description)
+            }
+            HStack {
+                Text("Logical Cores")
+                Spacer()
+                Text(cpuStore.logicalCores.description)
+            }
+            cpuStore.upTime.map { upTime in
+                HStack {
+                    Text("Up Time")
+                    Spacer()
+                    Text("\(upTime.days)d \(upTime.hrs)h \(upTime.mins)m")
+                }
+            }
+            if cpuStore.thermalLevel != .NotPublished && cpuStore.thermalLevel != .Unknown {
+                HStack {
+                    Text("Thermal Lv.")
+                    Spacer()
+                    Text(cpuStore.thermalLevel.rawValue.titleCase())
+                        .font(.system(size: 12, weight: .regular))
+                        .multilineTextAlignment(.trailing)
+                }
+            }
         }
-        .frame(width: 120)
-        .padding(.leading, 20)
-        .fixedSize()
+        .frame(width: 160)
+        .menuInfo()
         .background(GeometryReader { self.reportSize($0) })
     }
 }

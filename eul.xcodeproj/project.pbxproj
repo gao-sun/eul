@@ -17,6 +17,10 @@
 		6C1FA40E24AA162800CA7F71 /* Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA40D24AA162800CA7F71 /* Refreshable.swift */; };
 		6C1FA41024AA1D4400CA7F71 /* FanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA40F24AA1D4400CA7F71 /* FanStore.swift */; };
 		6C1FA41224AA1DC100CA7F71 /* MemoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA41124AA1DC100CA7F71 /* MemoryStore.swift */; };
+		6C4CCCF1250BA68B00590E0E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4CCCF0250BA68B00590E0E /* View.swift */; };
+		6C4CCCF3250BA8BC00590E0E /* FanMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4CCCF2250BA8BC00590E0E /* FanMenuView.swift */; };
+		6C4CCCF5250BAAEE00590E0E /* MemoryMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4CCCF4250BAAEE00590E0E /* MemoryMenuView.swift */; };
+		6C4CCCF7250BADC800590E0E /* BatteryMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4CCCF6250BADC800590E0E /* BatteryMenuView.swift */; };
 		6C4E880C24A6545E00766E15 /* SystemKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4E880B24A6545E00766E15 /* SystemKit.framework */; };
 		6C4E880D24A6545E00766E15 /* SystemKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4E880B24A6545E00766E15 /* SystemKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C4E881124A6548E00766E15 /* SystemKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6C4E881024A6548D00766E15 /* SystemKit.framework.dSYM */; };
@@ -84,6 +88,10 @@
 		6C1FA40D24AA162800CA7F71 /* Refreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
 		6C1FA40F24AA1D4400CA7F71 /* FanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanStore.swift; sourceTree = "<group>"; };
 		6C1FA41124AA1DC100CA7F71 /* MemoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStore.swift; sourceTree = "<group>"; };
+		6C4CCCF0250BA68B00590E0E /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		6C4CCCF2250BA8BC00590E0E /* FanMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanMenuView.swift; sourceTree = "<group>"; };
+		6C4CCCF4250BAAEE00590E0E /* MemoryMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryMenuView.swift; sourceTree = "<group>"; };
+		6C4CCCF6250BADC800590E0E /* BatteryMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryMenuView.swift; sourceTree = "<group>"; };
 		6C4E880824A649BC00766E15 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		6C4E880B24A6545E00766E15 /* SystemKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemKit.framework; path = Carthage/Build/Mac/SystemKit.framework; sourceTree = "<group>"; };
 		6C4E881024A6548D00766E15 /* SystemKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SystemKit.framework.dSYM; path = Carthage/Build/Mac/SystemKit.framework.dSYM; sourceTree = "<group>"; };
@@ -97,7 +105,7 @@
 		6C5F8551249FAF3C00CF0EF8 /* eul-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eul-Bridging-Header.h"; sourceTree = "<group>"; };
 		6C7DB6CE24E02F0600133B06 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		6C7DB6D024E0300E00133B06 /* NetworkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStore.swift; sourceTree = "<group>"; };
-		6C7DB6D224E0350700133B06 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		6C7DB6D224E0350700133B06 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../Utilities/String.swift; sourceTree = "<group>"; };
 		6C7DB6D424E7A75E00133B06 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
 		6C7DB6D624E7A85C00133B06 /* ByteUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteUnit.swift; sourceTree = "<group>"; };
 		6C7DB6DB24E7FFE300133B06 /* PreferenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceStore.swift; sourceTree = "<group>"; };
@@ -221,7 +229,6 @@
 				6C1FA3FF24A712AA00CA7F71 /* SmcControl.swift */,
 				6C1FA3FD24A7118000CA7F71 /* Info.swift */,
 				6C7DB6CE24E02F0600133B06 /* Shell.swift */,
-				6C7DB6D224E0350700133B06 /* String.swift */,
 				6C7DB6D624E7A85C00133B06 /* ByteUnit.swift */,
 			);
 			path = Utilities;
@@ -244,6 +251,8 @@
 				6C1FA40A24AA139300CA7F71 /* NSNotification.swift */,
 				6C7DB6DD24E8077700133B06 /* Animation.swift */,
 				6CDE6C7C24F2AB8800463114 /* NSMenuItem.swift */,
+				6C4CCCF0250BA68B00590E0E /* View.swift */,
+				6C7DB6D224E0350700133B06 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -282,6 +291,9 @@
 			isa = PBXGroup;
 			children = (
 				6CDE6C7A24F2AA6C00463114 /* CpuMenuView.swift */,
+				6C4CCCF2250BA8BC00590E0E /* FanMenuView.swift */,
+				6C4CCCF4250BAAEE00590E0E /* MemoryMenuView.swift */,
+				6C4CCCF6250BADC800590E0E /* BatteryMenuView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -360,10 +372,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CDE6C7824F112D700463114 /* EulComponent.swift in Sources */,
+				6C4CCCF3250BA8BC00590E0E /* FanMenuView.swift in Sources */,
 				6C7DB6DC24E7FFE300133B06 /* PreferenceStore.swift in Sources */,
 				6C1FA40E24AA162800CA7F71 /* Refreshable.swift in Sources */,
 				6C1FA40424A7187F00CA7F71 /* FanView.swift in Sources */,
 				6C7DB6CF24E02F0600133B06 /* Shell.swift in Sources */,
+				6C4CCCF5250BAAEE00590E0E /* MemoryMenuView.swift in Sources */,
 				6CDE6C7D24F2AB8800463114 /* NSMenuItem.swift in Sources */,
 				6CAEED6524A62DF800C39597 /* SMC.swift in Sources */,
 				6C5F8541249FACE000CF0EF8 /* ContentView.swift in Sources */,
@@ -375,6 +389,7 @@
 				6C1FA3F824A70DF300CA7F71 /* CpuView.swift in Sources */,
 				6CB26F7924E8310900E809FE /* SectionView.swift in Sources */,
 				6C1FA40024A712AA00CA7F71 /* SmcControl.swift in Sources */,
+				6C4CCCF7250BADC800590E0E /* BatteryMenuView.swift in Sources */,
 				6CAEED6224A5F51600C39597 /* Text.swift in Sources */,
 				6C7DB6D324E0350700133B06 /* String.swift in Sources */,
 				6C1FA3FA24A70E6700CA7F71 /* CpuStore.swift in Sources */,
@@ -391,6 +406,7 @@
 				6CDE6C7424F0047600463114 /* SizeChangeView.swift in Sources */,
 				6C1FA41224AA1DC100CA7F71 /* MemoryStore.swift in Sources */,
 				6C7DB6D724E7A85C00133B06 /* ByteUnit.swift in Sources */,
+				6C4CCCF1250BA68B00590E0E /* View.swift in Sources */,
 				6C7DB6E224E80F5100133B06 /* PreferenceComponentsView.swift in Sources */,
 				6C1FA3FE24A7118000CA7F71 /* Info.swift in Sources */,
 				6C7DB6D124E0300E00133B06 /* NetworkStore.swift in Sources */,

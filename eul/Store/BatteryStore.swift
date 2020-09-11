@@ -13,18 +13,24 @@ class BatteryStore: ObservableObject, Refreshable {
     static let shared = BatteryStore()
 
     private var battery = Battery()
-    private var batteryIO = Info.Battery()
     private let opened = false
+
+    var io = Info.Battery()
 
     @Published var acPowered = false
     @Published var charged = false
     @Published var charging = false
+    @Published var capacity = 0
+    @Published var maxCapacity = 0
+    @Published var designCapacity = 0
+    @Published var cycleCount = 0
+
     var charge: Int {
-        batteryIO.currentPercentage
+        io.currentPercentage
     }
 
     @objc func refresh() {
-        batteryIO = Info.Battery()
+        io = Info.Battery()
 
         guard battery.open() == kIOReturnSuccess else {
             return
@@ -33,6 +39,10 @@ class BatteryStore: ObservableObject, Refreshable {
         acPowered = battery.isACPowered()
         charged = battery.isCharged()
         charging = battery.isCharging()
+        capacity = battery.currentCapacity()
+        maxCapacity = battery.maxCapactiy()
+        designCapacity = battery.designCapacity()
+        cycleCount = battery.cycleCount()
         _ = battery.close()
     }
 

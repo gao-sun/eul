@@ -18,10 +18,12 @@ struct CpuView: SizeChangeView {
                 .resizable()
                 .frame(width: 15, height: 15)
             VStack(alignment: .leading, spacing: 0) {
-                Text(cpuStore.temp)
-                    .compact()
                 Text(cpuStore.usage)
                     .compact()
+                cpuStore.temp.map {
+                    Text(String(format: "%.0f°C", $0))
+                    .compact()
+                }
             }
         }
         .fixedSize()

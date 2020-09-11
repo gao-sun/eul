@@ -19,6 +19,16 @@ extension String {
         return values[index]
     }
 
+    func titleCase() -> String {
+        self
+            .replacingOccurrences(of: "([A-Z])",
+                                  with: " $1",
+                                  options: .regularExpression,
+                                  range: range(of: self))
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .capitalized
+    }
+
     var splittedByWhitespace: [String] {
         guard let trimWhiteSpaceRegEx = try? NSRegularExpression(pattern: "/ +/g") else {
             return []
