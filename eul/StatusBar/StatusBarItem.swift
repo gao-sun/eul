@@ -9,7 +9,6 @@
 import Cocoa
 import SwiftUI
 
-
 class StatusBarItem {
     let config: ComponentConfig
     let component: EulComponent
@@ -47,14 +46,14 @@ class StatusBarItem {
         item.isVisible = false
 
         let preferencesItem = NSMenuItem(
-            title: "Preferences",
+            title: "menu.preferences".localized(),
             action: #selector(AppDelegate.open),
             keyEquivalent: ","
         )
         preferencesItem.keyEquivalentModifierMask = .command
 
         let quitItem = NSMenuItem(
-            title: "Quit eul",
+            title: "menu.quit".localized(),
             action: #selector(AppDelegate.exit),
             keyEquivalent: "q"
         )

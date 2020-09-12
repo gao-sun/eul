@@ -8,6 +8,7 @@
 
 import Cocoa
 import SwiftUI
+import Localize_Swift
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

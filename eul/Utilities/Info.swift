@@ -17,7 +17,7 @@ struct Info {
         case poor
 
         var description: String {
-            rawValue.titleCase()
+            "battery.condition.\(rawValue)".localized()
         }
     }
 
@@ -27,12 +27,7 @@ struct Info {
         case unknown
 
         var description: String {
-            switch self {
-            case .acPower:
-                return "AC Power"
-            default:
-                return rawValue.titleCase()
-            }
+            "battery.power_source.\(rawValue)".localized()
         }
     }
 

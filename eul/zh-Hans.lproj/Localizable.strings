@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery.charge" = "电量";
+"battery.power_source" = "电源";
+"battery.power_source.battery" = "电池";
+"battery.power_source.acPower" = "电源适配器";
+"battery.power_source.unknown" = "未知";
+"battery.is_charging" = "充电中";
+"battery.to_full_charge" = "充满";
+"battery.to_empty" = "电量耗尽";
+"battery.health" = "健康";
+"battery.max_capacity" = "最大容量";
+"battery.design_capacity" = "设计容量";
+"battery.cycle_count" = "循环次数";
+"battery.condition" = "状况";
+"battery.condition.good" = "好";
+"battery.condition.fair" = "尚可";
+"battery.condition.poor" = "差";
+
+// MARK: Menu
+"menu.summary" = "概览";
+"menu.yes" = "是";
+"menu.no" = "否";
+"menu.preferences" = "偏好设置";
+"menu.quit" = "退出 eul";

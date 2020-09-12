@@ -17,53 +17,62 @@ struct BatteryMenuView: SizeChangeView {
 
     var body: some View {
         VStack(spacing: 2) {
-            Text("Summary")
-                .menuSection()
-            HStack {
-                Text("Charge")
-                Spacer()
-                Text("\(batteryStore.charge)%")
-            }
-            HStack {
-                Text("Power Source")
-                Spacer()
-                Text(io.powerSource.description)
-            }
-            if io.isCharging {
+            Group {
+                Text("menu.summary".localized())
+                    .menuSection()
                 HStack {
-                    Text("To Full Charge")
+                    Text("battery.charge".localized())
                     Spacer()
-                    Text("\(io.timeToFullCharge) min")
+                    Text("\(batteryStore.charge)%")
+                }
+                HStack {
+                    Text("battery.power_source".localized())
+                    Spacer()
+                    Text(io.powerSource.description)
+                }
+                HStack {
+                    Text("battery.is_charging".localized())
+                    Spacer()
+                    Text("menu.\(io.isCharging ? "yes" : "no")".localized())
+                }
+                if io.isCharging {
+                    HStack {
+                        Text("battery.to_full_charge".localized())
+                        Spacer()
+                        Text("\(io.timeToFullCharge) min")
+                    }
+                }
+                if !io.isCharging && !io.isCharged {
+                    HStack {
+                        Text("battery.to_empty".localized())
+                        Spacer()
+                        Text("\(batteryStore.io.timeToEmpty) min")
+                    }
                 }
             }
-            if !io.isCharging && !io.isCharged {
+            Group {
+                Text("battery.health".localized())
+                    .menuSection()
                 HStack {
-                    Text("To Empty")
+                    Text("battery.max_capacity".localized())
                     Spacer()
-                    Text("\(batteryStore.io.timeToEmpty) min")
+                    Text("\(batteryStore.maxCapacity.description) mAh")
                 }
-            }
-            Text("Health")
-                .menuSection()
-            HStack {
-                Text("Max Capacity")
-                Spacer()
-                Text("\(batteryStore.maxCapacity.description) mAh")
-            }
-            HStack {
-                Text("Design Capacity")
-                Spacer()
-                Text("\(batteryStore.designCapacity.description) mAh")
-            }
-            HStack {
-                Text("Cycle Count")
-                Spacer()
-                Text("\(batteryStore.cycleCount.description)")
-            }
-            HStack {
-                Text("Condition")
-                Spacer()
-                Text(batteryStore.io.condition.description)
+                HStack {
+                    Text("battery.design_capacity".localized())
+                    Spacer()
+                    Text("\(batteryStore.designCapacity.description) mAh")
+                }
+                HStack {
+                    Text("battery.cycle_count".localized())
+                    Spacer()
+                    Text("\(batteryStore.cycleCount.description)")
+                }
+                HStack {
+                    Text("battery.condition".localized())
+                    Spacer()
+                    Text(batteryStore.io.condition.description)
+                }
             }
         }
         .frame(width: 200)

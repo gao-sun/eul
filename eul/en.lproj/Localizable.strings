@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery.charge" = "Charge";
+"battery.power_source" = "Power Source";
+"battery.power_source.battery" = "Battery";
+"battery.power_source.acPower" = "AC Power";
+"battery.power_source.unknown" = "Unknown";
+"battery.is_charging" = "Is Charging";
+"battery.to_full_charge" = "To Full Charge";
+"battery.to_empty" = "To Empty";
+"battery.health" = "Health";
+"battery.max_capacity" = "Max Capacity";
+"battery.design_capacity" = "Design Capacity";
+"battery.cycle_count" = "Cycle Count";
+"battery.condition" = "Condition";
+"battery.condition.good" = "Good";
+"battery.condition.fair" = "Fair";
+"battery.condition.poor" = "Poor";
+
+// MARK: Menu
+"menu.summary" = "Summary";
+"menu.yes" = "Yes";
+"menu.no" = "No";
+"menu.preferences" = "Preferences";
+"menu.quit" = "Quit eul";
