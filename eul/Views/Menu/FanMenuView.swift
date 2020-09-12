@@ -15,26 +15,26 @@ struct FanMenuView: SizeChangeView {
     var body: some View {
         VStack(spacing: 2) {
             ForEach(fanStore.fans) { fan in
-                Text("Fan \(fan.id + 1)")
+                Text("\("fan".localized()) \(fan.id + 1)")
                     .menuSection()
                 HStack {
-                    Text("Current")
+                    Text("fan.current".localized())
                     Spacer()
                     Text("\(fan.speed.description) rpm")
                 }
                 HStack {
-                    Text("Min Speed")
+                    Text("fan.min".localized())
                     Spacer()
                     Text("\(fan.fan.minSpeed.description) rpm")
                 }
                 HStack {
-                    Text("Max Speed")
+                    Text("fan.max".localized())
                     Spacer()
                     Text("\(fan.fan.maxSpeed.description) rpm")
                 }
             }
         }
-        .frame(width: 200)
+        .frame(width: 160)
         .menuInfo()
         .background(GeometryReader { self.reportSize($0) })
     }

@@ -35,6 +35,12 @@
 "cpu.up_time" = "Up Time";
 "cpu.thermal_level" = "Thermal Lv.";
 
+// MARK: Fan
+"fan" = "Fan";
+"fan.current" = "Current";
+"fan.min" = "Min";
+"fan.max" = "Max";
+
 // MARK: Menu
 "menu.summary" = "Summary";
 "menu.yes" = "Yes";

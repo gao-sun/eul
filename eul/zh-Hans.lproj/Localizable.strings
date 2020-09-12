@@ -35,6 +35,12 @@
 "cpu.up_time" = "运行时间";
 "cpu.thermal_level" = "温度等级";
 
+// MARK: Fan
+"fan" = "风扇";
+"fan.current" = "当前";
+"fan.min" = "最小";
+"fan.max" = "最大";
+
 // MARK: Menu
 "menu.summary" = "概览";
 "menu.yes" = "是";
