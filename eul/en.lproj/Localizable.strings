@@ -80,6 +80,11 @@
 "component.battery" = "Battery";
 "component.network" = "Network";
 
+// MARK: Language
+"language" = "Language";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+
 // MARK: General UI
 "ui.display" = "Display";
 "ui.components" = "Components";

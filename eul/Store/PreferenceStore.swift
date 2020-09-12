@@ -7,13 +7,22 @@
 //
 
 import Foundation
+import Localize_Swift
 
 class PreferenceStore: ObservableObject {
     static let shared = PreferenceStore()
+    static var availableLanguages: [String] {
+        Localize.availableLanguages().filter { $0 != "Base" }
+    }
 
     @Published var temperatureUnit = TemperatureUnit.celius {
-        didSet {
-            SmcControl.shared.tempUnit = temperatureUnit
+        willSet {
+            SmcControl.shared.tempUnit = newValue
+        }
+    }
+    @Published var language = Localize.currentLanguage() {
+        willSet {
+            Localize.setCurrentLanguage(newValue)
         }
     }
     @Published var textDisplay = Preference.TextDisplay.compact

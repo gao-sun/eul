@@ -80,7 +80,11 @@
 "component.battery" = "电池";
 "component.network" = "网络";
 
+// MARK: Language
+"language" = "语言";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+
 // MARK: General UI
 "ui.display" = "显示";
 "ui.components" = "组件";
-

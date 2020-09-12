@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var preferenceStore = PreferenceStore.shared
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             SectionView(title: "ui.display") {
@@ -20,6 +22,7 @@ struct ContentView: View {
         }
         .padding(20)
         .frame(minWidth: 610)
-        .environmentObject(PreferenceStore.shared)
+        .environmentObject(preferenceStore)
+        .id(preferenceStore.language)
     }
 }

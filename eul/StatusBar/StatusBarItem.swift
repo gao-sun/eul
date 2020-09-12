@@ -15,6 +15,8 @@ class StatusBarItem {
     private let item: NSStatusItem
     private var statusView: NSHostingView<AnyView>?
     private var menuView: NSHostingView<AnyView>?
+    private let preferencesItem: NSMenuItem
+    private let quitItem: NSMenuItem
 
     var isVisible: Bool {
         get { item.isVisible }
@@ -31,6 +33,11 @@ class StatusBarItem {
         menuView?.frame = NSMakeRect(0, 0, size.width, size.height)
     }
 
+    func updateLanguage() {
+        preferencesItem.title = "menu.preferences".localized()
+        quitItem.title = "menu.quit".localized()
+    }
+
     func refresh() {
         let view = NSHostingView(rootView: config.viewBuilder(onSizeChange))
         view.frame = NSMakeRect(0, 0, 0, AppDelegate.statusBarHeight)
@@ -45,14 +52,14 @@ class StatusBarItem {
         item = NSStatusBar.system.statusItem(withLength: 0)
         item.isVisible = false
 
-        let preferencesItem = NSMenuItem(
+        preferencesItem = NSMenuItem(
             title: "menu.preferences".localized(),
             action: #selector(AppDelegate.open),
             keyEquivalent: ","
         )
         preferencesItem.keyEquivalentModifierMask = .command
 
-        let quitItem = NSMenuItem(
+        quitItem = NSMenuItem(
             title: "menu.quit".localized(),
             action: #selector(AppDelegate.exit),
             keyEquivalent: "q"
