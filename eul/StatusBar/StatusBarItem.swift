@@ -33,13 +33,11 @@ class StatusBarItem {
     }
 
     func refresh() {
-        statusView = NSHostingView(rootView: config.viewBuilder(onSizeChange))
-
-        if let statusView = statusView {
-            statusView.frame = NSMakeRect(0, 0, 0, AppDelegate.statusBarHeight)
-            item.button?.subviews.forEach { $0.removeFromSuperview() }
-            item.button?.addSubview(statusView)
-        }
+        let view = NSHostingView(rootView: config.viewBuilder(onSizeChange))
+        view.frame = NSMakeRect(0, 0, 0, AppDelegate.statusBarHeight)
+        item.button?.subviews.forEach { $0.removeFromSuperview() }
+        item.button?.addSubview(view)
+        statusView = view
     }
 
     init(with component: EulComponent) {
