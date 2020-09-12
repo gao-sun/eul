@@ -10,11 +10,6 @@ import Foundation
 
 
 struct Preference {
-    enum TemperatureUnit: String, StringEnum {
-        case celsius
-        case fahrenheit
-    }
-
     enum TextDisplay: String, StringEnum {
         case compact
         case singleLine

@@ -10,7 +10,7 @@ import SwiftUI
 
 extension Preference {
     struct DisplayView: View {
-        let temperatureUnits = TemperatureUnit.allCases
+        let temperatureUnits: [TemperatureUnit] = [.celius, .fahrenheit]
         let textDisplays = TextDisplay.allCases
 
         @EnvironmentObject var preference: PreferenceStore
@@ -19,7 +19,7 @@ extension Preference {
             HStack(spacing: 24) {
                 HStack(spacing: 0) {
                     Picker("Temperature", selection: $preference.temperatureUnit) {
-                        ForEach(temperatureUnits) {
+                        ForEach(temperatureUnits, id: \.self) {
                             Text($0.description)
                                 .tag($0)
                         }

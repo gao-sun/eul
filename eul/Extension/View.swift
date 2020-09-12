@@ -15,6 +15,7 @@ extension View {
             .foregroundColor(.info)
             .padding(.leading, 20)
             .padding(.trailing, 12)
+            .padding(.top, -2)
             .padding(.bottom, 4)
             .fixedSize()
     }

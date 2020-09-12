@@ -8,6 +8,19 @@
 
 import Foundation
 
+extension TemperatureUnit {
+    var description: String {
+        switch self {
+        case .celius:
+            return "celsius"
+        case .fahrenheit:
+            return "fahrenheit"
+        case .kelvin:
+            return "kelvin"
+        }
+    }
+}
+
 class SmcControl: Refreshable {
     static var shared = SmcControl()
 
@@ -37,6 +50,7 @@ class SmcControl: Refreshable {
 
     var sensors: [TemperatureData] = []
     var fans: [FanData] = []
+    var tempUnit: TemperatureUnit = .celius
     var cpuProximityTemperature: Double? {
         sensors.first(where: { $0.sensor.name == "CPU_0_PROXIMITY" })?.temp
     }
@@ -45,6 +59,10 @@ class SmcControl: Refreshable {
     }
     var memoryProximityTemperature: Double? {
         sensors.first(where: { $0.sensor.name == "MEM_SLOTS_PROXIMITY" })?.temp
+    }
+
+    func formatTemp(_ value: Double) -> String {
+        String(format: "%.0f°\(tempUnit == .celius ? "C" : "F")", value)
     }
 
     // must call a function explicitly to init shared instance
@@ -77,7 +95,7 @@ class SmcControl: Refreshable {
         }
         for sensor in sensors {
             do {
-                sensor.temp = try SMCKit.temperature(sensor.sensor.code)
+                sensor.temp = try SMCKit.temperature(sensor.sensor.code, unit: tempUnit)
             } catch let error {
                 sensor.temp = 0
                 print("error while getting temperature", error)

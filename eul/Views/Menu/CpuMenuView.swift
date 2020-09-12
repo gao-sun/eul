@@ -21,58 +21,62 @@ struct CpuMenuView: SizeChangeView {
 
     var body: some View {
         VStack(spacing: 2) {
-            Text("Summary")
-                .menuSection()
-            HStack {
-                Text("Usage")
-                Spacer()
-                Text(String(format: "%.1f%%", usage))
-            }
-            HStack {
-                Text("Idle")
-                Spacer()
-                Text(String(format: "%.1f%%", 100 - usage))
-            }
-            cpuStore.temp.map { temp in
+            Group {
+                Text("Summary")
+                    .menuSection()
                 HStack {
-                    Text("Temp")
+                    Text("Usage")
                     Spacer()
-                    Text(String(format: "%.0f°C", temp))
+                    Text(String(format: "%.1f%%", usage))
+                }
+                HStack {
+                    Text("Idle")
+                    Spacer()
+                    Text(String(format: "%.1f%%", 100 - usage))
+                }
+                cpuStore.temp.map { temp in
+                    HStack {
+                        Text("Temp")
+                        Spacer()
+                        Text(SmcControl.shared.formatTemp(temp))
+                    }
+                }
+                cpuStore.gpuTemp.map { temp in
+                    HStack {
+                        Text("GPU Temp")
+                        Spacer()
+                        Text(SmcControl.shared.formatTemp(temp))
+                    }
                 }
             }
-            cpuStore.gpuTemp.map { temp in
+            Group {
+                Text("Info")
+                    .menuSection()
                 HStack {
-                    Text("GPU Temp")
+                    Text("Physical Cores")
                     Spacer()
-                    Text(String(format: "%.0f°C", temp))
+                    Text(cpuStore.physicalCores.description)
                 }
-            }
-            Text("Info")
-                .menuSection()
-            HStack {
-                Text("Physical Cores")
-                Spacer()
-                Text(cpuStore.physicalCores.description)
-            }
-            HStack {
-                Text("Logical Cores")
-                Spacer()
-                Text(cpuStore.logicalCores.description)
-            }
-            cpuStore.upTime.map { upTime in
                 HStack {
-                    Text("Up Time")
+                    Text("Logical Cores")
                     Spacer()
-                    Text("\(upTime.days)d \(upTime.hrs)h \(upTime.mins)m")
+                    Text(cpuStore.logicalCores.description)
                 }
-            }
-            if cpuStore.thermalLevel != .NotPublished && cpuStore.thermalLevel != .Unknown {
-                HStack {
-                    Text("Thermal Lv.")
-                    Spacer()
-                    Text(cpuStore.thermalLevel.rawValue.titleCase())
-                        .font(.system(size: 12, weight: .regular))
-                        .multilineTextAlignment(.trailing)
+                cpuStore.upTime.map { upTime in
+                    HStack {
+                        Text("Up Time")
+                        Spacer()
+                        Text("\(upTime.days)d \(upTime.hrs)h \(upTime.mins)m")
+                    }
+                }
+                if cpuStore.thermalLevel != .NotPublished && cpuStore.thermalLevel != .Unknown {
+                    HStack {
+                        Text("Thermal Lv.")
+                        Spacer()
+                        Text(cpuStore.thermalLevel.rawValue.titleCase())
+                            .font(.system(size: 12, weight: .regular))
+                            .multilineTextAlignment(.trailing)
+                    }
                 }
             }
         }

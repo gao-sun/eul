@@ -35,7 +35,7 @@ struct MemoryMenuView: SizeChangeView {
                 HStack {
                     Text("Temp")
                     Spacer()
-                    Text(String(format: "%.0f°C", temp))
+                    Text(SmcControl.shared.formatTemp(temp))
                 }
             }
             Text("Usage")

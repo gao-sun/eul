@@ -20,8 +20,8 @@ struct CpuView: SizeChangeView {
             VStack(alignment: .leading, spacing: 0) {
                 Text(cpuStore.usage)
                     .compact()
-                cpuStore.temp.map {
-                    Text(String(format: "%.0f°C", $0))
+                cpuStore.temp.map { temp in
+                    Text(SmcControl.shared.formatTemp(temp))
                     .compact()
                 }
             }

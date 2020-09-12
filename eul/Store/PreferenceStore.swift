@@ -11,7 +11,11 @@ import Foundation
 class PreferenceStore: ObservableObject {
     static let shared = PreferenceStore()
 
-    @Published var temperatureUnit = Preference.TemperatureUnit.celsius
+    @Published var temperatureUnit = TemperatureUnit.celius {
+        didSet {
+            SmcControl.shared.tempUnit = temperatureUnit
+        }
+    }
     @Published var textDisplay = Preference.TextDisplay.compact
     @Published var isActiveComponentToggling = false
     @Published var activeComponents = EulComponent.allCases
