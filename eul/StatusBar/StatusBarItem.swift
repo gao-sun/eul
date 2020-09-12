@@ -11,6 +11,7 @@ import SwiftUI
 
 
 class StatusBarItem {
+    let config: ComponentConfig
     let component: EulComponent
     private let item: NSStatusItem
     private var statusView: NSHostingView<AnyView>?
@@ -31,12 +32,21 @@ class StatusBarItem {
         menuView?.frame = NSMakeRect(0, 0, size.width, size.height)
     }
 
+    func refresh() {
+        statusView = NSHostingView(rootView: config.viewBuilder(onSizeChange))
+
+        if let statusView = statusView {
+            statusView.frame = NSMakeRect(0, 0, 0, AppDelegate.statusBarHeight)
+            item.button?.subviews.forEach { $0.removeFromSuperview() }
+            item.button?.addSubview(statusView)
+        }
+    }
+
     init(with component: EulComponent) {
-        let config = getComponentConfig(component)
+        config = getComponentConfig(component)
         self.component = component
         item = NSStatusBar.system.statusItem(withLength: 0)
         item.isVisible = false
-        statusView = NSHostingView(rootView: config.viewBuilder(onSizeChange))
 
         let preferencesItem = NSMenuItem(
             title: "Preferences",
@@ -67,9 +77,6 @@ class StatusBarItem {
         statusBarMenu.addItem(quitItem)
         item.menu = statusBarMenu
 
-        if let statusView = statusView {
-            statusView.frame = NSMakeRect(0, 0, 0, AppDelegate.statusBarHeight)
-            item.button?.addSubview(statusView)
-        }
+        refresh()
     }
 }
