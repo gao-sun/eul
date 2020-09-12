@@ -12,17 +12,16 @@ struct MemoryView: SizeChangeView {
     var onSizeChange: ((CGSize) -> Void)?
     @ObservedObject var memoryStore = MemoryStore.shared
 
+    var texts: [String] {
+        [memoryStore.freeString, memoryStore.usedString]
+    }
+
     var body: some View {
         HStack(spacing: 6) {
             Image("Memory")
                 .resizable()
                 .frame(width: 15, height: 15)
-            VStack(alignment: .leading, spacing: 0) {
-                Text(memoryStore.freeString)
-                    .compact()
-                Text(memoryStore.usedString)
-                    .compact()
-            }
+            StatusBarTextView(texts: texts)
         }
         .fixedSize()
         .background(GeometryReader { self.reportSize($0) })

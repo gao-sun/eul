@@ -13,6 +13,10 @@ struct BatteryView: SizeChangeView {
     var onSizeChange: ((CGSize) -> Void)?
     @ObservedObject var batteryStore = BatteryStore.shared
 
+    var texts: [String] {
+        ["\(batteryStore.charge)%"]
+    }
+
     var body: some View {
         HStack(spacing: 6) {
             ZStack(alignment: .leading) {
@@ -24,8 +28,7 @@ struct BatteryView: SizeChangeView {
                     .foregroundColor(.white)
                     .offset(x: 1)
             }
-            Text("\(batteryStore.charge)%")
-                .normal()
+            StatusBarTextView(texts: texts)
         }
         .fixedSize()
         .background(GeometryReader { self.reportSize($0) })

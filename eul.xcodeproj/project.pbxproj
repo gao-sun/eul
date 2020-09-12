@@ -24,6 +24,7 @@
 		6C4E880C24A6545E00766E15 /* SystemKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4E880B24A6545E00766E15 /* SystemKit.framework */; };
 		6C4E880D24A6545E00766E15 /* SystemKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4E880B24A6545E00766E15 /* SystemKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C4E881124A6548E00766E15 /* SystemKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6C4E881024A6548D00766E15 /* SystemKit.framework.dSYM */; };
+		6C58053A250CAEC3007F467A /* StatusBarTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C580539250CAEC3007F467A /* StatusBarTextView.swift */; };
 		6C5F853F249FACE000CF0EF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5F853E249FACE000CF0EF8 /* AppDelegate.swift */; };
 		6C5F8541249FACE000CF0EF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5F8540249FACE000CF0EF8 /* ContentView.swift */; };
 		6C5F8543249FACE200CF0EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8542249FACE200CF0EF8 /* Assets.xcassets */; };
@@ -95,6 +96,7 @@
 		6C4E880824A649BC00766E15 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		6C4E880B24A6545E00766E15 /* SystemKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemKit.framework; path = Carthage/Build/Mac/SystemKit.framework; sourceTree = "<group>"; };
 		6C4E881024A6548D00766E15 /* SystemKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SystemKit.framework.dSYM; path = Carthage/Build/Mac/SystemKit.framework.dSYM; sourceTree = "<group>"; };
+		6C580539250CAEC3007F467A /* StatusBarTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarTextView.swift; sourceTree = "<group>"; };
 		6C5F853B249FACE000CF0EF8 /* eul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eul.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5F853E249FACE000CF0EF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C5F8540249FACE000CF0EF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				6CB26F7824E8310900E809FE /* SectionView.swift */,
+				6C580539250CAEC3007F467A /* StatusBarTextView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				6CAEED6524A62DF800C39597 /* SMC.swift in Sources */,
 				6C5F8541249FACE000CF0EF8 /* ContentView.swift in Sources */,
 				6C5F853F249FACE000CF0EF8 /* AppDelegate.swift in Sources */,
+				6C58053A250CAEC3007F467A /* StatusBarTextView.swift in Sources */,
 				6C7DB6E424E80F9400133B06 /* PreferenceDisplayView.swift in Sources */,
 				6C7DB6DE24E8077700133B06 /* Animation.swift in Sources */,
 				6CEF771424DD95D7007C3640 /* BatteryView.swift in Sources */,

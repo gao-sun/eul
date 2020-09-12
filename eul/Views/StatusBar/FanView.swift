@@ -12,17 +12,16 @@ struct FanView: SizeChangeView {
     var onSizeChange: ((CGSize) -> Void)?
     @ObservedObject var fanStore = FanStore.shared
 
+    var texts: [String] {
+        fanStore.fans.map { "\($0.speed.description) rpm" }
+    }
+
     var body: some View {
         HStack(spacing: 6) {
             Image("Fan")
                 .resizable()
                 .frame(width: 15, height: 15)
-            VStack(alignment: .leading, spacing: 0) {
-                ForEach(fanStore.fans, id: \.fan.id) {
-                    Text("\($0.speed.description) rpm")
-                        .compact()
-                }
-            }
+            StatusBarTextView(texts: texts)
         }
         .fixedSize()
         .background(GeometryReader { self.reportSize($0) })

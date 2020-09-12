@@ -12,19 +12,16 @@ struct CpuView: SizeChangeView {
     var onSizeChange: ((CGSize) -> Void)?
     @ObservedObject var cpuStore = CpuStore.shared
 
+    var texts: [String] {
+        [cpuStore.usage, cpuStore.temp.map({ SmcControl.shared.formatTemp($0) })].compactMap { $0 }
+    }
+
     var body: some View {
         HStack(spacing: 6) {
             Image("CPU")
                 .resizable()
                 .frame(width: 15, height: 15)
-            VStack(alignment: .leading, spacing: 0) {
-                Text(cpuStore.usage)
-                    .compact()
-                cpuStore.temp.map { temp in
-                    Text(SmcControl.shared.formatTemp(temp))
-                    .compact()
-                }
-            }
+            StatusBarTextView(texts: texts)
         }
         .fixedSize()
         .background(GeometryReader { self.reportSize($0) })
