@@ -25,7 +25,6 @@ extension Preference {
                                 .tag($0)
                         }
                     }
-                    .focusable(false)
                     .frame(width: 200)
                 }
                 HStack(spacing: 0) {
@@ -35,7 +34,6 @@ extension Preference {
                                 .tag($0)
                         }
                     }
-                    .focusable(false)
                     .frame(width: 200)
                 }
                 HStack(spacing: 0) {
@@ -45,7 +43,6 @@ extension Preference {
                                 .tag($0)
                         }
                     }
-                    .focusable(false)
                     .frame(width: 200)
                 }
             }

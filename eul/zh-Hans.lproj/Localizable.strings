@@ -86,5 +86,8 @@
 "language.zh-Hans" = "简体中文";
 
 // MARK: General UI
+"ui.general" = "通用";
+"ui.version" = "版本";
+"ui.check_update" = "检查更新";
 "ui.display" = "显示";
 "ui.components" = "组件";

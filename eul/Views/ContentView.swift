@@ -13,6 +13,9 @@ struct ContentView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
+            SectionView(title: "ui.general") {
+                Preference.GeneralView()
+            }
             SectionView(title: "ui.display") {
                 Preference.DisplayView()
             }

@@ -1,2 +1,3 @@
 github "gao-sun/SystemKit"
 github "marmelroy/Localize-Swift"
+github "sindresorhus/LaunchAtLogin" "master"
