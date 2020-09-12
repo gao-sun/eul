@@ -24,6 +24,17 @@
 "battery.condition.fair" = "尚可";
 "battery.condition.poor" = "差";
 
+// MARK: CPU / Info
+"cpu.usage" = "用量";
+"cpu.idle" = "空闲";
+"cpu.temperature" = "温度";
+"gpu.temperature" = "GPU 温度";
+"cpu.info" = "信息";
+"cpu.physical_cores" = "物理核心";
+"cpu.logical_cores" = "逻辑核心";
+"cpu.up_time" = "运行时间";
+"cpu.thermal_level" = "温度等级";
+
 // MARK: Menu
 "menu.summary" = "概览";
 "menu.yes" = "是";

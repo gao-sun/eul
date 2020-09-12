@@ -24,6 +24,17 @@
 "battery.condition.fair" = "Fair";
 "battery.condition.poor" = "Poor";
 
+// MARK: CPU / Info
+"cpu.usage" = "Usage";
+"cpu.idle" = "Idle";
+"cpu.temperature" = "Temp.";
+"gpu.temperature" = "GPU Temp.";
+"cpu.info" = "Info";
+"cpu.physical_cores" = "Physical Cores";
+"cpu.logical_cores" = "Logical Cores";
+"cpu.up_time" = "Up Time";
+"cpu.thermal_level" = "Thermal Lv.";
+
 // MARK: Menu
 "menu.summary" = "Summary";
 "menu.yes" = "Yes";

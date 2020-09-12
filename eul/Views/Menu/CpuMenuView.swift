@@ -22,56 +22,56 @@ struct CpuMenuView: SizeChangeView {
     var body: some View {
         VStack(spacing: 2) {
             Group {
-                Text("Summary")
+                Text("menu.summary".localized())
                     .menuSection()
                 HStack {
-                    Text("Usage")
+                    Text("cpu.usage".localized())
                     Spacer()
                     Text(String(format: "%.1f%%", usage))
                 }
                 HStack {
-                    Text("Idle")
+                    Text("cpu.idle".localized())
                     Spacer()
                     Text(String(format: "%.1f%%", 100 - usage))
                 }
                 cpuStore.temp.map { temp in
                     HStack {
-                        Text("Temp")
+                        Text("cpu.temperature".localized())
                         Spacer()
                         Text(SmcControl.shared.formatTemp(temp))
                     }
                 }
                 cpuStore.gpuTemp.map { temp in
                     HStack {
-                        Text("GPU Temp")
+                        Text("gpu.temperature".localized())
                         Spacer()
                         Text(SmcControl.shared.formatTemp(temp))
                     }
                 }
             }
             Group {
-                Text("Info")
+                Text("cpu.info".localized())
                     .menuSection()
                 HStack {
-                    Text("Physical Cores")
+                    Text("cpu.physical_cores".localized())
                     Spacer()
                     Text(cpuStore.physicalCores.description)
                 }
                 HStack {
-                    Text("Logical Cores")
+                    Text("cpu.logical_cores".localized())
                     Spacer()
                     Text(cpuStore.logicalCores.description)
                 }
                 cpuStore.upTime.map { upTime in
                     HStack {
-                        Text("Up Time")
+                        Text("cpu.up_time".localized())
                         Spacer()
                         Text("\(upTime.days)d \(upTime.hrs)h \(upTime.mins)m")
                     }
                 }
                 if cpuStore.thermalLevel != .NotPublished && cpuStore.thermalLevel != .Unknown {
                     HStack {
-                        Text("Thermal Lv.")
+                        Text("cpu.thermal_level".localized())
                         Spacer()
                         Text(cpuStore.thermalLevel.rawValue.titleCase())
                             .font(.system(size: 12, weight: .regular))
