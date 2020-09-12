@@ -14,6 +14,10 @@ enum EulComponent: String, CaseIterable, Identifiable {
         rawValue
     }
 
+    var localizedDescription: String {
+        "component.\(rawValue.lowercased())".localized()
+    }
+
     case CPU
     case Fan
     case Memory

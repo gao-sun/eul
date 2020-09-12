@@ -28,9 +28,9 @@ extension Preference {
         var body: some View {
             VStack(alignment: .leading, spacing: 4) {
                 HStack {
-                    Text("Status Bar")
+                    Text("component.status_bar".localized())
                         .subsection()
-                    Text("drag to reorder")
+                    Text("component.drag_to_reorder".localized())
                         .subsection()
                         .foregroundColor(Color.gray)
                 }
@@ -40,7 +40,7 @@ extension Preference {
                             Image(element.rawValue)
                                 .resizable()
                                 .frame(width: 12, height: 12)
-                            Text(element.rawValue)
+                            Text(element.localizedDescription)
                                 .normal()
                             if self.preference.activeComponents.count > 1 {
                                 Image("X")
@@ -120,9 +120,9 @@ extension Preference {
                 .coordinateSpace(name: "ComponentsOrdering")
                 if preference.availableComponents.count > 0 {
                     HStack {
-                        Text("Available")
+                        Text("component.available".localized())
                             .subsection()
-                        Text("click to append")
+                        Text("component.click_to_append".localized())
                             .subsection()
                             .foregroundColor(Color.gray)
                     }
@@ -132,7 +132,7 @@ extension Preference {
                                 Image(element.rawValue)
                                     .resizable()
                                     .frame(width: 12, height: 12)
-                                Text(element.rawValue)
+                                Text(element.localizedDescription)
                                     .normal()
                             }
                             .padding(.vertical, 4)

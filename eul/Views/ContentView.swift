@@ -11,10 +11,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SectionView(title: "Display") {
+            SectionView(title: "ui.display") {
                 Preference.DisplayView()
             }
-            SectionView(title: "Components") {
+            SectionView(title: "ui.components") {
                 Preference.ComponentsView()
             }
         }

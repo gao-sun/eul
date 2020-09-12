@@ -14,7 +14,7 @@ struct SectionView<Content: View>: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text(title)
+            Text(title.localized())
                 .section()
             content()
         }

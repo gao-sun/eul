@@ -57,3 +57,30 @@
 "menu.no" = "否";
 "menu.preferences" = "偏好设置";
 "menu.quit" = "退出 eul";
+
+// MARK: Temperature
+"temp.temperature" = "温度";
+"temp.celsius" = "摄氏度";
+"temp.fahrenheit" = "华氏度";
+"temp.kelvin" = "开尔文";
+
+// MARK: Text Display
+"text_display" = "文本显示";
+"compact" = "紧凑";
+"single line" = "单行";
+
+// MARK: Component
+"component.status_bar" = "状态栏";
+"component.drag_to_reorder" = "拖拽以排序";
+"component.available" = "可用";
+"component.click_to_append" = "单击以添加";
+"component.cpu" = "CPU";
+"component.fan" = "风扇";
+"component.memory" = "内存";
+"component.battery" = "电池";
+"component.network" = "网络";
+
+// MARK: General UI
+"ui.display" = "显示";
+"ui.components" = "组件";
+

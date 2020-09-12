@@ -18,21 +18,23 @@ extension Preference {
         var body: some View {
             HStack(spacing: 24) {
                 HStack(spacing: 0) {
-                    Picker("Temperature", selection: $preference.temperatureUnit) {
+                    Picker("temp.temperature".localized(), selection: $preference.temperatureUnit) {
                         ForEach(temperatureUnits, id: \.self) {
                             Text($0.description)
                                 .tag($0)
                         }
                     }
+                    .focusable(false)
                     .frame(width: 200)
                 }
                 HStack(spacing: 0) {
-                    Picker("Text Display", selection: $preference.textDisplay) {
+                    Picker("text_display".localized(), selection: $preference.textDisplay) {
                         ForEach(textDisplays) {
                             Text($0.description)
                                 .tag($0)
                         }
                     }
+                    .focusable(false)
                     .frame(width: 200)
                 }
             }

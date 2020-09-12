@@ -57,3 +57,30 @@
 "menu.no" = "No";
 "menu.preferences" = "Preferences";
 "menu.quit" = "Quit eul";
+
+// MARK: Temperature
+"temp.temperature" = "Temperature";
+"temp.celsius" = "Celsius";
+"temp.fahrenheit" = "Fahrenheit";
+"temp.kelvin" = "Kelvin";
+
+// MARK: Text Display
+"text_display" = "Text Display";
+"compact" = "compact";
+"single line" = "single line";
+
+// MARK: Component
+"component.status_bar" = "Status Bar";
+"component.drag_to_reorder" = "drag to reorder";
+"component.available" = "Available";
+"component.click_to_append" = "click to append";
+"component.cpu" = "CPU";
+"component.fan" = "Fan";
+"component.memory" = "Memory";
+"component.battery" = "Battery";
+"component.network" = "Network";
+
+// MARK: General UI
+"ui.display" = "Display";
+"ui.components" = "Components";
+

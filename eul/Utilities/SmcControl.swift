@@ -12,11 +12,11 @@ extension TemperatureUnit {
     var description: String {
         switch self {
         case .celius:
-            return "celsius"
+            return "temp.celsius".localized()
         case .fahrenheit:
-            return "fahrenheit"
+            return "temp.fahrenheit".localized()
         case .kelvin:
-            return "kelvin"
+            return "temp.kelvin".localized()
         }
     }
 }
