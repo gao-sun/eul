@@ -41,6 +41,16 @@
 "fan.min" = "最小";
 "fan.max" = "最大";
 
+// MARK: Memory
+"memory.total" = "总计";
+"memory.free" = "可用";
+"memory.cached_files" = "已缓存";
+"memory.temp" = "温度";
+"memory.usage" = "用量";
+"memory.app" = "App";
+"memory.wired" = "联动";
+"memory.compressed" = "被压缩";
+
 // MARK: Menu
 "menu.summary" = "概览";
 "menu.yes" = "是";

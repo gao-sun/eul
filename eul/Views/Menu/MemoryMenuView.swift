@@ -14,44 +14,44 @@ struct MemoryMenuView: SizeChangeView {
 
     var body: some View {
         VStack(spacing: 2) {
-            Text("Summary")
+            Text("menu.summary".localized())
                 .menuSection()
             HStack {
-                Text("Total")
+                Text("memory.total".localized())
                 Spacer()
                 Text(MemoryStore.memoryUnit(memoryStore.total))
             }
             HStack {
-                Text("Free")
+                Text("memory.free".localized())
                 Spacer()
                 Text(MemoryStore.memoryUnit(memoryStore.free))
             }
             HStack {
-                Text("Cached Files")
+                Text("memory.cached_files".localized())
                 Spacer()
                 Text(MemoryStore.memoryUnit(memoryStore.cachedFiles))
             }
             memoryStore.temp.map { temp in
                 HStack {
-                    Text("Temp")
+                    Text("memory.temp".localized())
                     Spacer()
                     Text(SmcControl.shared.formatTemp(temp))
                 }
             }
-            Text("Usage")
+            Text("memory.usage".localized())
                 .menuSection()
             HStack {
-                Text("App")
+                Text("memory.app".localized())
                 Spacer()
                 Text(MemoryStore.memoryUnit(memoryStore.appMemory))
             }
             HStack {
-                Text("Wired")
+                Text("memory.wired".localized())
                 Spacer()
                 Text(MemoryStore.memoryUnit(memoryStore.wired))
             }
             HStack {
-                Text("Compressed")
+                Text("memory.compressed".localized())
                 Spacer()
                 Text(MemoryStore.memoryUnit(memoryStore.compressed))
             }

@@ -41,6 +41,16 @@
 "fan.min" = "Min";
 "fan.max" = "Max";
 
+// MARK: Memory
+"memory.total" = "Total";
+"memory.free" = "Free";
+"memory.cached_files" = "Cached Files";
+"memory.temp" = "Temp.";
+"memory.usage" = "Usage";
+"memory.app" = "App";
+"memory.wired" = "Wired";
+"memory.compressed" = "Compressed";
+
 // MARK: Menu
 "menu.summary" = "Summary";
 "menu.yes" = "Yes";
