@@ -88,7 +88,10 @@
 // MARK: General UI
 "ui.general" = "General";
 "ui.version" = "version";
-"ui.check_update" = "check update";
+"ui.checking_update" = "checking update";
+"ui.up_to_date" = "up-to-date";
+"ui.new_version" = "new version detected";
+"ui.download" = "download";
 "ui.display" = "Display";
 "ui.components" = "Components";
 

@@ -88,6 +88,9 @@
 // MARK: General UI
 "ui.general" = "通用";
 "ui.version" = "版本";
-"ui.check_update" = "检查更新";
+"ui.checking_update" = "正在检查更新";
+"ui.up_to_date" = "已是最新";
+"ui.new_version" = "检测到新版本";
+"ui.download" = "下载";
 "ui.display" = "显示";
 "ui.components" = "组件";
