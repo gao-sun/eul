@@ -22,4 +22,6 @@ Enjoy clear and simple status monitoring in macOS.
 
 # Installation
 
-Download the [latest release](https://github.com/gao-sun/eul/releases/latest) and drag `.app` file into your `Application` folder.
+Download the [latest release](https://github.com/gao-sun/eul/releases/latest/download/eul.app.zip) directly and drag `.app` file into your `Application` folder.
+
+Or [click here](https://github.com/gao-sun/eul/releases/latest) to browse our latest release note.
