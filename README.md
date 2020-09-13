@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/14722250/93017676-1a009c00-f5fd-11ea-9b8e-c69c2cd4fa89.png" height=64 />
+</p>
+
 # eul
 
 Enjoy clear and simple status monitoring in macOS.
