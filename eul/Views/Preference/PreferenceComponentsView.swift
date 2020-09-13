@@ -69,7 +69,7 @@ extension Preference {
                         }
                         .padding(.vertical, 4)
                         .padding(.horizontal, 12)
-                        .background(Color.selectedBackground)
+                        .background(Color.controlBackground)
                         .cornerRadius(4)
                         .offset(x: self.dragging == element ? self.offsetWidth : 0)
                         .zIndex(self.dragging == element ? 1 : 0)
@@ -137,7 +137,7 @@ extension Preference {
                             }
                             .padding(.vertical, 4)
                             .padding(.horizontal, 12)
-                            .background(Color.selectedBackground)
+                            .background(Color.controlBackground)
                             .cornerRadius(4)
                             .contentShape(Rectangle())
                             .onTapGesture {

@@ -25,7 +25,6 @@ struct BatteryIconView: View {
                     .frame(width: 18, height: 18)
                 Rectangle()
                     .frame(width: CGFloat(charge) * lengthUnit, height: 8)
-                    .foregroundColor(.white)
                     .offset(x: 1)
             }
         }

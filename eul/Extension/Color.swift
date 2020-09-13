@@ -30,15 +30,8 @@ extension Color {
     }
 
     static private var isDark: Bool { NSApp.effectiveAppearance.name == NSAppearance.Name.darkAqua }
-
-    static var selectedBackground: Color {
-        isDark ? Color(hex: "#555") : Color(hex: "#eee")
-    }
-
-    static var border: Color {
-        isDark ? Color(hex: "#777") : Color(hex: "#ccc")
-    }
-
+    static let border = Color(NSColor.controlColor)
+    static let controlBackground = Color(NSColor.controlBackgroundColor)
     static let text = Color(NSColor.textColor)
     static let textBackground = Color(NSColor.textBackgroundColor)
     static let info = Color(NSColor.disabledControlTextColor)
