@@ -92,6 +92,7 @@
 "ui.up_to_date" = "up-to-date";
 "ui.new_version" = "new version detected";
 "ui.download" = "download";
+"ui.launch_at_login" = "launch at login";
 "ui.display" = "Display";
 "ui.components" = "Components";
 

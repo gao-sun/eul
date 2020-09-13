@@ -92,5 +92,6 @@
 "ui.up_to_date" = "已是最新";
 "ui.new_version" = "检测到新版本";
 "ui.download" = "下载";
+"ui.launch_at_login" = "登录时启动";
 "ui.display" = "显示";
 "ui.components" = "组件";

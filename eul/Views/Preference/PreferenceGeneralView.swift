@@ -12,6 +12,7 @@ import SwiftyJSON
 
 extension Preference {
     struct GeneralView: View {
+        @ObservedObject var launchAtLogin = LaunchAtLogin.observable
         @EnvironmentObject var preference: PreferenceStore
         @State var isUpdateAvailable: Bool?
         @State var checkUpdateFailed = false
@@ -64,8 +65,8 @@ extension Preference {
                         }) {
                             Text("GitHub")
                         }
+                        .focusable(false)
                     }
-                    .focusable(false)
                     HStack(spacing: 6) {
                         if isUpdateAvailable == nil {
                             ActivityIndicatorView {
@@ -78,10 +79,13 @@ extension Preference {
                                 .foregroundColor(.info)
                         } else if checkUpdateFailed {
                         } else if isUpdateAvailable == true {
-                            Button(action: {
-
-                            }) {
-                                Text("ui.download".localized())
+                            URL(string: "https://github.com/\(repo)/releases/latest").map { url in
+                                Button(action: {
+                                    NSWorkspace.shared.open(url)
+                                }) {
+                                    Text("ui.download".localized())
+                                }
+                                .focusable(false)
                             }
                             Text("ui.new_version".localized())
                                 .inlineSection()
@@ -93,7 +97,10 @@ extension Preference {
                         }
                     }
                 }
-                LaunchAtLogin.Toggle()
+                Toggle(isOn: $launchAtLogin.isEnabled) {
+                    Text("ui.launch_at_login".localized())
+                        .inlineSection()
+                }
             }
             .padding(.vertical, 8)
             .onAppear {
