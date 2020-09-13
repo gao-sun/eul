@@ -1,6 +1,6 @@
 # eul
 
-Enjoy clear and simple stats monitoring in your macOS status bar.
+Enjoy clear and simple status monitoring in macOS.
 
 <img src="https://user-images.githubusercontent.com/14722250/93015394-ae620300-f5eb-11ea-8bd5-ae58d4677167.png" height=30 />
 
