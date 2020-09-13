@@ -15,6 +15,7 @@ class StatusBarItem {
     private let item: NSStatusItem
     private var statusView: NSHostingView<AnyView>?
     private var menuView: NSHostingView<AnyView>?
+    private let versionItem: NSMenuItem
     private let preferencesItem: NSMenuItem
     private let quitItem: NSMenuItem
 
@@ -52,6 +53,11 @@ class StatusBarItem {
         item = NSStatusBar.system.statusItem(withLength: 0)
         item.isVisible = false
 
+        versionItem = NSMenuItem(
+            title: "eul v\(PreferenceStore.shared.version ?? "?")",
+            action: nil,
+            keyEquivalent: ""
+        )
         preferencesItem = NSMenuItem(
             title: "menu.preferences".localized(),
             action: #selector(AppDelegate.open),
@@ -68,7 +74,6 @@ class StatusBarItem {
 
         let statusBarMenu = NSMenu()
 
-
         if let menuBuilder = config.menuBuilder {
             let customItem = NSMenuItem()
             menuView = NSHostingView(rootView: menuBuilder(onMenuSizeChange))
@@ -77,6 +82,7 @@ class StatusBarItem {
             statusBarMenu.addItem(NSMenuItem.separator())
         }
 
+        statusBarMenu.addItem(versionItem)
         statusBarMenu.addItem(preferencesItem)
         statusBarMenu.addItem(quitItem)
         item.menu = statusBarMenu

@@ -18,7 +18,20 @@ class PreferenceStore: ObservableObject {
     }
 
     private let userDefaultsKey = "preference"
+    private let repo = "gao-sun/eul"
     private var cancellable: AnyCancellable?
+
+    var repoURL: URL? {
+        URL(string: "https://github.com/\(repo)")
+    }
+
+    var latestReleaseURL: URL? {
+        URL(string: "https://github.com/\(repo)/releases/latest")
+    }
+
+    var version: String? {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    }
 
     @Published var temperatureUnit = TemperatureUnit.celius {
         willSet {
@@ -34,6 +47,8 @@ class PreferenceStore: ObservableObject {
     @Published var isActiveComponentToggling = false
     @Published var activeComponents = EulComponent.allCases
     @Published var availableComponents: [EulComponent] = []
+    @Published var isUpdateAvailable: Bool?
+    @Published var checkUpdateFailed = false
 
     var json: JSON {
         JSON([
@@ -67,6 +82,35 @@ class PreferenceStore: ObservableObject {
     func toggleAvailableComponent(at index: Int) {
         activeComponents.append(availableComponents[index])
         availableComponents.remove(at: index)
+    }
+
+    func checkUpdate() {
+        isUpdateAvailable = nil
+        checkUpdateFailed = false
+
+        let session = URLSession.shared
+        let url = URL(string: "https://api.github.com/repos/\(repo)/releases/latest")
+
+        if let url = url {
+            let task = session.dataTask(with: url) { data, response, error in
+                DispatchQueue.main.async {
+                    if
+                        error == nil,
+                        let version = self.version,
+                        let tagName = JSON(data as Any)["tag_name"].string,
+                        version.compare(tagName, options: .numeric) == .orderedAscending
+                    {
+                        self.isUpdateAvailable = true
+                    } else {
+                        self.isUpdateAvailable = false
+                    }
+                }
+            }
+            task.resume()
+        } else {
+            self.isUpdateAvailable = false
+            self.checkUpdateFailed = true
+        }
     }
 
     func loadFromDefaults() {
