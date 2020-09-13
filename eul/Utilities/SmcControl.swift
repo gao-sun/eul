@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension TemperatureUnit {
+extension TemperatureUnit: RawRepresentable {
     var description: String {
         switch self {
         case .celius:
@@ -18,6 +18,35 @@ extension TemperatureUnit {
         case .kelvin:
             return "temp.kelvin".localized()
         }
+    }
+
+    public var rawValue: String {
+        switch self {
+        case .celius:
+            return "celsius"
+        case .fahrenheit:
+            return "fahrenheit"
+        case .kelvin:
+            return "kelvin"
+        }
+    }
+
+    public init?(rawValue: String) {
+        let lowercased = rawValue.lowercased()
+
+        if lowercased == "celius" || lowercased == "celsius" || lowercased == "c" {
+            self = .celius
+            return
+        }
+        if lowercased == "fahrenheit" || lowercased == "f" {
+            self = .fahrenheit
+            return
+        }
+        if lowercased == "kelvin" || lowercased == "k" {
+            self = .kelvin
+            return
+        }
+        return nil
     }
 }
 

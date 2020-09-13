@@ -27,8 +27,8 @@
 // MARK: CPU / Info
 "cpu.usage" = "Usage";
 "cpu.idle" = "Idle";
-"cpu.temperature" = "Temp.";
-"gpu.temperature" = "GPU Temp.";
+"cpu.temperature" = "Temp";
+"gpu.temperature" = "GPU Temp";
 "cpu.info" = "Info";
 "cpu.physical_cores" = "Physical Cores";
 "cpu.logical_cores" = "Logical Cores";
@@ -45,7 +45,7 @@
 "memory.total" = "Total";
 "memory.free" = "Free";
 "memory.cached_files" = "Cached Files";
-"memory.temp" = "Temp.";
+"memory.temp" = "Temp";
 "memory.usage" = "Usage";
 "memory.app" = "App";
 "memory.wired" = "Wired";
