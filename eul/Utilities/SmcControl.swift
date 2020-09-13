@@ -83,9 +83,11 @@ class SmcControl: Refreshable {
     var cpuProximityTemperature: Double? {
         sensors.first(where: { $0.sensor.name == "CPU_0_PROXIMITY" })?.temp
     }
+
     var gpuProximityTemperature: Double? {
         sensors.first(where: { $0.sensor.name == "GPU_0_PROXIMITY" })?.temp
     }
+
     var memoryProximityTemperature: Double? {
         sensors.first(where: { $0.sensor.name == "MEM_SLOTS_PROXIMITY" })?.temp
     }
@@ -107,7 +109,7 @@ class SmcControl: Refreshable {
                     maxSpeed: try SMCKit.fanMaxSpeed($0)
                 )
             ) }
-        } catch let error {
+        } catch {
             print("SMC init error", error)
         }
         SMCKit.close()
@@ -117,7 +119,7 @@ class SmcControl: Refreshable {
     @objc func refresh() {
         do {
             try SMCKit.open()
-        } catch let error {
+        } catch {
             SMCKit.close()
             print("error while opening SMC", error)
             return
@@ -125,7 +127,7 @@ class SmcControl: Refreshable {
         for sensor in sensors {
             do {
                 sensor.temp = try SMCKit.temperature(sensor.sensor.code, unit: tempUnit)
-            } catch let error {
+            } catch {
                 sensor.temp = 0
                 print("error while getting temperature", error)
             }
@@ -133,7 +135,7 @@ class SmcControl: Refreshable {
         for fan in fans {
             do {
                 fan.speed = try SMCKit.fanCurrentSpeed(fan.fan.id)
-            } catch let error {
+            } catch {
                 fan.speed = 0
                 print("error while getting fan speed", error)
             }

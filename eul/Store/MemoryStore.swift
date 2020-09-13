@@ -36,6 +36,7 @@ class MemoryStore: ObservableObject, Refreshable {
     var freeString: String {
         MemoryStore.memoryUnit(total - used)
     }
+
     var usedString: String {
         MemoryStore.memoryUnit(used)
     }

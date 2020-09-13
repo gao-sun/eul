@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Preference {
     enum TextDisplay: String, StringEnum {
         case compact

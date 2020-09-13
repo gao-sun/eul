@@ -20,4 +20,3 @@ struct SectionView<Content: View>: View {
         }
     }
 }
-

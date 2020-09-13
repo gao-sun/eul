@@ -10,36 +10,30 @@ import SwiftUI
 
 extension Text {
     func compact() -> some View {
-        self
-            .font(.system(size: 8, weight: .regular))
+        font(.system(size: 8, weight: .regular))
     }
 
     func normal() -> some View {
-        self
-            .font(.system(size: 12, weight: .regular))
+        font(.system(size: 12, weight: .regular))
     }
 
     func section() -> some View {
-        self
-            .font(.headline)
+        font(.headline)
             .padding(.top, 8)
             .padding(.bottom, 4)
     }
 
     func subsection() -> some View {
-        self
-            .font(.system(size: 12, weight: .regular))
+        font(.system(size: 12, weight: .regular))
             .padding(.top, 8)
     }
 
     func inlineSection() -> some View {
-        self
-            .font(.system(size: 12, weight: .regular))
+        font(.system(size: 12, weight: .regular))
     }
 
     func menuSection() -> some View {
-        self
-            .font(.system(size: 11, weight: .semibold))
+        font(.system(size: 11, weight: .semibold))
             .padding(.top, 8)
             .padding(.bottom, 4)
             .frame(maxWidth: .infinity, alignment: .leading)

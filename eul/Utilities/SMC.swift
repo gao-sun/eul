@@ -26,12 +26,14 @@
 
 // huge credit to D0miH for new MacBook fan speed compatibility
 
-import IOKit
 import Foundation
+import IOKit
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
+
 // MARK: Type Aliases
-//------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------
 
 // http://stackoverflow.com/a/22383661
 
@@ -50,12 +52,13 @@ public typealias SMCBytes = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8,
                              UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8,
                              UInt8, UInt8, UInt8, UInt8)
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
+
 // MARK: Standard Library Extensions
-//------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------
 
 extension UInt32 {
-
     init(fromBytes bytes: (UInt8, UInt8, UInt8, UInt8)) {
         // TODO: Broken up due to "Expression was too complex" error as of
         //       Swift 4.
@@ -70,14 +73,12 @@ extension UInt32 {
 }
 
 extension Bool {
-
     init(fromByte byte: UInt8) {
         self = byte == 1 ? true : false
     }
 }
 
 public extension Int {
-
     init(fromFPE2 bytes: FPE2) {
         self = (Int(bytes.0) << 6) + (Int(bytes.1) >> 2)
     }
@@ -90,30 +91,27 @@ public extension Int {
         self = Int(resultValue)
     }
 
-
     func toFPE2() -> FPE2 {
         return (UInt8(self >> 6), UInt8((self << 2) ^ ((self >> 6) << 8)))
     }
 }
 
 extension Double {
-
     init(fromSP78 bytes: SP78) {
         // FIXME: Handle second byte
         let sign = bytes.0 & 0x80 == 0 ? 1.0 : -1.0
-        self = sign * Double(bytes.0 & 0x7F)    // AND to mask sign bit
+        self = sign * Double(bytes.0 & 0x7F) // AND to mask sign bit
     }
 }
 
 // Thanks to Airspeed Velocity for the great idea!
 // http://airspeedvelocity.net/2015/05/22/my-talk-at-swift-summit/
 public extension FourCharCode {
-
     init(fromString str: String) {
         precondition(str.count == 4)
 
         self = str.utf8.reduce(0) { sum, character in
-            return sum << 8 | UInt32(character)
+            sum << 8 | UInt32(character)
         }
     }
 
@@ -134,16 +132,18 @@ public extension FourCharCode {
     }
 
     func toString() -> String {
-        return String(describing: UnicodeScalar(self >> 24 & 0xff)!) +
-               String(describing: UnicodeScalar(self >> 16 & 0xff)!) +
-               String(describing: UnicodeScalar(self >> 8  & 0xff)!) +
-               String(describing: UnicodeScalar(self       & 0xff)!)
+        return String(describing: UnicodeScalar(self >> 24 & 0xFF)!) +
+            String(describing: UnicodeScalar(self >> 16 & 0xFF)!) +
+            String(describing: UnicodeScalar(self >> 8 & 0xFF)!) +
+            String(describing: UnicodeScalar(self & 0xFF)!)
     }
 }
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
+
 // MARK: Defined by AppleSMC.kext
-//------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------
 
 /// Defined by AppleSMC.kext
 ///
@@ -162,20 +162,19 @@ public extension FourCharCode {
 ///
 /// http://www.opensource.apple.com/source/PowerManagement/PowerManagement-211/
 public struct SMCParamStruct {
-
     /// I/O Kit function selector
     public enum Selector: UInt8 {
-        case kSMCHandleYPCEvent  = 2
-        case kSMCReadKey         = 5
-        case kSMCWriteKey        = 6
+        case kSMCHandleYPCEvent = 2
+        case kSMCReadKey = 5
+        case kSMCWriteKey = 6
         case kSMCGetKeyFromIndex = 8
-        case kSMCGetKeyInfo      = 9
+        case kSMCGetKeyInfo = 9
     }
 
     /// Return codes for SMCParamStruct.result property
     public enum Result: UInt8 {
-        case kSMCSuccess     = 0
-        case kSMCError       = 1
+        case kSMCSuccess = 0
+        case kSMCError = 1
         case kSMCKeyNotFound = 132
     }
 
@@ -237,13 +236,14 @@ public struct SMCParamStruct {
                            UInt8(0), UInt8(0))
 }
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
+
 // MARK: SMC Client
-//------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------
 
 /// SMC data type information
 public struct DataTypes {
-
     /// Fan information struct
     public static let FDS = DataType(type: FourCharCode(fromStaticString: "{fds"), size: 16)
     public static let Flag = DataType(type: FourCharCode(fromStaticString: "flag"), size: 1)
@@ -266,7 +266,7 @@ public struct DataType: Equatable {
     let size: UInt32
 }
 
-public func ==(lhs: DataType, rhs: DataType) -> Bool {
+public func == (lhs: DataType, rhs: DataType) -> Bool {
     return lhs.type == rhs.type && lhs.size == rhs.size
 }
 
@@ -274,9 +274,7 @@ public func ==(lhs: DataType, rhs: DataType) -> Bool {
 /// Macs. Works by talking to the AppleSMC.kext (kernel extension), the closed
 /// source driver for the SMC.
 public struct SMCKit {
-
     public enum SMCError: Error {
-
         /// AppleSMC driver not found
         case driverNotFound
 
@@ -339,7 +337,8 @@ public struct SMCKit {
 
     /// Get information about the key at index
     public static func keyInformationAtIndex(_ index: Int) throws ->
-                                                                  FourCharCode {
+        FourCharCode
+    {
         var inputStruct = SMCParamStruct()
 
         inputStruct.data8 = SMCParamStruct.Selector.kSMCGetKeyFromIndex.rawValue
@@ -377,8 +376,9 @@ public struct SMCKit {
 
     /// Make an actual call to the SMC driver
     public static func callDriver(_ inputStruct: inout SMCParamStruct,
-                        selector: SMCParamStruct.Selector = .kSMCHandleYPCEvent)
-                                                      throws -> SMCParamStruct {
+                                  selector: SMCParamStruct.Selector = .kSMCHandleYPCEvent)
+        throws -> SMCParamStruct
+    {
         assert(MemoryLayout<SMCParamStruct>.stride == 80, "SMCParamStruct size is != 80")
 
         var outputStruct = SMCParamStruct()
@@ -401,23 +401,24 @@ public struct SMCKit {
             throw SMCError.notPrivileged
         default:
             throw SMCError.unknown(kIOReturn: result,
-                                SMCResult: outputStruct.result)
+                                   SMCResult: outputStruct.result)
         }
     }
 }
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
+
 // MARK: General
-//------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------
 
 extension SMCKit {
-
     /// Get all valid SMC keys for this machine
     public static func allKeys() throws -> [SMCKey] {
         let count = try keyCount()
         var keys = [SMCKey]()
 
-        for i in 0 ..< count {
+        for i in 0..<count {
             let key = try keyInformationAtIndex(i)
             let info = try keyInformation(key)
             keys.append(SMCKey(code: key, info: info))
@@ -445,9 +446,11 @@ extension SMCKit {
     }
 }
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
+
 // MARK: Temperature
-//------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------
 
 /// The list is NOT exhaustive. In addition, the names of the sensors may not be
 /// mapped to the correct hardware component.
@@ -461,106 +464,105 @@ extension SMCKit {
 /// * http://www.opensource.apple.com/source/net_snmp/
 /// * http://www.parhelia.ch/blog/statics/k3_keys.html
 public struct TemperatureSensors {
-
     public static let AMBIENT_AIR_0 = TemperatureSensor(name: "AMBIENT_AIR_0",
-                                   code: FourCharCode(fromStaticString: "TA0P"))
+                                                        code: FourCharCode(fromStaticString: "TA0P"))
     public static let AMBIENT_AIR_1 = TemperatureSensor(name: "AMBIENT_AIR_1",
-                                   code: FourCharCode(fromStaticString: "TA1P"))
+                                                        code: FourCharCode(fromStaticString: "TA1P"))
     // Via powermetrics(1)
     public static let CPU_0_DIE = TemperatureSensor(name: "CPU_0_DIE",
-                                   code: FourCharCode(fromStaticString: "TC0F"))
+                                                    code: FourCharCode(fromStaticString: "TC0F"))
     public static let CPU_0_DIODE = TemperatureSensor(name: "CPU_0_DIODE",
-                                   code: FourCharCode(fromStaticString: "TC0D"))
+                                                      code: FourCharCode(fromStaticString: "TC0D"))
     public static let CPU_0_HEATSINK = TemperatureSensor(name: "CPU_0_HEATSINK",
-                                   code: FourCharCode(fromStaticString: "TC0H"))
+                                                         code: FourCharCode(fromStaticString: "TC0H"))
     public static let CPU_0_PROXIMITY =
-                                      TemperatureSensor(name: "CPU_0_PROXIMITY",
-                                   code: FourCharCode(fromStaticString: "TC0P"))
+        TemperatureSensor(name: "CPU_0_PROXIMITY",
+                          code: FourCharCode(fromStaticString: "TC0P"))
     public static let ENCLOSURE_BASE_0 =
-                                     TemperatureSensor(name: "ENCLOSURE_BASE_0",
-                                   code: FourCharCode(fromStaticString: "TB0T"))
+        TemperatureSensor(name: "ENCLOSURE_BASE_0",
+                          code: FourCharCode(fromStaticString: "TB0T"))
     public static let ENCLOSURE_BASE_1 =
-                                     TemperatureSensor(name: "ENCLOSURE_BASE_1",
-                                   code: FourCharCode(fromStaticString: "TB1T"))
+        TemperatureSensor(name: "ENCLOSURE_BASE_1",
+                          code: FourCharCode(fromStaticString: "TB1T"))
     public static let ENCLOSURE_BASE_2 =
-                                     TemperatureSensor(name: "ENCLOSURE_BASE_2",
-                                   code: FourCharCode(fromStaticString: "TB2T"))
+        TemperatureSensor(name: "ENCLOSURE_BASE_2",
+                          code: FourCharCode(fromStaticString: "TB2T"))
     public static let ENCLOSURE_BASE_3 =
-                                     TemperatureSensor(name: "ENCLOSURE_BASE_3",
-                                   code: FourCharCode(fromStaticString: "TB3T"))
+        TemperatureSensor(name: "ENCLOSURE_BASE_3",
+                          code: FourCharCode(fromStaticString: "TB3T"))
     public static let GPU_0_DIODE = TemperatureSensor(name: "GPU_0_DIODE",
-                                   code: FourCharCode(fromStaticString: "TG0D"))
+                                                      code: FourCharCode(fromStaticString: "TG0D"))
     public static let GPU_0_HEATSINK = TemperatureSensor(name: "GPU_0_HEATSINK",
-                                   code: FourCharCode(fromStaticString: "TG0H"))
+                                                         code: FourCharCode(fromStaticString: "TG0H"))
     public static let GPU_0_PROXIMITY =
-                                      TemperatureSensor(name: "GPU_0_PROXIMITY",
-                                   code: FourCharCode(fromStaticString: "TG0P"))
+        TemperatureSensor(name: "GPU_0_PROXIMITY",
+                          code: FourCharCode(fromStaticString: "TG0P"))
     public static let HDD_PROXIMITY = TemperatureSensor(name: "HDD_PROXIMITY",
-                                   code: FourCharCode(fromStaticString: "TH0P"))
+                                                        code: FourCharCode(fromStaticString: "TH0P"))
     public static let HEATSINK_0 = TemperatureSensor(name: "HEATSINK_0",
-                                   code: FourCharCode(fromStaticString: "Th0H"))
+                                                     code: FourCharCode(fromStaticString: "Th0H"))
     public static let HEATSINK_1 = TemperatureSensor(name: "HEATSINK_1",
-                                   code: FourCharCode(fromStaticString: "Th1H"))
+                                                     code: FourCharCode(fromStaticString: "Th1H"))
     public static let HEATSINK_2 = TemperatureSensor(name: "HEATSINK_2",
-                                   code: FourCharCode(fromStaticString: "Th2H"))
+                                                     code: FourCharCode(fromStaticString: "Th2H"))
     public static let LCD_PROXIMITY = TemperatureSensor(name: "LCD_PROXIMITY",
-                                   code: FourCharCode(fromStaticString: "TL0P"))
+                                                        code: FourCharCode(fromStaticString: "TL0P"))
     public static let MEM_SLOT_0 = TemperatureSensor(name: "MEM_SLOT_0",
-                                   code: FourCharCode(fromStaticString: "TM0S"))
+                                                     code: FourCharCode(fromStaticString: "TM0S"))
     public static let MEM_SLOTS_PROXIMITY =
-                                  TemperatureSensor(name: "MEM_SLOTS_PROXIMITY",
-                                   code: FourCharCode(fromStaticString: "TM0P"))
+        TemperatureSensor(name: "MEM_SLOTS_PROXIMITY",
+                          code: FourCharCode(fromStaticString: "TM0P"))
     public static let MISC_PROXIMITY = TemperatureSensor(name: "MISC_PROXIMITY",
-                                   code: FourCharCode(fromStaticString: "Tm0P"))
+                                                         code: FourCharCode(fromStaticString: "Tm0P"))
     public static let NORTHBRIDGE = TemperatureSensor(name: "NORTHBRIDGE",
-                                   code: FourCharCode(fromStaticString: "TN0H"))
+                                                      code: FourCharCode(fromStaticString: "TN0H"))
     public static let NORTHBRIDGE_DIODE =
-                                    TemperatureSensor(name: "NORTHBRIDGE_DIODE",
-                                   code: FourCharCode(fromStaticString: "TN0D"))
+        TemperatureSensor(name: "NORTHBRIDGE_DIODE",
+                          code: FourCharCode(fromStaticString: "TN0D"))
     public static let NORTHBRIDGE_PROXIMITY =
-                                TemperatureSensor(name: "NORTHBRIDGE_PROXIMITY",
-                                   code: FourCharCode(fromStaticString: "TN0P"))
+        TemperatureSensor(name: "NORTHBRIDGE_PROXIMITY",
+                          code: FourCharCode(fromStaticString: "TN0P"))
     public static let ODD_PROXIMITY = TemperatureSensor(name: "ODD_PROXIMITY",
-                                   code: FourCharCode(fromStaticString: "TO0P"))
+                                                        code: FourCharCode(fromStaticString: "TO0P"))
     public static let PALM_REST = TemperatureSensor(name: "PALM_REST",
-                                   code: FourCharCode(fromStaticString: "Ts0P"))
+                                                    code: FourCharCode(fromStaticString: "Ts0P"))
     public static let PWR_SUPPLY_PROXIMITY =
-                                 TemperatureSensor(name: "PWR_SUPPLY_PROXIMITY",
-                                   code: FourCharCode(fromStaticString: "Tp0P"))
+        TemperatureSensor(name: "PWR_SUPPLY_PROXIMITY",
+                          code: FourCharCode(fromStaticString: "Tp0P"))
     public static let THUNDERBOLT_0 = TemperatureSensor(name: "THUNDERBOLT_0",
-                                   code: FourCharCode(fromStaticString: "TI0P"))
+                                                        code: FourCharCode(fromStaticString: "TI0P"))
     public static let THUNDERBOLT_1 = TemperatureSensor(name: "THUNDERBOLT_1",
-                                   code: FourCharCode(fromStaticString: "TI1P"))
+                                                        code: FourCharCode(fromStaticString: "TI1P"))
 
-    public static let all = [AMBIENT_AIR_0.code : AMBIENT_AIR_0,
-                             AMBIENT_AIR_1.code : AMBIENT_AIR_1,
-                             CPU_0_DIE.code : CPU_0_DIE,
-                             CPU_0_DIODE.code : CPU_0_DIODE,
-                             CPU_0_HEATSINK.code : CPU_0_HEATSINK,
-                             CPU_0_PROXIMITY.code : CPU_0_PROXIMITY,
-                             ENCLOSURE_BASE_0.code : ENCLOSURE_BASE_0,
-                             ENCLOSURE_BASE_1.code : ENCLOSURE_BASE_1,
-                             ENCLOSURE_BASE_2.code : ENCLOSURE_BASE_2,
-                             ENCLOSURE_BASE_3.code : ENCLOSURE_BASE_3,
-                             GPU_0_DIODE.code : GPU_0_DIODE,
-                             GPU_0_HEATSINK.code : GPU_0_HEATSINK,
-                             GPU_0_PROXIMITY.code : GPU_0_PROXIMITY,
-                             HDD_PROXIMITY.code : HDD_PROXIMITY,
-                             HEATSINK_0.code : HEATSINK_0,
-                             HEATSINK_1.code : HEATSINK_1,
-                             HEATSINK_2.code : HEATSINK_2,
-                             MEM_SLOT_0.code : MEM_SLOT_0,
+    public static let all = [AMBIENT_AIR_0.code: AMBIENT_AIR_0,
+                             AMBIENT_AIR_1.code: AMBIENT_AIR_1,
+                             CPU_0_DIE.code: CPU_0_DIE,
+                             CPU_0_DIODE.code: CPU_0_DIODE,
+                             CPU_0_HEATSINK.code: CPU_0_HEATSINK,
+                             CPU_0_PROXIMITY.code: CPU_0_PROXIMITY,
+                             ENCLOSURE_BASE_0.code: ENCLOSURE_BASE_0,
+                             ENCLOSURE_BASE_1.code: ENCLOSURE_BASE_1,
+                             ENCLOSURE_BASE_2.code: ENCLOSURE_BASE_2,
+                             ENCLOSURE_BASE_3.code: ENCLOSURE_BASE_3,
+                             GPU_0_DIODE.code: GPU_0_DIODE,
+                             GPU_0_HEATSINK.code: GPU_0_HEATSINK,
+                             GPU_0_PROXIMITY.code: GPU_0_PROXIMITY,
+                             HDD_PROXIMITY.code: HDD_PROXIMITY,
+                             HEATSINK_0.code: HEATSINK_0,
+                             HEATSINK_1.code: HEATSINK_1,
+                             HEATSINK_2.code: HEATSINK_2,
+                             MEM_SLOT_0.code: MEM_SLOT_0,
                              MEM_SLOTS_PROXIMITY.code: MEM_SLOTS_PROXIMITY,
-                             PALM_REST.code : PALM_REST,
-                             LCD_PROXIMITY.code : LCD_PROXIMITY,
-                             MISC_PROXIMITY.code : MISC_PROXIMITY,
-                             NORTHBRIDGE.code : NORTHBRIDGE,
-                             NORTHBRIDGE_DIODE.code : NORTHBRIDGE_DIODE,
-                             NORTHBRIDGE_PROXIMITY.code : NORTHBRIDGE_PROXIMITY,
-                             ODD_PROXIMITY.code : ODD_PROXIMITY,
-                             PWR_SUPPLY_PROXIMITY.code : PWR_SUPPLY_PROXIMITY,
-                             THUNDERBOLT_0.code : THUNDERBOLT_0,
-                             THUNDERBOLT_1.code : THUNDERBOLT_1]
+                             PALM_REST.code: PALM_REST,
+                             LCD_PROXIMITY.code: LCD_PROXIMITY,
+                             MISC_PROXIMITY.code: MISC_PROXIMITY,
+                             NORTHBRIDGE.code: NORTHBRIDGE,
+                             NORTHBRIDGE_DIODE.code: NORTHBRIDGE_DIODE,
+                             NORTHBRIDGE_PROXIMITY.code: NORTHBRIDGE_PROXIMITY,
+                             ODD_PROXIMITY.code: ODD_PROXIMITY,
+                             PWR_SUPPLY_PROXIMITY.code: PWR_SUPPLY_PROXIMITY,
+                             THUNDERBOLT_0.code: THUNDERBOLT_0,
+                             THUNDERBOLT_1.code: THUNDERBOLT_1]
 }
 
 public struct TemperatureSensor {
@@ -585,9 +587,9 @@ public enum TemperatureUnit {
 }
 
 extension SMCKit {
-
     public static func allKnownTemperatureSensors() throws ->
-                                                           [TemperatureSensor] {
+        [TemperatureSensor]
+    {
         var sensors = [TemperatureSensor]()
 
         for sensor in TemperatureSensors.all.values {
@@ -601,14 +603,16 @@ extension SMCKit {
         let keys = try allKeys()
 
         return keys.filter { $0.code.toString().hasPrefix("T") &&
-                             $0.info == DataTypes.SP78 &&
-                             TemperatureSensors.all[$0.code] == nil }
-                   .map { TemperatureSensor(name: "Unknown", code: $0.code) }
+            $0.info == DataTypes.SP78 &&
+            TemperatureSensors.all[$0.code] == nil
+        }
+        .map { TemperatureSensor(name: "Unknown", code: $0.code) }
     }
 
     /// Get current temperature of a sensor
     public static func temperature(_ sensorCode: FourCharCode,
-                             unit: TemperatureUnit = .celius) throws -> Double {
+                                   unit: TemperatureUnit = .celius) throws -> Double
+    {
         let data = try readData(SMCKey(code: sensorCode, info: DataTypes.SP78))
 
         let temperatureInCelius = Double(fromSP78: (data.0, data.1))
@@ -624,9 +628,11 @@ extension SMCKit {
     }
 }
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
+
 // MARK: Fan
-//------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------
 
 public struct Fan {
     // TODO: Should we start the fan id from 1 instead of 0?
@@ -637,12 +643,11 @@ public struct Fan {
 }
 
 extension SMCKit {
-
     public static func allFans() throws -> [Fan] {
         let count = try fanCount()
         var fans = [Fan]()
 
-        for i in 0 ..< count {
+        for i in 0..<count {
             fans.append(try SMCKit.fan(i))
         }
 
@@ -660,7 +665,7 @@ extension SMCKit {
     /// 2015 MacBook (8,1), have at least 1
     public static func fanCount() throws -> Int {
         let key = SMCKey(code: FourCharCode(fromStaticString: "FNum"),
-                                            info: DataTypes.UInt8)
+                         info: DataTypes.UInt8)
 
         let data = try readData(key)
         return Int(data.0)
@@ -668,20 +673,20 @@ extension SMCKit {
 
     public static func fanName(_ id: Int) throws -> String {
         let key = SMCKey(code: FourCharCode(fromString: "F\(id)ID"),
-                                            info: DataTypes.FDS)
+                         info: DataTypes.FDS)
         let data = try readData(key)
 
         // The last 12 bytes of '{fds' data type, a custom struct defined by the
         // AppleSMC.kext that is 16 bytes, contains the fan name
-        let c1  = String(UnicodeScalar(data.4))
-        let c2  = String(UnicodeScalar(data.5))
-        let c3  = String(UnicodeScalar(data.6))
-        let c4  = String(UnicodeScalar(data.7))
-        let c5  = String(UnicodeScalar(data.8))
-        let c6  = String(UnicodeScalar(data.9))
-        let c7  = String(UnicodeScalar(data.10))
-        let c8  = String(UnicodeScalar(data.11))
-        let c9  = String(UnicodeScalar(data.12))
+        let c1 = String(UnicodeScalar(data.4))
+        let c2 = String(UnicodeScalar(data.5))
+        let c3 = String(UnicodeScalar(data.6))
+        let c4 = String(UnicodeScalar(data.7))
+        let c5 = String(UnicodeScalar(data.8))
+        let c6 = String(UnicodeScalar(data.9))
+        let c7 = String(UnicodeScalar(data.10))
+        let c8 = String(UnicodeScalar(data.11))
+        let c9 = String(UnicodeScalar(data.12))
         let c10 = String(UnicodeScalar(data.13))
         let c11 = String(UnicodeScalar(data.14))
         let c12 = String(UnicodeScalar(data.15))
@@ -749,9 +754,11 @@ extension SMCKit {
     }
 }
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
+
 // MARK: Miscellaneous
-//------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------
 
 public struct batteryInfo {
     public let batteryCount: Int
@@ -762,7 +769,6 @@ public struct batteryInfo {
 }
 
 extension SMCKit {
-
     public static func isOpticalDiskDriveFull() throws -> Bool {
         // TODO: Should we catch key not found? That just means the machine
         // doesn't have an ODD. Returning false though is not fully correct.
@@ -776,14 +782,14 @@ extension SMCKit {
 
     public static func batteryInformation() throws -> batteryInfo {
         let batteryCountKey =
-                            SMCKey(code: FourCharCode(fromStaticString: "BNum"),
-                                   info: DataTypes.UInt8)
+            SMCKey(code: FourCharCode(fromStaticString: "BNum"),
+                   info: DataTypes.UInt8)
         let batteryPoweredKey =
-                            SMCKey(code: FourCharCode(fromStaticString: "BATP"),
-                                   info: DataTypes.Flag)
+            SMCKey(code: FourCharCode(fromStaticString: "BATP"),
+                   info: DataTypes.Flag)
         let batteryInfoKey =
-                            SMCKey(code: FourCharCode(fromStaticString: "BSIn"),
-                                   info: DataTypes.UInt8)
+            SMCKey(code: FourCharCode(fromStaticString: "BSIn"),
+                   info: DataTypes.UInt8)
 
         let batteryCountData = try readData(batteryCountKey)
         let batteryCount = Int(batteryCountData.0)

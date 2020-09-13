@@ -6,8 +6,8 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 class StatusBarManager {
     @ObservedObject var preferenceStore = PreferenceStore.shared

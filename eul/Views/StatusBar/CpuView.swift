@@ -13,7 +13,7 @@ struct CpuView: SizeChangeView {
     @ObservedObject var cpuStore = CpuStore.shared
 
     var texts: [String] {
-        [cpuStore.usage, cpuStore.temp.map({ SmcControl.shared.formatTemp($0) })].compactMap { $0 }
+        [cpuStore.usage, cpuStore.temp.map { SmcControl.shared.formatTemp($0) }].compactMap { $0 }
     }
 
     var body: some View {

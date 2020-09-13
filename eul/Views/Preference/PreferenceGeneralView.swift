@@ -6,8 +6,8 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
-import SwiftUI
 import LaunchAtLogin
+import SwiftUI
 import SwiftyJSON
 
 extension Preference {

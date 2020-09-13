@@ -10,13 +10,13 @@ import SwiftUI
 
 struct ActivityIndicatorView: NSViewRepresentable {
     typealias NSViewType = NSProgressIndicator
-    var configuration = { (view: NSViewType) in }
+    var configuration = { (_: NSViewType) in }
 
-    func makeNSView(context: NSViewRepresentableContext<ActivityIndicatorView>) -> NSProgressIndicator {
+    func makeNSView(context _: NSViewRepresentableContext<ActivityIndicatorView>) -> NSProgressIndicator {
         NSViewType()
     }
 
-    func updateNSView(_ nsView: NSProgressIndicator, context: NSViewRepresentableContext<ActivityIndicatorView>) {
+    func updateNSView(_ nsView: NSProgressIndicator, context _: NSViewRepresentableContext<ActivityIndicatorView>) {
         configuration(nsView)
     }
 }

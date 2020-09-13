@@ -26,7 +26,7 @@ func shell(_ args: String...) -> String? {
 
     task.waitUntilExit()
 
-    if (task.terminationStatus != 0) {
+    if task.terminationStatus != 0 {
         return nil
     }
 

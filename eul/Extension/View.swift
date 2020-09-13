@@ -10,8 +10,7 @@ import SwiftUI
 
 extension View {
     func menuInfo() -> some View {
-        self
-            .font(.system(size: 14, weight: .regular))
+        font(.system(size: 14, weight: .regular))
             .foregroundColor(.info)
             .padding(.leading, 20)
             .padding(.trailing, 12)

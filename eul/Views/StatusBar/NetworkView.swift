@@ -27,4 +27,3 @@ struct NetworkView: SizeChangeView {
         .background(GeometryReader { self.reportSize($0) })
     }
 }
-

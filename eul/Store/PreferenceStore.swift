@@ -6,8 +6,8 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
-import Foundation
 import Combine
+import Foundation
 import Localize_Swift
 import SwiftyJSON
 
@@ -38,11 +38,13 @@ class PreferenceStore: ObservableObject {
             SmcControl.shared.tempUnit = newValue
         }
     }
+
     @Published var language = Localize.currentLanguage() {
         willSet {
             Localize.setCurrentLanguage(newValue)
         }
     }
+
     @Published var textDisplay = Preference.TextDisplay.compact
     @Published var isActiveComponentToggling = false
     @Published var activeComponents = EulComponent.allCases
@@ -56,7 +58,7 @@ class PreferenceStore: ObservableObject {
             "language": language,
             "textDisplay": textDisplay.rawValue,
             "activeComponents": activeComponents.map { $0.rawValue },
-            "availableComponents": availableComponents.map { $0.rawValue }
+            "availableComponents": availableComponents.map { $0.rawValue },
         ])
     }
 
@@ -92,7 +94,7 @@ class PreferenceStore: ObservableObject {
         let url = URL(string: "https://api.github.com/repos/\(repo)/releases/latest")
 
         if let url = url {
-            let task = session.dataTask(with: url) { data, response, error in
+            let task = session.dataTask(with: url) { data, _, error in
                 DispatchQueue.main.async {
                     if
                         error == nil,
@@ -108,8 +110,8 @@ class PreferenceStore: ObservableObject {
             }
             task.resume()
         } else {
-            self.isUpdateAvailable = false
-            self.checkUpdateFailed = true
+            isUpdateAvailable = false
+            checkUpdateFailed = true
         }
     }
 

@@ -6,8 +6,8 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
-import SwiftUI
 import Localize_Swift
+import SwiftUI
 
 extension Preference {
     struct DisplayView: View {

@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import SystemKit
 import IOKit.ps
+import SystemKit
 
 struct Info {
     enum BatteryCondition: String {
@@ -37,6 +37,7 @@ struct Info {
         var currentPercentage: Int {
             Int(Double(currentCapacity) / Double(maxCapacity) * 100)
         }
+
         var condition: BatteryCondition = .good
         var powerSource: PowerSourceState = .unknown
         var timeToFullCharge = 0

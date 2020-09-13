@@ -35,7 +35,7 @@ extension Preference {
                         .foregroundColor(Color.gray)
                 }
                 HStack {
-                    ForEach(Array(preference.activeComponents.enumerated()), id: \.element) { (offset, element) in
+                    ForEach(Array(preference.activeComponents.enumerated()), id: \.element) { offset, element in
                         HStack(spacing: 8) {
                             Image(element.rawValue)
                                 .resizable()
@@ -75,7 +75,7 @@ extension Preference {
                         .zIndex(self.dragging == element ? 1 : 0)
                         .contentShape(Rectangle())
                         .gesture(DragGesture()
-                            .updating(self.$offsetWidth, body: { (value, state, _) in
+                            .updating(self.$offsetWidth, body: { value, state, _ in
                                 state = value.translation.width
 
                                 let currentFrame = self.frames[offset]
@@ -100,7 +100,7 @@ extension Preference {
                                     }
                                 }
                             })
-                            .onChanged { value in
+                            .onChanged { _ in
                                 self.dragging = element
                             }
                             .onEnded { _ in
@@ -127,7 +127,7 @@ extension Preference {
                             .foregroundColor(Color.gray)
                     }
                     HStack {
-                        ForEach(Array(preference.availableComponents.enumerated()), id: \.element) { (offset, element) in
+                        ForEach(Array(preference.availableComponents.enumerated()), id: \.element) { offset, element in
                             HStack(spacing: 8) {
                                 Image(element.rawValue)
                                     .resizable()

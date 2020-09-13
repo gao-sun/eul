@@ -29,7 +29,7 @@ extension Color {
         self.init(red: Double(r) / 255, green: Double(g) / 255, blue: Double(b) / 255, opacity: Double(a) / 255)
     }
 
-    static private var isDark: Bool { NSApp.effectiveAppearance.name == NSAppearance.Name.darkAqua }
+    private static var isDark: Bool { NSApp.effectiveAppearance.name == NSAppearance.Name.darkAqua }
     static let border = Color(NSColor.controlColor)
     static let controlBackground = Color(NSColor.controlBackgroundColor)
     static let text = Color(NSColor.textColor)

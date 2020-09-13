@@ -80,4 +80,3 @@ struct BatteryMenuView: SizeChangeView {
         .background(GeometryReader { self.reportSize($0) })
     }
 }
-

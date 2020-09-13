@@ -13,15 +13,15 @@ public struct ByteUnit {
     public let bytes: UInt64
 
     public var kilobytes: Double {
-        Double(bytes) / 1_024
+        Double(bytes) / 1024
     }
 
     public var megabytes: Double {
-        kilobytes / 1_024
+        kilobytes / 1024
     }
 
     public var gigabytes: Double {
-        megabytes / 1_024
+        megabytes / 1024
     }
 
     public init(_ bytes: UInt64) {
@@ -34,16 +34,16 @@ public struct ByteUnit {
 
     public var readable: String {
         switch bytes {
-        case 0..<1_024:
-          return "\(bytes) bytes"
-        case 1_024..<(1_024 * 1_024):
-          return "\(String(format: "%.2f", kilobytes)) kb"
-        case 1_024..<(1_024 * 1_024 * 1_024):
-          return "\(String(format: "%.2f", megabytes)) mb"
-        case (1_024 * 1_024 * 1_024)...UInt64.max:
-          return "\(String(format: "%.2f", gigabytes)) gb"
+        case 0..<1024:
+            return "\(bytes) bytes"
+        case 1024..<(1024 * 1024):
+            return "\(String(format: "%.2f", kilobytes)) kb"
+        case 1024..<(1024 * 1024 * 1024):
+            return "\(String(format: "%.2f", megabytes)) mb"
+        case (1024 * 1024 * 1024)...UInt64.max:
+            return "\(String(format: "%.2f", gigabytes)) gb"
         default:
-          return "\(bytes) bytes"
+            return "\(bytes) bytes"
         }
     }
 }

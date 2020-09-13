@@ -131,6 +131,7 @@
 		6C7DB6E324E80F9400133B06 /* PreferenceDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceDisplayView.swift; sourceTree = "<group>"; };
 		6C7DB6E524E82C5A00133B06 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		6C7DB6E724E82C7700133B06 /* StringEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnum.swift; sourceTree = "<group>"; };
+		6C9667D9250E3D6F00E51ABB /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		6CAEED5324A5DE4700C39597 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6CAEED6124A5F51600C39597 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		6CAEED6424A62DF800C39597 /* SMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMC.swift; sourceTree = "<group>"; };
@@ -208,6 +209,7 @@
 				6C5F853D249FACE000CF0EF8 /* eul */,
 				6C5F853C249FACE000CF0EF8 /* Products */,
 				6C4E880824A649BC00766E15 /* Cartfile */,
+				6C9667D9250E3D6F00E51ABB /* .swiftformat */,
 				6C4E880A24A6545E00766E15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -339,6 +341,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C5F854E249FACE200CF0EF8 /* Build configuration list for PBXNativeTarget "eul" */;
 			buildPhases = (
+				6C9667DA250E3DA200E51ABB /* SwiftFormat */,
 				6C5F8537249FACE000CF0EF8 /* Sources */,
 				6C5F8538249FACE000CF0EF8 /* Frameworks */,
 				6C5F8539249FACE000CF0EF8 /* Resources */,
@@ -404,6 +407,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6C9667DA250E3DA200E51ABB /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
 		6CC0798D250CEE96000D7DAC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

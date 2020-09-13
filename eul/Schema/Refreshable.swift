@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc protocol RefreshableObjC: class {
+@objc protocol RefreshableObjC: AnyObject {
     func refresh()
 }
 

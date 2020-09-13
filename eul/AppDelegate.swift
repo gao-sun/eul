@@ -7,8 +7,8 @@
 //
 
 import Cocoa
-import SwiftUI
 import Localize_Swift
+import SwiftUI
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -26,12 +26,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    func applicationDidFinishLaunching(_: Notification) {
         let contentView = ContentView()
         window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
+            backing: .buffered, defer: false
+        )
         window.center()
         window.setFrameAutosaveName("Eul Preferences")
         window.contentView = NSHostingView(rootView: contentView)
@@ -40,10 +41,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.standardWindowButton(.miniaturizeButton)?.isHidden = true
         window.makeKeyAndOrderFront(nil)
         SmcControl.shared.start()
-        self.refreshRepeatedly()
+        refreshRepeatedly()
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
+    func applicationWillTerminate(_: Notification) {
         // Insert code here to tear down your application
     }
 
@@ -56,4 +57,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApplication.shared.terminate(self)
     }
 }
-
