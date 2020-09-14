@@ -20,6 +20,10 @@ Enjoy clear and simple status monitoring in macOS.
   - Network: in/out speed
 - Written in SwiftUI (as much as possible)
 
+# OS Requirement
+
+macOS 10.15 minimum for SwiftUI support
+
 # Installation
 
 Download the [latest release](https://github.com/gao-sun/eul/releases/latest/download/eul.app.zip) directly and drag `.app` file into your `Application` folder.
