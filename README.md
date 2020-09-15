@@ -6,7 +6,7 @@
 
 Enjoy clear and simple status monitoring in macOS.
 
-<img src="https://user-images.githubusercontent.com/14722250/93015394-ae620300-f5eb-11ea-8bd5-ae58d4677167.png" height=30 />
+<img src="https://user-images.githubusercontent.com/14722250/93159105-0f9aeb00-f740-11ea-8d96-75cd0ec837b3.png" height=30 />
 
 # Highlights
 
@@ -29,3 +29,7 @@ macOS 10.15 minimum for SwiftUI support
 Download the [latest release](https://github.com/gao-sun/eul/releases/latest/download/eul.app.zip) directly and drag `.app` file into your `Application` folder.
 
 Or [click here](https://github.com/gao-sun/eul/releases/latest) to browse our latest release note.
+
+# Preferences
+
+<img src="https://user-images.githubusercontent.com/14722250/93159099-0dd12780-f740-11ea-8d17-df2beb9eee1c.png" height=450 />
