@@ -69,9 +69,6 @@ extension Preference {
                 }
             }
             .padding(.vertical, 8)
-            .onAppear {
-                self.preference.checkUpdate()
-            }
         }
     }
 }

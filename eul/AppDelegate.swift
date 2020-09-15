@@ -11,7 +11,7 @@ import Localize_Swift
 import SwiftUI
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     var window: NSWindow!
     let statusBarManager = StatusBarManager()
 
@@ -40,8 +40,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.standardWindowButton(.zoomButton)?.isHidden = true
         window.standardWindowButton(.miniaturizeButton)?.isHidden = true
         window.makeKeyAndOrderFront(nil)
+        window.delegate = self
         SmcControl.shared.start()
         refreshRepeatedly()
+    }
+
+    func windowDidBecomeMain(_: Notification) {
+        PreferenceStore.shared.checkUpdate()
     }
 
     func applicationWillTerminate(_: Notification) {

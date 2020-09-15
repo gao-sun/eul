@@ -51,8 +51,8 @@ class PreferenceStore: ObservableObject {
     @Published var availableComponents: [EulComponent] = []
     @Published var fontDesign: Preference.FontDesign = .default
     @Published var showIcon = true
-    @Published var isUpdateAvailable: Bool?
-    @Published var checkUpdateFailed = false
+    @Published var isUpdateAvailable: Bool? = false
+    @Published var checkUpdateFailed = true
 
     var json: JSON {
         JSON([
