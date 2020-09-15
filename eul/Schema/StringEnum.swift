@@ -26,6 +26,6 @@ extension StringEnum {
                 }
             }
             return $0 + String($1)
-        }.localized()
+        }
     }
 }

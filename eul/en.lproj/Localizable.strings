@@ -66,8 +66,13 @@
 
 // MARK: Text Display
 "text_display" = "Text Display";
-"compact" = "compact";
-"single line" = "single line";
+"text_display.compact" = "compact";
+"text_display.single_line" = "single line";
+
+// MARK: Font Design
+"font_design" = "Font Design";
+"font_design.default" = "default";
+"font_design.monospaced" = "monospaced";
 
 // MARK: Component
 "component.status_bar" = "Status Bar";

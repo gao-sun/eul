@@ -12,12 +12,16 @@ struct StatusBarTextView: View {
     @ObservedObject var preferenceStore = PreferenceStore.shared
     var texts: [String] = []
 
+    var fontDesign: Font.Design {
+        preferenceStore.fontDesign.value
+    }
+
     func getCompactRow(_ index: Int) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(self.texts[index * 2])
-                .compact()
+                .compact(design: fontDesign)
             Text(self.texts[index * 2 + 1])
-                .compact()
+                .compact(design: fontDesign)
         }
     }
 
@@ -26,7 +30,7 @@ struct StatusBarTextView: View {
             if preferenceStore.textDisplay == .singleLine {
                 ForEach(0..<texts.count, id: \.self) {
                     Text(self.texts[$0])
-                        .normal()
+                        .normal(design: self.fontDesign)
                 }
             }
 
@@ -36,7 +40,7 @@ struct StatusBarTextView: View {
                 }
                 if texts.count % 2 == 1 {
                     Text(texts[texts.count - 1])
-                        .normal()
+                        .normal(design: fontDesign)
                 }
             }
         }

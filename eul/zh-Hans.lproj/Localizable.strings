@@ -66,8 +66,14 @@
 
 // MARK: Text Display
 "text_display" = "文本显示";
-"compact" = "紧凑";
-"single line" = "单行";
+"text_display.compact" = "紧凑";
+"text_display.single_line" = "单行";
+
+// MARK: Font Design
+"font_design" = "字体样式";
+"font_design.default" = "默认";
+"font_design.monospaced" = "等宽";
+
 
 // MARK: Component
 "component.status_bar" = "状态栏";

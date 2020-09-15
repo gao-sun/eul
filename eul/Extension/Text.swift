@@ -9,12 +9,12 @@
 import SwiftUI
 
 extension Text {
-    func compact() -> some View {
-        font(.system(size: 8, weight: .regular))
+    func compact(design: Font.Design = .default) -> some View {
+        font(.system(size: 8, weight: .regular, design: design))
     }
 
-    func normal() -> some View {
-        font(.system(size: 12, weight: .regular))
+    func normal(design: Font.Design = .default) -> some View {
+        font(.system(size: 12, weight: .regular, design: design))
     }
 
     func section() -> some View {

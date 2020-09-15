@@ -14,6 +14,7 @@ class StatusBarManager {
     private var activeCancellable: AnyCancellable?
     private var displayCancellable: AnyCancellable?
     private var showIconCancellable: AnyCancellable?
+    private var fontDesignCancellable: AnyCancellable?
     private var languageCancellable: AnyCancellable?
     var itemDict: [EulComponent: StatusBarItem] = [:]
 
@@ -29,6 +30,7 @@ class StatusBarManager {
     }
 
     func subscribe() {
+        // TO-DO: refactor
         languageCancellable = preferenceStore.$language.sink { _ in
             self.updateLanguage()
         }
@@ -41,10 +43,15 @@ class StatusBarManager {
         showIconCancellable = preferenceStore.$showIcon.sink { _ in
             self.refresh()
         }
+        fontDesignCancellable = preferenceStore.$fontDesign.sink { _ in
+            self.refresh()
+        }
     }
 
     func refresh() {
-        itemDict.values.forEach { $0.refresh() }
+        DispatchQueue.main.async {
+            self.itemDict.values.forEach { $0.refresh() }
+        }
     }
 
     func updateLanguage() {
