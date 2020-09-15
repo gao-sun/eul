@@ -11,6 +11,7 @@ import SwiftUI
 struct FanView: SizeChangeView {
     var onSizeChange: ((CGSize) -> Void)?
     @ObservedObject var fanStore = FanStore.shared
+    @ObservedObject var preferenceStore = PreferenceStore.shared
 
     var texts: [String] {
         fanStore.fans.map { "\($0.speed.description) rpm" }
@@ -18,9 +19,11 @@ struct FanView: SizeChangeView {
 
     var body: some View {
         HStack(spacing: 6) {
-            Image("Fan")
-                .resizable()
-                .frame(width: 15, height: 15)
+            if preferenceStore.showIcon {
+                Image("Fan")
+                    .resizable()
+                    .frame(width: 15, height: 15)
+            }
             StatusBarTextView(texts: texts)
         }
         .fixedSize()

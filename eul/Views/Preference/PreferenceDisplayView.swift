@@ -17,7 +17,7 @@ extension Preference {
         @EnvironmentObject var preference: PreferenceStore
 
         var body: some View {
-            VStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 12) {
                 HStack(spacing: 0) {
                     Picker("language".localized(), selection: $preference.language) {
                         ForEach(PreferenceStore.availableLanguages, id: \.self) {
@@ -44,6 +44,10 @@ extension Preference {
                         }
                     }
                     .frame(width: 200)
+                }
+                Toggle(isOn: $preference.showIcon) {
+                    Text("ui.show_icon".localized())
+                        .inlineSection()
                 }
             }
             .padding(.vertical, 8)

@@ -11,6 +11,7 @@ import SwiftUI
 struct MemoryView: SizeChangeView {
     var onSizeChange: ((CGSize) -> Void)?
     @ObservedObject var memoryStore = MemoryStore.shared
+    @ObservedObject var preferenceStore = PreferenceStore.shared
 
     var texts: [String] {
         [memoryStore.freeString, memoryStore.usedString]
@@ -18,9 +19,11 @@ struct MemoryView: SizeChangeView {
 
     var body: some View {
         HStack(spacing: 6) {
-            Image("Memory")
-                .resizable()
-                .frame(width: 15, height: 15)
+            if preferenceStore.showIcon {
+                Image("Memory")
+                    .resizable()
+                    .frame(width: 15, height: 15)
+            }
             StatusBarTextView(texts: texts)
         }
         .fixedSize()

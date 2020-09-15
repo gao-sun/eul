@@ -11,6 +11,7 @@ import SwiftUI
 struct CpuView: SizeChangeView {
     var onSizeChange: ((CGSize) -> Void)?
     @ObservedObject var cpuStore = CpuStore.shared
+    @ObservedObject var preferenceStore = PreferenceStore.shared
 
     var texts: [String] {
         [cpuStore.usage, cpuStore.temp.map { SmcControl.shared.formatTemp($0) }].compactMap { $0 }
@@ -18,9 +19,11 @@ struct CpuView: SizeChangeView {
 
     var body: some View {
         HStack(spacing: 6) {
-            Image("CPU")
-                .resizable()
-                .frame(width: 15, height: 15)
+            if preferenceStore.showIcon {
+                Image("CPU")
+                    .resizable()
+                    .frame(width: 15, height: 15)
+            }
             StatusBarTextView(texts: texts)
         }
         .fixedSize()

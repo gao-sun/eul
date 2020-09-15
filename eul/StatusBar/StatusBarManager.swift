@@ -13,6 +13,7 @@ class StatusBarManager {
     @ObservedObject var preferenceStore = PreferenceStore.shared
     private var activeCancellable: AnyCancellable?
     private var displayCancellable: AnyCancellable?
+    private var showIconCancellable: AnyCancellable?
     private var languageCancellable: AnyCancellable?
     var itemDict: [EulComponent: StatusBarItem] = [:]
 
@@ -35,8 +36,15 @@ class StatusBarManager {
             self.render(components: $0)
         }
         displayCancellable = preferenceStore.$textDisplay.sink { _ in
-            self.itemDict.values.forEach { $0.refresh() }
+            self.refresh()
         }
+        showIconCancellable = preferenceStore.$showIcon.sink { _ in
+            self.refresh()
+        }
+    }
+
+    func refresh() {
+        itemDict.values.forEach { $0.refresh() }
     }
 
     func updateLanguage() {

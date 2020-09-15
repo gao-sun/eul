@@ -49,6 +49,7 @@ class PreferenceStore: ObservableObject {
     @Published var isActiveComponentToggling = false
     @Published var activeComponents = EulComponent.allCases
     @Published var availableComponents: [EulComponent] = []
+    @Published var showIcon = true
     @Published var isUpdateAvailable: Bool?
     @Published var checkUpdateFailed = false
 
@@ -59,6 +60,7 @@ class PreferenceStore: ObservableObject {
             "textDisplay": textDisplay.rawValue,
             "activeComponents": activeComponents.map { $0.rawValue },
             "availableComponents": availableComponents.map { $0.rawValue },
+            "showIcon": showIcon,
         ])
     }
 
@@ -146,6 +148,9 @@ class PreferenceStore: ObservableObject {
                         }
                         return nil
                     }
+                }
+                if let value = data["showIcon"].bool {
+                    showIcon = value
                 }
             } catch {
                 print("Unable to get preference data from user defaults")

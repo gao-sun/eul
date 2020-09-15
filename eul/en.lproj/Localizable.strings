@@ -95,4 +95,4 @@
 "ui.launch_at_login" = "launch at login";
 "ui.display" = "Display";
 "ui.components" = "Components";
-
+"ui.show_icon" = "Show icon";
