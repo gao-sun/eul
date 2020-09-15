@@ -32,4 +32,4 @@ Or [click here](https://github.com/gao-sun/eul/releases/latest) to browse our la
 
 # Preferences
 
-<img src="https://user-images.githubusercontent.com/14722250/93159099-0dd12780-f740-11ea-8d17-df2beb9eee1c.png" height=450 />
+<img src="https://user-images.githubusercontent.com/14722250/93159992-fdba4780-f741-11ea-823b-c384c8a15b56.png" height=450 />
