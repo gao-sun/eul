@@ -25,7 +25,8 @@ class StatusBarItem {
     }
 
     func onSizeChange(size: CGSize) {
-        let width = size.width + 12
+        let width = size.width + (Info.isBigSur ? 0 : 12)
+
         item.length = width
         statusView?.frame = NSMakeRect(0, 0, width, AppDelegate.statusBarHeight)
     }
