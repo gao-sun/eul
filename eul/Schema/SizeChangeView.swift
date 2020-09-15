@@ -19,7 +19,9 @@ protocol SizeChangeView: View {
 
 extension SizeChangeView {
     func reportSize(_ geometry: GeometryProxy) -> Color {
-        onSizeChange?(geometry.size)
+        DispatchQueue.main.async {
+            self.onSizeChange?(geometry.size)
+        }
         return Color.clear
     }
 }
