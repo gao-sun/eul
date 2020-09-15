@@ -61,6 +61,7 @@ extension Preference {
                                 .foregroundColor(.info)
                         }
                     }
+                    .fixedSize()
                 }
                 Toggle(isOn: $launchAtLogin.isEnabled) {
                     Text("ui.launch_at_login".localized())
