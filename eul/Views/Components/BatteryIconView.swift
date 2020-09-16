@@ -14,7 +14,7 @@ struct BatteryIconView: View {
     var charge: Double = 0
 
     var chargeFloat: CGFloat {
-        (charge.isNaN || charge.isInfinite) ? 100 : CGFloat(charge)
+        (charge.isNaN || charge.isInfinite) ? 100 : CGFloat(charge * 100)
     }
 
     var body: some View {

@@ -35,33 +35,37 @@ struct BatteryMenuView: SizeChangeView {
                     Spacer()
                     Text("menu.\(io.isCharging ? "yes" : "no")".localized())
                 }
-                if io.isCharging {
+                if io.isCharging && io.timeToFullCharge >= 0 {
                     HStack {
                         Text("battery.to_full_charge".localized())
                         Spacer()
                         Text("\(io.timeToFullCharge) min")
                     }
                 }
-                if !io.isCharging && !io.isCharged {
+                if !io.isCharging && !io.isCharged && io.timeToEmpty >= 0 {
                     HStack {
                         Text("battery.to_empty".localized())
                         Spacer()
-                        Text("\(batteryStore.io.timeToEmpty) min")
+                        Text("\(io.timeToEmpty) min")
                     }
                 }
             }
             Group {
                 Text("battery.health".localized())
                     .menuSection()
-                HStack {
-                    Text("battery.max_capacity".localized())
-                    Spacer()
-                    Text("\(batteryStore.maxCapacity.description) mAh")
+                if batteryStore.maxCapacity > 0 {
+                    HStack {
+                        Text("battery.max_capacity".localized())
+                        Spacer()
+                        Text("\(batteryStore.maxCapacity.description) mAh")
+                    }
                 }
-                HStack {
-                    Text("battery.design_capacity".localized())
-                    Spacer()
-                    Text("\(batteryStore.designCapacity.description) mAh")
+                if batteryStore.designCapacity > 0 {
+                    HStack {
+                        Text("battery.design_capacity".localized())
+                        Spacer()
+                        Text("\(batteryStore.designCapacity.description) mAh")
+                    }
                 }
                 HStack {
                     Text("battery.health_percentage".localized())
@@ -76,7 +80,7 @@ struct BatteryMenuView: SizeChangeView {
                 HStack {
                     Text("battery.condition".localized())
                     Spacer()
-                    Text(batteryStore.io.condition.description)
+                    Text(io.condition.description)
                 }
             }
         }
