@@ -18,6 +18,7 @@
 "battery.health" = "Health";
 "battery.max_capacity" = "Max Capacity";
 "battery.design_capacity" = "Design Capacity";
+"battery.health_percentage" = "Health Percentage";
 "battery.cycle_count" = "Cycle Count";
 "battery.condition" = "Condition";
 "battery.condition.good" = "Good";

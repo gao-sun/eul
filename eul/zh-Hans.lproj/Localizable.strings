@@ -18,6 +18,7 @@
 "battery.health" = "健康";
 "battery.max_capacity" = "最大容量";
 "battery.design_capacity" = "设计容量";
+"battery.health_percentage" = "健康度";
 "battery.cycle_count" = "循环次数";
 "battery.condition" = "状况";
 "battery.condition.good" = "好";

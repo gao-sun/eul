@@ -39,8 +39,8 @@ struct Info {
     struct Battery {
         var currentCapacity = 0
         var maxCapacity = 0
-        var currentPercentage: Double {
-            Double(currentCapacity) / Double(maxCapacity) * 100
+        var currentCharge: Double {
+            Double(currentCapacity) / Double(maxCapacity)
         }
 
         var condition: BatteryCondition = .good

@@ -23,7 +23,7 @@ struct BatteryMenuView: SizeChangeView {
                 HStack {
                     Text("battery.charge".localized())
                     Spacer()
-                    Text(batteryStore.chargeString)
+                    Text(batteryStore.charge.percentageString)
                 }
                 HStack {
                     Text("battery.power_source".localized())
@@ -62,6 +62,11 @@ struct BatteryMenuView: SizeChangeView {
                     Text("battery.design_capacity".localized())
                     Spacer()
                     Text("\(batteryStore.designCapacity.description) mAh")
+                }
+                HStack {
+                    Text("battery.health_percentage".localized())
+                    Spacer()
+                    Text(batteryStore.health.percentageString)
                 }
                 HStack {
                     Text("battery.cycle_count".localized())

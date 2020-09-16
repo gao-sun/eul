@@ -14,7 +14,7 @@ struct BatteryView: SizeChangeView {
     @ObservedObject var preferenceStore = PreferenceStore.shared
 
     var texts: [String] {
-        [batteryStore.chargeString]
+        [batteryStore.charge.percentageString]
     }
 
     var body: some View {
