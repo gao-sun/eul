@@ -39,8 +39,8 @@ struct Info {
     struct Battery {
         var currentCapacity = 0
         var maxCapacity = 0
-        var currentPercentage: Int {
-            Int(Double(currentCapacity) / Double(maxCapacity) * 100)
+        var currentPercentage: Double {
+            Double(currentCapacity) / Double(maxCapacity) * 100
         }
 
         var condition: BatteryCondition = .good
@@ -105,8 +105,7 @@ struct Info {
 
             if
                 let rows = shell("netstat -bI \(interface)")?.split(separator: "\n").map({ String($0) }),
-                rows.count > 1
-            {
+                rows.count > 1 {
                 let headers = rows[0].splittedByWhitespace
                 let values = rows[1].splittedByWhitespace
 

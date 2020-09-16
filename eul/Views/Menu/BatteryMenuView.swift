@@ -23,7 +23,7 @@ struct BatteryMenuView: SizeChangeView {
                 HStack {
                     Text("battery.charge".localized())
                     Spacer()
-                    Text("\(batteryStore.charge)%")
+                    Text(batteryStore.chargeString)
                 }
                 HStack {
                     Text("battery.power_source".localized())

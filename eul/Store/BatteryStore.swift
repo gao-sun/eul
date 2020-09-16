@@ -25,8 +25,12 @@ class BatteryStore: ObservableObject, Refreshable {
     @Published var designCapacity = 0
     @Published var cycleCount = 0
 
-    var charge: Int {
+    var charge: Double {
         io.currentPercentage
+    }
+
+    var chargeString: String {
+        (charge.isNaN || charge.isInfinite) ? "N/A" : String(format: "%.0f%%", charge)
     }
 
     @objc func refresh() {

@@ -11,7 +11,11 @@ import SwiftUI
 struct BatteryIconView: View {
     private let lengthUnit: CGFloat = 15.0 / 100
     var isCharging = false
-    var charge = 0
+    var charge: Double = 0
+
+    var chargeFloat: CGFloat {
+        (charge.isNaN || charge.isInfinite) ? 100 : CGFloat(charge)
+    }
 
     var body: some View {
         ZStack(alignment: .leading) {
@@ -24,7 +28,7 @@ struct BatteryIconView: View {
                     .resizable()
                     .frame(width: 18, height: 18)
                 Rectangle()
-                    .frame(width: CGFloat(charge) * lengthUnit, height: 8)
+                    .frame(width: chargeFloat * lengthUnit, height: 8)
                     .offset(x: 1)
             }
         }

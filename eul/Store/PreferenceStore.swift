@@ -104,8 +104,7 @@ class PreferenceStore: ObservableObject {
                         error == nil,
                         let version = self.version,
                         let tagName = JSON(data as Any)["tag_name"].string,
-                        "v\(version)".compare(tagName, options: .numeric) == .orderedAscending
-                    {
+                        "v\(version)".compare(tagName, options: .numeric) == .orderedAscending {
                         self.isUpdateAvailable = true
                     } else {
                         self.isUpdateAvailable = false

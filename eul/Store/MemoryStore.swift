@@ -13,7 +13,10 @@ class MemoryStore: ObservableObject, Refreshable {
     static let shared = MemoryStore()
 
     static func memoryUnit(_ value: Double) -> String {
-        value < 1.0 ? String(Int(value * 1000.0)) + " MB" : String(format: "%.2f", value) + " GB"
+        if value.isNaN || value.isInfinite {
+            return "N/A"
+        }
+        return value < 1.0 ? String(Int(value * 1000.0)) + " MB" : String(format: "%.2f", value) + " GB"
     }
 
     @Published var free: Double = 0
