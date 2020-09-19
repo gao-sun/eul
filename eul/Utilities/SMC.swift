@@ -588,7 +588,8 @@ public enum TemperatureUnit {
 
 extension SMCKit {
     public static func allKnownTemperatureSensors() throws ->
-        [TemperatureSensor] {
+        [TemperatureSensor]
+    {
         var sensors = [TemperatureSensor]()
 
         for sensor in TemperatureSensors.all.values {

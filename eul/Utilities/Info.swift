@@ -105,7 +105,8 @@ struct Info {
 
             if
                 let rows = shell("netstat -bI \(interface)")?.split(separator: "\n").map({ String($0) }),
-                rows.count > 1 {
+                rows.count > 1
+            {
                 let headers = rows[0].splittedByWhitespace
                 let values = rows[1].splittedByWhitespace
 
