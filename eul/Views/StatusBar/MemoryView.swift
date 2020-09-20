@@ -8,10 +8,9 @@
 
 import SwiftUI
 
-struct MemoryView: SizeChangeView {
-    var onSizeChange: ((CGSize) -> Void)?
-    @ObservedObject var memoryStore = MemoryStore.shared
-    @ObservedObject var preferenceStore = PreferenceStore.shared
+struct MemoryView: View {
+    @EnvironmentObject var memoryStore: MemoryStore
+    @EnvironmentObject var preferenceStore: PreferenceStore
 
     var texts: [String] {
         [memoryStore.freeString, memoryStore.usedString]
@@ -26,7 +25,5 @@ struct MemoryView: SizeChangeView {
             }
             StatusBarTextView(texts: texts)
         }
-        .fixedSize()
-        .background(GeometryReader { self.reportSize($0) })
     }
 }

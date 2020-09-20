@@ -8,10 +8,9 @@
 
 import SwiftUI
 
-struct FanView: SizeChangeView {
-    var onSizeChange: ((CGSize) -> Void)?
-    @ObservedObject var fanStore = FanStore.shared
-    @ObservedObject var preferenceStore = PreferenceStore.shared
+struct FanView: View {
+    @EnvironmentObject var fanStore: FanStore
+    @EnvironmentObject var preferenceStore: PreferenceStore
 
     var texts: [String] {
         fanStore.fans.map { "\($0.speed.description) rpm" }
@@ -26,7 +25,5 @@ struct FanView: SizeChangeView {
             }
             StatusBarTextView(texts: texts)
         }
-        .fixedSize()
-        .background(GeometryReader { self.reportSize($0) })
     }
 }

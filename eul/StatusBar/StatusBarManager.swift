@@ -16,13 +16,9 @@ class StatusBarManager {
     private var showIconCancellable: AnyCancellable?
     private var fontDesignCancellable: AnyCancellable?
     private var languageCancellable: AnyCancellable?
-    var itemDict: [EulComponent: StatusBarItem] = [:]
+    private let item = StatusBarItem()
 
     init() {
-        EulComponent.allCases.forEach {
-            self.itemDict[$0] = StatusBarItem(with: $0)
-        }
-
         // w/o the delay items will have a chance of not appearing
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.subscribe()
@@ -50,23 +46,19 @@ class StatusBarManager {
 
     func refresh() {
         DispatchQueue.main.async {
-            self.itemDict.values.forEach { $0.refresh() }
+            self.item.refresh()
         }
     }
 
     func updateLanguage() {
-        itemDict.values.forEach {
-            $0.updateLanguage()
-        }
+        item.updateLanguage()
     }
 
-    func render(components: [EulComponent]) {
-        EulComponent.allCases.forEach {
-            self.itemDict[$0]?.isVisible = false
-        }
+    func render(components _: [EulComponent]) {
+        item.isVisible = false
 
-        components.reversed().forEach {
-            self.itemDict[$0]?.isVisible = true
+        DispatchQueue.main.async {
+            self.item.isVisible = true
         }
     }
 }

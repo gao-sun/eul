@@ -8,10 +8,9 @@
 
 import SwiftUI
 
-struct CpuView: SizeChangeView {
-    var onSizeChange: ((CGSize) -> Void)?
-    @ObservedObject var cpuStore = CpuStore.shared
-    @ObservedObject var preferenceStore = PreferenceStore.shared
+struct CpuView: View {
+    @EnvironmentObject var cpuStore: CpuStore
+    @EnvironmentObject var preferenceStore: PreferenceStore
 
     var texts: [String] {
         [cpuStore.usage, cpuStore.temp.map { SmcControl.shared.formatTemp($0) }].compactMap { $0 }
@@ -26,7 +25,5 @@ struct CpuView: SizeChangeView {
             }
             StatusBarTextView(texts: texts)
         }
-        .fixedSize()
-        .background(GeometryReader { self.reportSize($0) })
     }
 }

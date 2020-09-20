@@ -18,4 +18,13 @@ extension View {
             .padding(.bottom, 4)
             .fixedSize()
     }
+
+    func withGlobalEnvironmentObjects() -> some View {
+        environmentObject(BatteryStore.shared)
+            .environmentObject(CpuStore.shared)
+            .environmentObject(FanStore.shared)
+            .environmentObject(MemoryStore.shared)
+            .environmentObject(NetworkStore.shared)
+            .environmentObject(PreferenceStore.shared)
+    }
 }

@@ -8,10 +8,9 @@
 
 import SwiftUI
 
-struct NetworkView: SizeChangeView {
-    var onSizeChange: ((CGSize) -> Void)?
-    @ObservedObject var networkStore = NetworkStore.shared
-    @ObservedObject var preferenceStore = PreferenceStore.shared
+struct NetworkView: View {
+    @EnvironmentObject var networkStore: NetworkStore
+    @EnvironmentObject var preferenceStore: PreferenceStore
 
     var texts: [String] {
         [networkStore.outSpeed, networkStore.inSpeed]
@@ -26,7 +25,5 @@ struct NetworkView: SizeChangeView {
             }
             StatusBarTextView(texts: texts)
         }
-        .fixedSize()
-        .background(GeometryReader { self.reportSize($0) })
     }
 }

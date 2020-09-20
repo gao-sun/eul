@@ -10,8 +10,7 @@ import Cocoa
 import SwiftUI
 
 class StatusBarItem {
-    let config: ComponentConfig
-    let component: EulComponent
+    let config: StatusBarConfig
     private let item: NSStatusItem
     private var statusView: NSHostingView<AnyView>?
     private var menuView: NSHostingView<AnyView>?
@@ -48,9 +47,8 @@ class StatusBarItem {
         statusView = view
     }
 
-    init(with component: EulComponent) {
-        config = getComponentConfig(component)
-        self.component = component
+    init() {
+        config = getStatusBarConfig()
         item = NSStatusBar.system.statusItem(withLength: 0)
         item.isVisible = false
 

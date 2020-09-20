@@ -18,6 +18,21 @@ enum EulComponent: String, CaseIterable, Identifiable {
         "component.\(rawValue.lowercased())".localized()
     }
 
+    func getView() -> AnyView {
+        switch self {
+        case .Battery:
+            return AnyView(BatteryView())
+        case .CPU:
+            return AnyView(CpuView())
+        case .Fan:
+            return AnyView(FanView())
+        case .Memory:
+            return AnyView(MemoryView())
+        case .Network:
+            return AnyView(NetworkView())
+        }
+    }
+
     case CPU
     case Fan
     case Memory
@@ -31,34 +46,11 @@ protocol EulComponentMenu {
 
 typealias EulComponentMenuBuilder = () -> EulComponentMenu
 
-struct ComponentConfig {
+struct StatusBarConfig {
     let viewBuilder: SizeChangeViewBuilder
     let menuBuilder: SizeChangeViewBuilder?
 }
 
-func getComponentConfig(_ component: EulComponent) -> ComponentConfig {
-    switch component {
-    case .CPU:
-        return ComponentConfig(
-            viewBuilder: { AnyView(CpuView(onSizeChange: $0)) },
-            menuBuilder: { AnyView(CpuMenuView(onSizeChange: $0)) }
-        )
-    case .Fan:
-        return ComponentConfig(
-            viewBuilder: { AnyView(FanView(onSizeChange: $0)) },
-            menuBuilder: { AnyView(FanMenuView(onSizeChange: $0)) }
-        )
-    case .Memory:
-        return ComponentConfig(
-            viewBuilder: { AnyView(MemoryView(onSizeChange: $0)) },
-            menuBuilder: { AnyView(MemoryMenuView(onSizeChange: $0)) }
-        )
-    case .Battery:
-        return ComponentConfig(
-            viewBuilder: { AnyView(BatteryView(onSizeChange: $0)) },
-            menuBuilder: { AnyView(BatteryMenuView(onSizeChange: $0)) }
-        )
-    case .Network:
-        return ComponentConfig(viewBuilder: { AnyView(NetworkView(onSizeChange: $0)) }, menuBuilder: nil)
-    }
+func getStatusBarConfig() -> StatusBarConfig {
+    StatusBarConfig(viewBuilder: { AnyView(StatusBarView(onSizeChange: $0).withGlobalEnvironmentObjects()) }, menuBuilder: nil)
 }

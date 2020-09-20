@@ -8,10 +8,10 @@
 
 import SwiftUI
 
-struct BatteryView: SizeChangeView {
+struct BatteryView: View {
     var onSizeChange: ((CGSize) -> Void)?
-    @ObservedObject var batteryStore = BatteryStore.shared
-    @ObservedObject var preferenceStore = PreferenceStore.shared
+    @EnvironmentObject var batteryStore: BatteryStore
+    @EnvironmentObject var preferenceStore: PreferenceStore
 
     var texts: [String] {
         [batteryStore.charge.percentageString]
@@ -24,7 +24,5 @@ struct BatteryView: SizeChangeView {
             }
             StatusBarTextView(texts: texts)
         }
-        .fixedSize()
-        .background(GeometryReader { self.reportSize($0) })
     }
 }
