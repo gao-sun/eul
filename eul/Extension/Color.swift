@@ -37,4 +37,5 @@ extension Color {
     static let textBackground = Color(NSColor.textBackgroundColor)
     static let info = Color(NSColor.disabledControlTextColor)
     static let shadow = Color(NSColor.shadowColor)
+    static let separator = Color(NSColor.separatorColor)
 }

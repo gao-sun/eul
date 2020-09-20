@@ -9,19 +9,10 @@
 import SwiftUI
 
 struct StatusMenuView: SizeChangeView {
-    @EnvironmentObject var cpuStore: CpuStore
-
     var onSizeChange: ((CGSize) -> Void)?
     var body: some View {
         VStack {
-            VStack(spacing: 4) {
-                Text("CPU")
-                    .menuSection()
-                cpuStore.usage.map {
-                    ProgressBarView(percentage: CGFloat($0))
-                }
-            }
-            .menuBlock()
+            CpuMenuBlockView()
         }
         .padding(.vertical, 8)
         .padding(.leading, 15)

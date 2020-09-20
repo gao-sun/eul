@@ -32,6 +32,11 @@ extension Text {
         font(.system(size: 12, weight: .regular))
     }
 
+    func miniSection() -> some View {
+        font(.system(size: 10, weight: .regular))
+            .foregroundColor(.secondary)
+    }
+
     func displayText() -> some View {
         font(.system(size: 11, weight: .regular))
     }
