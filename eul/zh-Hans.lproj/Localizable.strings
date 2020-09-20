@@ -107,4 +107,5 @@
 "ui.launch_at_login" = "登录时启动";
 "ui.display" = "显示";
 "ui.components" = "组件";
+"ui.show_components_in_status_bar" = "在状态栏显示组件";
 "ui.show_icon" = "显示图标";

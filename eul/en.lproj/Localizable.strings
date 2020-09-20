@@ -106,4 +106,5 @@
 "ui.launch_at_login" = "Launch at login";
 "ui.display" = "Display";
 "ui.components" = "Components";
+"ui.show_components_in_status_bar" = "Show components in status bar";
 "ui.show_icon" = "Show icon";

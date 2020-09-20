@@ -13,6 +13,7 @@ class StatusBarManager {
     @ObservedObject var preferenceStore = PreferenceStore.shared
     private var activeCancellable: AnyCancellable?
     private var displayCancellable: AnyCancellable?
+    private var showComponentsCancellable: AnyCancellable?
     private var showIconCancellable: AnyCancellable?
     private var fontDesignCancellable: AnyCancellable?
     private var languageCancellable: AnyCancellable?
@@ -34,6 +35,9 @@ class StatusBarManager {
             self.render(components: $0)
         }
         displayCancellable = preferenceStore.$textDisplay.sink { _ in
+            self.refresh()
+        }
+        showComponentsCancellable = preferenceStore.$showComponents.sink { _ in
             self.refresh()
         }
         showIconCancellable = preferenceStore.$showIcon.sink { _ in

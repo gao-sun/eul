@@ -14,8 +14,14 @@ struct StatusBarView: SizeChangeView {
 
     var body: some View {
         HStack(spacing: 12) {
-            ForEach(preferenceStore.activeComponents) { component in
-                component.getView()
+            if preferenceStore.showComponents {
+                ForEach(preferenceStore.activeComponents) { component in
+                    component.getView()
+                }
+            } else {
+                Image("eul")
+                    .resizable()
+                    .frame(width: 16, height: 16)
             }
         }
         .fixedSize()

@@ -20,7 +20,9 @@ struct ContentView: View {
                 Preference.DisplayView()
             }
             SectionView(title: "ui.components") {
-                Preference.ComponentsView()
+                Preference
+                    .ComponentsView()
+                    .padding(.top, 8)
             }
         }
         .padding(20)

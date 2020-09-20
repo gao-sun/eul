@@ -50,6 +50,7 @@ class PreferenceStore: ObservableObject {
     @Published var activeComponents = EulComponent.allCases
     @Published var availableComponents: [EulComponent] = []
     @Published var fontDesign: Preference.FontDesign = .default
+    @Published var showComponents = true
     @Published var showIcon = true
     @Published var isUpdateAvailable: Bool? = false
     @Published var checkUpdateFailed = true
@@ -62,6 +63,7 @@ class PreferenceStore: ObservableObject {
             "activeComponents": activeComponents.map { $0.rawValue },
             "availableComponents": availableComponents.map { $0.rawValue },
             "fontDesign": fontDesign.rawValue,
+            "showComponents": showComponents,
             "showIcon": showIcon,
         ])
     }
@@ -150,6 +152,9 @@ class PreferenceStore: ObservableObject {
                         }
                         return nil
                     }
+                }
+                if let value = data["showComponents"].bool {
+                    showComponents = value
                 }
                 if let value = data["showIcon"].bool {
                     showIcon = value

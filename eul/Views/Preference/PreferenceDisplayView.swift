@@ -49,10 +49,6 @@ extension Preference {
                     }
                 }
                 .frame(width: 200)
-                Toggle(isOn: $preference.showIcon) {
-                    Text("ui.show_icon".localized())
-                        .inlineSection()
-                }
             }
             .padding(.vertical, 8)
         }
