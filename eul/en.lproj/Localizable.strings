@@ -7,17 +7,18 @@
 */
 
 // MARK: Battery
+"battery" = "Battery";
 "battery.charge" = "Charge";
 "battery.power_source" = "Power Source";
 "battery.power_source.battery" = "Battery";
 "battery.power_source.acPower" = "AC Power";
 "battery.power_source.unknown" = "Unknown";
 "battery.is_charging" = "Is Charging";
-"battery.to_full_charge" = "To Full Charge";
-"battery.to_empty" = "To Empty";
+"battery.to_full_charge" = "to full charge";
+"battery.to_empty" = "to empty";
 "battery.health" = "Health";
-"battery.max_capacity" = "Max Capacity";
-"battery.design_capacity" = "Design Capacity";
+"battery.max_capacity" = "Max Cap.";
+"battery.design_capacity" = "Design Cap.";
 "battery.health_percentage" = "Health Percentage";
 "battery.cycle_count" = "Cycle Count";
 "battery.condition" = "Condition";

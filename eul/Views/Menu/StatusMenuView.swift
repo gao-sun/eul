@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct StatusMenuView: SizeChangeView {
+    @EnvironmentObject var preferenceStore: PreferenceStore
+
     var onSizeChange: ((CGSize) -> Void)?
     var body: some View {
         VStack(spacing: 12) {
@@ -17,6 +19,7 @@ struct StatusMenuView: SizeChangeView {
                 FanMenuBlockView()
             }
             MemoryMenuBlockView()
+            BatteryMenuBlockView()
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 15)

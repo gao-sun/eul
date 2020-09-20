@@ -24,7 +24,7 @@ extension View {
             .padding(.horizontal, 12)
             .background(
                 RoundedRectangle(cornerRadius: radius, style: .continuous)
-                    .stroke(Color.menuBorder, lineWidth: 1)
+                    .stroke(Color.menuBorder.opacity(0.5), lineWidth: 1)
                     .background(
                         RoundedRectangle(cornerRadius: radius, style: .continuous)
                             .fill(Color.textBackground)

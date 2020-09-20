@@ -9,9 +9,13 @@
 import SwiftUI
 
 struct BatteryIconView: View {
-    private let lengthUnit: CGFloat = 15.0 / 100
+    var size: CGFloat = 18
     var isCharging = false
     var charge: Double = 0
+
+    private var lengthUnit: CGFloat {
+        size * 15 / 18 / 100
+    }
 
     var chargeFloat: CGFloat {
         (charge.isNaN || charge.isInfinite) ? 100 : CGFloat(charge * 100)
@@ -22,11 +26,11 @@ struct BatteryIconView: View {
             if isCharging {
                 Image("BatteryCharging")
                     .resizable()
-                    .frame(width: 18, height: 18)
+                    .frame(width: size, height: size)
             } else {
                 Image("BatteryEmpty")
                     .resizable()
-                    .frame(width: 18, height: 18)
+                    .frame(width: size, height: size)
                 Rectangle()
                     .frame(width: chargeFloat * lengthUnit, height: 8)
                     .offset(x: 1)

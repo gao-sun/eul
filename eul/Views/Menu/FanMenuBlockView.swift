@@ -18,7 +18,7 @@ struct FanMenuBlockView: View {
             ForEach(fanStore.fans) { fan in
                 Text("\("fan".localized()) \(fan.id + 1)")
                     .miniSection()
-                    .padding(.top, 4)
+                    .padding(.top, fan.id > 0 ? 2 : 0)
                 ProgressBarView(
                     percentage: CGFloat(fan.percentage),
                     textWidth: 55,

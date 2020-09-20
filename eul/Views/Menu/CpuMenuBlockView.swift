@@ -9,20 +9,6 @@
 import SwiftUI
 
 struct CpuMenuBlockView: View {
-    struct UsageDetailSectionView: View {
-        var title: String
-        var usage: Double
-
-        var body: some View {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(title.localized())
-                    .miniSection()
-                Text(String(format: "%.1f%%", usage))
-                    .displayText()
-            }
-        }
-    }
-
     @EnvironmentObject var cpuStore: CpuStore
 
     var body: some View {

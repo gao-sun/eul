@@ -42,9 +42,9 @@ extension Text {
     }
 
     func menuSection() -> some View {
-        font(.system(size: 11, weight: .bold))
+        font(.system(size: 12, weight: .bold))
             .padding(.top, 4)
-            .padding(.bottom, 4)
+            .padding(.bottom, 6)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
