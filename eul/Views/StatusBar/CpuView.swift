@@ -13,7 +13,7 @@ struct CpuView: View {
     @EnvironmentObject var preferenceStore: PreferenceStore
 
     var texts: [String] {
-        [cpuStore.usage, cpuStore.temp.map { SmcControl.shared.formatTemp($0) }].compactMap { $0 }
+        [cpuStore.usageString, cpuStore.temp.map { SmcControl.shared.formatTemp($0) }].compactMap { $0 }
     }
 
     var body: some View {

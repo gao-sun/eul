@@ -32,9 +32,13 @@ extension Text {
         font(.system(size: 12, weight: .regular))
     }
 
+    func displayText() -> some View {
+        font(.system(size: 11, weight: .regular))
+    }
+
     func menuSection() -> some View {
-        font(.system(size: 11, weight: .semibold))
-            .padding(.top, 8)
+        font(.system(size: 11, weight: .bold))
+            .padding(.top, 4)
             .padding(.bottom, 4)
             .frame(maxWidth: .infinity, alignment: .leading)
     }

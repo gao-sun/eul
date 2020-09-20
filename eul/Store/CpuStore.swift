@@ -12,7 +12,7 @@ import SystemKit
 class CpuStore: ObservableObject, Refreshable {
     static let shared = CpuStore()
 
-    @Published var usage = ""
+    @Published var usageString = ""
     @Published var temp: Double?
     @Published var gpuTemp: Double?
     @Published var usageCPU: (system: Double, user: Double, idle: Double, nice: Double)?
@@ -20,6 +20,13 @@ class CpuStore: ObservableObject, Refreshable {
     @Published var logicalCores = 0
     @Published var upTime: (days: Int, hrs: Int, mins: Int, secs: Int)?
     @Published var thermalLevel: System.ThermalLevel = .Unknown
+
+    var usage: Double? {
+        guard let usageCPU = usageCPU else {
+            return nil
+        }
+        return usageCPU.system + usageCPU.user
+    }
 
     private func getInfo() {
         physicalCores = System.physicalCores()
@@ -30,7 +37,7 @@ class CpuStore: ObservableObject, Refreshable {
 
     private func getUsage() {
         usageCPU = Info.system.usageCPU()
-        usage = String(format: "%.1f%%", (usageCPU?.system ?? 0) + (usageCPU?.user ?? 0))
+        usageString = String(format: "%.1f%%", (usageCPU?.system ?? 0) + (usageCPU?.user ?? 0))
     }
 
     private func getTemp() {

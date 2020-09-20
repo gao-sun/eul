@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct BatteryView: View {
-    var onSizeChange: ((CGSize) -> Void)?
     @EnvironmentObject var batteryStore: BatteryStore
     @EnvironmentObject var preferenceStore: PreferenceStore
 

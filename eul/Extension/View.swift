@@ -19,6 +19,22 @@ extension View {
             .fixedSize()
     }
 
+    func menuBlock(radius: CGFloat = 8) -> some View {
+        padding(.vertical, 8)
+            .padding(.horizontal, 12)
+            .background(
+                RoundedRectangle(cornerRadius: radius, style: .continuous)
+                    .stroke(Color.menuBorder, lineWidth: 1)
+                    .background(
+                        RoundedRectangle(cornerRadius: radius, style: .continuous)
+                            .fill(Color.textBackground)
+                            .brightness(0.05)
+                            .blur(radius: 2)
+                    )
+                    .shadow(color: Color.shadow.opacity(0.1), radius: 5)
+            )
+    }
+
     func withGlobalEnvironmentObjects() -> some View {
         environmentObject(BatteryStore.shared)
             .environmentObject(CpuStore.shared)

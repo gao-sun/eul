@@ -31,8 +31,10 @@ extension Color {
 
     private static var isDark: Bool { NSApp.effectiveAppearance.name == NSAppearance.Name.darkAqua }
     static let border = Color(NSColor.controlColor)
+    static let menuBorder = Color(NSColor.separatorColor)
     static let controlBackground = Color(NSColor.controlBackgroundColor)
     static let text = Color(NSColor.textColor)
     static let textBackground = Color(NSColor.textBackgroundColor)
     static let info = Color(NSColor.disabledControlTextColor)
+    static let shadow = Color(NSColor.shadowColor)
 }

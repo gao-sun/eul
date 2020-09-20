@@ -52,5 +52,8 @@ struct StatusBarConfig {
 }
 
 func getStatusBarConfig() -> StatusBarConfig {
-    StatusBarConfig(viewBuilder: { AnyView(StatusBarView(onSizeChange: $0).withGlobalEnvironmentObjects()) }, menuBuilder: nil)
+    StatusBarConfig(
+        viewBuilder: { AnyView(StatusBarView(onSizeChange: $0).withGlobalEnvironmentObjects()) },
+        menuBuilder: { AnyView(StatusMenuView(onSizeChange: $0).withGlobalEnvironmentObjects()) }
+    )
 }
