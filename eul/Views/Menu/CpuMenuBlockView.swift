@@ -36,11 +36,11 @@ struct CpuMenuBlockView: View {
                 Group {
                     SeparatorView()
                     HStack {
-                        UsageDetailSectionView(title: "cpu.system", usage: usageCPU.system)
+                        MiniSectionView(title: "cpu.system", value: String(format: "%.1f%%", usageCPU.system))
                         Spacer()
-                        UsageDetailSectionView(title: "cpu.user", usage: usageCPU.user)
+                        MiniSectionView(title: "cpu.user", value: String(format: "%.1f%%", usageCPU.user))
                         Spacer()
-                        UsageDetailSectionView(title: "cpu.nice", usage: usageCPU.nice)
+                        MiniSectionView(title: "cpu.nice", value: String(format: "%.1f%%", usageCPU.nice))
                     }
                 }
             }

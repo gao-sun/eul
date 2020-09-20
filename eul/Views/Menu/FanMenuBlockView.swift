@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct FanMenuBlockView: View {
-    @ObservedObject var fanStore = FanStore.shared
+    @EnvironmentObject var fanStore: FanStore
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {

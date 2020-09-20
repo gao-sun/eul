@@ -11,11 +11,12 @@ import SwiftUI
 struct StatusMenuView: SizeChangeView {
     var onSizeChange: ((CGSize) -> Void)?
     var body: some View {
-        VStack {
+        VStack(spacing: 12) {
             HStack(alignment: .top, spacing: 12) {
                 CpuMenuBlockView()
                 FanMenuBlockView()
             }
+            MemoryMenuBlockView()
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 15)

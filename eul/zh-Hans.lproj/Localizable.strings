@@ -46,6 +46,7 @@
 "fan.max" = "最大";
 
 // MARK: Memory
+"memory" = "内存";
 "memory.total" = "总计";
 "memory.free" = "可用";
 "memory.cached_files" = "已缓存";

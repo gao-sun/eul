@@ -36,6 +36,14 @@ class MemoryStore: ObservableObject, Refreshable {
         free + inactive + active + wired + compressed
     }
 
+    var allFree: Double {
+        total - used
+    }
+
+    var allFreePercentage: Double {
+        allFree / total * 100
+    }
+
     var freeString: String {
         MemoryStore.memoryUnit(total - used)
     }
