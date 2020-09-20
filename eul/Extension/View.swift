@@ -29,6 +29,7 @@ extension View {
                         RoundedRectangle(cornerRadius: radius, style: .continuous)
                             .fill(Color.textBackground)
                             .brightness(0.05)
+                            .opacity(0.5)
                             .blur(radius: 2)
                     )
                     .shadow(color: Color.shadow.opacity(0.1), radius: 5)

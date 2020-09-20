@@ -71,6 +71,10 @@ class SmcControl: Refreshable {
             fan.id
         }
 
+        var percentage: Double {
+            Double(speed - fan.minSpeed) / Double(fan.maxSpeed - fan.minSpeed)
+        }
+
         init(fan: Fan, speed: Int = 0) {
             self.fan = fan
             self.speed = speed

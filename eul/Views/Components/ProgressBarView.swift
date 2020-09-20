@@ -9,9 +9,12 @@
 import SwiftUI
 
 struct ProgressBarView: View {
+    @State var firstAppear = true
     var width: CGFloat = 80
     var percentage: CGFloat = 100
     var showText = true
+    var textWidth: CGFloat = 40
+    var customText: String? = nil
 
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
@@ -24,11 +27,14 @@ struct ProgressBarView: View {
                     .foregroundColor(.primary)
             }
             if showText {
-                Text(String(format: "%.1f%%", percentage))
+                Text(customText.map { $0 } ?? String(format: "%.1f%%", percentage))
                     .displayText()
-                    .frame(width: 40, alignment: .trailing)
+                    .frame(width: textWidth, alignment: .trailing)
             }
         }
-        .animation(.fast)
+        .animation(firstAppear ? .none : .fast)
+        .onAppear {
+            self.firstAppear = false
+        }
     }
 }

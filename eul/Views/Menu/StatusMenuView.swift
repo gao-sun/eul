@@ -12,10 +12,13 @@ struct StatusMenuView: SizeChangeView {
     var onSizeChange: ((CGSize) -> Void)?
     var body: some View {
         VStack {
-            CpuMenuBlockView()
+            HStack(alignment: .top, spacing: 12) {
+                CpuMenuBlockView()
+                FanMenuBlockView()
+            }
         }
         .padding(.vertical, 8)
-        .padding(.leading, 15)
+        .padding(.horizontal, 15)
         .fixedSize()
         .background(GeometryReader { self.reportSize($0) })
     }
