@@ -108,3 +108,6 @@
 "ui.components" = "Components";
 "ui.show_components_in_status_bar" = "Show components in status bar";
 "ui.show_icon" = "Show icon";
+"ui.refresh_rate" = "Refresh Rate";
+"ui.smc" = "SMC";
+"ui.network" = "Network";

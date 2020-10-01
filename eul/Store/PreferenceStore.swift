@@ -50,6 +50,8 @@ class PreferenceStore: ObservableObject {
     @Published var activeComponents = EulComponent.allCases
     @Published var availableComponents: [EulComponent] = []
     @Published var fontDesign: Preference.FontDesign = .default
+    @Published var smcRefreshRate = 3
+    @Published var networkRefreshRate = 3
     @Published var showComponents = true
     @Published var showIcon = true
     @Published var isUpdateAvailable: Bool? = false
@@ -63,6 +65,8 @@ class PreferenceStore: ObservableObject {
             "activeComponents": activeComponents.map { $0.rawValue },
             "availableComponents": availableComponents.map { $0.rawValue },
             "fontDesign": fontDesign.rawValue,
+            "smcRefreshRate": smcRefreshRate,
+            "networkRefreshRate": networkRefreshRate,
             "showComponents": showComponents,
             "showIcon": showIcon,
         ])
@@ -161,6 +165,12 @@ class PreferenceStore: ObservableObject {
                 }
                 if let raw = data["fontDesign"].string, let value = Preference.FontDesign(rawValue: raw) {
                     fontDesign = value
+                }
+                if let value = data["smcRefreshRate"].int {
+                    smcRefreshRate = value
+                }
+                if let value = data["networkRefreshRate"].int {
+                    networkRefreshRate = value
                 }
             } catch {
                 print("Unable to get preference data from user defaults")

@@ -14,15 +14,23 @@ import SwiftUI
 class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     var window: NSWindow!
     let statusBarManager = StatusBarManager()
+    @ObservedObject var preferenceStore = PreferenceStore.shared
 
     static var statusBarHeight: CGFloat {
         NSStatusBar.system.thickness
     }
 
-    func refreshRepeatedly() {
+    func refreshSMCRepeatedly() {
         NotificationCenter.default.post(name: .SMCShouldRefresh, object: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.refreshRepeatedly()
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(preferenceStore.smcRefreshRate)) { [self] in
+            refreshSMCRepeatedly()
+        }
+    }
+
+    func refreshNetworkRepeatedly() {
+        NotificationCenter.default.post(name: .NetworkShouldRefresh, object: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(preferenceStore.networkRefreshRate)) { [self] in
+            refreshNetworkRepeatedly()
         }
     }
 
@@ -42,7 +50,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         window.makeKeyAndOrderFront(nil)
         window.delegate = self
         SmcControl.shared.start()
-        refreshRepeatedly()
+        refreshSMCRepeatedly()
+        refreshNetworkRepeatedly()
     }
 
     func windowDidBecomeMain(_: Notification) {

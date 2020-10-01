@@ -80,7 +80,6 @@
 "font_design.default" = "默认";
 "font_design.monospaced" = "等宽";
 
-
 // MARK: Component
 "component.status_bar" = "状态栏";
 "component.drag_to_reorder" = "拖拽以排序";
@@ -109,3 +108,6 @@
 "ui.components" = "组件";
 "ui.show_components_in_status_bar" = "在状态栏显示组件";
 "ui.show_icon" = "显示图标";
+"ui.refresh_rate" = "刷新频率";
+"ui.smc" = "SMC";
+"ui.network" = "网络";

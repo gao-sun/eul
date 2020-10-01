@@ -19,6 +19,9 @@ struct ContentView: View {
             SectionView(title: "ui.display") {
                 Preference.DisplayView()
             }
+            SectionView(title: "ui.refresh_rate") {
+                Preference.RefreshRateView()
+            }
             SectionView(title: "ui.components") {
                 Preference
                     .ComponentsView()

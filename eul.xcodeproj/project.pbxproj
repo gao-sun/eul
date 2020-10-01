@@ -59,6 +59,7 @@
 		6CDE6C7824F112D700463114 /* EulComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDE6C7724F112D700463114 /* EulComponent.swift */; };
 		6CDE6C7D24F2AB8800463114 /* NSMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDE6C7C24F2AB8800463114 /* NSMenuItem.swift */; };
 		6CE33C7D252601BB00831857 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE33C7C252601BB00831857 /* Int.swift */; };
+		6CE33C7F25260E3D00831857 /* PreferenceRefreshRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE33C7E25260E3D00831857 /* PreferenceRefreshRateView.swift */; };
 		6CE7969325166916008BEB2B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 6CE7969225166916008BEB2B /* SwiftyJSON */; };
 		6CEF771224DD94C8007C3640 /* BatteryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEF771124DD94C8007C3640 /* BatteryStore.swift */; };
 		6CEF771424DD95D7007C3640 /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEF771324DD95D7007C3640 /* BatteryView.swift */; };
@@ -144,6 +145,7 @@
 		6CDE6C7724F112D700463114 /* EulComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulComponent.swift; sourceTree = "<group>"; };
 		6CDE6C7C24F2AB8800463114 /* NSMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMenuItem.swift; sourceTree = "<group>"; };
 		6CE33C7C252601BB00831857 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		6CE33C7E25260E3D00831857 /* PreferenceRefreshRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceRefreshRateView.swift; sourceTree = "<group>"; };
 		6CEF771124DD94C8007C3640 /* BatteryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryStore.swift; sourceTree = "<group>"; };
 		6CEF771324DD95D7007C3640 /* BatteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
 		6CF28D0C251758EE00EBE9CB /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				6C7DB6E124E80F5100133B06 /* PreferenceComponentsView.swift */,
 				6C7DB6E324E80F9400133B06 /* PreferenceDisplayView.swift */,
 				6CC0798B250CD793000D7DAC /* PreferenceGeneralView.swift */,
+				6CE33C7E25260E3D00831857 /* PreferenceRefreshRateView.swift */,
 			);
 			path = Preference;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				6C33CECB251767C400345977 /* ProgressBarView.swift in Sources */,
 				6C58053A250CAEC3007F467A /* StatusBarTextView.swift in Sources */,
 				6C7DB6E424E80F9400133B06 /* PreferenceDisplayView.swift in Sources */,
+				6CE33C7F25260E3D00831857 /* PreferenceRefreshRateView.swift in Sources */,
 				6C993B8A2517868B00586C6B /* FanMenuBlockView.swift in Sources */,
 				6C993B8C25178D3B00586C6B /* MemoryMenuBlockView.swift in Sources */,
 				6C7DB6DE24E8077700133B06 /* Animation.swift in Sources */,

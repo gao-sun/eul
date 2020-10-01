@@ -47,6 +47,6 @@ class NetworkStore: ObservableObject, Refreshable {
 
     init() {
         lastTimestamp = Date().timeIntervalSince1970
-        initObserver(for: .StoreShouldRefresh)
+        initObserver(for: .NetworkShouldRefresh)
     }
 }

@@ -26,7 +26,6 @@ extension Preference {
                     }
                 }
                 .frame(width: 200)
-
                 Picker("temp.temperature".localized(), selection: $preference.temperatureUnit) {
                     ForEach(temperatureUnits, id: \.self) {
                         Text($0.description)
