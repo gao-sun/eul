@@ -12,8 +12,12 @@ struct StatusBarView: SizeChangeView {
     @EnvironmentObject var preferenceStore: PreferenceStore
     var onSizeChange: ((CGSize) -> Void)?
 
+    var spacing: CGFloat {
+        preferenceStore.fontDesign == .default ? 10 : 8
+    }
+
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: spacing) {
             if preferenceStore.showComponents {
                 ForEach(preferenceStore.activeComponents) { component in
                     component.getView()

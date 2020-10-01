@@ -16,6 +16,13 @@ struct CpuView: View {
         [cpuStore.usageString, cpuStore.temp.map { SmcControl.shared.formatTemp($0) }].compactMap { $0 }
     }
 
+    var textWidth: CGFloat? {
+        guard preferenceStore.textDisplay == .compact else {
+            return nil
+        }
+        return preferenceStore.fontDesign == .default ? 30 : 35
+    }
+
     var body: some View {
         HStack(spacing: 6) {
             if preferenceStore.showIcon {
@@ -24,6 +31,7 @@ struct CpuView: View {
                     .frame(width: 15, height: 15)
             }
             StatusBarTextView(texts: texts)
+                .frame(width: textWidth)
         }
     }
 }

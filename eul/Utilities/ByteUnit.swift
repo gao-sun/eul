@@ -34,14 +34,12 @@ public struct ByteUnit {
 
     public var readable: String {
         switch bytes {
-        case 0..<1024:
-            return "\(bytes) bytes"
-        case 1024..<(1024 * 1024):
-            return "\(String(format: "%.2f", kilobytes)) kb"
+        case 0..<(1024 * 1024):
+            return "\(String(format: "%.1f", kilobytes)) kb"
         case 1024..<(1024 * 1024 * 1024):
-            return "\(String(format: "%.2f", megabytes)) mb"
+            return "\(String(format: "%.1f", megabytes)) mb"
         case (1024 * 1024 * 1024)...UInt64.max:
-            return "\(String(format: "%.2f", gigabytes)) gb"
+            return "\(String(format: "%.1f", gigabytes)) gb"
         default:
             return "\(bytes) bytes"
         }

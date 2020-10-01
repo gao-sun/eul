@@ -40,4 +40,8 @@ extension String {
         )
         return trimmed.split(separator: " ").map { String($0) }
     }
+
+    var numericOnly: String {
+        filter("0123456789.".contains)
+    }
 }
