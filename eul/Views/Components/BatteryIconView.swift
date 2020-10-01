@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct BatteryIconView: View {
-    var size: CGFloat = 18
+    var size: CGFloat = 16
     var isCharging = false
     var charge: Double = 0
 

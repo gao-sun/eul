@@ -31,7 +31,7 @@ struct NetworkView: View {
             if preferenceStore.showIcon {
                 Image("Network")
                     .resizable()
-                    .frame(width: 15, height: 15)
+                    .frame(width: 13, height: 13)
             }
             StatusBarTextView(texts: texts)
                 .frame(width: textWidth)
