@@ -32,3 +32,51 @@ func shell(_ args: String...) -> String? {
 
     return output
 }
+
+@discardableResult
+func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminate: (() -> Void)? = nil) -> Process {
+    let task = Process()
+    let pipe = Pipe()
+
+    task.standardOutput = pipe
+    task.launchPath = "/bin/bash"
+    task.arguments = ["-c"] + args
+
+    let outHandle = pipe.fileHandleForReading
+    outHandle.waitForDataInBackgroundAndNotify()
+
+    var progressObserver: NSObjectProtocol!
+    progressObserver = NotificationCenter.default.addObserver(
+        forName: NSNotification.Name.NSFileHandleDataAvailable,
+        object: outHandle,
+        queue: nil
+    ) { _ in
+        let data = outHandle.availableData
+
+        if data.count > 0 {
+            if let str = String(data: data, encoding: String.Encoding.utf8) {
+                onData?(str)
+            }
+            outHandle.waitForDataInBackgroundAndNotify()
+        } else {
+            didTerminate?()
+            NotificationCenter.default.removeObserver(progressObserver!)
+        }
+    }
+
+    var terminationObserver: NSObjectProtocol!
+    terminationObserver = NotificationCenter.default.addObserver(
+        forName: Process.didTerminateNotification,
+        object: task, queue: nil
+    ) {
+        _ -> Void in
+        didTerminate?()
+        NotificationCenter.default.removeObserver(terminationObserver!)
+    }
+
+    DispatchQueue(label: "shellPipe-\(UUID().uuidString)").async {
+        task.launch()
+    }
+
+    return task
+}

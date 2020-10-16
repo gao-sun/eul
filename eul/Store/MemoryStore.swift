@@ -32,6 +32,10 @@ class MemoryStore: ObservableObject, Refreshable {
         appMemory + wired + compressed
     }
 
+    var usedPercentage: Double {
+        used / total * 100
+    }
+
     var total: Double {
         free + inactive + active + wired + compressed
     }

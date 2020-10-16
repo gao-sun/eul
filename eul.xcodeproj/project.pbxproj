@@ -30,6 +30,8 @@
 		6C5F8541249FACE000CF0EF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5F8540249FACE000CF0EF8 /* ContentView.swift */; };
 		6C5F8543249FACE200CF0EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8542249FACE200CF0EF8 /* Assets.xcassets */; };
 		6C5F8549249FACE200CF0EF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8547249FACE200CF0EF8 /* Main.storyboard */; };
+		6C79AD342539E6080033845C /* CpuTopStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD332539E6080033845C /* CpuTopStore.swift */; };
+		6C79AD362539EBE60033845C /* ProcessUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD352539EBE60033845C /* ProcessUsage.swift */; };
 		6C7DB6CF24E02F0600133B06 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6CE24E02F0600133B06 /* Shell.swift */; };
 		6C7DB6D124E0300E00133B06 /* NetworkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6D024E0300E00133B06 /* NetworkStore.swift */; };
 		6C7DB6D324E0350700133B06 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6D224E0350700133B06 /* String.swift */; };
@@ -116,6 +118,8 @@
 		6C5F8548249FACE200CF0EF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C5F854A249FACE200CF0EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C5F854B249FACE200CF0EF8 /* eul.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = eul.entitlements; sourceTree = "<group>"; };
+		6C79AD332539E6080033845C /* CpuTopStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuTopStore.swift; sourceTree = "<group>"; };
+		6C79AD352539EBE60033845C /* ProcessUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessUsage.swift; sourceTree = "<group>"; };
 		6C7DB6CE24E02F0600133B06 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		6C7DB6D024E0300E00133B06 /* NetworkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStore.swift; sourceTree = "<group>"; };
 		6C7DB6D224E0350700133B06 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../Utilities/String.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				6C1FA40D24AA162800CA7F71 /* Refreshable.swift */,
 				6CDE6C7324F0047600463114 /* SizeChangeView.swift */,
 				6C7DB6E724E82C7700133B06 /* StringEnum.swift */,
+				6C79AD352539EBE60033845C /* ProcessUsage.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				6C1FA41124AA1DC100CA7F71 /* MemoryStore.swift */,
 				6C7DB6D024E0300E00133B06 /* NetworkStore.swift */,
 				6C7DB6DB24E7FFE300133B06 /* PreferenceStore.swift */,
+				6C79AD332539E6080033845C /* CpuTopStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -486,6 +492,7 @@
 				6CDE6C7624F10C8000463114 /* StatusBarManager.swift in Sources */,
 				6CEF771224DD94C8007C3640 /* BatteryStore.swift in Sources */,
 				6C1FA41024AA1D4400CA7F71 /* FanStore.swift in Sources */,
+				6C79AD342539E6080033845C /* CpuTopStore.swift in Sources */,
 				6CAEED5424A5DE4700C39597 /* Color.swift in Sources */,
 				6CB260AB250DE26900328DAA /* ActivityIndicatorView.swift in Sources */,
 				6CDE6C7224F0007D00463114 /* StatusBarItem.swift in Sources */,
@@ -502,6 +509,7 @@
 				6C1FA3FE24A7118000CA7F71 /* Info.swift in Sources */,
 				6C05F2C825120517004A0F72 /* Double.swift in Sources */,
 				6C993B902517920600586C6B /* BatteryMenuBlockView.swift in Sources */,
+				6C79AD362539EBE60033845C /* ProcessUsage.swift in Sources */,
 				6CE33C7D252601BB00831857 /* Int.swift in Sources */,
 				6C7DB6D124E0300E00133B06 /* NetworkStore.swift in Sources */,
 				6C33CEC92517634400345977 /* StatusMenuView.swift in Sources */,

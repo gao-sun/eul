@@ -122,4 +122,8 @@ struct Info {
     }
 
     static var system = System()
+
+    static func getProcessCommand(pid: Int) -> String? {
+        shell("ps -p \(pid) -o comm=")?.trimmingCharacters(in: .newlines)
+    }
 }

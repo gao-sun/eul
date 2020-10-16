@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CpuMenuBlockView: View {
     @EnvironmentObject var cpuStore: CpuStore
+    @EnvironmentObject var cpuTopStore: CpuTopStore
 
     var body: some View {
         VStack(spacing: 4) {
@@ -42,6 +43,20 @@ struct CpuMenuBlockView: View {
                                 MiniSectionView(title: "gpu.temperature", value: SmcControl.shared.formatTemp(temp))
                             }
                         }
+                    }
+                }
+            }
+            if cpuTopStore.topProcesses.count > 0 {
+                SeparatorView()
+                ForEach(cpuTopStore.topProcesses) { process in
+                    HStack {
+                        Text(process.displayName)
+                            .secondaryDisplayText()
+                            .frame(width: 150, alignment: .leading)
+                            .lineLimit(1)
+                        Spacer()
+                        Text(process.value.description)
+                            .displayText()
                     }
                 }
             }

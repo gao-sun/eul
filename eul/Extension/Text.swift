@@ -41,6 +41,11 @@ extension Text {
         font(.system(size: 11, weight: .regular))
     }
 
+    func secondaryDisplayText() -> some View {
+        font(.system(size: 11, weight: .regular))
+            .foregroundColor(.secondary)
+    }
+
     func menuSection() -> some View {
         font(.system(size: 12, weight: .bold))
             .padding(.top, 4)
