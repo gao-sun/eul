@@ -12,18 +12,18 @@ struct FanMenuBlockView: View {
     @EnvironmentObject var fanStore: FanStore
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        HStack(spacing: 4) {
             Text("fan".localized())
                 .menuSection()
-            ForEach(fanStore.fans) { fan in
-                Text("\("fan".localized()) \(fan.id + 1)")
-                    .miniSection()
-                    .padding(.top, fan.id > 0 ? 2 : 0)
-                ProgressBarView(
-                    percentage: CGFloat(fan.percentage),
-                    textWidth: 55,
-                    customText: "\(fan.speed.description) rpm"
-                )
+            Spacer()
+            HStack {
+                ForEach(fanStore.fans) { fan in
+                    MiniSectionView(
+                        title: "\("fan".localized()) \(fan.id + 1)",
+                        value: "\(fan.speed.description) rpm"
+                    )
+                    .frame(width: 80)
+                }
             }
         }
         .padding(.top, 2)

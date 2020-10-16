@@ -18,17 +18,17 @@ struct MemoryMenuBlockView: View {
             HStack {
                 ProgressBarView(
                     width: 130,
-                    percentage: CGFloat(memoryStore.allFreePercentage),
+                    percentage: CGFloat(memoryStore.usedPercentage),
                     showText: false
                 )
                 Spacer()
+                Text(MemoryStore.memoryUnit(memoryStore.used))
+                    .displayText()
+                Text("memory.usage".localized())
+                    .miniSection()
                 Text(MemoryStore.memoryUnit(memoryStore.allFree))
                     .displayText()
                 Text("memory.free".localized())
-                    .miniSection()
-                Text(MemoryStore.memoryUnit(memoryStore.total))
-                    .displayText()
-                Text("memory.total".localized())
                     .miniSection()
             }
             SeparatorView()

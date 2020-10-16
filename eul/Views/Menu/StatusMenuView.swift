@@ -14,10 +14,8 @@ struct StatusMenuView: SizeChangeView {
     var onSizeChange: ((CGSize) -> Void)?
     var body: some View {
         VStack(spacing: 12) {
-            HStack(alignment: .top, spacing: 12) {
-                CpuMenuBlockView()
-                FanMenuBlockView()
-            }
+            CpuMenuBlockView()
+            FanMenuBlockView()
             MemoryMenuBlockView()
             BatteryMenuBlockView()
         }

@@ -13,10 +13,13 @@ struct CpuMenuBlockView: View {
 
     var body: some View {
         VStack(spacing: 4) {
-            Text("CPU")
-                .menuSection()
-            cpuStore.usage.map {
-                ProgressBarView(percentage: CGFloat($0))
+            HStack {
+                Text("CPU")
+                    .menuSection()
+                Spacer()
+                cpuStore.usage.map {
+                    ProgressBarView(percentage: CGFloat($0))
+                }
             }
             cpuStore.usageCPU.map { usageCPU in
                 Group {
@@ -27,28 +30,19 @@ struct CpuMenuBlockView: View {
                         MiniSectionView(title: "cpu.user", value: String(format: "%.1f%%", usageCPU.user))
                         Spacer()
                         MiniSectionView(title: "cpu.nice", value: String(format: "%.1f%%", usageCPU.nice))
+                        cpuStore.temp.map { temp in
+                            Group {
+                                Spacer()
+                                MiniSectionView(title: "cpu.temperature", value: SmcControl.shared.formatTemp(temp))
+                            }
+                        }
+                        cpuStore.gpuTemp.map { temp in
+                            Group {
+                                Spacer()
+                                MiniSectionView(title: "gpu.temperature", value: SmcControl.shared.formatTemp(temp))
+                            }
+                        }
                     }
-                }
-            }
-            if cpuStore.temp != nil || cpuStore.gpuTemp != nil {
-                SeparatorView()
-            }
-            cpuStore.temp.map { temp in
-                HStack {
-                    Text("cpu.temperature".localized())
-                        .miniSection()
-                    Spacer()
-                    Text(SmcControl.shared.formatTemp(temp))
-                        .displayText()
-                }
-            }
-            cpuStore.gpuTemp.map { temp in
-                HStack {
-                    Text("gpu.temperature".localized())
-                        .miniSection()
-                    Spacer()
-                    Text(SmcControl.shared.formatTemp(temp))
-                        .displayText()
                 }
             }
         }
