@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ProcessRowView<Usage: ProcessUsage>: View {
     let process: Usage
-    var nameWidth: CGFloat = 180
+    var nameWidth: CGFloat = 200
     var valueViewBuilder: (() -> AnyView)? = nil
 
     var body: some View {

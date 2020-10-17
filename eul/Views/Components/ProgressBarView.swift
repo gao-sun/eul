@@ -32,7 +32,6 @@ struct ProgressBarView: View {
                     .frame(width: textWidth, alignment: .trailing)
             }
         }
-        .animation(firstAppear ? .none : .fast)
         .onAppear {
             self.firstAppear = false
         }

@@ -23,6 +23,7 @@ struct StatusMenuView: SizeChangeView {
         .padding(.vertical, 8)
         .padding(.horizontal, 15)
         .fixedSize()
+        .animation(.none)
         .background(GeometryReader { self.reportSize($0) })
     }
 }

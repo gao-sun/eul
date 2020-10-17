@@ -32,11 +32,11 @@ class StatusBarItem {
         let width = size.width + (Info.isBigSur ? 8 : 12)
 
         item.length = width
-        statusView?.frame = NSMakeRect(0, 0, width, AppDelegate.statusBarHeight)
+        statusView?.setFrameSize(NSSize(width: width, height: AppDelegate.statusBarHeight))
     }
 
     func onMenuSizeChange(size: CGSize) {
-        menuView?.frame = NSMakeRect(0, 0, size.width, size.height)
+        menuView?.setFrameSize(NSSize(width: size.width, height: size.height))
     }
 
     func updateLanguage() {
@@ -46,7 +46,7 @@ class StatusBarItem {
 
     func refresh() {
         let view = NSHostingView(rootView: config.viewBuilder(onSizeChange))
-        view.frame = NSMakeRect(0, 0, 0, AppDelegate.statusBarHeight)
+        view.setFrameSize(NSSize(width: 0, height: AppDelegate.statusBarHeight))
         item.button?.subviews.forEach { $0.removeFromSuperview() }
         item.button?.addSubview(view)
         statusView = view
