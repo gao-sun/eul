@@ -57,6 +57,11 @@
 "memory.wired" = "Wired";
 "memory.compressed" = "Compressed";
 
+// MARK: Network
+"network" = "Network";
+"network.in" = "In";
+"network.out" = "Out";
+
 // MARK: Menu
 "menu.summary" = "Summary";
 "menu.yes" = "Yes";

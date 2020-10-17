@@ -23,7 +23,7 @@ class CpuTopStore: ObservableObject {
     @Published var topProcesses: [ProcessCpuUsage] = []
 
     init() {
-        shellPipe("top -l0 -u -n 5 -stats pid,cpu,command -s 5") { string in
+        shellPipe("top -l0 -u -n 5 -stats pid,cpu,command -s 3") { string in
             let rows = string.split(separator: "\n", omittingEmptySubsequences: false).map { String($0) }
 
             guard let separatorIndex = rows.firstIndex(of: "") else {

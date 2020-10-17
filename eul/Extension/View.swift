@@ -44,6 +44,7 @@ extension View {
             .environmentObject(FanStore.shared)
             .environmentObject(MemoryStore.shared)
             .environmentObject(NetworkStore.shared)
+            .environmentObject(NetworkTopStore.shared)
             .environmentObject(PreferenceStore.shared)
     }
 }

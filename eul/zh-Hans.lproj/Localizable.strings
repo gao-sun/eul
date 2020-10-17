@@ -38,7 +38,7 @@
 "cpu.thermal_level" = "温度等级";
 "cpu.system" = "系统";
 "cpu.user" = "用户";
-"cpu.nice" = "nice";
+"cpu.nice" = "Nice";
 
 // MARK: Fan
 "fan" = "风扇";
@@ -56,6 +56,11 @@
 "memory.app" = "App";
 "memory.wired" = "联动";
 "memory.compressed" = "被压缩";
+
+// MARK: Network
+"network" = "网络";
+"network.in" = "上传";
+"network.out" = "下载";
 
 // MARK: Menu
 "menu.summary" = "概览";

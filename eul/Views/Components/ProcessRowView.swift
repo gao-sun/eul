@@ -10,16 +10,22 @@ import SwiftUI
 
 struct ProcessRowView<Usage: ProcessUsage>: View {
     let process: Usage
+    var nameWidth: CGFloat = 180
+    var valueViewBuilder: (() -> AnyView)? = nil
 
     var body: some View {
         HStack {
             Text(process.displayName)
                 .secondaryDisplayText()
-                .frame(width: 180, alignment: .leading)
+                .frame(width: nameWidth, alignment: .leading)
                 .lineLimit(1)
             Spacer()
-            Text(process.value.description)
-                .displayText()
+            if let builder = valueViewBuilder {
+                builder()
+            } else {
+                Text(process.value.description)
+                    .displayText()
+            }
             HStack(spacing: 6) {
                 if let runningApp = process.runningApp, runningApp.canBeActivated {
                     MenuActionButtonView(id: "\(process.pid)-nagivate", imageName: "Navigate", toolTip: "process.bring_to_front") {

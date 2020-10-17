@@ -18,6 +18,7 @@ struct StatusMenuView: SizeChangeView {
             FanMenuBlockView()
             MemoryMenuBlockView()
             BatteryMenuBlockView()
+            NetworkMenuBlockMenuView()
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 15)

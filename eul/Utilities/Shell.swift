@@ -45,6 +45,7 @@ func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminat
     let outHandle = pipe.fileHandleForReading
     outHandle.waitForDataInBackgroundAndNotify()
 
+    var buffer = Data()
     var progressObserver: NSObjectProtocol!
     progressObserver = NotificationCenter.default.addObserver(
         forName: NSNotification.Name.NSFileHandleDataAvailable,
@@ -54,13 +55,16 @@ func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminat
         let data = outHandle.availableData
 
         if data.count > 0 {
-            if let str = String(data: data, encoding: String.Encoding.utf8) {
+            buffer += data
+            if let str = String(data: buffer, encoding: String.Encoding.utf8), str.last?.isNewline == true {
+                buffer.removeAll()
                 DispatchQueue.main.async {
                     onData?(str)
                 }
             }
             outHandle.waitForDataInBackgroundAndNotify()
         } else {
+            buffer.removeAll()
             DispatchQueue.main.async {
                 didTerminate?()
             }
