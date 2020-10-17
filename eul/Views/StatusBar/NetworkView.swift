@@ -17,13 +17,10 @@ struct NetworkView: View {
     }
 
     var textWidth: CGFloat? {
-        guard preferenceStore.textDisplay == .compact else {
-            return nil
+        if preferenceStore.textDisplay == .compact {
+            return 45
         }
-        let maxNumber = texts.reduce(0) { max($0, ($1.numericOnly as NSString).integerValue) }
-        return preferenceStore.fontDesign == .default
-            ? 35 + 2.5 * CGFloat(maxNumber.digitCount)
-            : 40 + 4 * CGFloat(maxNumber.digitCount)
+        return preferenceStore.fontDesign == .default ? 120 : 145
     }
 
     var body: some View {
