@@ -23,6 +23,11 @@
 		6C33CECB251767C400345977 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33CECA251767C400345977 /* ProgressBarView.swift */; };
 		6C33CECD25177CE300345977 /* CpuMenuBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33CECC25177CE300345977 /* CpuMenuBlockView.swift */; };
 		6C33CECF25177D8400345977 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33CECE25177D8400345977 /* SeparatorView.swift */; };
+		6C387DC1253AEB1A00CBB81B /* StatusBarMenuHostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C387DC0253AEB1A00CBB81B /* StatusBarMenuHostingView.swift */; };
+		6C387DC3253AEF3600CBB81B /* ProcessRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C387DC2253AEF3600CBB81B /* ProcessRowView.swift */; };
+		6C387DC5253AF46000CBB81B /* NSRunningApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C387DC4253AF46000CBB81B /* NSRunningApplication.swift */; };
+		6C457392253AC69E00BB2584 /* UIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C457391253AC69E00BB2584 /* UIStore.swift */; };
+		6C457394253AC91500BB2584 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C457393253AC91500BB2584 /* TooltipView.swift */; };
 		6C4CCCF1250BA68B00590E0E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4CCCF0250BA68B00590E0E /* View.swift */; };
 		6C58053A250CAEC3007F467A /* StatusBarTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C580539250CAEC3007F467A /* StatusBarTextView.swift */; };
 		6C58053D250CC6B8007F467A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C58053F250CC6B8007F467A /* Localizable.strings */; };
@@ -32,6 +37,7 @@
 		6C5F8549249FACE200CF0EF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8547249FACE200CF0EF8 /* Main.storyboard */; };
 		6C79AD342539E6080033845C /* CpuTopStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD332539E6080033845C /* CpuTopStore.swift */; };
 		6C79AD362539EBE60033845C /* ProcessUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD352539EBE60033845C /* ProcessUsage.swift */; };
+		6C79AD382539F9030033845C /* MenuActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD372539F9030033845C /* MenuActionButtonView.swift */; };
 		6C7DB6CF24E02F0600133B06 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6CE24E02F0600133B06 /* Shell.swift */; };
 		6C7DB6D124E0300E00133B06 /* NetworkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6D024E0300E00133B06 /* NetworkStore.swift */; };
 		6C7DB6D324E0350700133B06 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6D224E0350700133B06 /* String.swift */; };
@@ -107,6 +113,11 @@
 		6C33CECA251767C400345977 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		6C33CECC25177CE300345977 /* CpuMenuBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuMenuBlockView.swift; sourceTree = "<group>"; };
 		6C33CECE25177D8400345977 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		6C387DC0253AEB1A00CBB81B /* StatusBarMenuHostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarMenuHostingView.swift; sourceTree = "<group>"; };
+		6C387DC2253AEF3600CBB81B /* ProcessRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRowView.swift; sourceTree = "<group>"; };
+		6C387DC4253AF46000CBB81B /* NSRunningApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRunningApplication.swift; sourceTree = "<group>"; };
+		6C457391253AC69E00BB2584 /* UIStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStore.swift; sourceTree = "<group>"; };
+		6C457393253AC91500BB2584 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		6C4CCCF0250BA68B00590E0E /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		6C580539250CAEC3007F467A /* StatusBarTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarTextView.swift; sourceTree = "<group>"; };
 		6C58053E250CC6B8007F467A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -120,6 +131,7 @@
 		6C5F854B249FACE200CF0EF8 /* eul.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = eul.entitlements; sourceTree = "<group>"; };
 		6C79AD332539E6080033845C /* CpuTopStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuTopStore.swift; sourceTree = "<group>"; };
 		6C79AD352539EBE60033845C /* ProcessUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessUsage.swift; sourceTree = "<group>"; };
+		6C79AD372539F9030033845C /* MenuActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionButtonView.swift; sourceTree = "<group>"; };
 		6C7DB6CE24E02F0600133B06 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		6C7DB6D024E0300E00133B06 /* NetworkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStore.swift; sourceTree = "<group>"; };
 		6C7DB6D224E0350700133B06 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../Utilities/String.swift; sourceTree = "<group>"; };
@@ -279,6 +291,7 @@
 				6C7DB6D224E0350700133B06 /* String.swift */,
 				6CAEED6124A5F51600C39597 /* Text.swift */,
 				6C4CCCF0250BA68B00590E0E /* View.swift */,
+				6C387DC4253AF46000CBB81B /* NSRunningApplication.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -293,6 +306,7 @@
 				6C7DB6D024E0300E00133B06 /* NetworkStore.swift */,
 				6C7DB6DB24E7FFE300133B06 /* PreferenceStore.swift */,
 				6C79AD332539E6080033845C /* CpuTopStore.swift */,
+				6C457391253AC69E00BB2584 /* UIStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -307,6 +321,9 @@
 				6C33CECA251767C400345977 /* ProgressBarView.swift */,
 				6C33CECE25177D8400345977 /* SeparatorView.swift */,
 				6C993B8D2517909200586C6B /* MiniSectionView.swift */,
+				6C79AD372539F9030033845C /* MenuActionButtonView.swift */,
+				6C457393253AC91500BB2584 /* TooltipView.swift */,
+				6C387DC2253AEF3600CBB81B /* ProcessRowView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -316,6 +333,7 @@
 			children = (
 				6CDE6C7124F0007D00463114 /* StatusBarItem.swift */,
 				6CDE6C7524F10C8000463114 /* StatusBarManager.swift */,
+				6C387DC0253AEB1A00CBB81B /* StatusBarMenuHostingView.swift */,
 			);
 			path = StatusBar;
 			sourceTree = "<group>";
@@ -494,16 +512,22 @@
 				6C1FA41024AA1D4400CA7F71 /* FanStore.swift in Sources */,
 				6C79AD342539E6080033845C /* CpuTopStore.swift in Sources */,
 				6CAEED5424A5DE4700C39597 /* Color.swift in Sources */,
+				6C457392253AC69E00BB2584 /* UIStore.swift in Sources */,
 				6CB260AB250DE26900328DAA /* ActivityIndicatorView.swift in Sources */,
 				6CDE6C7224F0007D00463114 /* StatusBarItem.swift in Sources */,
 				6C1FA40B24AA139300CA7F71 /* NSNotification.swift in Sources */,
+				6C79AD382539F9030033845C /* MenuActionButtonView.swift in Sources */,
 				6C7DB6D524E7A75E00133B06 /* NetworkView.swift in Sources */,
 				6C7DB6E824E82C7700133B06 /* StringEnum.swift in Sources */,
 				6CC0798C250CD793000D7DAC /* PreferenceGeneralView.swift in Sources */,
+				6C457394253AC91500BB2584 /* TooltipView.swift in Sources */,
 				6C1FA40724AA127E00CA7F71 /* MemoryView.swift in Sources */,
 				6CDE6C7424F0047600463114 /* SizeChangeView.swift in Sources */,
 				6C1FA41224AA1DC100CA7F71 /* MemoryStore.swift in Sources */,
 				6C7DB6D724E7A85C00133B06 /* ByteUnit.swift in Sources */,
+				6C387DC3253AEF3600CBB81B /* ProcessRowView.swift in Sources */,
+				6C387DC1253AEB1A00CBB81B /* StatusBarMenuHostingView.swift in Sources */,
+				6C387DC5253AF46000CBB81B /* NSRunningApplication.swift in Sources */,
 				6C4CCCF1250BA68B00590E0E /* View.swift in Sources */,
 				6C7DB6E224E80F5100133B06 /* PreferenceComponentsView.swift in Sources */,
 				6C1FA3FE24A7118000CA7F71 /* Info.swift in Sources */,

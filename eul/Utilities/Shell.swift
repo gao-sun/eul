@@ -55,11 +55,15 @@ func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminat
 
         if data.count > 0 {
             if let str = String(data: data, encoding: String.Encoding.utf8) {
-                onData?(str)
+                DispatchQueue.main.async {
+                    onData?(str)
+                }
             }
             outHandle.waitForDataInBackgroundAndNotify()
         } else {
-            didTerminate?()
+            DispatchQueue.main.async {
+                didTerminate?()
+            }
             NotificationCenter.default.removeObserver(progressObserver!)
         }
     }
@@ -70,11 +74,13 @@ func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminat
         object: task, queue: nil
     ) {
         _ -> Void in
-        didTerminate?()
+        DispatchQueue.main.async {
+            didTerminate?()
+        }
         NotificationCenter.default.removeObserver(terminationObserver!)
     }
 
-    DispatchQueue(label: "shellPipe-\(UUID().uuidString)").async {
+    DispatchQueue(label: "shellPipe-\(UUID().uuidString)", qos: .background).async {
         task.launch()
     }
 

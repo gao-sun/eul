@@ -48,15 +48,9 @@ struct CpuMenuBlockView: View {
             }
             if cpuTopStore.topProcesses.count > 0 {
                 SeparatorView()
-                ForEach(cpuTopStore.topProcesses) { process in
-                    HStack {
-                        Text(process.displayName)
-                            .secondaryDisplayText()
-                            .frame(width: 150, alignment: .leading)
-                            .lineLimit(1)
-                        Spacer()
-                        Text(process.value.description)
-                            .displayText()
+                VStack(spacing: 8) {
+                    ForEach(cpuTopStore.topProcesses) {
+                        ProcessRowView(process: $0)
                     }
                 }
             }

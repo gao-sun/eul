@@ -37,7 +37,8 @@ extension View {
     }
 
     func withGlobalEnvironmentObjects() -> some View {
-        environmentObject(BatteryStore.shared)
+        environmentObject(UIStore.shared)
+            .environmentObject(BatteryStore.shared)
             .environmentObject(CpuStore.shared)
             .environmentObject(CpuTopStore.shared)
             .environmentObject(FanStore.shared)

@@ -6,14 +6,16 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
+import AppKit
 import Foundation
 
 protocol ProcessUsage: Identifiable {
-    associatedtype T
+    associatedtype T: CustomStringConvertible
     var pid: Int { get }
     var command: String { get }
     var value: T { get }
     var displayName: String { get }
+    var runningApp: NSRunningApplication? { get }
 }
 
 extension ProcessUsage {

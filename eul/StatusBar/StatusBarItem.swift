@@ -9,6 +9,10 @@
 import Cocoa
 import SwiftUI
 
+extension Notification.Name {
+    static let StatusBarMenuShouldClose = Notification.Name("StatusBarMenuShouldClose")
+}
+
 class StatusBarItem {
     let config: StatusBarConfig
     private let item: NSStatusItem
@@ -17,6 +21,7 @@ class StatusBarItem {
     private let versionItem: NSMenuItem
     private let preferencesItem: NSMenuItem
     private let quitItem: NSMenuItem
+    private var shouldCloseObserver: NSObjectProtocol?
 
     var isVisible: Bool {
         get { item.isVisible }
@@ -75,7 +80,7 @@ class StatusBarItem {
 
         if let menuBuilder = config.menuBuilder {
             let customItem = NSMenuItem()
-            menuView = NSHostingView(rootView: menuBuilder(onMenuSizeChange))
+            menuView = StatusBarMenuHostingView(rootView: menuBuilder(onMenuSizeChange))
             customItem.view = menuView
             statusBarMenu.addItem(customItem)
             statusBarMenu.addItem(NSMenuItem.separator())
@@ -86,6 +91,16 @@ class StatusBarItem {
         statusBarMenu.addItem(quitItem)
         item.menu = statusBarMenu
 
+        shouldCloseObserver = NotificationCenter.default.addObserver(forName: .StatusBarMenuShouldClose, object: nil, queue: nil) { _ in
+            statusBarMenu.cancelTracking()
+        }
+
         refresh()
+    }
+
+    deinit {
+        if let observer = shouldCloseObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 }

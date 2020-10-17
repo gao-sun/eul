@@ -6,6 +6,7 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
+import AppKit
 import Foundation
 
 class CpuTopStore: ObservableObject {
@@ -14,6 +15,7 @@ class CpuTopStore: ObservableObject {
         let pid: Int
         let command: String
         let value: Double
+        let runningApp: NSRunningApplication?
     }
 
     static let shared = CpuTopStore()
@@ -21,7 +23,7 @@ class CpuTopStore: ObservableObject {
     @Published var topProcesses: [ProcessCpuUsage] = []
 
     init() {
-        shellPipe("top -l0 -u -n 5 -stats pid,cpu,command -s 2") { string in
+        shellPipe("top -l0 -u -n 5 -stats pid,cpu,command -s 5") { string in
             let rows = string.split(separator: "\n", omittingEmptySubsequences: false).map { String($0) }
 
             guard let separatorIndex = rows.firstIndex(of: "") else {
@@ -31,12 +33,19 @@ class CpuTopStore: ObservableObject {
             if rows.indices.contains(separatorIndex + 1) {
                 let titleRow = rows[separatorIndex + 1].lowercased()
                 if titleRow.contains("pid"), titleRow.contains("cpu"), titleRow.contains("command") {
+                    let runningApps = NSWorkspace.shared.runningApplications
+
                     self.topProcesses = ((separatorIndex + 2)..<rows.count).compactMap { index in
                         let row = rows[index].split(separator: " ").map { String($0) }
                         guard row.count >= 3, let pid = Int(row[0]), let cpu = Double(row[1]), cpu >= 0.1 else {
                             return nil
                         }
-                        return ProcessCpuUsage(pid: pid, command: Info.getProcessCommand(pid: pid) ?? row[2], value: cpu)
+                        return ProcessCpuUsage(
+                            pid: pid,
+                            command: Info.getProcessCommand(pid: pid) ?? row[2],
+                            value: cpu,
+                            runningApp: runningApps.first(where: { $0.processIdentifier == pid })
+                        )
                     }
                 }
             }

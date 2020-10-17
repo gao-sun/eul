@@ -91,6 +91,16 @@
 "component.battery" = "Battery";
 "component.network" = "Network";
 
+// MARK: Process
+"process" = "Process";
+"process.bring_to_front" = "Bring to front";
+"process.reveal_in_finder" = "Reveal in Finder";
+"process.terminate" = "Terminate";
+"process.force_terminate" = "Force Terminate";
+"process.terminate_alert.text.%@" = "Are you sure want to terminate %@?";
+"process.terminate_alert.command.%@" = "Command: %@";
+"process.terminate_alert.cancel" = "Cancel";
+
 // MARK: Language
 "language" = "Language";
 "language.en" = "English";
