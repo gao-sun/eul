@@ -29,7 +29,7 @@ struct NetworkMenuBlockMenuView: View {
                 // FIXME: multi thread with same pid
                 VStack(spacing: 8) {
                     ForEach(networkTopStore.processes.prefix(3)) { process in
-                        ProcessRowView(section: "network", process: process, nameWidth: 115) { AnyView(
+                        ProcessRowView(section: "network", process: process, nameWidth: 140) { AnyView(
                             HStack(spacing: 4) {
                                 Text(ByteUnit(process.value.outSpeedInByte).readable)
                                     .displayText()

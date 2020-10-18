@@ -69,12 +69,14 @@ class NetworkTopStore: ObservableObject {
         lastOutBytes.removeAll()
         lastTimestamp = Date().timeIntervalSince1970
         processes = []
-        task = shellPipe("nettop -P -x -J interface,bytes_in,bytes_out -l0 -s \(interval)") { [self] string in
+        task = shellPipe("nettop -P -x -J bytes_in,bytes_out -L0 -s \(interval)") { [self] string in
             let rows = string.split(separator: "\n").map { String($0) }
-            let headers = rows[0].split(separator: " ").map { String($0.lowercased()) }
+            let headers = rows[0]
+                .split(separator: ",", omittingEmptySubsequences: false)
+                .map { String($0.lowercased()) }
+            let processIndex = 1
 
             guard
-                let interfaceIndex = headers.firstIndex(of: "interface"),
                 let inBytesIndex = headers.firstIndex(of: "bytes_in"),
                 let outBytesIndex = headers.firstIndex(of: "bytes_out")
             else {
@@ -86,13 +88,22 @@ class NetworkTopStore: ObservableObject {
             let timeElapsed = time - lastTimestamp
 
             processes = rows.dropFirst().compactMap { row in
-                let cols = row.split(separator: " ").map { String($0) }
-                let interface = cols[interfaceIndex]
-                let splitted = interface.split(separator: ".").map { String($0) }
+                let cols = row.split(separator: ",").map { String($0) }
 
                 guard
-                    splitted.count >= 2,
-                    let pid = Int(splitted[1]),
+                    cols.indices.contains(processIndex),
+                    cols.indices.contains(inBytesIndex),
+                    cols.indices.contains(outBytesIndex)
+                else {
+                    return nil
+                }
+
+                let processCol = cols[processIndex]
+                let splitted = processCol.split(separator: ".").map { String($0) }
+
+                guard
+                    let last = splitted.last,
+                    let pid = Int(last),
                     let inBytes = Double(cols[inBytesIndex]),
                     let outBytes = Double(cols[outBytesIndex])
                 else {
