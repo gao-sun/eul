@@ -70,6 +70,7 @@
 "menu.no" = "No";
 "menu.preferences" = "Preferences";
 "menu.quit" = "Quit eul";
+"menu.show_top_activities" = "Show top activities";
 
 // MARK: Temperature
 "temp.temperature" = "Temperature";
@@ -128,3 +129,4 @@
 "ui.refresh_rate" = "Refresh Rate";
 "ui.smc" = "SMC";
 "ui.network" = "Network";
+"ui.menu_view" = "Menu View";

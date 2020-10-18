@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct CpuMenuBlockView: View {
+    @EnvironmentObject var preferenceStore: PreferenceStore
     @EnvironmentObject var cpuStore: CpuStore
     @EnvironmentObject var cpuTopStore: CpuTopStore
 
@@ -46,19 +47,21 @@ struct CpuMenuBlockView: View {
                     }
                 }
             }
-            SeparatorView()
-            VStack(spacing: 8) {
-                ForEach(cpuTopStore.topProcesses) {
-                    ProcessRowView(section: "cpu", process: $0)
+            if preferenceStore.showTopActivities {
+                SeparatorView()
+                VStack(spacing: 8) {
+                    ForEach(cpuTopStore.topProcesses) {
+                        ProcessRowView(section: "cpu", process: $0)
+                    }
+                    if !cpuTopStore.dataAvailable {
+                        Spacer()
+                        Text("cpu.waiting_status_report".localized())
+                            .secondaryDisplayText()
+                        Spacer()
+                    }
                 }
-                if !cpuTopStore.dataAvailable {
-                    Spacer()
-                    Text("cpu.waiting_status_report".localized())
-                        .secondaryDisplayText()
-                    Spacer()
-                }
+                .frame(height: 102)
             }
-            .frame(height: 102)
         }
         .menuBlock()
     }

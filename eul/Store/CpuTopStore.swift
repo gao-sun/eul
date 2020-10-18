@@ -7,7 +7,8 @@
 //
 
 import AppKit
-import Foundation
+import Combine
+import SwiftUI
 
 class CpuTopStore: ObservableObject {
     struct ProcessCpuUsage: ProcessUsage {
@@ -20,12 +21,29 @@ class CpuTopStore: ObservableObject {
 
     static let shared = CpuTopStore()
 
+    private var task: Process?
+    private var activeCancellable: AnyCancellable?
     private var firstLoaded = false
+    @ObservedObject var preferenceStore = PreferenceStore.shared
     @Published var dataAvailable = false
     @Published var topProcesses: [ProcessCpuUsage] = []
 
-    init() {
-        shellPipe("top -l0 -u -n 5 -stats pid,cpu,command -s 3") { [self] string in
+    func update(shouldStart: Bool) {
+        guard shouldStart else {
+            task?.terminate()
+            task = nil
+            return
+        }
+
+        if task != nil {
+            print("cpu task already started")
+            return
+        }
+
+        firstLoaded = false
+        dataAvailable = false
+        topProcesses = []
+        task = shellPipe("top -l0 -u -n 5 -stats pid,cpu,command -s 3") { [self] string in
             let rows = string.split(separator: "\n", omittingEmptySubsequences: false).map { String($0) }
 
             guard let separatorIndex = rows.firstIndex(of: "") else {
@@ -57,6 +75,13 @@ class CpuTopStore: ObservableObject {
                     }
                 }
             }
+        }
+    }
+
+    init() {
+        update(shouldStart: preferenceStore.showTopActivities)
+        activeCancellable = preferenceStore.$showTopActivities.sink { [self] in
+            update(shouldStart: $0)
         }
     }
 }

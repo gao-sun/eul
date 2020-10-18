@@ -11,9 +11,27 @@ import SwiftUI
 struct StatusMenuView: SizeChangeView {
     @EnvironmentObject var preferenceStore: PreferenceStore
 
+    func openPreferences() {
+        NSApplication.shared.mainWindow?.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+    }
+
+    func quit() {
+        NSApplication.shared.terminate(self)
+    }
+
     var onSizeChange: ((CGSize) -> Void)?
     var body: some View {
         VStack(spacing: 12) {
+            HStack {
+                Text("eul")
+                    .font(.system(size: 12, weight: .semibold))
+                Text("v\(PreferenceStore.shared.version ?? "?")")
+                    .secondaryDisplayText()
+                Spacer()
+                MenuActionTextView(id: "menu.preferences", text: "menu.preferences", action: openPreferences)
+                MenuActionTextView(id: "menu.quit", text: "menu.quit", action: openPreferences)
+            }
             CpuMenuBlockView()
             FanMenuBlockView()
             MemoryMenuBlockView()

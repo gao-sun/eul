@@ -61,13 +61,4 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     func applicationWillTerminate(_: Notification) {
         // Insert code here to tear down your application
     }
-
-    @objc func open() {
-        window.makeKeyAndOrderFront(nil)
-        NSApp.activate(ignoringOtherApps: true)
-    }
-
-    @objc func exit() {
-        NSApplication.shared.terminate(self)
-    }
 }

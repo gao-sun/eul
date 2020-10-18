@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import Combine
 import SwiftUI
 
 class NetworkTopStore: ObservableObject {
@@ -33,7 +34,9 @@ class NetworkTopStore: ObservableObject {
 
     static let shared = NetworkTopStore()
 
-    private var lastTimestamp: TimeInterval
+    private var task: Process?
+    private var activeCancellable: AnyCancellable?
+    private var lastTimestamp: TimeInterval = Date().timeIntervalSince1970
     private var lastInBytes: [Int: Double] = [:]
     private var lastOutBytes: [Int: Double] = [:]
     @ObservedObject var preferenceStore = PreferenceStore.shared
@@ -50,9 +53,23 @@ class NetworkTopStore: ObservableObject {
         preferenceStore.networkRefreshRate
     }
 
-    init() {
+    func update(shouldStart: Bool) {
+        guard shouldStart else {
+            task?.terminate()
+            task = nil
+            return
+        }
+
+        if task != nil {
+            print("network task already started")
+            return
+        }
+
+        lastInBytes.removeAll()
+        lastOutBytes.removeAll()
         lastTimestamp = Date().timeIntervalSince1970
-        shellPipe("nettop -P -x -J interface,bytes_in,bytes_out -l0 -s \(interval)") { [self] string in
+        processes = []
+        task = shellPipe("nettop -P -x -J interface,bytes_in,bytes_out -l0 -s \(interval)") { [self] string in
             let rows = string.split(separator: "\n").map { String($0) }
             let headers = rows[0].split(separator: " ").map { String($0.lowercased()) }
 
@@ -111,6 +128,13 @@ class NetworkTopStore: ObservableObject {
             .sorted(by: { $0.value.totalSpeedInByte > $1.value.totalSpeedInByte })
 
             lastTimestamp = time
+        }
+    }
+
+    init() {
+        update(shouldStart: preferenceStore.showTopActivities)
+        activeCancellable = preferenceStore.$showTopActivities.sink { [self] in
+            update(shouldStart: $0)
         }
     }
 }

@@ -18,9 +18,6 @@ class StatusBarItem {
     private let item: NSStatusItem
     private var statusView: NSHostingView<AnyView>?
     private var menuView: NSHostingView<AnyView>?
-    private let versionItem: NSMenuItem
-    private let preferencesItem: NSMenuItem
-    private let quitItem: NSMenuItem
     private var shouldCloseObserver: NSObjectProtocol?
 
     var isVisible: Bool {
@@ -39,11 +36,6 @@ class StatusBarItem {
         menuView?.setFrameSize(NSSize(width: size.width, height: size.height))
     }
 
-    func updateLanguage() {
-        preferencesItem.title = "menu.preferences".localized()
-        quitItem.title = "menu.quit".localized()
-    }
-
     func refresh() {
         let view = NSHostingView(rootView: config.viewBuilder(onSizeChange))
         view.setFrameSize(NSSize(width: 0, height: AppDelegate.statusBarHeight))
@@ -57,25 +49,6 @@ class StatusBarItem {
         item = NSStatusBar.system.statusItem(withLength: 0)
         item.isVisible = false
 
-        versionItem = NSMenuItem(
-            title: "eul v\(PreferenceStore.shared.version ?? "?")",
-            action: nil,
-            keyEquivalent: ""
-        )
-        preferencesItem = NSMenuItem(
-            title: "menu.preferences".localized(),
-            action: #selector(AppDelegate.open),
-            keyEquivalent: ","
-        )
-        preferencesItem.keyEquivalentModifierMask = .command
-
-        quitItem = NSMenuItem(
-            title: "menu.quit".localized(),
-            action: #selector(AppDelegate.exit),
-            keyEquivalent: "q"
-        )
-        quitItem.keyEquivalentModifierMask = .command
-
         let statusBarMenu = NSMenu()
 
         if let menuBuilder = config.menuBuilder {
@@ -86,9 +59,6 @@ class StatusBarItem {
             statusBarMenu.addItem(NSMenuItem.separator())
         }
 
-//        statusBarMenu.addItem(versionItem)
-//        statusBarMenu.addItem(preferencesItem)
-//        statusBarMenu.addItem(quitItem)
         item.menu = statusBarMenu
 
         shouldCloseObserver = NotificationCenter.default.addObserver(forName: .StatusBarMenuShouldClose, object: nil, queue: nil) { _ in

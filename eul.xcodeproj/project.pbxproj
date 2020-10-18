@@ -37,6 +37,8 @@
 		6C5F8541249FACE000CF0EF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5F8540249FACE000CF0EF8 /* ContentView.swift */; };
 		6C5F8543249FACE200CF0EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8542249FACE200CF0EF8 /* Assets.xcassets */; };
 		6C5F8549249FACE200CF0EF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8547249FACE200CF0EF8 /* Main.storyboard */; };
+		6C5FBD4E253C7A060016F3A2 /* PreferenceMenuViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FBD4D253C7A060016F3A2 /* PreferenceMenuViewView.swift */; };
+		6C5FBD50253C83520016F3A2 /* MenuActionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FBD4F253C83520016F3A2 /* MenuActionTextView.swift */; };
 		6C79AD342539E6080033845C /* CpuTopStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD332539E6080033845C /* CpuTopStore.swift */; };
 		6C79AD362539EBE60033845C /* ProcessUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD352539EBE60033845C /* ProcessUsage.swift */; };
 		6C79AD382539F9030033845C /* MenuActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD372539F9030033845C /* MenuActionButtonView.swift */; };
@@ -133,6 +135,8 @@
 		6C5F8548249FACE200CF0EF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C5F854A249FACE200CF0EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C5F854B249FACE200CF0EF8 /* eul.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = eul.entitlements; sourceTree = "<group>"; };
+		6C5FBD4D253C7A060016F3A2 /* PreferenceMenuViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceMenuViewView.swift; sourceTree = "<group>"; };
+		6C5FBD4F253C83520016F3A2 /* MenuActionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionTextView.swift; sourceTree = "<group>"; };
 		6C79AD332539E6080033845C /* CpuTopStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuTopStore.swift; sourceTree = "<group>"; };
 		6C79AD352539EBE60033845C /* ProcessUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessUsage.swift; sourceTree = "<group>"; };
 		6C79AD372539F9030033845C /* MenuActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionButtonView.swift; sourceTree = "<group>"; };
@@ -279,6 +283,7 @@
 				6C7DB6E324E80F9400133B06 /* PreferenceDisplayView.swift */,
 				6CC0798B250CD793000D7DAC /* PreferenceGeneralView.swift */,
 				6CE33C7E25260E3D00831857 /* PreferenceRefreshRateView.swift */,
+				6C5FBD4D253C7A060016F3A2 /* PreferenceMenuViewView.swift */,
 			);
 			path = Preference;
 			sourceTree = "<group>";
@@ -319,16 +324,17 @@
 		6CB26F7724E830FF00E809FE /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				6CB26F7824E8310900E809FE /* SectionView.swift */,
-				6C580539250CAEC3007F467A /* StatusBarTextView.swift */,
 				6CB260AA250DE26900328DAA /* ActivityIndicatorView.swift */,
 				6CB260AF250DF1A900328DAA /* BatteryIconView.swift */,
-				6C33CECA251767C400345977 /* ProgressBarView.swift */,
-				6C33CECE25177D8400345977 /* SeparatorView.swift */,
-				6C993B8D2517909200586C6B /* MiniSectionView.swift */,
 				6C79AD372539F9030033845C /* MenuActionButtonView.swift */,
-				6C457393253AC91500BB2584 /* TooltipView.swift */,
+				6C5FBD4F253C83520016F3A2 /* MenuActionTextView.swift */,
+				6C993B8D2517909200586C6B /* MiniSectionView.swift */,
 				6C387DC2253AEF3600CBB81B /* ProcessRowView.swift */,
+				6C33CECA251767C400345977 /* ProgressBarView.swift */,
+				6CB26F7824E8310900E809FE /* SectionView.swift */,
+				6C33CECE25177D8400345977 /* SeparatorView.swift */,
+				6C580539250CAEC3007F467A /* StatusBarTextView.swift */,
+				6C457393253AC91500BB2584 /* TooltipView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -486,6 +492,7 @@
 			files = (
 				6CDE6C7824F112D700463114 /* EulComponent.swift in Sources */,
 				6C7DB6DC24E7FFE300133B06 /* PreferenceStore.swift in Sources */,
+				6C5FBD50253C83520016F3A2 /* MenuActionTextView.swift in Sources */,
 				6C1FA40E24AA162800CA7F71 /* Refreshable.swift in Sources */,
 				6C1FA40424A7187F00CA7F71 /* FanView.swift in Sources */,
 				6C7DB6CF24E02F0600133B06 /* Shell.swift in Sources */,
@@ -499,6 +506,7 @@
 				6C7DB6E424E80F9400133B06 /* PreferenceDisplayView.swift in Sources */,
 				6CE33C7F25260E3D00831857 /* PreferenceRefreshRateView.swift in Sources */,
 				6C993B8A2517868B00586C6B /* FanMenuBlockView.swift in Sources */,
+				6C5FBD4E253C7A060016F3A2 /* PreferenceMenuViewView.swift in Sources */,
 				6C993B8C25178D3B00586C6B /* MemoryMenuBlockView.swift in Sources */,
 				6C7DB6DE24E8077700133B06 /* Animation.swift in Sources */,
 				6CEF771424DD95D7007C3640 /* BatteryView.swift in Sources */,

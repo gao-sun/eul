@@ -54,6 +54,7 @@ class PreferenceStore: ObservableObject {
     @Published var networkRefreshRate = 3
     @Published var showComponents = true
     @Published var showIcon = true
+    @Published var showTopActivities = true
     @Published var isUpdateAvailable: Bool? = false
     @Published var checkUpdateFailed = true
 
@@ -69,6 +70,7 @@ class PreferenceStore: ObservableObject {
             "networkRefreshRate": networkRefreshRate,
             "showComponents": showComponents,
             "showIcon": showIcon,
+            "showTopActivities": showTopActivities,
         ])
     }
 
@@ -171,6 +173,9 @@ class PreferenceStore: ObservableObject {
                 }
                 if let value = data["networkRefreshRate"].int {
                     networkRefreshRate = value
+                }
+                if let value = data["showTopActivities"].bool {
+                    showTopActivities = value
                 }
             } catch {
                 print("Unable to get preference data from user defaults")

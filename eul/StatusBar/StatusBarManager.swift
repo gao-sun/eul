@@ -16,7 +16,6 @@ class StatusBarManager {
     private var showComponentsCancellable: AnyCancellable?
     private var showIconCancellable: AnyCancellable?
     private var fontDesignCancellable: AnyCancellable?
-    private var languageCancellable: AnyCancellable?
     private let item = StatusBarItem()
 
     init() {
@@ -28,9 +27,6 @@ class StatusBarManager {
 
     func subscribe() {
         // TO-DO: refactor
-        languageCancellable = preferenceStore.$language.sink { _ in
-            self.updateLanguage()
-        }
         activeCancellable = preferenceStore.$activeComponents.sink {
             self.render(components: $0)
         }
@@ -52,10 +48,6 @@ class StatusBarManager {
         DispatchQueue.main.async {
             self.item.refresh()
         }
-    }
-
-    func updateLanguage() {
-        item.updateLanguage()
     }
 
     func render(components _: [EulComponent]) {

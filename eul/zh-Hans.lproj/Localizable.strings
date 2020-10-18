@@ -70,6 +70,7 @@
 "menu.no" = "否";
 "menu.preferences" = "偏好设置";
 "menu.quit" = "退出 eul";
+"menu.show_top_activities" = "展示活跃进程";
 
 // MARK: Temperature
 "temp.temperature" = "温度";
@@ -128,3 +129,4 @@
 "ui.refresh_rate" = "刷新频率";
 "ui.smc" = "SMC";
 "ui.network" = "网络";
+"ui.menu_view" = "菜单视图";

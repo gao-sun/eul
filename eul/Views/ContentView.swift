@@ -27,6 +27,9 @@ struct ContentView: View {
                     .ComponentsView()
                     .padding(.top, 8)
             }
+            SectionView(title: "ui.menu_view") {
+                Preference.PreferenceMenuViewView()
+            }
         }
         .padding(20)
         .frame(minWidth: 610)
