@@ -60,7 +60,7 @@ struct CpuMenuBlockView: View {
                         Spacer()
                     }
                 }
-                .frame(height: 102)
+                .frame(width: 311, height: 102) // fix size to avoid jitter in menu view
             }
         }
         .menuBlock()
