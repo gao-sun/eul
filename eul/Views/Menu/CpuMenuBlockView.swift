@@ -46,14 +46,19 @@ struct CpuMenuBlockView: View {
                     }
                 }
             }
-            if cpuTopStore.topProcesses.count > 0 {
-                SeparatorView()
-                VStack(spacing: 8) {
-                    ForEach(cpuTopStore.topProcesses) {
-                        ProcessRowView(process: $0)
-                    }
+            SeparatorView()
+            VStack(spacing: 8) {
+                ForEach(cpuTopStore.topProcesses) {
+                    ProcessRowView(section: "cpu", process: $0)
+                }
+                if !cpuTopStore.dataAvailable {
+                    Spacer()
+                    Text("cpu.waiting_status_report".localized())
+                        .secondaryDisplayText()
+                    Spacer()
                 }
             }
+            .frame(height: 102)
         }
         .menuBlock()
     }

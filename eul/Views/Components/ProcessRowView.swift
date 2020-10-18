@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ProcessRowView<Usage: ProcessUsage>: View {
+    let section: String
     let process: Usage
     var nameWidth: CGFloat = 200
     var valueViewBuilder: (() -> AnyView)? = nil
@@ -25,10 +26,11 @@ struct ProcessRowView<Usage: ProcessUsage>: View {
             } else {
                 Text(process.value.description)
                     .displayText()
+                    .frame(width: 35, alignment: .trailing)
             }
             HStack(spacing: 6) {
                 if let runningApp = process.runningApp, runningApp.canBeActivated {
-                    MenuActionButtonView(id: "\(process.pid)-nagivate", imageName: "Navigate", toolTip: "process.bring_to_front") {
+                    MenuActionButtonView(id: "\(section)-\(process.pid)-nagivate", imageName: "Navigate", toolTip: "process.bring_to_front") {
                         if runningApp.isActive {
                             NotificationCenter.default.post(name: .StatusBarMenuShouldClose, object: nil)
                         } else {
@@ -36,10 +38,10 @@ struct ProcessRowView<Usage: ProcessUsage>: View {
                         }
                     }
                 }
-                MenuActionButtonView(id: "\(process.pid)-open", imageName: "Folder", toolTip: "process.reveal_in_finder") {
+                MenuActionButtonView(id: "\(section)-\(process.pid)-open", imageName: "Folder", toolTip: "process.reveal_in_finder") {
                     NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: process.command, isDirectory: false)])
                 }
-                MenuActionButtonView(id: "\(process.pid)-terminate", imageName: "Terminate", toolTip: "process.terminate") {
+                MenuActionButtonView(id: "\(section)-\(process.pid)-terminate", imageName: "Terminate", toolTip: "process.terminate") {
                     let alert = NSAlert()
                     alert.messageText = "process.terminate_alert.text.%@".localizedFormat(process.displayName)
                     alert.informativeText = "process.terminate_alert.command.%@".localizedFormat(process.command)

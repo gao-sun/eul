@@ -20,10 +20,12 @@ class CpuTopStore: ObservableObject {
 
     static let shared = CpuTopStore()
 
+    private var firstLoaded = false
+    @Published var dataAvailable = false
     @Published var topProcesses: [ProcessCpuUsage] = []
 
     init() {
-        shellPipe("top -l0 -u -n 5 -stats pid,cpu,command -s 3") { string in
+        shellPipe("top -l0 -u -n 5 -stats pid,cpu,command -s 3") { [self] string in
             let rows = string.split(separator: "\n", omittingEmptySubsequences: false).map { String($0) }
 
             guard let separatorIndex = rows.firstIndex(of: "") else {
@@ -35,7 +37,7 @@ class CpuTopStore: ObservableObject {
                 if titleRow.contains("pid"), titleRow.contains("cpu"), titleRow.contains("command") {
                     let runningApps = NSWorkspace.shared.runningApplications
 
-                    self.topProcesses = ((separatorIndex + 2)..<rows.count).compactMap { index in
+                    topProcesses = ((separatorIndex + 2)..<rows.count).compactMap { index in
                         let row = rows[index].split(separator: " ").map { String($0) }
                         guard row.count >= 3, let pid = Int(row[0]), let cpu = Double(row[1]), cpu >= 0.1 else {
                             return nil
@@ -46,6 +48,12 @@ class CpuTopStore: ObservableObject {
                             value: cpu,
                             runningApp: runningApps.first(where: { $0.processIdentifier == pid })
                         )
+                    }
+
+                    if !firstLoaded {
+                        firstLoaded = true
+                    } else if !dataAvailable {
+                        dataAvailable = true
                     }
                 }
             }

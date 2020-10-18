@@ -86,9 +86,9 @@ class StatusBarItem {
             statusBarMenu.addItem(NSMenuItem.separator())
         }
 
-        statusBarMenu.addItem(versionItem)
-        statusBarMenu.addItem(preferencesItem)
-        statusBarMenu.addItem(quitItem)
+//        statusBarMenu.addItem(versionItem)
+//        statusBarMenu.addItem(preferencesItem)
+//        statusBarMenu.addItem(quitItem)
         item.menu = statusBarMenu
 
         shouldCloseObserver = NotificationCenter.default.addObserver(forName: .StatusBarMenuShouldClose, object: nil, queue: nil) { _ in

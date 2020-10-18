@@ -39,6 +39,7 @@
 "cpu.system" = "system";
 "cpu.user" = "user";
 "cpu.nice" = "nice";
+"cpu.waiting_status_report" = "Waiting for first status report";
 
 // MARK: Fan
 "fan" = "Fan";
@@ -61,6 +62,7 @@
 "network" = "Network";
 "network.in" = "In";
 "network.out" = "Out";
+"network.no_activity" = "No activity";
 
 // MARK: Menu
 "menu.summary" = "Summary";

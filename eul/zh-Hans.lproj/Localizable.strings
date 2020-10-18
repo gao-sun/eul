@@ -39,6 +39,7 @@
 "cpu.system" = "系统";
 "cpu.user" = "用户";
 "cpu.nice" = "Nice";
+"cpu.waiting_status_report" = "正在等待状态更新";
 
 // MARK: Fan
 "fan" = "风扇";
@@ -59,8 +60,9 @@
 
 // MARK: Network
 "network" = "网络";
-"network.in" = "上传";
-"network.out" = "下载";
+"network.in" = "下载";
+"network.out" = "上传";
+"network.no_activity" = "无活动";
 
 // MARK: Menu
 "menu.summary" = "概览";
