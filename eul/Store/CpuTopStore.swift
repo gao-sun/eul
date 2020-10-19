@@ -36,14 +36,14 @@ class CpuTopStore: ObservableObject {
         }
 
         if task != nil {
-            print("cpu task already started")
+            Print("cpu task already started")
             return
         }
 
         firstLoaded = false
         dataAvailable = false
         topProcesses = []
-        task = shellPipe("top -l0 -u -n 5 -stats pid,cpu,command -s 3") { [self] string in
+        task = shellPipe("top -l 0 -u -n 5 -stats pid,cpu,command -s 3") { [self] string in
             let rows = string.split(separator: "\n", omittingEmptySubsequences: false).map { String($0) }
 
             guard let separatorIndex = rows.firstIndex(of: "") else {
@@ -54,8 +54,7 @@ class CpuTopStore: ObservableObject {
                 let titleRow = rows[separatorIndex + 1].lowercased()
                 if titleRow.contains("pid"), titleRow.contains("cpu"), titleRow.contains("command") {
                     let runningApps = NSWorkspace.shared.runningApplications
-
-                    topProcesses = ((separatorIndex + 2)..<rows.count).compactMap { index in
+                    let result: [ProcessCpuUsage] = ((separatorIndex + 2)..<rows.count).compactMap { index in
                         let row = rows[index].split(separator: " ").map { String($0) }
                         guard row.count >= 3, let pid = Int(row[0]), let cpu = Double(row[1]), cpu >= 0.1 else {
                             return nil
@@ -68,10 +67,14 @@ class CpuTopStore: ObservableObject {
                         )
                     }
 
-                    if !firstLoaded {
-                        firstLoaded = true
-                    } else if !dataAvailable {
-                        dataAvailable = true
+                    Print("CPU top is updating")
+                    DispatchQueue.main.async { [self] in
+                        topProcesses = result
+                        if !firstLoaded {
+                            firstLoaded = true
+                        } else if !dataAvailable {
+                            dataAvailable = true
+                        }
                     }
                 }
             }

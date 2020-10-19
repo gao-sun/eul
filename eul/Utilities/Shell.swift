@@ -15,6 +15,8 @@ func shell(_ args: String...) -> String? {
     let pipe = Pipe()
     let error = Pipe()
 
+    Print("shell with", args)
+
     task.standardOutput = pipe
     task.standardError = error
     task.launchPath = "/bin/bash"
@@ -38,39 +40,11 @@ func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminat
     let task = Process()
     let pipe = Pipe()
 
+    Print("shell pipe with", args)
+
     task.standardOutput = pipe
     task.launchPath = "/bin/bash"
     task.arguments = ["-c"] + args
-
-    let outHandle = pipe.fileHandleForReading
-    outHandle.waitForDataInBackgroundAndNotify()
-
-    var buffer = Data()
-    var progressObserver: NSObjectProtocol!
-    progressObserver = NotificationCenter.default.addObserver(
-        forName: NSNotification.Name.NSFileHandleDataAvailable,
-        object: outHandle,
-        queue: nil
-    ) { _ in
-        let data = outHandle.availableData
-
-        if data.count > 0 {
-            buffer += data
-            if let str = String(data: buffer, encoding: String.Encoding.utf8), str.last?.isNewline == true {
-                buffer.removeAll()
-                DispatchQueue.main.async {
-                    onData?(str)
-                }
-            }
-            outHandle.waitForDataInBackgroundAndNotify()
-        } else {
-            buffer.removeAll()
-            DispatchQueue.main.async {
-                didTerminate?()
-            }
-            NotificationCenter.default.removeObserver(progressObserver!)
-        }
-    }
 
     var terminationObserver: NSObjectProtocol!
     terminationObserver = NotificationCenter.default.addObserver(
@@ -78,13 +52,32 @@ func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminat
         object: task, queue: nil
     ) {
         _ -> Void in
-        DispatchQueue.main.async {
-            didTerminate?()
-        }
+        didTerminate?()
         NotificationCenter.default.removeObserver(terminationObserver!)
     }
 
-    DispatchQueue(label: "shellPipe-\(UUID().uuidString)", qos: .background).async {
+    var buffer = Data()
+    let outHandle = pipe.fileHandleForReading
+    outHandle.readabilityHandler = { _ in
+        let data = outHandle.availableData
+
+        Print("data received for", args)
+
+        if data.count > 0 {
+            buffer += data
+            if let str = String(data: buffer, encoding: String.Encoding.utf8), str.last?.isNewline == true {
+                buffer.removeAll()
+                onData?(str)
+            }
+            outHandle.waitForDataInBackgroundAndNotify()
+        } else {
+            buffer.removeAll()
+        }
+    }
+    outHandle.waitForDataInBackgroundAndNotify()
+
+    DispatchQueue(label: "shellPipe-\(UUID().uuidString)", qos: .background, attributes: .concurrent).async {
+        Print("good to launch")
         task.launch()
     }
 
