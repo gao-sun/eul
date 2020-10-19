@@ -49,10 +49,6 @@ class NetworkTopStore: ObservableObject {
         }
     }
 
-    var interval: Int {
-        preferenceStore.networkRefreshRate
-    }
-
     func update(shouldStart: Bool) {
         guard shouldStart else {
             task?.terminate()
@@ -69,7 +65,7 @@ class NetworkTopStore: ObservableObject {
         lastOutBytes.removeAll()
         lastTimestamp = Date().timeIntervalSince1970
         processes = []
-        task = shellPipe("nettop -P -x -J bytes_in,bytes_out -L0 -s \(interval)") { [self] string in
+        task = shellPipe("nettop -P -x -J bytes_in,bytes_out -L0 -s 3") { [self] string in
             let rows = string.split(separator: "\n").map { String($0) }
             let headers = rows[0]
                 .split(separator: ",", omittingEmptySubsequences: false)
@@ -125,7 +121,7 @@ class NetworkTopStore: ObservableObject {
                     outSpeedInByte: lastOut.map { (outBytes - $0) / timeElapsed } ?? 0
                 )
 
-                guard speed.totalSpeedInByte > 0.1 else {
+                guard speed.totalSpeedInByte >= 100 else {
                     return nil
                 }
 
