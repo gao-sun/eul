@@ -12,8 +12,9 @@ struct StatusMenuView: SizeChangeView {
     @EnvironmentObject var preferenceStore: PreferenceStore
 
     func openPreferences() {
-        NSApplication.shared.mainWindow?.makeKeyAndOrderFront(nil)
+        (NSApp.delegate as! AppDelegate).window.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
+        NotificationCenter.default.post(name: .StatusBarMenuShouldClose, object: nil)
     }
 
     func quit() {
