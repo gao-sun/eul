@@ -13,10 +13,10 @@ class BatteryStore: ObservableObject, Refreshable {
     static let shared = BatteryStore()
 
     private var battery = Battery()
-    private let opened = false
 
     var io = Info.Battery()
 
+    @Published var opened = false
     @Published var acPowered = false
     @Published var charged = false
     @Published var charging = false
@@ -37,9 +37,11 @@ class BatteryStore: ObservableObject, Refreshable {
         io = Info.Battery()
 
         guard battery.open() == kIOReturnSuccess else {
+            opened = false
             return
         }
 
+        opened = true
         acPowered = battery.isACPowered()
         charged = battery.isCharged()
         charging = battery.isCharging()

@@ -38,6 +38,14 @@ enum EulComponent: String, CaseIterable, Identifiable {
     case Memory
     case Battery
     case Network
+
+    static var allCases: [EulComponent] {
+        if BatteryStore().opened {
+            return [.Battery, .CPU, .Fan, .Memory, .Network]
+        } else {
+            return [.CPU, .Fan, .Memory, .Network]
+        }
+    }
 }
 
 protocol EulComponentMenu {
