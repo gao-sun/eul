@@ -37,7 +37,7 @@ struct StatusMenuView: SizeChangeView {
             CpuMenuBlockView()
             FanMenuBlockView()
             MemoryMenuBlockView()
-            if batteryStore.opened {
+            if batteryStore.valid {
                 BatteryMenuBlockView()
             }
             NetworkMenuBlockMenuView()

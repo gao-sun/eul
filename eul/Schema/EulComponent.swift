@@ -40,7 +40,7 @@ enum EulComponent: String, CaseIterable, Identifiable {
     case Network
 
     static var allCases: [EulComponent] {
-        if BatteryStore().opened {
+        if BatteryStore().valid {
             return [.Battery, .CPU, .Fan, .Memory, .Network]
         } else {
             return [.CPU, .Fan, .Memory, .Network]
