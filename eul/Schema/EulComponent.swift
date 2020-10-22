@@ -33,6 +33,21 @@ enum EulComponent: String, CaseIterable, Identifiable {
         }
     }
 
+    func getMenuView() -> AnyView {
+        switch self {
+        case .Battery:
+            return AnyView(BatteryMenuBlockView())
+        case .CPU:
+            return AnyView(CpuMenuBlockView())
+        case .Fan:
+            return AnyView(FanMenuBlockView())
+        case .Memory:
+            return AnyView(MemoryMenuBlockView())
+        case .Network:
+            return AnyView(NetworkMenuBlockMenuView())
+        }
+    }
+
     case CPU
     case Fan
     case Memory

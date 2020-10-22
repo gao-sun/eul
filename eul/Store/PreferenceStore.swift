@@ -55,6 +55,9 @@ class PreferenceStore: ObservableObject {
     @Published var showComponents = true
     @Published var showIcon = true
     @Published var showTopActivities = true
+    @Published var isActiveMenuComponentToggling = false
+    @Published var activeMenuComponents = EulComponent.allCases
+    @Published var availableMenuComponents: [EulComponent] = []
     @Published var isUpdateAvailable: Bool? = false
     @Published var checkUpdateFailed = true
 
@@ -71,6 +74,8 @@ class PreferenceStore: ObservableObject {
             "showComponents": showComponents,
             "showIcon": showIcon,
             "showTopActivities": showTopActivities,
+            "activeMenuComponents": activeMenuComponents.map { $0.rawValue },
+            "availableMenuComponents": availableMenuComponents.map { $0.rawValue },
         ])
     }
 
@@ -98,6 +103,21 @@ class PreferenceStore: ObservableObject {
         availableComponents.remove(at: index)
     }
 
+    func toggleActiveMenuComponent(at index: Int) {
+        isActiveMenuComponentToggling = true
+        availableMenuComponents.append(activeMenuComponents[index])
+        activeMenuComponents.remove(at: index)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // wait for rendering, will crash w/o delay
+            self.isActiveMenuComponentToggling = false
+        }
+    }
+
+    func toggleAvailableMenuComponent(at index: Int) {
+        activeMenuComponents.append(availableMenuComponents[index])
+        availableMenuComponents.remove(at: index)
+    }
+
     func checkUpdate() {
         isUpdateAvailable = nil
         checkUpdateFailed = false
@@ -112,8 +132,7 @@ class PreferenceStore: ObservableObject {
                         error == nil,
                         let version = self.version,
                         let tagName = JSON(data as Any)["tag_name"].string,
-                        "v\(version)".compare(tagName, options: .numeric) == .orderedAscending
-                    {
+                        "v\(version)".compare(tagName, options: .numeric) == .orderedAscending {
                         self.isUpdateAvailable = true
                     } else {
                         self.isUpdateAvailable = false
@@ -176,6 +195,22 @@ class PreferenceStore: ObservableObject {
                 }
                 if let value = data["showTopActivities"].bool {
                     showTopActivities = value
+                }
+                if let array = data["activeMenuComponents"].array {
+                    activeMenuComponents = array.compactMap {
+                        if let string = $0.string {
+                            return EulComponent(rawValue: string)
+                        }
+                        return nil
+                    }
+                }
+                if let array = data["availableMenuComponents"].array {
+                    availableMenuComponents = array.compactMap {
+                        if let string = $0.string {
+                            return EulComponent(rawValue: string)
+                        }
+                        return nil
+                    }
                 }
             } catch {
                 print("Unable to get preference data from user defaults")

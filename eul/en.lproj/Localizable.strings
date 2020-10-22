@@ -90,6 +90,7 @@
 
 // MARK: Component
 "component.status_bar" = "Status Bar";
+"component.menu_view" = "Menu View";
 "component.drag_to_reorder" = "drag to reorder";
 "component.available" = "Available";
 "component.click_to_append" = "click to append";

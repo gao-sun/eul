@@ -34,13 +34,9 @@ struct StatusMenuView: SizeChangeView {
                 MenuActionTextView(id: "menu.preferences", text: "menu.preferences", action: openPreferences)
                 MenuActionTextView(id: "menu.quit", text: "menu.quit", action: quit)
             }
-            CpuMenuBlockView()
-            FanMenuBlockView()
-            MemoryMenuBlockView()
-            if batteryStore.isValid {
-                BatteryMenuBlockView()
+            ForEach(preferenceStore.activeMenuComponents) { component in
+                component.getMenuView()
             }
-            NetworkMenuBlockMenuView()
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 15)

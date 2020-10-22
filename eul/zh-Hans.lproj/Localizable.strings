@@ -90,6 +90,7 @@
 
 // MARK: Component
 "component.status_bar" = "状态栏";
+"component.menu_view" = "菜单视图";
 "component.drag_to_reorder" = "拖拽以排序";
 "component.available" = "可用";
 "component.click_to_append" = "单击以添加";
