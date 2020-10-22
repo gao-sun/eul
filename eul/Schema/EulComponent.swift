@@ -40,11 +40,8 @@ enum EulComponent: String, CaseIterable, Identifiable {
     case Network
 
     static var allCases: [EulComponent] {
-        if BatteryStore().valid {
-            return [.Battery, .CPU, .Fan, .Memory, .Network]
-        } else {
-            return [.CPU, .Fan, .Memory, .Network]
-        }
+        let components: [EulComponent] = [.CPU, .Fan, .Memory, .Network]
+        return BatteryStore.shared.isValid ? components + [.Battery] : components
     }
 }
 

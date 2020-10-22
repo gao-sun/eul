@@ -16,7 +16,7 @@ class BatteryStore: ObservableObject, Refreshable {
 
     var io = Info.Battery()
 
-    @Published var valid = true
+    @Published var isValid = true
 
     @Published var acPowered = false
     @Published var charged = false
@@ -38,11 +38,11 @@ class BatteryStore: ObservableObject, Refreshable {
         io = Info.Battery()
 
         guard battery.open() == kIOReturnSuccess else {
-            valid = false
+            isValid = false
             return
         }
 
-        valid = true
+        isValid = true
 
         acPowered = battery.isACPowered()
         charged = battery.isCharged()
