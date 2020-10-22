@@ -116,6 +116,7 @@
 "language.zh-Hans" = "简体中文";
 
 // MARK: General UI
+"ui.preferences" = "eul偏好设置";
 "ui.general" = "通用";
 "ui.version" = "版本";
 "ui.checking_update" = "正在检查更新";

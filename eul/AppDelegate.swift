@@ -41,13 +41,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
             backing: .buffered, defer: false
         )
+        window.title = "ui.preferences".localized()
         window.center()
         window.setFrameAutosaveName("Eul Preferences")
         window.contentView = NSHostingView(rootView: contentView)
         window.isReleasedWhenClosed = false
         window.standardWindowButton(.zoomButton)?.isHidden = true
         window.standardWindowButton(.miniaturizeButton)?.isHidden = true
-        window.makeKeyAndOrderFront(nil)
         window.delegate = self
         SmcControl.shared.start()
         refreshSMCRepeatedly()
