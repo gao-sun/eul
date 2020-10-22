@@ -10,6 +10,7 @@ import SwiftUI
 
 struct StatusMenuView: SizeChangeView {
     @EnvironmentObject var preferenceStore: PreferenceStore
+    @EnvironmentObject var batteryStore: BatteryStore
 
     func openPreferences() {
         (NSApp.delegate as! AppDelegate).window.makeKeyAndOrderFront(nil)
@@ -36,7 +37,9 @@ struct StatusMenuView: SizeChangeView {
             CpuMenuBlockView()
             FanMenuBlockView()
             MemoryMenuBlockView()
-            BatteryMenuBlockView()
+            if batteryStore.isValid {
+                BatteryMenuBlockView()
+            }
             NetworkMenuBlockMenuView()
         }
         .padding(.vertical, 8)
