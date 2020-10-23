@@ -1,0 +1,72 @@
+name: PR Label
+
+on:
+  pull_request:
+    branches: [master]
+    types: [opened, closed, reopened, synchronize]
+  pull_request_review:
+    types: [submitted, edited, dismissed]
+
+jobs:
+  setup-label:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/github-script@v2
+        id: setup-labels
+        with:
+          script: |
+            let labelsToAdd = ['needs review'], labelsToDelete = ['approved'];
+            const repoPayload = {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            };
+            const issuePayload = {
+              issue_number: context.issue.number,
+              ...repoPayload,
+            };
+            const pullPayload = {
+              pull_number: context.issue.number,
+              ...repoPayload,
+            };
+            const { data: pull } = await github.pulls.get(pullPayload);
+            if (pull.merged) {
+              console.log('PR: merged');
+              labelsToAdd = ['merged'];
+              labelsToDelete = ['needs review', 'approved'];
+            } else if (pull.state === 'closed') {
+              console.log('PR: closed');
+              labelsToAdd = [];
+              labelsToDelete = ['needs review', 'approved'];
+            } else {
+              console.log('PR: open');
+              const { data: reviews } = await github.pulls.listReviews(pullPayload);
+              if (
+                reviews &&
+                reviews.some(review => review.state === 'APPROVED') &&
+                !reviews.some(review => review.state === 'REQUEST_CHANGES')
+              ) {
+                labelsToAdd = ['approved'];
+                labelsToDelete = ['needs review'];
+              }
+            }
+            const { data: currentLabels } = await github.issues.listLabelsOnIssue(issuePayload);
+            console.log('To add: ', labelsToAdd);
+            console.log('To delete: ', labelsToDelete);
+            console.log('Current: ', currentLabels.map(label => label.name));
+            labelsToAdd.forEach(toAdd => {
+              if (!currentLabels.find(label => label.name === toAdd)) {
+                github.issues.addLabels({
+                  ...issuePayload,
+                  labels: [toAdd],
+                });
+              }
+            });
+            labelsToDelete.forEach(toDelete => {
+              if (currentLabels.find(label => label.name === toDelete)) {
+                github.issues.removeLabel({
+                  ...issuePayload,
+                  name: toDelete,
+                });
+              }
+            });

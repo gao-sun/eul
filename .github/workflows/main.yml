@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  Build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/cache@v2
+        with:
+          path: .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+      - name: Install SwiftFormat
+        run: brew install gao-sun/core/swiftformat@0.46.2
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: 1
+      - name: Install xcpretty
+        run: gem install xcpretty
+      - name: SwiftFormat # this is necessary since we'll format files in build phase
+        run: swiftformat --lint .
+      - name: Switch Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_12.app
+      - name: Build
+        run: xcodebuild -project ./eul.xcodeproj -sdk macosx build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO" | xcpretty && exit ${PIPESTATUS[0]}
