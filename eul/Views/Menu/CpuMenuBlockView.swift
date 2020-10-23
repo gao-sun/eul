@@ -32,18 +32,6 @@ struct CpuMenuBlockView: View {
                         MiniSectionView(title: "cpu.user", value: String(format: "%.1f%%", usageCPU.user))
                         Spacer()
                         MiniSectionView(title: "cpu.nice", value: String(format: "%.1f%%", usageCPU.nice))
-                        cpuStore.temp.map { temp in
-                            Group {
-                                Spacer()
-                                MiniSectionView(title: "cpu.temperature", value: SmcControl.shared.formatTemp(temp))
-                            }
-                        }
-                        cpuStore.gpuTemp.map { temp in
-                            Group {
-                                Spacer()
-                                MiniSectionView(title: "gpu.temperature", value: SmcControl.shared.formatTemp(temp))
-                            }
-                        }
                     }
                 }
             }

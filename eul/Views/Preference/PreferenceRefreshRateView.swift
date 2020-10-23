@@ -15,13 +15,6 @@ extension Preference {
 
         var body: some View {
             HStack(spacing: 12) {
-                Picker("ui.smc".localized(), selection: $preference.smcRefreshRate) {
-                    ForEach(allIntervals, id: \.self) {
-                        Text("\($0)s")
-                            .tag($0)
-                    }
-                }
-                .frame(width: 150)
                 Picker("ui.network".localized(), selection: $preference.networkRefreshRate) {
                     ForEach(allIntervals, id: \.self) {
                         Text("\($0)s")

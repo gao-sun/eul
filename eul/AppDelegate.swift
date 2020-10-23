@@ -20,10 +20,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         NSStatusBar.system.thickness
     }
 
-    func refreshSMCRepeatedly() {
-        NotificationCenter.default.post(name: .SMCShouldRefresh, object: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + Double(preferenceStore.smcRefreshRate)) { [self] in
-            refreshSMCRepeatedly()
+    func refreshStoreRepeatedly() {
+        NotificationCenter.default.post(name: .StoreShouldRefresh, object: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [self] in
+            refreshStoreRepeatedly()
         }
     }
 
@@ -49,8 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         window.standardWindowButton(.miniaturizeButton)?.isHidden = true
         window.makeKeyAndOrderFront(nil)
         window.delegate = self
-        SmcControl.shared.start()
-        refreshSMCRepeatedly()
+        refreshStoreRepeatedly()
         refreshNetworkRepeatedly()
     }
 

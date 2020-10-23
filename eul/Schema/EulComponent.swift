@@ -24,8 +24,6 @@ enum EulComponent: String, CaseIterable, Identifiable {
             return AnyView(BatteryView())
         case .CPU:
             return AnyView(CpuView())
-        case .Fan:
-            return AnyView(FanView())
         case .Memory:
             return AnyView(MemoryView())
         case .Network:
@@ -34,7 +32,6 @@ enum EulComponent: String, CaseIterable, Identifiable {
     }
 
     case CPU
-    case Fan
     case Memory
     case Battery
     case Network

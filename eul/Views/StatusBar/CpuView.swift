@@ -13,14 +13,14 @@ struct CpuView: View {
     @EnvironmentObject var preferenceStore: PreferenceStore
 
     var texts: [String] {
-        [cpuStore.usageString, cpuStore.temp.map { SmcControl.shared.formatTemp($0) }].compactMap { $0 }
+        [cpuStore.usageString]
     }
 
     var textWidth: CGFloat? {
         guard preferenceStore.textDisplay == .compact else {
             return nil
         }
-        return preferenceStore.fontDesign == .default ? 30 : 35
+        return preferenceStore.fontDesign == .default ? 40 : 45
     }
 
     var body: some View {

@@ -34,7 +34,6 @@ struct StatusMenuView: SizeChangeView {
                 MenuActionTextView(id: "menu.quit", text: "menu.quit", action: quit)
             }
             CpuMenuBlockView()
-            FanMenuBlockView()
             MemoryMenuBlockView()
             BatteryMenuBlockView()
             NetworkMenuBlockMenuView()

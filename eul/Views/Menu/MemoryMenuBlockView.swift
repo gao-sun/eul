@@ -40,12 +40,6 @@ struct MemoryMenuBlockView: View {
                 MiniSectionView(title: "memory.wired", value: MemoryStore.memoryUnit(memoryStore.wired))
                 Spacer()
                 MiniSectionView(title: "memory.compressed", value: MemoryStore.memoryUnit(memoryStore.compressed))
-                memoryStore.temp.map { temp in
-                    Group {
-                        Spacer()
-                        MiniSectionView(title: "memory.temp", value: SmcControl.shared.formatTemp(temp))
-                    }
-                }
             }
         }
         .menuBlock()

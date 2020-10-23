@@ -7,23 +7,3 @@
 //
 
 import SwiftUI
-
-struct FanView: View {
-    @EnvironmentObject var fanStore: FanStore
-    @EnvironmentObject var preferenceStore: PreferenceStore
-
-    var texts: [String] {
-        fanStore.fans.map { "\($0.speed.description) rpm" }
-    }
-
-    var body: some View {
-        HStack(spacing: 6) {
-            if preferenceStore.showIcon {
-                Image("Fan")
-                    .resizable()
-                    .frame(width: 13, height: 13)
-            }
-            StatusBarTextView(texts: texts)
-        }
-    }
-}
