@@ -47,8 +47,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         window.isReleasedWhenClosed = false
         window.standardWindowButton(.zoomButton)?.isHidden = true
         window.standardWindowButton(.miniaturizeButton)?.isHidden = true
-        window.makeKeyAndOrderFront(nil)
         window.delegate = self
+
+        // comment out for not showing window at login. no proper solution currently, tracking:
+        // https://github.com/sindresorhus/LaunchAtLogin/issues/33
+        // window.makeKeyAndOrderFront(nil)
+        // NSApp.activate(ignoringOtherApps: true)
+
         SmcControl.shared.start()
         refreshSMCRepeatedly()
         refreshNetworkRepeatedly()
