@@ -158,6 +158,7 @@ class PreferenceStore: ObservableObject {
                         }
                         return nil
                     }
+                    availableComponents += EulComponent.allCases.filter { !activeComponents.contains($0) && !availableComponents.contains($0) }
                 }
                 if let value = data["showComponents"].bool {
                     showComponents = value
