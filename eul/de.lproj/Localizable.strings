@@ -132,3 +132,4 @@
 "ui.smc" = "SMC";
 "ui.network" = "Netzwerk";
 "ui.menu_view" = "Menü Ansicht";
+"ui.empty" = "Empty";

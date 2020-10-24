@@ -10,7 +10,7 @@ import SwiftUI
 
 extension Preference {
     struct ComponentsView: View {
-        @State var updated = false
+        private let coordinateSpace = "ComponentsOrdering"
         @EnvironmentObject var preference: PreferenceStore
         @EnvironmentObject var componentsStore: ComponentsStore<EulComponent>
         @State var dragging: EulComponent?
@@ -20,7 +20,7 @@ extension Preference {
         func updateFrame(geometry: GeometryProxy, index: Int) -> some View {
             if !componentsStore.isActiveComponentToggling {
                 DispatchQueue.main.async {
-                    self.frames[index] = geometry.frame(in: CoordinateSpace.named("ComponentsOrdering"))
+                    self.frames[index] = geometry.frame(in: CoordinateSpace.named(coordinateSpace))
                 }
             }
             return Color.clear
@@ -135,7 +135,7 @@ extension Preference {
                             .stroke(Color.border, lineWidth: 1)
                     )
                     .clipped()
-                    .coordinateSpace(name: "ComponentsOrdering")
+                    .coordinateSpace(name: coordinateSpace)
                     if componentsStore.availableComponents.count > 0 {
                         HStack {
                             Text("component.available".localized())

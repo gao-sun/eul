@@ -131,3 +131,4 @@
 "ui.smc" = "SMC";
 "ui.network" = "网络";
 "ui.menu_view" = "菜单视图";
+"ui.empty" = "空";
