@@ -36,9 +36,9 @@
 "cpu.logical_cores" = "Logische Cores";
 "cpu.up_time" = "Betriebszeit";
 "cpu.thermal_level" = "Thermal Lv.";
-"cpu.system" = "system";
+"cpu.system" = "System";
 "cpu.user" = "Benutzer";
-"cpu.nice" = "gut";
+"cpu.nice" = "Gut";
 "cpu.waiting_status_report" = "Warten auf ersten Statusbericht";
 
 // MARK: Fan
