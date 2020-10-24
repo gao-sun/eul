@@ -10,6 +10,7 @@ import SwiftUI
 
 struct StatusBarView: SizeChangeView {
     @EnvironmentObject var preferenceStore: PreferenceStore
+    @EnvironmentObject var componentsStore: ComponentsStore<EulComponent>
     var onSizeChange: ((CGSize) -> Void)?
 
     var spacing: CGFloat {
@@ -18,8 +19,8 @@ struct StatusBarView: SizeChangeView {
 
     var body: some View {
         HStack(spacing: spacing) {
-            if preferenceStore.showComponents {
-                ForEach(preferenceStore.activeComponents) { component in
+            if componentsStore.showComponents {
+                ForEach(componentsStore.activeComponents) { component in
                     component.getView()
                 }
             } else {

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var preferenceStore = PreferenceStore.shared
+    @EnvironmentObject var preferenceStore: PreferenceStore
     @State var activeSection: Preference.Section = .general
 
     var body: some View {
@@ -53,7 +53,6 @@ struct ContentView: View {
             .padding(20)
             .frame(minWidth: 610, alignment: .leading)
         }
-        .environmentObject(preferenceStore)
         .id(preferenceStore.language)
     }
 }

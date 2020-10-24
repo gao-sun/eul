@@ -46,13 +46,9 @@ class PreferenceStore: ObservableObject {
     }
 
     @Published var textDisplay = Preference.TextDisplay.compact
-    @Published var isActiveComponentToggling = false
-    @Published var activeComponents = EulComponent.allCases
-    @Published var availableComponents: [EulComponent] = []
     @Published var fontDesign: Preference.FontDesign = .default
     @Published var smcRefreshRate = 3
     @Published var networkRefreshRate = 3
-    @Published var showComponents = true
     @Published var showIcon = true
     @Published var showTopActivities = true
     @Published var isUpdateAvailable: Bool? = false
@@ -63,12 +59,9 @@ class PreferenceStore: ObservableObject {
             "temperatureUnit": temperatureUnit.rawValue,
             "language": language,
             "textDisplay": textDisplay.rawValue,
-            "activeComponents": activeComponents.map { $0.rawValue },
-            "availableComponents": availableComponents.map { $0.rawValue },
             "fontDesign": fontDesign.rawValue,
             "smcRefreshRate": smcRefreshRate,
             "networkRefreshRate": networkRefreshRate,
-            "showComponents": showComponents,
             "showIcon": showIcon,
             "showTopActivities": showTopActivities,
         ])
@@ -81,21 +74,6 @@ class PreferenceStore: ObservableObject {
                 self.saveToDefaults()
             }
         }
-    }
-
-    func toggleActiveComponent(at index: Int) {
-        isActiveComponentToggling = true
-        availableComponents.append(activeComponents[index])
-        activeComponents.remove(at: index)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // wait for rendering, will crash w/o delay
-            self.isActiveComponentToggling = false
-        }
-    }
-
-    func toggleAvailableComponent(at index: Int) {
-        activeComponents.append(availableComponents[index])
-        availableComponents.remove(at: index)
     }
 
     func checkUpdate() {
@@ -132,7 +110,7 @@ class PreferenceStore: ObservableObject {
             do {
                 let data = try JSON(data: raw)
 
-                print("⚙️ loaded data from user defaults", data)
+                print("⚙️ loaded data from user defaults", userDefaultsKey, data)
 
                 if let raw = data["temperatureUnit"].string, let value = TemperatureUnit(rawValue: raw) {
                     temperatureUnit = value
@@ -142,26 +120,6 @@ class PreferenceStore: ObservableObject {
                 }
                 if let raw = data["textDisplay"].string, let value = Preference.TextDisplay(rawValue: raw) {
                     textDisplay = value
-                }
-                if let array = data["activeComponents"].array {
-                    activeComponents = array.compactMap {
-                        if let string = $0.string {
-                            return EulComponent(rawValue: string)
-                        }
-                        return nil
-                    }
-                }
-                if let array = data["availableComponents"].array {
-                    availableComponents = array.compactMap {
-                        if let string = $0.string {
-                            return EulComponent(rawValue: string)
-                        }
-                        return nil
-                    }
-                    availableComponents += EulComponent.allCases.filter { !activeComponents.contains($0) && !availableComponents.contains($0) }
-                }
-                if let value = data["showComponents"].bool {
-                    showComponents = value
                 }
                 if let value = data["showIcon"].bool {
                     showIcon = value

@@ -67,6 +67,8 @@
 		6CB26F7924E8310900E809FE /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB26F7824E8310900E809FE /* SectionView.swift */; };
 		6CC0798C250CD793000D7DAC /* PreferenceGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC0798B250CD793000D7DAC /* PreferenceGeneralView.swift */; };
 		6CDBB4C1254462B100D01EA0 /* PreferenceSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBB4C0254462B100D01EA0 /* PreferenceSectionView.swift */; };
+		6CDBB4C325447B7500D01EA0 /* EulMenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBB4C225447B7500D01EA0 /* EulMenuComponent.swift */; };
+		6CDBB4C525447D8B00D01EA0 /* ComponentsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBB4C425447D8B00D01EA0 /* ComponentsStore.swift */; };
 		6CDE6C7224F0007D00463114 /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDE6C7124F0007D00463114 /* StatusBarItem.swift */; };
 		6CDE6C7424F0047600463114 /* SizeChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDE6C7324F0047600463114 /* SizeChangeView.swift */; };
 		6CDE6C7624F10C8000463114 /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDE6C7524F10C8000463114 /* StatusBarManager.swift */; };
@@ -167,6 +169,8 @@
 		6CB26F7824E8310900E809FE /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		6CC0798B250CD793000D7DAC /* PreferenceGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceGeneralView.swift; sourceTree = "<group>"; };
 		6CDBB4C0254462B100D01EA0 /* PreferenceSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceSectionView.swift; sourceTree = "<group>"; };
+		6CDBB4C225447B7500D01EA0 /* EulMenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulMenuComponent.swift; sourceTree = "<group>"; };
+		6CDBB4C425447D8B00D01EA0 /* ComponentsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsStore.swift; sourceTree = "<group>"; };
 		6CDE6C7124F0007D00463114 /* StatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarItem.swift; sourceTree = "<group>"; };
 		6CDE6C7324F0047600463114 /* SizeChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeChangeView.swift; sourceTree = "<group>"; };
 		6CDE6C7524F10C8000463114 /* StatusBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				6CDE6C7724F112D700463114 /* EulComponent.swift */,
+				6CDBB4C225447B7500D01EA0 /* EulMenuComponent.swift */,
 				6C7DB6E524E82C5A00133B06 /* Preference.swift */,
 				6C1FA40D24AA162800CA7F71 /* Refreshable.swift */,
 				6CDE6C7324F0047600463114 /* SizeChangeView.swift */,
@@ -324,6 +329,7 @@
 				6C387DC6253B08F100CBB81B /* NetworkTopStore.swift */,
 				6C7DB6DB24E7FFE300133B06 /* PreferenceStore.swift */,
 				6C457391253AC69E00BB2584 /* UIStore.swift */,
+				6CDBB4C425447D8B00D01EA0 /* ComponentsStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -359,12 +365,12 @@
 		6CDE6C7924F2AA3200463114 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				6C33CEC82517634400345977 /* StatusMenuView.swift */,
+				6C993B8F2517920600586C6B /* BatteryMenuBlockView.swift */,
 				6C33CECC25177CE300345977 /* CpuMenuBlockView.swift */,
 				6C993B892517868B00586C6B /* FanMenuBlockView.swift */,
 				6C993B8B25178D3B00586C6B /* MemoryMenuBlockView.swift */,
-				6C993B8F2517920600586C6B /* BatteryMenuBlockView.swift */,
 				6C387DC8253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift */,
+				6C33CEC82517634400345977 /* StatusMenuView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 				6C1FA40B24AA139300CA7F71 /* NSNotification.swift in Sources */,
 				6C79AD382539F9030033845C /* MenuActionButtonView.swift in Sources */,
 				6C7DB6D524E7A75E00133B06 /* NetworkView.swift in Sources */,
+				6CDBB4C325447B7500D01EA0 /* EulMenuComponent.swift in Sources */,
 				6CDBB4C1254462B100D01EA0 /* PreferenceSectionView.swift in Sources */,
 				6C7DB6E824E82C7700133B06 /* StringEnum.swift in Sources */,
 				6CC0798C250CD793000D7DAC /* PreferenceGeneralView.swift in Sources */,
@@ -560,6 +567,7 @@
 				6C05F2C825120517004A0F72 /* Double.swift in Sources */,
 				6C993B902517920600586C6B /* BatteryMenuBlockView.swift in Sources */,
 				6C79AD362539EBE60033845C /* ProcessUsage.swift in Sources */,
+				6CDBB4C525447D8B00D01EA0 /* ComponentsStore.swift in Sources */,
 				6CE33C7D252601BB00831857 /* Int.swift in Sources */,
 				6C7DB6D124E0300E00133B06 /* NetworkStore.swift in Sources */,
 				6C33CEC92517634400345977 /* StatusMenuView.swift in Sources */,

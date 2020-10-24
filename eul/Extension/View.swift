@@ -46,5 +46,7 @@ extension View {
             .environmentObject(NetworkStore.shared)
             .environmentObject(NetworkTopStore.shared)
             .environmentObject(PreferenceStore.shared)
+            .environmentObject(sharedComponentsStore)
+            .environmentObject(sharedMenuComponentsStore)
     }
 }
