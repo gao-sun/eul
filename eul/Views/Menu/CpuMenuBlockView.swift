@@ -47,7 +47,7 @@ struct CpuMenuBlockView: View {
                     }
                 }
             }
-            if preferenceStore.showTopActivities {
+            if preferenceStore.showCPUTopActivities {
                 SeparatorView()
                 VStack(spacing: 8) {
                     ForEach(cpuTopStore.topProcesses) {

@@ -82,9 +82,13 @@ class CpuTopStore: ObservableObject {
     }
 
     init() {
-        update(shouldStart: preferenceStore.showTopActivities)
-        activeCancellable = preferenceStore.$showTopActivities.sink { [self] in
-            update(shouldStart: $0)
-        }
+        activeCancellable = Publishers
+            .CombineLatest(preferenceStore.$showCPUTopActivities, sharedMenuComponentsStore.$activeComponents)
+            .map {
+                $0 && $1.contains(.CPU)
+            }
+            .sink { [self] in
+                update(shouldStart: $0)
+            }
     }
 }

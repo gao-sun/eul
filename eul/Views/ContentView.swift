@@ -9,31 +9,50 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var preferenceStore = PreferenceStore.shared
+    @EnvironmentObject var preferenceStore: PreferenceStore
+    @State var activeSection: Preference.Section = .general
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            SectionView(title: "ui.general") {
-                Preference.GeneralView()
+        HSplitView {
+            VStack(spacing: 4) {
+                ForEach(Preference.Section.allCases) {
+                    Preference.PreferenceSectionView(activeSection: $activeSection, section: $0)
+                }
+                Spacer()
             }
-            SectionView(title: "ui.display") {
-                Preference.DisplayView()
+            .padding(.top, 40)
+            .padding(.horizontal, 8)
+            .frame(width: 150)
+            .background(Color.controlBackground)
+            VStack(alignment: .leading, spacing: 12) {
+                if activeSection == .general {
+                    SectionView(title: "ui.app") {
+                        Preference.GeneralView()
+                    }
+                    SectionView(title: "ui.display") {
+                        Preference.DisplayView()
+                    }
+                    SectionView(title: "ui.refresh_rate") {
+                        Preference.RefreshRateView()
+                    }
+                }
+                if activeSection == .components {
+                    SectionView(title: "ui.display") {
+                        Preference
+                            .ComponentsView()
+                            .padding(.top, 8)
+                    }
+                }
+                if activeSection == .menuView {
+                    SectionView(title: "ui.display") {
+                        Preference.PreferenceMenuViewView()
+                    }
+                }
+                Spacer()
             }
-            SectionView(title: "ui.refresh_rate") {
-                Preference.RefreshRateView()
-            }
-            SectionView(title: "ui.components") {
-                Preference
-                    .ComponentsView()
-                    .padding(.top, 8)
-            }
-            SectionView(title: "ui.menu_view") {
-                Preference.PreferenceMenuViewView()
-            }
+            .padding(20)
+            .frame(minWidth: 610, alignment: .leading)
         }
-        .padding(20)
-        .frame(minWidth: 610)
-        .environmentObject(preferenceStore)
         .id(preferenceStore.language)
     }
 }

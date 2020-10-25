@@ -10,16 +10,17 @@ import SwiftUI
 
 extension Preference {
     struct ComponentsView: View {
-        @State var updated = false
+        private let coordinateSpace = "ComponentsOrdering"
         @EnvironmentObject var preference: PreferenceStore
+        @EnvironmentObject var componentsStore: ComponentsStore<EulComponent>
         @State var dragging: EulComponent?
         @State var frames: [CGRect] = .init(repeating: .zero, count: EulComponent.allCases.count)
         @GestureState var offsetWidth: CGFloat = 0
 
         func updateFrame(geometry: GeometryProxy, index: Int) -> some View {
-            if !preference.isActiveComponentToggling {
+            if !componentsStore.isActiveComponentToggling {
                 DispatchQueue.main.async {
-                    self.frames[index] = geometry.frame(in: CoordinateSpace.named("ComponentsOrdering"))
+                    self.frames[index] = geometry.frame(in: CoordinateSpace.named(coordinateSpace))
                 }
             }
             return Color.clear
@@ -28,11 +29,11 @@ extension Preference {
         var body: some View {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 12) {
-                    Toggle(isOn: $preference.showComponents) {
+                    Toggle(isOn: $componentsStore.showComponents) {
                         Text("ui.show_components_in_status_bar".localized())
                             .inlineSection()
                     }
-                    if preference.showComponents {
+                    if componentsStore.showComponents {
                         Toggle(isOn: $preference.showIcon) {
                             Text("ui.show_icon".localized())
                                 .inlineSection()
@@ -40,7 +41,7 @@ extension Preference {
                     }
                     Spacer()
                 }
-                if preference.showComponents {
+                if componentsStore.showComponents {
                     HStack {
                         Text("component.status_bar".localized())
                             .subsection()
@@ -49,14 +50,14 @@ extension Preference {
                             .foregroundColor(Color.gray)
                     }
                     HStack {
-                        ForEach(Array(preference.activeComponents.enumerated()), id: \.element) { offset, element in
+                        ForEach(Array(componentsStore.activeComponents.enumerated()), id: \.element) { offset, element in
                             HStack(spacing: 8) {
                                 Image(element.rawValue)
                                     .resizable()
                                     .frame(width: 12, height: 12)
                                 Text(element.localizedDescription)
                                     .normal()
-                                if self.preference.activeComponents.count > 1 {
+                                if self.componentsStore.activeComponents.count > 1 {
                                     Image("X")
                                         .resizable()
                                         .frame(width: 8, height: 8)
@@ -75,7 +76,7 @@ extension Preference {
                                         }
                                         .onTapGesture {
                                             withAnimation(.fast) {
-                                                self.preference.toggleActiveComponent(at: offset)
+                                                self.componentsStore.toggleActiveComponent(at: offset)
                                             }
                                         }
                                         .padding(.trailing, -4)
@@ -94,12 +95,12 @@ extension Preference {
 
                                     let currentFrame = self.frames[offset]
 
-                                    if state > 0, offset < self.preference.activeComponents.count - 1 {
+                                    if state > 0, offset < self.componentsStore.activeComponents.count - 1 {
                                         let nextFrame = self.frames[offset + 1]
 
                                         if currentFrame.maxX + state > (nextFrame.minX + nextFrame.maxX) / 2 {
                                             DispatchQueue.main.async {
-                                                self.preference.activeComponents.swapAt(offset, offset + 1)
+                                                self.componentsStore.activeComponents.swapAt(offset, offset + 1)
                                             }
                                         }
                                     }
@@ -109,7 +110,7 @@ extension Preference {
 
                                         if currentFrame.minX + state < (prevFrame.minX + prevFrame.maxX) / 2 {
                                             DispatchQueue.main.async {
-                                                self.preference.activeComponents.swapAt(offset, offset - 1)
+                                                self.componentsStore.activeComponents.swapAt(offset, offset - 1)
                                             }
                                         }
                                     }
@@ -134,8 +135,8 @@ extension Preference {
                             .stroke(Color.border, lineWidth: 1)
                     )
                     .clipped()
-                    .coordinateSpace(name: "ComponentsOrdering")
-                    if preference.availableComponents.count > 0 {
+                    .coordinateSpace(name: coordinateSpace)
+                    if componentsStore.availableComponents.count > 0 {
                         HStack {
                             Text("component.available".localized())
                                 .subsection()
@@ -144,7 +145,7 @@ extension Preference {
                                 .foregroundColor(Color.gray)
                         }
                         HStack {
-                            ForEach(Array(preference.availableComponents.enumerated()), id: \.element) { offset, element in
+                            ForEach(Array(componentsStore.availableComponents.enumerated()), id: \.element) { offset, element in
                                 HStack(spacing: 8) {
                                     Image(element.rawValue)
                                         .resizable()
@@ -159,7 +160,7 @@ extension Preference {
                                 .contentShape(Rectangle())
                                 .onTapGesture {
                                     withAnimation(.fast) {
-                                        self.preference.toggleAvailableComponent(at: offset)
+                                        self.componentsStore.toggleAvailableComponent(at: offset)
                                     }
                                 }
                             }

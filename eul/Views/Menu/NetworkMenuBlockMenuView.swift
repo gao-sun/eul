@@ -24,7 +24,7 @@ struct NetworkMenuBlockMenuView: View {
                 MiniSectionView(title: "network.in", value: networkStore.inSpeed)
                     .frame(width: 60, alignment: .leading)
             }
-            if preferenceStore.showTopActivities {
+            if preferenceStore.showNetworkTopActivities {
                 SeparatorView()
                 // FIXME: multi thread with same pid
                 VStack(spacing: 8) {

@@ -36,9 +36,9 @@
 "cpu.logical_cores" = "Logische Cores";
 "cpu.up_time" = "Betriebszeit";
 "cpu.thermal_level" = "Thermal Lv.";
-"cpu.system" = "system";
+"cpu.system" = "System";
 "cpu.user" = "Benutzer";
-"cpu.nice" = "gut";
+"cpu.nice" = "Gut";
 "cpu.waiting_status_report" = "Warten auf ersten Statusbericht";
 
 // MARK: Fan
@@ -70,7 +70,8 @@
 "menu.no" = "Nein";
 "menu.preferences" = "Einstellungen";
 "menu.quit" = "Beende eul";
-"menu.show_top_activities" = "Top-Aktivitäten anzeigen";
+"menu.show_cpu_top_activities" = "CPU top-Aktivitäten anzeigen";
+"menu.show_network_top_activities" = "Network top-Aktivitäten anzeigen";
 
 // MARK: Temperature
 "temp.temperature" = "Temperatur";
@@ -116,6 +117,7 @@
 "language.de" = "Deutsch";
 
 // MARK: General UI
+"ui.app" = "App";
 "ui.general" = "Allgemein";
 "ui.version" = "Version";
 "ui.checking_update" = "Update prüfen";
@@ -127,7 +129,8 @@
 "ui.components" = "Komponenten";
 "ui.show_components_in_status_bar" = "Komponenten in der Statusleiste anzeigen";
 "ui.show_icon" = "Symbol anzeigen";
-"ui.refresh_rate" = "   ";
+"ui.refresh_rate" = "Refresh Rate";
 "ui.smc" = "SMC";
 "ui.network" = "Netzwerk";
 "ui.menu_view" = "Menü Ansicht";
+"ui.empty" = "Empty";

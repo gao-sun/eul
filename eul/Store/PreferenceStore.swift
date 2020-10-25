@@ -46,15 +46,12 @@ class PreferenceStore: ObservableObject {
     }
 
     @Published var textDisplay = Preference.TextDisplay.compact
-    @Published var isActiveComponentToggling = false
-    @Published var activeComponents = EulComponent.allCases
-    @Published var availableComponents: [EulComponent] = []
     @Published var fontDesign: Preference.FontDesign = .default
     @Published var smcRefreshRate = 3
     @Published var networkRefreshRate = 3
-    @Published var showComponents = true
     @Published var showIcon = true
-    @Published var showTopActivities = true
+    @Published var showCPUTopActivities = true
+    @Published var showNetworkTopActivities = true
     @Published var isUpdateAvailable: Bool? = false
     @Published var checkUpdateFailed = true
 
@@ -63,14 +60,12 @@ class PreferenceStore: ObservableObject {
             "temperatureUnit": temperatureUnit.rawValue,
             "language": language,
             "textDisplay": textDisplay.rawValue,
-            "activeComponents": activeComponents.map { $0.rawValue },
-            "availableComponents": availableComponents.map { $0.rawValue },
             "fontDesign": fontDesign.rawValue,
             "smcRefreshRate": smcRefreshRate,
             "networkRefreshRate": networkRefreshRate,
-            "showComponents": showComponents,
             "showIcon": showIcon,
-            "showTopActivities": showTopActivities,
+            "showCPUTopActivities": showCPUTopActivities,
+            "showNetworkTopActivities": showNetworkTopActivities,
         ])
     }
 
@@ -81,21 +76,6 @@ class PreferenceStore: ObservableObject {
                 self.saveToDefaults()
             }
         }
-    }
-
-    func toggleActiveComponent(at index: Int) {
-        isActiveComponentToggling = true
-        availableComponents.append(activeComponents[index])
-        activeComponents.remove(at: index)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // wait for rendering, will crash w/o delay
-            self.isActiveComponentToggling = false
-        }
-    }
-
-    func toggleAvailableComponent(at index: Int) {
-        activeComponents.append(availableComponents[index])
-        availableComponents.remove(at: index)
     }
 
     func checkUpdate() {
@@ -132,7 +112,7 @@ class PreferenceStore: ObservableObject {
             do {
                 let data = try JSON(data: raw)
 
-                print("⚙️ loaded data from user defaults", data)
+                print("⚙️ loaded data from user defaults", userDefaultsKey, data)
 
                 if let raw = data["temperatureUnit"].string, let value = TemperatureUnit(rawValue: raw) {
                     temperatureUnit = value
@@ -142,25 +122,6 @@ class PreferenceStore: ObservableObject {
                 }
                 if let raw = data["textDisplay"].string, let value = Preference.TextDisplay(rawValue: raw) {
                     textDisplay = value
-                }
-                if let array = data["activeComponents"].array {
-                    activeComponents = array.compactMap {
-                        if let string = $0.string {
-                            return EulComponent(rawValue: string)
-                        }
-                        return nil
-                    }
-                }
-                if let array = data["availableComponents"].array {
-                    availableComponents = array.compactMap {
-                        if let string = $0.string {
-                            return EulComponent(rawValue: string)
-                        }
-                        return nil
-                    }
-                }
-                if let value = data["showComponents"].bool {
-                    showComponents = value
                 }
                 if let value = data["showIcon"].bool {
                     showIcon = value
@@ -174,8 +135,11 @@ class PreferenceStore: ObservableObject {
                 if let value = data["networkRefreshRate"].int {
                     networkRefreshRate = value
                 }
-                if let value = data["showTopActivities"].bool {
-                    showTopActivities = value
+                if let value = data["showCPUTopActivities"].bool {
+                    showCPUTopActivities = value
+                }
+                if let value = data["showNetworkTopActivities"].bool {
+                    showNetworkTopActivities = value
                 }
             } catch {
                 print("Unable to get preference data from user defaults")
