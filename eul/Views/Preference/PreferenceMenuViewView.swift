@@ -28,7 +28,7 @@ extension Preference {
 
         var body: some View {
             VStack(alignment: .leading, spacing: 12) {
-                HStack {
+                HStack(spacing: 12) {
                     Toggle(isOn: $preference.showCPUTopActivities) {
                         Text("menu.show_cpu_top_activities".localized())
                             .inlineSection()
