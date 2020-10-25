@@ -70,7 +70,8 @@
 "menu.no" = "否";
 "menu.preferences" = "偏好设置";
 "menu.quit" = "退出 eul";
-"menu.show_top_activities" = "展示活跃进程";
+"menu.show_cpu_top_activities" = "展示 CPU 活跃进程";
+"menu.show_network_top_activities" = "展示网络活跃进程";
 
 // MARK: Temperature
 "temp.temperature" = "温度";

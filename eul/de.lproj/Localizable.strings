@@ -70,7 +70,8 @@
 "menu.no" = "Nein";
 "menu.preferences" = "Einstellungen";
 "menu.quit" = "Beende eul";
-"menu.show_top_activities" = "Top-Aktivitäten anzeigen";
+"menu.show_cpu_top_activities" = "CPU top-Aktivitäten anzeigen";
+"menu.show_network_top_activities" = "Network top-Aktivitäten anzeigen";
 
 // MARK: Temperature
 "temp.temperature" = "Temperatur";
