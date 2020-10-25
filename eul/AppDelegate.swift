@@ -52,8 +52,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
         // comment out for not showing window at login. no proper solution currently, tracking:
         // https://github.com/sindresorhus/LaunchAtLogin/issues/33
-        window.makeKeyAndOrderFront(nil)
-        NSApp.activate(ignoringOtherApps: true)
+        // window.makeKeyAndOrderFront(nil)
+        // NSApp.activate(ignoringOtherApps: true)
 
         SmcControl.shared.start()
         refreshSMCRepeatedly()
