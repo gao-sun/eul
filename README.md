@@ -38,10 +38,10 @@ Download the [latest release](https://github.com/gao-sun/eul/releases/latest/dow
 brew cask install eul
 ```
 
+### App Store
+
+Search `eul` or [click here](https://apps.apple.com/us/app/eul/id1537133867) to view in App Store. Some features are disabled since the removal of all SMC calls.
+
 ### Release Notes
 
 [Click here](https://github.com/gao-sun/eul/releases/latest) to browse our latest release notes.
-
-# Preferences
-
-<img src="https://user-images.githubusercontent.com/14722250/96442576-ee955080-123d-11eb-8247-f09bb3e91492.png" width="500" />
