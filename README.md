@@ -45,3 +45,10 @@ Search `eul` or [click here](https://apps.apple.com/us/app/eul/id1537133867) to 
 ### Release Notes
 
 [Click here](https://github.com/gao-sun/eul/releases/latest) to browse our latest release notes.
+
+# Language Support
+
+- 简体中文
+- English
+- Deutsch (credit @akeschmidi)
+- Русский (credit @JiLiZART)
