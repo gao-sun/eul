@@ -10,7 +10,7 @@ Enjoy clear and simple status monitoring in macOS.
 
 <img src="https://user-images.githubusercontent.com/14722250/96442330-8cd4e680-123d-11eb-8458-9cf967dd889f.png" width="400" />
 
-# Highlights
+## Highlights
 
 - Dark Mode compatible
 - Drag to re-order components
@@ -22,11 +22,11 @@ Enjoy clear and simple status monitoring in macOS.
   - Network: in/out speed
 - Written in SwiftUI (as much as possible)
 
-# OS Requirement
+## OS Requirement
 
 macOS 10.15 minimum for SwiftUI support
 
-# Installation
+## Installation
 
 ### Download
 
@@ -46,7 +46,11 @@ Search `eul` or [click here](https://apps.apple.com/us/app/eul/id1537133867) to 
 
 [Click here](https://github.com/gao-sun/eul/releases/latest) to browse our latest release notes.
 
-# Language Support
+## Contributors
+
+[@XaoflySho](https://github.com/XaoflySho) [@akeschmidi](https://github.com/akeschmidi) [@Nikolay](https://github.com/JiLiZART)
+
+## Language Support
 
 - 简体中文
 - English
