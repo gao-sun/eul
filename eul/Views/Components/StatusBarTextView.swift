@@ -11,13 +11,14 @@ import SwiftUI
 struct StatusBarTextView: View {
     @ObservedObject var preferenceStore = PreferenceStore.shared
     var texts: [String] = []
+    var alignment: HorizontalAlignment = .leading
 
     var fontDesign: Font.Design {
         preferenceStore.fontDesign.value
     }
 
     func getCompactRow(_ index: Int) -> some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: alignment, spacing: 0) {
             Text(self.texts[index * 2])
                 .compact(design: fontDesign)
             Text(self.texts[index * 2 + 1])

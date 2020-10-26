@@ -35,13 +35,13 @@ public struct ByteUnit {
     public var readable: String {
         switch bytes {
         case 0..<(1024 * 1024):
-            return "\(String(format: "%.\(kilobytes >= 100 ? 0 : 1)f", kilobytes)) kb"
+            return "\(String(format: "%.\(kilobytes >= 100 ? 0 : 1)f", kilobytes)) KB"
         case 1024..<(1024 * 1024 * 1024):
-            return "\(String(format: "%.\(megabytes >= 100 ? 0 : 1)f", megabytes)) mb"
+            return "\(String(format: "%.\(megabytes >= 100 ? 0 : 1)f", megabytes)) MB"
         case (1024 * 1024 * 1024)...UInt64.max:
-            return "\(String(format: "%.\(gigabytes >= 100 ? 0 : 1)f", gigabytes)) gb"
+            return "\(String(format: "%.\(gigabytes >= 100 ? 0 : 1)f", gigabytes)) GB"
         default:
-            return "\(bytes) bytes"
+            return "\(bytes) Bytes"
         }
     }
 }
