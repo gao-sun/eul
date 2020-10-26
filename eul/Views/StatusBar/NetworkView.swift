@@ -18,7 +18,7 @@ struct NetworkView: View {
 
     var textWidth: CGFloat? {
         if preferenceStore.textDisplay == .compact {
-            return 45
+            return 50
         }
         return preferenceStore.fontDesign == .default ? 120 : 145
     }
@@ -30,8 +30,8 @@ struct NetworkView: View {
                     .resizable()
                     .frame(width: 13, height: 13)
             }
-            StatusBarTextView(texts: texts)
-                .frame(width: textWidth)
+            StatusBarTextView(texts: texts, alignment: .trailing)
+                .frame(width: textWidth, alignment: .trailing)
         }
     }
 }
