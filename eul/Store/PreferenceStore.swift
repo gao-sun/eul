@@ -51,7 +51,7 @@ class PreferenceStore: ObservableObject {
     @Published var networkRefreshRate = 3
     @Published var showIcon = true
     @Published var showCPUTopActivities = true
-    @Published var showNetworkTopActivities = true
+    @Published var showNetworkTopActivities = false
     @Published var isUpdateAvailable: Bool? = false
     @Published var checkUpdateFailed = true
 
