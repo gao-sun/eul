@@ -1,5 +1,5 @@
 //
-//  PreferenceMenuViewView.swift
+//  PreferenceMenuView.swift
 //  eul
 //
 //  Created by Gao Sun on 2020/10/18.
@@ -9,7 +9,7 @@
 import SwiftUI
 
 extension Preference {
-    struct PreferenceMenuViewView: View {
+    struct PreferenceMenuView: View {
         private let coordinateSpace = "MenuComponentsOrdering"
         @EnvironmentObject var preference: PreferenceStore
         @EnvironmentObject var componentsStore: ComponentsStore<EulMenuComponent>

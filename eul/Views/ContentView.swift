@@ -45,7 +45,7 @@ struct ContentView: View {
                 }
                 if activeSection == .menuView {
                     SectionView(title: "ui.display") {
-                        Preference.PreferenceMenuViewView()
+                        Preference.PreferenceMenuView()
                     }
                 }
                 Spacer()
