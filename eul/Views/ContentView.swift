@@ -48,6 +48,11 @@ struct ContentView: View {
                         Preference.PreferenceMenuViewView()
                     }
                 }
+                if activeSection == .statusBarView {
+                    SectionView(title: "ui.display") {
+                        Preference.PreferenceStatusBarView()
+                    }
+                }
                 Spacer()
             }
             .padding(20)

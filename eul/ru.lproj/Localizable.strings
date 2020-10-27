@@ -135,3 +135,4 @@
 "ui.network" = "Сеть";
 "ui.menu_view" = "Вид Меню";
 "ui.empty" = "Пусто";
+"ui.status_bar_view" = "Status Bar View";

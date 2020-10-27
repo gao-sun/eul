@@ -135,3 +135,4 @@
 "ui.network" = "网络";
 "ui.menu_view" = "菜单视图";
 "ui.empty" = "空";
+"ui.status_bar_view" = "状态栏视图";
