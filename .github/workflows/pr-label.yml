@@ -15,6 +15,7 @@ jobs:
       - uses: actions/github-script@v2
         id: setup-labels
         with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             let labelsToAdd = ['needs review'], labelsToDelete = ['approved'];
             const repoPayload = {
