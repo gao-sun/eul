@@ -1,7 +1,7 @@
 name: PR Label
 
 on:
-  pull_request:
+  pull_request_target:
     branches: [master]
     types: [opened, closed, reopened, synchronize]
   pull_request_review:
@@ -15,6 +15,7 @@ jobs:
       - uses: actions/github-script@v2
         id: setup-labels
         with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             let labelsToAdd = ['needs review'], labelsToDelete = ['approved'];
             const repoPayload = {
