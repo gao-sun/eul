@@ -89,6 +89,18 @@ struct Info {
                     powerSource = .unknown
                 }
             }
+
+            Print(
+                "🔋 battery info",
+                currentCapacity,
+                maxCapacity,
+                timeToFullCharge,
+                timeToEmpty,
+                isCharged,
+                isCharging,
+                condition,
+                powerSource
+            )
         }
     }
 
