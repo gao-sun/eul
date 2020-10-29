@@ -56,4 +56,4 @@ Search `eul` or [click here](https://apps.apple.com/us/app/eul/id1537133867) to 
 - English
 - Deutsch (credit [@akeschmidi](https://github.com/akeschmidi))
 - Русский (credit [@Nikolay](https://github.com/JiLiZART))
-- Spanish (credit [@JesusM](https://github.com/JesusM))
+- Español (credit [@JesusM](https://github.com/JesusM))
