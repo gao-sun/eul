@@ -48,7 +48,7 @@ Search `eul` or [click here](https://apps.apple.com/us/app/eul/id1537133867) to 
 
 ## Contributors
 
-[@XaoflySho](https://github.com/XaoflySho) [@akeschmidi](https://github.com/akeschmidi) [@Nikolay](https://github.com/JiLiZART)
+[@XaoflySho](https://github.com/XaoflySho) [@akeschmidi](https://github.com/akeschmidi) [@Nikolay](https://github.com/JiLiZART) [@JesusM](https://github.com/JesusM)
 
 ## Language Support
 
@@ -56,3 +56,4 @@ Search `eul` or [click here](https://apps.apple.com/us/app/eul/id1537133867) to 
 - English
 - Deutsch (credit [@akeschmidi](https://github.com/akeschmidi))
 - Русский (credit [@Nikolay](https://github.com/JiLiZART))
+- Spanish (credit [@JesusM](https://github.com/JesusM))
