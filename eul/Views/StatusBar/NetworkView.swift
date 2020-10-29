@@ -30,7 +30,7 @@ struct NetworkView: View {
                     .resizable()
                     .frame(width: 13, height: 13)
             }
-            StatusBarTextView(texts: texts, alignment: .trailing)
+            StatusBarTextView(texts: texts)
                 .frame(width: textWidth, alignment: .trailing)
         }
     }

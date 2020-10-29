@@ -11,7 +11,7 @@ import SwiftUI
 struct StatusBarTextView: View {
     @ObservedObject var preferenceStore = PreferenceStore.shared
     var texts: [String] = []
-    var alignment: HorizontalAlignment = .leading
+    var alignment: HorizontalAlignment = .trailing
 
     var fontDesign: Font.Design {
         preferenceStore.fontDesign.value
