@@ -116,6 +116,7 @@
 "language.zh-Hans" = "简体中文";
 "language.de" = "Deutsch";
 "language.ru" = "Русский";
+"language.es" = "Español";
 
 // MARK: General UI
 "ui.app" = "Приложение";
