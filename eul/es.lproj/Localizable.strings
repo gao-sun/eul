@@ -87,7 +87,7 @@
 // MARK: Font Design
 "font_design" = "Diseño Fuente";
 "font_design.default" = "por defecto";
-"font_design.monospaced" = "monospaciada";
+"font_design.monospaced" = "monoespaciada";
 
 // MARK: Component
 "component.status_bar" = "Barra de Estado";
