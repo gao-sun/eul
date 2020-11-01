@@ -89,6 +89,7 @@ extension Preference {
                             .offset(x: self.dragging == element ? self.offsetWidth : 0)
                             .zIndex(self.dragging == element ? 1 : 0)
                             .contentShape(Rectangle())
+                            .fixedSize()
                             .gesture(DragGesture()
                                 .updating(self.$offsetWidth, body: { value, state, _ in
                                     state = value.translation.width
@@ -158,6 +159,7 @@ extension Preference {
                                 .background(Color.controlBackground)
                                 .cornerRadius(4)
                                 .contentShape(Rectangle())
+                                .fixedSize()
                                 .onTapGesture {
                                     withAnimation(.fast) {
                                         self.componentsStore.toggleAvailableComponent(at: offset)

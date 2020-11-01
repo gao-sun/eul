@@ -99,6 +99,7 @@
 "component.memory" = "Память";
 "component.battery" = "Батарея";
 "component.network" = "Сеть";
+"component.disk" = "Disk";
 
 // MARK: Process
 "process" = "Процесс";

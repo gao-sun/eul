@@ -99,6 +99,7 @@
 "component.memory" = "内存";
 "component.battery" = "电池";
 "component.network" = "网络";
+"component.disk" = "存储";
 
 // MARK: Process
 "process" = "进程";

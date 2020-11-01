@@ -51,8 +51,8 @@ struct ContentView: View {
                 Spacer()
             }
             .padding(20)
-            .frame(minWidth: 610, alignment: .leading)
         }
+        .frame(height: 400)
         .id(preferenceStore.language)
     }
 }

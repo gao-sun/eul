@@ -31,6 +31,9 @@
 		6C457392253AC69E00BB2584 /* UIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C457391253AC69E00BB2584 /* UIStore.swift */; };
 		6C457394253AC91500BB2584 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C457393253AC91500BB2584 /* TooltipView.swift */; };
 		6C4CCCF1250BA68B00590E0E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4CCCF0250BA68B00590E0E /* View.swift */; };
+		6C572D7D254EFB4E00EF9904 /* DiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C572D7C254EFB4E00EF9904 /* DiskView.swift */; };
+		6C572D7F254EFD4700EF9904 /* DiskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C572D7E254EFD4700EF9904 /* DiskStore.swift */; };
+		6C572D81254EFD5B00EF9904 /* DiskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C572D80254EFD5B00EF9904 /* DiskList.swift */; };
 		6C58053A250CAEC3007F467A /* StatusBarTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C580539250CAEC3007F467A /* StatusBarTextView.swift */; };
 		6C58053D250CC6B8007F467A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C58053F250CC6B8007F467A /* Localizable.strings */; };
 		6C5F853F249FACE000CF0EF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5F853E249FACE000CF0EF8 /* AppDelegate.swift */; };
@@ -129,6 +132,9 @@
 		6C457391253AC69E00BB2584 /* UIStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStore.swift; sourceTree = "<group>"; };
 		6C457393253AC91500BB2584 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		6C4CCCF0250BA68B00590E0E /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		6C572D7C254EFB4E00EF9904 /* DiskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskView.swift; sourceTree = "<group>"; };
+		6C572D7E254EFD4700EF9904 /* DiskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStore.swift; sourceTree = "<group>"; };
+		6C572D80254EFD5B00EF9904 /* DiskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskList.swift; sourceTree = "<group>"; };
 		6C580539250CAEC3007F467A /* StatusBarTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarTextView.swift; sourceTree = "<group>"; };
 		6C58053E250CC6B8007F467A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C580540250CC74A007F467A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 				6C1FA40624AA127E00CA7F71 /* MemoryView.swift */,
 				6C7DB6D424E7A75E00133B06 /* NetworkView.swift */,
 				6CF28D0C251758EE00EBE9CB /* StatusBarView.swift */,
+				6C572D7C254EFB4E00EF9904 /* DiskView.swift */,
 			);
 			path = StatusBar;
 			sourceTree = "<group>";
@@ -224,6 +231,7 @@
 				6CDE6C7324F0047600463114 /* SizeChangeView.swift */,
 				6C7DB6E724E82C7700133B06 /* StringEnum.swift */,
 				6C79AD352539EBE60033845C /* ProcessUsage.swift */,
+				6C572D80254EFD5B00EF9904 /* DiskList.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -332,6 +340,7 @@
 				6C7DB6DB24E7FFE300133B06 /* PreferenceStore.swift */,
 				6C457391253AC69E00BB2584 /* UIStore.swift */,
 				6CDBB4C425447D8B00D01EA0 /* ComponentsStore.swift */,
+				6C572D7E254EFD4700EF9904 /* DiskStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -512,6 +521,7 @@
 				6C7DB6DC24E7FFE300133B06 /* PreferenceStore.swift in Sources */,
 				6C5FBD50253C83520016F3A2 /* MenuActionTextView.swift in Sources */,
 				6C1FA40E24AA162800CA7F71 /* Refreshable.swift in Sources */,
+				6C572D7F254EFD4700EF9904 /* DiskStore.swift in Sources */,
 				6C1FA40424A7187F00CA7F71 /* FanView.swift in Sources */,
 				6C7DB6CF24E02F0600133B06 /* Shell.swift in Sources */,
 				6CDE6C7D24F2AB8800463114 /* NSMenuItem.swift in Sources */,
@@ -555,10 +565,12 @@
 				6CDBB4C1254462B100D01EA0 /* PreferenceSectionView.swift in Sources */,
 				6C7DB6E824E82C7700133B06 /* StringEnum.swift in Sources */,
 				6CC0798C250CD793000D7DAC /* PreferenceGeneralView.swift in Sources */,
+				6C572D81254EFD5B00EF9904 /* DiskList.swift in Sources */,
 				6C457394253AC91500BB2584 /* TooltipView.swift in Sources */,
 				6C1FA40724AA127E00CA7F71 /* MemoryView.swift in Sources */,
 				6CDE6C7424F0047600463114 /* SizeChangeView.swift in Sources */,
 				6C1FA41224AA1DC100CA7F71 /* MemoryStore.swift in Sources */,
+				6C572D7D254EFB4E00EF9904 /* DiskView.swift in Sources */,
 				6C387DC7253B08F100CBB81B /* NetworkTopStore.swift in Sources */,
 				6C7DB6D724E7A85C00133B06 /* ByteUnit.swift in Sources */,
 				6C831369253DCF1F00914BB0 /* Print.swift in Sources */,
