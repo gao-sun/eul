@@ -12,6 +12,7 @@ struct BatteryIconView: View {
     var size: CGFloat = 16
     var isCharging = false
     var charge: Double = 0
+    var acPowered = false
 
     private var lengthUnit: CGFloat {
         size * 15 / 18 / 100
@@ -25,6 +26,10 @@ struct BatteryIconView: View {
         ZStack(alignment: .leading) {
             if isCharging {
                 Image("BatteryCharging")
+                    .resizable()
+                    .frame(width: size, height: size)
+            } else if acPowered {
+                Image("BatteryAC")
                     .resizable()
                     .frame(width: size, height: size)
             } else {
