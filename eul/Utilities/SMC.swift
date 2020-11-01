@@ -243,7 +243,7 @@ public struct SMCParamStruct {
 // ------------------------------------------------------------------------------
 
 /// SMC data type information
-public struct DataTypes {
+public enum DataTypes {
     /// Fan information struct
     public static let FDS = DataType(type: FourCharCode(fromStaticString: "{fds"), size: 16)
     public static let Flag = DataType(type: FourCharCode(fromStaticString: "flag"), size: 1)
@@ -273,7 +273,7 @@ public func == (lhs: DataType, rhs: DataType) -> Bool {
 /// Apple System Management Controller (SMC) user-space client for Intel-based
 /// Macs. Works by talking to the AppleSMC.kext (kernel extension), the closed
 /// source driver for the SMC.
-public struct SMCKit {
+public enum SMCKit {
     public enum SMCError: Error {
         /// AppleSMC driver not found
         case driverNotFound
@@ -412,9 +412,9 @@ public struct SMCKit {
 
 // ------------------------------------------------------------------------------
 
-extension SMCKit {
+public extension SMCKit {
     /// Get all valid SMC keys for this machine
-    public static func allKeys() throws -> [SMCKey] {
+    static func allKeys() throws -> [SMCKey] {
         let count = try keyCount()
         var keys = [SMCKey]()
 
@@ -428,7 +428,7 @@ extension SMCKit {
     }
 
     /// Get the number of valid SMC keys for this machine
-    public static func keyCount() throws -> Int {
+    static func keyCount() throws -> Int {
         let key = SMCKey(code: FourCharCode(fromStaticString: "#KEY"),
                          info: DataTypes.UInt32)
 
@@ -437,7 +437,7 @@ extension SMCKit {
     }
 
     /// Is this key valid on this machine?
-    public static func isKeyFound(_ code: FourCharCode) throws -> Bool {
+    static func isKeyFound(_ code: FourCharCode) throws -> Bool {
         do {
             _ = try keyInformation(code)
         } catch SMCError.keyNotFound { return false }
@@ -463,7 +463,7 @@ extension SMCKit {
 /// * https://github.com/jedda/OSX-Monitoring-Tools
 /// * http://www.opensource.apple.com/source/net_snmp/
 /// * http://www.parhelia.ch/blog/statics/k3_keys.html
-public struct TemperatureSensors {
+public enum TemperatureSensors {
     public static let AMBIENT_AIR_0 = TemperatureSensor(name: "AMBIENT_AIR_0",
                                                         code: FourCharCode(fromStaticString: "TA0P"))
     public static let AMBIENT_AIR_1 = TemperatureSensor(name: "AMBIENT_AIR_1",
@@ -586,8 +586,8 @@ public enum TemperatureUnit {
     }
 }
 
-extension SMCKit {
-    public static func allKnownTemperatureSensors() throws ->
+public extension SMCKit {
+    static func allKnownTemperatureSensors() throws ->
         [TemperatureSensor]
     {
         var sensors = [TemperatureSensor]()
@@ -599,7 +599,7 @@ extension SMCKit {
         return sensors
     }
 
-    public static func allUnknownTemperatureSensors() throws -> [TemperatureSensor] {
+    static func allUnknownTemperatureSensors() throws -> [TemperatureSensor] {
         let keys = try allKeys()
 
         return keys.filter { $0.code.toString().hasPrefix("T") &&
@@ -610,8 +610,8 @@ extension SMCKit {
     }
 
     /// Get current temperature of a sensor
-    public static func temperature(_ sensorCode: FourCharCode,
-                                   unit: TemperatureUnit = .celius) throws -> Double
+    static func temperature(_ sensorCode: FourCharCode,
+                            unit: TemperatureUnit = .celius) throws -> Double
     {
         let data = try readData(SMCKey(code: sensorCode, info: DataTypes.SP78))
 
@@ -642,8 +642,8 @@ public struct Fan {
     public let maxSpeed: Int
 }
 
-extension SMCKit {
-    public static func allFans() throws -> [Fan] {
+public extension SMCKit {
+    static func allFans() throws -> [Fan] {
         let count = try fanCount()
         var fans = [Fan]()
 
@@ -654,7 +654,7 @@ extension SMCKit {
         return fans
     }
 
-    public static func fan(_ id: Int) throws -> Fan {
+    static func fan(_ id: Int) throws -> Fan {
         let name = try fanName(id)
         let minSpeed = try fanMinSpeed(id)
         let maxSpeed = try fanMaxSpeed(id)
@@ -663,7 +663,7 @@ extension SMCKit {
 
     /// Number of fans this machine has. All Intel based Macs, except for the
     /// 2015 MacBook (8,1), have at least 1
-    public static func fanCount() throws -> Int {
+    static func fanCount() throws -> Int {
         let key = SMCKey(code: FourCharCode(fromStaticString: "FNum"),
                          info: DataTypes.UInt8)
 
@@ -671,7 +671,7 @@ extension SMCKit {
         return Int(data.0)
     }
 
-    public static func fanName(_ id: Int) throws -> String {
+    static func fanName(_ id: Int) throws -> String {
         let key = SMCKey(code: FourCharCode(fromString: "F\(id)ID"),
                          info: DataTypes.FDS)
         let data = try readData(key)
@@ -717,15 +717,15 @@ extension SMCKit {
         }
     }
 
-    public static func fanCurrentSpeed(_ id: Int) throws -> Int {
+    static func fanCurrentSpeed(_ id: Int) throws -> Int {
         try decodeData(with: "F\(id)Ac")
     }
 
-    public static func fanMinSpeed(_ id: Int) throws -> Int {
+    static func fanMinSpeed(_ id: Int) throws -> Int {
         try decodeData(with: "F\(id)Mn")
     }
 
-    public static func fanMaxSpeed(_ id: Int) throws -> Int {
+    static func fanMaxSpeed(_ id: Int) throws -> Int {
         try decodeData(with: "F\(id)Mx")
     }
 
@@ -735,7 +735,7 @@ extension SMCKit {
     /// WARNING: You are playing with hardware here, BE CAREFUL.
     ///
     /// - Throws: Of note, `SMCKit.SMCError`'s `UnsafeFanSpeed` and `NotPrivileged`
-    public static func fanSetMinSpeed(_ id: Int, speed: Int) throws {
+    static func fanSetMinSpeed(_ id: Int, speed: Int) throws {
         let maxSpeed = try fanMaxSpeed(id)
         if speed <= 0 || speed > maxSpeed { throw SMCError.unsafeFanSpeed }
 
@@ -768,8 +768,8 @@ public struct batteryInfo {
     public let isCharging: Bool
 }
 
-extension SMCKit {
-    public static func isOpticalDiskDriveFull() throws -> Bool {
+public extension SMCKit {
+    static func isOpticalDiskDriveFull() throws -> Bool {
         // TODO: Should we catch key not found? That just means the machine
         // doesn't have an ODD. Returning false though is not fully correct.
         // Maybe we could throw a no ODD error instead?
@@ -780,7 +780,7 @@ extension SMCKit {
         return Bool(fromByte: data.0)
     }
 
-    public static func batteryInformation() throws -> batteryInfo {
+    static func batteryInformation() throws -> batteryInfo {
         let batteryCountKey =
             SMCKey(code: FourCharCode(fromStaticString: "BNum"),
                    info: DataTypes.UInt8)
