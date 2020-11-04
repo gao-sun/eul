@@ -47,13 +47,13 @@ struct CpuWidgetEntryView: View {
     var body: some View {
         VStack(spacing: 8) {
             Spacer()
-            HStack {
+            HStack(alignment: .top) {
                 Image("CPU")
                     .resizable()
                     .frame(width: 12, height: 12)
                 Spacer()
                 Text("79°C")
-                    .font(.system(size: 12, weight: .regular))
+                    .font(.system(size: 11, weight: .semibold))
                     .foregroundColor(.secondary)
             }
             HStack {

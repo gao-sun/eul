@@ -54,6 +54,6 @@ extension Text {
     }
 
     func widgetTitle() -> some View {
-        font(.system(size: 40, weight: .bold))
+        font(.system(size: 40, weight: .heavy))
     }
 }

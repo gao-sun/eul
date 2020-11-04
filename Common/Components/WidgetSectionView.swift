@@ -15,10 +15,10 @@ struct WidgetSectionView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(title.localized())
-                .font(.system(size: 10, weight: .regular))
+                .font(.system(size: 10, weight: .semibold))
                 .foregroundColor(.thirdary)
             Text(value)
-                .font(.system(size: 11, weight: .semibold))
+                .font(.system(size: 11, weight: .bold))
                 .foregroundColor(.secondary)
         }
     }
