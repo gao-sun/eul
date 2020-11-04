@@ -137,3 +137,7 @@
 "ui.network" = "网络";
 "ui.menu_view" = "菜单视图";
 "ui.empty" = "空";
+
+//MARK: Widget
+"widget.title" = "CPU 小组件";
+"widget.description" = "显示 CPU 相关信息";

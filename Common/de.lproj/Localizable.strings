@@ -137,3 +137,7 @@
 "ui.network" = "Netzwerk";
 "ui.menu_view" = "Menü Ansicht";
 "ui.empty" = "Empty";
+
+//MARK: Widget
+"widget.cpu.title" = "CPU Widget";
+"widget.cpu.description" = "Display CPU information";

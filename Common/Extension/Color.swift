@@ -38,4 +38,5 @@ extension Color {
     static let info = Color(NSColor.disabledControlTextColor)
     static let shadow = Color(NSColor.shadowColor)
     static let separator = Color(NSColor.separatorColor)
+    static let thirdary = Color.secondary.opacity(0.6)
 }

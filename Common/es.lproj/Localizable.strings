@@ -137,3 +137,8 @@
 "ui.network" = "Red";
 "ui.menu_view" = "Vista del Menú";
 "ui.empty" = "Vacío";
+
+//MARK: Widget
+"widget.cpu.title" = "CPU Widget";
+"widget.cpu.description" = "Display CPU information";
+

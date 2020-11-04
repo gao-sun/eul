@@ -52,4 +52,8 @@ extension Text {
             .padding(.bottom, 6)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
+
+    func widgetTitle() -> some View {
+        font(.system(size: 40, weight: .bold))
+    }
 }
