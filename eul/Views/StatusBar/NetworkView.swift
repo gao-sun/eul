@@ -16,13 +16,6 @@ struct NetworkView: View {
         [networkStore.outSpeed, networkStore.inSpeed]
     }
 
-    var textWidth: CGFloat? {
-        if preferenceStore.textDisplay == .compact {
-            return 50
-        }
-        return preferenceStore.fontDesign == .default ? 120 : 145
-    }
-
     var body: some View {
         HStack(spacing: 6) {
             if preferenceStore.showIcon {
@@ -31,7 +24,7 @@ struct NetworkView: View {
                     .frame(width: 13, height: 13)
             }
             StatusBarTextView(texts: texts)
-                .frame(width: textWidth, alignment: .trailing)
+                .stableWidth(20)
         }
     }
 }

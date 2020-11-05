@@ -26,6 +26,7 @@ struct BatteryView: View {
                 )
             }
             StatusBarTextView(texts: texts)
+                .stableWidth()
         }
     }
 }

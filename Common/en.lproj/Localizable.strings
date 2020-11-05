@@ -39,7 +39,7 @@
 "cpu.system" = "System";
 "cpu.user" = "User";
 "cpu.nice" = "Nice";
-"cpu.waiting_status_report" = "Waiting for first status report";
+"cpu.waiting_status_report" = "Waiting for the first status report";
 
 // MARK: Fan
 "fan" = "Fan";
