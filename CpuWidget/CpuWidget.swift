@@ -18,6 +18,7 @@ struct Provider: TimelineProvider {
 
     func getSnapshot(in _: Context, completion: @escaping (SimpleEntry) -> Void) {
         let entry = SimpleEntry(date: Date())
+        print(Container.get(CpuEntry.self))
         completion(entry)
     }
 
