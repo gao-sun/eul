@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct StatusMenuView: SizeChangeView {
+    @EnvironmentObject var uiStore: UIStore
     @EnvironmentObject var preferenceStore: PreferenceStore
     @EnvironmentObject var menuComponentsStore: ComponentsStore<EulMenuComponent>
 
@@ -40,6 +41,7 @@ struct StatusMenuView: SizeChangeView {
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 15)
+        .frame(minWidth: uiStore.menuWidth)
         .fixedSize()
         .animation(.none)
         .background(GeometryReader { self.reportSize($0) })

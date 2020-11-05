@@ -13,4 +13,5 @@ class UIStore: ObservableObject {
     static let shared = UIStore()
 
     @Published var hoveringID: String?
+    @Published var menuWidth: CGFloat?
 }
