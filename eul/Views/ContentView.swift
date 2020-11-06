@@ -20,7 +20,7 @@ struct ContentView: View {
                 }
                 Spacer()
             }
-            .padding(.top, 40)
+            .padding(.vertical, 20)
             .padding(.horizontal, 8)
             .frame(width: 150)
             .background(Color.controlBackground)
@@ -50,7 +50,8 @@ struct ContentView: View {
                 }
                 Spacer()
             }
-            .padding(20)
+            .padding(.vertical, 12)
+            .padding(.horizontal, 20)
         }
         .frame(height: 400)
         .id(preferenceStore.language)

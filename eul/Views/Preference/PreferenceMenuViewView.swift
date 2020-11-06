@@ -38,6 +38,7 @@ extension Preference {
                             .inlineSection()
                     }
                 }
+                .fixedSize()
                 HStack(alignment: .top, spacing: 20) {
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
