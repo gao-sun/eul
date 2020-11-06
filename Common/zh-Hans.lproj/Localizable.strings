@@ -139,5 +139,6 @@
 "ui.empty" = "空";
 
 //MARK: Widget
+"widget.not_available" = "eul 未启动";
 "widget.title" = "CPU 小组件";
 "widget.description" = "显示 CPU 相关信息";

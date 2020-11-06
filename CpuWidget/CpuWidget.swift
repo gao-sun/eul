@@ -12,67 +12,75 @@ import SwiftUI
 import WidgetKit
 
 struct Provider: TimelineProvider {
-    func placeholder(in _: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+    func placeholder(in _: Context) -> CpuEntry {
+        Container.get(CpuEntry.self) ?? CpuEntry.sample
     }
 
-    func getSnapshot(in _: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let entry = SimpleEntry(date: Date())
-        print(Container.get(CpuEntry.self))
+    func getSnapshot(in context: Context, completion: @escaping (CpuEntry) -> Void) {
+        if context.isPreview {
+            completion(CpuEntry.sample)
+        }
+
+        let entry = Container.get(CpuEntry.self) ?? CpuEntry(isValid: false)
         completion(entry)
     }
 
     func getTimeline(in _: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
+        let entry = Container.get(CpuEntry.self) ?? CpuEntry(isValid: false)
         let currentDate = Date()
-        for hourOffset in 0..<5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
-        }
+        let nextDate = Calendar.current.date(byAdding: .second, value: 10, to: currentDate)!
+        let entries: [CpuEntry] = [entry, CpuEntry(date: nextDate, isValid: false)]
 
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        let timeline = Timeline(entries: entries, policy: .never)
         completion(timeline)
     }
-}
-
-struct SimpleEntry: TimelineEntry {
-    let date: Date
 }
 
 struct CpuWidgetEntryView: View {
     var entry: Provider.Entry
 
     var body: some View {
-        VStack(spacing: 8) {
-            Spacer()
-            HStack(alignment: .top) {
-                Image("CPU")
-                    .resizable()
-                    .frame(width: 12, height: 12)
+        ZStack {
+            VStack(spacing: 8) {
                 Spacer()
-                Text("79°C")
-                    .font(.system(size: 11, weight: .semibold))
-                    .foregroundColor(.secondary)
+                HStack(alignment: .top) {
+                    Image("CPU")
+                        .resizable()
+                        .frame(width: 12, height: 12)
+                    Spacer()
+                    if let temp = entry.temp {
+                        Text("\(String(format: "%.0f", temp))°C")
+                            .font(.system(size: 11, weight: .semibold))
+                            .foregroundColor(.secondary)
+                    }
+                }
+                HStack {
+                    Text(entry.usageString)
+                        .widgetTitle()
+                    Spacer()
+                }
+                .padding(.bottom, 24)
+                HStack {
+                    Group {
+                        if let usageSystem = entry.usageSystem {
+                            WidgetSectionView(title: "cpu.system", value: String(format: "%.1f%%", usageSystem))
+                        }
+                        if let usageUser = entry.usageUser {
+                            WidgetSectionView(title: "cpu.user", value: String(format: "%.1f%%", usageUser))
+                        }
+                        if let usageNice = entry.usageNice {
+                            WidgetSectionView(title: "cpu.nice", value: String(format: "%.1f%%", usageNice))
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                Spacer()
             }
-            HStack {
-                Text("48%")
-                    .widgetTitle()
-                Spacer()
+            .padding(16)
+            if !entry.isValid {
+                WidgetNotAvailbleView()
             }
-            .padding(.bottom, 24)
-            HStack {
-                WidgetSectionView(title: "cpu.system", value: String(format: "%.1f%%", 41.1))
-                Spacer()
-                WidgetSectionView(title: "cpu.user", value: String(format: "%.1f%%", 32.2))
-                Spacer()
-                WidgetSectionView(title: "cpu.nice", value: String(format: "%.1f%%", 15.8))
-            }
-            Spacer()
         }
-        .padding(16)
     }
 }
 

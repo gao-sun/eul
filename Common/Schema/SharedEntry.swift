@@ -11,4 +11,6 @@ import WidgetKit
 
 protocol SharedEntry: TimelineEntry, Codable {
     static var containerKey: String { get }
+
+    var isValid: Bool { get }
 }

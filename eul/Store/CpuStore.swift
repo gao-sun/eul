@@ -9,6 +9,7 @@
 import Combine
 import Foundation
 import SystemKit
+import WidgetKit
 
 class CpuStore: ObservableObject, Refreshable {
     static let shared = CpuStore()
@@ -57,8 +58,13 @@ class CpuStore: ObservableObject, Refreshable {
     func writeToContainer() {
         Container.set(CpuEntry(
             temp: temp,
-            usageSystem: usageCPU?.system
+            usageSystem: usageCPU?.system,
+            usageUser: usageCPU?.user,
+            usageNice: usageCPU?.nice
         ))
+        if #available(OSX 11, *) {
+            WidgetCenter.shared.reloadTimelines(ofKind: "CpuWidget")
+        }
     }
 
     init() {

@@ -139,5 +139,6 @@
 "ui.empty" = "Пусто";
 
 //MARK: Widget
+"widget.not_available" = "eul isn't up";
 "widget.cpu.title" = "CPU Widget";
 "widget.cpu.description" = "Display CPU information";
