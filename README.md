@@ -4,22 +4,12 @@
 
 # eul
 
-Enjoy clear and simple status monitoring in macOS.
-
-<img src="https://user-images.githubusercontent.com/14722250/93159105-0f9aeb00-f740-11ea-8d96-75cd0ec837b3.png" height=24 />
-
-<img src="https://user-images.githubusercontent.com/14722250/96442330-8cd4e680-123d-11eb-8458-9cf967dd889f.png" width="400" />
+![Preview](https://user-images.githubusercontent.com/14722250/98441501-afba3280-2139-11eb-8a04-949fac7ff6b2.jpg)
 
 ## Highlights
 
 - Dark Mode compatible
-- Drag to re-order components
-- Detailed information
-  - CPU: usage/temperature/cores/up time
-  - Fan: current/min/max speed
-  - Memory: usage/cached files/temperature
-  - Battery: usage/health/cycle count
-  - Network: in/out speed
+- Big Sur widgets out of the box
 - Written in SwiftUI (as much as possible)
 
 ## OS Requirement
@@ -40,7 +30,12 @@ brew cask install eul
 
 ### App Store
 
-Search `eul` or [click here](https://apps.apple.com/us/app/eul/id1537133867) to view in App Store. Some features are disabled since the removal of all SMC calls.
+Search `eul` or [click here](https://apps.apple.com/us/app/eul/id1537133867) to view in App Store.
+
+Note:
+
+1. Some features are disabled due to the removal of all SMC calls.
+2. The version is out-dated.
 
 ### Release Notes
 
