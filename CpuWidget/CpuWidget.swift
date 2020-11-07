@@ -37,6 +37,7 @@ struct Provider: TimelineProvider {
 }
 
 struct CpuWidgetEntryView: View {
+    var preferenceEntry = Container.get(PreferenceEntry.self) ?? PreferenceEntry()
     var entry: Provider.Entry
 
     var body: some View {
@@ -49,7 +50,7 @@ struct CpuWidgetEntryView: View {
                         .frame(width: 12, height: 12)
                     Spacer()
                     if let temp = entry.temp {
-                        Text("\(String(format: "%.0f", temp))°C")
+                        Text(temp.formatTemp(unit: preferenceEntry.temperatureUnit))
                             .font(.system(size: 11, weight: .semibold))
                             .foregroundColor(.secondary)
                     }

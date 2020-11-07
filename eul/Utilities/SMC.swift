@@ -565,27 +565,6 @@ public enum TemperatureSensors {
                              THUNDERBOLT_1.code: THUNDERBOLT_1]
 }
 
-public struct TemperatureSensor {
-    public let name: String
-    public let code: FourCharCode
-}
-
-public enum TemperatureUnit {
-    case celius
-    case fahrenheit
-    case kelvin
-
-    public static func toFahrenheit(_ celius: Double) -> Double {
-        // https://en.wikipedia.org/wiki/Fahrenheit#Definition_and_conversions
-        return (celius * 1.8) + 32
-    }
-
-    public static func toKelvin(_ celius: Double) -> Double {
-        // https://en.wikipedia.org/wiki/Kelvin
-        return celius + 273.15
-    }
-}
-
 public extension SMCKit {
     static func allKnownTemperatureSensors() throws ->
         [TemperatureSensor]

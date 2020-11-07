@@ -10,6 +10,7 @@ import Combine
 import Foundation
 import Localize_Swift
 import SwiftyJSON
+import WidgetKit
 
 class PreferenceStore: ObservableObject {
     static let shared = PreferenceStore()
@@ -71,9 +72,12 @@ class PreferenceStore: ObservableObject {
 
     init() {
         loadFromDefaults()
+        writeToContainer()
+
         cancellable = objectWillChange.sink {
             DispatchQueue.main.async {
                 self.saveToDefaults()
+                self.writeToContainer()
             }
         }
     }
@@ -153,6 +157,13 @@ class PreferenceStore: ObservableObject {
             UserDefaults.standard.set(data, forKey: userDefaultsKey)
         } catch {
             print("Unable to get preference data")
+        }
+    }
+
+    func writeToContainer() {
+        Container.set(PreferenceEntry(temperatureUnit: temperatureUnit))
+        if #available(OSX 11, *) {
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
 }

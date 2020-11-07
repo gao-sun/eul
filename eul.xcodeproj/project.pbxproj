@@ -65,6 +65,10 @@
 		6C68E07325558F2D00595F83 /* WidgetNotAvailbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C68E06B25558F1F00595F83 /* WidgetNotAvailbleView.swift */; };
 		6C68E07C255662AB00595F83 /* SharedWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C68E07B255662AB00595F83 /* SharedWidgetEntry.swift */; };
 		6C68E07D255662AB00595F83 /* SharedWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C68E07B255662AB00595F83 /* SharedWidgetEntry.swift */; };
+		6C68E0802556643700595F83 /* PreferenceEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C68E07F2556643700595F83 /* PreferenceEntry.swift */; };
+		6C68E0812556643700595F83 /* PreferenceEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C68E07F2556643700595F83 /* PreferenceEntry.swift */; };
+		6C68E084255664F500595F83 /* SmcStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C68E083255664F500595F83 /* SmcStruct.swift */; };
+		6C68E085255664F500595F83 /* SmcStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C68E083255664F500595F83 /* SmcStruct.swift */; };
 		6C739CC125544D7200B30B0D /* SharedEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C739CC025544D7200B30B0D /* SharedEntry.swift */; };
 		6C739CC225544D7200B30B0D /* SharedEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C739CC025544D7200B30B0D /* SharedEntry.swift */; };
 		6C79AD342539E6080033845C /* CpuTopStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD332539E6080033845C /* CpuTopStore.swift */; };
@@ -209,6 +213,8 @@
 		6C5FBD4F253C83520016F3A2 /* MenuActionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionTextView.swift; sourceTree = "<group>"; };
 		6C68E06B25558F1F00595F83 /* WidgetNotAvailbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNotAvailbleView.swift; sourceTree = "<group>"; };
 		6C68E07B255662AB00595F83 /* SharedWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWidgetEntry.swift; sourceTree = "<group>"; };
+		6C68E07F2556643700595F83 /* PreferenceEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceEntry.swift; sourceTree = "<group>"; };
+		6C68E083255664F500595F83 /* SmcStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmcStruct.swift; sourceTree = "<group>"; };
 		6C739CC025544D7200B30B0D /* SharedEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedEntry.swift; sourceTree = "<group>"; };
 		6C79AD332539E6080033845C /* CpuTopStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuTopStore.swift; sourceTree = "<group>"; };
 		6C79AD352539EBE60033845C /* ProcessUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessUsage.swift; sourceTree = "<group>"; };
@@ -456,6 +462,8 @@
 				6C7DFDAC255436DD000FCE5C /* CpuEntry.swift */,
 				6C739CC025544D7200B30B0D /* SharedEntry.swift */,
 				6C68E07B255662AB00595F83 /* SharedWidgetEntry.swift */,
+				6C68E07F2556643700595F83 /* PreferenceEntry.swift */,
+				6C68E083255664F500595F83 /* SmcStruct.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -734,6 +742,7 @@
 				6C68E07125558F2B00595F83 /* WidgetSectionView.swift in Sources */,
 				6C7DB6E424E80F9400133B06 /* PreferenceDisplayView.swift in Sources */,
 				6CE33C7F25260E3D00831857 /* PreferenceRefreshRateView.swift in Sources */,
+				6C68E084255664F500595F83 /* SmcStruct.swift in Sources */,
 				6C993B8A2517868B00586C6B /* FanMenuBlockView.swift in Sources */,
 				6C5FBD4E253C7A060016F3A2 /* PreferenceMenuViewView.swift in Sources */,
 				6C993B8C25178D3B00586C6B /* MemoryMenuBlockView.swift in Sources */,
@@ -780,6 +789,7 @@
 				6C7DB6D724E7A85C00133B06 /* ByteUnit.swift in Sources */,
 				6C831369253DCF1F00914BB0 /* Print.swift in Sources */,
 				6C7E1F0C2552EB2700287D08 /* CpuWidget.intentdefinition in Sources */,
+				6C68E0802556643700595F83 /* PreferenceEntry.swift in Sources */,
 				6C387DC3253AEF3600CBB81B /* ProcessRowView.swift in Sources */,
 				6C387DC1253AEB1A00CBB81B /* StatusBarMenuHostingView.swift in Sources */,
 				6C387DC5253AF46000CBB81B /* NSRunningApplication.swift in Sources */,
@@ -803,6 +813,7 @@
 			files = (
 				6C7E1F052552EB2600287D08 /* CpuWidget.swift in Sources */,
 				6C16BEF12552EE0700CCF5B7 /* Color.swift in Sources */,
+				6C68E085255664F500595F83 /* SmcStruct.swift in Sources */,
 				6C16BEF92552EE7100CCF5B7 /* SectionView.swift in Sources */,
 				6C16BEF02552EE0700CCF5B7 /* Animation.swift in Sources */,
 				6C68E06D25558F1F00595F83 /* WidgetNotAvailbleView.swift in Sources */,
@@ -817,6 +828,7 @@
 				6C16BEF72552EE7100CCF5B7 /* TooltipView.swift in Sources */,
 				6C16BF012552EE7100CCF5B7 /* BatteryIconView.swift in Sources */,
 				6C68E07D255662AB00595F83 /* SharedWidgetEntry.swift in Sources */,
+				6C68E0812556643700595F83 /* PreferenceEntry.swift in Sources */,
 				6C38131C2554352C0025B97C /* Container.swift in Sources */,
 				6C739CC225544D7200B30B0D /* SharedEntry.swift in Sources */,
 				6C16BEFB2552EE7100CCF5B7 /* ActivityIndicatorView.swift in Sources */,
