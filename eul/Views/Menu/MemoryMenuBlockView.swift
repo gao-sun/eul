@@ -23,24 +23,24 @@ struct MemoryMenuBlockView: View {
                     showText: false
                 )
                 Spacer()
-                Text(MemoryStore.memoryUnit(memoryStore.used))
+                Text(memoryStore.used.memoryString)
                     .displayText()
                 Text("memory.usage".localized())
                     .miniSection()
-                Text(MemoryStore.memoryUnit(memoryStore.allFree))
+                Text(memoryStore.allFree.memoryString)
                     .displayText()
                 Text("memory.free".localized())
                     .miniSection()
             }
             SeparatorView()
             HStack {
-                MiniSectionView(title: "memory.cached_files", value: MemoryStore.memoryUnit(memoryStore.cachedFiles))
+                MiniSectionView(title: "memory.cached_files", value: memoryStore.cachedFiles.memoryString)
                 Spacer()
-                MiniSectionView(title: "memory.app", value: MemoryStore.memoryUnit(memoryStore.appMemory))
+                MiniSectionView(title: "memory.app", value: memoryStore.appMemory.memoryString)
                 Spacer()
-                MiniSectionView(title: "memory.wired", value: MemoryStore.memoryUnit(memoryStore.wired))
+                MiniSectionView(title: "memory.wired", value: memoryStore.wired.memoryString)
                 Spacer()
-                MiniSectionView(title: "memory.compressed", value: MemoryStore.memoryUnit(memoryStore.compressed))
+                MiniSectionView(title: "memory.compressed", value: memoryStore.compressed.memoryString)
                 memoryStore.temp.map { temp in
                     Group {
                         Spacer()

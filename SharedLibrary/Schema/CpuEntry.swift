@@ -1,5 +1,5 @@
 //
-//  CpuInfo.swift
+//  CpuEntry.swift
 //  eul
 //
 //  Created by Gao Sun on 2020/11/5.
@@ -30,7 +30,7 @@ public struct CpuEntry: SharedWidgetEntry {
     public var isValid: Bool = true
 
     public var usageString: String {
-        guard let usageSystem = usageSystem, let usageUser = usageUser else {
+        guard isValid, let usageSystem = usageSystem, let usageUser = usageUser else {
             return "N/A"
         }
         return String(format: "%.0f%%", usageSystem + usageUser)

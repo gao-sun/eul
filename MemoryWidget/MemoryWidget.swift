@@ -1,8 +1,8 @@
 //
-//  CpuWidget.swift
-//  CpuWidget
+//  MemoryWidget.swift
+//  MemoryWidget
 //
-//  Created by Gao Sun on 2020/11/4.
+//  Created by Gao Sun on 2020/11/7.
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
@@ -13,31 +13,31 @@ import SwiftUI
 import WidgetKit
 
 struct Provider: TimelineProvider {
-    func placeholder(in _: Context) -> CpuEntry {
-        Container.get(CpuEntry.self) ?? CpuEntry.sample
+    func placeholder(in _: Context) -> MemoryEntry {
+        Container.get(MemoryEntry.self) ?? MemoryEntry.sample
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (CpuEntry) -> Void) {
+    func getSnapshot(in context: Context, completion: @escaping (MemoryEntry) -> Void) {
         if context.isPreview {
-            completion(CpuEntry.sample)
+            completion(MemoryEntry.sample)
         }
 
-        let entry = Container.get(CpuEntry.self) ?? CpuEntry(isValid: false)
+        let entry = Container.get(MemoryEntry.self) ?? MemoryEntry(isValid: false)
         completion(entry)
     }
 
     func getTimeline(in _: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-        let entry = Container.get(CpuEntry.self) ?? CpuEntry(isValid: false)
+        let entry = Container.get(MemoryEntry.self) ?? MemoryEntry(isValid: false)
         let currentDate = Date()
         let nextDate = Calendar.current.date(byAdding: .second, value: 10, to: currentDate)!
-        let entries: [CpuEntry] = [entry, CpuEntry(date: nextDate, isValid: false)]
+        let entries: [MemoryEntry] = [entry, MemoryEntry(date: nextDate, isValid: false)]
 
         let timeline = Timeline(entries: entries, policy: .never)
         completion(timeline)
     }
 }
 
-struct CpuWidgetEntryView: View {
+struct MemoryWidgetEntryView: View {
     var preferenceEntry = Container.get(PreferenceEntry.self) ?? PreferenceEntry()
     var entry: Provider.Entry
 
@@ -46,7 +46,7 @@ struct CpuWidgetEntryView: View {
             VStack(spacing: 8) {
                 Spacer()
                 HStack(alignment: .top) {
-                    Image("CPU")
+                    Image("Memory")
                         .resizable()
                         .frame(width: 12, height: 12)
                     Spacer()
@@ -64,15 +64,8 @@ struct CpuWidgetEntryView: View {
                 .padding(.bottom, 24)
                 HStack {
                     Group {
-                        if let usageSystem = entry.usageSystem {
-                            WidgetSectionView(title: "cpu.system".localized(), value: String(format: "%.1f%%", usageSystem))
-                        }
-                        if let usageUser = entry.usageUser {
-                            WidgetSectionView(title: "cpu.user".localized(), value: String(format: "%.1f%%", usageUser))
-                        }
-                        if let usageNice = entry.usageNice {
-                            WidgetSectionView(title: "cpu.nice".localized(), value: String(format: "%.1f%%", usageNice))
-                        }
+                        WidgetSectionView(title: "memory.usage".localized(), value: entry.used.memoryString)
+                        WidgetSectionView(title: "memory.free".localized(), value: (entry.total - entry.used).memoryString)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -88,14 +81,14 @@ struct CpuWidgetEntryView: View {
 
 @main
 struct CpuWidget: Widget {
-    let kind: String = CpuEntry.kind
+    let kind: String = MemoryEntry.kind
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            CpuWidgetEntryView(entry: entry)
+            MemoryWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("widget.cpu.title".localized())
-        .description("widget.cpu.description".localized())
+        .configurationDisplayName("widget.memory.title".localized())
+        .description("widget.memory.description".localized())
         .supportedFamilies([.systemSmall])
     }
 }

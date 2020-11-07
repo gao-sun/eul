@@ -11,6 +11,7 @@ import WidgetKit
 
 public protocol SharedWidgetEntry: SharedEntry, TimelineEntry {
     static var kind: String { get }
+    static var sample: Self { get }
 
     var isValid: Bool { get }
 }

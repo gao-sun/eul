@@ -142,3 +142,5 @@
 "widget.not_available" = "eul isn't up";
 "widget.cpu.title" = "CPU Widget";
 "widget.cpu.description" = "Display CPU information";
+"widget.memory.title" = "Memory Widget";
+"widget.memory.description" = "Display memory information";

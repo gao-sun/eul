@@ -26,7 +26,7 @@
 			<key>INIntentIneligibleForSuggestions</key>
 			<true/>
 			<key>INIntentName</key>
-			<string>CpuConfiguration</string>
+			<string>MemoryConfiguration</string>
 			<key>INIntentResponse</key>
 			<dict>
 				<key>INIntentResponseCodes</key>
@@ -44,7 +44,7 @@
 				</array>
 			</dict>
 			<key>INIntentTitle</key>
-			<string>Cpu Configuration</string>
+			<string>Memory Configuration</string>
 			<key>INIntentTitleID</key>
 			<string>gpCwrM</string>
 			<key>INIntentType</key>

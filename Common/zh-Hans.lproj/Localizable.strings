@@ -140,5 +140,7 @@
 
 //MARK: Widget
 "widget.not_available" = "eul 未启动";
-"widget.title" = "CPU 小组件";
-"widget.description" = "显示 CPU 相关信息";
+"widget.cpu.title" = "CPU 小组件";
+"widget.cpu.description" = "显示 CPU 相关信息";
+"widget.memory.title" = "内存小组件";
+"widget.memory.description" = "显示内存相关信息";

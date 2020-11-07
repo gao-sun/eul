@@ -6,18 +6,16 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
+import Combine
 import Foundation
+import SharedLibrary
 import SystemKit
+import WidgetKit
 
 class MemoryStore: ObservableObject, Refreshable {
     static let shared = MemoryStore()
 
-    static func memoryUnit(_ value: Double) -> String {
-        if value.isNaN || value.isInfinite {
-            return "N/A"
-        }
-        return value < 1.0 ? String(Int(value * 1000.0)) + " MB" : String(format: "%.2f", value) + " GB"
-    }
+    private var cancellable: AnyCancellable?
 
     @Published var free: Double = 0
     @Published var active: Double = 0
@@ -49,11 +47,11 @@ class MemoryStore: ObservableObject, Refreshable {
     }
 
     var freeString: String {
-        MemoryStore.memoryUnit(total - used)
+        (total - used).memoryString
     }
 
     var usedString: String {
-        MemoryStore.memoryUnit(used)
+        used.memoryString
     }
 
     @objc func refresh() {
@@ -61,7 +59,19 @@ class MemoryStore: ObservableObject, Refreshable {
         temp = SmcControl.shared.memoryProximityTemperature
     }
 
+    func writeToContainer() {
+        Container.set(MemoryEntry(used: used, total: total, temp: temp))
+        if #available(OSX 11, *) {
+            WidgetCenter.shared.reloadTimelines(ofKind: MemoryEntry.kind)
+        }
+    }
+
     init() {
         initObserver(for: .StoreShouldRefresh)
+        cancellable = objectWillChange.sink {
+            DispatchQueue.main.async {
+                self.writeToContainer()
+            }
+        }
     }
 }
