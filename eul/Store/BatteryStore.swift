@@ -59,7 +59,7 @@ class BatteryStore: ObservableObject, Refreshable {
 
     func writeToContainer() {
         Container.set(BatteryEntry(
-            isCharging: charging, acPowered: acPowered, charge: charge, capacity: capacity, maxCapacity: maxCapacity, designCapacity: designCapacity, cycleCount: cycleCount, conditionString: io.condition.description
+            isCharging: charging, acPowered: acPowered, charge: charge, capacity: capacity, maxCapacity: maxCapacity, designCapacity: designCapacity, cycleCount: cycleCount, condition: io.condition
         ))
         if #available(OSX 11, *) {
             WidgetCenter.shared.reloadTimelines(ofKind: BatteryEntry.kind)

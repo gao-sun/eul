@@ -12,6 +12,18 @@ import SharedLibrary
 import SwiftUI
 import WidgetKit
 
+extension BatteryEntry.BatteryCondition {
+    var description: String {
+        "battery.condition.\(rawValue)".localized()
+    }
+}
+
+extension BatteryEntry.PowerSourceState {
+    var description: String {
+        "battery.power_source.\(rawValue)".localized()
+    }
+}
+
 struct Provider: StandardProvider {
     typealias WidgetEntry = BatteryEntry
 }
@@ -43,7 +55,7 @@ struct BatteryWidgetEntryView: View {
                         Group {
                             WidgetSectionView(title: "battery.health".localized(), value: entry.health.percentageString)
                             WidgetSectionView(title: "battery.cycle".localized(), value: entry.cycleCount.description)
-                            WidgetSectionView(title: "battery.condition".localized(), value: entry.conditionString)
+                            WidgetSectionView(title: "battery.condition".localized(), value: entry.condition.description)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }

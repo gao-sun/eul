@@ -9,12 +9,24 @@
 import Foundation
 
 public struct BatteryEntry: SharedWidgetEntry {
+    public enum BatteryCondition: String, Codable {
+        case good
+        case fair
+        case poor
+    }
+
+    public enum PowerSourceState: String, Codable {
+        case battery
+        case acPower
+        case unknown
+    }
+
     public init(date: Date, isValid: Bool) {
         self.date = date
         self.isValid = isValid
     }
 
-    public init(date: Date = Date(), isCharging: Bool = false, acPowered: Bool = false, charge: Double? = nil, capacity: Int = 0, maxCapacity: Int = 0, designCapacity: Int = 0, cycleCount: Int = 0, conditionString: String = "N/A", isValid: Bool = true) {
+    public init(date: Date = Date(), isCharging: Bool = false, acPowered: Bool = false, charge: Double? = nil, capacity: Int = 0, maxCapacity: Int = 0, designCapacity: Int = 0, cycleCount: Int = 0, condition: BatteryEntry.BatteryCondition = BatteryCondition.good, isValid: Bool = true) {
         self.date = date
         self.isCharging = isCharging
         self.acPowered = acPowered
@@ -23,7 +35,7 @@ public struct BatteryEntry: SharedWidgetEntry {
         self.maxCapacity = maxCapacity
         self.designCapacity = designCapacity
         self.cycleCount = cycleCount
-        self.conditionString = conditionString
+        self.condition = condition
         self.isValid = isValid
     }
 
@@ -39,7 +51,7 @@ public struct BatteryEntry: SharedWidgetEntry {
     public var maxCapacity = 0
     public var designCapacity = 0
     public var cycleCount = 0
-    public var conditionString = "N/A"
+    public var condition = BatteryCondition.good
     public var isValid: Bool = true
 
     public var chargeString: String {
