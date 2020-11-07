@@ -391,13 +391,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6C16BEEB2552EC5800CCF5B7 /* Common */ = {
+		6C16BEEB2552EC5800CCF5B7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				6C5F8542249FACE200CF0EF8 /* Assets.xcassets */,
 				6C58053F250CC6B8007F467A /* Localizable.strings */,
 			);
-			path = Common;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		6C16BEEF2552EDD900CCF5B7 /* Extension */ = {
@@ -498,7 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				6C2688EF2556762B00FB7306 /* SharedLibrary */,
-				6C16BEEB2552EC5800CCF5B7 /* Common */,
+				6C16BEEB2552EC5800CCF5B7 /* Resource */,
 				6C5F853D249FACE000CF0EF8 /* eul */,
 				6C7E1F032552EB2600287D08 /* CpuWidget */,
 				6C45750825568DCB00A2AD84 /* MemoryWidget */,

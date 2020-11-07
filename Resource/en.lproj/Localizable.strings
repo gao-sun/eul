@@ -145,3 +145,5 @@
 "widget.cpu.description" = "Display CPU information";
 "widget.memory.title" = "Memory Widget";
 "widget.memory.description" = "Display memory information";
+"widget.battery.title" = "Battery Widget";
+"widget.battery.description" = "Display battery information";

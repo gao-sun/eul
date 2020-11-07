@@ -78,8 +78,8 @@ struct BatteryWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             BatteryWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("widget.memory.title".localized())
-        .description("widget.memory.description".localized())
+        .configurationDisplayName("widget.battery.title".localized())
+        .description("widget.battery.description".localized())
         .supportedFamilies([.systemSmall])
     }
 }
