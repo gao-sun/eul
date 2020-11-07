@@ -9,8 +9,8 @@
 import SwiftUI
 
 extension View {
-    func stableWidth(_ factor: CGFloat = 10) -> some View {
-        modifier(StableWidth(factor: factor))
+    func stableWidth(_ factor: CGFloat = 10, alignment: Alignment = .trailing) -> some View {
+        modifier(StableWidth(factor: factor, alignment: alignment))
     }
 }
 
@@ -18,6 +18,7 @@ struct StableWidth: ViewModifier {
     @State private var idealWidth: CGFloat?
 
     var factor: CGFloat
+    var alignment: Alignment
 
     func getSize(_ proxy: GeometryProxy) -> some View {
         DispatchQueue.main.async { [self] in
@@ -28,7 +29,7 @@ struct StableWidth: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .frame(idealWidth: idealWidth)
+            .frame(idealWidth: idealWidth, alignment: alignment)
             .fixedSize()
             .background(GeometryReader { getSize($0) })
     }
