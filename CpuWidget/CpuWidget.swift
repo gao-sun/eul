@@ -12,29 +12,8 @@ import SharedLibrary
 import SwiftUI
 import WidgetKit
 
-struct Provider: TimelineProvider {
-    func placeholder(in _: Context) -> CpuEntry {
-        Container.get(CpuEntry.self) ?? CpuEntry.sample
-    }
-
-    func getSnapshot(in context: Context, completion: @escaping (CpuEntry) -> Void) {
-        if context.isPreview {
-            completion(CpuEntry.sample)
-        }
-
-        let entry = Container.get(CpuEntry.self) ?? CpuEntry(isValid: false)
-        completion(entry)
-    }
-
-    func getTimeline(in _: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-        let entry = Container.get(CpuEntry.self) ?? CpuEntry(isValid: false)
-        let currentDate = Date()
-        let nextDate = Calendar.current.date(byAdding: .second, value: 10, to: currentDate)!
-        let entries: [CpuEntry] = [entry, CpuEntry(date: nextDate, isValid: false)]
-
-        let timeline = Timeline(entries: entries, policy: .never)
-        completion(timeline)
-    }
+struct Provider: StandardProvider {
+    typealias WidgetEntry = CpuEntry
 }
 
 struct CpuWidgetEntryView: View {

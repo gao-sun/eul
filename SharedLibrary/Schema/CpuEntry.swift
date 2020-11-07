@@ -9,6 +9,11 @@
 import Foundation
 
 public struct CpuEntry: SharedWidgetEntry {
+    public init(date: Date, isValid: Bool) {
+        self.date = date
+        self.isValid = isValid
+    }
+
     public init(date: Date = Date(), temp: Double? = nil, usageSystem: Double? = nil, usageUser: Double? = nil, usageNice: Double? = nil, isValid: Bool = true) {
         self.date = date
         self.temp = temp

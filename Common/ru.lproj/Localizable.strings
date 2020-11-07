@@ -21,6 +21,7 @@
 "battery.design_capacity" = "Заводская Емкость";
 "battery.health_percentage" = "Состояние в процентах";
 "battery.cycle_count" = "Циклов заряда";
+"battery.cycle" = "Cycle";
 "battery.condition" = "Состояние";
 "battery.condition.good" = "Хорошо";
 "battery.condition.fair" = "Нормально";

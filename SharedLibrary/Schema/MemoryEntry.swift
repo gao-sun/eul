@@ -9,6 +9,11 @@
 import Foundation
 
 public struct MemoryEntry: SharedWidgetEntry {
+    public init(date: Date, isValid: Bool) {
+        self.date = date
+        self.isValid = isValid
+    }
+
     public init(date: Date = Date(), used: Double = 0, total: Double = 0, temp: Double? = nil, isValid: Bool = true) {
         self.date = date
         self.used = used

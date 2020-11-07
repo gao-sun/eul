@@ -79,6 +79,18 @@
 		6C7CF45D25568E6200CEC263 /* MemoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7CF45C25568E6200CEC263 /* MemoryEntry.swift */; };
 		6C7CF4642556910D00CEC263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8542249FACE200CF0EF8 /* Assets.xcassets */; };
 		6C7CF4672556910F00CEC263 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C58053F250CC6B8007F467A /* Localizable.strings */; };
+		6C7CF46F25569B8100CEC263 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7E1EFF2552EB2600287D08 /* WidgetKit.framework */; };
+		6C7CF47025569B8100CEC263 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7E1F012552EB2600287D08 /* SwiftUI.framework */; };
+		6C7CF47325569B8100CEC263 /* BatteryWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7CF47225569B8100CEC263 /* BatteryWidget.swift */; };
+		6C7CF47625569B8200CEC263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CF47525569B8200CEC263 /* Assets.xcassets */; };
+		6C7CF47925569B8200CEC263 /* BatteryWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 6C7CF47425569B8100CEC263 /* BatteryWidget.intentdefinition */; };
+		6C7CF47A25569B8200CEC263 /* BatteryWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 6C7CF47425569B8100CEC263 /* BatteryWidget.intentdefinition */; };
+		6C7CF47D25569B8200CEC263 /* BatteryWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6C7CF46E25569B8100CEC263 /* BatteryWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6C7CF48525569C6D00CEC263 /* BatteryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7CF48425569C6D00CEC263 /* BatteryEntry.swift */; };
+		6C7CF48A25569E2B00CEC263 /* StandardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7CF48925569E2B00CEC263 /* StandardProvider.swift */; };
+		6C7CF48F25569F7500CEC263 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 6C7CF48E25569F7500CEC263 /* Localize_Swift */; };
+		6C7CF4962556A53800CEC263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8542249FACE200CF0EF8 /* Assets.xcassets */; };
+		6C7CF49A2556A53A00CEC263 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C58053F250CC6B8007F467A /* Localizable.strings */; };
 		6C7DB6CF24E02F0600133B06 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6CE24E02F0600133B06 /* Shell.swift */; };
 		6C7DB6D124E0300E00133B06 /* NetworkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6D024E0300E00133B06 /* NetworkStore.swift */; };
 		6C7DB6D524E7A75E00133B06 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DB6D424E7A75E00133B06 /* NetworkView.swift */; };
@@ -143,6 +155,13 @@
 			remoteGlobalIDString = 6C45750425568DCB00A2AD84;
 			remoteInfo = MemoryWidgetExtension;
 		};
+		6C7CF47B25569B8200CEC263 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C5F8533249FACE000CF0EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C7CF46D25569B8100CEC263;
+			remoteInfo = BatteryWidgetExtension;
+		};
 		6C7E1F0D2552EB2700287D08 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6C5F8533249FACE000CF0EF8 /* Project object */;
@@ -179,6 +198,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				6C7CF47D25569B8200CEC263 /* BatteryWidgetExtension.appex in Embed App Extensions */,
 				6C7E1F0F2552EB2700287D08 /* CpuWidgetExtension.appex in Embed App Extensions */,
 				6C45751425568DCC00A2AD84 /* MemoryWidgetExtension.appex in Embed App Extensions */,
 			);
@@ -257,6 +277,14 @@
 		6C79AD352539EBE60033845C /* ProcessUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessUsage.swift; sourceTree = "<group>"; };
 		6C79AD372539F9030033845C /* MenuActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionButtonView.swift; sourceTree = "<group>"; };
 		6C7CF45C25568E6200CEC263 /* MemoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryEntry.swift; sourceTree = "<group>"; };
+		6C7CF46E25569B8100CEC263 /* BatteryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BatteryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C7CF47225569B8100CEC263 /* BatteryWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryWidget.swift; sourceTree = "<group>"; };
+		6C7CF47425569B8100CEC263 /* BatteryWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = BatteryWidget.intentdefinition; sourceTree = "<group>"; };
+		6C7CF47525569B8200CEC263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6C7CF47725569B8200CEC263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C7CF47825569B8200CEC263 /* BatteryWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BatteryWidget.entitlements; sourceTree = "<group>"; };
+		6C7CF48425569C6D00CEC263 /* BatteryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryEntry.swift; sourceTree = "<group>"; };
+		6C7CF48925569E2B00CEC263 /* StandardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardProvider.swift; sourceTree = "<group>"; };
 		6C7DB6CE24E02F0600133B06 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		6C7DB6D024E0300E00133B06 /* NetworkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStore.swift; sourceTree = "<group>"; };
 		6C7DB6D224E0350700133B06 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -335,6 +363,16 @@
 				6C2688F52556762B00FB7306 /* SharedLibrary.framework in Frameworks */,
 				6CF28D0925168B8200EBE9CB /* SystemKit in Frameworks */,
 				6C86924C251665A50009A784 /* Localize_Swift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C7CF46B25569B8100CEC263 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C7CF48F25569F7500CEC263 /* Localize_Swift in Frameworks */,
+				6C7CF47025569B8100CEC263 /* SwiftUI.framework in Frameworks */,
+				6C7CF46F25569B8100CEC263 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +502,7 @@
 				6C5F853D249FACE000CF0EF8 /* eul */,
 				6C7E1F032552EB2600287D08 /* CpuWidget */,
 				6C45750825568DCB00A2AD84 /* MemoryWidget */,
+				6C7CF47125569B8100CEC263 /* BatteryWidget */,
 				6C7E1EFE2552EB2600287D08 /* Frameworks */,
 				6C5F853C249FACE000CF0EF8 /* Products */,
 				6C9667D9250E3D6F00E51ABB /* .swiftformat */,
@@ -477,6 +516,7 @@
 				6C7E1EFD2552EB2600287D08 /* CpuWidgetExtension.appex */,
 				6C2688EE2556762B00FB7306 /* SharedLibrary.framework */,
 				6C45750525568DCB00A2AD84 /* MemoryWidgetExtension.appex */,
+				6C7CF46E25569B8100CEC263 /* BatteryWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -524,6 +564,18 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		6C7CF47125569B8100CEC263 /* BatteryWidget */ = {
+			isa = PBXGroup;
+			children = (
+				6C7CF47225569B8100CEC263 /* BatteryWidget.swift */,
+				6C7CF47425569B8100CEC263 /* BatteryWidget.intentdefinition */,
+				6C7CF47525569B8200CEC263 /* Assets.xcassets */,
+				6C7CF47725569B8200CEC263 /* Info.plist */,
+				6C7CF47825569B8200CEC263 /* BatteryWidget.entitlements */,
+			);
+			path = BatteryWidget;
+			sourceTree = "<group>";
+		};
 		6C7DB6D824E7C85200133B06 /* Preference */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,6 +598,8 @@
 				6C68E07F2556643700595F83 /* PreferenceEntry.swift */,
 				6C68E083255664F500595F83 /* SmcStruct.swift */,
 				6C7CF45C25568E6200CEC263 /* MemoryEntry.swift */,
+				6C7CF48425569C6D00CEC263 /* BatteryEntry.swift */,
+				6C7CF48925569E2B00CEC263 /* StandardProvider.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -708,6 +762,7 @@
 				6C7E1F0E2552EB2700287D08 /* PBXTargetDependency */,
 				6C2688F42556762B00FB7306 /* PBXTargetDependency */,
 				6C45751325568DCC00A2AD84 /* PBXTargetDependency */,
+				6C7CF47C25569B8200CEC263 /* PBXTargetDependency */,
 			);
 			name = eul;
 			packageProductDependencies = (
@@ -719,6 +774,26 @@
 			productName = eul;
 			productReference = 6C5F853B249FACE000CF0EF8 /* eul.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6C7CF46D25569B8100CEC263 /* BatteryWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C7CF47E25569B8200CEC263 /* Build configuration list for PBXNativeTarget "BatteryWidgetExtension" */;
+			buildPhases = (
+				6C7CF46A25569B8100CEC263 /* Sources */,
+				6C7CF46B25569B8100CEC263 /* Frameworks */,
+				6C7CF46C25569B8100CEC263 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BatteryWidgetExtension;
+			packageProductDependencies = (
+				6C7CF48E25569F7500CEC263 /* Localize_Swift */,
+			);
+			productName = BatteryWidgetExtension;
+			productReference = 6C7CF46E25569B8100CEC263 /* BatteryWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		6C7E1EFC2552EB2600287D08 /* CpuWidgetExtension */ = {
 			isa = PBXNativeTarget;
@@ -763,6 +838,9 @@
 						CreatedOnToolsVersion = 11.5;
 						LastSwiftMigration = 1150;
 					};
+					6C7CF46D25569B8100CEC263 = {
+						CreatedOnToolsVersion = 12.2;
+					};
 					6C7E1EFC2552EB2600287D08 = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -795,6 +873,7 @@
 				6C5F853A249FACE000CF0EF8 /* eul */,
 				6C7E1EFC2552EB2600287D08 /* CpuWidgetExtension */,
 				6C45750425568DCB00A2AD84 /* MemoryWidgetExtension */,
+				6C7CF46D25569B8100CEC263 /* BatteryWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -824,6 +903,16 @@
 				6C5F8549249FACE200CF0EF8 /* Main.storyboard in Resources */,
 				6C58053D250CC6B8007F467A /* Localizable.strings in Resources */,
 				6C5F8543249FACE200CF0EF8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C7CF46C25569B8100CEC263 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C7CF4962556A53800CEC263 /* Assets.xcassets in Resources */,
+				6C7CF49A2556A53A00CEC263 /* Localizable.strings in Resources */,
+				6C7CF47625569B8200CEC263 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,8 +978,10 @@
 				6C2689182556774D00FB7306 /* Container.swift in Sources */,
 				6C4574FE25567ABC00A2AD84 /* TooltipView.swift in Sources */,
 				6C2689002556763700FB7306 /* Text.swift in Sources */,
+				6C7CF48525569C6D00CEC263 /* BatteryEntry.swift in Sources */,
 				6C2689012556763700FB7306 /* String.swift in Sources */,
 				6C2689112556773300FB7306 /* CpuEntry.swift in Sources */,
+				6C7CF48A25569E2B00CEC263 /* StandardProvider.swift in Sources */,
 				6C4574FB25567ABC00A2AD84 /* ProgressBarView.swift in Sources */,
 				6C2689132556773300FB7306 /* PreferenceEntry.swift in Sources */,
 				6C4574FF25567ABC00A2AD84 /* WidgetSectionView.swift in Sources */,
@@ -936,6 +1027,7 @@
 				6C7DB6E424E80F9400133B06 /* PreferenceDisplayView.swift in Sources */,
 				6CE33C7F25260E3D00831857 /* PreferenceRefreshRateView.swift in Sources */,
 				6C993B8A2517868B00586C6B /* FanMenuBlockView.swift in Sources */,
+				6C7CF47A25569B8200CEC263 /* BatteryWidget.intentdefinition in Sources */,
 				6C5FBD4E253C7A060016F3A2 /* PreferenceMenuViewView.swift in Sources */,
 				6C993B8C25178D3B00586C6B /* MemoryMenuBlockView.swift in Sources */,
 				6CEF771424DD95D7007C3640 /* BatteryView.swift in Sources */,
@@ -984,6 +1076,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6C7CF46A25569B8100CEC263 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C7CF47925569B8200CEC263 /* BatteryWidget.intentdefinition in Sources */,
+				6C7CF47325569B8100CEC263 /* BatteryWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6C7E1EF92552EB2600287D08 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1010,6 +1111,11 @@
 			isa = PBXTargetDependency;
 			target = 6C45750425568DCB00A2AD84 /* MemoryWidgetExtension */;
 			targetProxy = 6C45751225568DCC00A2AD84 /* PBXContainerItemProxy */;
+		};
+		6C7CF47C25569B8200CEC263 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C7CF46D25569B8100CEC263 /* BatteryWidgetExtension */;
+			targetProxy = 6C7CF47B25569B8200CEC263 /* PBXContainerItemProxy */;
 		};
 		6C7E1F0E2552EB2700287D08 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1330,6 +1436,56 @@
 			};
 			name = Release;
 		};
+		6C7CF47F25569B8200CEC263 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = BatteryWidget/BatteryWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 18;
+				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				INFOPLIST_FILE = BatteryWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.3.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.BatteryWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6C7CF48025569B8200CEC263 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = BatteryWidget/BatteryWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 18;
+				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				INFOPLIST_FILE = BatteryWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.3.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.BatteryWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		6C7E1F112552EB2700287D08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1421,6 +1577,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6C7CF47E25569B8200CEC263 /* Build configuration list for PBXNativeTarget "BatteryWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C7CF47F25569B8200CEC263 /* Debug */,
+				6C7CF48025569B8200CEC263 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6C7E1F132552EB2700287D08 /* Build configuration list for PBXNativeTarget "CpuWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1474,6 +1639,11 @@
 			productName = LaunchAtLogin;
 		};
 		6C7CF45625568E1E00CEC263 /* Localize_Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6C86924A251665A50009A784 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
+			productName = Localize_Swift;
+		};
+		6C7CF48E25569F7500CEC263 /* Localize_Swift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6C86924A251665A50009A784 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
 			productName = Localize_Swift;

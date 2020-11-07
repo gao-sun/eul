@@ -6,7 +6,6 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
-import Combine
 import Foundation
 import SharedLibrary
 import SystemKit
@@ -14,8 +13,6 @@ import WidgetKit
 
 class CpuStore: ObservableObject, Refreshable {
     static let shared = CpuStore()
-
-    private var cancellable: AnyCancellable?
 
     @Published var usageString = ""
     @Published var temp: Double?
@@ -54,6 +51,7 @@ class CpuStore: ObservableObject, Refreshable {
         getInfo()
         getUsage()
         getTemp()
+        writeToContainer()
     }
 
     func writeToContainer() {
@@ -70,10 +68,5 @@ class CpuStore: ObservableObject, Refreshable {
 
     init() {
         initObserver(for: .StoreShouldRefresh)
-        cancellable = objectWillChange.sink {
-            DispatchQueue.main.async {
-                self.writeToContainer()
-            }
-        }
     }
 }

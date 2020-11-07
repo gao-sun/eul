@@ -1,6 +1,6 @@
 //
-//  MemoryWidget.swift
-//  MemoryWidget
+//  BatteryWidget.swift
+//  BatteryWidget
 //
 //  Created by Gao Sun on 2020/11/7.
 //  Copyright © 2020 Gao Sun. All rights reserved.
@@ -13,11 +13,10 @@ import SwiftUI
 import WidgetKit
 
 struct Provider: StandardProvider {
-    typealias WidgetEntry = MemoryEntry
+    typealias WidgetEntry = BatteryEntry
 }
 
-struct MemoryWidgetEntryView: View {
-    var preferenceEntry = Container.get(PreferenceEntry.self) ?? PreferenceEntry()
+struct BatteryWidgetEntryView: View {
     var entry: Provider.Entry
 
     var body: some View {
@@ -25,18 +24,16 @@ struct MemoryWidgetEntryView: View {
             VStack(spacing: 8) {
                 Spacer()
                 HStack(alignment: .top) {
-                    Image("Memory")
-                        .resizable()
-                        .frame(width: 12, height: 12)
+                    BatteryIconView(
+                        size: 16,
+                        isCharging: entry.isCharging,
+                        charge: entry.charge ?? 1,
+                        acPowered: entry.acPowered
+                    )
                     Spacer()
-                    if let temp = entry.temp {
-                        Text(temp.formatTemp(unit: preferenceEntry.temperatureUnit))
-                            .font(.system(size: 11, weight: .semibold))
-                            .foregroundColor(.secondary)
-                    }
                 }
                 HStack {
-                    Text(entry.usageString)
+                    Text(entry.chargeString)
                         .widgetTitle()
                     Spacer()
                 }
@@ -44,8 +41,9 @@ struct MemoryWidgetEntryView: View {
                 if entry.isValid {
                     HStack {
                         Group {
-                            WidgetSectionView(title: "memory.usage".localized(), value: entry.used.memoryString)
-                            WidgetSectionView(title: "memory.free".localized(), value: (entry.total - entry.used).memoryString)
+                            WidgetSectionView(title: "battery.health".localized(), value: entry.health.percentageString)
+                            WidgetSectionView(title: "battery.cycle".localized(), value: entry.cycleCount.description)
+                            WidgetSectionView(title: "battery.condition".localized(), value: entry.conditionString)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
@@ -61,12 +59,12 @@ struct MemoryWidgetEntryView: View {
 }
 
 @main
-struct MemoryWidget: Widget {
-    let kind: String = MemoryEntry.kind
+struct BatteryWidget: Widget {
+    let kind: String = BatteryEntry.kind
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            MemoryWidgetEntryView(entry: entry)
+            BatteryWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("widget.memory.title".localized())
         .description("widget.memory.description".localized())

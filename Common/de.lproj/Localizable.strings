@@ -21,6 +21,7 @@
 "battery.design_capacity" = "Design Kap.";
 "battery.health_percentage" = "Gesundheit in Prozent";
 "battery.cycle_count" = "Zyklus-Zählung";
+"battery.cycle" = "Cycle";
 "battery.condition" = "Zustand";
 "battery.condition.good" = "Gut";
 "battery.condition.fair" = "Messen";

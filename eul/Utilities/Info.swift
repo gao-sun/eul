@@ -12,8 +12,10 @@ import SystemKit
 
 struct Info {
     static var isBigSur: Bool {
-        let version = ProcessInfo().operatingSystemVersion
-        return !(version.majorVersion <= 10 && version.minorVersion < 16)
+        if #available(OSX 11, *) {
+            return true
+        }
+        return false
     }
 
     enum BatteryCondition: String {

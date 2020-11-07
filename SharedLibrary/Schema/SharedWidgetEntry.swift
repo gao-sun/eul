@@ -14,4 +14,13 @@ public protocol SharedWidgetEntry: SharedEntry, TimelineEntry {
     static var sample: Self { get }
 
     var isValid: Bool { get }
+
+    init(date: Date, isValid: Bool)
+    init(isValid: Bool)
+}
+
+public extension SharedWidgetEntry {
+    init(isValid: Bool) {
+        self.init(date: Date(), isValid: isValid)
+    }
 }

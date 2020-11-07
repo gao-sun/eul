@@ -6,7 +6,6 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
-import Combine
 import Foundation
 import SharedLibrary
 import SystemKit
@@ -14,8 +13,6 @@ import WidgetKit
 
 class MemoryStore: ObservableObject, Refreshable {
     static let shared = MemoryStore()
-
-    private var cancellable: AnyCancellable?
 
     @Published var free: Double = 0
     @Published var active: Double = 0
@@ -57,6 +54,7 @@ class MemoryStore: ObservableObject, Refreshable {
     @objc func refresh() {
         (free, active, inactive, wired, compressed, appMemory, cachedFiles) = System.memoryUsage()
         temp = SmcControl.shared.memoryProximityTemperature
+        writeToContainer()
     }
 
     func writeToContainer() {
@@ -68,10 +66,5 @@ class MemoryStore: ObservableObject, Refreshable {
 
     init() {
         initObserver(for: .StoreShouldRefresh)
-        cancellable = objectWillChange.sink {
-            DispatchQueue.main.async {
-                self.writeToContainer()
-            }
-        }
     }
 }
