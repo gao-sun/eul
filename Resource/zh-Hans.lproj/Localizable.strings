@@ -147,3 +147,5 @@
 "widget.memory.description" = "显示内存相关信息";
 "widget.battery.title" = "电池小组件";
 "widget.battery.description" = "显示电池相关信息";
+"widget.network.title" = "网络小组件";
+"widget.network.description" = "显示网络相关信息";

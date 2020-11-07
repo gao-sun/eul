@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SharedLibrary
 
 class DiskStore: ObservableObject, Refreshable {
     static let shared = DiskStore()

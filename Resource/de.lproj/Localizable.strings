@@ -147,3 +147,5 @@
 "widget.memory.description" = "Display memory information";
 "widget.battery.title" = "Battery Widget";
 "widget.battery.description" = "Display battery information";
+"widget.network.title" = "Network Widget";
+"widget.network.description" = "Display network information";

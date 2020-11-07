@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SharedLibrary
 
 class NetworkStore: ObservableObject, Refreshable {
     static let shared = NetworkStore()

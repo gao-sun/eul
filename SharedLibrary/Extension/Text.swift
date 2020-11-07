@@ -55,5 +55,13 @@ public extension Text {
 
     func widgetTitle() -> some View {
         font(.system(size: 40, weight: .heavy))
+            .scaledToFill()
+            .minimumScaleFactor(0.3)
+    }
+
+    func widgetDisplayText() -> some View {
+        font(.system(size: 24, weight: .heavy))
+            .scaledToFill()
+            .minimumScaleFactor(0.5)
     }
 }
