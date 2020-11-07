@@ -126,6 +126,12 @@
 		6C993B8C25178D3B00586C6B /* MemoryMenuBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C993B8B25178D3B00586C6B /* MemoryMenuBlockView.swift */; };
 		6C993B8E2517909200586C6B /* MiniSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C993B8D2517909200586C6B /* MiniSectionView.swift */; };
 		6C993B902517920600586C6B /* BatteryMenuBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C993B8F2517920600586C6B /* BatteryMenuBlockView.swift */; };
+		6C9A10C12556C4FB000459E1 /* SharedLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; };
+		6C9A10C22556C4FB000459E1 /* SharedLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C9A10C62556C4FF000459E1 /* SharedLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; };
+		6C9A10C72556C4FF000459E1 /* SharedLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C9A10CB2556C502000459E1 /* SharedLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; };
+		6C9A10CC2556C502000459E1 /* SharedLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6CAEED6524A62DF800C39597 /* SMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED6424A62DF800C39597 /* SMC.swift */; };
 		6CC0798C250CD793000D7DAC /* PreferenceGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC0798B250CD793000D7DAC /* PreferenceGeneralView.swift */; };
 		6CDBB4C1254462B100D01EA0 /* PreferenceSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBB4C0254462B100D01EA0 /* PreferenceSectionView.swift */; };
@@ -187,6 +193,27 @@
 			remoteGlobalIDString = 6C7E1EFC2552EB2600287D08;
 			remoteInfo = CpuWidgetExtension;
 		};
+		6C9A10C32556C4FB000459E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C5F8533249FACE000CF0EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C2688ED2556762B00FB7306;
+			remoteInfo = SharedLibrary;
+		};
+		6C9A10C82556C4FF000459E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C5F8533249FACE000CF0EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C2688ED2556762B00FB7306;
+			remoteInfo = SharedLibrary;
+		};
+		6C9A10CD2556C502000459E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C5F8533249FACE000CF0EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C2688ED2556762B00FB7306;
+			remoteInfo = SharedLibrary;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -222,6 +249,39 @@
 				6C5DAD0D2556B2FF005F67C3 /* NetworkWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C9A10C52556C4FB000459E1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6C9A10C22556C4FB000459E1 /* SharedLibrary.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C9A10CA2556C4FF000459E1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6C9A10C72556C4FF000459E1 /* SharedLibrary.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C9A10CF2556C502000459E1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6C9A10CC2556C502000459E1 /* SharedLibrary.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6CC6D7A4250E2810000B03D4 /* Embed Frameworks */ = {
@@ -377,6 +437,7 @@
 				6C7CF45725568E1E00CEC263 /* Localize_Swift in Frameworks */,
 				6C45750725568DCB00A2AD84 /* SwiftUI.framework in Frameworks */,
 				6C45750625568DCB00A2AD84 /* WidgetKit.framework in Frameworks */,
+				6C9A10C12556C4FB000459E1 /* SharedLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +448,7 @@
 				6C5DAD202556B42C005F67C3 /* Localize_Swift in Frameworks */,
 				6C5DAD002556B2FE005F67C3 /* SwiftUI.framework in Frameworks */,
 				6C5DACFF2556B2FE005F67C3 /* WidgetKit.framework in Frameworks */,
+				6C9A10CB2556C502000459E1 /* SharedLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +471,7 @@
 				6C7CF48F25569F7500CEC263 /* Localize_Swift in Frameworks */,
 				6C7CF47025569B8100CEC263 /* SwiftUI.framework in Frameworks */,
 				6C7CF46F25569B8100CEC263 /* WidgetKit.framework in Frameworks */,
+				6C9A10C62556C4FF000459E1 /* SharedLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,10 +844,12 @@
 				6C45750125568DCB00A2AD84 /* Sources */,
 				6C45750225568DCB00A2AD84 /* Frameworks */,
 				6C45750325568DCB00A2AD84 /* Resources */,
+				6C9A10C52556C4FB000459E1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6C9A10C42556C4FB000459E1 /* PBXTargetDependency */,
 			);
 			name = MemoryWidgetExtension;
 			packageProductDependencies = (
@@ -801,10 +866,12 @@
 				6C5DACFA2556B2FE005F67C3 /* Sources */,
 				6C5DACFB2556B2FE005F67C3 /* Frameworks */,
 				6C5DACFC2556B2FE005F67C3 /* Resources */,
+				6C9A10CF2556C502000459E1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6C9A10CE2556C502000459E1 /* PBXTargetDependency */,
 			);
 			name = NetworkWidgetExtension;
 			packageProductDependencies = (
@@ -854,10 +921,12 @@
 				6C7CF46A25569B8100CEC263 /* Sources */,
 				6C7CF46B25569B8100CEC263 /* Frameworks */,
 				6C7CF46C25569B8100CEC263 /* Resources */,
+				6C9A10CA2556C4FF000459E1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6C9A10C92556C4FF000459E1 /* PBXTargetDependency */,
 			);
 			name = BatteryWidgetExtension;
 			packageProductDependencies = (
@@ -1223,6 +1292,21 @@
 			isa = PBXTargetDependency;
 			target = 6C7E1EFC2552EB2600287D08 /* CpuWidgetExtension */;
 			targetProxy = 6C7E1F0D2552EB2700287D08 /* PBXContainerItemProxy */;
+		};
+		6C9A10C42556C4FB000459E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C2688ED2556762B00FB7306 /* SharedLibrary */;
+			targetProxy = 6C9A10C32556C4FB000459E1 /* PBXContainerItemProxy */;
+		};
+		6C9A10C92556C4FF000459E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C2688ED2556762B00FB7306 /* SharedLibrary */;
+			targetProxy = 6C9A10C82556C4FF000459E1 /* PBXContainerItemProxy */;
+		};
+		6C9A10CE2556C502000459E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C2688ED2556762B00FB7306 /* SharedLibrary */;
+			targetProxy = 6C9A10CD2556C502000459E1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
