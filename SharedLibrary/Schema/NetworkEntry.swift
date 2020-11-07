@@ -9,7 +9,7 @@
 import Foundation
 
 public struct NetworkEntry: SharedWidgetEntry {
-    public init(date: Date = Date(), inSpeedInByte: UInt64 = 0, outSpeedInByte: UInt64 = 0, isValid: Bool = true) {
+    public init(date: Date = Date(), inSpeedInByte: Double = 0, outSpeedInByte: Double = 0, isValid: Bool = true) {
         self.date = date
         self.inSpeedInByte = inSpeedInByte
         self.outSpeedInByte = outSpeedInByte
@@ -26,7 +26,7 @@ public struct NetworkEntry: SharedWidgetEntry {
     public static let sample = NetworkEntry(inSpeedInByte: 20480, outSpeedInByte: 10240)
 
     public var date = Date()
-    public var inSpeedInByte: UInt64 = 0
-    public var outSpeedInByte: UInt64 = 0
+    public var inSpeedInByte: Double = 0
+    public var outSpeedInByte: Double = 0
     public var isValid: Bool = true
 }

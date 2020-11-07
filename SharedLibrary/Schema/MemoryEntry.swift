@@ -24,7 +24,7 @@ public struct MemoryEntry: SharedWidgetEntry {
 
     public static let containerKey = "MemoryEntry"
     public static let kind = "MemoryWidget"
-    public static let sample = MemoryEntry(used: 10, total: 18)
+    public static let sample = MemoryEntry(used: 10, total: 18, temp: 50)
 
     public var date = Date()
     public var used: Double = 0
