@@ -140,12 +140,12 @@
 "ui.empty" = "Пусто";
 
 //MARK: Widget
-"widget.not_available" = "eul isn't up";
-"widget.cpu.title" = "CPU Widget";
-"widget.cpu.description" = "Display CPU information";
-"widget.memory.title" = "Memory Widget";
-"widget.memory.description" = "Display memory information";
-"widget.battery.title" = "Battery Widget";
-"widget.battery.description" = "Display battery information";
-"widget.network.title" = "Network Widget";
-"widget.network.description" = "Display network information";
+"widget.not_available" = "eul еще не готов";
+"widget.cpu.title" = "Виджет CPU";
+"widget.cpu.description" = "Отобржать информацию о CPU";
+"widget.memory.title" = "Виджет Памяти";
+"widget.memory.description" = "Отображать информацию о памяти";
+"widget.battery.title" = "Виджет Батареи";
+"widget.battery.description" = "Отображать информацию о батарее";
+"widget.network.title" = "Виджет Сети";
+"widget.network.description" = "Отображать информацию о сети";
