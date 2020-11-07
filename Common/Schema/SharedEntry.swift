@@ -9,8 +9,6 @@
 import Foundation
 import WidgetKit
 
-protocol SharedEntry: TimelineEntry, Codable {
+protocol SharedEntry: Codable {
     static var containerKey: String { get }
-
-    var isValid: Bool { get }
 }

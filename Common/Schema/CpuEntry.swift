@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct CpuEntry: SharedEntry {
+struct CpuEntry: SharedWidgetEntry {
     static let containerKey = "CpuEntry"
+    static let kind = "CpuWidget"
     static let sample = CpuEntry(temp: 50, usageSystem: 10, usageUser: 20, usageNice: 30)
 
     var date = Date()

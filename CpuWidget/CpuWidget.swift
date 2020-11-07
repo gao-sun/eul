@@ -86,7 +86,7 @@ struct CpuWidgetEntryView: View {
 
 @main
 struct CpuWidget: Widget {
-    let kind: String = "CpuWidget"
+    let kind: String = CpuEntry.kind
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
@@ -94,6 +94,6 @@ struct CpuWidget: Widget {
         }
         .configurationDisplayName("widget.title".localized())
         .description("widget.description".localized())
-        .supportedFamilies([.systemSmall, .systemMedium])
+        .supportedFamilies([.systemSmall])
     }
 }
