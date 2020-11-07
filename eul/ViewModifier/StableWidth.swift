@@ -29,8 +29,8 @@ struct StableWidth: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .frame(idealWidth: idealWidth, alignment: alignment)
             .fixedSize()
             .background(GeometryReader { getSize($0) })
+            .frame(idealWidth: idealWidth, alignment: alignment)
     }
 }
