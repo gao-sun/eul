@@ -65,13 +65,13 @@ struct CpuWidgetEntryView: View {
                 HStack {
                     Group {
                         if let usageSystem = entry.usageSystem {
-                            WidgetSectionView(title: "cpu.system", value: String(format: "%.1f%%", usageSystem))
+                            WidgetSectionView(title: "cpu.system".localized(), value: String(format: "%.1f%%", usageSystem))
                         }
                         if let usageUser = entry.usageUser {
-                            WidgetSectionView(title: "cpu.user", value: String(format: "%.1f%%", usageUser))
+                            WidgetSectionView(title: "cpu.user".localized(), value: String(format: "%.1f%%", usageUser))
                         }
                         if let usageNice = entry.usageNice {
-                            WidgetSectionView(title: "cpu.nice", value: String(format: "%.1f%%", usageNice))
+                            WidgetSectionView(title: "cpu.nice".localized(), value: String(format: "%.1f%%", usageNice))
                         }
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -80,7 +80,7 @@ struct CpuWidgetEntryView: View {
             }
             .padding(16)
             if !entry.isValid {
-                WidgetNotAvailbleView()
+                WidgetNotAvailbleView(text: "widget.not_available".localized())
             }
         }
     }

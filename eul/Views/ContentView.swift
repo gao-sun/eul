@@ -6,6 +6,7 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
+import SharedLibrary
 import SwiftUI
 
 struct ContentView: View {
@@ -26,25 +27,25 @@ struct ContentView: View {
             .background(Color.controlBackground)
             VStack(alignment: .leading, spacing: 12) {
                 if activeSection == .general {
-                    SectionView(title: "ui.app") {
+                    SectionView(title: "ui.app".localized()) {
                         Preference.GeneralView()
                     }
-                    SectionView(title: "ui.display") {
+                    SectionView(title: "ui.display".localized()) {
                         Preference.DisplayView()
                     }
-                    SectionView(title: "ui.refresh_rate") {
+                    SectionView(title: "ui.refresh_rate".localized()) {
                         Preference.RefreshRateView()
                     }
                 }
                 if activeSection == .components {
-                    SectionView(title: "ui.display") {
+                    SectionView(title: "ui.display".localized()) {
                         Preference
                             .ComponentsView()
                             .padding(.top, 8)
                     }
                 }
                 if activeSection == .menuView {
-                    SectionView(title: "ui.display") {
+                    SectionView(title: "ui.display".localized()) {
                         Preference.PreferenceMenuViewView()
                     }
                 }

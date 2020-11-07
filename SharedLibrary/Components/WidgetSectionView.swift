@@ -8,13 +8,18 @@
 
 import SwiftUI
 
-struct WidgetSectionView: View {
-    var title: String
-    var value: String
+public struct WidgetSectionView: View {
+    public init(title: String, value: String) {
+        self.title = title
+        self.value = value
+    }
 
-    var body: some View {
+    public var title: String
+    public var value: String
+
+    public var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(title.localized())
+            Text(title)
                 .font(.system(size: 10, weight: .semibold))
                 .foregroundColor(.thirdary)
             Text(value)

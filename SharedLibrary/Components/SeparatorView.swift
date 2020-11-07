@@ -8,10 +8,14 @@
 
 import SwiftUI
 
-struct SeparatorView: View {
-    var padding: CGFloat = 4
+public struct SeparatorView: View {
+    public init(padding: CGFloat = 4) {
+        self.padding = padding
+    }
 
-    var body: some View {
+    public var padding: CGFloat = 4
+
+    public var body: some View {
         Rectangle()
             .fill(Color.separator)
             .frame(height: 1)

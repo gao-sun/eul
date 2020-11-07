@@ -8,21 +8,28 @@
 
 import SwiftUI
 
-struct BatteryIconView: View {
-    var size: CGFloat = 16
-    var isCharging = false
-    var charge: Double = 0
-    var acPowered = false
+public struct BatteryIconView: View {
+    public init(size: CGFloat = 16, isCharging: Bool = false, charge: Double = 0, acPowered: Bool = false) {
+        self.size = size
+        self.isCharging = isCharging
+        self.charge = charge
+        self.acPowered = acPowered
+    }
+
+    public var size: CGFloat = 16
+    public var isCharging = false
+    public var charge: Double = 0
+    public var acPowered = false
 
     private var lengthUnit: CGFloat {
         size * 15 / 18 / 100
     }
 
-    var chargeFloat: CGFloat {
+    public var chargeFloat: CGFloat {
         (charge.isNaN || charge.isInfinite) ? 100 : CGFloat(charge * 100)
     }
 
-    var body: some View {
+    public var body: some View {
         ZStack(alignment: .leading) {
             if isCharging {
                 Image("BatteryCharging")

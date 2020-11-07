@@ -16,11 +16,16 @@ public extension View {
     }
 }
 
-struct ToolTip: ViewModifier {
-    let toolTip: String?
-    let isVisible: Bool
+public struct ToolTip: ViewModifier {
+    public init(toolTip: String?, isVisible: Bool) {
+        self.toolTip = toolTip
+        self.isVisible = isVisible
+    }
 
-    func body(content: Content) -> some View {
+    public let toolTip: String?
+    public let isVisible: Bool
+
+    public func body(content: Content) -> some View {
         content
             .overlay(Group {
                 if isVisible {
