@@ -9,7 +9,7 @@
 import Foundation
 import WidgetKit
 
-protocol SharedWidgetEntry: SharedEntry, TimelineEntry {
+public protocol SharedWidgetEntry: SharedEntry, TimelineEntry {
     static var kind: String { get }
 
     var isValid: Bool { get }

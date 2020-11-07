@@ -9,6 +9,7 @@
 import Combine
 import Foundation
 import Localize_Swift
+import SharedLibrary
 import SwiftyJSON
 import WidgetKit
 

@@ -9,8 +9,33 @@
 import Foundation
 
 public struct TemperatureSensor {
+    public init(name: String, code: FourCharCode) {
+        self.name = name
+        self.code = code
+    }
+
     public let name: String
     public let code: FourCharCode
+}
+
+extension TemperatureUnit {
+    public init?(rawValue: String) {
+        let lowercased = rawValue.lowercased()
+
+        if lowercased == "celius" || lowercased == "celsius" || lowercased == "c" {
+            self = .celius
+            return
+        }
+        if lowercased == "fahrenheit" || lowercased == "f" {
+            self = .fahrenheit
+            return
+        }
+        if lowercased == "kelvin" || lowercased == "k" {
+            self = .kelvin
+            return
+        }
+        return nil
+    }
 }
 
 public enum TemperatureUnit: String, Codable {
@@ -29,7 +54,7 @@ public enum TemperatureUnit: String, Codable {
     }
 }
 
-extension Double {
+public extension Double {
     func formatTemp(unit: TemperatureUnit = .celius) -> String {
         String(format: "%.0f°\(unit.rawValue.prefix(1).uppercased())", self)
     }

@@ -9,6 +9,6 @@
 import Foundation
 import WidgetKit
 
-protocol SharedEntry: Codable {
+public protocol SharedEntry: Codable {
     static var containerKey: String { get }
 }

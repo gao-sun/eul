@@ -28,6 +28,7 @@
 
 import Foundation
 import IOKit
+import SharedLibrary
 
 // ------------------------------------------------------------------------------
 

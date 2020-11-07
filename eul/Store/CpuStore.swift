@@ -8,6 +8,7 @@
 
 import Combine
 import Foundation
+import SharedLibrary
 import SystemKit
 import WidgetKit
 
