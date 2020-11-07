@@ -1,0 +1,151 @@
+/* 
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery" = "Батарея";
+"battery.charge" = "Заряд";
+"battery.power_source" = "Источник питания";
+"battery.power_source.battery" = "Батарея";
+"battery.power_source.acPower" = "Сетевой Адаптер";
+"battery.power_source.unknown" = "Неизвестно";
+"battery.is_charging" = "Заряжается";
+"battery.to_full_charge" = "до полного заряда";
+"battery.to_empty" = "до разряда";
+"battery.health" = "Здоровье";
+"battery.max_capacity" = "Макс. Емкость";
+"battery.design_capacity" = "Заводская Емкость";
+"battery.health_percentage" = "Состояние в процентах";
+"battery.cycle_count" = "Циклов заряда";
+"battery.cycle" = "Cycle";
+"battery.condition" = "Состояние";
+"battery.condition.good" = "Хорошо";
+"battery.condition.fair" = "Нормально";
+"battery.condition.poor" = "Плохо";
+
+// MARK: CPU / Info
+"cpu.usage" = "Нагрузка";
+"cpu.idle" = "Простой";
+"cpu.temperature" = "Температура";
+"gpu.temperature" = "Температура Видео";
+"cpu.info" = "Инфо";
+"cpu.physical_cores" = "Физических Ядер";
+"cpu.logical_cores" = "Логических Ядер";
+"cpu.up_time" = "Время работы";
+"cpu.thermal_level" = "Уровень тепла";
+"cpu.system" = "Система";
+"cpu.user" = "Пользователь";
+"cpu.nice" = "Приоритет";
+"cpu.waiting_status_report" = "Ожидание первого статус репорта";
+
+// MARK: Fan
+"fan" = "Кулер";
+"fan.current" = "Текущий";
+"fan.min" = "Мин";
+"fan.max" = "Макс";
+
+// MARK: Memory
+"memory" = "Память";
+"memory.total" = "Всего";
+"memory.free" = "Свободно";
+"memory.cached_files" = "Файлов кеша.";
+"memory.temp" = "Температура";
+"memory.usage" = "Занято";
+"memory.app" = "Приложение";
+"memory.wired" = "Зарезервировано";
+"memory.compressed" = "Сжато";
+
+// MARK: Network
+"network" = "Сеть";
+"network.in" = "Входящ.";
+"network.out" = "Исходящ.";
+"network.no_activity" = "Нет активности";
+
+// MARK: Menu
+"menu.summary" = "Суммарно";
+"menu.yes" = "Да";
+"menu.no" = "Нет";
+"menu.preferences" = "Настройки";
+"menu.quit" = "Выход";
+"menu.show_cpu_top_activities" = "Показать максимальную активность ЦП";
+"menu.show_network_top_activities" = "Показать максимальную активность Сети";
+
+// MARK: Temperature
+"temp.temperature" = "Температура";
+"temp.celsius" = "в цельсиях";
+"temp.fahrenheit" = "в фаренгейтах";
+"temp.kelvin" = "в кельвинах";
+
+// MARK: Text Display
+"text_display" = "Текст";
+"text_display.compact" = "компактно";
+"text_display.single_line" = "в одну строку";
+
+// MARK: Font Design
+"font_design" = "Шрифт";
+"font_design.default" = "стандартно";
+"font_design.monospaced" = "моноширный";
+
+// MARK: Component
+"component.status_bar" = "Статус Бар";
+"component.drag_to_reorder" = "перетащите, чтобы изменить порядок";
+"component.available" = "Доступно";
+"component.click_to_append" = "кликните чтобы добавить";
+"component.cpu" = "Процессор";
+"component.fan" = "Кулер";
+"component.memory" = "Память";
+"component.battery" = "Батарея";
+"component.network" = "Сеть";
+"component.disk" = "Disk";
+
+// MARK: Process
+"process" = "Процесс";
+"process.bring_to_front" = "На передний план";
+"process.reveal_in_finder" = "Показать в Finder";
+"process.terminate" = "Завершить";
+"process.force_terminate" = "Завершить принудительно";
+"process.terminate_alert.text.%@" = "Вы уверены что хотите завершить %@?";
+"process.terminate_alert.command.%@" = "Команда: %@";
+"process.terminate_alert.cancel" = "Отмена";
+
+// MARK: Language
+"language" = "Язык";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+
+// MARK: General UI
+"ui.app" = "Приложение";
+"ui.general" = "Основное";
+"ui.version" = "версия";
+"ui.checking_update" = "проверка обновлений";
+"ui.up_to_date" = "самая последняя версия";
+"ui.new_version" = "есть новая версия";
+"ui.download" = "скачивание";
+"ui.launch_at_login" = "Запускать при входе";
+"ui.display" = "Отображение";
+"ui.components" = "Компоненты";
+"ui.show_components_in_status_bar" = "Показывать компоненты в статус баре";
+"ui.show_icon" = "Показать иконки";
+"ui.refresh_rate" = "Частота обновления";
+"ui.smc" = "SMC";
+"ui.network" = "Сеть";
+"ui.menu_view" = "Вид Меню";
+"ui.empty" = "Пусто";
+
+//MARK: Widget
+"widget.not_available" = "eul isn't up";
+"widget.cpu.title" = "CPU Widget";
+"widget.cpu.description" = "Display CPU information";
+"widget.memory.title" = "Memory Widget";
+"widget.memory.description" = "Display memory information";
+"widget.battery.title" = "Battery Widget";
+"widget.battery.description" = "Display battery information";
+"widget.network.title" = "Network Widget";
+"widget.network.description" = "Display network information";

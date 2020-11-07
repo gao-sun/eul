@@ -36,5 +36,9 @@
 	<true/>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>CpuConfigurationIntent</string>
+	</array>
 </dict>
 </plist>

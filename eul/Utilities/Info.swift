@@ -8,32 +8,27 @@
 
 import Foundation
 import IOKit.ps
+import SharedLibrary
 import SystemKit
+
+extension BatteryEntry.BatteryCondition {
+    var description: String {
+        "battery.condition.\(rawValue)".localized()
+    }
+}
+
+extension BatteryEntry.PowerSourceState {
+    var description: String {
+        "battery.power_source.\(rawValue)".localized()
+    }
+}
 
 struct Info {
     static var isBigSur: Bool {
-        let version = ProcessInfo().operatingSystemVersion
-        return !(version.majorVersion <= 10 && version.minorVersion < 16)
-    }
-
-    enum BatteryCondition: String {
-        case good
-        case fair
-        case poor
-
-        var description: String {
-            "battery.condition.\(rawValue)".localized()
+        if #available(OSX 11, *) {
+            return true
         }
-    }
-
-    enum PowerSourceState: String {
-        case battery
-        case acPower
-        case unknown
-
-        var description: String {
-            "battery.power_source.\(rawValue)".localized()
-        }
+        return false
     }
 
     struct Battery {
@@ -43,8 +38,8 @@ struct Info {
             Double(currentCapacity) / Double(maxCapacity)
         }
 
-        var condition: BatteryCondition = .good
-        var powerSource: PowerSourceState = .unknown
+        var condition: BatteryEntry.BatteryCondition = .good
+        var powerSource: BatteryEntry.PowerSourceState = .unknown
         var timeToFullCharge = 0
         var timeToEmpty = 0
         var isCharged = false

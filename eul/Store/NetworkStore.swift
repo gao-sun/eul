@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SharedLibrary
+import WidgetKit
 
 class NetworkStore: ObservableObject, Refreshable {
     static let shared = NetworkStore()
@@ -43,6 +45,14 @@ class NetworkStore: ObservableObject, Refreshable {
 
         lastTimestamp = time
         network = current
+        writeToContainer()
+    }
+
+    func writeToContainer() {
+        Container.set(NetworkEntry(inSpeedInByte: inSpeedInByte, outSpeedInByte: outSpeedInByte))
+        if #available(OSX 11, *) {
+            WidgetCenter.shared.reloadTimelines(ofKind: NetworkEntry.kind)
+        }
     }
 
     init() {

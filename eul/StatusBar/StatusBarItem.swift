@@ -13,8 +13,9 @@ extension Notification.Name {
     static let StatusBarMenuShouldClose = Notification.Name("StatusBarMenuShouldClose")
 }
 
-class StatusBarItem {
+class StatusBarItem: NSObject, NSMenuDelegate {
     let config: StatusBarConfig
+    private let statusBarMenu: NSMenu
     private let item: NSStatusItem
     private var statusView: NSHostingView<AnyView>?
     private var menuView: NSHostingView<AnyView>?
@@ -44,25 +45,31 @@ class StatusBarItem {
         statusView = view
     }
 
-    init() {
-        config = getStatusBarConfig()
-        item = NSStatusBar.system.statusItem(withLength: 0)
-        item.isVisible = false
+    func menuWillOpen(_ menu: NSMenu) {
+        UIStore.shared.menuWidth = menu.size.width
+    }
 
-        let statusBarMenu = NSMenu()
+    override init() {
+        config = getStatusBarConfig()
+        statusBarMenu = NSMenu()
+        item = NSStatusBar.system.statusItem(withLength: 0)
+        super.init()
+
+        statusBarMenu.delegate = self
+        item.isVisible = false
 
         if let menuBuilder = config.menuBuilder {
             let customItem = NSMenuItem()
             menuView = StatusBarMenuHostingView(rootView: menuBuilder(onMenuSizeChange))
+            menuView?.translatesAutoresizingMaskIntoConstraints = false
             customItem.view = menuView
             statusBarMenu.addItem(customItem)
-            statusBarMenu.addItem(NSMenuItem.separator())
         }
 
         item.menu = statusBarMenu
 
         shouldCloseObserver = NotificationCenter.default.addObserver(forName: .StatusBarMenuShouldClose, object: nil, queue: nil) { _ in
-            statusBarMenu.cancelTracking()
+            self.statusBarMenu.cancelTracking()
         }
 
         refresh()

@@ -7,6 +7,7 @@
 //
 
 import Localize_Swift
+import SharedLibrary
 import SwiftUI
 
 extension Preference {

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
+import SharedLibrary
 import SwiftUI
 
 struct BatteryMenuBlockView: View {
@@ -34,7 +35,12 @@ struct BatteryMenuBlockView: View {
                         .miniSection()
                         .padding(.trailing, 4)
                 }
-                BatteryIconView(size: 15, isCharging: batteryStore.io.isCharging, charge: batteryStore.charge)
+                BatteryIconView(
+                    size: 15,
+                    isCharging: batteryStore.io.isCharging,
+                    charge: batteryStore.charge,
+                    acPowered: batteryStore.acPowered
+                )
                 Text(batteryStore.charge.percentageString)
                     .displayText()
             }

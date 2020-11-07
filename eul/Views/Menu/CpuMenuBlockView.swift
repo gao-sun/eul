@@ -6,6 +6,7 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
+import SharedLibrary
 import SwiftUI
 
 struct CpuMenuBlockView: View {
@@ -60,7 +61,8 @@ struct CpuMenuBlockView: View {
                         Spacer()
                     }
                 }
-                .frame(width: 311, height: 102) // fix size to avoid jitter in menu view
+                .frame(minWidth: 311)
+                .frame(height: 102) // fix size to avoid jitter in menu view
             }
         }
         .menuBlock()

@@ -7,6 +7,7 @@
 //
 
 import LaunchAtLogin
+import SharedLibrary
 import SwiftUI
 import SwiftyJSON
 

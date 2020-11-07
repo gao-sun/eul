@@ -6,6 +6,7 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
+import SharedLibrary
 import SwiftUI
 
 struct ContentView: View {
@@ -20,39 +21,40 @@ struct ContentView: View {
                 }
                 Spacer()
             }
-            .padding(.top, 40)
+            .padding(.vertical, 20)
             .padding(.horizontal, 8)
             .frame(width: 150)
             .background(Color.controlBackground)
             VStack(alignment: .leading, spacing: 12) {
                 if activeSection == .general {
-                    SectionView(title: "ui.app") {
+                    SectionView(title: "ui.app".localized()) {
                         Preference.GeneralView()
                     }
-                    SectionView(title: "ui.display") {
+                    SectionView(title: "ui.display".localized()) {
                         Preference.DisplayView()
                     }
-                    SectionView(title: "ui.refresh_rate") {
+                    SectionView(title: "ui.refresh_rate".localized()) {
                         Preference.RefreshRateView()
                     }
                 }
                 if activeSection == .components {
-                    SectionView(title: "ui.display") {
+                    SectionView(title: "ui.display".localized()) {
                         Preference
                             .ComponentsView()
                             .padding(.top, 8)
                     }
                 }
                 if activeSection == .menuView {
-                    SectionView(title: "ui.display") {
+                    SectionView(title: "ui.display".localized()) {
                         Preference.PreferenceMenuViewView()
                     }
                 }
                 Spacer()
             }
-            .padding(20)
-            .frame(minWidth: 610, alignment: .leading)
+            .padding(.vertical, 12)
+            .padding(.horizontal, 20)
         }
+        .frame(height: 400)
         .id(preferenceStore.language)
     }
 }

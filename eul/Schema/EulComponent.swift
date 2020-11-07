@@ -30,6 +30,8 @@ enum EulComponent: String, CaseIterable, Identifiable {
             return AnyView(MemoryView())
         case .Network:
             return AnyView(NetworkView())
+        case .Disk:
+            return AnyView(DiskView())
         }
     }
 
@@ -38,9 +40,10 @@ enum EulComponent: String, CaseIterable, Identifiable {
     case Memory
     case Battery
     case Network
+    case Disk
 
     static var allCases: [EulComponent] {
-        let components: [EulComponent] = [.CPU, .Fan, .Memory, .Network]
+        let components: [EulComponent] = [.CPU, .Fan, .Memory, .Network, .Disk]
         return BatteryStore.shared.isValid ? components + [.Battery] : components
     }
 }

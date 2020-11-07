@@ -6,6 +6,7 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
+import SharedLibrary
 import SwiftUI
 
 struct BatteryView: View {
@@ -19,9 +20,14 @@ struct BatteryView: View {
     var body: some View {
         HStack(spacing: 6) {
             if preferenceStore.showIcon {
-                BatteryIconView(isCharging: batteryStore.io.isCharging, charge: batteryStore.charge)
+                BatteryIconView(
+                    isCharging: batteryStore.io.isCharging,
+                    charge: batteryStore.charge,
+                    acPowered: batteryStore.acPowered
+                )
             }
             StatusBarTextView(texts: texts)
+                .stableWidth()
         }
     }
 }

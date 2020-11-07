@@ -1,0 +1,151 @@
+/* 
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery" = "电池";
+"battery.charge" = "电量";
+"battery.power_source" = "电源";
+"battery.power_source.battery" = "电池";
+"battery.power_source.acPower" = "电源适配器";
+"battery.power_source.unknown" = "未知";
+"battery.is_charging" = "充电中";
+"battery.to_full_charge" = "充满";
+"battery.to_empty" = "电量耗尽";
+"battery.health" = "健康";
+"battery.max_capacity" = "最大容量";
+"battery.design_capacity" = "设计容量";
+"battery.health_percentage" = "健康度";
+"battery.cycle_count" = "循环";
+"battery.cycle" = "循环";
+"battery.condition" = "状况";
+"battery.condition.good" = "好";
+"battery.condition.fair" = "尚可";
+"battery.condition.poor" = "差";
+
+// MARK: CPU / Info
+"cpu.usage" = "用量";
+"cpu.idle" = "空闲";
+"cpu.temperature" = "温度";
+"gpu.temperature" = "GPU 温度";
+"cpu.info" = "信息";
+"cpu.physical_cores" = "物理核心";
+"cpu.logical_cores" = "逻辑核心";
+"cpu.up_time" = "运行时间";
+"cpu.thermal_level" = "温度等级";
+"cpu.system" = "系统";
+"cpu.user" = "用户";
+"cpu.nice" = "Nice";
+"cpu.waiting_status_report" = "正在等待状态更新";
+
+// MARK: Fan
+"fan" = "风扇";
+"fan.current" = "当前";
+"fan.min" = "最小";
+"fan.max" = "最大";
+
+// MARK: Memory
+"memory" = "内存";
+"memory.total" = "总计";
+"memory.free" = "可用";
+"memory.cached_files" = "已缓存";
+"memory.temp" = "温度";
+"memory.usage" = "用量";
+"memory.app" = "App";
+"memory.wired" = "联动";
+"memory.compressed" = "被压缩";
+
+// MARK: Network
+"network" = "网络";
+"network.in" = "下载";
+"network.out" = "上传";
+"network.no_activity" = "无活动";
+
+// MARK: Menu
+"menu.summary" = "概览";
+"menu.yes" = "是";
+"menu.no" = "否";
+"menu.preferences" = "偏好设置";
+"menu.quit" = "退出 eul";
+"menu.show_cpu_top_activities" = "展示 CPU 活跃进程";
+"menu.show_network_top_activities" = "展示网络活跃进程";
+
+// MARK: Temperature
+"temp.temperature" = "温度";
+"temp.celsius" = "摄氏度";
+"temp.fahrenheit" = "华氏度";
+"temp.kelvin" = "开尔文";
+
+// MARK: Text Display
+"text_display" = "文本显示";
+"text_display.compact" = "紧凑";
+"text_display.single_line" = "单行";
+
+// MARK: Font Design
+"font_design" = "字体样式";
+"font_design.default" = "默认";
+"font_design.monospaced" = "等宽";
+
+// MARK: Component
+"component.status_bar" = "状态栏";
+"component.drag_to_reorder" = "拖拽以排序";
+"component.available" = "可用";
+"component.click_to_append" = "单击以添加";
+"component.cpu" = "CPU";
+"component.fan" = "风扇";
+"component.memory" = "内存";
+"component.battery" = "电池";
+"component.network" = "网络";
+"component.disk" = "存储";
+
+// MARK: Process
+"process" = "进程";
+"process.bring_to_front" = "置于顶部";
+"process.reveal_in_finder" = "在 Finder 中显示";
+"process.terminate" = "终止";
+"process.force_terminate" = "强制终止";
+"process.terminate_alert.text.%@" = "确定要终止 %@ ?";
+"process.terminate_alert.command.%@" = "%@";
+"process.terminate_alert.cancel" = "取消";
+
+// MARK: Language
+"language" = "语言";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+
+// MARK: General UI
+"ui.app" = "App";
+"ui.general" = "通用";
+"ui.version" = "版本";
+"ui.checking_update" = "正在检查更新";
+"ui.up_to_date" = "已是最新";
+"ui.new_version" = "检测到新版本";
+"ui.download" = "下载";
+"ui.launch_at_login" = "登录时启动";
+"ui.display" = "显示";
+"ui.components" = "组件";
+"ui.show_components_in_status_bar" = "在状态栏显示组件";
+"ui.show_icon" = "显示图标";
+"ui.refresh_rate" = "刷新频率";
+"ui.smc" = "SMC";
+"ui.network" = "网络";
+"ui.menu_view" = "菜单视图";
+"ui.empty" = "空";
+
+//MARK: Widget
+"widget.not_available" = "eul 未启动";
+"widget.cpu.title" = "CPU 小组件";
+"widget.cpu.description" = "显示 CPU 相关信息";
+"widget.memory.title" = "内存小组件";
+"widget.memory.description" = "显示内存相关信息";
+"widget.battery.title" = "电池小组件";
+"widget.battery.description" = "显示电池相关信息";
+"widget.network.title" = "网络小组件";
+"widget.network.description" = "显示网络相关信息";
