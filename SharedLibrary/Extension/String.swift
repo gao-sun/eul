@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     static func getValue(of column: String, in values: [String], of headers: [String]) -> String? {
         guard
             let index = headers.firstIndex(where: { $0.lowercased() == column }),

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Int {
+public extension Int {
     var digitCount: Int {
         var n = self
         var count = 0

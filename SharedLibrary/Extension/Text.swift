@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-extension Text {
+public extension Text {
     func compact(design: Font.Design = .default) -> some View {
         font(.system(size: 8, weight: .regular, design: design))
     }

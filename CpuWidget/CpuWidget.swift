@@ -8,6 +8,7 @@
 
 import Intents
 import Localize_Swift
+import SharedLibrary
 import SwiftUI
 import WidgetKit
 

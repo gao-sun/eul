@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Double {
+public extension Double {
     var percentageString: String {
         (isNaN || isInfinite) ? "N/A" : String(format: "%.0f%%", self * 100)
     }

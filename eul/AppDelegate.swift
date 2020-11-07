@@ -8,6 +8,7 @@
 
 import Cocoa
 import Localize_Swift
+import SharedLibrary
 import SwiftUI
 
 @NSApplicationMain
