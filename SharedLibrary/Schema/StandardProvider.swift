@@ -25,17 +25,17 @@ public extension StandardProvider {
             return
         }
 
-        let entry = Container.get(WidgetEntry.self) ?? WidgetEntry(isValid: false)
+        let entry = Container.get(WidgetEntry.self) ?? WidgetEntry(outdated: true)
         completion(entry)
     }
 
     func getTimeline(in _: Context, completion: @escaping (Timeline<WidgetEntry>) -> Void) {
-        let entry = Container.get(WidgetEntry.self) ?? WidgetEntry(isValid: false)
+        let entry = Container.get(WidgetEntry.self) ?? WidgetEntry(outdated: true)
         let currentDate = Date()
         let nextDate = Calendar.current.date(byAdding: .second, value: 10, to: currentDate)!
-        let entries: [WidgetEntry] = [entry, WidgetEntry(date: nextDate, isValid: false)]
+        let entries: [WidgetEntry] = [entry, WidgetEntry(date: nextDate, outdated: true)]
 
-        let timeline = Timeline(entries: entries, policy: .never)
+        let timeline = Timeline(entries: entries, policy: .after(Date().addingTimeInterval(10)))
         completion(timeline)
     }
 }

@@ -9,17 +9,17 @@
 import Foundation
 
 public struct MemoryEntry: SharedWidgetEntry {
-    public init(date: Date, isValid: Bool) {
+    public init(date: Date = Date(), outdated: Bool = false, used: Double = 0, total: Double = 0, temp: Double? = nil) {
         self.date = date
-        self.isValid = isValid
-    }
-
-    public init(date: Date = Date(), used: Double = 0, total: Double = 0, temp: Double? = nil, isValid: Bool = true) {
-        self.date = date
+        self.outdated = outdated
         self.used = used
         self.total = total
         self.temp = temp
-        self.isValid = isValid
+    }
+
+    public init(date: Date, outdated: Bool) {
+        self.date = date
+        self.outdated = outdated
     }
 
     public static let containerKey = "MemoryEntry"
@@ -27,10 +27,10 @@ public struct MemoryEntry: SharedWidgetEntry {
     public static let sample = MemoryEntry(used: 10, total: 18, temp: 50)
 
     public var date = Date()
+    public var outdated = false
     public var used: Double = 0
     public var total: Double = 0
     public var temp: Double?
-    public var isValid: Bool = true
 
     var usedPercentage: Double {
         used / total * 100
