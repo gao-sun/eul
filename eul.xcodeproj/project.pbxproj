@@ -87,6 +87,7 @@
 		6C79AD342539E6080033845C /* CpuTopStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD332539E6080033845C /* CpuTopStore.swift */; };
 		6C79AD362539EBE60033845C /* ProcessUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD352539EBE60033845C /* ProcessUsage.swift */; };
 		6C79AD382539F9030033845C /* MenuActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD372539F9030033845C /* MenuActionButtonView.swift */; };
+		6C7A8D8A25578F8100FF52ED /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A8D8925578F8100FF52ED /* LineChart.swift */; };
 		6C7CF45725568E1E00CEC263 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 6C7CF45625568E1E00CEC263 /* Localize_Swift */; };
 		6C7CF45D25568E6200CEC263 /* MemoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7CF45C25568E6200CEC263 /* MemoryEntry.swift */; };
 		6C7CF4642556910D00CEC263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8542249FACE200CF0EF8 /* Assets.xcassets */; };
@@ -362,6 +363,7 @@
 		6C79AD332539E6080033845C /* CpuTopStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuTopStore.swift; sourceTree = "<group>"; };
 		6C79AD352539EBE60033845C /* ProcessUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessUsage.swift; sourceTree = "<group>"; };
 		6C79AD372539F9030033845C /* MenuActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionButtonView.swift; sourceTree = "<group>"; };
+		6C7A8D8925578F8100FF52ED /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		6C7CF45C25568E6200CEC263 /* MemoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryEntry.swift; sourceTree = "<group>"; };
 		6C7CF46E25569B8100CEC263 /* BatteryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BatteryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7CF47225569B8100CEC263 /* BatteryWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryWidget.swift; sourceTree = "<group>"; };
@@ -657,6 +659,7 @@
 		6C5F855824A5D99600CF0EF8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6C7A8D8825578F7300FF52ED /* Chart */,
 				6C5F8540249FACE000CF0EF8 /* ContentView.swift */,
 				6CDE6C7924F2AA3200463114 /* Menu */,
 				6C7DB6D824E7C85200133B06 /* Preference */,
@@ -675,6 +678,14 @@
 				6C831368253DCF1F00914BB0 /* Print.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6C7A8D8825578F7300FF52ED /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				6C7A8D8925578F8100FF52ED /* LineChart.swift */,
+			);
+			path = Chart;
 			sourceTree = "<group>";
 		};
 		6C7CF47125569B8100CEC263 /* BatteryWidget */ = {
@@ -1188,6 +1199,7 @@
 				6CAEED6524A62DF800C39597 /* SMC.swift in Sources */,
 				6C5F8541249FACE000CF0EF8 /* ContentView.swift in Sources */,
 				6C387DC9253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift in Sources */,
+				6C7A8D8A25578F8100FF52ED /* LineChart.swift in Sources */,
 				6C5F853F249FACE000CF0EF8 /* AppDelegate.swift in Sources */,
 				6C58053A250CAEC3007F467A /* StatusBarTextView.swift in Sources */,
 				6C7DB6E424E80F9400133B06 /* PreferenceDisplayView.swift in Sources */,
