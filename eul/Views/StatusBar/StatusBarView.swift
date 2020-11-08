@@ -14,7 +14,7 @@ struct StatusBarView: SizeChangeView {
     var onSizeChange: ((CGSize) -> Void)?
 
     var spacing: CGFloat {
-        preferenceStore.fontDesign == .default ? 10 : 8
+        preferenceStore.fontDesign == .default ? 12 : 10
     }
 
     var body: some View {
