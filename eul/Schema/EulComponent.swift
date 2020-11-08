@@ -9,13 +9,20 @@
 import Foundation
 import SwiftUI
 
-enum EulComponent: String, CaseIterable, Identifiable {
+enum EulComponent: String, CaseIterable, Identifiable, Codable {
     var id: String {
         rawValue
     }
 
     var localizedDescription: String {
         "component.\(rawValue.lowercased())".localized()
+    }
+
+    var graphAvailable: Bool {
+        guard self == .CPU || self == .Memory else {
+            return false
+        }
+        return true
     }
 
     func getView() -> AnyView {

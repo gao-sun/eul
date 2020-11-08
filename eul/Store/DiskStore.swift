@@ -12,7 +12,7 @@ import SharedLibrary
 class DiskStore: ObservableObject, Refreshable {
     static let shared = DiskStore()
 
-    var list: DiskList?
+    @Published var list: DiskList?
 
     var ceilingBytes: UInt64? {
         list?.Containers.reduce(0) { $0 + $1.CapacityCeiling }

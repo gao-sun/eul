@@ -89,6 +89,7 @@
 		6C79AD382539F9030033845C /* MenuActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD372539F9030033845C /* MenuActionButtonView.swift */; };
 		6C7A8D8A25578F8100FF52ED /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A8D8925578F8100FF52ED /* LineChart.swift */; };
 		6C7A8D8D255802FF00FF52ED /* EulComponentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A8D8C255802FF00FF52ED /* EulComponentConfig.swift */; };
+		6C7A8D9125581E7D00FF52ED /* StatusComponentConfigStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A8D9025581E7D00FF52ED /* StatusComponentConfigStore.swift */; };
 		6C7CF45725568E1E00CEC263 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 6C7CF45625568E1E00CEC263 /* Localize_Swift */; };
 		6C7CF45D25568E6200CEC263 /* MemoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7CF45C25568E6200CEC263 /* MemoryEntry.swift */; };
 		6C7CF4642556910D00CEC263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8542249FACE200CF0EF8 /* Assets.xcassets */; };
@@ -366,6 +367,7 @@
 		6C79AD372539F9030033845C /* MenuActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionButtonView.swift; sourceTree = "<group>"; };
 		6C7A8D8925578F8100FF52ED /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		6C7A8D8C255802FF00FF52ED /* EulComponentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulComponentConfig.swift; sourceTree = "<group>"; };
+		6C7A8D9025581E7D00FF52ED /* StatusComponentConfigStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusComponentConfigStore.swift; sourceTree = "<group>"; };
 		6C7CF45C25568E6200CEC263 /* MemoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryEntry.swift; sourceTree = "<group>"; };
 		6C7CF46E25569B8100CEC263 /* BatteryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BatteryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7CF47225569B8100CEC263 /* BatteryWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryWidget.swift; sourceTree = "<group>"; };
@@ -778,6 +780,7 @@
 				6C457391253AC69E00BB2584 /* UIStore.swift */,
 				6CDBB4C425447D8B00D01EA0 /* ComponentsStore.swift */,
 				6C572D7E254EFD4700EF9904 /* DiskStore.swift */,
+				6C7A8D9025581E7D00FF52ED /* StatusComponentConfigStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -1230,6 +1233,7 @@
 				6C1FA40B24AA139300CA7F71 /* NSNotification.swift in Sources */,
 				6C5DAD0A2556B2FF005F67C3 /* NetworkWidget.intentdefinition in Sources */,
 				6C79AD382539F9030033845C /* MenuActionButtonView.swift in Sources */,
+				6C7A8D9125581E7D00FF52ED /* StatusComponentConfigStore.swift in Sources */,
 				6C7DB6D524E7A75E00133B06 /* NetworkView.swift in Sources */,
 				6CDBB4C325447B7500D01EA0 /* EulMenuComponent.swift in Sources */,
 				6CDBB4C1254462B100D01EA0 /* PreferenceSectionView.swift in Sources */,

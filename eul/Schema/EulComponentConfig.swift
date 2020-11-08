@@ -7,10 +7,42 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-protocol EulComponentConfig: Codable {
-    var component: EulComponent { get }
-    var showIcon: Bool { get }
-    var graphAvailable: Bool { get }
-    var showGraph: Bool { get }
+struct EulComponentConfig: Codable {
+    var component: EulComponent
+    var showIcon: Bool = true
+    var showText: Bool = true
+    var showGraph: Bool = false
+
+    var json: JSON {
+        JSON([
+            "component": component.rawValue,
+            "showIcon": showIcon,
+            "showText": showText,
+            "showGraph": showGraph,
+        ])
+    }
+}
+
+extension EulComponentConfig {
+    init?(_ json: JSON) {
+        guard let rawComponent = json["component"].string, let component = EulComponent(rawValue: rawComponent) else {
+            return nil
+        }
+
+        self.component = component
+
+        if let bool = json["showIcon"].bool {
+            showIcon = bool
+        }
+
+        if let bool = json["showText"].bool {
+            showText = bool
+        }
+
+        if let bool = json["showGraph"].bool {
+            showGraph = bool
+        }
+    }
 }

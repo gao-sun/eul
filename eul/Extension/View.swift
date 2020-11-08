@@ -49,5 +49,6 @@ extension View {
             .environmentObject(PreferenceStore.shared)
             .environmentObject(sharedComponentsStore)
             .environmentObject(sharedMenuComponentsStore)
+            .environmentObject(StatusComponentConfigStore.shared)
     }
 }
