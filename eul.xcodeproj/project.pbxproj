@@ -88,6 +88,7 @@
 		6C79AD362539EBE60033845C /* ProcessUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD352539EBE60033845C /* ProcessUsage.swift */; };
 		6C79AD382539F9030033845C /* MenuActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD372539F9030033845C /* MenuActionButtonView.swift */; };
 		6C7A8D8A25578F8100FF52ED /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A8D8925578F8100FF52ED /* LineChart.swift */; };
+		6C7A8D8D255802FF00FF52ED /* EulComponentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A8D8C255802FF00FF52ED /* EulComponentConfig.swift */; };
 		6C7CF45725568E1E00CEC263 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 6C7CF45625568E1E00CEC263 /* Localize_Swift */; };
 		6C7CF45D25568E6200CEC263 /* MemoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7CF45C25568E6200CEC263 /* MemoryEntry.swift */; };
 		6C7CF4642556910D00CEC263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8542249FACE200CF0EF8 /* Assets.xcassets */; };
@@ -364,6 +365,7 @@
 		6C79AD352539EBE60033845C /* ProcessUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessUsage.swift; sourceTree = "<group>"; };
 		6C79AD372539F9030033845C /* MenuActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionButtonView.swift; sourceTree = "<group>"; };
 		6C7A8D8925578F8100FF52ED /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		6C7A8D8C255802FF00FF52ED /* EulComponentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulComponentConfig.swift; sourceTree = "<group>"; };
 		6C7CF45C25568E6200CEC263 /* MemoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryEntry.swift; sourceTree = "<group>"; };
 		6C7CF46E25569B8100CEC263 /* BatteryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BatteryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7CF47225569B8100CEC263 /* BatteryWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryWidget.swift; sourceTree = "<group>"; };
@@ -552,6 +554,7 @@
 			isa = PBXGroup;
 			children = (
 				6CDE6C7724F112D700463114 /* EulComponent.swift */,
+				6C7A8D8C255802FF00FF52ED /* EulComponentConfig.swift */,
 				6CDBB4C225447B7500D01EA0 /* EulMenuComponent.swift */,
 				6C7DB6E524E82C5A00133B06 /* Preference.swift */,
 				6C1FA40D24AA162800CA7F71 /* Refreshable.swift */,
@@ -1222,6 +1225,7 @@
 				6C1FA41024AA1D4400CA7F71 /* FanStore.swift in Sources */,
 				6C79AD342539E6080033845C /* CpuTopStore.swift in Sources */,
 				6C457392253AC69E00BB2584 /* UIStore.swift in Sources */,
+				6C7A8D8D255802FF00FF52ED /* EulComponentConfig.swift in Sources */,
 				6CDE6C7224F0007D00463114 /* StatusBarItem.swift in Sources */,
 				6C1FA40B24AA139300CA7F71 /* NSNotification.swift in Sources */,
 				6C5DAD0A2556B2FF005F67C3 /* NetworkWidget.intentdefinition in Sources */,

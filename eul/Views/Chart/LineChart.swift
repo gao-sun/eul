@@ -11,10 +11,14 @@ import SwiftUI
 
 struct LineChart: View {
     var points: [Double] = []
+    var maxPointCount = 10
     var maximumPoint: Double = 100
     var minimumPoint: Double = 0
-    var stepX: CGFloat = 5
-    var frame = CGSize(width: 60, height: 30)
+    var frame = CGSize(width: (AppDelegate.statusBarHeight - 4) * 1.75, height: AppDelegate.statusBarHeight - 4)
+
+    var stepX: CGFloat {
+        frame.width / (CGFloat(maxPointCount) - 1)
+    }
 
     func getY(_ value: Double) -> CGFloat {
         CGFloat((value - minimumPoint) / (maximumPoint - minimumPoint)) * frame.height
@@ -81,6 +85,6 @@ struct LineChart: View {
 
 struct LineChart_Preview: PreviewProvider {
     static var previews: LineChart {
-        LineChart(points: [20, 30, 40, 50, 65, 70, 40, 40, 50, 65, 70, 40, 70])
+        LineChart(points: [10, 10, 10, 20, 20, 20, 30, 30, 30, 80])
     }
 }

@@ -25,6 +25,7 @@ struct CpuView: View {
             }
             StatusBarTextView(texts: texts)
                 .stableWidth()
+            LineChart(points: cpuStore.usageHistory)
         }
     }
 }
