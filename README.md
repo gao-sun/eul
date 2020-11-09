@@ -43,12 +43,13 @@ Note:
 
 ## Contributors
 
-[@XaoflySho](https://github.com/XaoflySho) [@akeschmidi](https://github.com/akeschmidi) [@Nikolay](https://github.com/JiLiZART) [@JesusM](https://github.com/JesusM) [@kant](https://github.com/kant)
+[@XaoflySho](https://github.com/XaoflySho) [@akeschmidi](https://github.com/akeschmidi) [@Nikolay](https://github.com/JiLiZART) [@JesusM](https://github.com/JesusM) [@kant](https://github.com/kant) [@rfuehrer](https://github.com/rfuehrer) [@nebeker](https://github.com/nebeker)
 
 ## Language Support
 
 - 简体中文
 - English
-- Deutsch (credit [@akeschmidi](https://github.com/akeschmidi))
+- Deutsch (credit [@akeschmidi](https://github.com/akeschmidi) [@rfuehrer](https://github.com/rfuehrer))
 - Русский (credit [@Nikolay](https://github.com/JiLiZART))
 - Español (credit [@JesusM](https://github.com/JesusM) [@kant](https://github.com/kant))
+- Portuguese (credit [@nebeker](https://github.com/nebeker))
