@@ -11,13 +11,13 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var preferenceStore: PreferenceStore
-    @State var activeSection: Preference.Section = .general
+    @EnvironmentObject var uiStore: UIStore
 
     var body: some View {
         HSplitView {
             VStack(spacing: 4) {
                 ForEach(Preference.Section.allCases) {
-                    Preference.PreferenceSectionView(activeSection: $activeSection, section: $0)
+                    Preference.PreferenceSectionView(activeSection: $uiStore.activeSection, section: $0)
                 }
                 Spacer()
             }
@@ -26,7 +26,7 @@ struct ContentView: View {
             .frame(width: 150)
             .background(Color.controlBackground)
             VStack(alignment: .leading, spacing: 12) {
-                if activeSection == .general {
+                if uiStore.activeSection == .general {
                     SectionView(title: "ui.app".localized()) {
                         Preference.GeneralView()
                     }
@@ -37,14 +37,14 @@ struct ContentView: View {
                         Preference.RefreshRateView()
                     }
                 }
-                if activeSection == .components {
+                if uiStore.activeSection == .components {
                     SectionView(title: "ui.display".localized()) {
                         Preference
                             .ComponentsView()
                             .padding(.top, 8)
                     }
                 }
-                if activeSection == .menuView {
+                if uiStore.activeSection == .menuView {
                     SectionView(title: "ui.display".localized()) {
                         Preference.PreferenceMenuViewView()
                     }

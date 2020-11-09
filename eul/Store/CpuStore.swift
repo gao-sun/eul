@@ -22,6 +22,7 @@ class CpuStore: ObservableObject, Refreshable {
     @Published var logicalCores = 0
     @Published var upTime: (days: Int, hrs: Int, mins: Int, secs: Int)?
     @Published var thermalLevel: System.ThermalLevel = .Unknown
+    @Published var usageHistory: [Double] = []
 
     var usage: Double? {
         guard let usageCPU = usageCPU else {
@@ -38,8 +39,10 @@ class CpuStore: ObservableObject, Refreshable {
     }
 
     private func getUsage() {
-        usageCPU = Info.system.usageCPU()
-        usageString = String(format: "%.1f%%", (usageCPU?.system ?? 0) + (usageCPU?.user ?? 0))
+        let usage = Info.system.usageCPU()
+        usageCPU = usage
+        usageString = String(format: "%.1f%%", usage.system + usage.user)
+        usageHistory = (usageHistory + [usage.system + usage.user]).suffix(10)
     }
 
     private func getTemp() {

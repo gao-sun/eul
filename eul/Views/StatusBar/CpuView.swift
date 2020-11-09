@@ -11,6 +11,11 @@ import SwiftUI
 struct CpuView: View {
     @EnvironmentObject var cpuStore: CpuStore
     @EnvironmentObject var preferenceStore: PreferenceStore
+    @EnvironmentObject var statusComponentConfigStore: StatusComponentConfigStore
+
+    var config: EulComponentConfig {
+        statusComponentConfigStore.configDict[.CPU] ?? EulComponentConfig(component: .CPU)
+    }
 
     var texts: [String] {
         [cpuStore.usageString, cpuStore.temp.map { SmcControl.shared.formatTemp($0) }].compactMap { $0 }
@@ -23,8 +28,14 @@ struct CpuView: View {
                     .resizable()
                     .frame(width: 13, height: 13)
             }
-            StatusBarTextView(texts: texts)
-                .stableWidth()
+            if config.showText {
+                StatusBarTextView(texts: texts)
+                    .stableWidth()
+            }
+
+            if config.showGraph {
+                LineChart(points: cpuStore.usageHistory)
+            }
         }
     }
 }

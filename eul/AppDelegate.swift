@@ -13,13 +13,23 @@ import SwiftUI
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
-    var window: NSWindow!
-    let statusBarManager = StatusBarManager()
-    @ObservedObject var preferenceStore = PreferenceStore.shared
-
     static var statusBarHeight: CGFloat {
         NSStatusBar.system.thickness
     }
+
+    static func openPreferences() {
+        (NSApp.delegate as! AppDelegate).window.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+        NotificationCenter.default.post(name: .StatusBarMenuShouldClose, object: nil)
+    }
+
+    static func quit() {
+        NSApplication.shared.terminate(self)
+    }
+
+    var window: NSWindow!
+    let statusBarManager = StatusBarManager()
+    @ObservedObject var preferenceStore = PreferenceStore.shared
 
     func refreshSMCRepeatedly() {
         NotificationCenter.default.post(name: .SMCShouldRefresh, object: nil)

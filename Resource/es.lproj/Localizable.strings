@@ -138,14 +138,18 @@
 "ui.network" = "Red";
 "ui.menu_view" = "Vista del Menú";
 "ui.empty" = "Vacío";
+"ui.hidden_by_system.title" = "eul menu components are force hidden by system";
+"ui.hidden_by_system.message" = "Open preference and try to reduce component count";
+"ui.hidden_by_system.open" = "Open";
+"ui.hidden_by_system.dismiss" = "Dismiss";
 
 //MARK: Widget
-"widget.not_available" = "eul isn't up";
-"widget.cpu.title" = "CPU Widget";
-"widget.cpu.description" = "Display CPU information";
-"widget.memory.title" = "Memory Widget";
-"widget.memory.description" = "Display memory information";
-"widget.battery.title" = "Battery Widget";
-"widget.battery.description" = "Display battery information";
-"widget.network.title" = "Network Widget";
-"widget.network.description" = "Display network information";
+"widget.not_available" = "eul no está arrancado";
+"widget.cpu.title" = "Widget de CPU";
+"widget.cpu.description" = "Mostrar información de CPU";
+"widget.memory.title" = "Widget de memoria";
+"widget.memory.description" = "Mostrar información de memoria";
+"widget.battery.title" = "Widget de batería";
+"widget.battery.description" = "Mostrar Widget de batería";
+"widget.network.title" = "WIdget de red";
+"widget.network.description" = "Mostrar Widget de red";

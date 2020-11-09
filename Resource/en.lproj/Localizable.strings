@@ -138,6 +138,10 @@
 "ui.network" = "Network";
 "ui.menu_view" = "Menu View";
 "ui.empty" = "Empty";
+"ui.hidden_by_system.title" = "eul status bar components are force hidden by system";
+"ui.hidden_by_system.message" = "Open preference and try to reduce component count";
+"ui.hidden_by_system.open" = "Open";
+"ui.hidden_by_system.dismiss" = "Dismiss";
 
 //MARK: Widget
 "widget.not_available" = "eul isn't up";

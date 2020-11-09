@@ -138,6 +138,10 @@
 "ui.network" = "Сеть";
 "ui.menu_view" = "Вид Меню";
 "ui.empty" = "Пусто";
+"ui.hidden_by_system.title" = "eul menu components are force hidden by system";
+"ui.hidden_by_system.message" = "Open preference and try to reduce component count";
+"ui.hidden_by_system.open" = "Open";
+"ui.hidden_by_system.dismiss" = "Dismiss";
 
 //MARK: Widget
 "widget.not_available" = "eul еще не готов";

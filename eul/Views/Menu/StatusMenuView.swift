@@ -13,16 +13,6 @@ struct StatusMenuView: SizeChangeView {
     @EnvironmentObject var preferenceStore: PreferenceStore
     @EnvironmentObject var menuComponentsStore: ComponentsStore<EulMenuComponent>
 
-    func openPreferences() {
-        (NSApp.delegate as! AppDelegate).window.makeKeyAndOrderFront(nil)
-        NSApp.activate(ignoringOtherApps: true)
-        NotificationCenter.default.post(name: .StatusBarMenuShouldClose, object: nil)
-    }
-
-    func quit() {
-        NSApplication.shared.terminate(self)
-    }
-
     var onSizeChange: ((CGSize) -> Void)?
     var body: some View {
         VStack(spacing: 12) {
@@ -32,8 +22,8 @@ struct StatusMenuView: SizeChangeView {
                 Text("v\(PreferenceStore.shared.version ?? "?")")
                     .secondaryDisplayText()
                 Spacer()
-                MenuActionTextView(id: "menu.preferences", text: "menu.preferences", action: openPreferences)
-                MenuActionTextView(id: "menu.quit", text: "menu.quit", action: quit)
+                MenuActionTextView(id: "menu.preferences", text: "menu.preferences", action: AppDelegate.openPreferences)
+                MenuActionTextView(id: "menu.quit", text: "menu.quit", action: AppDelegate.quit)
             }
             ForEach(menuComponentsStore.activeComponents) {
                 $0.getView()

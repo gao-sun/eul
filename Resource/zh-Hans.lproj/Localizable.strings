@@ -138,6 +138,10 @@
 "ui.network" = "网络";
 "ui.menu_view" = "菜单视图";
 "ui.empty" = "空";
+"ui.hidden_by_system.title" = "eul 状态栏组件被系统隐藏";
+"ui.hidden_by_system.message" = "打开偏好设置并尝试减少状态栏组件数量";
+"ui.hidden_by_system.open" = "打开";
+"ui.hidden_by_system.dismiss" = "忽略";
 
 //MARK: Widget
 "widget.not_available" = "eul 未启动";

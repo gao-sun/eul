@@ -23,7 +23,14 @@ class StatusBarItem: NSObject, NSMenuDelegate {
 
     var isVisible: Bool {
         get { item.isVisible }
-        set { item.isVisible = newValue }
+        set {
+            item.isVisible = newValue
+            if newValue {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.checkStatusItemVisibility()
+                }
+            }
+        }
     }
 
     func onSizeChange(size: CGSize) {
@@ -47,6 +54,27 @@ class StatusBarItem: NSObject, NSMenuDelegate {
 
     func menuWillOpen(_ menu: NSMenu) {
         UIStore.shared.menuWidth = menu.size.width
+    }
+
+    func checkStatusItemVisibility() {
+        if item.button?.window?.occlusionState.contains(.visible) == false {
+            print("⚠️ status item hidden by system")
+            let alert = NSAlert()
+            alert.messageText = "ui.hidden_by_system.title".localized()
+            alert.informativeText = "ui.hidden_by_system.message".localized()
+            alert.alertStyle = .warning
+            alert.addButton(withTitle: "ui.hidden_by_system.open".localized())
+            alert.addButton(withTitle: "ui.hidden_by_system.dismiss".localized())
+            NSApp.activate(ignoringOtherApps: true)
+
+            let result = alert.runModal()
+            if result == .alertFirstButtonReturn {
+                UIStore.shared.activeSection = .components
+                AppDelegate.openPreferences()
+            }
+        } else {
+            print("✅ status item is visible")
+        }
     }
 
     override init() {
