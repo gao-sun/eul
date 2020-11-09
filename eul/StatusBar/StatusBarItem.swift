@@ -20,11 +20,17 @@ class StatusBarItem: NSObject, NSMenuDelegate {
     private var statusView: NSHostingView<AnyView>?
     private var menuView: NSHostingView<AnyView>?
     private var shouldCloseObserver: NSObjectProtocol?
-    private var statusBarVisibleObserver: NSObjectProtocol?
 
     var isVisible: Bool {
         get { item.isVisible }
-        set { item.isVisible = newValue }
+        set {
+            item.isVisible = newValue
+            if newValue {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.checkStatusItemVisibility()
+                }
+            }
+        }
     }
 
     func onSizeChange(size: CGSize) {
@@ -50,6 +56,27 @@ class StatusBarItem: NSObject, NSMenuDelegate {
         UIStore.shared.menuWidth = menu.size.width
     }
 
+    func checkStatusItemVisibility() {
+        if item.button?.window?.occlusionState.contains(.visible) == false {
+            print("⚠️ status item hidden by system")
+            let alert = NSAlert()
+            alert.messageText = "ui.hidden_by_system.title".localized()
+            alert.informativeText = "ui.hidden_by_system.message".localized()
+            alert.alertStyle = .warning
+            alert.addButton(withTitle: "ui.hidden_by_system.open".localized())
+            alert.addButton(withTitle: "ui.hidden_by_system.dismiss".localized())
+            NSApp.activate(ignoringOtherApps: true)
+
+            let result = alert.runModal()
+            if result == .alertFirstButtonReturn {
+                UIStore.shared.activeSection = .components
+                AppDelegate.openPreferences()
+            }
+        } else {
+            print("✅ status item is visible")
+        }
+    }
+
     override init() {
         config = getStatusBarConfig()
         statusBarMenu = NSMenu()
@@ -72,33 +99,6 @@ class StatusBarItem: NSObject, NSMenuDelegate {
         shouldCloseObserver = NotificationCenter.default.addObserver(forName: .StatusBarMenuShouldClose, object: nil, queue: nil) { _ in
             self.statusBarMenu.cancelTracking()
         }
-
-        // https://github.com/feedback-assistant/reports/issues/37
-        statusBarVisibleObserver = NotificationCenter.default.addObserver(
-            forName: NSWindow.didChangeOcclusionStateNotification,
-            object: item.button?.window,
-            queue: nil,
-            using: { _ in
-                print("receiving didChangeOcclusionStateNotification", self.item.button?.window?.occlusionState ?? "N/A")
-
-                if self.item.button?.window?.occlusionState.contains(.visible) == false {
-                    print("⚠️ status item hidden by system")
-                    let alert = NSAlert()
-                    alert.messageText = "ui.hidden_by_system.title".localized()
-                    alert.informativeText = "ui.hidden_by_system.message".localized()
-                    alert.alertStyle = .warning
-                    alert.addButton(withTitle: "ui.hidden_by_system.open".localized())
-                    alert.addButton(withTitle: "ui.hidden_by_system.dismiss".localized())
-                    NSApp.activate(ignoringOtherApps: true)
-
-                    let result = alert.runModal()
-                    if result == .alertFirstButtonReturn {
-                        UIStore.shared.activeSection = .components
-                        AppDelegate.openPreferences()
-                    }
-                }
-            }
-        )
 
         refresh()
     }

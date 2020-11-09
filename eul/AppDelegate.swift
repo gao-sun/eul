@@ -13,10 +13,6 @@ import SwiftUI
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
-    var window: NSWindow!
-    let statusBarManager = StatusBarManager()
-    @ObservedObject var preferenceStore = PreferenceStore.shared
-
     static var statusBarHeight: CGFloat {
         NSStatusBar.system.thickness
     }
@@ -30,6 +26,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     static func quit() {
         NSApplication.shared.terminate(self)
     }
+
+    var window: NSWindow!
+    let statusBarManager = StatusBarManager()
+    @ObservedObject var preferenceStore = PreferenceStore.shared
 
     func refreshSMCRepeatedly() {
         NotificationCenter.default.post(name: .SMCShouldRefresh, object: nil)
