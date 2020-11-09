@@ -45,23 +45,23 @@ struct BatteryMenuBlockView: View {
                     .displayText()
             }
             HStack {
-                Text(batteryStore.health.percentageString)
-                    .displayText()
                 Text("battery.health".localized())
                     .miniSection()
+                Text(batteryStore.health.percentageString)
+                    .displayText()
                 if batteryStore.maxCapacity > 0 {
                     Spacer()
-                    Text("\(batteryStore.maxCapacity.description) mAh")
-                        .displayText()
                     Text("battery.max_capacity".localized())
                         .miniSection()
+                    Text("\(batteryStore.maxCapacity.description) mAh")
+                        .displayText()
                 }
                 if batteryStore.designCapacity > 0 {
                     Spacer()
-                    Text("\(batteryStore.designCapacity.description) mAh")
-                        .displayText()
                     Text("battery.design_capacity".localized())
                         .miniSection()
+                    Text("\(batteryStore.designCapacity.description) mAh")
+                        .displayText()
                 }
             }
             .padding(.top, 4)
