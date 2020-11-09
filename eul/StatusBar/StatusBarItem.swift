@@ -90,6 +90,7 @@ class StatusBarItem: NSObject, NSMenuDelegate {
             let customItem = NSMenuItem()
             menuView = StatusBarMenuHostingView(rootView: menuBuilder(onMenuSizeChange))
             menuView?.translatesAutoresizingMaskIntoConstraints = false
+            menuView?.setFrameSize(NSSize(width: 1, height: 1))
             customItem.view = menuView
             statusBarMenu.addItem(customItem)
         }
