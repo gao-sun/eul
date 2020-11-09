@@ -13,7 +13,7 @@ struct DiskView: View {
     @EnvironmentObject var preferenceStore: PreferenceStore
 
     var texts: [String] {
-        [diskStore.usageString, diskStore.freeString]
+        [diskStore.freeString, diskStore.usageString]
     }
 
     var body: some View {
