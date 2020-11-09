@@ -14,7 +14,7 @@ struct ContentView: View {
     @EnvironmentObject var uiStore: UIStore
 
     var body: some View {
-        HSplitView {
+        HStack {
             VStack(spacing: 4) {
                 ForEach(Preference.Section.allCases) {
                     Preference.PreferenceSectionView(activeSection: $uiStore.activeSection, section: $0)

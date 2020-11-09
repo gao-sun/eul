@@ -23,14 +23,14 @@ struct MemoryMenuBlockView: View {
                     showText: false
                 )
                 Spacer()
-                Text(memoryStore.used.memoryString)
-                    .displayText()
                 Text("memory.usage".localized())
                     .miniSection()
-                Text(memoryStore.allFree.memoryString)
+                Text(memoryStore.used.memoryString)
                     .displayText()
                 Text("memory.free".localized())
                     .miniSection()
+                Text(memoryStore.allFree.memoryString)
+                    .displayText()
             }
             SeparatorView()
             HStack {
