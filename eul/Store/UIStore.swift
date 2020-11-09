@@ -14,4 +14,5 @@ class UIStore: ObservableObject {
 
     @Published var hoveringID: String?
     @Published var menuWidth: CGFloat?
+    @Published var activeSection: Preference.Section = .general
 }

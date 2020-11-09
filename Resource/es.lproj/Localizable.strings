@@ -138,6 +138,10 @@
 "ui.network" = "Red";
 "ui.menu_view" = "Vista del Menú";
 "ui.empty" = "Vacío";
+"ui.hidden_by_system.title" = "eul menu components are force hidden by system";
+"ui.hidden_by_system.message" = "Open preference and try to reduce component count";
+"ui.hidden_by_system.open" = "Open";
+"ui.hidden_by_system.dismiss" = "Dismiss";
 
 //MARK: Widget
 "widget.not_available" = "eul no está arrancado";

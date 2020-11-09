@@ -21,6 +21,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         NSStatusBar.system.thickness
     }
 
+    static func openPreferences() {
+        (NSApp.delegate as! AppDelegate).window.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+        NotificationCenter.default.post(name: .StatusBarMenuShouldClose, object: nil)
+    }
+
+    static func quit() {
+        NSApplication.shared.terminate(self)
+    }
+
     func refreshSMCRepeatedly() {
         NotificationCenter.default.post(name: .SMCShouldRefresh, object: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + Double(preferenceStore.smcRefreshRate)) { [self] in
