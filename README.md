@@ -43,7 +43,7 @@ Note:
 
 ## Contributors
 
-[@XaoflySho](https://github.com/XaoflySho) [@akeschmidi](https://github.com/akeschmidi) [@Nikolay](https://github.com/JiLiZART) [@JesusM](https://github.com/JesusM)
+[@XaoflySho](https://github.com/XaoflySho) [@akeschmidi](https://github.com/akeschmidi) [@Nikolay](https://github.com/JiLiZART) [@JesusM](https://github.com/JesusM) [@kant](https://github.com/kant)
 
 ## Language Support
 
@@ -51,4 +51,4 @@ Note:
 - English
 - Deutsch (credit [@akeschmidi](https://github.com/akeschmidi))
 - Русский (credit [@Nikolay](https://github.com/JiLiZART))
-- Español (credit [@JesusM](https://github.com/JesusM))
+- Español (credit [@JesusM](https://github.com/JesusM) [@kant](https://github.com/kant))
