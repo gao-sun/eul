@@ -1,5 +1,5 @@
 //
-//  StatusComponentConfigStore.swift
+//  ComponentConfigStore.swift
 //  eul
 //
 //  Created by Gao Sun on 2020/11/8.
@@ -10,9 +10,9 @@ import Combine
 import Foundation
 import SwiftyJSON
 
-class StatusComponentConfigStore: ObservableObject {
-    static let shared = StatusComponentConfigStore()
-    private let userDefaultsKey = "statusComponentConfig"
+class ComponentConfigStore: ObservableObject {
+    static let shared = ComponentConfigStore()
+    private let userDefaultsKey = "componentConfig"
     private var cancellable: AnyCancellable?
 
     @Published var configDict: [EulComponent: EulComponentConfig] = [:]

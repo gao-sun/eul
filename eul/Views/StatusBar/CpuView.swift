@@ -11,10 +11,10 @@ import SwiftUI
 struct CpuView: View {
     @EnvironmentObject var cpuStore: CpuStore
     @EnvironmentObject var preferenceStore: PreferenceStore
-    @EnvironmentObject var statusComponentConfigStore: StatusComponentConfigStore
+    @EnvironmentObject var componentConfigStore: ComponentConfigStore
 
     var config: EulComponentConfig {
-        statusComponentConfigStore.configDict[.CPU] ?? EulComponentConfig(component: .CPU)
+        componentConfigStore.configDict[.CPU] ?? EulComponentConfig(component: .CPU)
     }
 
     var texts: [String] {
