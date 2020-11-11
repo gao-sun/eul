@@ -35,5 +35,10 @@ struct StatusMenuView: SizeChangeView {
         .fixedSize()
         .animation(.none)
         .background(GeometryReader { self.reportSize($0) })
+        .onPreferenceChange(SizePreferenceKey.self, perform: { value in
+            if let size = value.first {
+                onSizeChange?(size)
+            }
+        })
     }
 }

@@ -14,14 +14,16 @@ typealias SizeChangeViewBuilder = (SizeChange) -> AnyView
 
 protocol SizeChangeView: View {
     var onSizeChange: SizeChange { get }
-    func reportSize(_ geometry: GeometryProxy) -> Color
+    func reportSize(_ geometry: GeometryProxy) -> AnyView
 }
 
 extension SizeChangeView {
-    func reportSize(_ geometry: GeometryProxy) -> Color {
-        DispatchQueue.main.async {
-            self.onSizeChange?(geometry.size)
-        }
-        return Color.clear
+    func reportSize(_ geometry: GeometryProxy) -> AnyView {
+        AnyView(
+            Color.clear.preference(
+                key: SizePreferenceKey.self,
+                value: [geometry.size]
+            )
+        )
     }
 }
