@@ -28,7 +28,7 @@ class StatusBarItem: NSObject, NSMenuDelegate {
             item.isVisible = newValue
             if newValue {
                 visibilityTimer?.invalidate()
-                visibilityTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
+                visibilityTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in
                     self.checkStatusItemVisibility()
                 })
             }

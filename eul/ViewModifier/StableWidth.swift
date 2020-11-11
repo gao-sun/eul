@@ -9,8 +9,8 @@
 import SwiftUI
 
 extension View {
-    func stableWidth(_ factor: CGFloat = 8) -> some View {
-        modifier(StableWidth(factor: factor))
+    func stableWidth(_ factor: CGFloat = 8, minWidth: CGFloat? = nil) -> some View {
+        modifier(StableWidth(factor: factor, minWidth: minWidth))
     }
 }
 
@@ -20,7 +20,7 @@ private struct CGFloatPreferenceKey: PreferenceKey {
     static var defaultValue: [CGFloat] = []
 
     static func reduce(value: inout [CGFloat], nextValue: () -> [CGFloat]) {
-        value = nextValue()
+        value += nextValue()
     }
 }
 
@@ -28,9 +28,21 @@ struct StableWidth: ViewModifier {
     @State private var idealWidth: CGFloat?
 
     var factor: CGFloat
+    var minWidth: CGFloat?
+
+    var computedIdealWidth: CGFloat? {
+        if let idealWidth = idealWidth {
+            if let minWidth = minWidth {
+                return max(idealWidth, minWidth)
+            }
+            return idealWidth
+        }
+
+        return nil
+    }
 
     func getSize(_ proxy: GeometryProxy) -> some View {
-        return Color.clear.preference(
+        Color.clear.preference(
             key: CGFloatPreferenceKey.self,
             value: [factor * ceil(proxy.size.width / factor)]
         )
@@ -43,7 +55,7 @@ struct StableWidth: ViewModifier {
                 .fixedSize()
                 .background(GeometryReader { getSize($0) })
         }
-        .frame(idealWidth: idealWidth)
+        .frame(idealWidth: computedIdealWidth)
         .fixedSize()
         .onPreferenceChange(CGFloatPreferenceKey.self, perform: { value in
             idealWidth = value.first

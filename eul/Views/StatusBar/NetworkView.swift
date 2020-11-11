@@ -24,7 +24,7 @@ struct NetworkView: View {
                     .frame(width: 13, height: 13)
             }
             StatusBarTextView(texts: texts)
-                .stableWidth(20)
+                .stableWidth(20, minWidth: 40)
         }
     }
 }

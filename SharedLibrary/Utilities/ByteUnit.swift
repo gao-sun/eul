@@ -38,7 +38,7 @@ public struct ByteUnit {
     public var readable: String {
         switch bytes {
         case 0..<(kilo * kilo):
-            return "\(String(format: "%.\(kilobytes >= 100 ? 0 : 1)f", kilobytes)) KB"
+            return "\(String(format: "%.\(0)f", kilobytes)) KB"
         case kilo..<(kilo * kilo * kilo):
             return "\(String(format: "%.\(megabytes >= 100 ? 0 : 1)f", megabytes)) MB"
         case (kilo * kilo * kilo)...UInt64.max:
