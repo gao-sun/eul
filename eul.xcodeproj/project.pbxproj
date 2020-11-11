@@ -316,6 +316,7 @@
 		6C1FA41124AA1DC100CA7F71 /* MemoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStore.swift; sourceTree = "<group>"; };
 		6C2688EE2556762B00FB7306 /* SharedLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2688F12556762B00FB7306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C2F1647255C1EAD0062F76F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C33CEC82517634400345977 /* StatusMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuView.swift; sourceTree = "<group>"; };
 		6C33CECA251767C400345977 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		6C33CECC25177CE300345977 /* CpuMenuBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuMenuBlockView.swift; sourceTree = "<group>"; };
@@ -1018,6 +1019,7 @@
 				de,
 				ru,
 				es,
+				pt,
 			);
 			mainGroup = 6C5F8532249FACE000CF0EF8;
 			packageReferences = (
@@ -1339,6 +1341,7 @@
 				DE4FCF352543102B00C985E7 /* de */,
 				6D4A9C042546317200B9BF25 /* ru */,
 				B00D5BCE254ABAB900395E7E /* es */,
+				6C2F1647255C1EAD0062F76F /* pt */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

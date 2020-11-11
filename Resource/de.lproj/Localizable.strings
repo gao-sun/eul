@@ -119,6 +119,7 @@
 "language.de" = "Deutsch";
 "language.ru" = "Русский";
 "language.es" = "Español";
+"language.pt" = "Português";
 
 // MARK: General UI
 "ui.app" = "App";
