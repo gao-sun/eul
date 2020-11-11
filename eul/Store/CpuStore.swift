@@ -41,7 +41,7 @@ class CpuStore: ObservableObject, Refreshable {
     private func getUsage() {
         let usage = Info.system.usageCPU()
         usageCPU = usage
-        usageString = String(format: "%.1f%%", usage.system + usage.user)
+        usageString = String(format: "%.0f%%", usage.system + usage.user)
         usageHistory = (usageHistory + [usage.system + usage.user]).suffix(10)
     }
 
