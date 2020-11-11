@@ -20,15 +20,17 @@ class StatusBarItem: NSObject, NSMenuDelegate {
     private var statusView: NSHostingView<AnyView>?
     private var menuView: NSHostingView<AnyView>?
     private var shouldCloseObserver: NSObjectProtocol?
+    private var visibilityTimer: Timer?
 
     var isVisible: Bool {
         get { item.isVisible }
         set {
             item.isVisible = newValue
             if newValue {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                visibilityTimer?.invalidate()
+                visibilityTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in
                     self.checkStatusItemVisibility()
-                }
+                })
             }
         }
     }
@@ -90,6 +92,7 @@ class StatusBarItem: NSObject, NSMenuDelegate {
             let customItem = NSMenuItem()
             menuView = StatusBarMenuHostingView(rootView: menuBuilder(onMenuSizeChange))
             menuView?.translatesAutoresizingMaskIntoConstraints = false
+            menuView?.setFrameSize(NSSize(width: 1, height: 1))
             customItem.view = menuView
             statusBarMenu.addItem(customItem)
         }

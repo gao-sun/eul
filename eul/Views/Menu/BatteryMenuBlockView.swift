@@ -22,14 +22,14 @@ struct BatteryMenuBlockView: View {
                     .menuSection()
                 Spacer()
                 if io.isCharging && io.timeToFullCharge >= 0 {
-                    Text("\(io.timeToFullCharge) min")
+                    Text(io.timeToFullCharge.readableTimeInMin)
                         .displayText()
                     Text("battery.to_full_charge".localized())
                         .miniSection()
                         .padding(.trailing, 4)
                 }
                 if !io.isCharging && !io.isCharged && io.timeToEmpty >= 0 {
-                    Text("\(io.timeToEmpty) min")
+                    Text(io.timeToEmpty.readableTimeInMin)
                         .displayText()
                     Text("battery.to_empty".localized())
                         .miniSection()

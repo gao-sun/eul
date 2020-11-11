@@ -31,5 +31,10 @@ struct StatusBarView: SizeChangeView {
         }
         .fixedSize()
         .background(GeometryReader { self.reportSize($0) })
+        .onPreferenceChange(SizePreferenceKey.self, perform: { value in
+            if let size = value.first {
+                onSizeChange?(size)
+            }
+        })
     }
 }

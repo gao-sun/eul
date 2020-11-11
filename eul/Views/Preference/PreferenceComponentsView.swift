@@ -18,12 +18,12 @@ extension Preference {
         @GestureState var offsetWidth: CGFloat = 0
 
         func updateFrame(geometry: GeometryProxy, index: Int) -> some View {
-            if !componentsStore.isActiveComponentToggling {
-                DispatchQueue.main.async {
-                    self.frames[index] = geometry.frame(in: CoordinateSpace.named(coordinateSpace))
-                }
-            }
-            return Color.clear
+            Color.clear.preference(
+                key: FramePreferenceKey.self,
+                value: componentsStore.isActiveComponentToggling
+                    ? []
+                    : [FramePreferenceData(index: index, frame: geometry.frame(in: CoordinateSpace.named(coordinateSpace)))]
+            )
         }
 
         var body: some View {
@@ -177,6 +177,11 @@ extension Preference {
                     }
                 }
             }
+            .onPreferenceChange(FramePreferenceKey.self, perform: { value in
+                for data in value {
+                    self.frames[data.index] = data.frame
+                }
+            })
         }
     }
 }

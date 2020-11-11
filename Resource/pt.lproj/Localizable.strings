@@ -33,7 +33,7 @@
 "cpu.temperature" = "Temp";
 "gpu.temperature" = "Temp GPU";
 "cpu.info" = "Info";
-"cpu.physical_cores" = Núcleos Físicos";
+"cpu.physical_cores" = "Núcleos Físicos";
 "cpu.logical_cores" = "Núcleos Lógicos";
 "cpu.up_time" = "Tempo de Atividade";
 "cpu.thermal_level" = "Nvl. Térmico";
@@ -81,7 +81,7 @@
 "temp.kelvin" = "Kelvin";
 
 // MARK: Text Display
-"text_display" = Estilo de Texto";
+"text_display" = "Estilo de Texto";
 "text_display.compact" = "compacto";
 "text_display.single_line" = "uma linha";
 

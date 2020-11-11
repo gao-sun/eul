@@ -18,7 +18,7 @@ enum EulComponent: String, CaseIterable, Identifiable, Codable {
         "component.\(rawValue.lowercased())".localized()
     }
 
-    var graphAvailable: Bool {
+    var isGraphAvailable: Bool {
         guard self == .CPU || self == .Memory else {
             return false
         }
