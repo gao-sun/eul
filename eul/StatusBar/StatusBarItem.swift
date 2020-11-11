@@ -20,15 +20,17 @@ class StatusBarItem: NSObject, NSMenuDelegate {
     private var statusView: NSHostingView<AnyView>?
     private var menuView: NSHostingView<AnyView>?
     private var shouldCloseObserver: NSObjectProtocol?
+    private var visibilityTimer: Timer?
 
     var isVisible: Bool {
         get { item.isVisible }
         set {
             item.isVisible = newValue
             if newValue {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                visibilityTimer?.invalidate()
+                visibilityTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
                     self.checkStatusItemVisibility()
-                }
+                })
             }
         }
     }
