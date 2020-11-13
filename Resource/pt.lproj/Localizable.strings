@@ -52,7 +52,7 @@
 "memory" = "Memoria";
 "memory.total" = "Total";
 "memory.free" = "Livre";
-"memory.cached_files" = "Ficheiros en Cached";
+"memory.cached_files" = "Ficheiros em Cache";
 "memory.temp" = "Temp";
 "memory.usage" = "Utilização";
 "memory.app" = "App";
@@ -70,9 +70,9 @@
 "menu.yes" = "Sim";
 "menu.no" = "Não";
 "menu.preferences" = "Preferências";
-"menu.quit" = "Sair eul";
-"menu.show_cpu_top_activities" = "Mostrar atividades mais intensas para o CPU";
-"menu.show_network_top_activities" = "Mostrar atividades mais intensas para o CPU";
+"menu.quit" = "Sair de eul";
+"menu.show_cpu_top_activities" = "Apresentar processos com maior atividade no CPU";
+"menu.show_network_top_activities" = "Apresentar processos com maior atividade na Rede";
 
 // MARK: Temperature
 "temp.temperature" = "Temperatura";
@@ -125,11 +125,11 @@
 // MARK: General UI
 "ui.app" = "App";
 "ui.general" = "Geral";
-"ui.version" = "versão";
-"ui.checking_update" = "a verificar atualização";
-"ui.up_to_date" = "atualizado";
-"ui.new_version" = "nova versão detetada";
-"ui.download" = "transferir";
+"ui.version" = "Versão";
+"ui.checking_update" = "A verificar atualização";
+"ui.up_to_date" = "Atualizado";
+"ui.new_version" = "Nova versão disponível";
+"ui.download" = "Transferir";
 "ui.launch_at_login" = "Iniciar no login";
 "ui.display" = "Aspeto";
 "ui.components" = "Componentes";
@@ -142,12 +142,12 @@
 "ui.empty" = "Vazio";
 
 //MARK: Widget
-"widget.not_available" = "eul não está a funcionar";
+"widget.not_available" = "eul não está disponível";
 "widget.cpu.title" = "Widget de CPU";
-"widget.cpu.description" = "Mostra informação do CPU";
+"widget.cpu.description" = "Apresenta informação do CPU";
 "widget.memory.title" = "Widget de Memória";
-"widget.memory.description" = "Mostra informação de memória";
+"widget.memory.description" = "Apresenta informação de memória";
 "widget.battery.title" = "Widget de Bateria";
-"widget.battery.description" = "Mostra informação de bateria";
+"widget.battery.description" = "Apresenta informação de bateria";
 "widget.network.title" = "Widget de Rede";
-"widget.network.description" = "Mostra informação de rede";
+"widget.network.description" = "Apresenta informação de rede";
