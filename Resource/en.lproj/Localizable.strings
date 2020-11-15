@@ -145,7 +145,7 @@
 "ui.hidden_by_system.dismiss" = "Dismiss";
 
 //MARK: Widget
-"widget.not_available" = "eul isn't up";
+"widget.not_available" = "eul isn't running";
 "widget.cpu.title" = "CPU Widget";
 "widget.cpu.description" = "Display CPU information";
 "widget.memory.title" = "Memory Widget";
