@@ -75,10 +75,10 @@
 "menu.show_network_top_activities" = "Show network top activities";
 
 // MARK: Temperature
-"temp.temperature" = "Temperature";
-"temp.celsius" = "celsius";
-"temp.fahrenheit" = "fahrenheit";
-"temp.kelvin" = "kelvin";
+"temp.temperature" = "温度単位";
+"temp.celsius" = "摂氏（℃）";
+"temp.fahrenheit" = "華氏（℉）";
+"temp.kelvin" = "ケルビン";
 
 // MARK: Text Display
 "text_display" = "Text Display";
