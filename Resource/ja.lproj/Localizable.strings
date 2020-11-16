@@ -28,19 +28,19 @@
 "battery.condition.poor" = "悪い";
 
 // MARK: CPU / Info
-"cpu.usage" = "Usage";
-"cpu.idle" = "Idle";
-"cpu.temperature" = "Temp";
-"gpu.temperature" = "GPU Temp";
-"cpu.info" = "Info";
-"cpu.physical_cores" = "Physical Cores";
-"cpu.logical_cores" = "Logical Cores";
-"cpu.up_time" = "Up Time";
-"cpu.thermal_level" = "Thermal Lv.";
-"cpu.system" = "System";
-"cpu.user" = "User";
+"cpu.usage" = "使用率";
+"cpu.idle" = "アイドル";
+"cpu.temperature" = "温度";
+"gpu.temperature" = "GPU 温度";
+"cpu.info" = "情報";
+"cpu.physical_cores" = "物理コア";
+"cpu.logical_cores" = "論理コア";
+"cpu.up_time" = "稼働時間";
+"cpu.thermal_level" = "温度レベル";
+"cpu.system" = "システム";
+"cpu.user" = "ユーザー";
 "cpu.nice" = "Nice";
-"cpu.waiting_status_report" = "Waiting for the first status report";
+"cpu.waiting_status_report" = "最初のステータスレポートを待っています";
 
 // MARK: Fan
 "fan" = "ファン";
