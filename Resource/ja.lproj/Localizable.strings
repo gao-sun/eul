@@ -103,14 +103,14 @@
 "component.disk" = "ディスク";
 
 // MARK: Process
-"process" = "Process";
-"process.bring_to_front" = "Bring to front";
-"process.reveal_in_finder" = "Reveal in Finder";
-"process.terminate" = "Terminate";
-"process.force_terminate" = "Force Terminate";
-"process.terminate_alert.text.%@" = "Are you sure want to terminate %@?";
-"process.terminate_alert.command.%@" = "Command: %@";
-"process.terminate_alert.cancel" = "Cancel";
+"process" = "プロセス";
+"process.bring_to_front" = "移動";
+"process.reveal_in_finder" = "Finder で表示";
+"process.terminate" = "終了";
+"process.force_terminate" = "強制終了";
+"process.terminate_alert.text.%@" = "%@ を終了してもよろしいですか？";
+"process.terminate_alert.command.%@" = "%@";
+"process.terminate_alert.cancel" = "キャンセル";
 
 // MARK: Language
 "language" = "Language";
