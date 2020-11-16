@@ -91,16 +91,16 @@
 "font_design.monospaced" = "等幅";
 
 // MARK: Component
-"component.status_bar" = "Status Bar";
-"component.drag_to_reorder" = "drag to reorder";
-"component.available" = "Available";
-"component.click_to_append" = "click to append";
+"component.status_bar" = "メニューバーに表示";
+"component.drag_to_reorder" = "ドラッグして並べ替え";
+"component.available" = "追加できる項目";
+"component.click_to_append" = "クリックして追加";
 "component.cpu" = "CPU";
-"component.fan" = "Fan";
-"component.memory" = "Memory";
-"component.battery" = "Battery";
-"component.network" = "Network";
-"component.disk" = "Disk";
+"component.fan" = "ファン";
+"component.memory" = "メモリ";
+"component.battery" = "バッテリー";
+"component.network" = "ネットワーク";
+"component.disk" = "ディスク";
 
 // MARK: Process
 "process" = "Process";
