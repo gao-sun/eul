@@ -7,25 +7,25 @@
 */
 
 // MARK: Battery
-"battery" = "Battery";
-"battery.charge" = "Charge";
-"battery.power_source" = "Power Source";
-"battery.power_source.battery" = "Battery";
-"battery.power_source.acPower" = "AC Power";
-"battery.power_source.unknown" = "Unknown";
-"battery.is_charging" = "Is Charging";
-"battery.to_full_charge" = "to full charge";
-"battery.to_empty" = "to empty";
-"battery.health" = "Health";
-"battery.max_capacity" = "Max Cap.";
-"battery.design_capacity" = "Design Cap.";
-"battery.health_percentage" = "Health Percentage";
-"battery.cycle_count" = "Cycle Count";
-"battery.cycle" = "Cycle";
-"battery.condition" = "Condition";
-"battery.condition.good" = "Good";
-"battery.condition.fair" = "Fair";
-"battery.condition.poor" = "Poor";
+"battery" = "バッテリー";
+"battery.charge" = "充電";
+"battery.power_source" = "電源";
+"battery.power_source.battery" = "バッテリー";
+"battery.power_source.acPower" = "電源アダプタ";
+"battery.power_source.unknown" = "不明";
+"battery.is_charging" = "充電中";
+"battery.to_full_charge" = "で充電完了";
+"battery.to_empty" = "の残り時間";
+"battery.health" = "状態";
+"battery.max_capacity" = "最大容量";
+"battery.design_capacity" = "設計容量";
+"battery.health_percentage" = "バッテリーの状態";
+"battery.cycle_count" = "充放電回数";
+"battery.cycle" = "充放電回数";
+"battery.condition" = "状態";
+"battery.condition.good" = "良い";
+"battery.condition.fair" = "普通";
+"battery.condition.poor" = "悪い";
 
 // MARK: CPU / Info
 "cpu.usage" = "Usage";
