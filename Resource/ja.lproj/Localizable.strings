@@ -43,10 +43,10 @@
 "cpu.waiting_status_report" = "Waiting for the first status report";
 
 // MARK: Fan
-"fan" = "Fan";
-"fan.current" = "Current";
-"fan.min" = "Min";
-"fan.max" = "Max";
+"fan" = "ファン";
+"fan.current" = "電流";
+"fan.min" = "最小";
+"fan.max" = "最大";
 
 // MARK: Memory
 "memory" = "メモリ";
