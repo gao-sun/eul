@@ -66,13 +66,13 @@
 "network.no_activity" = "No activity";
 
 // MARK: Menu
-"menu.summary" = "Summary";
-"menu.yes" = "Yes";
-"menu.no" = "No";
-"menu.preferences" = "Preferences";
-"menu.quit" = "Quit eul";
-"menu.show_cpu_top_activities" = "Show CPU top activities";
-"menu.show_network_top_activities" = "Show network top activities";
+"menu.summary" = "サマリー";
+"menu.yes" = "はい";
+"menu.no" = "いいえ";
+"menu.preferences" = "設定";
+"menu.quit" = "eul を終了";
+"menu.show_cpu_top_activities" = "CPU の上位アクティビティを表示";
+"menu.show_network_top_activities" = "ネットワークの上位アクティビティを表示";
 
 // MARK: Temperature
 "temp.temperature" = "温度単位";
