@@ -81,9 +81,9 @@
 "temp.kelvin" = "ケルビン";
 
 // MARK: Text Display
-"text_display" = "Text Display";
-"text_display.compact" = "compact";
-"text_display.single_line" = "single line";
+"text_display" = "テキストの表示";
+"text_display.compact" = "コンパクト";
+"text_display.single_line" = "1行";
 
 // MARK: Font Design
 "font_design" = "Font Design";
