@@ -51,8 +51,8 @@
 
 // MARK: Memory
 "memory" = "메모리";
-"memory.total" = "사용된 메모리";
-"memory.free" = "대기";
+"memory.total" = "사용됨";
+"memory.free" = "대기중";
 "memory.cached_files" = "캐쉬된 파일";
 "memory.temp" = "온도";
 "memory.usage" = "사용중";
