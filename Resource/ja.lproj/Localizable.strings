@@ -86,9 +86,9 @@
 "text_display.single_line" = "1行";
 
 // MARK: Font Design
-"font_design" = "Font Design";
-"font_design.default" = "default";
-"font_design.monospaced" = "monospaced";
+"font_design" = "フォント";
+"font_design.default" = "デフォルト";
+"font_design.monospaced" = "等幅";
 
 // MARK: Component
 "component.status_bar" = "Status Bar";
