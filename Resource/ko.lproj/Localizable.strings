@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   eul
 
@@ -10,14 +10,14 @@
 // MARK: Battery
 "battery" = "배터리 사용중";
 "battery.charge" = "충전중";
-"battery.power_source" = "전원 공급";
+"battery.power_source" = "전원 공급원";
 "battery.power_source.battery" = "배터리";
-"battery.power_source.acPower" = "AC 전원";
-"battery.power_source.unknown" = "알수 없음";
+"battery.power_source.acPower" = "전원 어댑터";
+"battery.power_source.unknown" = "알 수 없음";
 "battery.is_charging" = "충전중";
 "battery.to_full_charge" = "완충까지";
 "battery.to_empty" = "방전까지";
-"battery.health" = "수명";
+"battery.health" = "성능 최대치";
 "battery.max_capacity" = "최대 용량";
 "battery.design_capacity" = "설계 용량";
 "battery.health_percentage" = "수명";
@@ -25,7 +25,7 @@
 "battery.cycle" = "사이클";
 "battery.condition" = "상태";
 "battery.condition.good" = "좋음";
-"battery.condition.fair" = "괜찮음";
+"battery.condition.fair" = "보통";
 "battery.condition.poor" = "나쁨";
 
 // MARK: CPU / Info
@@ -36,44 +36,44 @@
 "cpu.info" = "정보";
 "cpu.physical_cores" = "물리 코어";
 "cpu.logical_cores" = "논리 코어";
-"cpu.up_time" = "가동시간";
+"cpu.up_time" = "가동 시간";
 "cpu.thermal_level" = "온도 Lv.";
 "cpu.system" = "시스템";
 "cpu.user" = "사용자";
-"cpu.nice" = "좋음";
+"cpu.nice" = "nice";
 "cpu.waiting_status_report" = "첫 보고 대기중";
 
 // MARK: Fan
-"fan" = "Fan";
+"fan" = "냉각 팬";
 "fan.current" = "현재";
 "fan.min" = "최소";
 "fan.max" = "최대";
 
 // MARK: Memory
-"memory" = "Memory";
-"memory.total" = "총 사용";
-"memory.free" = "사용 가능";
-"memory.cached_files" = "캐쉬됨";
+"memory" = "메모리";
+"memory.total" = "사용된 메모리";
+"memory.free" = "대기";
+"memory.cached_files" = "캐쉬된 파일";
 "memory.temp" = "온도";
 "memory.usage" = "사용중";
-"memory.app" = "앱";
-"memory.wired" = "고정됨";
+"memory.app" = "앱 메모리";
+"memory.wired" = "와이어드 메모리";
 "memory.compressed" = "압축됨";
 
 // MARK: Network
-"network" = "Network";
-"network.in" = "다운로드";
-"network.out" = "업로드";
+"network" = "네트워크";
+"network.in" = "수신된 바이트";
+"network.out" = "송신된 바이트";
 "network.no_activity" = "활동 없음";
 
 // MARK: Menu
 "menu.summary" = "요약";
-"menu.yes" = "예";
-"menu.no" = "아니요";
+"menu.yes" = "승인";
+"menu.no" = "취소";
 "menu.preferences" = "설정";
 "menu.quit" = "종료";
 "menu.show_cpu_top_activities" = "CPU 상위 사용 앱 보여주기";
-"menu.show_network_top_activities" = "Network 상위 사용 앱 보여주기";
+"menu.show_network_top_activities" = "네트워크 상위 사용 앱 보여주기";
 
 // MARK: Temperature
 "temp.temperature" = "온도";
@@ -83,8 +83,8 @@
 
 // MARK: Text Display
 "text_display" = "상태바 설정";
-"text_display.compact" = "두줄로";
-"text_display.single_line" = "한줄로";
+"text_display.compact" = "두 줄로";
+"text_display.single_line" = "한 줄로";
 
 // MARK: Font Design
 "font_design" = "폰트 설정";
@@ -93,15 +93,15 @@
 
 // MARK: Component
 "component.status_bar" = "상태바";
-"component.drag_to_reorder" = "드래그 해서 재배치";
-"component.available" = "사용가능";
+"component.drag_to_reorder" = "드래그해서 재배치";
+"component.available" = "사용 가능";
 "component.click_to_append" = "클릭해서 배치";
 "component.cpu" = "CPU";
-"component.fan" = "Fan";
-"component.memory" = "Memory";
-"component.battery" = "Battery";
-"component.network" = "Network";
-"component.disk" = "Disk";
+"component.fan" = "냉각 팬";
+"component.memory" = "메모리";
+"component.battery" = "배터리";
+"component.network" = "네트워크";
+"component.disk" = "디스크";
 
 // MARK: Process
 "process" = "프로세스";
@@ -109,12 +109,12 @@
 "process.reveal_in_finder" = "Finder에서 열기";
 "process.terminate" = "종료";
 "process.force_terminate" = "강제 종료";
-"process.terminate_alert.text.%@" = "정말 종료 하시겠습니까? %@?";
+"process.terminate_alert.text.%@" = "정말로 %@을(를) 종료하겠습니까?";
 "process.terminate_alert.command.%@" = "명령어: %@";
 "process.terminate_alert.cancel" = "취소";
 
 // MARK: Language
-"language" = "Language";
+"language" = "언어";
 "language.en" = "English";
 "language.zh-Hans" = "简体中文";
 "language.de" = "Deutsch";
@@ -124,27 +124,27 @@
 "language.ko" = "한국어";
 
 // MARK: General UI
-"ui.app" = "앱";
+"ui.app" = "애플리케이션";
 "ui.general" = "일반";
 "ui.version" = "버전";
-"ui.checking_update" = "업데이트 확인중";
-"ui.up_to_date" = "업데이트 됨";
+"ui.checking_update" = "업데이트 확인 중";
+"ui.up_to_date" = "최신 상태입니다";
 "ui.new_version" = "새 버전 감지됨";
 "ui.download" = "다운로드";
-"ui.launch_at_login" = "로그인시 실행하기";
-"ui.display" = "Display";
+"ui.launch_at_login" = "로그인 시 실행하기";
+"ui.display" = "시각 효과";
 "ui.components" = "컴포넌트";
 "ui.show_components_in_status_bar" = "상태바에 컴포넌트 보여주기";
 "ui.show_icon" = "아이콘 보여주기";
-"ui.refresh_rate" = "새로고침 빈도";
+"ui.refresh_rate" = "업데이트 주기";
 "ui.smc" = "SMC";
-"ui.network" = "Network";
+"ui.network" = "네트워크";
 "ui.menu_view" = "메뉴";
-"ui.empty" = "비어있음";
+"ui.empty" = "비어 있음";
 "ui.hidden_by_system.title" = "eul 상태바 컴포넌트가 시스템에 의해 가려짐";
-"ui.hidden_by_system.message" = "설정을 열고 컴포넌트 수를 줄여주세요";
+"ui.hidden_by_system.message" = "설정에서 컴포넌트 수를 줄여주세요";
 "ui.hidden_by_system.open" = "열기";
-"ui.hidden_by_system.dismiss" = "닫기";
+"ui.hidden_by_system.dismiss" = "취소";
 
 //MARK: Widget
 "widget.not_available" = "eul이 시작되지 않음";
