@@ -123,26 +123,26 @@
 
 // MARK: General UI
 "ui.app" = "App";
-"ui.general" = "General";
-"ui.version" = "version";
-"ui.checking_update" = "checking update";
-"ui.up_to_date" = "up-to-date";
-"ui.new_version" = "new version detected";
-"ui.download" = "download";
-"ui.launch_at_login" = "Launch at login";
-"ui.display" = "Display";
-"ui.components" = "Components";
-"ui.show_components_in_status_bar" = "Show components in status bar";
-"ui.show_icon" = "Show icon";
-"ui.refresh_rate" = "Refresh Rate";
+"ui.general" = "一般";
+"ui.version" = "バージョン";
+"ui.checking_update" = "アップデートを確認中";
+"ui.up_to_date" = "最新です";
+"ui.new_version" = "新しいバージョンがあります";
+"ui.download" = "ダウンロード";
+"ui.launch_at_login" = "ログイン時に起動";
+"ui.display" = "表示";
+"ui.components" = "コンポーネント";
+"ui.show_components_in_status_bar" = "メニューバーにコンポーネントを表示";
+"ui.show_icon" = "アイコンを表示";
+"ui.refresh_rate" = "更新頻度";
 "ui.smc" = "SMC";
-"ui.network" = "Network";
-"ui.menu_view" = "Menu View";
-"ui.empty" = "Empty";
-"ui.hidden_by_system.title" = "eul status bar components are force hidden by system";
-"ui.hidden_by_system.message" = "Open preference and try to reduce component count";
-"ui.hidden_by_system.open" = "Open";
-"ui.hidden_by_system.dismiss" = "Dismiss";
+"ui.network" = "ネットワーク";
+"ui.menu_view" = "メニュー表示";
+"ui.empty" = "何も表示しない";
+"ui.hidden_by_system.title" = "eul はシステムによって強制的に非表示になっています";
+"ui.hidden_by_system.message" = "設定からメニューバーに表示するコンポーネントを減らしてみてください。";
+"ui.hidden_by_system.open" = "設定を開く";
+"ui.hidden_by_system.dismiss" = "閉じる";
 
 //MARK: Widget
 "widget.not_available" = "eul isn't running";
