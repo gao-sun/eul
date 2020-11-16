@@ -49,15 +49,15 @@
 "fan.max" = "Max";
 
 // MARK: Memory
-"memory" = "Memory";
-"memory.total" = "Total";
-"memory.free" = "Free";
-"memory.cached_files" = "Cached Files";
-"memory.temp" = "Temp";
-"memory.usage" = "Usage";
-"memory.app" = "App";
-"memory.wired" = "Wired";
-"memory.compressed" = "Compressed";
+"memory" = "メモリ";
+"memory.total" = "合計";
+"memory.free" = "空き";
+"memory.cached_files" = "キャッシュされたファイル";
+"memory.temp" = "温度";
+"memory.usage" = "使用済み";
+"memory.app" = "App メモリ";
+"memory.wired" = "確保されているメモリ";
+"memory.compressed" = "圧縮";
 
 // MARK: Network
 "network" = "ネットワーク";
