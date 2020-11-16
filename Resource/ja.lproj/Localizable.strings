@@ -60,10 +60,10 @@
 "memory.compressed" = "Compressed";
 
 // MARK: Network
-"network" = "Network";
-"network.in" = "In";
-"network.out" = "Out";
-"network.no_activity" = "No activity";
+"network" = "ネットワーク";
+"network.in" = "受信";
+"network.out" = "送信";
+"network.no_activity" = "アクティビティなし";
 
 // MARK: Menu
 "menu.summary" = "サマリー";
