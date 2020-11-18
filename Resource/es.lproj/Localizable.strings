@@ -120,6 +120,7 @@
 "language.ru" = "Русский";
 "language.es" = "Español";
 "language.pt" = "Português";
+"language.ja" = "日本語";
 
 // MARK: General UI
 "ui.app" = "Aplicación";

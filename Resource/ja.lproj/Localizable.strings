@@ -1,0 +1,157 @@
+/* 
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery" = "バッテリー";
+"battery.charge" = "充電";
+"battery.power_source" = "電源";
+"battery.power_source.battery" = "バッテリー";
+"battery.power_source.acPower" = "電源アダプタ";
+"battery.power_source.unknown" = "不明";
+"battery.is_charging" = "充電中";
+"battery.to_full_charge" = "で充電完了";
+"battery.to_empty" = "の残り時間";
+"battery.health" = "状態";
+"battery.max_capacity" = "最大容量";
+"battery.design_capacity" = "設計容量";
+"battery.health_percentage" = "バッテリーの状態";
+"battery.cycle_count" = "充放電回数";
+"battery.cycle" = "充放電回数";
+"battery.condition" = "状態";
+"battery.condition.good" = "良い";
+"battery.condition.fair" = "普通";
+"battery.condition.poor" = "悪い";
+
+// MARK: CPU / Info
+"cpu.usage" = "使用率";
+"cpu.idle" = "アイドル";
+"cpu.temperature" = "温度";
+"gpu.temperature" = "GPU 温度";
+"cpu.info" = "情報";
+"cpu.physical_cores" = "物理コア";
+"cpu.logical_cores" = "論理コア";
+"cpu.up_time" = "稼働時間";
+"cpu.thermal_level" = "温度レベル";
+"cpu.system" = "システム";
+"cpu.user" = "ユーザー";
+"cpu.nice" = "Nice";
+"cpu.waiting_status_report" = "最初のステータスレポートを待っています";
+
+// MARK: Fan
+"fan" = "ファン";
+"fan.current" = "電流";
+"fan.min" = "最小";
+"fan.max" = "最大";
+
+// MARK: Memory
+"memory" = "メモリ";
+"memory.total" = "合計";
+"memory.free" = "空き";
+"memory.cached_files" = "キャッシュされたファイル";
+"memory.temp" = "温度";
+"memory.usage" = "使用済み";
+"memory.app" = "App メモリ";
+"memory.wired" = "確保されているメモリ";
+"memory.compressed" = "圧縮";
+
+// MARK: Network
+"network" = "ネットワーク";
+"network.in" = "受信";
+"network.out" = "送信";
+"network.no_activity" = "アクティビティなし";
+
+// MARK: Menu
+"menu.summary" = "サマリー";
+"menu.yes" = "はい";
+"menu.no" = "いいえ";
+"menu.preferences" = "設定";
+"menu.quit" = "eul を終了";
+"menu.show_cpu_top_activities" = "CPU の上位アクティビティを表示";
+"menu.show_network_top_activities" = "ネットワークの上位アクティビティを表示";
+
+// MARK: Temperature
+"temp.temperature" = "温度単位";
+"temp.celsius" = "摂氏（℃）";
+"temp.fahrenheit" = "華氏（℉）";
+"temp.kelvin" = "ケルビン";
+
+// MARK: Text Display
+"text_display" = "テキストの表示";
+"text_display.compact" = "コンパクト";
+"text_display.single_line" = "1行";
+
+// MARK: Font Design
+"font_design" = "フォント";
+"font_design.default" = "デフォルト";
+"font_design.monospaced" = "等幅";
+
+// MARK: Component
+"component.status_bar" = "メニューバーに表示";
+"component.drag_to_reorder" = "ドラッグして並べ替え";
+"component.available" = "追加できる項目";
+"component.click_to_append" = "クリックして追加";
+"component.cpu" = "CPU";
+"component.fan" = "ファン";
+"component.memory" = "メモリ";
+"component.battery" = "バッテリー";
+"component.network" = "ネットワーク";
+"component.disk" = "ディスク";
+
+// MARK: Process
+"process" = "プロセス";
+"process.bring_to_front" = "移動";
+"process.reveal_in_finder" = "Finder で表示";
+"process.terminate" = "終了";
+"process.force_terminate" = "強制終了";
+"process.terminate_alert.text.%@" = "%@ を終了してもよろしいですか？";
+"process.terminate_alert.command.%@" = "%@";
+"process.terminate_alert.cancel" = "キャンセル";
+
+// MARK: Language
+"language" = "言語";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+"language.pt" = "Português";
+"language.ja" = "日本語";
+
+// MARK: General UI
+"ui.app" = "App";
+"ui.general" = "一般";
+"ui.version" = "バージョン";
+"ui.checking_update" = "アップデートを確認中";
+"ui.up_to_date" = "最新です";
+"ui.new_version" = "新しいバージョンがあります";
+"ui.download" = "ダウンロード";
+"ui.launch_at_login" = "ログイン時に起動";
+"ui.display" = "表示";
+"ui.components" = "コンポーネント";
+"ui.show_components_in_status_bar" = "メニューバーにコンポーネントを表示";
+"ui.show_icon" = "アイコンを表示";
+"ui.refresh_rate" = "更新頻度";
+"ui.smc" = "SMC";
+"ui.network" = "ネットワーク";
+"ui.menu_view" = "メニュー表示";
+"ui.empty" = "何も表示しない";
+"ui.hidden_by_system.title" = "eul はシステムによって強制的に非表示になっています";
+"ui.hidden_by_system.message" = "設定からメニューバーに表示するコンポーネントを減らしてみてください。";
+"ui.hidden_by_system.open" = "設定を開く";
+"ui.hidden_by_system.dismiss" = "閉じる";
+
+//MARK: Widget
+"widget.not_available" = "eul は実行されていません";
+"widget.cpu.title" = "CPU";
+"widget.cpu.description" = "CPU の情報を表示します。";
+"widget.memory.title" = "メモリ";
+"widget.memory.description" = "メモリの情報を表示します。";
+"widget.battery.title" = "バッテリー";
+"widget.battery.description" = "バッテリーの情報を表示します。";
+"widget.network.title" = "ネットワーク";
+"widget.network.description" = "ネットワークの情報を表示します。";
