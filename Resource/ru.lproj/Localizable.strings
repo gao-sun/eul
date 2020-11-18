@@ -121,6 +121,7 @@
 "language.es" = "Español";
 "language.pt" = "Português";
 "language.ja" = "日本語";
+"language.fr" = "Français";
 
 // MARK: General UI
 "ui.app" = "Приложение";
