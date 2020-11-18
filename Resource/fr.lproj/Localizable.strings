@@ -35,7 +35,7 @@
 "cpu.info" = "Info";
 "cpu.physical_cores" = "Cœurs physiques";
 "cpu.logical_cores" = "Cœurs logiques";
-"cpu.up_time" = "Up Time";
+"cpu.up_time" = "Temps depuis le démarrage";
 "cpu.thermal_level" = "Niveau thermique";
 "cpu.system" = "Système";
 "cpu.user" = "Utilisateur";
@@ -154,4 +154,4 @@
 "widget.battery.title" = "Widget Batterie";
 "widget.battery.description" = "Afficher les informations de la batterie";
 "widget.network.title" = "Widget Réseau";
-"widget.network.description" = "Afficher les informations réseau";
+"widget.network.description" = "Afficher les informations du réseau";
