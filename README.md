@@ -52,4 +52,4 @@ Note:
 - Deutsch (credit [@akeschmidi](https://github.com/akeschmidi) [@rfuehrer](https://github.com/rfuehrer))
 - Русский (credit [@Nikolay](https://github.com/JiLiZART))
 - Español (credit [@JesusM](https://github.com/JesusM) [@kant](https://github.com/kant))
-- Portuguese (credit [@nebeker](https://github.com/nebeker))
+- Portuguese (credit [@nebeker](https://github.com/nebeker) [@jorgeclaro](https://github.com/jorgeclaro))
