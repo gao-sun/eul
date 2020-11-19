@@ -56,6 +56,11 @@ class StatusBarItem: NSObject, NSMenuDelegate {
 
     func menuWillOpen(_ menu: NSMenu) {
         UIStore.shared.menuWidth = menu.size.width
+        UIStore.shared.menuOpened = true
+    }
+
+    func menuDidClose(_: NSMenu) {
+        UIStore.shared.menuOpened = false
     }
 
     func checkStatusItemVisibility() {
