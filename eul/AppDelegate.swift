@@ -90,6 +90,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         }
     }
 
+    func applicationShouldTerminate(_: NSApplication) -> NSApplication.TerminateReply {
+        print("🤚 should terminate")
+        SmcControl.shared.close()
+        return .terminateNow
+    }
+
     func wakeUp() {
         isSleeping = false
         refreshSMCRepeatedly()

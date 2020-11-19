@@ -88,18 +88,14 @@ class SmcControl: Refreshable {
         } catch {
             print("SMC init error", error)
         }
-        SMCKit.close()
         initObserver(for: .SMCShouldRefresh)
     }
 
+    func close() {
+        SMCKit.close()
+    }
+
     @objc func refresh() {
-        do {
-            try SMCKit.open()
-        } catch {
-            SMCKit.close()
-            print("error while opening SMC", error)
-            return
-        }
         for sensor in sensors {
             do {
                 sensor.temp = try SMCKit.temperature(sensor.sensor.code, unit: tempUnit)
@@ -116,7 +112,6 @@ class SmcControl: Refreshable {
                 print("error while getting fan speed", error)
             }
         }
-        SMCKit.close()
         NotificationCenter.default.post(name: .StoreShouldRefresh, object: nil)
     }
 }
