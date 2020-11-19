@@ -156,9 +156,13 @@ class NetworkTopStore: ObservableObject {
 
     init() {
         activeCancellable = Publishers
-            .CombineLatest(preferenceStore.$showNetworkTopActivities, sharedMenuComponentsStore.$activeComponents)
+            .CombineLatest3(
+                preferenceStore.$showNetworkTopActivities,
+                sharedMenuComponentsStore.$activeComponents,
+                UIStore.shared.$menuOpened
+            )
             .map {
-                $0 && $1.contains(.Network)
+                $0 && $1.contains(.Network) && $2
             }
             .sink { [self] in
                 update(shouldStart: $0)

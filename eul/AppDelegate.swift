@@ -27,11 +27,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         NSApplication.shared.terminate(self)
     }
 
+    private var isSleeping = false
+
     var window: NSWindow!
     let statusBarManager = StatusBarManager()
     @ObservedObject var preferenceStore = PreferenceStore.shared
 
     func refreshSMCRepeatedly() {
+        guard !isSleeping else {
+            return
+        }
+
         NotificationCenter.default.post(name: .SMCShouldRefresh, object: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + Double(preferenceStore.smcRefreshRate)) { [self] in
             refreshSMCRepeatedly()
@@ -39,6 +45,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     }
 
     func refreshNetworkRepeatedly() {
+        guard !isSleeping else {
+            return
+        }
+
         NotificationCenter.default.post(name: .NetworkShouldRefresh, object: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + Double(preferenceStore.networkRefreshRate)) { [self] in
             refreshNetworkRepeatedly()
@@ -67,8 +77,33 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         // NSApp.activate(ignoringOtherApps: true)
 
         SmcControl.shared.start()
+        wakeUp()
+
+        let notificationCenter = NSWorkspace.shared.notificationCenter
+        notificationCenter.addObserver(forName: NSWorkspace.willSleepNotification, object: nil, queue: nil) { _ in
+            print("😪 going to sleep")
+            self.sleep()
+        }
+        notificationCenter.addObserver(forName: NSWorkspace.didWakeNotification, object: nil, queue: nil) { _ in
+            print("🤩 woke up")
+            self.wakeUp()
+        }
+    }
+
+    func applicationShouldTerminate(_: NSApplication) -> NSApplication.TerminateReply {
+        print("🤚 should terminate")
+        SmcControl.shared.close()
+        return .terminateNow
+    }
+
+    func wakeUp() {
+        isSleeping = false
         refreshSMCRepeatedly()
         refreshNetworkRepeatedly()
+    }
+
+    func sleep() {
+        isSleeping = true
     }
 
     func windowDidBecomeMain(_: Notification) {

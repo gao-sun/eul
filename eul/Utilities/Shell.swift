@@ -46,16 +46,6 @@ func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminat
     task.launchPath = "/bin/bash"
     task.arguments = ["-c"] + args
 
-    var terminationObserver: NSObjectProtocol!
-    terminationObserver = NotificationCenter.default.addObserver(
-        forName: Process.didTerminateNotification,
-        object: task, queue: nil
-    ) {
-        _ -> Void in
-        didTerminate?()
-        NotificationCenter.default.removeObserver(terminationObserver!)
-    }
-
     var buffer = Data()
     let outHandle = pipe.fileHandleForReading
     outHandle.readabilityHandler = { _ in
@@ -75,6 +65,11 @@ func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminat
         }
     }
     outHandle.waitForDataInBackgroundAndNotify()
+
+    task.terminationHandler = { _ in
+        try? outHandle.close()
+        didTerminate?()
+    }
 
     DispatchQueue(label: "shellPipe-\(UUID().uuidString)", qos: .background, attributes: .concurrent).async {
         Print("good to launch")
