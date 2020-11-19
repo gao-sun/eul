@@ -1,4 +1,23 @@
 {
   "imageSize": 48,
-  "contributorsPerLine": 12
+  "contributorsPerLine": 12,
+  "projectName": "eul",
+  "projectOwner": "gao-sun",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true,
+  "contributors": [
+    {
+      "login": "XaoflySho",
+      "name": "XaoflySho",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/13835089?v=4",
+      "profile": "http://www.zlucy.com",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "files": [
+    "README.md"
+  ]
 }
