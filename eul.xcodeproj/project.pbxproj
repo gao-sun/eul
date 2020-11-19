@@ -413,6 +413,8 @@
 		6CB260AF250DF1A900328DAA /* BatteryIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryIconView.swift; sourceTree = "<group>"; };
 		6CB26F7824E8310900E809FE /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		6CC0798B250CD793000D7DAC /* PreferenceGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceGeneralView.swift; sourceTree = "<group>"; };
+		6CC7384E2566C07D003A15AC /* mn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = mn; path = mn.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6CC738502566C140003A15AC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6CDBB4C0254462B100D01EA0 /* PreferenceSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceSectionView.swift; sourceTree = "<group>"; };
 		6CDBB4C225447B7500D01EA0 /* EulMenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulMenuComponent.swift; sourceTree = "<group>"; };
 		6CDBB4C425447D8B00D01EA0 /* ComponentsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsStore.swift; sourceTree = "<group>"; };
@@ -1030,6 +1032,8 @@
 				pt,
 				ja,
 				fr,
+				mn,
+				ko,
 			);
 			mainGroup = 6C5F8532249FACE000CF0EF8;
 			packageReferences = (
@@ -1356,6 +1360,8 @@
 				6C2F1647255C1EAD0062F76F /* pt */,
 				CBD2B8D02562D42500CB7E90 /* ja */,
 				D27F239C2564E5B700D3F565 /* fr */,
+				6CC7384E2566C07D003A15AC /* mn */,
+				6CC738502566C140003A15AC /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
