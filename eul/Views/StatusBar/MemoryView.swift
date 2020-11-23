@@ -10,7 +10,11 @@ import SwiftUI
 
 struct MemoryView: View {
     @EnvironmentObject var memoryStore: MemoryStore
-    @EnvironmentObject var preferenceStore: PreferenceStore
+    @EnvironmentObject var componentConfigStore: ComponentConfigStore
+
+    var config: EulComponentConfig {
+        componentConfigStore[.Memory]
+    }
 
     var texts: [String] {
         [memoryStore.freeString, memoryStore.usedString]
@@ -18,7 +22,7 @@ struct MemoryView: View {
 
     var body: some View {
         HStack(spacing: 6) {
-            if preferenceStore.showIcon {
+            if config.showIcon {
                 Image("Memory")
                     .resizable()
                     .frame(width: 13, height: 13)

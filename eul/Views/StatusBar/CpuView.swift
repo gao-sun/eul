@@ -10,11 +10,10 @@ import SwiftUI
 
 struct CpuView: View {
     @EnvironmentObject var cpuStore: CpuStore
-    @EnvironmentObject var preferenceStore: PreferenceStore
     @EnvironmentObject var componentConfigStore: ComponentConfigStore
 
     var config: EulComponentConfig {
-        componentConfigStore.configDict[.CPU] ?? EulComponentConfig(component: .CPU)
+        componentConfigStore[.CPU]
     }
 
     var texts: [String] {
@@ -23,7 +22,7 @@ struct CpuView: View {
 
     var body: some View {
         HStack(spacing: 6) {
-            if preferenceStore.showIcon {
+            if config.showIcon {
                 Image("CPU")
                     .resizable()
                     .frame(width: 13, height: 13)

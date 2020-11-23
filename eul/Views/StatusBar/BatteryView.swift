@@ -11,7 +11,11 @@ import SwiftUI
 
 struct BatteryView: View {
     @EnvironmentObject var batteryStore: BatteryStore
-    @EnvironmentObject var preferenceStore: PreferenceStore
+    @EnvironmentObject var componentConfigStore: ComponentConfigStore
+
+    var config: EulComponentConfig {
+        componentConfigStore[.Battery]
+    }
 
     var texts: [String] {
         [batteryStore.charge.percentageString]
@@ -19,7 +23,7 @@ struct BatteryView: View {
 
     var body: some View {
         HStack(spacing: 6) {
-            if preferenceStore.showIcon {
+            if config.showIcon {
                 BatteryIconView(
                     isCharging: batteryStore.io.isCharging,
                     charge: batteryStore.charge,

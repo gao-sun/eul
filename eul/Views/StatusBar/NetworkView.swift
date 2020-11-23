@@ -10,7 +10,11 @@ import SwiftUI
 
 struct NetworkView: View {
     @EnvironmentObject var networkStore: NetworkStore
-    @EnvironmentObject var preferenceStore: PreferenceStore
+    @EnvironmentObject var componentConfigStore: ComponentConfigStore
+
+    var config: EulComponentConfig {
+        componentConfigStore[.Network]
+    }
 
     var texts: [String] {
         [networkStore.outSpeed, networkStore.inSpeed]
@@ -18,7 +22,7 @@ struct NetworkView: View {
 
     var body: some View {
         HStack(spacing: 6) {
-            if preferenceStore.showIcon {
+            if config.showIcon {
                 Image("Network")
                     .resizable()
                     .frame(width: 13, height: 13)

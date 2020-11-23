@@ -10,7 +10,11 @@ import SwiftUI
 
 struct DiskView: View {
     @EnvironmentObject var diskStore: DiskStore
-    @EnvironmentObject var preferenceStore: PreferenceStore
+    @EnvironmentObject var componentConfigStore: ComponentConfigStore
+
+    var config: EulComponentConfig {
+        componentConfigStore[.Disk]
+    }
 
     var texts: [String] {
         [diskStore.freeString, diskStore.usageString]
@@ -18,7 +22,7 @@ struct DiskView: View {
 
     var body: some View {
         HStack(spacing: 6) {
-            if preferenceStore.showIcon {
+            if config.showIcon {
                 Image("Disk")
                     .resizable()
                     .frame(width: 13, height: 13)
