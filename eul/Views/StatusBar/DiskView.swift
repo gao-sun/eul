@@ -27,8 +27,10 @@ struct DiskView: View {
                     .resizable()
                     .frame(width: 13, height: 13)
             }
-            StatusBarTextView(texts: texts)
-                .stableWidth()
+            if config.showText {
+                StatusBarTextView(texts: texts)
+                    .stableWidth()
+            }
         }
     }
 }

@@ -141,7 +141,6 @@
 "ui.display" = "시각 효과";
 "ui.components" = "컴포넌트";
 "ui.show_components_in_status_bar" = "상태바에 컴포넌트 보여주기";
-"ui.show_icon" = "아이콘 보여주기";
 "ui.refresh_rate" = "업데이트 주기";
 "ui.smc" = "SMC";
 "ui.network" = "네트워크";
@@ -151,6 +150,10 @@
 "ui.hidden_by_system.message" = "설정에서 컴포넌트 수를 줄여주세요";
 "ui.hidden_by_system.open" = "열기";
 "ui.hidden_by_system.dismiss" = "취소";
+
+// MARK: Component
+"component.show_icon" = "아이콘 보여주기";
+"component.show_text" = "Show text";
 
 //MARK: Widget
 "widget.not_available" = "eul이 시작되지 않음";

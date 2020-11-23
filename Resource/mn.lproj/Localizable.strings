@@ -151,6 +151,10 @@
 "ui.hidden_by_system.open" = "Нээх";
 "ui.hidden_by_system.dismiss" = "Цуцлах";
 
+// MARK: Component
+"component.show_icon" = "Аякон харах";
+"component.show_text" = "Show text";
+
 //MARK: Widget
 "widget.not_available" = "eul ачааллаагүй байна";
 "widget.cpu.title" = "CPU Виджет";

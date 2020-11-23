@@ -139,7 +139,6 @@
 "ui.display" = "Mostrar";
 "ui.components" = "Componentes";
 "ui.show_components_in_status_bar" = "Mostrar componentes en la barra de estado";
-"ui.show_icon" = "Mostrar icono";
 "ui.refresh_rate" = "Ratio de Refresco";
 "ui.smc" = "SMC";
 "ui.network" = "Red";
@@ -149,6 +148,10 @@
 "ui.hidden_by_system.message" = "Open preference and try to reduce component count";
 "ui.hidden_by_system.open" = "Open";
 "ui.hidden_by_system.dismiss" = "Dismiss";
+
+// MARK: Component
+"component.show_icon" = "Mostrar icono";
+"component.show_text" = "Show text";
 
 //MARK: Widget
 "widget.not_available" = "eul no está arrancado";

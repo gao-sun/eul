@@ -22,9 +22,15 @@ extension Preference {
         var body: some View {
             SectionView(title: component.localizedDescription) {
                 VStack(alignment: .leading, spacing: 12) {
-                    Toggle(isOn: config.showIcon) {
-                        Text("ui.show_icon".localized())
-                            .inlineSection()
+                    HStack(spacing: 12) {
+                        Toggle(isOn: config.showIcon) {
+                            Text("component.show_icon".localized())
+                                .inlineSection()
+                        }
+                        Toggle(isOn: config.showText) {
+                            Text("component.show_text".localized())
+                                .inlineSection()
+                        }
                     }
                 }
                 .padding(.vertical, 8)

@@ -33,12 +33,6 @@ extension Preference {
                         Text("ui.show_components_in_status_bar".localized())
                             .inlineSection()
                     }
-                    if componentsStore.showComponents {
-                        Toggle(isOn: $preference.showIcon) {
-                            Text("ui.show_icon".localized())
-                                .inlineSection()
-                        }
-                    }
                     Spacer()
                 }
                 if componentsStore.showComponents {

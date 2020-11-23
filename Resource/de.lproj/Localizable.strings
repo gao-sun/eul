@@ -140,7 +140,6 @@
 "ui.display" = "Anzeige";
 "ui.components" = "Komponenten";
 "ui.show_components_in_status_bar" = "Komponenten in der Statusleiste anzeigen";
-"ui.show_icon" = "Symbol anzeigen";
 "ui.refresh_rate" = "Aktualisierungsrate";
 "ui.smc" = "SMC";
 "ui.network" = "Netzwerk";
@@ -150,6 +149,10 @@
 "ui.hidden_by_system.message" = "Öffne Einstellungen und verringere die Anzahl der Komponenten";
 "ui.hidden_by_system.open" = "Öffnen";
 "ui.hidden_by_system.dismiss" = "Verwerfen";
+
+// MARK: Component
+"component.show_icon" = "Symbol anzeigen";
+"component.show_text" = "Show text";
 
 //MARK: Widget
 "widget.not_available" = "eul läuft nicht";

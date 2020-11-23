@@ -139,12 +139,15 @@
 "ui.display" = "Aspeto";
 "ui.components" = "Componentes";
 "ui.show_components_in_status_bar" = "Mostrar componentes na barra de estado";
-"ui.show_icon" = "Mostrar ícone";
 "ui.refresh_rate" = "Taxa de Atualização";
 "ui.smc" = "SMC";
 "ui.network" = "Rede";
 "ui.menu_view" = "Vista de Menu";
 "ui.empty" = "Vazio";
+
+// MARK: Component
+"component.show_icon" = "Mostrar ícone";
+"component.show_text" = "Show text";
 
 //MARK: Widget
 "widget.not_available" = "eul não está disponível";
