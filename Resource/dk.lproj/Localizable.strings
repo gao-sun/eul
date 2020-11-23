@@ -1,0 +1,163 @@
+/*
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Modified by b3z on 2020/11/23.
+  Copyright © 2020 Gao Sun, b3z. All rights reserved.
+
+*/
+
+// MARK: Battery
+"battery" = "batteri";
+"battery.charge" = "opladning";
+"battery.power_source" = "strømkilde";
+"battery.power_source.battery" = "batteri";
+"battery.power_source.acPower" = "AC-strøm";
+"battery.power_source.unknown" = "ukendt";
+"battery.is_charging" = "er indlæst";
+"battery.to_full_charge" = "til fuldt opladet";
+"battery.to_empty" = "at tømme";
+"battery.health" = "at tømme";
+"battery.max_capacity" = "maksimal kap.";
+"battery.design_capacity" = "design kap.";
+"battery.health_percentage" = "sundhed i procent";
+"battery.cycle_count" = "opladningscyklusser";
+"battery.cycle" = "cyklusser";
+"battery.condition" = "tilstand";
+"battery.condition.good" = "godt";
+"battery.condition.fair" = "okay";
+"battery.condition.poor" = "dårlig";
+
+// MARK: CPU / Info
+"cpu.usage" = "brug";
+"cpu.idle" = "ledig";
+"cpu.temperature" = "temp.";
+"gpu.temperature" = "GPU temp.";
+"cpu.info" = "Info";
+"cpu.physical_cores" = "fysiske kerner";
+"cpu.logical_cores" = "logiske kerner";
+"cpu.up_time" = "oppetid";
+"cpu.thermal_level" = "termisk niveau";
+"cpu.system" = "system";
+"cpu.user" = "bruger";
+"cpu.nice" = "pæn";
+"cpu.waiting_status_report" = "venter på statusrapport";
+
+// MARK: Fan
+"fan" = "ventilator";
+"fan.current" = "i øjeblikket";
+"fan.min" = "min";
+"fan.max" = "maks";
+
+// MARK: Memory
+"memory" = "hukommelse";
+"memory.total" = "i alt";
+"memory.free" = "åben";
+"memory.cached_files" = "cachelagrede filer";
+"memory.temp" = "temp";
+"memory.usage" = "brug";
+"memory.app" = "app";
+"memory.wired" = "kernel";
+"memory.compressed" = "komprimeret";
+
+// MARK: Network
+"network" = "netværk";
+"network.in" = "indgående";
+"network.out" = "udgående";
+"network.no_activity" = "ingen aktivitet";
+
+// MARK: Menu
+"menu.summary" = "oversigt";
+"menu.yes" = "ja";
+"menu.no" = "nej";
+"menu.preferences" = "præferencer";
+"menu.quit" = "forlade eul";
+"menu.show_cpu_top_activities" = "Vis CPU topaktiviteter";
+"menu.show_network_top_activities" = "Vis netværk topaktiviteter";
+
+// MARK: Temperature
+"temp.temperature" = "temperatur";
+"temp.celsius" = "celsius";
+"temp.fahrenheit" = "fahrenheit";
+"temp.kelvin" = "kelvin";
+
+// MARK: Text Display
+"text_display" = "tekstvisning";
+"text_display.compact" = "kompakt";
+"text_display.single_line" = "enkelt linje";
+
+// MARK: Font Design
+"font_design" = "Font design";
+"font_design.default" = "standard";
+"font_design.monospaced" = "monospaced";
+
+// MARK: Component
+"component.status_bar" = "statuslinje";
+"component.drag_to_reorder" = "træk for at omarrangere";
+"component.available" = "disponibel";
+"component.click_to_append" = "klik for at tilføje";
+"component.cpu" = "CPU";
+"component.fan" = "ventilator";
+"component.memory" = "hukommelse";
+"component.battery" = "batteri";
+"component.network" = "netværk";
+"component.disk" = "harddisk";
+
+// MARK: Process
+"process" = "proces";
+"process.bring_to_front" = "tage den op foran";
+"process.reveal_in_finder" = "tage den op foran";
+"process.terminate" = "opsige";
+"process.force_terminate" = "kraft afslutte";
+"process.terminate_alert.text.%@" = "vil du virkelig afslutte @p?";
+"process.terminate_alert.command.%@" = "kommando: %@";
+"process.terminate_alert.cancel" = "cancle";
+
+// MARK: Language
+"language" = "Sprog";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+"language.pt" = "Português";
+"language.ja" = "日本語";
+"language.fr" = "Français";
+"language.mn" = "Монгол";
+"language.ko" = "한국어";
+"language.dk" = "Dansk";
+
+// MARK: General UI
+"ui.app" = "App";
+"ui.general" = "generel";
+"ui.version" = "version";
+"ui.checking_update" = "kontrollerer for opdateringer";
+"ui.up_to_date" = "opdateret";
+"ui.new_version" = "opdatering tilgængelig";
+"ui.download" = "hent";
+"ui.launch_at_login" = "start ved login";
+"ui.display" = "Skærm";
+"ui.components" = "komponenter";
+"ui.show_components_in_status_bar" = "Vis komponenter i statuslinjen";
+"ui.show_icon" = "Vis ikoner";
+"ui.refresh_rate" = "opdateringshastighed";
+"ui.smc" = "SMC";
+"ui.network" = "netværk";
+"ui.menu_view" = "menuvisning";
+"ui.empty" = "tom";
+"ui.hidden_by_system.title" = "eul menuelementer er skjult for systemet";
+"ui.hidden_by_system.message" = "Åbn Indstillinger, og reducer antallet af komponenter";
+"ui.hidden_by_system.open" = "at åbne";
+"ui.hidden_by_system.dismiss" = "afskedige";
+
+//MARK: Widget
+"widget.not_available" = "eul eul er ikke tilgængelig";
+"widget.cpu.title" = "CPU Widget";
+"widget.cpu.description" = "Vis CPU-oplysninger";
+"widget.memory.title" = "Opbevaring Widget";
+"widget.memory.description" = "Vis opbevaring-oplysninger";
+"widget.battery.title" = "Batteri Widget";
+"widget.battery.description" = "Vis batteri-oplysninger";
+"widget.network.title" = "Netværk Widget";
+"widget.network.description" = "Vis netværk-oplysninger";
