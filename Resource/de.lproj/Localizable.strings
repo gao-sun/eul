@@ -14,17 +14,17 @@
 "battery.power_source.acPower" = "AC-Leistung";
 "battery.power_source.unknown" = "Unbekannt";
 "battery.is_charging" = "Wird geladen";
-"battery.to_full_charge" = "zu voller Ladung";
-"battery.to_empty" = "zu leeren";
+"battery.to_full_charge" = "bis voll geladen";
+"battery.to_empty" = "bis leer";
 "battery.health" = "Gesundheit";
 "battery.max_capacity" = "Maximale Kap.";
 "battery.design_capacity" = "Design Kap.";
 "battery.health_percentage" = "Gesundheit in Prozent";
-"battery.cycle_count" = "Zyklus-Zählung";
+"battery.cycle_count" = "Ladezyklen";
 "battery.cycle" = "Zyklen";
 "battery.condition" = "Zustand";
 "battery.condition.good" = "gut";
-"battery.condition.fair" = "angemessen";
+"battery.condition.fair" = "okay"; 
 "battery.condition.poor" = "schlecht";
 
 // MARK: CPU / Info
