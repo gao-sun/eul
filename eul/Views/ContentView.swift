@@ -46,7 +46,7 @@ struct ContentView: View {
                                 .padding(.top, 8)
                         }
                         if componentsStore.showComponents {
-                            ForEach(componentsStore.activeComponents) {
+                            ForEach(EulComponent.allCases) {
                                 Preference.ComponentConfigView(component: $0)
                             }
                         }
