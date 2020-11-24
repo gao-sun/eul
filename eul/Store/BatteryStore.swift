@@ -12,8 +12,6 @@ import SystemKit
 import WidgetKit
 
 class BatteryStore: ObservableObject, Refreshable {
-    static let shared = BatteryStore()
-
     private var battery = Battery()
 
     var io = Info.Battery()

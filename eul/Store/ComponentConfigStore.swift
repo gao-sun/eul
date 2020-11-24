@@ -17,8 +17,6 @@ class ComponentConfigStore: ObservableObject {
         })
     }
 
-    static let shared = ComponentConfigStore()
-
     subscript(_ key: EulComponent) -> EulComponentConfig {
         get {
             configDict[key]
@@ -58,7 +56,7 @@ class ComponentConfigStore: ObservableObject {
             return
         }
 
-        let value = PreferenceStore.shared.showIcon
+        let value = SharedStore.preference.showIcon
         EulComponent.allCases.forEach {
             configDict[$0].showIcon = value
         }

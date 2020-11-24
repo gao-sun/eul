@@ -19,7 +19,7 @@ struct StatusMenuView: SizeChangeView {
             HStack {
                 Text("eul")
                     .font(.system(size: 12, weight: .semibold))
-                Text("v\(PreferenceStore.shared.version ?? "?")")
+                Text("v\(preferenceStore.version ?? "?")")
                     .secondaryDisplayText()
                 Spacer()
                 MenuActionTextView(id: "menu.preferences", text: "menu.preferences", action: AppDelegate.openPreferences)

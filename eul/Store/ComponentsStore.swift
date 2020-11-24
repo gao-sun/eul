@@ -10,25 +10,29 @@ import Combine
 import Foundation
 import SwiftyJSON
 
-class ComponentsStore<Component: CaseIterable & RawRepresentable & Equatable>: ObservableObject where Component.RawValue == String {
+class ComponentsStore<Component: JSONCodabble & Equatable>: ObservableObject {
     @Published var showComponents = true
     @Published var isActiveComponentToggling = false
-    @Published var activeComponents = Array(Component.allCases)
-    @Published var availableComponents: [Component] = []
+    @Published var activeComponents: [Component]
+    @Published var availableComponents: [Component]
 
+    private let allComponents: [Component]
     private let userDefaultsKey: String
     private var cancellable: AnyCancellable?
 
     var json: JSON {
         JSON([
             "showComponents": showComponents,
-            "activeComponents": activeComponents.map { $0.rawValue },
-            "availableComponents": availableComponents.map { $0.rawValue },
+            "activeComponents": activeComponents.map { $0.json },
+            "availableComponents": availableComponents.map { $0.json },
         ])
     }
 
-    init(key: String) {
+    init(key: String, allComponents all: [Component]) {
+        allComponents = all
         userDefaultsKey = key
+        activeComponents = allComponents
+        availableComponents = []
         loadFromDefaults()
         cancellable = objectWillChange.sink {
             DispatchQueue.main.async {
@@ -65,20 +69,14 @@ class ComponentsStore<Component: CaseIterable & RawRepresentable & Equatable>: O
 
                 if let array = data["activeComponents"].array {
                     activeComponents = array.compactMap {
-                        if let string = $0.string {
-                            return Component(rawValue: string)
-                        }
-                        return nil
+                        Component(json: $0)
                     }
                 }
                 if let array = data["availableComponents"].array {
                     availableComponents = array.compactMap {
-                        if let string = $0.string {
-                            return Component(rawValue: string)
-                        }
-                        return nil
+                        Component(json: $0)
                     }
-                    availableComponents += Array(Component.allCases).filter {
+                    availableComponents += allComponents.filter {
                         !activeComponents.contains($0) && !availableComponents.contains($0)
                     }
                 }
@@ -97,6 +95,3 @@ class ComponentsStore<Component: CaseIterable & RawRepresentable & Equatable>: O
         }
     }
 }
-
-let sharedComponentsStore = ComponentsStore<EulComponent>(key: "components")
-let sharedMenuComponentsStore = ComponentsStore<EulMenuComponent>(key: "menuComponents")

@@ -10,8 +10,6 @@ import Foundation
 import SharedLibrary
 
 class DiskStore: ObservableObject, Refreshable {
-    static let shared = DiskStore()
-
     @Published var list: DiskList?
 
     var ceilingBytes: UInt64? {

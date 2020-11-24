@@ -32,14 +32,12 @@ class NetworkTopStore: ObservableObject {
         let runningApp: NSRunningApplication?
     }
 
-    static let shared = NetworkTopStore()
-
     private var timer: Timer?
     private var activeCancellable: AnyCancellable?
     private var lastTimestamp: TimeInterval = Date().timeIntervalSince1970
     private var lastInBytes: [Int: Double] = [:]
     private var lastOutBytes: [Int: Double] = [:]
-    @ObservedObject var preferenceStore = PreferenceStore.shared
+    @ObservedObject var preferenceStore = SharedStore.preference
     @Published var processes: [ProcessNetworkUsage] = []
 
     private var interval: Int {
@@ -158,8 +156,8 @@ class NetworkTopStore: ObservableObject {
         activeCancellable = Publishers
             .CombineLatest3(
                 preferenceStore.$showNetworkTopActivities,
-                sharedMenuComponentsStore.$activeComponents,
-                UIStore.shared.$menuOpened
+                SharedStore.menuComponents.$activeComponents,
+                SharedStore.ui.$menuOpened
             )
             .map {
                 $0 && $1.contains(.Network) && $2

@@ -37,18 +37,18 @@ extension View {
     }
 
     func withGlobalEnvironmentObjects() -> some View {
-        environmentObject(UIStore.shared)
-            .environmentObject(BatteryStore.shared)
-            .environmentObject(CpuStore.shared)
-            .environmentObject(CpuTopStore.shared)
-            .environmentObject(FanStore.shared)
-            .environmentObject(MemoryStore.shared)
-            .environmentObject(NetworkStore.shared)
-            .environmentObject(NetworkTopStore.shared)
-            .environmentObject(DiskStore.shared)
-            .environmentObject(PreferenceStore.shared)
-            .environmentObject(sharedComponentsStore)
-            .environmentObject(sharedMenuComponentsStore)
-            .environmentObject(ComponentConfigStore.shared)
+        environmentObject(SharedStore.ui)
+            .environmentObject(SharedStore.battery)
+            .environmentObject(SharedStore.cpu)
+            .environmentObject(SharedStore.cpuTop)
+            .environmentObject(SharedStore.fan)
+            .environmentObject(SharedStore.memory)
+            .environmentObject(SharedStore.network)
+            .environmentObject(SharedStore.networkTop)
+            .environmentObject(SharedStore.disk)
+            .environmentObject(SharedStore.preference)
+            .environmentObject(SharedStore.components)
+            .environmentObject(SharedStore.menuComponents)
+            .environmentObject(SharedStore.componentConfig)
     }
 }

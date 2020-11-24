@@ -12,8 +12,6 @@ import SystemKit
 import WidgetKit
 
 class MemoryStore: ObservableObject, Refreshable {
-    static let shared = MemoryStore()
-
     @Published var free: Double = 0
     @Published var active: Double = 0
     @Published var inactive: Double = 0

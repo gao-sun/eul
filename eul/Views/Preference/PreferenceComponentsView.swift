@@ -11,7 +11,6 @@ import SwiftUI
 extension Preference {
     struct ComponentsView: View {
         private let coordinateSpace = "ComponentsOrdering"
-        @EnvironmentObject var preference: PreferenceStore
         @EnvironmentObject var componentsStore: ComponentsStore<EulComponent>
         @State var dragging: EulComponent?
         @State var frames: [CGRect] = .init(repeating: .zero, count: EulComponent.allCases.count)

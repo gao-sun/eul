@@ -8,8 +8,9 @@
 
 import Foundation
 import SwiftUI
+import SwiftyJSON
 
-enum EulMenuComponent: String, CaseIterable, Identifiable {
+enum EulMenuComponent: String, CaseIterable, Identifiable, JSONCodabble {
     var id: String {
         rawValue
     }
@@ -41,6 +42,6 @@ enum EulMenuComponent: String, CaseIterable, Identifiable {
 
     static var allCases: [EulMenuComponent] {
         let components: [EulMenuComponent] = [.CPU, .Fan, .Memory, .Network]
-        return BatteryStore.shared.isValid ? components + [.Battery] : components
+        return SharedStore.battery.isValid ? components + [.Battery] : components
     }
 }

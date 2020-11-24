@@ -9,8 +9,6 @@
 import Foundation
 
 class FanStore: ObservableObject, Refreshable {
-    static let shared = FanStore()
-
     @Published var fans: [SmcControl.FanData] = []
 
     @objc func refresh() {

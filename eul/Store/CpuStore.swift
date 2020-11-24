@@ -12,8 +12,6 @@ import SystemKit
 import WidgetKit
 
 class CpuStore: ObservableObject, Refreshable {
-    static let shared = CpuStore()
-
     @Published var usageString = ""
     @Published var temp: Double?
     @Published var gpuTemp: Double?

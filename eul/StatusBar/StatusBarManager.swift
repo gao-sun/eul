@@ -10,8 +10,8 @@ import Combine
 import SwiftUI
 
 class StatusBarManager {
-    @ObservedObject var preferenceStore = PreferenceStore.shared
-    @ObservedObject var componentsStore = sharedComponentsStore
+    @ObservedObject var preferenceStore = SharedStore.preference
+    @ObservedObject var componentsStore = SharedStore.components
     private var activeCancellable: AnyCancellable?
     private var displayCancellable: AnyCancellable?
     private var showComponentsCancellable: AnyCancellable?
@@ -28,13 +28,13 @@ class StatusBarManager {
 
     func subscribe() {
         // TO-DO: refactor
-        activeCancellable = sharedComponentsStore.$activeComponents.sink {
+        activeCancellable = SharedStore.components.$activeComponents.sink {
             self.render(components: $0)
         }
         displayCancellable = preferenceStore.$textDisplay.sink { _ in
             self.refresh()
         }
-        showComponentsCancellable = sharedComponentsStore.$showComponents.sink { _ in
+        showComponentsCancellable = SharedStore.components.$showComponents.sink { _ in
             self.refresh()
         }
         showIconCancellable = preferenceStore.$showIcon.sink { _ in

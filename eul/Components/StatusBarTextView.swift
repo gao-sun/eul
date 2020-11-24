@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct StatusBarTextView: View {
-    @ObservedObject var preferenceStore = PreferenceStore.shared
+    @ObservedObject var preferenceStore = SharedStore.preference
     var texts: [String] = []
     var alignment: HorizontalAlignment = .trailing
 

@@ -55,12 +55,12 @@ class StatusBarItem: NSObject, NSMenuDelegate {
     }
 
     func menuWillOpen(_ menu: NSMenu) {
-        UIStore.shared.menuWidth = menu.size.width
-        UIStore.shared.menuOpened = true
+        SharedStore.ui.menuWidth = menu.size.width
+        SharedStore.ui.menuOpened = true
     }
 
     func menuDidClose(_: NSMenu) {
-        UIStore.shared.menuOpened = false
+        SharedStore.ui.menuOpened = false
     }
 
     func checkStatusItemVisibility() {
@@ -76,7 +76,7 @@ class StatusBarItem: NSObject, NSMenuDelegate {
 
             let result = alert.runModal()
             if result == .alertFirstButtonReturn {
-                UIStore.shared.activeSection = .components
+                SharedStore.ui.activeSection = .components
                 AppDelegate.openPreferences()
             }
         } else {
