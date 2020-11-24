@@ -10,8 +10,10 @@ import SpriteKit
 import SwiftUI
 
 struct LineChart: View {
+    static var defaultMaxPointCount = 10
+
     var points: [Double] = []
-    var maxPointCount = 10
+    var maxPointCount = defaultMaxPointCount
     var maximumPoint: Double = 100
     var minimumPoint: Double = 0
     var frame = CGSize(width: (AppDelegate.statusBarHeight - 4) * 1.75, height: AppDelegate.statusBarHeight - 4)

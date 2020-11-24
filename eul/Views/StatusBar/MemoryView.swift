@@ -27,6 +27,9 @@ struct MemoryView: View {
                     .resizable()
                     .frame(width: 13, height: 13)
             }
+            if config.showGraph {
+                LineChart(points: memoryStore.usageHistory)
+            }
             if config.showText {
                 StatusBarTextView(texts: texts)
                     .stableWidth()

@@ -42,7 +42,7 @@ class CpuStore: ObservableObject, Refreshable {
         let usage = Info.system.usageCPU()
         usageCPU = usage
         usageString = String(format: "%.0f%%", usage.system + usage.user)
-        usageHistory = (usageHistory + [usage.system + usage.user]).suffix(10)
+        usageHistory = (usageHistory + [usage.system + usage.user]).suffix(LineChart.defaultMaxPointCount)
     }
 
     private func getTemp() {

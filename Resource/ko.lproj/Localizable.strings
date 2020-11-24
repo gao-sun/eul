@@ -153,6 +153,7 @@
 
 // MARK: Component
 "component.show_icon" = "아이콘 보여주기";
+"component.show_graph" = "Show graph";
 "component.show_text" = "Show text";
 
 //MARK: Widget

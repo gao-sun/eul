@@ -151,6 +151,7 @@
 
 // MARK: Component
 "component.show_icon" = "显示图标";
+"component.show_graph" = "显示图表";
 "component.show_text" = "显示文字";
 
 //MARK: Widget

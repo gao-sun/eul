@@ -153,6 +153,7 @@
 
 // MARK: Component
 "component.show_icon" = "Аякон харах";
+"component.show_graph" = "Show graph";
 "component.show_text" = "Show text";
 
 //MARK: Widget

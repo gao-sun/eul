@@ -22,6 +22,7 @@ class MemoryStore: ObservableObject, Refreshable {
     @Published var appMemory: Double = 0
     @Published var cachedFiles: Double = 0
     @Published var temp: Double?
+    @Published var usageHistory: [Double] = []
 
     var used: Double {
         appMemory + wired + compressed
@@ -54,6 +55,7 @@ class MemoryStore: ObservableObject, Refreshable {
     @objc func refresh() {
         (free, active, inactive, wired, compressed, appMemory, cachedFiles) = System.memoryUsage()
         temp = SmcControl.shared.memoryProximityTemperature
+        usageHistory = (usageHistory + [usedPercentage]).suffix(LineChart.defaultMaxPointCount)
         writeToContainer()
     }
 

@@ -27,6 +27,12 @@ extension Preference {
                             Text("component.show_icon".localized())
                                 .inlineSection()
                         }
+                        if config.wrappedValue.component.isGraphAvailable {
+                            Toggle(isOn: config.showGraph) {
+                                Text("component.show_graph".localized())
+                                    .inlineSection()
+                            }
+                        }
                         Toggle(isOn: config.showText) {
                             Text("component.show_text".localized())
                                 .inlineSection()

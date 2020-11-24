@@ -152,6 +152,7 @@
 
 // MARK: Component
 "component.show_icon" = "Afficher l'icône";
+"component.show_graph" = "Show graph";
 "component.show_text" = "Show text";
 
 //MARK: Widget
