@@ -27,10 +27,10 @@ struct NetworkView: View {
                     .resizable()
                     .frame(width: 13, height: 13)
             }
-            if config.showText {
-                StatusBarTextView(texts: texts)
-                    .stableWidth(20, minWidth: 40)
-            }
+//            if config.showText {
+            StatusBarTextView(texts: texts)
+                .stableWidth(20, minWidth: 40)
+//            }
         }
     }
 }

@@ -11,6 +11,28 @@ import SharedLibrary
 import SwiftUI
 
 extension Preference {
+    struct ComponentTextConfigView<Component: Equatable & JSONCodabble & Hashable & LocalizedStringConvertible>: View {
+        @EnvironmentObject var componentsStore: ComponentsStore<Component>
+
+        var body: some View {
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(spacing: 12) {
+                    Toggle(isOn: $componentsStore.showComponents) {
+                        Text("component.show_text".localized())
+                            .inlineSection()
+                    }
+                    Spacer()
+                }
+                HorizontalOrganizingView(componentsStore: componentsStore) { component in
+                    HStack {
+                        Text(component.localizedDescription)
+                            .normal()
+                    }
+                }
+            }
+        }
+    }
+
     struct ComponentConfigView: View {
         @EnvironmentObject var componentConfigStore: ComponentConfigStore
 
@@ -21,7 +43,7 @@ extension Preference {
 
         var body: some View {
             SectionView(title: component.localizedDescription) {
-                VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading, spacing: 20) {
                     HStack(spacing: 12) {
                         Toggle(isOn: config.showIcon) {
                             Text("component.show_icon".localized())
@@ -33,10 +55,9 @@ extension Preference {
                                     .inlineSection()
                             }
                         }
-                        Toggle(isOn: config.showText) {
-                            Text("component.show_text".localized())
-                                .inlineSection()
-                        }
+                    }
+                    if component == .CPU {
+                        ComponentTextConfigView<CpuTextComponent>()
                     }
                 }
                 .padding(.vertical, 8)

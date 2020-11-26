@@ -11,6 +11,7 @@ import SwiftUI
 struct HorizontalOrganizingView<Element: JSONCodabble & Equatable & Hashable, ElementView: View>: View {
     @ObservedObject var componentsStore: ComponentsStore<Element>
     let coordinateSpace: String
+    var title: String?
     var buildElementView: (Element) -> ElementView
 
     @State var dragging: Element?
@@ -29,8 +30,10 @@ struct HorizontalOrganizingView<Element: JSONCodabble & Equatable & Hashable, El
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
-                Text("component.status_bar".localized())
-                    .subsection()
+                if let title = title {
+                    Text(title.localized())
+                        .subsection()
+                }
                 Text("component.drag_to_reorder".localized())
                     .subsection()
                     .foregroundColor(Color.gray)
@@ -163,10 +166,16 @@ struct HorizontalOrganizingView<Element: JSONCodabble & Equatable & Hashable, El
 }
 
 extension HorizontalOrganizingView {
-    init(componentsStore: ComponentsStore<Element>, count: Int, coordinateSpace: String, buildElementView: @escaping (Element) -> ElementView) {
+    init(
+        componentsStore: ComponentsStore<Element>,
+        coordinateSpace: String = "\(String(describing: Element.self))Ordering",
+        title: String? = nil,
+        buildElementView: @escaping (Element) -> ElementView
+    ) {
         self.componentsStore = componentsStore
-        _frames = State(initialValue: [CGRect](repeating: .zero, count: count))
+        _frames = State(initialValue: [CGRect](repeating: .zero, count: componentsStore.totalCount))
         self.coordinateSpace = coordinateSpace
+        self.title = title
         self.buildElementView = buildElementView
     }
 }

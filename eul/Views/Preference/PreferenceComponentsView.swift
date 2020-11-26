@@ -10,7 +10,6 @@ import SwiftUI
 
 extension Preference {
     struct ComponentsView: View {
-        private let coordinateSpace = "ComponentsOrdering"
         @EnvironmentObject var componentsStore: ComponentsStore<EulComponent>
 
         var body: some View {
@@ -25,8 +24,7 @@ extension Preference {
                 if componentsStore.showComponents {
                     HorizontalOrganizingView(
                         componentsStore: componentsStore,
-                        count: EulComponent.allCases.count,
-                        coordinateSpace: coordinateSpace
+                        title: "component.status_bar"
                     ) { component in
                         HStack {
                             Image(component.rawValue)

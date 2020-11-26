@@ -50,5 +50,6 @@ extension View {
             .environmentObject(SharedStore.components)
             .environmentObject(SharedStore.menuComponents)
             .environmentObject(SharedStore.componentConfig)
+            .environmentObject(SharedStore.cpuTextComponents)
     }
 }

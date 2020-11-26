@@ -20,6 +20,10 @@ class ComponentsStore<Component: JSONCodabble & Equatable>: ObservableObject {
     private let userDefaultsKey: String
     private var cancellable: AnyCancellable?
 
+    var totalCount: Int {
+        allComponents.count
+    }
+
     var json: JSON {
         JSON([
             "showComponents": showComponents,
@@ -28,7 +32,7 @@ class ComponentsStore<Component: JSONCodabble & Equatable>: ObservableObject {
         ])
     }
 
-    init(key: String, allComponents all: [Component]) {
+    init(key: String = String(describing: Component.self), allComponents all: [Component]) {
         allComponents = all
         userDefaultsKey = key
         activeComponents = allComponents
@@ -93,5 +97,11 @@ class ComponentsStore<Component: JSONCodabble & Equatable>: ObservableObject {
         } catch {
             print("Unable to get preference data")
         }
+    }
+}
+
+extension ComponentsStore where Component: CaseIterable {
+    convenience init(key: String = String(describing: Component.self)) {
+        self.init(key: key, allComponents: Array(Component.allCases))
     }
 }

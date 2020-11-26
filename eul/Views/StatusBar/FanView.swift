@@ -27,10 +27,10 @@ struct FanView: View {
                     .resizable()
                     .frame(width: 13, height: 13)
             }
-            if config.showText {
-                StatusBarTextView(texts: texts)
-                    .stableWidth()
-            }
+//            if config.showText {
+            StatusBarTextView(texts: texts)
+                .stableWidth()
+//            }
         }
     }
 }

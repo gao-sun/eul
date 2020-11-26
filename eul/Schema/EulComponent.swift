@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import SwiftyJSON
 
-enum EulComponent: String, CaseIterable, Identifiable, Codable, JSONCodabble {
+enum EulComponent: String, CaseIterable, Identifiable, Codable, JSONCodabble, LocalizedStringConvertible {
     var id: String {
         rawValue
     }

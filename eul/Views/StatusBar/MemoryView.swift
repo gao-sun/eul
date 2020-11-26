@@ -30,10 +30,10 @@ struct MemoryView: View {
             if config.showGraph {
                 LineChart(points: memoryStore.usageHistory)
             }
-            if config.showText {
-                StatusBarTextView(texts: texts)
-                    .stableWidth()
-            }
+//            if config.showText {
+            StatusBarTextView(texts: texts)
+                .stableWidth()
+//            }
         }
     }
 }

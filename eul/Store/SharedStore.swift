@@ -19,7 +19,8 @@ enum SharedStore {
     static let networkTop = NetworkTopStore()
     static let preference = PreferenceStore()
     static let ui = UIStore()
-    static let components = ComponentsStore<EulComponent>(key: "components", allComponents: Array(EulComponent.allCases))
-    static let menuComponents = ComponentsStore<EulMenuComponent>(key: "menuComponents", allComponents: Array(EulMenuComponent.allCases))
+    static let components = ComponentsStore<EulComponent>()
+    static let menuComponents = ComponentsStore<EulMenuComponent>()
     static let componentConfig = ComponentConfigStore()
+    static let cpuTextComponents = ComponentsStore<CpuTextComponent>()
 }

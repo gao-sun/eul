@@ -30,10 +30,10 @@ struct BatteryView: View {
                     acPowered: batteryStore.acPowered
                 )
             }
-            if config.showText {
-                StatusBarTextView(texts: texts)
-                    .stableWidth()
-            }
+//            if config.showText {
+            StatusBarTextView(texts: texts)
+                .stableWidth()
+//            }
         }
     }
 }
