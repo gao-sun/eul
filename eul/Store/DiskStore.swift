@@ -10,8 +10,6 @@ import Foundation
 import SharedLibrary
 
 class DiskStore: ObservableObject, Refreshable {
-    static let shared = DiskStore()
-
     @Published var list: DiskList?
 
     var ceilingBytes: UInt64? {
@@ -29,11 +27,25 @@ class DiskStore: ObservableObject, Refreshable {
         return ByteUnit(ceiling - free, kilo: 1000).readable
     }
 
+    var usagePercentageString: String {
+        guard let ceiling = ceilingBytes, let free = freeBytes else {
+            return "N/A"
+        }
+        return (Double(ceiling - free) / Double(ceiling)).percentageString
+    }
+
     var freeString: String {
         guard let free = freeBytes else {
             return "N/A"
         }
         return ByteUnit(free, kilo: 1000).readable
+    }
+
+    var totalString: String {
+        guard let ceiling = ceilingBytes else {
+            return "N/A"
+        }
+        return ByteUnit(ceiling, kilo: 1000).readable
     }
 
     @objc func refresh() {

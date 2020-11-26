@@ -19,12 +19,10 @@ class CpuTopStore: ObservableObject {
         let runningApp: NSRunningApplication?
     }
 
-    static let shared = CpuTopStore()
-
     private var task: Process?
     private var activeCancellable: AnyCancellable?
     private var firstLoaded = false
-    @ObservedObject var preferenceStore = PreferenceStore.shared
+    @ObservedObject var preferenceStore = SharedStore.preference
     @Published var dataAvailable = false
     @Published var topProcesses: [ProcessCpuUsage] = []
 
@@ -85,8 +83,8 @@ class CpuTopStore: ObservableObject {
         activeCancellable = Publishers
             .CombineLatest3(
                 preferenceStore.$showCPUTopActivities,
-                sharedMenuComponentsStore.$activeComponents,
-                UIStore.shared.$menuOpened
+                SharedStore.menuComponents.$activeComponents,
+                SharedStore.ui.$menuOpened
             )
             .map {
                 $0 && $1.contains(.CPU) && $2

@@ -35,20 +35,4 @@ extension View {
                     .shadow(color: Color.shadow.opacity(0.1), radius: 5)
             )
     }
-
-    func withGlobalEnvironmentObjects() -> some View {
-        environmentObject(UIStore.shared)
-            .environmentObject(BatteryStore.shared)
-            .environmentObject(CpuStore.shared)
-            .environmentObject(CpuTopStore.shared)
-            .environmentObject(FanStore.shared)
-            .environmentObject(MemoryStore.shared)
-            .environmentObject(NetworkStore.shared)
-            .environmentObject(NetworkTopStore.shared)
-            .environmentObject(DiskStore.shared)
-            .environmentObject(PreferenceStore.shared)
-            .environmentObject(sharedComponentsStore)
-            .environmentObject(sharedMenuComponentsStore)
-            .environmentObject(ComponentConfigStore.shared)
-    }
 }

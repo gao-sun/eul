@@ -10,21 +10,44 @@ import SwiftUI
 
 struct MemoryView: View {
     @EnvironmentObject var memoryStore: MemoryStore
-    @EnvironmentObject var preferenceStore: PreferenceStore
+    @EnvironmentObject var componentConfigStore: ComponentConfigStore
+    @EnvironmentObject var textStore: ComponentsStore<MemoryTextComponent>
+
+    var config: EulComponentConfig {
+        componentConfigStore[.Memory]
+    }
 
     var texts: [String] {
-        [memoryStore.freeString, memoryStore.usedString]
+        textStore.activeComponents.map {
+            switch $0 {
+            case .free:
+                return memoryStore.freeString
+            case .usage:
+                return memoryStore.usedString
+            case .total:
+                return memoryStore.total.memoryString
+            case .usagePercentage:
+                return memoryStore.usedPercentageString
+            case .temperature:
+                return memoryStore.temp?.temperatureString ?? "N/A"
+            }
+        }
     }
 
     var body: some View {
         HStack(spacing: 6) {
-            if preferenceStore.showIcon {
+            if config.showIcon {
                 Image("Memory")
                     .resizable()
                     .frame(width: 13, height: 13)
             }
-            StatusBarTextView(texts: texts)
-                .stableWidth()
+            if config.showGraph {
+                LineChart(points: memoryStore.usageHistory)
+            }
+            if textStore.showComponents {
+                StatusBarTextView(texts: texts)
+                    .stableWidth()
+            }
         }
     }
 }

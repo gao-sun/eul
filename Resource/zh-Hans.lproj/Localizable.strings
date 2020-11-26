@@ -139,7 +139,6 @@
 "ui.display" = "显示";
 "ui.components" = "组件";
 "ui.show_components_in_status_bar" = "在状态栏显示组件";
-"ui.show_icon" = "显示图标";
 "ui.refresh_rate" = "刷新频率";
 "ui.smc" = "SMC";
 "ui.network" = "网络";
@@ -149,6 +148,22 @@
 "ui.hidden_by_system.message" = "打开偏好设置并尝试减少状态栏组件数量";
 "ui.hidden_by_system.open" = "打开";
 "ui.hidden_by_system.dismiss" = "忽略";
+
+// MARK: Component
+"component.show_icon" = "显示图标";
+"component.show_graph" = "显示图表";
+"component.show_text" = "显示文字";
+
+// MARK: Text Component
+"text_component.free" = "空闲";
+"text_component.usage" = "用量";
+"text_component.total" = "总计";
+"text_component.usagePercentage" = "用量百分比";
+"text_component.temperature" = "温度";
+"text_component.upload" = "上传";
+"text_component.download" = "下载";
+"text_component.percentage" = "百分比";
+"text_component.mah" = "mAh";
 
 //MARK: Widget
 "widget.not_available" = "eul 未启动";

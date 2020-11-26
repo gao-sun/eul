@@ -11,6 +11,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var preferenceStore: PreferenceStore
+    @EnvironmentObject var componentsStore: ComponentsStore<EulComponent>
     @EnvironmentObject var uiStore: UIStore
 
     var body: some View {
@@ -25,34 +26,42 @@ struct ContentView: View {
             .padding(.horizontal, 8)
             .frame(width: 150)
             .background(Color.controlBackground)
-            VStack(alignment: .leading, spacing: 12) {
-                if uiStore.activeSection == .general {
-                    SectionView(title: "ui.app".localized()) {
-                        Preference.GeneralView()
+            ScrollView([.vertical], showsIndicators: false) {
+                VStack(alignment: .leading, spacing: 12) {
+                    if uiStore.activeSection == .general {
+                        SectionView(title: "ui.app".localized()) {
+                            Preference.GeneralView()
+                        }
+                        SectionView(title: "ui.display".localized()) {
+                            Preference.DisplayView()
+                        }
+                        SectionView(title: "ui.refresh_rate".localized()) {
+                            Preference.RefreshRateView()
+                        }
                     }
-                    SectionView(title: "ui.display".localized()) {
-                        Preference.DisplayView()
+                    if uiStore.activeSection == .components {
+                        SectionView(title: "ui.display".localized()) {
+                            Preference
+                                .ComponentsView()
+                                .padding(.top, 8)
+                        }
+                        if componentsStore.showComponents {
+                            ForEach(EulComponent.allCases) {
+                                Preference.ComponentConfigView(component: $0)
+                            }
+                        }
                     }
-                    SectionView(title: "ui.refresh_rate".localized()) {
-                        Preference.RefreshRateView()
+                    if uiStore.activeSection == .menuView {
+                        SectionView(title: "ui.display".localized()) {
+                            Preference.PreferenceMenuViewView()
+                        }
                     }
+                    Spacer()
                 }
-                if uiStore.activeSection == .components {
-                    SectionView(title: "ui.display".localized()) {
-                        Preference
-                            .ComponentsView()
-                            .padding(.top, 8)
-                    }
-                }
-                if uiStore.activeSection == .menuView {
-                    SectionView(title: "ui.display".localized()) {
-                        Preference.PreferenceMenuViewView()
-                    }
-                }
-                Spacer()
+                .padding(.vertical, 12)
+                .padding(.horizontal, 20)
             }
-            .padding(.vertical, 12)
-            .padding(.horizontal, 20)
+            .clipped()
         }
         .frame(height: 400)
         .id(preferenceStore.language)

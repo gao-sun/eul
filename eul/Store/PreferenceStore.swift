@@ -14,7 +14,6 @@ import SwiftyJSON
 import WidgetKit
 
 class PreferenceStore: ObservableObject {
-    static let shared = PreferenceStore()
     static var availableLanguages: [String] {
         Localize.availableLanguages().filter { $0 != "Base" }
     }

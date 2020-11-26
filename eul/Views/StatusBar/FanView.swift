@@ -10,7 +10,11 @@ import SwiftUI
 
 struct FanView: View {
     @EnvironmentObject var fanStore: FanStore
-    @EnvironmentObject var preferenceStore: PreferenceStore
+    @EnvironmentObject var componentConfigStore: ComponentConfigStore
+
+    var config: EulComponentConfig {
+        componentConfigStore[.Fan]
+    }
 
     var texts: [String] {
         fanStore.fans.map { "\($0.speed.description) rpm" }
@@ -18,13 +22,15 @@ struct FanView: View {
 
     var body: some View {
         HStack(spacing: 6) {
-            if preferenceStore.showIcon {
+            if config.showIcon {
                 Image("Fan")
                     .resizable()
                     .frame(width: 13, height: 13)
             }
+//            if config.showText {
             StatusBarTextView(texts: texts)
                 .stableWidth()
+//            }
         }
     }
 }

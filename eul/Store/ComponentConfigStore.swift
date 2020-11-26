@@ -11,26 +11,58 @@ import Foundation
 import SwiftyJSON
 
 class ComponentConfigStore: ObservableObject {
-    static let shared = ComponentConfigStore()
+    static func makeConfigDict() -> Dict<EulComponent, EulComponentConfig> {
+        Dict<EulComponent, EulComponentConfig>(buildDefault: {
+            EulComponentConfig(component: $0)
+        })
+    }
+
+    subscript(_ key: EulComponent) -> EulComponentConfig {
+        get {
+            configDict[key]
+        }
+
+        set {
+            configDict[key] = newValue
+        }
+    }
+
     private let userDefaultsKey = "componentConfig"
     private var cancellable: AnyCancellable?
+    private var converted = false
 
-    @Published var configDict: [EulComponent: EulComponentConfig] = [:]
+    @Published var configDict = ComponentConfigStore.makeConfigDict()
 
     var json: JSON {
         JSON([
-            "configs": configDict.values.map { $0.json },
+            "converted": converted,
+            "configs": configDict.dict.values.map { $0.json },
         ])
     }
 
     init() {
         loadFromDefaults()
+        convertIfNeeded()
 
         cancellable = objectWillChange.sink {
             DispatchQueue.main.async {
                 self.saveToDefaults()
             }
         }
+    }
+
+    func convertIfNeeded() {
+        guard !converted else {
+            return
+        }
+
+        let value = SharedStore.preference.showIcon
+        EulComponent.allCases.forEach {
+            configDict[$0].showIcon = value
+        }
+
+        converted = true
+        saveToDefaults()
     }
 
     func loadFromDefaults() {
@@ -40,10 +72,14 @@ class ComponentConfigStore: ObservableObject {
 
                 print("⚙️ loaded data from user defaults", userDefaultsKey, data)
 
+                if let bool = data["converted"].bool {
+                    converted = bool
+                }
+
                 if let array = data["configs"].array {
                     configDict = array
                         .compactMap { EulComponentConfig($0) }
-                        .reduce(into: [EulComponent: EulComponentConfig]()) {
+                        .reduce(into: ComponentConfigStore.makeConfigDict()) {
                             $0[$1.component] = $1
                         }
                 }

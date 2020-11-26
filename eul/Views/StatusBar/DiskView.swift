@@ -10,21 +10,39 @@ import SwiftUI
 
 struct DiskView: View {
     @EnvironmentObject var diskStore: DiskStore
-    @EnvironmentObject var preferenceStore: PreferenceStore
+    @EnvironmentObject var componentConfigStore: ComponentConfigStore
+    @EnvironmentObject var textStore: ComponentsStore<DiskTextComponent>
+
+    var config: EulComponentConfig {
+        componentConfigStore[.Disk]
+    }
 
     var texts: [String] {
-        [diskStore.freeString, diskStore.usageString]
+        textStore.activeComponents.map {
+            switch $0 {
+            case .free:
+                return diskStore.freeString
+            case .usage:
+                return diskStore.usageString
+            case .total:
+                return diskStore.totalString
+            case .usagePercentage:
+                return diskStore.usagePercentageString
+            }
+        }
     }
 
     var body: some View {
         HStack(spacing: 6) {
-            if preferenceStore.showIcon {
+            if config.showIcon {
                 Image("Disk")
                     .resizable()
                     .frame(width: 13, height: 13)
             }
-            StatusBarTextView(texts: texts)
-                .stableWidth()
+            if textStore.showComponents {
+                StatusBarTextView(texts: texts)
+                    .stableWidth()
+            }
         }
     }
 }

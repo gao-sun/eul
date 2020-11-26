@@ -140,7 +140,6 @@
 "ui.display" = "表示";
 "ui.components" = "コンポーネント";
 "ui.show_components_in_status_bar" = "メニューバーにコンポーネントを表示";
-"ui.show_icon" = "アイコンを表示";
 "ui.refresh_rate" = "更新頻度";
 "ui.smc" = "SMC";
 "ui.network" = "ネットワーク";
@@ -150,6 +149,22 @@
 "ui.hidden_by_system.message" = "設定からメニューバーに表示するコンポーネントを減らしてみてください。";
 "ui.hidden_by_system.open" = "設定を開く";
 "ui.hidden_by_system.dismiss" = "閉じる";
+
+// MARK: Component
+"component.show_icon" = "アイコンを表示";
+"component.show_graph" = "Show graph";
+"component.show_text" = "Show text";
+
+// MARK: Text Component
+"text_component.free" = "Free";
+"text_component.usage" = "Usage";
+"text_component.total" = "Total";
+"text_component.usagePercentage" = "Usage Percentage";
+"text_component.temperature" = "Temperature";
+"text_component.upload" = "Upload";
+"text_component.download" = "Download";
+"text_component.percentage" = "Percentage";
+"text_component.mah" = "mAh";
 
 //MARK: Widget
 "widget.not_available" = "eul は実行されていません";

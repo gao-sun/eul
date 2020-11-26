@@ -11,6 +11,12 @@
 		6C16BEEC2552EC9700CCF5B7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C58053F250CC6B8007F467A /* Localizable.strings */; };
 		6C16BF0C2552F21C00CCF5B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8542249FACE200CF0EF8 /* Assets.xcassets */; };
 		6C16BF10255428EF00CCF5B7 /* StableWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C16BF0F255428EF00CCF5B7 /* StableWidth.swift */; };
+		6C19252F256D56BF006B0D73 /* JSONCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19252E256D56BF006B0D73 /* JSONCodable.swift */; };
+		6C192533256D5984006B0D73 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C192532256D5984006B0D73 /* SharedStore.swift */; };
+		6C192537256D5C39006B0D73 /* HorizontalOrganizingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C192536256D5C38006B0D73 /* HorizontalOrganizingView.swift */; };
+		6C19253B256FE4ED006B0D73 /* CpuTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19253A256FE4ED006B0D73 /* CpuTextComponent.swift */; };
+		6C19253F256FEBE5006B0D73 /* LocalizedStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19253E256FEBE5006B0D73 /* LocalizedStringConvertible.swift */; };
+		6C192543256FF01E006B0D73 /* MemoryTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C192542256FF01E006B0D73 /* MemoryTextComponent.swift */; };
 		6C1FA3F824A70DF300CA7F71 /* CpuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA3F724A70DF300CA7F71 /* CpuView.swift */; };
 		6C1FA3FA24A70E6700CA7F71 /* CpuStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA3F924A70E6700CA7F71 /* CpuStore.swift */; };
 		6C1FA3FE24A7118000CA7F71 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1FA3FD24A7118000CA7F71 /* Info.swift */; };
@@ -44,6 +50,9 @@
 		6C387DC5253AF46000CBB81B /* NSRunningApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C387DC4253AF46000CBB81B /* NSRunningApplication.swift */; };
 		6C387DC7253B08F100CBB81B /* NetworkTopStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C387DC6253B08F100CBB81B /* NetworkTopStore.swift */; };
 		6C387DC9253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C387DC8253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift */; };
+		6C3A002D256FF62F0030AB70 /* NetworkTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3A002C256FF62F0030AB70 /* NetworkTextComponent.swift */; };
+		6C3A0034256FF7510030AB70 /* BatteryTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3A0033256FF7510030AB70 /* BatteryTextComponent.swift */; };
+		6C3A0037256FFB330030AB70 /* DiskTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3A0036256FFB330030AB70 /* DiskTextComponent.swift */; };
 		6C457392253AC69E00BB2584 /* UIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C457391253AC69E00BB2584 /* UIStore.swift */; };
 		6C4574F825567ABC00A2AD84 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB260AA250DE26900328DAA /* ActivityIndicatorView.swift */; };
 		6C4574F925567ABC00A2AD84 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB26F7824E8310900E809FE /* SectionView.swift */; };
@@ -137,6 +146,8 @@
 		6C9A10CC2556C502000459E1 /* SharedLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6CAEED6524A62DF800C39597 /* SMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED6424A62DF800C39597 /* SMC.swift */; };
 		6CC0798C250CD793000D7DAC /* PreferenceGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC0798B250CD793000D7DAC /* PreferenceGeneralView.swift */; };
+		6CC73857256A9E4D003A15AC /* PreferenceComponentConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC73856256A9E4D003A15AC /* PreferenceComponentConfigView.swift */; };
+		6CC7385E256BEABA003A15AC /* Dict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7385D256BEABA003A15AC /* Dict.swift */; };
 		6CDBB4C1254462B100D01EA0 /* PreferenceSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBB4C0254462B100D01EA0 /* PreferenceSectionView.swift */; };
 		6CDBB4C325447B7500D01EA0 /* EulMenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBB4C225447B7500D01EA0 /* EulMenuComponent.swift */; };
 		6CDBB4C525447D8B00D01EA0 /* ComponentsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBB4C425447D8B00D01EA0 /* ComponentsStore.swift */; };
@@ -306,6 +317,12 @@
 		6C05F2C725120517004A0F72 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		6C16BF082552EFFF00CCF5B7 /* WidgetSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSectionView.swift; sourceTree = "<group>"; };
 		6C16BF0F255428EF00CCF5B7 /* StableWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableWidth.swift; sourceTree = "<group>"; };
+		6C19252E256D56BF006B0D73 /* JSONCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCodable.swift; sourceTree = "<group>"; };
+		6C192532256D5984006B0D73 /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		6C192536256D5C38006B0D73 /* HorizontalOrganizingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalOrganizingView.swift; sourceTree = "<group>"; };
+		6C19253A256FE4ED006B0D73 /* CpuTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuTextComponent.swift; sourceTree = "<group>"; };
+		6C19253E256FEBE5006B0D73 /* LocalizedStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringConvertible.swift; sourceTree = "<group>"; };
+		6C192542256FF01E006B0D73 /* MemoryTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTextComponent.swift; sourceTree = "<group>"; };
 		6C1FA3F724A70DF300CA7F71 /* CpuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuView.swift; sourceTree = "<group>"; };
 		6C1FA3F924A70E6700CA7F71 /* CpuStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuStore.swift; sourceTree = "<group>"; };
 		6C1FA3FD24A7118000CA7F71 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
@@ -329,6 +346,10 @@
 		6C387DC4253AF46000CBB81B /* NSRunningApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRunningApplication.swift; sourceTree = "<group>"; };
 		6C387DC6253B08F100CBB81B /* NetworkTopStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTopStore.swift; sourceTree = "<group>"; };
 		6C387DC8253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMenuBlockMenuView.swift; sourceTree = "<group>"; };
+		6C3A002C256FF62F0030AB70 /* NetworkTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTextComponent.swift; sourceTree = "<group>"; };
+		6C3A0033256FF7510030AB70 /* BatteryTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryTextComponent.swift; sourceTree = "<group>"; };
+		6C3A0036256FFB330030AB70 /* DiskTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskTextComponent.swift; sourceTree = "<group>"; };
+		6C3A003B256FFEF20030AB70 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C457391253AC69E00BB2584 /* UIStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStore.swift; sourceTree = "<group>"; };
 		6C457393253AC91500BB2584 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		6C45750525568DCB00A2AD84 /* MemoryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MemoryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -415,6 +436,8 @@
 		6CC0798B250CD793000D7DAC /* PreferenceGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceGeneralView.swift; sourceTree = "<group>"; };
 		6CC7384E2566C07D003A15AC /* mn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = mn; path = mn.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6CC738502566C140003A15AC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6CC73856256A9E4D003A15AC /* PreferenceComponentConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceComponentConfigView.swift; sourceTree = "<group>"; };
+		6CC7385D256BEABA003A15AC /* Dict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dict.swift; sourceTree = "<group>"; };
 		6CDBB4C0254462B100D01EA0 /* PreferenceSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceSectionView.swift; sourceTree = "<group>"; };
 		6CDBB4C225447B7500D01EA0 /* EulMenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulMenuComponent.swift; sourceTree = "<group>"; };
 		6CDBB4C425447D8B00D01EA0 /* ComponentsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsStore.swift; sourceTree = "<group>"; };
@@ -535,6 +558,7 @@
 				6C5FBD4F253C83520016F3A2 /* MenuActionTextView.swift */,
 				6C387DC2253AEF3600CBB81B /* ProcessRowView.swift */,
 				6C993B8D2517909200586C6B /* MiniSectionView.swift */,
+				6C192536256D5C38006B0D73 /* HorizontalOrganizingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -545,6 +569,18 @@
 				6C16BF0F255428EF00CCF5B7 /* StableWidth.swift */,
 			);
 			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		6C192539256FE4D6006B0D73 /* TextComponents */ = {
+			isa = PBXGroup;
+			children = (
+				6C19253A256FE4ED006B0D73 /* CpuTextComponent.swift */,
+				6C192542256FF01E006B0D73 /* MemoryTextComponent.swift */,
+				6C3A002C256FF62F0030AB70 /* NetworkTextComponent.swift */,
+				6C3A0033256FF7510030AB70 /* BatteryTextComponent.swift */,
+				6C3A0036256FFB330030AB70 /* DiskTextComponent.swift */,
+			);
+			path = TextComponents;
 			sourceTree = "<group>";
 		};
 		6C1FA40524AA126400CA7F71 /* StatusBar */ = {
@@ -564,17 +600,21 @@
 		6C1FA40C24AA161900CA7F71 /* Schema */ = {
 			isa = PBXGroup;
 			children = (
+				6C192539256FE4D6006B0D73 /* TextComponents */,
+				6CC7385D256BEABA003A15AC /* Dict.swift */,
 				6C572D80254EFD5B00EF9904 /* DiskList.swift */,
 				6CDE6C7724F112D700463114 /* EulComponent.swift */,
 				6C7A8D8C255802FF00FF52ED /* EulComponentConfig.swift */,
 				6CDBB4C225447B7500D01EA0 /* EulMenuComponent.swift */,
 				6CEF48A1255C33CE002E4D73 /* FramePreferenceKey.swift */,
+				6C19252E256D56BF006B0D73 /* JSONCodable.swift */,
 				6C7DB6E524E82C5A00133B06 /* Preference.swift */,
 				6C79AD352539EBE60033845C /* ProcessUsage.swift */,
 				6C1FA40D24AA162800CA7F71 /* Refreshable.swift */,
 				6CDE6C7324F0047600463114 /* SizeChangeView.swift */,
 				6CEF48A5255C366A002E4D73 /* SizePreferenceKey.swift */,
 				6C7DB6E724E82C7700133B06 /* StringEnum.swift */,
+				6C19253E256FEBE5006B0D73 /* LocalizedStringConvertible.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -719,11 +759,12 @@
 		6C7DB6D824E7C85200133B06 /* Preference */ = {
 			isa = PBXGroup;
 			children = (
+				6CC73856256A9E4D003A15AC /* PreferenceComponentConfigView.swift */,
 				6C7DB6E124E80F5100133B06 /* PreferenceComponentsView.swift */,
 				6C7DB6E324E80F9400133B06 /* PreferenceDisplayView.swift */,
 				6CC0798B250CD793000D7DAC /* PreferenceGeneralView.swift */,
-				6CE33C7E25260E3D00831857 /* PreferenceRefreshRateView.swift */,
 				6C5FBD4D253C7A060016F3A2 /* PreferenceMenuViewView.swift */,
+				6CE33C7E25260E3D00831857 /* PreferenceRefreshRateView.swift */,
 				6CDBB4C0254462B100D01EA0 /* PreferenceSectionView.swift */,
 			);
 			path = Preference;
@@ -792,6 +833,7 @@
 				6C387DC6253B08F100CBB81B /* NetworkTopStore.swift */,
 				6C7DB6DB24E7FFE300133B06 /* PreferenceStore.swift */,
 				6C457391253AC69E00BB2584 /* UIStore.swift */,
+				6C192532256D5984006B0D73 /* SharedStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -1034,6 +1076,7 @@
 				fr,
 				mn,
 				ko,
+				ar,
 			);
 			mainGroup = 6C5F8532249FACE000CF0EF8;
 			packageReferences = (
@@ -1211,6 +1254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CDE6C7824F112D700463114 /* EulComponent.swift in Sources */,
+				6C3A0037256FFB330030AB70 /* DiskTextComponent.swift in Sources */,
 				6C7DB6DC24E7FFE300133B06 /* PreferenceStore.swift in Sources */,
 				6CEF48A2255C33CE002E4D73 /* FramePreferenceKey.swift in Sources */,
 				6C5FBD50253C83520016F3A2 /* MenuActionTextView.swift in Sources */,
@@ -1218,6 +1262,7 @@
 				6C572D7F254EFD4700EF9904 /* DiskStore.swift in Sources */,
 				6C1FA40424A7187F00CA7F71 /* FanView.swift in Sources */,
 				6C7DB6CF24E02F0600133B06 /* Shell.swift in Sources */,
+				6C192533256D5984006B0D73 /* SharedStore.swift in Sources */,
 				6CDE6C7D24F2AB8800463114 /* NSMenuItem.swift in Sources */,
 				6CAEED6524A62DF800C39597 /* SMC.swift in Sources */,
 				6C5F8541249FACE000CF0EF8 /* ContentView.swift in Sources */,
@@ -1227,6 +1272,7 @@
 				6C58053A250CAEC3007F467A /* StatusBarTextView.swift in Sources */,
 				6C7DB6E424E80F9400133B06 /* PreferenceDisplayView.swift in Sources */,
 				6CE33C7F25260E3D00831857 /* PreferenceRefreshRateView.swift in Sources */,
+				6C3A0034256FF7510030AB70 /* BatteryTextComponent.swift in Sources */,
 				6C993B8A2517868B00586C6B /* FanMenuBlockView.swift in Sources */,
 				6C7CF47A25569B8200CEC263 /* BatteryWidget.intentdefinition in Sources */,
 				6C5FBD4E253C7A060016F3A2 /* PreferenceMenuViewView.swift in Sources */,
@@ -1240,19 +1286,27 @@
 				6C33CECD25177CE300345977 /* CpuMenuBlockView.swift in Sources */,
 				6CF28D0D251758EE00EBE9CB /* StatusBarView.swift in Sources */,
 				6C1FA3FA24A70E6700CA7F71 /* CpuStore.swift in Sources */,
+				6C19253F256FEBE5006B0D73 /* LocalizedStringConvertible.swift in Sources */,
+				6C19253B256FE4ED006B0D73 /* CpuTextComponent.swift in Sources */,
 				6CDE6C7624F10C8000463114 /* StatusBarManager.swift in Sources */,
 				6CEF771224DD94C8007C3640 /* BatteryStore.swift in Sources */,
+				6CC7385E256BEABA003A15AC /* Dict.swift in Sources */,
 				6C1FA41024AA1D4400CA7F71 /* FanStore.swift in Sources */,
 				6C79AD342539E6080033845C /* CpuTopStore.swift in Sources */,
 				6C457392253AC69E00BB2584 /* UIStore.swift in Sources */,
 				6C7A8D8D255802FF00FF52ED /* EulComponentConfig.swift in Sources */,
+				6C192543256FF01E006B0D73 /* MemoryTextComponent.swift in Sources */,
+				6C192537256D5C39006B0D73 /* HorizontalOrganizingView.swift in Sources */,
 				6CDE6C7224F0007D00463114 /* StatusBarItem.swift in Sources */,
 				6C1FA40B24AA139300CA7F71 /* NSNotification.swift in Sources */,
 				6C5DAD0A2556B2FF005F67C3 /* NetworkWidget.intentdefinition in Sources */,
 				6C79AD382539F9030033845C /* MenuActionButtonView.swift in Sources */,
 				6C7A8D9125581E7D00FF52ED /* ComponentConfigStore.swift in Sources */,
+				6CC73857256A9E4D003A15AC /* PreferenceComponentConfigView.swift in Sources */,
 				6CEF48A6255C366A002E4D73 /* SizePreferenceKey.swift in Sources */,
 				6C7DB6D524E7A75E00133B06 /* NetworkView.swift in Sources */,
+				6C19252F256D56BF006B0D73 /* JSONCodable.swift in Sources */,
+				6C3A002D256FF62F0030AB70 /* NetworkTextComponent.swift in Sources */,
 				6CDBB4C325447B7500D01EA0 /* EulMenuComponent.swift in Sources */,
 				6CDBB4C1254462B100D01EA0 /* PreferenceSectionView.swift in Sources */,
 				6C7DB6E824E82C7700133B06 /* StringEnum.swift in Sources */,
@@ -1362,6 +1416,7 @@
 				D27F239C2564E5B700D3F565 /* fr */,
 				6CC7384E2566C07D003A15AC /* mn */,
 				6CC738502566C140003A15AC /* ko */,
+				6C3A003B256FFEF20030AB70 /* ar */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1447,7 +1502,7 @@
 				CODE_SIGN_ENTITLEMENTS = MemoryWidget/MemoryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = MemoryWidget/Info.plist;
@@ -1457,7 +1512,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.MemoryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1473,7 +1528,7 @@
 				CODE_SIGN_ENTITLEMENTS = MemoryWidget/MemoryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = MemoryWidget/Info.plist;
@@ -1483,7 +1538,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.MemoryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1499,7 +1554,7 @@
 				CODE_SIGN_ENTITLEMENTS = NetworkWidget/NetworkWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NetworkWidget/Info.plist;
@@ -1509,7 +1564,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.NetworkWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1525,7 +1580,7 @@
 				CODE_SIGN_ENTITLEMENTS = NetworkWidget/NetworkWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NetworkWidget/Info.plist;
@@ -1535,7 +1590,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.NetworkWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1670,7 +1725,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1682,7 +1737,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1701,7 +1756,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1713,7 +1768,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1729,7 +1784,7 @@
 				CODE_SIGN_ENTITLEMENTS = BatteryWidget/BatteryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BatteryWidget/Info.plist;
@@ -1739,7 +1794,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.BatteryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1755,7 +1810,7 @@
 				CODE_SIGN_ENTITLEMENTS = BatteryWidget/BatteryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BatteryWidget/Info.plist;
@@ -1765,7 +1820,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.BatteryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1781,7 +1836,7 @@
 				CODE_SIGN_ENTITLEMENTS = CpuWidget/CpuWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CpuWidget/Info.plist;
@@ -1791,7 +1846,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.CpuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1807,7 +1862,7 @@
 				CODE_SIGN_ENTITLEMENTS = CpuWidget/CpuWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CpuWidget/Info.plist;
@@ -1817,7 +1872,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.CpuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

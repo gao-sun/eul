@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
     var window: NSWindow!
     let statusBarManager = StatusBarManager()
-    @ObservedObject var preferenceStore = PreferenceStore.shared
+    @ObservedObject var preferenceStore = SharedStore.preference
 
     func refreshSMCRepeatedly() {
         guard !isSleeping else {
@@ -107,7 +107,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     }
 
     func windowDidBecomeMain(_: Notification) {
-        PreferenceStore.shared.checkUpdate()
+        preferenceStore.checkUpdate()
     }
 
     func applicationWillTerminate(_: Notification) {

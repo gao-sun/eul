@@ -11,8 +11,6 @@ import SharedLibrary
 import WidgetKit
 
 class NetworkStore: ObservableObject, Refreshable {
-    static let shared = NetworkStore()
-
     private var network = Info.Network()
     private var lastTimestamp: TimeInterval
 

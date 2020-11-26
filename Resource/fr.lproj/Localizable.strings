@@ -140,7 +140,6 @@
 "ui.display" = "Présentation";
 "ui.components" = "Composants";
 "ui.show_components_in_status_bar" = "Afficher les composants dans la barre des menus";
-"ui.show_icon" = "Afficher l'icône";
 "ui.refresh_rate" = "Fréquence de rafraîchissement";
 "ui.smc" = "SMC";
 "ui.network" = "Réseau";
@@ -150,6 +149,22 @@
 "ui.hidden_by_system.message" = "Ouvrez les préférences et essayez de réduire le nombre de composants.";
 "ui.hidden_by_system.open" = "Ouvrir";
 "ui.hidden_by_system.dismiss" = "Ignorer";
+
+// MARK: Component
+"component.show_icon" = "Afficher l'icône";
+"component.show_graph" = "Show graph";
+"component.show_text" = "Show text";
+
+// MARK: Text Component
+"text_component.free" = "Free";
+"text_component.usage" = "Usage";
+"text_component.total" = "Total";
+"text_component.usagePercentage" = "Usage Percentage";
+"text_component.temperature" = "Temperature";
+"text_component.upload" = "Upload";
+"text_component.download" = "Download";
+"text_component.percentage" = "Percentage";
+"text_component.mah" = "mAh";
 
 //MARK: Widget
 "widget.not_available" = "eul n'est pas en cours d'exécution";
