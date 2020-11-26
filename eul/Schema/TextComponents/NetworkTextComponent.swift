@@ -9,11 +9,7 @@
 import SwiftUI
 import SwiftyJSON
 
-enum NetworkTextComponent: String, CaseIterable, JSONCodabble, LocalizedStringConvertible {
+enum NetworkTextComponent: String, CaseIterable, JSONCodabble, LocalizedTextComponent {
     case upload
     case download
-
-    var localizedDescription: String {
-        rawValue
-    }
 }

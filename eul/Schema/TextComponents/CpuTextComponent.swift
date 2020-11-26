@@ -9,11 +9,7 @@
 import SwiftUI
 import SwiftyJSON
 
-enum CpuTextComponent: String, CaseIterable, JSONCodabble, LocalizedStringConvertible {
+enum CpuTextComponent: String, CaseIterable, JSONCodabble, LocalizedTextComponent {
     case usagePercentage
     case temperature
-
-    var localizedDescription: String {
-        rawValue
-    }
 }

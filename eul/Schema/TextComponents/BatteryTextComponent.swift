@@ -9,13 +9,9 @@
 import SwiftUI
 import SwiftyJSON
 
-enum BatteryTextComponent: String, CaseIterable, JSONCodabble, LocalizedStringConvertible {
+enum BatteryTextComponent: String, CaseIterable, JSONCodabble, LocalizedTextComponent {
     case percentage
     case mah
-
-    var localizedDescription: String {
-        rawValue
-    }
 
     static var defaultComponents: [Self] {
         [.percentage]

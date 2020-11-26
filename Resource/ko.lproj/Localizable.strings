@@ -156,6 +156,17 @@
 "component.show_graph" = "Show graph";
 "component.show_text" = "Show text";
 
+// MARK: Text Component
+"text_component.free" = "Free";
+"text_component.usage" = "Usage";
+"text_component.total" = "Total";
+"text_component.usagePercentage" = "Usage Percentage";
+"text_component.temperature" = "Temperature";
+"text_component.upload" = "Upload";
+"text_component.download" = "Download";
+"text_component.percentage" = "Percentage";
+"text_component.mah" = "mAh";
+
 //MARK: Widget
 "widget.not_available" = "eul이 시작되지 않음";
 "widget.cpu.title" = "CPU 위젯";

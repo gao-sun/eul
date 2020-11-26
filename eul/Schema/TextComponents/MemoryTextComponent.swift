@@ -9,16 +9,12 @@
 import SwiftUI
 import SwiftyJSON
 
-enum MemoryTextComponent: String, CaseIterable, JSONCodabble, LocalizedStringConvertible {
+enum MemoryTextComponent: String, CaseIterable, JSONCodabble, LocalizedTextComponent {
     case free
     case usage
     case total
     case usagePercentage
     case temperature
-
-    var localizedDescription: String {
-        rawValue
-    }
 
     static var defaultComponents: [Self] {
         [.free, .usage]

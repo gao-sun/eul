@@ -9,15 +9,11 @@
 import SwiftUI
 import SwiftyJSON
 
-enum DiskTextComponent: String, CaseIterable, JSONCodabble, LocalizedStringConvertible {
+enum DiskTextComponent: String, CaseIterable, JSONCodabble, LocalizedTextComponent {
     case free
     case usage
     case total
     case usagePercentage
-
-    var localizedDescription: String {
-        rawValue
-    }
 
     static var defaultComponents: [Self] {
         [.free, .usage]
