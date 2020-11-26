@@ -114,6 +114,7 @@
 
 // MARK: Language
 "language" = "Idioma";
+"language.ar" = "العربية";
 "language.en" = "English";
 "language.zh-Hans" = "简体中文";
 "language.de" = "Deutsch";
