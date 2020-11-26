@@ -349,6 +349,7 @@
 		6C3A002C256FF62F0030AB70 /* NetworkTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTextComponent.swift; sourceTree = "<group>"; };
 		6C3A0033256FF7510030AB70 /* BatteryTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryTextComponent.swift; sourceTree = "<group>"; };
 		6C3A0036256FFB330030AB70 /* DiskTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskTextComponent.swift; sourceTree = "<group>"; };
+		6C3A003B256FFEF20030AB70 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C457391253AC69E00BB2584 /* UIStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStore.swift; sourceTree = "<group>"; };
 		6C457393253AC91500BB2584 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		6C45750525568DCB00A2AD84 /* MemoryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MemoryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1075,6 +1076,7 @@
 				fr,
 				mn,
 				ko,
+				ar,
 			);
 			mainGroup = 6C5F8532249FACE000CF0EF8;
 			packageReferences = (
@@ -1414,6 +1416,7 @@
 				D27F239C2564E5B700D3F565 /* fr */,
 				6CC7384E2566C07D003A15AC /* mn */,
 				6CC738502566C140003A15AC /* ko */,
+				6C3A003B256FFEF20030AB70 /* ar */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
