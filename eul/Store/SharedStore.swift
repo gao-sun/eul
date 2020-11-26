@@ -6,7 +6,7 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
 enum SharedStore {
     static let battery = BatteryStore()
@@ -26,4 +26,26 @@ enum SharedStore {
     static let memoryTextComponents = ComponentsStore<MemoryTextComponent>(
         defaultComponents: MemoryTextComponent.defaultComponents
     )
+    static let networkTextComponents = ComponentsStore<NetworkTextComponent>()
+}
+
+extension View {
+    func withGlobalEnvironmentObjects() -> some View {
+        environmentObject(SharedStore.ui)
+            .environmentObject(SharedStore.battery)
+            .environmentObject(SharedStore.cpu)
+            .environmentObject(SharedStore.cpuTop)
+            .environmentObject(SharedStore.fan)
+            .environmentObject(SharedStore.memory)
+            .environmentObject(SharedStore.network)
+            .environmentObject(SharedStore.networkTop)
+            .environmentObject(SharedStore.disk)
+            .environmentObject(SharedStore.preference)
+            .environmentObject(SharedStore.components)
+            .environmentObject(SharedStore.menuComponents)
+            .environmentObject(SharedStore.componentConfig)
+            .environmentObject(SharedStore.cpuTextComponents)
+            .environmentObject(SharedStore.memoryTextComponents)
+            .environmentObject(SharedStore.networkTextComponents)
+    }
 }

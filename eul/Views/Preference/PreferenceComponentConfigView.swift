@@ -62,6 +62,9 @@ extension Preference {
                     if component == .Memory {
                         ComponentTextConfigView<MemoryTextComponent>()
                     }
+                    if component == .Network {
+                        ComponentTextConfigView<NetworkTextComponent>()
+                    }
                 }
                 .padding(.vertical, 8)
             }
