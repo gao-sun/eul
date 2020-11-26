@@ -52,6 +52,7 @@
 		6C387DC9253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C387DC8253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift */; };
 		6C3A002D256FF62F0030AB70 /* NetworkTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3A002C256FF62F0030AB70 /* NetworkTextComponent.swift */; };
 		6C3A0034256FF7510030AB70 /* BatteryTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3A0033256FF7510030AB70 /* BatteryTextComponent.swift */; };
+		6C3A0037256FFB330030AB70 /* DiskTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3A0036256FFB330030AB70 /* DiskTextComponent.swift */; };
 		6C457392253AC69E00BB2584 /* UIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C457391253AC69E00BB2584 /* UIStore.swift */; };
 		6C4574F825567ABC00A2AD84 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB260AA250DE26900328DAA /* ActivityIndicatorView.swift */; };
 		6C4574F925567ABC00A2AD84 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB26F7824E8310900E809FE /* SectionView.swift */; };
@@ -347,6 +348,7 @@
 		6C387DC8253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMenuBlockMenuView.swift; sourceTree = "<group>"; };
 		6C3A002C256FF62F0030AB70 /* NetworkTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTextComponent.swift; sourceTree = "<group>"; };
 		6C3A0033256FF7510030AB70 /* BatteryTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryTextComponent.swift; sourceTree = "<group>"; };
+		6C3A0036256FFB330030AB70 /* DiskTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskTextComponent.swift; sourceTree = "<group>"; };
 		6C457391253AC69E00BB2584 /* UIStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStore.swift; sourceTree = "<group>"; };
 		6C457393253AC91500BB2584 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		6C45750525568DCB00A2AD84 /* MemoryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MemoryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -575,6 +577,7 @@
 				6C192542256FF01E006B0D73 /* MemoryTextComponent.swift */,
 				6C3A002C256FF62F0030AB70 /* NetworkTextComponent.swift */,
 				6C3A0033256FF7510030AB70 /* BatteryTextComponent.swift */,
+				6C3A0036256FFB330030AB70 /* DiskTextComponent.swift */,
 			);
 			path = TextComponents;
 			sourceTree = "<group>";
@@ -1249,6 +1252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CDE6C7824F112D700463114 /* EulComponent.swift in Sources */,
+				6C3A0037256FFB330030AB70 /* DiskTextComponent.swift in Sources */,
 				6C7DB6DC24E7FFE300133B06 /* PreferenceStore.swift in Sources */,
 				6CEF48A2255C33CE002E4D73 /* FramePreferenceKey.swift in Sources */,
 				6C5FBD50253C83520016F3A2 /* MenuActionTextView.swift in Sources */,

@@ -68,6 +68,9 @@ extension Preference {
                     if component == .Battery {
                         ComponentTextConfigView<BatteryTextComponent>()
                     }
+                    if component == .Disk {
+                        ComponentTextConfigView<DiskTextComponent>()
+                    }
                 }
                 .padding(.vertical, 8)
             }

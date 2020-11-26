@@ -30,6 +30,9 @@ enum SharedStore {
     static let batteryTextComponents = ComponentsStore<BatteryTextComponent>(
         defaultComponents: BatteryTextComponent.defaultComponents
     )
+    static let diskTextComponents = ComponentsStore<DiskTextComponent>(
+        defaultComponents: DiskTextComponent.defaultComponents
+    )
 }
 
 extension View {
@@ -51,5 +54,6 @@ extension View {
             .environmentObject(SharedStore.memoryTextComponents)
             .environmentObject(SharedStore.networkTextComponents)
             .environmentObject(SharedStore.batteryTextComponents)
+            .environmentObject(SharedStore.diskTextComponents)
     }
 }

@@ -11,13 +11,25 @@ import SwiftUI
 struct DiskView: View {
     @EnvironmentObject var diskStore: DiskStore
     @EnvironmentObject var componentConfigStore: ComponentConfigStore
+    @EnvironmentObject var textStore: ComponentsStore<DiskTextComponent>
 
     var config: EulComponentConfig {
         componentConfigStore[.Disk]
     }
 
     var texts: [String] {
-        [diskStore.freeString, diskStore.usageString]
+        textStore.activeComponents.map {
+            switch $0 {
+            case .free:
+                return diskStore.freeString
+            case .usage:
+                return diskStore.usageString
+            case .total:
+                return diskStore.totalString
+            case .usagePercentage:
+                return diskStore.usagePercentageString
+            }
+        }
     }
 
     var body: some View {
@@ -27,10 +39,10 @@ struct DiskView: View {
                     .resizable()
                     .frame(width: 13, height: 13)
             }
-//            if config.showText {
-            StatusBarTextView(texts: texts)
-                .stableWidth()
-//            }
+            if textStore.showComponents {
+                StatusBarTextView(texts: texts)
+                    .stableWidth()
+            }
         }
     }
 }
