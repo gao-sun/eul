@@ -12,13 +12,21 @@ import SwiftUI
 struct BatteryView: View {
     @EnvironmentObject var batteryStore: BatteryStore
     @EnvironmentObject var componentConfigStore: ComponentConfigStore
+    @EnvironmentObject var textStore: ComponentsStore<BatteryTextComponent>
 
     var config: EulComponentConfig {
         componentConfigStore[.Battery]
     }
 
     var texts: [String] {
-        [batteryStore.charge.percentageString]
+        textStore.activeComponents.map {
+            switch $0 {
+            case .percentage:
+                return batteryStore.charge.percentageString
+            case .mah:
+                return "\(batteryStore.capacity) mAh"
+            }
+        }
     }
 
     var body: some View {
@@ -30,10 +38,10 @@ struct BatteryView: View {
                     acPowered: batteryStore.acPowered
                 )
             }
-//            if config.showText {
-            StatusBarTextView(texts: texts)
-                .stableWidth()
-//            }
+            if textStore.showComponents {
+                StatusBarTextView(texts: texts)
+                    .stableWidth()
+            }
         }
     }
 }

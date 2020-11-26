@@ -65,6 +65,9 @@ extension Preference {
                     if component == .Network {
                         ComponentTextConfigView<NetworkTextComponent>()
                     }
+                    if component == .Battery {
+                        ComponentTextConfigView<BatteryTextComponent>()
+                    }
                 }
                 .padding(.vertical, 8)
             }

@@ -51,6 +51,7 @@
 		6C387DC7253B08F100CBB81B /* NetworkTopStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C387DC6253B08F100CBB81B /* NetworkTopStore.swift */; };
 		6C387DC9253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C387DC8253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift */; };
 		6C3A002D256FF62F0030AB70 /* NetworkTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3A002C256FF62F0030AB70 /* NetworkTextComponent.swift */; };
+		6C3A0034256FF7510030AB70 /* BatteryTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3A0033256FF7510030AB70 /* BatteryTextComponent.swift */; };
 		6C457392253AC69E00BB2584 /* UIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C457391253AC69E00BB2584 /* UIStore.swift */; };
 		6C4574F825567ABC00A2AD84 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB260AA250DE26900328DAA /* ActivityIndicatorView.swift */; };
 		6C4574F925567ABC00A2AD84 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB26F7824E8310900E809FE /* SectionView.swift */; };
@@ -345,6 +346,7 @@
 		6C387DC6253B08F100CBB81B /* NetworkTopStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTopStore.swift; sourceTree = "<group>"; };
 		6C387DC8253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMenuBlockMenuView.swift; sourceTree = "<group>"; };
 		6C3A002C256FF62F0030AB70 /* NetworkTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTextComponent.swift; sourceTree = "<group>"; };
+		6C3A0033256FF7510030AB70 /* BatteryTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryTextComponent.swift; sourceTree = "<group>"; };
 		6C457391253AC69E00BB2584 /* UIStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStore.swift; sourceTree = "<group>"; };
 		6C457393253AC91500BB2584 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		6C45750525568DCB00A2AD84 /* MemoryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MemoryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -572,6 +574,7 @@
 				6C19253A256FE4ED006B0D73 /* CpuTextComponent.swift */,
 				6C192542256FF01E006B0D73 /* MemoryTextComponent.swift */,
 				6C3A002C256FF62F0030AB70 /* NetworkTextComponent.swift */,
+				6C3A0033256FF7510030AB70 /* BatteryTextComponent.swift */,
 			);
 			path = TextComponents;
 			sourceTree = "<group>";
@@ -1263,6 +1266,7 @@
 				6C58053A250CAEC3007F467A /* StatusBarTextView.swift in Sources */,
 				6C7DB6E424E80F9400133B06 /* PreferenceDisplayView.swift in Sources */,
 				6CE33C7F25260E3D00831857 /* PreferenceRefreshRateView.swift in Sources */,
+				6C3A0034256FF7510030AB70 /* BatteryTextComponent.swift in Sources */,
 				6C993B8A2517868B00586C6B /* FanMenuBlockView.swift in Sources */,
 				6C7CF47A25569B8200CEC263 /* BatteryWidget.intentdefinition in Sources */,
 				6C5FBD4E253C7A060016F3A2 /* PreferenceMenuViewView.swift in Sources */,

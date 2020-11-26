@@ -16,8 +16,4 @@ enum NetworkTextComponent: String, CaseIterable, JSONCodabble, LocalizedStringCo
     var localizedDescription: String {
         rawValue
     }
-
-    static var defaultComponents: [Self] {
-        [.upload, .download]
-    }
 }
