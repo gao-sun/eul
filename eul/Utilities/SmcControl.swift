@@ -22,6 +22,12 @@ extension TemperatureUnit {
     }
 }
 
+extension Double {
+    var temperatureString: String {
+        SmcControl.shared.formatTemp(self)
+    }
+}
+
 class SmcControl: Refreshable {
     static var shared = SmcControl()
 

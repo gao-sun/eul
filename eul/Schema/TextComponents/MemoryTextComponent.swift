@@ -14,6 +14,7 @@ enum MemoryTextComponent: String, CaseIterable, JSONCodabble, LocalizedStringCon
     case usage
     case total
     case usagePercentage
+    case temperature
 
     var localizedDescription: String {
         rawValue

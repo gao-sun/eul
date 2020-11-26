@@ -23,7 +23,7 @@ struct CpuView: View {
             case .usagePercentage:
                 return cpuStore.usageString
             case .temperature:
-                return cpuStore.temp.map { SmcControl.shared.formatTemp($0) } ?? "N/A"
+                return cpuStore.temp?.temperatureString ?? "N/A"
             }
         }
     }

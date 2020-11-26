@@ -28,6 +28,8 @@ struct MemoryView: View {
                 return memoryStore.total.memoryString
             case .usagePercentage:
                 return memoryStore.usedPercentageString
+            case .temperature:
+                return memoryStore.temp?.temperatureString ?? "N/A"
             }
         }
     }
