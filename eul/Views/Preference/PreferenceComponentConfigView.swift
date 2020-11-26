@@ -59,6 +59,9 @@ extension Preference {
                     if component == .CPU {
                         ComponentTextConfigView<CpuTextComponent>()
                     }
+                    if component == .Memory {
+                        ComponentTextConfigView<MemoryTextComponent>()
+                    }
                 }
                 .padding(.vertical, 8)
             }

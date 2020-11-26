@@ -11,13 +11,25 @@ import SwiftUI
 struct MemoryView: View {
     @EnvironmentObject var memoryStore: MemoryStore
     @EnvironmentObject var componentConfigStore: ComponentConfigStore
+    @EnvironmentObject var textStore: ComponentsStore<MemoryTextComponent>
 
     var config: EulComponentConfig {
         componentConfigStore[.Memory]
     }
 
     var texts: [String] {
-        [memoryStore.freeString, memoryStore.usedString]
+        textStore.activeComponents.map {
+            switch $0 {
+            case .free:
+                return memoryStore.freeString
+            case .usage:
+                return memoryStore.usedString
+            case .total:
+                return memoryStore.total.memoryString
+            case .usagePercentage:
+                return memoryStore.usedPercentageString
+            }
+        }
     }
 
     var body: some View {
@@ -30,10 +42,10 @@ struct MemoryView: View {
             if config.showGraph {
                 LineChart(points: memoryStore.usageHistory)
             }
-//            if config.showText {
-            StatusBarTextView(texts: texts)
-                .stableWidth()
-//            }
+            if textStore.showComponents {
+                StatusBarTextView(texts: texts)
+                    .stableWidth()
+            }
         }
     }
 }

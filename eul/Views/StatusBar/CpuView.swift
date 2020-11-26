@@ -20,7 +20,7 @@ struct CpuView: View {
     var texts: [String] {
         textStore.activeComponents.map {
             switch $0 {
-            case .usage:
+            case .usagePercentage:
                 return cpuStore.usageString
             case .temperature:
                 return cpuStore.temp.map { SmcControl.shared.formatTemp($0) } ?? "N/A"

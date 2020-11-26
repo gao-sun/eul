@@ -6,12 +6,11 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
-import Foundation
 import SwiftUI
 import SwiftyJSON
 
 enum CpuTextComponent: String, CaseIterable, JSONCodabble, LocalizedStringConvertible {
-    case usage
+    case usagePercentage
     case temperature
 
     var localizedDescription: String {

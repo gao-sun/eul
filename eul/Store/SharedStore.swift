@@ -23,4 +23,7 @@ enum SharedStore {
     static let menuComponents = ComponentsStore<EulMenuComponent>()
     static let componentConfig = ComponentConfigStore()
     static let cpuTextComponents = ComponentsStore<CpuTextComponent>()
+    static let memoryTextComponents = ComponentsStore<MemoryTextComponent>(
+        defaultComponents: MemoryTextComponent.defaultComponents
+    )
 }

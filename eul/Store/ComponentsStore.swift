@@ -32,11 +32,16 @@ class ComponentsStore<Component: JSONCodabble & Equatable>: ObservableObject {
         ])
     }
 
-    init(key: String = String(describing: Component.self), allComponents all: [Component]) {
+    init(
+        key: String = String(describing: Component.self),
+        allComponents all: [Component],
+        defaultComponents: [Component]? = nil
+    ) {
+        let active = defaultComponents ?? all
         allComponents = all
         userDefaultsKey = key
-        activeComponents = allComponents
-        availableComponents = []
+        activeComponents = active
+        availableComponents = all.filter { !active.contains($0) }
         loadFromDefaults()
         cancellable = objectWillChange.sink {
             DispatchQueue.main.async {
@@ -101,7 +106,7 @@ class ComponentsStore<Component: JSONCodabble & Equatable>: ObservableObject {
 }
 
 extension ComponentsStore where Component: CaseIterable {
-    convenience init(key: String = String(describing: Component.self)) {
-        self.init(key: key, allComponents: Array(Component.allCases))
+    convenience init(key: String = String(describing: Component.self), defaultComponents: [Component]? = nil) {
+        self.init(key: key, allComponents: Array(Component.allCases), defaultComponents: defaultComponents)
     }
 }

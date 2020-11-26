@@ -30,6 +30,10 @@ class MemoryStore: ObservableObject, Refreshable {
         used / total * 100
     }
 
+    var usedPercentageString: String {
+        (used / total).percentageString
+    }
+
     var total: Double {
         free + inactive + active + wired + compressed
     }
