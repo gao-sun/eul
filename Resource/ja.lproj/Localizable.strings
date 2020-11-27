@@ -40,7 +40,7 @@
 "cpu.system" = "システム";
 "cpu.user" = "ユーザー";
 "cpu.nice" = "Nice";
-"cpu.waiting_status_report" = "最初のステータスレポートを待っています";
+"cpu.waiting_status_report" = "ステータスの更新を待っています";
 
 // MARK: Fan
 "fan" = "ファン";
@@ -152,18 +152,18 @@
 
 // MARK: Component
 "component.show_icon" = "アイコンを表示";
-"component.show_graph" = "Show graph";
-"component.show_text" = "Show text";
+"component.show_graph" = "グラフを表示";
+"component.show_text" = "テキストを表示";
 
 // MARK: Text Component
-"text_component.free" = "Free";
-"text_component.usage" = "Usage";
-"text_component.total" = "Total";
-"text_component.usagePercentage" = "Usage Percentage";
-"text_component.temperature" = "Temperature";
-"text_component.upload" = "Upload";
-"text_component.download" = "Download";
-"text_component.percentage" = "Percentage";
+"text_component.free" = "空き";
+"text_component.usage" = "使用済み";
+"text_component.total" = "合計";
+"text_component.usagePercentage" = "使用率";
+"text_component.temperature" = "温度";
+"text_component.upload" = "送信";
+"text_component.download" = "受信";
+"text_component.percentage" = "割合（%）";
 "text_component.mah" = "mAh";
 
 //MARK: Widget
