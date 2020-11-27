@@ -152,18 +152,18 @@
 
 // MARK: Component
 "component.show_icon" = "Afficher l'icône";
-"component.show_graph" = "Show graph";
-"component.show_text" = "Show text";
+"component.show_graph" = "Afficher le graphique";
+"component.show_text" = "Afficher le texte";
 
 // MARK: Text Component
-"text_component.free" = "Free";
-"text_component.usage" = "Usage";
-"text_component.total" = "Total";
-"text_component.usagePercentage" = "Usage Percentage";
-"text_component.temperature" = "Temperature";
-"text_component.upload" = "Upload";
-"text_component.download" = "Download";
-"text_component.percentage" = "Percentage";
+"text_component.free" = "Libre";
+"text_component.usage" = "Utilisée";
+"text_component.total" = "Totale";
+"text_component.usagePercentage" = "Pourcentage d'utilisation";
+"text_component.temperature" = "Température";
+"text_component.upload" = "Téléversement";
+"text_component.download" = "Téléchargement";
+"text_component.percentage" = "Pourcentage";
 "text_component.mah" = "mAh";
 
 //MARK: Widget
