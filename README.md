@@ -49,6 +49,7 @@ Note:
 
 - 简体中文
 - English
+- Arabic (credit [@40uf411](https://github.com/40uf411))
 - Deutsch (credit [@akeschmidi](https://github.com/akeschmidi) [@rfuehrer](https://github.com/rfuehrer))
 - Русский (credit [@Nikolay](https://github.com/JiLiZART))
 - Español (credit [@JesusM](https://github.com/JesusM) [@kant](https://github.com/kant))
