@@ -24,6 +24,12 @@ struct CpuView: View {
                 return cpuStore.usageString
             case .temperature:
                 return cpuStore.temp?.temperatureString ?? "N/A"
+            case .loadAverage1Min:
+                return cpuStore.loadAverage1MinString
+            case .loadAverage5Min:
+                return cpuStore.loadAverage5MinString
+            case .loadAverage15Min:
+                return cpuStore.loadAverage15MinString
             }
         }
     }
