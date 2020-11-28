@@ -164,6 +164,14 @@
 "text_component.download" = "下载";
 "text_component.percentage" = "百分比";
 "text_component.mah" = "mAh";
+"text_component.loadAverage1Min" = "平均负载 (1分钟)";
+"text_component.loadAverage5Min" = "平均负载 (5分钟)";
+"text_component.loadAverage15Min" = "平均负载 (15分钟)";
+
+// MARK: CPU Display Mode
+"cpu_display_mode" = "CPU 显示";
+"cpu_display_mode.usage_percentage" = "百分比";
+"cpu_display_mode.load_average" = "平均负载";
 
 //MARK: Widget
 "widget.not_available" = "eul 未启动";

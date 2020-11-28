@@ -39,6 +39,16 @@ extension Preference {
                     }
                 }
                 .fixedSize()
+                HStack(spacing: 12) {
+                    Picker("cpu_display_mode".localized(), selection: $preference.cpuMenuDisplay) {
+                        ForEach(Preference.CpuMenuDisplay.allCases, id: \.self) {
+                            Text($0.description)
+                                .tag($0)
+                        }
+                    }
+                    .frame(width: 250)
+                }
+                .fixedSize()
                 HStack(alignment: .top, spacing: 20) {
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {

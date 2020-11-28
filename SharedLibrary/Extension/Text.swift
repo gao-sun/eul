@@ -48,8 +48,7 @@ public extension Text {
 
     func menuSection() -> some View {
         font(.system(size: 12, weight: .bold))
-            .padding(.top, 4)
-            .padding(.bottom, 6)
+            .padding(.vertical, 4)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 

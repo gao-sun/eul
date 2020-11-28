@@ -45,4 +45,18 @@ struct Preference {
             }
         }
     }
+
+    enum CpuMenuDisplay: String, StringEnum {
+        case usagePercentage
+        case loadAverage
+
+        var description: String {
+            switch self {
+            case .usagePercentage:
+                return "cpu_display_mode.usage_percentage".localized()
+            case .loadAverage:
+                return "cpu_display_mode.load_average".localized()
+            }
+        }
+    }
 }

@@ -127,7 +127,6 @@
 "language.ko" = "한국어";
 "language.dk" = "Dansk";
 
-
 // MARK: General UI
 "ui.app" = "App";
 "ui.general" = "General";
@@ -165,6 +164,14 @@
 "text_component.download" = "Download";
 "text_component.percentage" = "Percentage";
 "text_component.mah" = "mAh";
+"text_component.loadAverage1Min" = "Load Average (1 min)";
+"text_component.loadAverage5Min" = "Load Average (5 min)";
+"text_component.loadAverage15Min" = "Load Average (15 min)";
+
+// MARK: CPU Display Mode
+"cpu_display_mode" = "CPU Display Mode";
+"cpu_display_mode.usage_percentage" = "Usage %";
+"cpu_display_mode.load_average" = "Load Average";
 
 //MARK: Widget
 "widget.not_available" = "eul isn't running";
