@@ -43,7 +43,35 @@ Note:
 
 ## Contributors
 
-[@XaoflySho](https://github.com/XaoflySho) [@akeschmidi](https://github.com/akeschmidi) [@Nikolay](https://github.com/JiLiZART) [@JesusM](https://github.com/JesusM) [@kant](https://github.com/kant) [@rfuehrer](https://github.com/rfuehrer) [@nebeker](https://github.com/nebeker)
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/XaoflySho"><img src="https://avatars3.githubusercontent.com/u/13835089?v=4?s=48" width="48px;" alt=""/><br /><sub><b>XaoflySho</b></sub></a><br /><a href="https://github.com/gao-sun/eul/commits?author=XaoflySho" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/akeschmidi"><img src="https://avatars1.githubusercontent.com/u/10963753?v=4?s=48" width="48px;" alt=""/><br /><sub><b>akeschmidi</b></sub></a><br /><a href="#translation-akeschmidi" title="Translation">🌍</a></td>
+    <td align="center"><a href="http://artkost.ru/"><img src="https://avatars2.githubusercontent.com/u/62051?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Nikolay Kostyurin</b></sub></a><br /><a href="#translation-JiLiZART" title="Translation">🌍</a></td>
+    <td align="center"><a href="http://jesusm.github.io/"><img src="https://avatars3.githubusercontent.com/u/752469?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Jesus</b></sub></a><br /><a href="#translation-JesusM" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/kant"><img src="https://avatars1.githubusercontent.com/u/32717?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Darío Hereñú</b></sub></a><br /><a href="#translation-kant" title="Translation">🌍</a></td>
+    <td align="center"><a href="http://opensource.generali-cloud.net/"><img src="https://avatars2.githubusercontent.com/u/25303664?v=4?s=48" width="48px;" alt=""/><br /><sub><b>R. Fuehrer</b></sub></a><br /><a href="#translation-rfuehrer" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/jorgeclaro"><img src="https://avatars2.githubusercontent.com/u/10659042?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Jorge Claro</b></sub></a><br /><a href="#translation-jorgeclaro" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://medium.com/@zorig"><img src="https://avatars0.githubusercontent.com/u/1277672?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Zorig</b></sub></a><br /><a href="#translation-Zorig" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/lill74"><img src="https://avatars2.githubusercontent.com/u/12353597?v=4?s=48" width="48px;" alt=""/><br /><sub><b>lill74</b></sub></a><br /><a href="#translation-lill74" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/strafe"><img src="https://avatars0.githubusercontent.com/u/15663890?v=4?s=48" width="48px;" alt=""/><br /><sub><b>strafe</b></sub></a><br /><a href="#translation-strafe" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/AndyH0ng"><img src="https://avatars0.githubusercontent.com/u/60703412?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Andy Hong</b></sub></a><br /><a href="#translation-AndyH0ng" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://treastrain.jp/"><img src="https://avatars2.githubusercontent.com/u/13805382?v=4?s=48" width="48px;" alt=""/><br /><sub><b>treastrain / Tanaka Ryoga</b></sub></a><br /><a href="#translation-treastrain" title="Translation">🌍</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/baptistecdr"><img src="https://avatars3.githubusercontent.com/u/11665396?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Baptiste C.</b></sub></a><br /><a href="#translation-baptistecdr" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/b3z"><img src="https://avatars2.githubusercontent.com/u/47346598?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Luca</b></sub></a><br /><a href="#translation-b3z" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/40uf411"><img src="https://avatars0.githubusercontent.com/u/29804103?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Ali AOUF &#124; علي عوف</b></sub></a><br /><a href="#translation-40uf411" title="Translation">🌍</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Language Support
 

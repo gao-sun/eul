@@ -1,4 +1,145 @@
 {
+  "projectName": "eul",
+  "projectOwner": "gao-sun",
   "imageSize": 48,
-  "contributorsPerLine": 12
+  "contributorsPerLine": 12,
+  "repoType": "github",
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "XaoflySho",
+      "name": "XaoflySho",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/13835089?v=4",
+      "profile": "https://github.com/XaoflySho",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "akeschmidi",
+      "name": "akeschmidi",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/10963753?v=4",
+      "profile": "https://github.com/akeschmidi",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "JiLiZART",
+      "name": "Nikolay Kostyurin",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/62051?v=4",
+      "profile": "http://artkost.ru/",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "JesusM",
+      "name": "Jesus",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/752469?v=4",
+      "profile": "http://jesusm.github.io/",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "kant",
+      "name": "Darío Hereñú",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32717?v=4",
+      "profile": "https://github.com/kant",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "rfuehrer",
+      "name": "R. Fuehrer",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25303664?v=4",
+      "profile": "http://opensource.generali-cloud.net/",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "jorgeclaro",
+      "name": "Jorge Claro",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10659042?v=4",
+      "profile": "https://github.com/jorgeclaro",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "Zorig",
+      "name": "Zorig",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1277672?v=4",
+      "profile": "https://medium.com/@zorig",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "lill74",
+      "name": "lill74",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/12353597?v=4",
+      "profile": "https://github.com/lill74",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "strafe",
+      "name": "strafe",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/15663890?v=4",
+      "profile": "https://github.com/strafe",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "AndyH0ng",
+      "name": "Andy Hong",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/60703412?v=4",
+      "profile": "https://github.com/AndyH0ng",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "treastrain",
+      "name": "treastrain / Tanaka Ryoga",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13805382?v=4",
+      "profile": "https://treastrain.jp/",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "baptistecdr",
+      "name": "Baptiste C.",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11665396?v=4",
+      "profile": "https://github.com/baptistecdr",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "b3z",
+      "name": "Luca",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/47346598?v=4",
+      "profile": "https://github.com/b3z",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "40uf411",
+      "name": "Ali AOUF | علي عوف",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/29804103?v=4",
+      "profile": "https://github.com/40uf411",
+      "contributions": [
+        "translation"
+      ]
+    }
+  ]
 }
