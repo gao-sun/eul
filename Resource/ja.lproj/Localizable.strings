@@ -149,6 +149,7 @@
 "ui.hidden_by_system.message" = "設定からメニューバーに表示するコンポーネントを減らしてみてください。";
 "ui.hidden_by_system.open" = "設定を開く";
 "ui.hidden_by_system.dismiss" = "閉じる";
+"ui.check_status_item_visibility" = "Check status item visibility";
 
 // MARK: Component
 "component.show_icon" = "アイコンを表示";

@@ -150,6 +150,7 @@
 "ui.hidden_by_system.message" = "افتح التفضيل وحاول تقليل عدد المكونات";
 "ui.hidden_by_system.open" = "افتح";
 "ui.hidden_by_system.dismiss" = "رفض";
+"ui.check_status_item_visibility" = "Check status item visibility";
 
 // MARK: Component
 "component.show_icon" = "Show icon";

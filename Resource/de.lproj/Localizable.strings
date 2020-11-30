@@ -149,6 +149,7 @@
 "ui.hidden_by_system.message" = "Öffne Einstellungen und verringere die Anzahl der Komponenten";
 "ui.hidden_by_system.open" = "Öffnen";
 "ui.hidden_by_system.dismiss" = "Verwerfen";
+"ui.check_status_item_visibility" = "Check status item visibility";
 
 // MARK: Component
 "component.show_icon" = "Symbol anzeigen";

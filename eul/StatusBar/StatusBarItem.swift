@@ -14,6 +14,8 @@ extension Notification.Name {
 }
 
 class StatusBarItem: NSObject, NSMenuDelegate {
+    @ObservedObject var preferenceStore = SharedStore.preference
+
     let config: StatusBarConfig
     private let statusBarMenu: NSMenu
     private let item: NSStatusItem
@@ -64,7 +66,7 @@ class StatusBarItem: NSObject, NSMenuDelegate {
     }
 
     func checkStatusItemVisibility() {
-        if item.button?.window?.occlusionState.contains(.visible) == false {
+        if preferenceStore.checkStatusItemVisibility, item.button?.window?.occlusionState.contains(.visible) == false {
             print("⚠️ status item hidden by system")
             let alert = NSAlert()
             alert.messageText = "ui.hidden_by_system.title".localized()

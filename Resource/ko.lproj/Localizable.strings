@@ -150,6 +150,7 @@
 "ui.hidden_by_system.message" = "설정에서 컴포넌트 수를 줄여주세요";
 "ui.hidden_by_system.open" = "열기";
 "ui.hidden_by_system.dismiss" = "취소";
+"ui.check_status_item_visibility" = "Check status item visibility";
 
 // MARK: Component
 "component.show_icon" = "아이콘 보여주기";

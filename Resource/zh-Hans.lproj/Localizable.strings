@@ -148,6 +148,7 @@
 "ui.hidden_by_system.message" = "打开偏好设置并尝试减少状态栏组件数量";
 "ui.hidden_by_system.open" = "打开";
 "ui.hidden_by_system.dismiss" = "忽略";
+"ui.check_status_item_visibility" = "检查状态栏可见性";
 
 // MARK: Component
 "component.show_icon" = "显示图标";

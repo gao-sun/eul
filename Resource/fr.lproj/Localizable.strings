@@ -149,6 +149,7 @@
 "ui.hidden_by_system.message" = "Ouvrez les préférences et essayez de réduire le nombre de composants.";
 "ui.hidden_by_system.open" = "Ouvrir";
 "ui.hidden_by_system.dismiss" = "Ignorer";
+"ui.check_status_item_visibility" = "Check status item visibility";
 
 // MARK: Component
 "component.show_icon" = "Afficher l'icône";

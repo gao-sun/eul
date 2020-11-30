@@ -148,6 +148,7 @@
 "ui.hidden_by_system.message" = "Open preference and try to reduce component count";
 "ui.hidden_by_system.open" = "Open";
 "ui.hidden_by_system.dismiss" = "Dismiss";
+"ui.check_status_item_visibility" = "Check status item visibility";
 
 // MARK: Component
 "component.show_icon" = "Показать иконки";
