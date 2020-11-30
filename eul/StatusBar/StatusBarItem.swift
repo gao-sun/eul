@@ -88,7 +88,7 @@ class StatusBarItem: NSObject, NSMenuDelegate {
                 AppDelegate.openPreferences()
             }
         } else {
-            print("✅ status item is visible")
+            Print("✅ status item is visible")
         }
     }
 
