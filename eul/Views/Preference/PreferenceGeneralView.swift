@@ -68,6 +68,10 @@ extension Preference {
                     Text("ui.launch_at_login".localized())
                         .inlineSection()
                 }
+                Toggle(isOn: $preference.checkStatusItemVisibility) {
+                    Text("ui.check_status_item_visibility".localized())
+                        .inlineSection()
+                }
             }
             .padding(.vertical, 8)
         }

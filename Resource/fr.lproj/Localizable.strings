@@ -149,6 +149,7 @@
 "ui.hidden_by_system.message" = "Ouvrez les préférences et essayez de réduire le nombre de composants.";
 "ui.hidden_by_system.open" = "Ouvrir";
 "ui.hidden_by_system.dismiss" = "Ignorer";
+"ui.check_status_item_visibility" = "Check status item visibility";
 
 // MARK: Component
 "component.show_icon" = "Afficher l'icône";
@@ -165,6 +166,14 @@
 "text_component.download" = "Téléchargement";
 "text_component.percentage" = "Pourcentage";
 "text_component.mah" = "mAh";
+"text_component.loadAverage1Min" = "Load Average (1 min)";
+"text_component.loadAverage5Min" = "Load Average (5 min)";
+"text_component.loadAverage15Min" = "Load Average (15 min)";
+
+// MARK: CPU Display Mode
+"cpu_display_mode" = "CPU Display Mode";
+"cpu_display_mode.usage_percentage" = "Usage %";
+"cpu_display_mode.load_average" = "Load Average";
 
 //MARK: Widget
 "widget.not_available" = "eul n'est pas en cours d'exécution";

@@ -15,24 +15,35 @@ struct CpuMenuBlockView: View {
     @EnvironmentObject var cpuTopStore: CpuTopStore
 
     var body: some View {
-        VStack(spacing: 4) {
-            HStack {
+        VStack(spacing: 8) {
+            HStack(alignment: .center) {
                 Text("CPU")
                     .menuSection()
                 Spacer()
-                cpuStore.usage.map {
-                    ProgressBarView(percentage: CGFloat($0))
+                LineChart(points: cpuStore.usageHistory, frame: CGSize(width: 35, height: 20))
+                if preferenceStore.cpuMenuDisplay == .usagePercentage {
+                    Text(cpuStore.usageString)
+                        .displayText()
                 }
             }
             cpuStore.usageCPU.map { usageCPU in
                 Group {
                     SeparatorView()
                     HStack {
-                        MiniSectionView(title: "cpu.system", value: String(format: "%.1f%%", usageCPU.system))
-                        Spacer()
-                        MiniSectionView(title: "cpu.user", value: String(format: "%.1f%%", usageCPU.user))
-                        Spacer()
-                        MiniSectionView(title: "cpu.nice", value: String(format: "%.1f%%", usageCPU.nice))
+                        if preferenceStore.cpuMenuDisplay == .usagePercentage {
+                            MiniSectionView(title: "cpu.system", value: String(format: "%.1f%%", usageCPU.system))
+                            Spacer()
+                            MiniSectionView(title: "cpu.user", value: String(format: "%.1f%%", usageCPU.user))
+                            Spacer()
+                            MiniSectionView(title: "cpu.nice", value: String(format: "%.1f%%", usageCPU.nice))
+                        }
+                        if preferenceStore.cpuMenuDisplay == .loadAverage {
+                            MiniSectionView(title: "1 min", value: cpuStore.loadAverage1MinString)
+                            Spacer()
+                            MiniSectionView(title: "5 min", value: cpuStore.loadAverage5MinString)
+                            Spacer()
+                            MiniSectionView(title: "15 min", value: cpuStore.loadAverage15MinString)
+                        }
                         cpuStore.temp.map { temp in
                             Group {
                                 Spacer()

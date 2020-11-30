@@ -12,4 +12,11 @@ import SwiftyJSON
 enum CpuTextComponent: String, CaseIterable, JSONCodabble, LocalizedTextComponent {
     case usagePercentage
     case temperature
+    case loadAverage1Min
+    case loadAverage5Min
+    case loadAverage15Min
+
+    static var defaultComponents: [Self] {
+        [.usagePercentage, .temperature]
+    }
 }

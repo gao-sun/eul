@@ -14,6 +14,8 @@ extension Notification.Name {
 }
 
 class StatusBarItem: NSObject, NSMenuDelegate {
+    @ObservedObject var preferenceStore = SharedStore.preference
+
     let config: StatusBarConfig
     private let statusBarMenu: NSMenu
     private let item: NSStatusItem
@@ -26,12 +28,6 @@ class StatusBarItem: NSObject, NSMenuDelegate {
         get { item.isVisible }
         set {
             item.isVisible = newValue
-            if newValue {
-                visibilityTimer?.invalidate()
-                visibilityTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in
-                    self.checkStatusItemVisibility()
-                })
-            }
         }
     }
 
@@ -40,6 +36,7 @@ class StatusBarItem: NSObject, NSMenuDelegate {
 
         item.length = width
         statusView?.setFrameSize(NSSize(width: width, height: AppDelegate.statusBarHeight))
+        checkVisibilityIfNeeded()
     }
 
     func onMenuSizeChange(size: CGSize) {
@@ -63,7 +60,18 @@ class StatusBarItem: NSObject, NSMenuDelegate {
         SharedStore.ui.menuOpened = false
     }
 
-    func checkStatusItemVisibility() {
+    func checkVisibilityIfNeeded() {
+        guard preferenceStore.checkStatusItemVisibility else {
+            return
+        }
+
+        visibilityTimer?.invalidate()
+        visibilityTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in
+            self.checkStatusItemVisibility()
+        })
+    }
+
+    private func checkStatusItemVisibility() {
         if item.button?.window?.occlusionState.contains(.visible) == false {
             print("⚠️ status item hidden by system")
             let alert = NSAlert()
@@ -80,7 +88,7 @@ class StatusBarItem: NSObject, NSMenuDelegate {
                 AppDelegate.openPreferences()
             }
         } else {
-            print("✅ status item is visible")
+            Print("✅ status item is visible")
         }
     }
 
