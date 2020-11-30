@@ -26,7 +26,7 @@ struct ContentView: View {
             .padding(.horizontal, 8)
             .frame(width: 150)
             .background(Color.controlBackground)
-            ScrollView([.vertical], showsIndicators: false) {
+            ScrollView([.vertical], showsIndicators: !Info.isBigSur) {
                 VStack(alignment: .leading, spacing: 12) {
                     if uiStore.activeSection == .general {
                         SectionView(title: "ui.app".localized()) {
@@ -63,7 +63,7 @@ struct ContentView: View {
             }
             .clipped()
         }
-        .frame(height: 400)
+        .frame(height: 420)
         .id(preferenceStore.language)
     }
 }
