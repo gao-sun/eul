@@ -30,6 +30,7 @@ class ComponentConfigStore: ObservableObject {
     private let userDefaultsKey = "componentConfig"
     private var cancellable: AnyCancellable?
     private var converted = false
+    private var onDidChange: (() -> Void)?
 
     @Published var configDict = ComponentConfigStore.makeConfigDict()
 
@@ -40,13 +41,16 @@ class ComponentConfigStore: ObservableObject {
         ])
     }
 
-    init() {
+    init(onDidChange didChange: (() -> Void)?) {
+        onDidChange = didChange
+
         loadFromDefaults()
         convertIfNeeded()
 
         cancellable = objectWillChange.sink {
-            DispatchQueue.main.async {
-                self.saveToDefaults()
+            DispatchQueue.main.async { [self] in
+                saveToDefaults()
+                onDidChange?()
             }
         }
     }

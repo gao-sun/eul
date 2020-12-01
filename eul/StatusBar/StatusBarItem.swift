@@ -36,7 +36,6 @@ class StatusBarItem: NSObject, NSMenuDelegate {
 
         item.length = width
         statusView?.setFrameSize(NSSize(width: width, height: AppDelegate.statusBarHeight))
-        checkVisibilityIfNeeded()
     }
 
     func onMenuSizeChange(size: CGSize) {

@@ -34,6 +34,7 @@ extension Preference {
     }
 
     struct ComponentConfigView: View {
+        @EnvironmentObject var batteryStore: BatteryStore
         @EnvironmentObject var componentConfigStore: ComponentConfigStore
 
         var component: EulComponent
@@ -62,10 +63,13 @@ extension Preference {
                     if component == .Memory {
                         ComponentTextConfigView<MemoryTextComponent>()
                     }
+                    if SmcControl.shared.isFanValid, component == .Fan {
+                        ComponentTextConfigView<FanTextComponent>()
+                    }
                     if component == .Network {
                         ComponentTextConfigView<NetworkTextComponent>()
                     }
-                    if component == .Battery {
+                    if batteryStore.isValid, component == .Battery {
                         ComponentTextConfigView<BatteryTextComponent>()
                     }
                     if component == .Disk {

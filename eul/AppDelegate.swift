@@ -30,7 +30,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     private var isSleeping = false
 
     var window: NSWindow!
-    let statusBarManager = StatusBarManager()
     @ObservedObject var preferenceStore = SharedStore.preference
 
     func refreshSMCRepeatedly() {
@@ -76,7 +75,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         // window.makeKeyAndOrderFront(nil)
         // NSApp.activate(ignoringOtherApps: true)
 
-        SmcControl.shared.start()
+        SmcControl.shared.subscribe()
+        StatusBarManager.shared.checkVisibilityIfNeeded()
         wakeUp()
 
         let notificationCenter = NSWorkspace.shared.notificationCenter
