@@ -9,4 +9,4 @@ assignees: ''
 
 <h3>Make sure there's no open issue for the same request before submit.</h3>
 
-**Clearly describe your feature below:**
+**Clearly describe your idea below:**
