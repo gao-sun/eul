@@ -10,6 +10,8 @@ import Combine
 import SwiftUI
 
 class StatusBarManager {
+    static let shared = StatusBarManager()
+
     @ObservedObject var preferenceStore = SharedStore.preference
     @ObservedObject var componentsStore = SharedStore.components
     private var activeCancellable: AnyCancellable?
@@ -24,6 +26,10 @@ class StatusBarManager {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.subscribe()
         }
+    }
+
+    func checkVisibilityIfNeeded() {
+        item.checkVisibilityIfNeeded()
     }
 
     func subscribe() {

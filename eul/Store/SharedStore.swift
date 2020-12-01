@@ -9,6 +9,7 @@
 import SwiftUI
 
 enum SharedStore {
+    static let visibilityCheckClosure = { StatusBarManager.shared.checkVisibilityIfNeeded() }
     static let battery = BatteryStore()
     static let cpu = CpuStore()
     static let cpuTop = CpuTopStore()
@@ -19,21 +20,27 @@ enum SharedStore {
     static let networkTop = NetworkTopStore()
     static let preference = PreferenceStore()
     static let ui = UIStore()
-    static let components = ComponentsStore<EulComponent>()
+    static let components = ComponentsStore<EulComponent>(onDidChange: visibilityCheckClosure)
     static let menuComponents = ComponentsStore<EulMenuComponent>()
-    static let componentConfig = ComponentConfigStore()
+    static let componentConfig = ComponentConfigStore(onDidChange: visibilityCheckClosure)
     static let cpuTextComponents = ComponentsStore<CpuTextComponent>(
-        defaultComponents: CpuTextComponent.defaultComponents
+        defaultComponents: CpuTextComponent.defaultComponents,
+        onDidChange: visibilityCheckClosure
     )
     static let memoryTextComponents = ComponentsStore<MemoryTextComponent>(
-        defaultComponents: MemoryTextComponent.defaultComponents
+        defaultComponents: MemoryTextComponent.defaultComponents,
+        onDidChange: visibilityCheckClosure
     )
-    static let networkTextComponents = ComponentsStore<NetworkTextComponent>()
+    static let networkTextComponents = ComponentsStore<NetworkTextComponent>(
+        onDidChange: visibilityCheckClosure
+    )
     static let batteryTextComponents = ComponentsStore<BatteryTextComponent>(
-        defaultComponents: BatteryTextComponent.defaultComponents
+        defaultComponents: BatteryTextComponent.defaultComponents,
+        onDidChange: visibilityCheckClosure
     )
     static let diskTextComponents = ComponentsStore<DiskTextComponent>(
-        defaultComponents: DiskTextComponent.defaultComponents
+        defaultComponents: DiskTextComponent.defaultComponents,
+        onDidChange: visibilityCheckClosure
     )
 }
 

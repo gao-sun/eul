@@ -19,6 +19,7 @@ class ComponentsStore<Component: JSONCodabble & Equatable>: ObservableObject {
     private let allComponents: [Component]
     private let userDefaultsKey: String
     private var cancellable: AnyCancellable?
+    private var onDidChange: (() -> Void)?
 
     var totalCount: Int {
         allComponents.count
@@ -35,17 +36,20 @@ class ComponentsStore<Component: JSONCodabble & Equatable>: ObservableObject {
     init(
         key: String = String(describing: Component.self),
         allComponents all: [Component],
-        defaultComponents: [Component]? = nil
+        defaultComponents: [Component]? = nil,
+        onDidChange didChange: (() -> Void)? = nil
     ) {
         let active = defaultComponents ?? all
         allComponents = all
         userDefaultsKey = key
         activeComponents = active
         availableComponents = all.filter { !active.contains($0) }
+        onDidChange = didChange
         loadFromDefaults()
         cancellable = objectWillChange.sink {
-            DispatchQueue.main.async {
-                self.saveToDefaults()
+            DispatchQueue.main.async { [self] in
+                saveToDefaults()
+                onDidChange?()
             }
         }
     }
@@ -106,7 +110,16 @@ class ComponentsStore<Component: JSONCodabble & Equatable>: ObservableObject {
 }
 
 extension ComponentsStore where Component: CaseIterable {
-    convenience init(key: String = String(describing: Component.self), defaultComponents: [Component]? = nil) {
-        self.init(key: key, allComponents: Array(Component.allCases), defaultComponents: defaultComponents)
+    convenience init(
+        key: String = String(describing: Component.self),
+        defaultComponents: [Component]? = nil,
+        onDidChange: (() -> Void)? = nil
+    ) {
+        self.init(
+            key: key,
+            allComponents: Array(Component.allCases),
+            defaultComponents: defaultComponents,
+            onDidChange: onDidChange
+        )
     }
 }
