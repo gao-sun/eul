@@ -42,6 +42,10 @@ enum SharedStore {
         defaultComponents: DiskTextComponent.defaultComponents,
         onDidChange: visibilityCheckClosure
     )
+    static let fanTextComponents = ComponentsStore<FanTextComponent>(
+        defaultComponents: FanTextComponent.defaultComponents,
+        onDidChange: visibilityCheckClosure
+    )
 }
 
 extension View {
@@ -64,5 +68,6 @@ extension View {
             .environmentObject(SharedStore.networkTextComponents)
             .environmentObject(SharedStore.batteryTextComponents)
             .environmentObject(SharedStore.diskTextComponents)
+            .environmentObject(SharedStore.fanTextComponents)
     }
 }

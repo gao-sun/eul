@@ -51,8 +51,11 @@ enum EulComponent: String, CaseIterable, Identifiable, Codable, JSONCodabble, Lo
     case Disk
 
     static var allCases: [EulComponent] {
-        let components: [EulComponent] = [.CPU, .Fan, .Memory, .Network, .Disk]
-        return SharedStore.battery.isValid ? components + [.Battery] : components
+        [.CPU, .Memory]
+            .appending(.Fan, condition: SmcControl.shared.isFanValid)
+            .appending(.Network)
+            .appending(.Battery, condition: SharedStore.battery.isValid)
+            .appending(.Disk)
     }
 }
 

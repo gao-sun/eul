@@ -75,7 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         // window.makeKeyAndOrderFront(nil)
         // NSApp.activate(ignoringOtherApps: true)
 
-        SmcControl.shared.start()
+        SmcControl.shared.subscribe()
         StatusBarManager.shared.checkVisibilityIfNeeded()
         wakeUp()
 

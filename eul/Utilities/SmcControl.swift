@@ -8,56 +8,10 @@
 
 import Foundation
 import SharedLibrary
-
-extension TemperatureUnit {
-    var description: String {
-        switch self {
-        case .celius:
-            return "temp.celsius".localized()
-        case .fahrenheit:
-            return "temp.fahrenheit".localized()
-        case .kelvin:
-            return "temp.kelvin".localized()
-        }
-    }
-}
-
-extension Double {
-    var temperatureString: String {
-        SmcControl.shared.formatTemp(self)
-    }
-}
+import SwiftyJSON
 
 class SmcControl: Refreshable {
     static var shared = SmcControl()
-
-    class TemperatureData {
-        let sensor: TemperatureSensor
-        var temp: Double
-
-        init(sensor: TemperatureSensor, temp: Double = 0) {
-            self.sensor = sensor
-            self.temp = temp
-        }
-    }
-
-    class FanData: Identifiable {
-        let fan: Fan
-        var speed: Int
-
-        var id: Int {
-            fan.id
-        }
-
-        var percentage: Double {
-            Double(speed) / Double(fan.maxSpeed) * 100
-        }
-
-        init(fan: Fan, speed: Int = 0) {
-            self.fan = fan
-            self.speed = speed
-        }
-    }
 
     var sensors: [TemperatureData] = []
     var fans: [FanData] = []
@@ -74,12 +28,15 @@ class SmcControl: Refreshable {
         sensors.first(where: { $0.sensor.name == "MEM_SLOTS_PROXIMITY" })?.temp
     }
 
+    var isFanValid: Bool {
+        fans.count > 0
+    }
+
     func formatTemp(_ value: Double) -> String {
         String(format: "%.0f°\(tempUnit == .celius ? "C" : "F")", value)
     }
 
-    // must call a function explicitly to init shared instance
-    func start() {
+    init() {
         do {
             try SMCKit.open()
             sensors = try SMCKit.allKnownTemperatureSensors().map { .init(sensor: $0) }
@@ -94,6 +51,13 @@ class SmcControl: Refreshable {
         } catch {
             print("SMC init error", error)
         }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    func subscribe() {
         initObserver(for: .SMCShouldRefresh)
     }
 
@@ -119,5 +83,50 @@ class SmcControl: Refreshable {
             }
         }
         NotificationCenter.default.post(name: .StoreShouldRefresh, object: nil)
+    }
+}
+
+extension TemperatureUnit {
+    var description: String {
+        switch self {
+        case .celius:
+            return "temp.celsius".localized()
+        case .fahrenheit:
+            return "temp.fahrenheit".localized()
+        case .kelvin:
+            return "temp.kelvin".localized()
+        }
+    }
+}
+
+extension Fan: JSONCodabble {
+    init?(json: JSON) {
+        guard
+            let id = json["id"].int,
+            let name = json["name"].string,
+            let minSpeed = json["id"].int,
+            let maxSpeed = json["id"].int
+        else {
+            return nil
+        }
+        self.id = id
+        self.name = name
+        self.minSpeed = minSpeed
+        self.maxSpeed = maxSpeed
+    }
+
+    var json: JSON {
+        JSON([
+            "id": id,
+            "name": name,
+            "minSpeed": minSpeed,
+            "maxSpeed": maxSpeed,
+        ])
+    }
+}
+
+extension Double {
+    var temperatureString: String {
+        SmcControl.shared.formatTemp(self)
     }
 }

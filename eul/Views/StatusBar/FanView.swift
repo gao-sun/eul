@@ -11,13 +11,26 @@ import SwiftUI
 struct FanView: View {
     @EnvironmentObject var fanStore: FanStore
     @EnvironmentObject var componentConfigStore: ComponentConfigStore
+    @EnvironmentObject var textStore: ComponentsStore<FanTextComponent>
 
     var config: EulComponentConfig {
         componentConfigStore[.Fan]
     }
 
+    var averageRpm: String {
+        "\(fanStore.fans.reduce(0) { $0 + $1.speed } / fanStore.fans.count) rpm"
+    }
+
     var texts: [String] {
-        fanStore.fans.map { "\($0.speed.description) rpm" }
+        textStore.activeComponents.compactMap { component in
+            if component.isAverage {
+                return averageRpm
+            }
+            guard let fan = fanStore.fans.first(where: { $0.id == component.id }) else {
+                return nil
+            }
+            return "\(fan.speed) rpm"
+        }
     }
 
     var body: some View {
@@ -27,10 +40,10 @@ struct FanView: View {
                     .resizable()
                     .frame(width: 13, height: 13)
             }
-//            if config.showText {
-            StatusBarTextView(texts: texts)
-                .stableWidth()
-//            }
+            if textStore.showComponents {
+                StatusBarTextView(texts: texts)
+                    .stableWidth()
+            }
         }
     }
 }
