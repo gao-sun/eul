@@ -10,20 +10,27 @@ import Foundation
 import SharedLibrary
 import SwiftyJSON
 
-class FanData: Identifiable {
-    let fan: Fan
-    var speed: Int
+struct FanData: Identifiable {
+    let id: Int
+    var currentSpeed: Int?
+    var minSpeed: Int?
+    var maxSpeed: Int?
 
-    var id: Int {
-        fan.id
+    var currentSpeedString: String {
+        currentSpeed.map {
+            "\($0) rpm"
+        } ?? "N/A"
     }
 
-    var percentage: Double {
-        Double(speed) / Double(fan.maxSpeed) * 100
+    var minSpeedString: String {
+        minSpeed.map {
+            "\($0) rpm"
+        } ?? "N/A"
     }
 
-    init(fan: Fan, speed: Int = 0) {
-        self.fan = fan
-        self.speed = speed
+    var maxSpeedString: String {
+        maxSpeed.map {
+            "\($0) rpm"
+        } ?? "N/A"
     }
 }

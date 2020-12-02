@@ -20,7 +20,7 @@ struct FanMenuBlockView: View {
                 ForEach(fanStore.fans) { fan in
                     MiniSectionView(
                         title: "\("fan".localized()) \(fan.id + 1)",
-                        value: "\(fan.speed.description) rpm"
+                        value: fan.currentSpeedString
                     )
                     .frame(width: 80)
                 }
