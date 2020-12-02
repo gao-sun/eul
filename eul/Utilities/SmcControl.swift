@@ -40,13 +40,10 @@ class SmcControl: Refreshable {
         do {
             try SMCKit.open()
             sensors = try SMCKit.allKnownTemperatureSensors().map { .init(sensor: $0) }
-            fans = try (0..<SMCKit.fanCount()).map { .init(
-                fan: Fan(
-                    id: $0,
-                    name: $0.description,
-                    minSpeed: try SMCKit.fanMinSpeed($0),
-                    maxSpeed: try SMCKit.fanMaxSpeed($0)
-                )
+            fans = try (0..<SMCKit.fanCount()).map { FanData(
+                id: $0,
+                minSpeed: try? SMCKit.fanMinSpeed($0),
+                maxSpeed: try? SMCKit.fanMaxSpeed($0)
             ) }
         } catch {
             print("SMC init error", error)
@@ -74,13 +71,13 @@ class SmcControl: Refreshable {
                 print("error while getting temperature", error)
             }
         }
-        for fan in fans {
-            do {
-                fan.speed = try SMCKit.fanCurrentSpeed(fan.fan.id)
-            } catch {
-                fan.speed = 0
-                print("error while getting fan speed", error)
-            }
+        fans = fans.map {
+            FanData(
+                id: $0.id,
+                currentSpeed: try? SMCKit.fanCurrentSpeed($0.id),
+                minSpeed: $0.minSpeed,
+                maxSpeed: $0.maxSpeed
+            )
         }
         NotificationCenter.default.post(name: .StoreShouldRefresh, object: nil)
     }

@@ -91,13 +91,14 @@ class StatusBarItem: NSObject, NSMenuDelegate {
         }
     }
 
-    override init() {
+    init(named: String = "eul") {
         config = getStatusBarConfig()
         statusBarMenu = NSMenu()
         item = NSStatusBar.system.statusItem(withLength: 0)
         super.init()
 
         statusBarMenu.delegate = self
+        item.autosaveName = named
         item.isVisible = false
 
         if let menuBuilder = config.menuBuilder {

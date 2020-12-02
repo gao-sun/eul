@@ -18,7 +18,8 @@ struct FanView: View {
     }
 
     var averageRpm: String {
-        "\(fanStore.fans.reduce(0) { $0 + $1.speed } / fanStore.fans.count) rpm"
+        let speeds = fanStore.fans.compactMap { $0.currentSpeed }
+        return "\(speeds.reduce(0) { $0 + $1 } / speeds.count) rpm"
     }
 
     var texts: [String] {
@@ -29,7 +30,7 @@ struct FanView: View {
             guard let fan = fanStore.fans.first(where: { $0.id == component.id }) else {
                 return nil
             }
-            return "\(fan.speed) rpm"
+            return fan.currentSpeedString
         }
     }
 
