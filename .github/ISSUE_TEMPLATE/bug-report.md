@@ -9,9 +9,11 @@ assignees: ''
 
 <h3>Make sure there's no open issue for the same bug before submit.</h3>
 
-**Describe the bug**
+**Describe the Bug**
 <!-- A clear and concise description of what the bug is. -->
 
+**Expected Behavior**
+<!-- It should be? -->
 
 **Screenshots**
 <!-- If applicable, add screenshots to help explain your problem. -->
