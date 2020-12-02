@@ -18,7 +18,6 @@ assignees: ''
 **Screenshots**
 <!-- If applicable, add screenshots to help explain your problem. -->
 
-
 **Context**
  - eul version:
  - macOS version:
