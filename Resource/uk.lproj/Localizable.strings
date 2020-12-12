@@ -1,0 +1,188 @@
+/*
+ Localizable.strings
+  eul
+
+  Created by Nazar Rudnyk on 25.11.2020.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery" = "Акумулятор";
+"battery.charge" = "Заряд";
+"battery.power_source" = "Джерело живлення";
+"battery.power_source.battery" = "Акумулятор";
+"battery.power_source.acPower" = "Електромережа";
+"battery.power_source.unknown" = "Невідомо";
+"battery.is_charging" = "Заряджається";
+"battery.to_full_charge" = "до повного зарядження";
+"battery.to_empty" = "залишилось";
+"battery.health" = "Справність";
+"battery.max_capacity" = "Макс. Ємність";
+"battery.design_capacity" = "Проектована Ємність";
+"battery.health_percentage" = "Справність в %";
+"battery.cycle_count" = "Циклів заряду";
+"battery.cycle" = "Циклів";
+"battery.condition" = "Стан";
+"battery.condition.good" = "Добрий";
+"battery.condition.fair" = "Допустимий";
+"battery.condition.poor" = "Незадовільний";
+
+// MARK: CPU / Info
+"cpu.usage" = "Вжиток";
+"cpu.idle" = "Простоює";
+"cpu.temperature" = "Температура";
+"gpu.temperature" = "Температура GPU";
+"cpu.info" = "Інфо";
+"cpu.physical_cores" = "Фізичних Ядер";
+"cpu.logical_cores" = "Логічних Ядер";
+"cpu.up_time" = "Час Роботи";
+"cpu.thermal_level" = "Тепловий Рівень";
+"cpu.system" = "Система";
+"cpu.user" = "Користувач";
+"cpu.nice" = "Пріоритет";
+"cpu.waiting_status_report" = "Очікування статус репорту";
+
+// MARK: Fan
+"fan" = "Система охолодження";
+"fan.current" = "Поточний";
+"fan.min" = "Мін.";
+"fan.max" = "Макс.";
+
+// MARK: Memory
+"memory" = "Пам'ять";
+"memory.total" = "Всього";
+"memory.free" = "Вільно";
+"memory.cached_files" = "Кеш";
+"memory.temp" = "Температура";
+"memory.usage" = "Вжито";
+"memory.app" = "Пам'ять програм";
+"memory.wired" = "Постійна";
+"memory.compressed" = "Стистена";
+
+// MARK: Network
+"network" = "Мережа";
+"network.in" = "Отримано/c";
+"network.out" = "Відправлено/c";
+"network.no_activity" = "Немає активності";
+
+// MARK: Menu
+"menu.summary" = "Підсумок";
+"menu.yes" = "Так";
+"menu.no" = "Ні";
+"menu.preferences" = "Налаштування";
+"menu.quit" = "Завершити eul";
+"menu.show_cpu_top_activities" = "Показувати топ-5 процесів ЦП";
+"menu.show_network_top_activities" = "Показувати топ-3 процесів Мережі";
+
+// MARK: Temperature
+"temp.temperature" = "Температура";
+"temp.celsius" = "за Цельсієм (°C)";
+"temp.fahrenheit" = "за Фаренгейтом (°F)";
+"temp.kelvin" = "Кельвін (K)";
+
+// MARK: Text Display
+"text_display" = "Відображення тексту";
+"text_display.compact" = "компактно";
+"text_display.single_line" = "в рядок";
+
+// MARK: Font Design
+"font_design" = "Вид Шрифту";
+"font_design.default" = "звичайний";
+"font_design.monospaced" = "фіксованої ширини (monospaced)";
+
+// MARK: Component
+"component.status_bar" = "Смуга меню";
+"component.drag_to_reorder" = "перетягніть, щоб змінити порядок";
+"component.available" = "Доступні";
+"component.click_to_append" = "натисніть, щоб додати";
+"component.cpu" = "Центральний процесор";
+"component.fan" = "Система охолодження";
+"component.memory" = "Пам'ять";
+"component.battery" = "Акумулятор";
+"component.network" = "Мережа";
+"component.disk" = "Диск";
+
+// MARK: Process
+"process" = "Процес";
+"process.bring_to_front" = "На передній план";
+"process.reveal_in_finder" = "Показати в Finder";
+"process.terminate" = "Завершити";
+"process.force_terminate" = "Примусово завершити";
+"process.terminate_alert.text.%@" = "Ви справді хочете примусово завершити «%@»?";
+"process.terminate_alert.command.%@" = "Процес: %@";
+"process.terminate_alert.cancel" = "Скасувати";
+
+// MARK: Language
+"language" = "Мова";
+"language.ar" = "العربية";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+"language.pt" = "Português";
+"language.ja" = "日本語";
+"language.fr" = "Français";
+"language.mn" = "Монгол";
+"language.ko" = "한국어";
+"language.dk" = "Dansk";
+"language.uk" = "Українська";
+
+// MARK: General UI
+"ui.app" = "Застосунок";
+"ui.general" = "Загальні";
+"ui.version" = "версія";
+"ui.checking_update" = "Перевірка наявності оновлення...";
+"ui.up_to_date" = "eul оновлено";
+"ui.new_version" = "доступна нова версія";
+"ui.download" = "завантаження";
+"ui.launch_at_login" = "Автозапуск";
+"ui.display" = "Відображення";
+"ui.components" = "Компоненти";
+"ui.show_components_in_status_bar" = "Показувати компоненти на смузі меню";
+"ui.refresh_rate" = "Частота оновлення";
+"ui.smc" = "SMC";
+"ui.network" = "Мережа";
+"ui.menu_view" = "Вигляд Меню";
+"ui.empty" = "Порожньо";
+"ui.hidden_by_system.title" = "Компоненти смуги меню "eul" примусово приховані системою";
+"ui.hidden_by_system.message" = "Спробуйте зменшити к-сть компонент в налаштуваннях";
+"ui.hidden_by_system.open" = "Відкрити Налаштування";
+"ui.hidden_by_system.dismiss" = "Відхилити";
+"ui.check_status_item_visibility" = "Перевіряти видимість в смузі меню";
+
+// MARK: Component
+"component.show_icon" = "Відображати піктограму";
+"component.show_graph" = "Відображати графік";
+"component.show_text" = "Відображати текст";
+
+// MARK: Text Component
+"text_component.free" = "Вільно";
+"text_component.usage" = "Вжито";
+"text_component.total" = "Всього";
+"text_component.usagePercentage" = "Вжито %";
+"text_component.temperature" = "Температура";
+"text_component.upload" = "Відвантаження";
+"text_component.download" = "Завантаження";
+"text_component.percentage" = "Процент";
+"text_component.mah" = "mAh";
+"text_component.loadAverage1Min" = "Середнє навантаження (1 хв)";
+"text_component.loadAverage5Min" = "Середнє навантаження (5 хв)";
+"text_component.loadAverage15Min" = "Середнє навантаження (15 хв)";
+"text_component.average" = "Середнє";
+
+// MARK: CPU Display Mode
+"cpu_display_mode" = "Режим відображення ЦП";
+"cpu_display_mode.usage_percentage" = "Вжиток %";
+"cpu_display_mode.load_average" = "Середнє навантаження";
+
+//MARK: Widget
+"widget.not_available" = "eul недоступний";
+"widget.cpu.title" = "Віджет ЦП";
+"widget.cpu.description" = "Переглядайте інформацію про вжиток CPU";
+"widget.memory.title" = "Віджет пам'яті";
+"widget.memory.description" = "Переглядайте інформацію про вжиток оперативної пам'яті";
+"widget.battery.title" = "Віджет Акумулятора";
+"widget.battery.description" = "Переглядайте інформацію про акумулятор";
+"widget.network.title" = "Віджет Мережі";
+"widget.network.description" = "Переглядайте інформацію про стан мережі";
