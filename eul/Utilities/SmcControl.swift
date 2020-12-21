@@ -19,6 +19,7 @@ class SmcControl: Refreshable {
     var cpuDieTemperature: Double? {
         sensors.first(where: { $0.sensor.name == "CPU_0_DIE" })?.temp
     }
+    
     var cpuProximityTemperature: Double? {
         sensors.first(where: { $0.sensor.name == "CPU_0_PROXIMITY" })?.temp
     }
