@@ -25,7 +25,7 @@ Download the [latest release](https://github.com/gao-sun/eul/releases/latest/dow
 ### Homebrew Cask
 
 ```bash
-brew cask install eul
+brew install --cask eul
 ```
 
 ### App Store
