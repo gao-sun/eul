@@ -4,8 +4,6 @@ on:
   pull_request_target:
     branches: [master]
     types: [opened, closed, reopened, synchronize]
-  pull_request_review:
-    types: [submitted, edited, dismissed]
 
 jobs:
   setup-label:
