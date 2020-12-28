@@ -52,7 +52,7 @@ class NetworkTopStore: ObservableObject {
     }
 
     private func run() {
-        guard let string = shell("nettop -L 1 -P -x -J bytes_in,bytes_out -s \(interval)") else {
+        guard let string = shell("nettop -L 1 -P -x -J bytes_in,bytes_out") else {
             print("unable to fetch network activity, please make sure nettop is available")
             return
         }

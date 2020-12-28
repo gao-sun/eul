@@ -19,9 +19,14 @@ func shell(_ args: String...) -> String? {
 
     task.standardOutput = pipe
     task.standardError = error
-    task.launchPath = "/bin/bash"
+    task.executableURL = URL(fileURLWithPath: "/bin/bash")
     task.arguments = ["-c"] + args
-    task.launch()
+
+    do {
+        try task.run()
+    } catch {
+        print("⚠️ shell executed with error", error)
+    }
 
     let data = pipe.fileHandleForReading.readDataToEndOfFile()
     let output = String(data: data, encoding: .utf8)
@@ -43,7 +48,7 @@ func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminat
     Print("shell pipe with", args)
 
     task.standardOutput = pipe
-    task.launchPath = "/bin/bash"
+    task.executableURL = URL(fileURLWithPath: "/bin/bash")
     task.arguments = ["-c"] + args
 
     var buffer = Data()
@@ -73,7 +78,11 @@ func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminat
 
     DispatchQueue(label: "shellPipe-\(UUID().uuidString)", qos: .background, attributes: .concurrent).async {
         Print("good to launch")
-        task.launch()
+        do {
+            try task.run()
+        } catch {
+            print("⚠️ shell pipe executed with error", error)
+        }
     }
 
     return task
