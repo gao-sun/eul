@@ -70,7 +70,7 @@ class CpuStore: ObservableObject, Refreshable {
     }
 
     private func getTemp() {
-        temp = SmcControl.shared.cpuProximityTemperature
+        temp = SmcControl.shared.cpuDieTemperature
         gpuTemp = SmcControl.shared.gpuProximityTemperature
     }
 

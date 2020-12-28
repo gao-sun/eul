@@ -16,6 +16,10 @@ class SmcControl: Refreshable {
     var sensors: [TemperatureData] = []
     var fans: [FanData] = []
     var tempUnit: TemperatureUnit = .celius
+    var cpuDieTemperature: Double? {
+        sensors.first(where: { $0.sensor.name == "CPU_0_DIE" })?.temp
+    }
+
     var cpuProximityTemperature: Double? {
         sensors.first(where: { $0.sensor.name == "CPU_0_PROXIMITY" })?.temp
     }
