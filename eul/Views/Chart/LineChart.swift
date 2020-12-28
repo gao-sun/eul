@@ -73,7 +73,7 @@ struct LineChart: View {
         ZStack {
             Group {
                 closedPath()
-                    .fill(LinearGradient(gradient: Gradient(colors: [.text, Color.text.opacity(0.9)]), startPoint: .bottom, endPoint: .top))
+                    .fill(Color.text)
                 path()
                     .stroke(Color.text, style: StrokeStyle(lineWidth: 2, lineJoin: .round))
             }
