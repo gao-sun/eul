@@ -145,7 +145,7 @@
 "ui.network" = "Мережа";
 "ui.menu_view" = "Вигляд Меню";
 "ui.empty" = "Порожньо";
-"ui.hidden_by_system.title" = "Компоненти смуги меню "eul" примусово приховані системою";
+"ui.hidden_by_system.title" = "Компоненти смуги меню \"eul\" примусово приховані системою";
 "ui.hidden_by_system.message" = "Спробуйте зменшити к-сть компонент в налаштуваннях";
 "ui.hidden_by_system.open" = "Відкрити Налаштування";
 "ui.hidden_by_system.dismiss" = "Відхилити";
