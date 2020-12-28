@@ -14,6 +14,8 @@ extension Notification.Name {
 }
 
 class StatusBarItem: NSObject, NSMenuDelegate {
+    static let launchTime = Date()
+
     @ObservedObject var preferenceStore = SharedStore.preference
 
     let config: StatusBarConfig
@@ -64,8 +66,10 @@ class StatusBarItem: NSObject, NSMenuDelegate {
             return
         }
 
+        // add delay on launch due to potential false alarm
+        let interval = max(15 + StatusBarItem.launchTime.timeIntervalSinceNow, 1.5)
         visibilityTimer?.invalidate()
-        visibilityTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in
+        visibilityTimer = Timer.scheduledTimer(withTimeInterval: interval, repeats: false, block: { _ in
             self.checkStatusItemVisibility()
         })
     }
