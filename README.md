@@ -85,6 +85,6 @@ Note:
 - Español (credit [@JesusM](https://github.com/JesusM) [@kant](https://github.com/kant))
 - Português (credit [@nebeker](https://github.com/nebeker) [@jorgeclaro](https://github.com/jorgeclaro))
 - Монгол (credit [@Zorig](https://github.com/Zorig) [@AndyH0ng](https://github.com/AndyH0ng ))
-- 한국어 (credit [@AndyH0ng](https://github.com/AndyH0ng))
+- 한국어 (credit [@AndyH0ng](https://github.com/AndyH0ng) [@sboh1214](https://github.com/sboh1214))
 - 日本語 (credit [@treastrain](https://github.com/treastrain))
 - Français (credit [@baptistecdr](https://github.com/baptistecdr))
