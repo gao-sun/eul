@@ -4,7 +4,9 @@
 
   Created by Gao Sun on 2020/9/12.
   Copyright © 2020 Gao Sun. All rights reserved.
-  Translation of KO. alus20x@gmail.com / github.com/lill74
+  Translation of KO.
+  alus20x@gmail.com / github.com/lill74
+  sboh1214@gmail.com / github.com/sboh1214
 */
 
 // MARK: Battery
@@ -40,7 +42,7 @@
 "cpu.thermal_level" = "온도 Lv.";
 "cpu.system" = "시스템";
 "cpu.user" = "사용자";
-"cpu.nice" = "nice";
+"cpu.nice" = "낮은 우선순위 사용자";
 "cpu.waiting_status_report" = "첫 보고 대기중";
 
 // MARK: Fan
@@ -150,40 +152,40 @@
 "ui.hidden_by_system.message" = "설정에서 컴포넌트 수를 줄여주세요";
 "ui.hidden_by_system.open" = "열기";
 "ui.hidden_by_system.dismiss" = "취소";
-"ui.check_status_item_visibility" = "Check status item visibility";
+"ui.check_status_item_visibility" = "상태바 아이템이 보이는지 검사";
 
 // MARK: Component
-"component.show_icon" = "아이콘 보여주기";
-"component.show_graph" = "Show graph";
-"component.show_text" = "Show text";
+"component.show_icon" = "아이콘 보기";
+"component.show_graph" = "그래프 보기";
+"component.show_text" = "설명 보기";
 
 // MARK: Text Component
-"text_component.free" = "Free";
-"text_component.usage" = "Usage";
-"text_component.total" = "Total";
-"text_component.usagePercentage" = "Usage Percentage";
-"text_component.temperature" = "Temperature";
-"text_component.upload" = "Upload";
-"text_component.download" = "Download";
-"text_component.percentage" = "Percentage";
+"text_component.free" = "대기 중";
+"text_component.usage" = "사용 중";
+"text_component.total" = "전체";
+"text_component.usagePercentage" = "사용률 %";
+"text_component.temperature" = "온도";
+"text_component.upload" = "업로드";
+"text_component.download" = "다운로드";
+"text_component.percentage" = "퍼센트";
 "text_component.mah" = "mAh";
-"text_component.loadAverage1Min" = "Load Average (1 min)";
-"text_component.loadAverage5Min" = "Load Average (5 min)";
-"text_component.loadAverage15Min" = "Load Average (15 min)";
-"text_component.average" = "Average";
+"text_component.loadAverage1Min" = "부하 평균 (1 분)";
+"text_component.loadAverage5Min" = "부하 평균 (5 분)";
+"text_component.loadAverage15Min" = "부하 평균 (15 분)";
+"text_component.average" = "평균";
 
 // MARK: CPU Display Mode
-"cpu_display_mode" = "CPU Display Mode";
-"cpu_display_mode.usage_percentage" = "Usage %";
-"cpu_display_mode.load_average" = "Load Average";
+"cpu_display_mode" = "CPU 보기 모드";
+"cpu_display_mode.usage_percentage" = "사용 %";
+"cpu_display_mode.load_average" = "부하 평균";
 
 //MARK: Widget
 "widget.not_available" = "eul이 시작되지 않음";
 "widget.cpu.title" = "CPU 위젯";
 "widget.cpu.description" = "CPU 정보를 표시합니다";
-"widget.memory.title" = "Memory 위젯";
-"widget.memory.description" = "Memory 정보를 표시합니다";
-"widget.battery.title" = "Battery 위젯";
-"widget.battery.description" = "Battery 정보를 표시합니다";
-"widget.network.title" = "Network 위젯";
-"widget.network.description" = "Network 정보를 표시합니다";
+"widget.memory.title" = "메모리 위젯";
+"widget.memory.description" = "메모리 정보를 표시합니다";
+"widget.battery.title" = "배터리 위젯";
+"widget.battery.description" = "배터리 정보를 표시합니다";
+"widget.network.title" = "네트워크 위젯";
+"widget.network.description" = "네트워크 정보를 표시합니다";
