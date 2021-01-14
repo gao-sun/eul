@@ -11,27 +11,27 @@
 "battery.charge" = "Laden";
 "battery.power_source" = "Stromquelle";
 "battery.power_source.battery" = "Batterie";
-"battery.power_source.acPower" = "AC-Leistung";
+"battery.power_source.acPower" = "Netzteil";
 "battery.power_source.unknown" = "Unbekannt";
 "battery.is_charging" = "Wird geladen";
-"battery.to_full_charge" = "bis voll geladen";
-"battery.to_empty" = "bis leer";
+"battery.to_full_charge" = "Restladezeit";
+"battery.to_empty" = "verbleibend";
 "battery.health" = "Gesundheit";
-"battery.max_capacity" = "Maximale Kap.";
-"battery.design_capacity" = "Design Kap.";
+"battery.max_capacity" = "Max. Kapazität";
+"battery.design_capacity" = "Design-Kap.";
 "battery.health_percentage" = "Gesundheit in Prozent";
 "battery.cycle_count" = "Ladezyklen";
 "battery.cycle" = "Zyklen";
 "battery.condition" = "Zustand";
-"battery.condition.good" = "gut";
-"battery.condition.fair" = "okay"; 
-"battery.condition.poor" = "schlecht";
+"battery.condition.good" = "Gut";
+"battery.condition.fair" = "Okay"; 
+"battery.condition.poor" = "Schlecht";
 
 // MARK: CPU / Info
 "cpu.usage" = "Verwendung";
 "cpu.idle" = "Leerlauf";
-"cpu.temperature" = "Temp";
-"gpu.temperature" = "GPU Temp";
+"cpu.temperature" = "Temperatur";
+"gpu.temperature" = "GPU-Temp.";
 "cpu.info" = "Info";
 "cpu.physical_cores" = "Physische Kerne";
 "cpu.logical_cores" = "Logische Kerne";
@@ -40,29 +40,29 @@
 "cpu.system" = "System";
 "cpu.user" = "Benutzer";
 "cpu.nice" = "Nice";
-"cpu.waiting_status_report" = "Warten auf ersten Statusbericht";
+"cpu.waiting_status_report" = "Auf ersten Statusbericht warten …";
 
 // MARK: Fan
 "fan" = "Lüfter";
 "fan.current" = "Aktuell";
-"fan.min" = "Min";
-"fan.max" = "Max";
+"fan.min" = "Min.";
+"fan.max" = "Max.";
 
 // MARK: Memory
 "memory" = "Speicher";
-"memory.total" = "Total";
-"memory.free" = "frei";
+"memory.total" = "Gesamt";
+"memory.free" = "Frei";
 "memory.cached_files" = "Cache-Dateien";
-"memory.temp" = "Temp";
-"memory.usage" = "Verwendung";
+"memory.temp" = "Temperatur";
+"memory.usage" = "Belegt";
 "memory.app" = "App";
-"memory.wired" = "Kernel";
+"memory.wired" = "Reserviert";
 "memory.compressed" = "Komprimiert";
 
 // MARK: Network
 "network" = "Netzwerk";
-"network.in" = "Eingehend";
-"network.out" = "Ausgehend";
+"network.in" = "Empfangen";
+"network.out" = "Gesendet";
 "network.no_activity" = "Keine Aktivität";
 
 // MARK: Menu
@@ -70,31 +70,31 @@
 "menu.yes" = "Ja";
 "menu.no" = "Nein";
 "menu.preferences" = "Einstellungen";
-"menu.quit" = "Beende eul";
-"menu.show_cpu_top_activities" = "CPU top-Aktivitäten anzeigen";
-"menu.show_network_top_activities" = "Netzwerk top-Aktivitäten anzeigen";
+"menu.quit" = "eul beenden";
+"menu.show_cpu_top_activities" = "Top-CPU-Aktivitäten anzeigen";
+"menu.show_network_top_activities" = "Top-Netzwerk-Aktivitäten anzeigen";
 
 // MARK: Temperature
-"temp.temperature" = "Temperatur";
+"temp.temperature" = "Temperatur:";
 "temp.celsius" = "Celsius";
 "temp.fahrenheit" = "Fahrenheit";
 "temp.kelvin" = "Kelvin";
 
 // MARK: Text Display
-"text_display" = "Text-Anzeige";
-"text_display.compact" = "kompakt";
-"text_display.single_line" = "einzelne Zeile";
+"text_display" = "Textanzeige:";
+"text_display.compact" = "Kompakt";
+"text_display.single_line" = "Einzeilig";
 
 // MARK: Font Design
-"font_design" = "Font Design";
+"font_design" = "Schriftdesign:";
 "font_design.default" = "Standard";
-"font_design.monospaced" = "Monospaced";
+"font_design.monospaced" = "Dicktengleich";
 
 // MARK: Component
-"component.status_bar" = "Statusleiste";
-"component.drag_to_reorder" = "Ziehen zum Neuordnen";
+"component.status_bar" = "Menüleiste";
+"component.drag_to_reorder" = "Zum Ordnen bewegen";
 "component.available" = "Verfügbar";
-"component.click_to_append" = "zum Anhängen anklicken";
+"component.click_to_append" = "Zum Hinzufügen anklicken";
 "component.cpu" = "CPU";
 "component.fan" = "Lüfter";
 "component.memory" = "Speicher";
@@ -105,15 +105,15 @@
 // MARK: Process
 "process" = "Prozess";
 "process.bring_to_front" = "Nach vorne bringen";
-"process.reveal_in_finder" = "Anzeigen im Finder";
+"process.reveal_in_finder" = "Im Finder anzeigen";
 "process.terminate" = "Beenden";
-"process.force_terminate" = "Sofort Beenden";
-"process.terminate_alert.text.%@" = "Wollen Sie wirklich %@ beenden?";
+"process.force_terminate" = "Sofort beenden";
+"process.terminate_alert.text.%@" = "Möchtest du „%@“ wirklich beenden?";
 "process.terminate_alert.command.%@" = "Befehl: %@";
 "process.terminate_alert.cancel" = "Abbrechen";
 
 // MARK: Language
-"language" = "Sprache";
+"language" = "Sprache:";
 "language.ar" = "العربية";
 "language.en" = "English";
 "language.zh-Hans" = "简体中文";
@@ -132,57 +132,57 @@
 "ui.app" = "App";
 "ui.general" = "Allgemein";
 "ui.version" = "Version";
-"ui.checking_update" = "Aktualisierung prüfen";
-"ui.up_to_date" = "Version aktuell";
+"ui.checking_update" = "Auf Aktualisierung prüfen";
+"ui.up_to_date" = "Version ist aktuell";
 "ui.new_version" = "Aktualisierung verfügbar";
-"ui.download" = "herunterladen";
+"ui.download" = "Herunterladen";
 "ui.launch_at_login" = "Bei Anmeldung starten";
 "ui.display" = "Anzeige";
-"ui.components" = "Komponenten";
-"ui.show_components_in_status_bar" = "Komponenten in der Statusleiste anzeigen";
+"ui.components" = "Elemente";
+"ui.show_components_in_status_bar" = "Elemente in der Menüleiste anzeigen";
 "ui.refresh_rate" = "Aktualisierungsrate";
-"ui.smc" = "SMC";
-"ui.network" = "Netzwerk";
-"ui.menu_view" = "Menü Ansicht";
-"ui.empty" = "leer";
-"ui.hidden_by_system.title" = "eul Menu Elemente werden vom System versteckt";
-"ui.hidden_by_system.message" = "Öffne Einstellungen und verringere die Anzahl der Komponenten";
+"ui.smc" = "SMC:";
+"ui.network" = "Netzwerk:";
+"ui.menu_view" = "Menüansicht";
+"ui.empty" = "Leer";
+"ui.hidden_by_system.title" = "eul-Menüelemente werden vom System ausgeblendet";
+"ui.hidden_by_system.message" = "Öffne die Einstellungen und verringere die Anzahl der Elemente";
 "ui.hidden_by_system.open" = "Öffnen";
-"ui.hidden_by_system.dismiss" = "Verwerfen";
-"ui.check_status_item_visibility" = "Check status item visibility";
+"ui.hidden_by_system.dismiss" = "Ausblenden";
+"ui.check_status_item_visibility" = "Sichtbarkeit in Menüleiste prüfen";
 
 // MARK: Component
 "component.show_icon" = "Symbol anzeigen";
-"component.show_graph" = "Show graph";
-"component.show_text" = "Show text";
+"component.show_graph" = "Graph anzeigen";
+"component.show_text" = "Text anzeigen";
 
 // MARK: Text Component
-"text_component.free" = "Free";
-"text_component.usage" = "Usage";
-"text_component.total" = "Total";
-"text_component.usagePercentage" = "Usage Percentage";
-"text_component.temperature" = "Temperature";
-"text_component.upload" = "Upload";
-"text_component.download" = "Download";
-"text_component.percentage" = "Percentage";
+"text_component.free" = "Frei";
+"text_component.usage" = "Belegt";
+"text_component.total" = "Gesamt";
+"text_component.usagePercentage" = "Nutzung in Prozent";
+"text_component.temperature" = "Temperatur";
+"text_component.upload" = "Ausgehend";
+"text_component.download" = "Eingehend";
+"text_component.percentage" = "Prozent";
 "text_component.mah" = "mAh";
-"text_component.loadAverage1Min" = "Load Average (1 min)";
-"text_component.loadAverage5Min" = "Load Average (5 min)";
-"text_component.loadAverage15Min" = "Load Average (15 min)";
-"text_component.average" = "Average";
+"text_component.loadAverage1Min" = "⌀-Auslastung (1 Min.)";
+"text_component.loadAverage5Min" = "⌀-Auslastung (5 Min.)";
+"text_component.loadAverage15Min" = "⌀-Auslastung (15 Min.)";
+"text_component.average" = "Durchschnitt";
 
 // MARK: CPU Display Mode
-"cpu_display_mode" = "CPU Display Mode";
-"cpu_display_mode.usage_percentage" = "Usage %";
-"cpu_display_mode.load_average" = "Load Average";
+ "cpu_display_mode" = "CPU Display Mode:";
+ "cpu_display_mode.usage_percentage" = "Nutzung in %";
+ "cpu_display_mode.load_average" = "⌀-Auslastung";
 
 //MARK: Widget
-"widget.not_available" = "eul läuft nicht";
-"widget.cpu.title" = "CPU Widget";
-"widget.cpu.description" = "Anzeige CPU Information";
-"widget.memory.title" = "Speicher Widget";
-"widget.memory.description" = "Anzeige Speicher Information";
-"widget.battery.title" = "Batterie Widget";
-"widget.battery.description" = "Anzeige Batterie Information";
-"widget.network.title" = "Netzwerk Widget";
-"widget.network.description" = "Anzeige Netzwerk Information";
+ "widget.not_available" = "eul läuft nicht";
+"widget.cpu.title" = "CPU-Widget";
+"widget.cpu.description" = "CPU-Informationen anzeigen";
+"widget.memory.title" = "Speicher-Widget";
+"widget.memory.description" = "Speicherinformationen anzeigen";
+"widget.battery.title" = "Batterie-Widget";
+"widget.battery.description" = "Batterieinformationen anzeigen";
+"widget.network.title" = "Netzwerk-Widget";
+"widget.network.description" = "Netzwerkinformationen anzeigen";
