@@ -38,21 +38,10 @@ class CpuTopStore: ObservableObject {
             return
         }
         let refreshRate = preferenceStore.smcRefreshRate
-        var terminalCommandDelay = 3
         firstLoaded = false
         dataAvailable = false
         topProcesses = []
-        if refreshRate == 1{
-            terminalCommandDelay = 1
-        }
-        else if refreshRate == 3{
-            terminalCommandDelay = 3
-        }
-        else if refreshRate == 5{
-            terminalCommandDelay = 5
-
-        }
-        task = shellPipe("top -l 0 -u -n 5 -stats pid,cpu,command -s \(terminalCommandDelay)") { [self] string in
+        task = shellPipe("top -l 0 -u -n 5 -stats pid,cpu,command -s \(refreshRate)") { [self] string in
             let rows = string.split(separator: "\n", omittingEmptySubsequences: false).map { String($0) }
 
             guard let separatorIndex = rows.firstIndex(of: "") else {
