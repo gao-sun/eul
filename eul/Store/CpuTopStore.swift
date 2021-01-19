@@ -15,7 +15,7 @@ class CpuTopStore: ObservableObject {
         typealias T = Double
         let pid: Int
         let command: String
-        let value: Double
+        let percentage: Double
         let runningApp: NSRunningApplication?
     }
 
@@ -60,7 +60,7 @@ class CpuTopStore: ObservableObject {
                         return ProcessCpuUsage(
                             pid: pid,
                             command: Info.getProcessCommand(pid: pid) ?? row[2],
-                            value: cpu,
+                            percentage: cpu,
                             runningApp: runningApps.first(where: { $0.processIdentifier == pid })
                         )
                     }

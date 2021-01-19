@@ -35,6 +35,11 @@ public struct ByteUnit {
         self.kilo = kilo
     }
 
+    public init(_ megaBytes: Double){
+        self.bytes = UInt64(megaBytes*1000000)
+        self.kilo = 1024
+    }
+
     public var readable: String {
         switch bytes {
         case 0..<(kilo * kilo):

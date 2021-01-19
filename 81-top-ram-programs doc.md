@@ -1,4 +1,4 @@
-# Issue \# 81 show top ram programs design doc #
+# Issue \#81 show top ram programs design doc #
 
 Created by Jevon Mao on 2020/1/18.
 

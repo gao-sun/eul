@@ -1,19 +1,23 @@
 //
-//  ProcessRowView.swift
+//  RamProcessRowView.swift
 //  eul
 //
-//  Created by Gao Sun on 2020/10/17.
-//  Copyright © 2020 Gao Sun. All rights reserved.
+//  Created by Jevon Mao on 1/18/21.
+//  Copyright © 2021 Gao Sun. All rights reserved.
 //
 
 import SwiftUI
+import SharedLibrary
 
-struct ProcessRowView<Usage: ProcessUsage>: View {
+struct RamProcessRowView: View {
     let section: String
-    let process: Usage
+    let process: RamUsage
     var nameWidth: CGFloat = 200
     var valueViewBuilder: (() -> AnyView)? = nil
-
+    
+    func doubleToStringSingleDigit(for number:Double) -> String{
+        return String(format: "%.1f", number)
+    }
     var body: some View {
         HStack {
             Text(process.displayName)
@@ -24,9 +28,17 @@ struct ProcessRowView<Usage: ProcessUsage>: View {
             if let builder = valueViewBuilder {
                 builder()
             } else {
-                Text(process.percentage.description)
-                    .displayText()
-                    .frame(width: 35, alignment: .trailing)
+                let percentage = process.percentage
+
+                HStack {
+                    
+                    Text("\(ByteUnit(process.usageAmount).readable)")
+                        .displayText()
+                        .frame(alignment: .trailing)
+                    Text(doubleToStringSingleDigit(for: percentage))
+                        .displayText()
+                        .frame(width: 35, alignment: .trailing)
+                }
             }
             HStack(spacing: 6) {
                 if let runningApp = process.runningApp, runningApp.canBeActivated {
