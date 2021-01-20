@@ -10,19 +10,10 @@ import SharedLibrary
 import SwiftUI
 import SystemKit
 
-struct RamUsage: ProcessUsage {
-    typealias T = Double
-    let pid: Int
-    let command: String
-    var percentage: Double
-    let usageAmount: Double
-    let runningApp: NSRunningApplication?
-}
-
 struct MemoryMenuBlockView: View {
     @EnvironmentObject var memoryStore: MemoryStore
+    @EnvironmentObject var memoryTopStore: MemoryTopStore
     var memorySizeMB = System.physicalMemory() * 1000
-    @State var ramProcesses: [RamUsage] = []
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -63,39 +54,21 @@ struct MemoryMenuBlockView: View {
             SeparatorView()
      
             VStack(spacing: 8) {
-                ForEach(ramProcesses) {process in
-                    RamProcessRowView(section: "cpu", process: process)
+                if !memoryTopStore.dataAvailable {
+                    Spacer()
+                    Text("cpu.waiting_status_report".localized())
+                        .secondaryDisplayText()
+                        .frame(maxWidth:.infinity, alignment: .center)
+                    Spacer()
+                }
+                else{
+                    ForEach(memoryTopStore.topProcesses) {
+                        RamProcessRowView(section: "cpu", process: $0)
+                    }
                 }
             }
             .frame(minWidth: 311)
-            .onAppear{
-                shellPipe("top -l 0 -n 5 -stats pid,command,rsize -s 3 -orsize"){string in
-                    let rows = string.split(separator: "\n", omittingEmptySubsequences: false).map { String($0) }
-
-                    guard let separatorIndex = rows.firstIndex(of: "") else {
-                        return
-                    }
-
-                    if rows.indices.contains(separatorIndex + 1) {
-                        let titleRow = rows[separatorIndex + 1].lowercased()
-                        if titleRow.contains("pid"), titleRow.contains("mem"), titleRow.contains("command") {
-                            let runningApps = NSWorkspace.shared.runningApplications
-                            let result: [RamUsage] = ((separatorIndex + 2)..<rows.count).compactMap { index in
-                                let row = rows[index].split(separator: " ").map { String($0) }
-                                guard row.count >= 2, let pid = Int(row[0]),let rawRamString = row.last, let ram = Double(rawRamString.filter("0123456789.".contains)) else {
-                                    return nil
-                                }
-                                
-                                let usage = 100 * (ram/memorySizeMB)
-                               
-                                return RamUsage(pid: pid, command: Info.getProcessCommand(pid: pid)!, percentage: usage, usageAmount: ram, runningApp: runningApps.first(where: {$0.processIdentifier == pid}))
-                            }
-                            self.ramProcesses = result
-
-                        }
-                    }
-                }
-            }
+            .frame(height:102)
             
         }
         .menuBlock()
