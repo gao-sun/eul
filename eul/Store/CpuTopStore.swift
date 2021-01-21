@@ -37,11 +37,11 @@ class CpuTopStore: ObservableObject {
             Print("cpu task already started")
             return
         }
-
+        let refreshRate = preferenceStore.smcRefreshRate
         firstLoaded = false
         dataAvailable = false
         topProcesses = []
-        task = shellPipe("top -l 0 -u -n 5 -stats pid,cpu,command -s 3") { [self] string in
+        task = shellPipe("top -l 0 -u -n 5 -stats pid,cpu,command -s \(refreshRate)") { [self] string in
             let rows = string.split(separator: "\n", omittingEmptySubsequences: false).map { String($0) }
 
             guard let separatorIndex = rows.firstIndex(of: "") else {
