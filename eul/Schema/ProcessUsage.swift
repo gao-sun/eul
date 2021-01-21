@@ -17,6 +17,7 @@ protocol ProcessUsage: Identifiable {
     var displayName: String { get }
     var runningApp: NSRunningApplication? { get }
 }
+
 struct RamUsage: ProcessUsage {
     typealias T = Double
     let pid: Int
@@ -25,6 +26,7 @@ struct RamUsage: ProcessUsage {
     let usageAmount: Double
     let runningApp: NSRunningApplication?
 }
+
 extension ProcessUsage {
     var id: Int {
         pid

@@ -6,18 +6,19 @@
 //  Copyright © 2021 Gao Sun. All rights reserved.
 //
 
-import SwiftUI
 import SharedLibrary
+import SwiftUI
 
 struct RamProcessRowView: View {
     let section: String
     let process: RamUsage
     var nameWidth: CGFloat = 200
     var valueViewBuilder: (() -> AnyView)? = nil
-    
-    func doubleToStringSingleDigit(for number:Double) -> String{
+
+    func doubleToStringSingleDigit(for number: Double) -> String {
         return String(format: "%.1f", number)
     }
+
     var body: some View {
         HStack {
             Text(process.displayName)
@@ -31,7 +32,6 @@ struct RamProcessRowView: View {
                 let percentage = process.percentage
 
                 HStack {
-                    
                     Text("\(ByteUnit(process.usageAmount).readable)")
                         .displayText()
                         .frame(alignment: .trailing)

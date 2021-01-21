@@ -14,7 +14,7 @@ struct MemoryMenuBlockView: View {
     @EnvironmentObject var memoryStore: MemoryStore
     @EnvironmentObject var memoryTopStore: MemoryTopStore
     var memorySizeMB = System.physicalMemory() * 1000
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text("memory".localized())
@@ -52,26 +52,22 @@ struct MemoryMenuBlockView: View {
                 }
             }
             SeparatorView()
-     
+
             VStack(spacing: 8) {
                 if !memoryTopStore.dataAvailable {
                     Spacer()
                     Text("cpu.waiting_status_report".localized())
                         .secondaryDisplayText()
-                        .frame(maxWidth:.infinity, alignment: .center)
+                        .frame(maxWidth: .infinity, alignment: .center)
                     Spacer()
-                }
-                else{
+                } else {
                     ForEach(memoryTopStore.topProcesses) {
                         RamProcessRowView(section: "cpu", process: $0)
                     }
-                   
                 }
             }
             .frame(minWidth: 311)
-            .frame(height:102)
-          
-            
+            .frame(height: 102)
         }
         .menuBlock()
     }

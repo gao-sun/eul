@@ -18,8 +18,8 @@ public struct TemperatureSensor {
     public let code: FourCharCode
 }
 
-extension TemperatureUnit {
-    public init?(rawValue: String) {
+public extension TemperatureUnit {
+    init?(rawValue: String) {
         let lowercased = rawValue.lowercased()
 
         if lowercased == "celius" || lowercased == "celsius" || lowercased == "c" {

@@ -6,8 +6,8 @@
 //  Copyright © 2021 Gao Sun. All rights reserved.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 import SystemKit
 
 class MemoryTopStore: ObservableObject {
@@ -18,15 +18,14 @@ class MemoryTopStore: ObservableObject {
     @ObservedObject var preferenceStore = SharedStore.preference
     @Published var dataAvailable = false
     @Published var topProcesses: [RamUsage] = []
-    
-    
+
     func update(shouldStart: Bool) {
         guard shouldStart else {
             task?.terminate()
             task = nil
             return
         }
-        
+
         if task != nil {
             Print("cpu task already started")
             return
@@ -35,27 +34,27 @@ class MemoryTopStore: ObservableObject {
         firstLoaded = false
         dataAvailable = false
         topProcesses = []
-        task = shellPipe("top -l 0 -n 5 -stats pid,command,rsize -s \(refreshRate) -orsize"){string in
+        task = shellPipe("top -l 0 -n 5 -stats pid,command,rsize -s \(refreshRate) -orsize") { string in
             print(string)
             let rows = string.split(separator: "\n", omittingEmptySubsequences: false).map { String($0) }
-            
+
             guard let separatorIndex = rows.firstIndex(of: "") else {
                 return
             }
-            
+
             if rows.indices.contains(separatorIndex + 1) {
                 let titleRow = rows[separatorIndex + 1].lowercased()
                 if titleRow.contains("pid"), titleRow.contains("mem"), titleRow.contains("command") {
-                    let runningApps = NSWorkspace.shared.runningApplications 
+                    let runningApps = NSWorkspace.shared.runningApplications
                     let result: [RamUsage] = ((separatorIndex + 2)..<rows.count).compactMap { index in
                         let row = rows[index].split(separator: " ").map { String($0) }
-                        guard row.count >= 2, let pid = Int(row[0]),let rawRamString = row.last, let ram = Double(rawRamString.filter("0123456789.".contains)) else {
+                        guard row.count >= 2, let pid = Int(row[0]), let rawRamString = row.last, let ram = Double(rawRamString.filter("0123456789.".contains)) else {
                             return nil
                         }
-                        
-                        let usage = 100 * (ram/self.memorySizeMB)
-                        
-                        return RamUsage(pid: pid, command: Info.getProcessCommand(pid: pid)!, percentage: usage, usageAmount: ram, runningApp: runningApps.first(where: {$0.processIdentifier == pid}))
+
+                        let usage = 100 * (ram / self.memorySizeMB)
+
+                        return RamUsage(pid: pid, command: Info.getProcessCommand(pid: pid)!, percentage: usage, usageAmount: ram, runningApp: runningApps.first(where: { $0.processIdentifier == pid }))
                     }
                     Print("RAM top is updating")
                     DispatchQueue.main.async { [self] in
@@ -70,7 +69,7 @@ class MemoryTopStore: ObservableObject {
             }
         }
     }
-    
+
     init() {
         activeCancellable = Publishers
             .CombineLatest(
