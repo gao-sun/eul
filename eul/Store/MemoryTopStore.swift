@@ -36,6 +36,7 @@ class MemoryTopStore: ObservableObject {
         dataAvailable = false
         topProcesses = []
         task = shellPipe("top -l 0 -n 5 -stats pid,command,rsize -s \(refreshRate) -orsize"){string in
+            print(string)
             let rows = string.split(separator: "\n", omittingEmptySubsequences: false).map { String($0) }
             
             guard let separatorIndex = rows.firstIndex(of: "") else {

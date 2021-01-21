@@ -65,10 +65,12 @@ struct MemoryMenuBlockView: View {
                     ForEach(memoryTopStore.topProcesses) {
                         RamProcessRowView(section: "cpu", process: $0)
                     }
+                   
                 }
             }
             .frame(minWidth: 311)
             .frame(height:102)
+          
             
         }
         .menuBlock()
