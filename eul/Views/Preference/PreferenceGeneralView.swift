@@ -19,13 +19,12 @@ extension Preference {
         var body: some View {
             VStack(alignment: .leading) {
                 HStack(spacing: 12) {
-                    preference.version.map { ver in
-                        Group {
-                            Text("eul \("ui.version".localized()) \(ver)")
-                                .inlineSection()
-                        }
+                    if let version = preference.version {
+                        Text("eul \("ui.version".localized()) \(version)")
+                            .inlineSection()
+                            .fixedSize()
                     }
-                    preference.repoURL.map { url in
+                    if let url = preference.repoURL {
                         Button(action: {
                             NSWorkspace.shared.open(url)
                         }) {
