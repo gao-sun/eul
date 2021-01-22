@@ -845,6 +845,7 @@
 			isa = PBXGroup;
 			children = (
 				6CEF771124DD94C8007C3640 /* BatteryStore.swift */,
+				6C321FBC25B5C46B00BFED76 /* BluetoothStore.swift */,
 				6C7A8D9025581E7D00FF52ED /* ComponentConfigStore.swift */,
 				6CDBB4C425447D8B00D01EA0 /* ComponentsStore.swift */,
 				6C1FA3F924A70E6700CA7F71 /* CpuStore.swift */,
@@ -855,9 +856,8 @@
 				6C7DB6D024E0300E00133B06 /* NetworkStore.swift */,
 				6C387DC6253B08F100CBB81B /* NetworkTopStore.swift */,
 				6C7DB6DB24E7FFE300133B06 /* PreferenceStore.swift */,
-				6C457391253AC69E00BB2584 /* UIStore.swift */,
 				6C192532256D5984006B0D73 /* SharedStore.swift */,
-				6C321FBC25B5C46B00BFED76 /* BluetoothStore.swift */,
+				6C457391253AC69E00BB2584 /* UIStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -891,12 +891,12 @@
 			isa = PBXGroup;
 			children = (
 				6C993B8F2517920600586C6B /* BatteryMenuBlockView.swift */,
+				6C321FBF25B5C8EF00BFED76 /* BluetoothMenuBlockView.swift */,
 				6C33CECC25177CE300345977 /* CpuMenuBlockView.swift */,
 				6C993B892517868B00586C6B /* FanMenuBlockView.swift */,
 				6C993B8B25178D3B00586C6B /* MemoryMenuBlockView.swift */,
 				6C387DC8253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift */,
 				6C33CEC82517634400345977 /* StatusMenuView.swift */,
-				6C321FBF25B5C8EF00BFED76 /* BluetoothMenuBlockView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";

@@ -112,6 +112,9 @@
 "process.terminate_alert.command.%@" = "Команда: %@";
 "process.terminate_alert.cancel" = "Отмена";
 
+// MARK: Bluetooth
+"bluetooth" = "Bluetooth";
+
 // MARK: Language
 "language" = "Язык";
 "language.ar" = "العربية";

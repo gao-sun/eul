@@ -42,16 +42,16 @@ class BluetoothStore: NSObject, ObservableObject {
     func fetch() {
         readPlist()
 
-        let pairedDevices: [BluetoothDevice] = IOBluetoothDevice.pairedDevices()?.compactMap {
-            guard let device = $0 as? IOBluetoothDevice else {
+        let connectedDevices: [BluetoothDevice] = IOBluetoothDevice.pairedDevices()?.compactMap {
+            guard let device = $0 as? IOBluetoothDevice, device.isConnected() else {
                 return nil
             }
             return BluetoothDevice(device: device, uuid: getUUID(by: device.addressString))
         } ?? []
 
-        let peripherals = cbCenteralManager?.retrievePeripherals(withIdentifiers: pairedDevices.compactMap { $0.uuid }) ?? []
+        let peripherals = cbCenteralManager?.retrievePeripherals(withIdentifiers: connectedDevices.compactMap { $0.uuid }) ?? []
 
-        devices = pairedDevices
+        devices = connectedDevices
             .map { device in
                 BluetoothDevice(
                     device: device.device,
@@ -60,8 +60,9 @@ class BluetoothStore: NSObject, ObservableObject {
                 )
             }
 
+        // TO-DO: display battery level of Apple peripherals
         devices.forEach {
-            if $0.device.isConnected(), let peripheral = $0.peripheral {
+            if let peripheral = $0.peripheral {
                 if peripheral.state == .disconnected {
                     cbCenteralManager?.connect(peripheral, options: nil)
                 } else if peripheral.state == .connected {

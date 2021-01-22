@@ -9,22 +9,34 @@
 import CoreBluetooth
 import SwiftUI
 
+struct BluetoothRowView: View {
+    let device: BluetoothDevice
+    var nameWidth: CGFloat = 200
+
+    var body: some View {
+        HStack {
+            Text(device.displayName)
+                .secondaryDisplayText()
+                .frame(width: nameWidth, alignment: .leading)
+                .lineLimit(1)
+            Spacer()
+            if let batteryLevel = device.batteryLevel {
+                Text("\(batteryLevel)%")
+                    .displayText()
+            }
+        }
+    }
+}
+
 struct BluetoothMenuBlockView: View {
     @EnvironmentObject var bluetoothStore: BluetoothStore
 
     var body: some View {
-        HStack(spacing: 4) {
+        VStack(spacing: 8) {
             Text("bluetooth".localized())
                 .menuSection()
-            Spacer()
-            HStack {
-                ForEach(bluetoothStore.devices) { item in
-                    MiniSectionView(
-                        title: item.device.nameOrAddress,
-                        value: item.batteryDescription
-                    )
-                    .frame(width: 80)
-                }
+            ForEach(bluetoothStore.devices) {
+                BluetoothRowView(device: $0)
             }
         }
         .padding(.top, 2)

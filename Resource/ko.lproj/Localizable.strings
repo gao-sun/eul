@@ -115,6 +115,9 @@
 "process.terminate_alert.command.%@" = "명령어: %@";
 "process.terminate_alert.cancel" = "취소";
 
+// MARK: Bluetooth
+"bluetooth" = "Bluetooth";
+
 // MARK: Language
 "language" = "언어";
 "language.ar" = "العربية";
