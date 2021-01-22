@@ -46,6 +46,7 @@
 		6C2689182556774D00FB7306 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3813172554346A0025B97C /* Container.swift */; };
 		6C321FBD25B5C46B00BFED76 /* BluetoothStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321FBC25B5C46B00BFED76 /* BluetoothStore.swift */; };
 		6C321FC025B5C8EF00BFED76 /* BluetoothMenuBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321FBF25B5C8EF00BFED76 /* BluetoothMenuBlockView.swift */; };
+		6C321FC325BB12A600BFED76 /* BluetoothDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321FC225BB12A600BFED76 /* BluetoothDevice.swift */; };
 		6C33CEC92517634400345977 /* StatusMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33CEC82517634400345977 /* StatusMenuView.swift */; };
 		6C33CECD25177CE300345977 /* CpuMenuBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33CECC25177CE300345977 /* CpuMenuBlockView.swift */; };
 		6C387DC1253AEB1A00CBB81B /* StatusBarMenuHostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C387DC0253AEB1A00CBB81B /* StatusBarMenuHostingView.swift */; };
@@ -346,6 +347,7 @@
 		6C2F1647255C1EAD0062F76F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C321FBC25B5C46B00BFED76 /* BluetoothStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothStore.swift; sourceTree = "<group>"; };
 		6C321FBF25B5C8EF00BFED76 /* BluetoothMenuBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothMenuBlockView.swift; sourceTree = "<group>"; };
+		6C321FC225BB12A600BFED76 /* BluetoothDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDevice.swift; sourceTree = "<group>"; };
 		6C33CEC82517634400345977 /* StatusMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuView.swift; sourceTree = "<group>"; };
 		6C33CECA251767C400345977 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		6C33CECC25177CE300345977 /* CpuMenuBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuMenuBlockView.swift; sourceTree = "<group>"; };
@@ -633,6 +635,7 @@
 				6C19253E256FEBE5006B0D73 /* LocalizedStringConvertible.swift */,
 				6CC1EBB625769B1F00BC05CA /* FanData.swift */,
 				6CC1EBB925769B4400BC05CA /* TemperatureData.swift */,
+				6C321FC225BB12A600BFED76 /* BluetoothDevice.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -1296,6 +1299,7 @@
 				6C5F853F249FACE000CF0EF8 /* AppDelegate.swift in Sources */,
 				6C58053A250CAEC3007F467A /* StatusBarTextView.swift in Sources */,
 				6C7DB6E424E80F9400133B06 /* PreferenceDisplayView.swift in Sources */,
+				6C321FC325BB12A600BFED76 /* BluetoothDevice.swift in Sources */,
 				6CE33C7F25260E3D00831857 /* PreferenceRefreshRateView.swift in Sources */,
 				6C3A0034256FF7510030AB70 /* BatteryTextComponent.swift in Sources */,
 				6C993B8A2517868B00586C6B /* FanMenuBlockView.swift in Sources */,

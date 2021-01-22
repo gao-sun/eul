@@ -21,7 +21,7 @@ struct BluetoothMenuBlockView: View {
                 ForEach(bluetoothStore.devices) { item in
                     MiniSectionView(
                         title: item.device.nameOrAddress,
-                        value: "100"
+                        value: item.batteryDescription
                     )
                     .frame(width: 80)
                 }
@@ -29,5 +29,8 @@ struct BluetoothMenuBlockView: View {
         }
         .padding(.top, 2)
         .menuBlock()
+        .onAppear {
+            bluetoothStore.fetch()
+        }
     }
 }
