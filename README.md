@@ -4,12 +4,13 @@
 
 # eul
 
-![Preview](https://user-images.githubusercontent.com/14722250/98441501-afba3280-2139-11eb-8a04-949fac7ff6b2.jpg)
+![Preview](https://user-images.githubusercontent.com/14722250/105518977-e0127580-5d13-11eb-897e-5199288a61d0.jpg)
 
 ## Highlights
 
 - Dark Mode compatible
 - Big Sur widgets out of the box
+- Bluetooth battery level
 - Written in SwiftUI (as much as possible)
 
 ## OS Requirement

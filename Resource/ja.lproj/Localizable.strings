@@ -101,6 +101,7 @@
 "component.battery" = "バッテリー";
 "component.network" = "ネットワーク";
 "component.disk" = "ディスク";
+"component.bluetooth" = "Bluetooth";
 
 // MARK: Process
 "process" = "プロセス";
@@ -111,6 +112,9 @@
 "process.terminate_alert.text.%@" = "%@ を終了してもよろしいですか？";
 "process.terminate_alert.command.%@" = "%@";
 "process.terminate_alert.cancel" = "キャンセル";
+
+// MARK: Bluetooth
+"bluetooth" = "Bluetooth";
 
 // MARK: Language
 "language" = "言語";

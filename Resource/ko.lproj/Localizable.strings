@@ -104,6 +104,7 @@
 "component.battery" = "배터리";
 "component.network" = "네트워크";
 "component.disk" = "디스크";
+"component.bluetooth" = "Bluetooth";
 
 // MARK: Process
 "process" = "프로세스";
@@ -114,6 +115,9 @@
 "process.terminate_alert.text.%@" = "정말로 %@을(를) 종료하겠습니까?";
 "process.terminate_alert.command.%@" = "명령어: %@";
 "process.terminate_alert.cancel" = "취소";
+
+// MARK: Bluetooth
+"bluetooth" = "Bluetooth";
 
 // MARK: Language
 "language" = "언어";
