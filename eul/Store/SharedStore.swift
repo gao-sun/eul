@@ -22,7 +22,7 @@ enum SharedStore {
     static let preference = PreferenceStore()
     static let ui = UIStore()
     static let components = ComponentsStore<EulComponent>(onDidChange: visibilityCheckClosure)
-    static let menuComponents = ComponentsStore<EulMenuComponent>()
+    static let menuComponents = ComponentsStore<EulMenuComponent>(defaultComponents: EulMenuComponent.defaultComponents)
     static let componentConfig = ComponentConfigStore(onDidChange: visibilityCheckClosure)
     static let cpuTextComponents = ComponentsStore<CpuTextComponent>(
         defaultComponents: CpuTextComponent.defaultComponents,

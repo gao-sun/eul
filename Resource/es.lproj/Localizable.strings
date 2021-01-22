@@ -101,6 +101,7 @@
 "component.battery" = "Batería";
 "component.network" = "Red";
 "component.disk" = "Disk";
+"component.bluetooth" = "Bluetooth";
 
 // MARK: Process
 "process" = "Proceso";

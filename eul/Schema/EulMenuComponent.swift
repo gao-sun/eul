@@ -47,4 +47,8 @@ enum EulMenuComponent: String, CaseIterable, Identifiable, JSONCodabble {
         let components: [EulMenuComponent] = [.CPU, .Fan, .Memory, .Network, .Bluetooth]
         return SharedStore.battery.isValid ? components + [.Battery] : components
     }
+
+    static var defaultComponents: [Self] {
+        allCases.filter { $0 != .Bluetooth }
+    }
 }

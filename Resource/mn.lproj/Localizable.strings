@@ -101,6 +101,7 @@
 "component.battery" = "Батaрей";
 "component.network" = "Сүлжээ";
 "component.disk" = "Диск";
+"component.bluetooth" = "Bluetooth";
 
 // MARK: Process
 "process" = "Процесс";

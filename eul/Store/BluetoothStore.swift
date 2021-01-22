@@ -20,7 +20,7 @@ class BluetoothStore: NSObject, ObservableObject {
     @Published var devices: [BluetoothDevice] = []
 
     var connectedDevices: [BluetoothDevice] {
-        devices.filter { $0.device.isConnected() }
+        devices.filter { $0.ioDevice.isConnected() }
     }
 
     private func readPlist() {
@@ -33,34 +33,47 @@ class BluetoothStore: NSObject, ObservableObject {
     }
 
     private func getUUID(by address: String) -> UUID? {
-        guard let uuidString = bluetoothPlist?.CoreBluetoothCache.first(where: { $1.DeviceAddress == address })?.key else {
+        guard let uuidString = bluetoothPlist?.CoreBluetoothCache?.first(where: { $1.DeviceAddress == address })?.key else {
             return nil
         }
         return UUID(uuidString: uuidString)
+    }
+
+    private func getPlistDevice(by address: String) -> BluetoothPlist.Device? {
+        guard let device = bluetoothPlist?.DeviceCache?.first(where: { $0.key == address })?.value else {
+            return nil
+        }
+        return device
     }
 
     func fetch() {
         readPlist()
 
         let connectedDevices: [BluetoothDevice] = IOBluetoothDevice.pairedDevices()?.compactMap {
-            guard let device = $0 as? IOBluetoothDevice, device.isConnected() else {
+            guard let ioDevice = $0 as? IOBluetoothDevice, ioDevice.isConnected() else {
                 return nil
             }
-            return BluetoothDevice(device: device, uuid: getUUID(by: device.addressString))
+            return BluetoothDevice(
+                ioDevice: ioDevice,
+                plistDevice: getPlistDevice(by: ioDevice.addressString),
+                uuid: getUUID(by: ioDevice.addressString)
+            )
         } ?? []
+
+        Print(
+            "🔵🦷 connected devices",
+            connectedDevices.map { "name=\($0.ioDevice.name ?? "N/A"), address=\($0.ioDevice.addressString ?? "N/A")" }
+        )
 
         let peripherals = cbCenteralManager?.retrievePeripherals(withIdentifiers: connectedDevices.compactMap { $0.uuid }) ?? []
 
         devices = connectedDevices
             .map { device in
-                BluetoothDevice(
-                    device: device.device,
-                    uuid: device.uuid,
+                device.copying(
                     peripheral: peripherals.first(where: { $0.identifier == device.uuid })
                 )
             }
 
-        // TO-DO: display battery level of Apple peripherals
         devices.forEach {
             if let peripheral = $0.peripheral {
                 if peripheral.state == .disconnected {
@@ -82,11 +95,11 @@ class BluetoothStore: NSObject, ObservableObject {
 
 extension BluetoothStore: CBCentralManagerDelegate {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        print("🔵🦷 state update", central.state.rawValue)
+        Print("🔵🦷 state update", central.state.rawValue)
     }
 
     func centralManager(_: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        print("🔵🦷 did connect peripheral", peripheral.description)
+        Print("🔵🦷 did connect peripheral", peripheral.description)
         peripheral.delegate = self
         peripheral.discoverServices([BluetoothDevice.batteryServiceUUID])
     }
@@ -94,7 +107,7 @@ extension BluetoothStore: CBCentralManagerDelegate {
 
 extension BluetoothStore: CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-        print("🔵🦷 did discover services", peripheral.description)
+        Print("🔵🦷 did discover services", peripheral.description)
 
         if let error = error {
             print("⚠️ error", error)
@@ -102,7 +115,7 @@ extension BluetoothStore: CBPeripheralDelegate {
         }
 
         guard let batteryService = peripheral.services?.first(where: { $0.uuid == BluetoothDevice.batteryServiceUUID }) else {
-            print("❔ battery service not found, skipping")
+            Print("❔ battery service not found, skipping")
             return
         }
 
@@ -110,7 +123,7 @@ extension BluetoothStore: CBPeripheralDelegate {
     }
 
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        print("🔵🦷 did discover characteristics", peripheral.description, service.description)
+        Print("🔵🦷 did discover characteristics", peripheral.description, service.description)
 
         if let error = error {
             print("⚠️ error", error)
@@ -118,7 +131,7 @@ extension BluetoothStore: CBPeripheralDelegate {
         }
 
         guard let batteryCharacteristics = service.characteristics?.first(where: { $0.uuid == BluetoothDevice.batteryCharacteristicsUUID }) else {
-            print("❔ battery characteristics not found, skipping")
+            Print("❔ battery characteristics not found, skipping")
             return
         }
 
@@ -127,7 +140,7 @@ extension BluetoothStore: CBPeripheralDelegate {
     }
 
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        print("🔵🦷 did update value for characteristics", peripheral.description, characteristic.description)
+        Print("🔵🦷 did update value for characteristics", peripheral.description, characteristic.description)
 
         if let error = error {
             print("⚠️ error", error)
@@ -138,6 +151,6 @@ extension BluetoothStore: CBPeripheralDelegate {
             return
         }
 
-        devices = devices.map { $0.uuid == peripheral.identifier ? $0.withBatteryLevel(batteryLevel) : $0 }
+        devices = devices.map { $0.uuid == peripheral.identifier ? $0.copying(batteryLevel: batteryLevel) : $0 }
     }
 }

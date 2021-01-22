@@ -101,6 +101,7 @@
 "component.battery" = "电池";
 "component.network" = "网络";
 "component.disk" = "存储";
+"component.bluetooth" = "蓝牙";
 
 // MARK: Process
 "process" = "进程";

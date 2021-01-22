@@ -11,12 +11,20 @@ import Foundation
 import IOBluetooth
 
 struct BluetoothPlist: Codable {
-    struct BluetoothCache: Codable {
+    struct Cache: Codable {
         var DeviceAddress: String
     }
 
-    var LEPairedDevices: [String]
-    var CoreBluetoothCache: [String: BluetoothCache]
+    struct Device: Codable {
+        var BatteryPercentCase: Int?
+        var BatteryPercentLeft: Int?
+        var BatteryPercentRight: Int?
+        var BatteryPercent: Double?
+    }
+
+    var LEPairedDevices: [String]?
+    var CoreBluetoothCache: [String: Cache]?
+    var DeviceCache: [String: Device]?
 }
 
 struct BluetoothDevice: Identifiable {
@@ -24,7 +32,8 @@ struct BluetoothDevice: Identifiable {
     static let batteryServiceUUID = CBUUID(string: "0x180F")
     static let batteryCharacteristicsUUID = CBUUID(string: "0x2A19")
 
-    let device: IOBluetoothDevice
+    let ioDevice: IOBluetoothDevice
+    var plistDevice: BluetoothPlist.Device?
     var uuid: UUID?
     var peripheral: CBPeripheral?
     var batteryLevel: UInt8?
@@ -34,21 +43,33 @@ struct BluetoothDevice: Identifiable {
     }
 
     var address: String {
-        device.addressString
+        ioDevice.addressString
     }
 
     var displayName: String {
-        device.nameOrAddress
+        ioDevice.nameOrAddress
     }
 
-    var batteryDescription: String {
-        guard let batteryLevel = batteryLevel else {
-            return "N/A"
-        }
-        return "\(batteryLevel)%"
+    var hasPlistBattery: Bool {
+        plistDevice?.BatteryPercent != nil
+            || plistDevice?.BatteryPercentCase != nil
+            || plistDevice?.BatteryPercentLeft != nil
+            || plistDevice?.BatteryPercentRight != nil
     }
 
-    func withBatteryLevel(_ level: UInt8) -> BluetoothDevice {
-        BluetoothDevice(device: device, uuid: uuid, peripheral: peripheral, batteryLevel: level)
+    func copying(
+        ioDevice: IOBluetoothDevice? = nil,
+        plistDevice: BluetoothPlist.Device? = nil,
+        uuid: UUID? = nil,
+        peripheral: CBPeripheral? = nil,
+        batteryLevel: UInt8? = nil
+    ) -> BluetoothDevice {
+        BluetoothDevice(
+            ioDevice: ioDevice ?? self.ioDevice,
+            plistDevice: plistDevice ?? self.plistDevice,
+            uuid: uuid ?? self.uuid,
+            peripheral: peripheral ?? self.peripheral,
+            batteryLevel: batteryLevel ?? self.batteryLevel
+        )
     }
 }
