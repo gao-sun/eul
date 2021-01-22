@@ -101,6 +101,7 @@
 "component.battery" = "电池";
 "component.network" = "网络";
 "component.disk" = "存储";
+"component.bluetooth" = "蓝牙";
 
 // MARK: Process
 "process" = "进程";
@@ -111,6 +112,9 @@
 "process.terminate_alert.text.%@" = "确定要终止 %@ ?";
 "process.terminate_alert.command.%@" = "%@";
 "process.terminate_alert.cancel" = "取消";
+
+// MARK: Bluetooth
+"bluetooth" = "蓝牙";
 
 // MARK: Language
 "language" = "语言";

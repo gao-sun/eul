@@ -18,10 +18,11 @@ enum SharedStore {
     static let memory = MemoryStore()
     static let network = NetworkStore()
     static let networkTop = NetworkTopStore()
+    static let bluetooth = BluetoothStore()
     static let preference = PreferenceStore()
     static let ui = UIStore()
     static let components = ComponentsStore<EulComponent>(onDidChange: visibilityCheckClosure)
-    static let menuComponents = ComponentsStore<EulMenuComponent>()
+    static let menuComponents = ComponentsStore<EulMenuComponent>(defaultComponents: EulMenuComponent.defaultComponents)
     static let componentConfig = ComponentConfigStore(onDidChange: visibilityCheckClosure)
     static let cpuTextComponents = ComponentsStore<CpuTextComponent>(
         defaultComponents: CpuTextComponent.defaultComponents,
@@ -59,6 +60,7 @@ extension View {
             .environmentObject(SharedStore.network)
             .environmentObject(SharedStore.networkTop)
             .environmentObject(SharedStore.disk)
+            .environmentObject(SharedStore.bluetooth)
             .environmentObject(SharedStore.preference)
             .environmentObject(SharedStore.components)
             .environmentObject(SharedStore.menuComponents)

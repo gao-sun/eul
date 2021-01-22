@@ -101,6 +101,7 @@
 "component.battery" = "Batería";
 "component.network" = "Red";
 "component.disk" = "Disk";
+"component.bluetooth" = "Bluetooth";
 
 // MARK: Process
 "process" = "Proceso";
@@ -111,6 +112,9 @@
 "process.terminate_alert.text.%@" = "¿Estás seguro de que quieres cerrar %@?";
 "process.terminate_alert.command.%@" = "Comando: %@";
 "process.terminate_alert.cancel" = "Cancelar";
+
+// MARK: Bluetooth
+"bluetooth" = "Bluetooth";
 
 // MARK: Language
 "language" = "Idioma";

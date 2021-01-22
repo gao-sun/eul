@@ -44,6 +44,9 @@
 		6C2689142556773300FB7306 /* SmcStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C68E083255664F500595F83 /* SmcStruct.swift */; };
 		6C2689152556773300FB7306 /* SharedEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C739CC025544D7200B30B0D /* SharedEntry.swift */; };
 		6C2689182556774D00FB7306 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3813172554346A0025B97C /* Container.swift */; };
+		6C321FBD25B5C46B00BFED76 /* BluetoothStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321FBC25B5C46B00BFED76 /* BluetoothStore.swift */; };
+		6C321FC025B5C8EF00BFED76 /* BluetoothMenuBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321FBF25B5C8EF00BFED76 /* BluetoothMenuBlockView.swift */; };
+		6C321FC325BB12A600BFED76 /* BluetoothDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321FC225BB12A600BFED76 /* BluetoothDevice.swift */; };
 		6C33CEC92517634400345977 /* StatusMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33CEC82517634400345977 /* StatusMenuView.swift */; };
 		6C33CECD25177CE300345977 /* CpuMenuBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33CECC25177CE300345977 /* CpuMenuBlockView.swift */; };
 		6C387DC1253AEB1A00CBB81B /* StatusBarMenuHostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C387DC0253AEB1A00CBB81B /* StatusBarMenuHostingView.swift */; };
@@ -342,6 +345,9 @@
 		6C2688EE2556762B00FB7306 /* SharedLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2688F12556762B00FB7306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C2F1647255C1EAD0062F76F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6C321FBC25B5C46B00BFED76 /* BluetoothStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothStore.swift; sourceTree = "<group>"; };
+		6C321FBF25B5C8EF00BFED76 /* BluetoothMenuBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothMenuBlockView.swift; sourceTree = "<group>"; };
+		6C321FC225BB12A600BFED76 /* BluetoothDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDevice.swift; sourceTree = "<group>"; };
 		6C33CEC82517634400345977 /* StatusMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuView.swift; sourceTree = "<group>"; };
 		6C33CECA251767C400345977 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		6C33CECC25177CE300345977 /* CpuMenuBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuMenuBlockView.swift; sourceTree = "<group>"; };
@@ -629,6 +635,7 @@
 				6C19253E256FEBE5006B0D73 /* LocalizedStringConvertible.swift */,
 				6CC1EBB625769B1F00BC05CA /* FanData.swift */,
 				6CC1EBB925769B4400BC05CA /* TemperatureData.swift */,
+				6C321FC225BB12A600BFED76 /* BluetoothDevice.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -838,6 +845,7 @@
 			isa = PBXGroup;
 			children = (
 				6CEF771124DD94C8007C3640 /* BatteryStore.swift */,
+				6C321FBC25B5C46B00BFED76 /* BluetoothStore.swift */,
 				6C7A8D9025581E7D00FF52ED /* ComponentConfigStore.swift */,
 				6CDBB4C425447D8B00D01EA0 /* ComponentsStore.swift */,
 				6C1FA3F924A70E6700CA7F71 /* CpuStore.swift */,
@@ -848,8 +856,8 @@
 				6C7DB6D024E0300E00133B06 /* NetworkStore.swift */,
 				6C387DC6253B08F100CBB81B /* NetworkTopStore.swift */,
 				6C7DB6DB24E7FFE300133B06 /* PreferenceStore.swift */,
-				6C457391253AC69E00BB2584 /* UIStore.swift */,
 				6C192532256D5984006B0D73 /* SharedStore.swift */,
+				6C457391253AC69E00BB2584 /* UIStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -883,6 +891,7 @@
 			isa = PBXGroup;
 			children = (
 				6C993B8F2517920600586C6B /* BatteryMenuBlockView.swift */,
+				6C321FBF25B5C8EF00BFED76 /* BluetoothMenuBlockView.swift */,
 				6C33CECC25177CE300345977 /* CpuMenuBlockView.swift */,
 				6C993B892517868B00586C6B /* FanMenuBlockView.swift */,
 				6C993B8B25178D3B00586C6B /* MemoryMenuBlockView.swift */,
@@ -1276,7 +1285,9 @@
 				6CEF48A2255C33CE002E4D73 /* FramePreferenceKey.swift in Sources */,
 				6C5FBD50253C83520016F3A2 /* MenuActionTextView.swift in Sources */,
 				6C1FA40E24AA162800CA7F71 /* Refreshable.swift in Sources */,
+				6C321FBD25B5C46B00BFED76 /* BluetoothStore.swift in Sources */,
 				6C572D7F254EFD4700EF9904 /* DiskStore.swift in Sources */,
+				6C321FC025B5C8EF00BFED76 /* BluetoothMenuBlockView.swift in Sources */,
 				6C1FA40424A7187F00CA7F71 /* FanView.swift in Sources */,
 				6C7DB6CF24E02F0600133B06 /* Shell.swift in Sources */,
 				6C192533256D5984006B0D73 /* SharedStore.swift in Sources */,
@@ -1288,6 +1299,7 @@
 				6C5F853F249FACE000CF0EF8 /* AppDelegate.swift in Sources */,
 				6C58053A250CAEC3007F467A /* StatusBarTextView.swift in Sources */,
 				6C7DB6E424E80F9400133B06 /* PreferenceDisplayView.swift in Sources */,
+				6C321FC325BB12A600BFED76 /* BluetoothDevice.swift in Sources */,
 				6CE33C7F25260E3D00831857 /* PreferenceRefreshRateView.swift in Sources */,
 				6C3A0034256FF7510030AB70 /* BatteryTextComponent.swift in Sources */,
 				6C993B8A2517868B00586C6B /* FanMenuBlockView.swift in Sources */,
@@ -1525,7 +1537,7 @@
 				CODE_SIGN_ENTITLEMENTS = MemoryWidget/MemoryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = MemoryWidget/Info.plist;
@@ -1535,7 +1547,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.MemoryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1551,7 +1563,7 @@
 				CODE_SIGN_ENTITLEMENTS = MemoryWidget/MemoryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = MemoryWidget/Info.plist;
@@ -1561,7 +1573,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.MemoryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1577,7 +1589,7 @@
 				CODE_SIGN_ENTITLEMENTS = NetworkWidget/NetworkWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NetworkWidget/Info.plist;
@@ -1587,7 +1599,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.NetworkWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1603,7 +1615,7 @@
 				CODE_SIGN_ENTITLEMENTS = NetworkWidget/NetworkWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NetworkWidget/Info.plist;
@@ -1613,7 +1625,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.NetworkWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1748,7 +1760,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1760,7 +1772,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1779,7 +1791,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1791,7 +1803,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1807,7 +1819,7 @@
 				CODE_SIGN_ENTITLEMENTS = BatteryWidget/BatteryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BatteryWidget/Info.plist;
@@ -1817,7 +1829,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.BatteryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1833,7 +1845,7 @@
 				CODE_SIGN_ENTITLEMENTS = BatteryWidget/BatteryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BatteryWidget/Info.plist;
@@ -1843,7 +1855,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.BatteryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1859,7 +1871,7 @@
 				CODE_SIGN_ENTITLEMENTS = CpuWidget/CpuWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CpuWidget/Info.plist;
@@ -1869,7 +1881,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.CpuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1885,7 +1897,7 @@
 				CODE_SIGN_ENTITLEMENTS = CpuWidget/CpuWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CpuWidget/Info.plist;
@@ -1895,7 +1907,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.CpuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

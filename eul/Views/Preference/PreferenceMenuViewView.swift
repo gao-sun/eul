@@ -75,6 +75,7 @@ extension Preference {
                                         .frame(width: 12, height: 12)
                                     Text(element.localizedDescription)
                                         .normal()
+                                        .fixedSize()
                                     Spacer()
                                     Image("X")
                                         .resizable()
@@ -171,6 +172,7 @@ extension Preference {
                                             .frame(width: 12, height: 12)
                                         Text(element.localizedDescription)
                                             .normal()
+                                            .fixedSize()
                                         Spacer()
                                     }
                                     .padding(.vertical, 8)
