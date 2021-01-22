@@ -34,7 +34,7 @@ class MemoryTopStore: ObservableObject {
         firstLoaded = false
         dataAvailable = false
         topProcesses = []
-        task = shellPipe("top -l 0 -n 5 -stats pid,command,rsize -s \(refreshRate) -orsize") { string in
+        task = shellPipe("top -l 0 -n 7 -stats pid,command,rsize -s \(refreshRate) -orsize") { string in
             print(string)
             let rows = string.split(separator: "\n", omittingEmptySubsequences: false).map { String($0) }
 
@@ -48,7 +48,7 @@ class MemoryTopStore: ObservableObject {
                     let runningApps = NSWorkspace.shared.runningApplications
                     let result: [RamUsage] = ((separatorIndex + 2)..<rows.count).compactMap { index in
                         let row = rows[index].split(separator: " ").map { String($0) }
-                        guard row.count >= 2, let pid = Int(row[0]), let rawRamString = row.last, let ram = Double(rawRamString.filter("0123456789.".contains)) else {
+                        guard row.count >= 2, let pid = Int(row[0]), let rawRamString = row.last, let ram = Double(rawRamString.filter("0123456789.".contains)), pid != 0 else {
                             return nil
                         }
 
@@ -58,7 +58,8 @@ class MemoryTopStore: ObservableObject {
                     }
                     Print("RAM top is updating")
                     DispatchQueue.main.async { [self] in
-                        topProcesses = result
+                        print(result.count)
+                        topProcesses = result.count < 5 ? result.dropLast(0) : result.dropLast(1)
                         if !firstLoaded {
                             firstLoaded = true
                         } else if !dataAvailable {

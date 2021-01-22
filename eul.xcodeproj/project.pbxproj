@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6232DD3725BB3A4300FBCF4D /* RamProcessComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6232DD3625BB3A4300FBCF4D /* RamProcessComponentView.swift */; };
 		62F2121125B69B5700642EE8 /* RamProcessRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F2121025B69B5700642EE8 /* RamProcessRowView.swift */; };
 		62F2121F25B808C600642EE8 /* MemoryTopStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F2121E25B808C600642EE8 /* MemoryTopStore.swift */; };
 		6C07E8A825167DBF00F728F9 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 6C07E8A725167DBF00F728F9 /* LaunchAtLogin */; };
@@ -321,6 +322,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6232DD3625BB3A4300FBCF4D /* RamProcessComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamProcessComponentView.swift; sourceTree = "<group>"; };
 		62F2121025B69B5700642EE8 /* RamProcessRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamProcessRowView.swift; sourceTree = "<group>"; };
 		62F2121E25B808C600642EE8 /* MemoryTopStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTopStore.swift; sourceTree = "<group>"; };
 		6C05F2C725120517004A0F72 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
@@ -575,6 +577,7 @@
 				6C993B8D2517909200586C6B /* MiniSectionView.swift */,
 				6C192536256D5C38006B0D73 /* HorizontalOrganizingView.swift */,
 				62F2121025B69B5700642EE8 /* RamProcessRowView.swift */,
+				6232DD3625BB3A4300FBCF4D /* RamProcessComponentView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1357,6 +1360,7 @@
 				6C1FA3FE24A7118000CA7F71 /* Info.swift in Sources */,
 				6C993B902517920600586C6B /* BatteryMenuBlockView.swift in Sources */,
 				6C79AD362539EBE60033845C /* ProcessUsage.swift in Sources */,
+				6232DD3725BB3A4300FBCF4D /* RamProcessComponentView.swift in Sources */,
 				62F2121125B69B5700642EE8 /* RamProcessRowView.swift in Sources */,
 				6CDBB4C525447D8B00D01EA0 /* ComponentsStore.swift in Sources */,
 				6C7DB6D124E0300E00133B06 /* NetworkStore.swift in Sources */,
