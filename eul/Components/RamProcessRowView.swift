@@ -41,7 +41,6 @@ struct RamProcessRowView: View {
                 }
             }
             RamProcessComponentView(process: process, section: section)
-
         }
     }
 }

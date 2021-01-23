@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct RamProcessComponentView: View {
-    @State var process:RamUsage
-    @State var section:String
+    @State var process: RamUsage
+    @State var section: String
     var body: some View {
         HStack(spacing: 6) {
             if let runningApp = process.runningApp, runningApp.canBeActivated {
@@ -55,5 +55,3 @@ struct RamProcessComponentView: View {
         .frame(width: 60, alignment: .trailing)
     }
 }
-
-

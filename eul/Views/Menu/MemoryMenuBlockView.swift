@@ -12,7 +12,7 @@ import SystemKit
 
 struct MemoryMenuBlockView: View {
     @EnvironmentObject var memoryStore: MemoryStore
-    @EnvironmentObject var memoryTopStore: MemoryTopStore
+    @EnvironmentObject var memoryTopStore: TopStore
     var memorySizeMB = System.physicalMemory() * 1000
 
     var body: some View {
@@ -54,14 +54,14 @@ struct MemoryMenuBlockView: View {
             SeparatorView()
 
             VStack(spacing: 8) {
-                if !memoryTopStore.dataAvailable {
+                if !memoryTopStore.ramDataAvailable {
                     Spacer()
                     Text("cpu.waiting_status_report".localized())
                         .secondaryDisplayText()
                         .frame(maxWidth: .infinity, alignment: .center)
                     Spacer()
                 } else {
-                    ForEach(memoryTopStore.topProcesses) {
+                    ForEach(memoryTopStore.ramTopProcesses) {
                         RamProcessRowView(section: "cpu", process: $0)
                     }
                 }

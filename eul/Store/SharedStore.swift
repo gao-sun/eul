@@ -12,8 +12,7 @@ enum SharedStore {
     static let visibilityCheckClosure = { StatusBarManager.shared.checkVisibilityIfNeeded() }
     static let battery = BatteryStore()
     static let cpu = CpuStore()
-    static let cpuTop = CpuTopStore()
-    static let memoryTop = MemoryTopStore()
+    static let topStore = TopStore()
     static let disk = DiskStore()
     static let fan = FanStore()
     static let memory = MemoryStore()
@@ -55,7 +54,6 @@ extension View {
         environmentObject(SharedStore.ui)
             .environmentObject(SharedStore.battery)
             .environmentObject(SharedStore.cpu)
-            .environmentObject(SharedStore.cpuTop)
             .environmentObject(SharedStore.fan)
             .environmentObject(SharedStore.memory)
             .environmentObject(SharedStore.network)
@@ -72,6 +70,6 @@ extension View {
             .environmentObject(SharedStore.batteryTextComponents)
             .environmentObject(SharedStore.diskTextComponents)
             .environmentObject(SharedStore.fanTextComponents)
-            .environmentObject(SharedStore.memoryTop)
+            .environmentObject(SharedStore.topStore)
     }
 }

@@ -12,7 +12,7 @@ import SwiftUI
 struct CpuMenuBlockView: View {
     @EnvironmentObject var preferenceStore: PreferenceStore
     @EnvironmentObject var cpuStore: CpuStore
-    @EnvironmentObject var cpuTopStore: CpuTopStore
+    @EnvironmentObject var cpuTopStore: TopStore
 
     var body: some View {
         VStack(spacing: 8) {
@@ -62,10 +62,10 @@ struct CpuMenuBlockView: View {
             if preferenceStore.showCPUTopActivities {
                 SeparatorView()
                 VStack(spacing: 8) {
-                    ForEach(cpuTopStore.topProcesses) {
+                    ForEach(cpuTopStore.CPUtopProcesses) {
                         ProcessRowView(section: "cpu", process: $0)
                     }
-                    if !cpuTopStore.dataAvailable {
+                    if !cpuTopStore.cpuDataAvailable {
                         Spacer()
                         Text("cpu.waiting_status_report".localized())
                             .secondaryDisplayText()
