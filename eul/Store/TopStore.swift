@@ -19,7 +19,7 @@ class TopStore: ObservableObject {
     @ObservedObject var preferenceStore = SharedStore.preference
     @Published var cpuDataAvailable = false
     @Published var ramDataAvailable = false
-    @Published var CPUtopProcesses: [ProcessCpuUsage] = []
+    @Published var cpuTopProcesses: [ProcessCpuUsage] = []
     @Published var ramTopProcesses: [RamUsage] = []
 
     enum taskType {
@@ -47,7 +47,7 @@ class TopStore: ObservableObject {
         firstLoaded = false
         cpuDataAvailable = false
         ramDataAvailable = false
-        ramTopProcesses = []; CPUtopProcesses = []
+        ramTopProcesses = []; cpuTopProcesses = []
 
         // MARK: Parsing command for CPU top processes
 
@@ -69,7 +69,7 @@ class TopStore: ObservableObject {
 
                 Print("CPU top is updating")
                 DispatchQueue.main.async { [self] in
-                    CPUtopProcesses = result
+                    cpuTopProcesses = result
                     if !firstLoaded {
                         firstLoaded = true
                     } else if !cpuDataAvailable {

@@ -61,8 +61,19 @@ struct MemoryMenuBlockView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                     Spacer()
                 } else {
-                    ForEach(memoryTopStore.ramTopProcesses) {
-                        RamProcessRowView(section: "cpu", process: $0)
+                    ForEach(memoryTopStore.ramTopProcesses) { process in
+                        ProcessRowView(section: "cpu", process: process) {
+                            AnyView(
+                                HStack {
+                                    Text("\(ByteUnit(process.usageAmount).readable)")
+                                        .displayText()
+                                        .frame(alignment: .trailing)
+                                    Text(doubleToStringSingleDigit(for: process.percentage))
+                                        .displayText()
+                                        .frame(width: 35, alignment: .trailing)
+                                }
+                            )
+                        }
                     }
                 }
             }

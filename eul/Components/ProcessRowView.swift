@@ -72,3 +72,7 @@ struct ProcessRowView<Usage: ProcessUsage>: View {
         }
     }
 }
+
+func doubleToStringSingleDigit(for number: Double) -> String {
+    return String(format: "%.1f", number)
+}

@@ -62,7 +62,7 @@ struct CpuMenuBlockView: View {
             if preferenceStore.showCPUTopActivities {
                 SeparatorView()
                 VStack(spacing: 8) {
-                    ForEach(cpuTopStore.CPUtopProcesses) {
+                    ForEach(cpuTopStore.cpuTopProcesses) {
                         ProcessRowView(section: "cpu", process: $0)
                     }
                     if !cpuTopStore.cpuDataAvailable {
