@@ -6,15 +6,17 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
+import Combine
 import Foundation
 import SharedLibrary
 import SwiftUI
 
 class DiskStore: ObservableObject, Refreshable {
-    static let volumesPath = "/Volumes"
+    private var activeCancellable: AnyCancellable?
 
     @Published var list: DiskList?
     @ObservedObject var componentsStore = SharedStore.components
+    @ObservedObject var menuComponentsStore = SharedStore.menuComponents
 
     var ceilingBytes: UInt64? {
         list?.disks.reduce(0) { $0 + $1.size }
@@ -57,11 +59,14 @@ class DiskStore: ObservableObject, Refreshable {
             return
         }
 
-        let volumes = (try? FileManager.default.contentsOfDirectory(atPath: DiskStore.volumesPath)) ?? []
+        guard let volumes = (try? FileManager.default.contentsOfDirectory(atPath: DiskList.volumesPath)) else {
+            list = nil
+            return
+        }
 
         list = DiskList(disks: volumes.compactMap {
             guard
-                let attributes = try? FileManager.default.attributesOfFileSystem(forPath: DiskStore.volumesPath + "/" + $0),
+                let attributes = try? FileManager.default.attributesOfFileSystem(forPath: DiskList.pathForName($0)),
                 let size = attributes[FileAttributeKey.systemSize] as? UInt64,
                 let freeSize = attributes[FileAttributeKey.systemFreeSize] as? UInt64
             else {
@@ -74,5 +79,13 @@ class DiskStore: ObservableObject, Refreshable {
 
     init() {
         initObserver(for: .StoreShouldRefresh)
+        // refresh immediately to prevent "N/A"
+        activeCancellable = Publishers
+            .CombineLatest(componentsStore.$activeComponents, menuComponentsStore.$activeComponents)
+            .sink { _ in
+                DispatchQueue.main.async {
+                    self.refresh()
+                }
+            }
     }
 }

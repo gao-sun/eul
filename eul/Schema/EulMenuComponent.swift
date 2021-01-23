@@ -33,6 +33,8 @@ enum EulMenuComponent: String, CaseIterable, Identifiable, JSONCodabble {
             return AnyView(NetworkMenuBlockMenuView())
         case .Bluetooth:
             return AnyView(BluetoothMenuBlockView())
+        case .Disk:
+            return AnyView(DiskMenuBlockView())
         }
     }
 
@@ -42,13 +44,14 @@ enum EulMenuComponent: String, CaseIterable, Identifiable, JSONCodabble {
     case Battery
     case Network
     case Bluetooth
+    case Disk
 
     static var allCases: [EulMenuComponent] {
-        let components: [EulMenuComponent] = [.CPU, .Fan, .Memory, .Network, .Bluetooth]
+        let components: [EulMenuComponent] = [.CPU, .Fan, .Memory, .Network, .Bluetooth, .Disk]
         return SharedStore.battery.isValid ? components + [.Battery] : components
     }
 
     static var defaultComponents: [Self] {
-        allCases.filter { $0 != .Bluetooth }
+        allCases.filter { ![.Bluetooth, .Disk].contains($0) }
     }
 }

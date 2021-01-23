@@ -172,6 +172,8 @@
 		6CEF771424DD95D7007C3640 /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEF771324DD95D7007C3640 /* BatteryView.swift */; };
 		6CF28D0925168B8200EBE9CB /* SystemKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6CF28D0825168B8200EBE9CB /* SystemKit */; };
 		6CF28D0D251758EE00EBE9CB /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF28D0C251758EE00EBE9CB /* StatusBarView.swift */; };
+		6CFAB7F925BC10E6002F5F48 /* DiskMenuBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFAB7F825BC10E6002F5F48 /* DiskMenuBlockView.swift */; };
+		6CFAB7FC25BC12E1002F5F48 /* MenuInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFAB7FB25BC12E1002F5F48 /* MenuInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -469,6 +471,8 @@
 		6CEF771124DD94C8007C3640 /* BatteryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryStore.swift; sourceTree = "<group>"; };
 		6CEF771324DD95D7007C3640 /* BatteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
 		6CF28D0C251758EE00EBE9CB /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		6CFAB7F825BC10E6002F5F48 /* DiskMenuBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskMenuBlockView.swift; sourceTree = "<group>"; };
+		6CFAB7FB25BC12E1002F5F48 /* MenuInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInfoView.swift; sourceTree = "<group>"; };
 		6D4A9C042546317200B9BF25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CA22A43256ED0140065FC1A /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B00D5BCE254ABAB900395E7E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -576,6 +580,7 @@
 				6C387DC2253AEF3600CBB81B /* ProcessRowView.swift */,
 				6C993B8D2517909200586C6B /* MiniSectionView.swift */,
 				6C192536256D5C38006B0D73 /* HorizontalOrganizingView.swift */,
+				6CFAB7FB25BC12E1002F5F48 /* MenuInfoView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -897,6 +902,7 @@
 				6C993B8B25178D3B00586C6B /* MemoryMenuBlockView.swift */,
 				6C387DC8253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift */,
 				6C33CEC82517634400345977 /* StatusMenuView.swift */,
+				6CFAB7F825BC10E6002F5F48 /* DiskMenuBlockView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1288,6 +1294,7 @@
 				6C321FBD25B5C46B00BFED76 /* BluetoothStore.swift in Sources */,
 				6C572D7F254EFD4700EF9904 /* DiskStore.swift in Sources */,
 				6C321FC025B5C8EF00BFED76 /* BluetoothMenuBlockView.swift in Sources */,
+				6CFAB7FC25BC12E1002F5F48 /* MenuInfoView.swift in Sources */,
 				6C1FA40424A7187F00CA7F71 /* FanView.swift in Sources */,
 				6C7DB6CF24E02F0600133B06 /* Shell.swift in Sources */,
 				6C192533256D5984006B0D73 /* SharedStore.swift in Sources */,
@@ -1334,6 +1341,7 @@
 				6C79AD382539F9030033845C /* MenuActionButtonView.swift in Sources */,
 				6C7A8D9125581E7D00FF52ED /* ComponentConfigStore.swift in Sources */,
 				6CC73857256A9E4D003A15AC /* PreferenceComponentConfigView.swift in Sources */,
+				6CFAB7F925BC10E6002F5F48 /* DiskMenuBlockView.swift in Sources */,
 				6CEF48A6255C366A002E4D73 /* SizePreferenceKey.swift in Sources */,
 				6C7DB6D524E7A75E00133B06 /* NetworkView.swift in Sources */,
 				6C19252F256D56BF006B0D73 /* JSONCodable.swift in Sources */,

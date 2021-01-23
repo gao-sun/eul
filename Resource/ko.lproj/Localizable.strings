@@ -119,6 +119,9 @@
 // MARK: Bluetooth
 "bluetooth" = "Bluetooth";
 
+// MARK: Disk
+"disk.eject" = "Eject";
+
 // MARK: Language
 "language" = "언어";
 "language.ar" = "العربية";
