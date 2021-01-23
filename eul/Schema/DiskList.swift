@@ -8,13 +8,12 @@
 
 import Foundation
 
-struct DiskList: Codable {
-    struct Container: Codable {
-        let APFSContainerUUID: String
-        let CapacityCeiling: UInt64
-        let CapacityFree: UInt64
-        let ContainerReference: String
+struct DiskList {
+    struct Disk {
+        let name: String
+        let size: UInt64
+        let freeSize: UInt64
     }
 
-    let Containers: [Container]
+    let disks: [Disk]
 }
