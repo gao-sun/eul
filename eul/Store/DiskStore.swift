@@ -6,18 +6,24 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
+import Combine
 import Foundation
 import SharedLibrary
+import SwiftUI
 
 class DiskStore: ObservableObject, Refreshable {
+    private var activeCancellable: AnyCancellable?
+
     @Published var list: DiskList?
+    @ObservedObject var componentsStore = SharedStore.components
+    @ObservedObject var menuComponentsStore = SharedStore.menuComponents
 
     var ceilingBytes: UInt64? {
-        list?.Containers.reduce(0) { $0 + $1.CapacityCeiling }
+        list?.disks.reduce(0) { $0 + $1.size }
     }
 
     var freeBytes: UInt64? {
-        list?.Containers.reduce(0) { $0 + $1.CapacityFree }
+        list?.disks.reduce(0) { $0 + $1.freeSize }
     }
 
     var usageString: String {
@@ -49,21 +55,37 @@ class DiskStore: ObservableObject, Refreshable {
     }
 
     @objc func refresh() {
-        // APFS will be good from Catalina
-        let plistString = shell("diskutil apfs list -plist") ?? ""
-        let propertiesDecoder = PropertyListDecoder()
-
-        if
-            let data = plistString.data(using: .utf8),
-            let list = try? propertiesDecoder.decode(DiskList.self, from: data)
-        {
-            self.list = list
-        } else {
-            list = nil
+        guard componentsStore.activeComponents.contains(.Disk) else {
+            return
         }
+
+        guard let volumes = (try? FileManager.default.contentsOfDirectory(atPath: DiskList.volumesPath)) else {
+            list = nil
+            return
+        }
+
+        list = DiskList(disks: volumes.compactMap {
+            guard
+                let attributes = try? FileManager.default.attributesOfFileSystem(forPath: DiskList.pathForName($0)),
+                let size = attributes[FileAttributeKey.systemSize] as? UInt64,
+                let freeSize = attributes[FileAttributeKey.systemFreeSize] as? UInt64
+            else {
+                return nil
+            }
+
+            return DiskList.Disk(name: $0, size: size, freeSize: freeSize)
+        })
     }
 
     init() {
         initObserver(for: .StoreShouldRefresh)
+        // refresh immediately to prevent "N/A"
+        activeCancellable = Publishers
+            .CombineLatest(componentsStore.$activeComponents, menuComponentsStore.$activeComponents)
+            .sink { _ in
+                DispatchQueue.main.async {
+                    self.refresh()
+                }
+            }
     }
 }

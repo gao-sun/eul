@@ -9,22 +9,6 @@
 import CoreBluetooth
 import SwiftUI
 
-struct BluetoothBatteryLevelView: View {
-    var initial: Character?
-    var batteryLevel: Int
-
-    var body: some View {
-        HStack(spacing: 4) {
-            if let initial = initial {
-                Text(String(initial))
-                    .miniSection()
-            }
-            Text("\(batteryLevel)%")
-                .displayText()
-        }
-    }
-}
-
 struct BluetoothRowView: View {
     let device: BluetoothDevice
     var nameWidth: CGFloat = 200
@@ -38,19 +22,19 @@ struct BluetoothRowView: View {
             Spacer()
             if let plistDevice = device.plistDevice, device.hasPlistBattery {
                 if let batteryPercent = plistDevice.BatteryPercent {
-                    BluetoothBatteryLevelView(batteryLevel: Int(batteryPercent * 100))
+                    MenuInfoView(text: "\(Int(batteryPercent * 100))%")
                 }
                 if let batteryPercent = plistDevice.BatteryPercentLeft {
-                    BluetoothBatteryLevelView(initial: "L", batteryLevel: batteryPercent)
+                    MenuInfoView(label: "L", text: "\(batteryPercent)%")
                 }
                 if let batteryPercent = plistDevice.BatteryPercentRight {
-                    BluetoothBatteryLevelView(initial: "R", batteryLevel: batteryPercent)
+                    MenuInfoView(label: "R", text: "\(batteryPercent)%")
                 }
                 if let batteryPercent = plistDevice.BatteryPercentCase {
-                    BluetoothBatteryLevelView(initial: "C", batteryLevel: batteryPercent)
+                    MenuInfoView(label: "C", text: "\(batteryPercent)%")
                 }
             } else if let batteryLevel = device.batteryLevel {
-                BluetoothBatteryLevelView(batteryLevel: Int(batteryLevel))
+                MenuInfoView(text: "\(batteryLevel)%")
             }
         }
     }
@@ -65,8 +49,7 @@ struct BluetoothMenuBlockView: View {
                 .menuSection()
             if bluetoothStore.devices.count == 0 {
                 Text("ui.empty".localized())
-                    .font(.system(size: 12, weight: .regular))
-                    .foregroundColor(.secondary)
+                    .placeholder()
                     .padding(.bottom, 4)
             }
             ForEach(bluetoothStore.devices) {
