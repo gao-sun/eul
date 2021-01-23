@@ -26,8 +26,8 @@ struct DiskRowView: View {
                 .secondaryDisplayText()
                 .lineLimit(1)
             Spacer()
-            MenuInfoView(label: "F", text: disk.freeSizeString)
             MenuInfoView(label: "U", text: disk.usedSizeString)
+            MenuInfoView(label: "F", text: disk.freeSizeString)
             if isEjecting {
                 ActivityIndicatorView {
                     $0.style = .spinning
