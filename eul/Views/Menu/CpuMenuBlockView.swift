@@ -50,12 +50,6 @@ struct CpuMenuBlockView: View {
                                 MiniSectionView(title: "cpu.temperature", value: SmcControl.shared.formatTemp(temp))
                             }
                         }
-                        cpuStore.gpuTemp.map { temp in
-                            Group {
-                                Spacer()
-                                MiniSectionView(title: "gpu.temperature", value: SmcControl.shared.formatTemp(temp))
-                            }
-                        }
                     }
                 }
             }

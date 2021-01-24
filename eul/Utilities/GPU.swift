@@ -62,7 +62,7 @@ extension GPU {
             return Statistic(
                 pciMatch: pciMatch,
                 usagePercentage: usagePercentage,
-                temperature: statistics["Temperature(C)"] as? Double,
+                temperature: statistics["Temperature(C)"] as? Double ?? SmcControl.shared.gpuProximityTemperature,
                 coreClock: statistics["Core Clock(MHz)"] as? Int,
                 memoryClock: statistics["Memory Clock(MHz)"] as? Int
             )
