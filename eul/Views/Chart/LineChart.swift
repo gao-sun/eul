@@ -11,6 +11,7 @@ import SwiftUI
 
 struct LineChart: View {
     static var defaultMaxPointCount = 10
+    static let minimumLineHeight: CGFloat = 0.5
 
     var points: [Double] = []
     var maxPointCount = defaultMaxPointCount
@@ -42,7 +43,7 @@ struct LineChart: View {
             from: 0,
             through: maxX,
             by: 0.5
-        ).map { CGPoint(x: $0, y: sequence.sample(atTime: $0) as? CGFloat ?? 0) }
+        ).map { CGPoint(x: $0, y: max(LineChart.minimumLineHeight, sequence.sample(atTime: $0) as? CGFloat ?? 0)) }
 
         var path = Path()
 
@@ -75,7 +76,7 @@ struct LineChart: View {
                 closedPath()
                     .fill(Color.text)
                 path()
-                    .stroke(Color.text, style: StrokeStyle(lineWidth: 2, lineJoin: .round))
+                    .stroke(Color.text, style: StrokeStyle(lineWidth: LineChart.minimumLineHeight, lineJoin: .round))
             }
             .rotationEffect(.degrees(180), anchor: .center)
             .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))

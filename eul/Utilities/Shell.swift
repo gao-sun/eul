@@ -10,7 +10,7 @@ import Foundation
 
 // https://stackoverflow.com/questions/26971240/how-do-i-run-an-terminal-command-in-a-swift-script-e-g-xcodebuild
 @discardableResult
-func shell(_ args: String...) -> String? {
+func shellData(_ args: [String]) -> Data? {
     let task = Process()
     let pipe = Pipe()
     let error = Pipe()
@@ -29,7 +29,6 @@ func shell(_ args: String...) -> String? {
     }
 
     let data = pipe.fileHandleForReading.readDataToEndOfFile()
-    let output = String(data: data, encoding: .utf8)
 
     task.waitUntilExit()
 
@@ -37,7 +36,16 @@ func shell(_ args: String...) -> String? {
         return nil
     }
 
-    return output
+    return data
+}
+
+@discardableResult
+func shell(_ args: String...) -> String? {
+    guard let data = shellData(args) else {
+        return nil
+    }
+
+    return String(data: data, encoding: .utf8)
 }
 
 @discardableResult

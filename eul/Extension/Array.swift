@@ -12,4 +12,8 @@ extension Array {
     func appending(_ newElement: Element, condition: Bool = true) -> [Element] {
         condition ? self + [newElement] : self
     }
+
+    func appending(_ newElements: [Element], condition: Bool = true) -> [Element] {
+        condition ? self + newElements : self
+    }
 }
