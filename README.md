@@ -4,7 +4,7 @@
 
 # eul
 
-![Preview](https://user-images.githubusercontent.com/14722250/105518977-e0127580-5d13-11eb-897e-5199288a61d0.jpg)
+![Preview](https://user-images.githubusercontent.com/14722250/105626766-f718ab00-5e6c-11eb-9761-661ff85c8faf.jpg)
 
 ## Highlights
 
