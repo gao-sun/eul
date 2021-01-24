@@ -1,0 +1,165 @@
+/* 
+Localizable.strings
+eul
+
+Created by Gao Sun on 2020/9/12.
+Modified by Tekrific on 2021/24/01
+Copyright © 2020 Gao Sun. All rights reserved.
+
+*/
+
+// MARK: Battery
+"battery" = "Batteri";
+"battery.charge" = "Laddning";
+"battery.power_source" = "Strömkälla";
+"battery.power_source.battery" = "Batteri";
+"battery.power_source.acPower" = "AC ström";
+"battery.power_source.unknown" = "Okänd";
+"battery.is_charging" = "Laddas";
+"battery.to_full_charge" = "till fulladning";
+"battery.to_empty" = "till tömt";
+"battery.health" = "Hälsa";
+"battery.max_capacity" = "Max kapac.";
+"battery.design_capacity" = "Design kapac.";
+"battery.health_percentage" = "Hälsa procent";
+"battery.cycle_count" = "Cykelräknare";
+"battery.cycle" = "Cykel";
+"battery.condition" = "Tillstånd";
+"battery.condition.good" = "Bra";
+"battery.condition.fair" = "Ok";
+"battery.condition.poor" = "Dåligt";
+
+// MARK: CPU / Info
+"cpu.usage" = "Användning";
+"cpu.idle" = "Inaktiv";
+"cpu.temperature" = "Temp";
+"gpu.temperature" = "GPU Temp";
+"cpu.info" = "Info";
+"cpu.physical_cores" = "Fysisk kärna";
+"cpu.logical_cores" = "Logisk kärna";
+"cpu.up_time" = "Upp tid";
+"cpu.thermal_level" = "Termisk nivå";
+"cpu.system" = "System";
+"cpu.user" = "Användare";
+"cpu.nice" = "Nice";
+"cpu.waiting_status_report" = "Väntar på statusrapport";
+
+// MARK: Fan
+"fan" = "Fläkt";
+"fan.current" = "Nuvarande";
+"fan.min" = "min";
+"fan.max" = "max";
+
+// MARK: Memory
+"memory" = "Minne";
+"memory.total" = "Total";
+"memory.free" = "Tillgängligt";
+"memory.cached_files" = "cachelagrade filer";
+"memory.temp" = "Temp";
+"memory.usage" = "Användning";
+"memory.app" = "App";
+"memory.wired" = "Kärna";
+"memory.compressed" = "Komprimerat";
+
+// MARK: Network
+"network" = "Nätverk";
+"network.in" = "Ingående";
+"network.out" = "Utgående";
+"network.no_activity" = "Ingen aktivitet";
+
+// MARK: Menu
+"menu.summary" = "Översikt";
+"menu.yes" = "ja";
+"menu.no" = "nej";
+"menu.preferences" = "Inställningar";
+"menu.quit" = "Avsluta eul";
+"menu.show_cpu_top_activities" = "Visa CPUs toppaktiviteter";
+"menu.show_network_top_activities" = "Visa nätverkets toppaktiviteter";
+
+// MARK: Temperature
+"temp.temperature" = "Temperatur";
+"temp.celsius" = "Celsius";
+"temp.fahrenheit" = "Fahrenheit";
+"temp.kelvin" = "Kelvin";
+
+// MARK: Text Display
+"text_display" = "Textvisning";
+"text_display.compact" = "kompakt";
+"text_display.single_line" = "Enskild rad";
+
+// MARK: Font Design
+"font_design" = "Typsnitt";
+"font_design.default" = "standard";
+"font_design.monospaced" = "monospaced";
+
+// MARK: Component
+"component.status_bar" = "Statusrad";
+"component.drag_to_reorder" = "Dra för att omordna";
+"component.available" = "Tillgänglig";
+"component.click_to_append" = "Klicka för att lägga till";
+"component.cpu" = "CPU";
+"component.fan" = "Fläkt";
+"component.memory" = "Minne";
+"component.battery" = "Batteri";
+"component.network" = "Nätverk";
+"component.disk" = "Hårddisk";
+
+// MARK: Process
+"process" = "process";
+"process.bring_to_front" = "Lägg främst";
+"process.reveal_in_finder" = "Visa";
+"process.terminate" = "Avsluta";
+"process.force_terminate" = "Tvinga avslut";
+"process.terminate_alert.text.%@" = "Vill du vverkligen avsluta @p?";
+"process.terminate_alert.command.%@" = "kommando: %@";
+"process.terminate_alert.cancel" = "Avbryt";
+
+// MARK: Language
+"language" = "Språk";
+"language.ar" = "العربية";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+"language.pt" = "Português";
+"language.ja" = "日本語";
+"language.fr" = "Français";
+"language.mn" = "Монгол";
+"language.ko" = "한국어";
+"language.dk" = "Dansk";
+*language.se" = "Svenska";
+
+// MARK: General UI
+"ui.app" = "App";
+"ui.general" = "generell";
+"ui.version" = "version";
+"ui.checking_update" = "Letar efter uppdateringar";
+"ui.up_to_date" = "Uppdaterad";
+"ui.new_version" = "Uppdatering tillgänlig";
+"ui.download" = "Hämtar";
+"ui.launch_at_login" = "start med login";
+"ui.display" = "Skärm";
+"ui.components" = "Komponenter";
+"ui.show_components_in_status_bar" = "Visa komponenter i statusraden";
+"ui.show_icon" = "Visa ikoner";
+"ui.refresh_rate" = "Uppdateringshastighet";
+"ui.smc" = "SMC";
+"ui.network" = "Nätverk";
+"ui.menu_view" = "Menyvisning";
+"ui.empty" = "Tom";
+"ui.hidden_by_system.title" = "eul menyelement är dolda av systemet";
+"ui.hidden_by_system.message" = "Öppna inställningar, och reducera antalet komponenter";
+"ui.hidden_by_system.open" = "att öppna";
+"ui.hidden_by_system.dismiss" = "avfärda";
+
+//MARK: Widget
+"widget.not_available" = "eul är inte tillgängligt";
+"widget.cpu.title" = "CPU Widget";
+"widget.cpu.description" = "Visa CPU-detaljer";
+"widget.memory.title" = "Lagring Widget";
+"widget.memory.description" = "Visa lagringsdetaljer";
+"widget.battery.title" = "Batteri Widget";
+"widget.battery.description" = "Visa batteri detaljer";
+"widget.network.title" = "Nätverks Widget";
+"widget.network.description" = "Visa nätverksdetaljer";
