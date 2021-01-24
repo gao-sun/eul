@@ -96,6 +96,7 @@
 "component.available" = "追加できる項目";
 "component.click_to_append" = "クリックして追加";
 "component.cpu" = "CPU";
+"component.gpu" = "GPU";
 "component.fan" = "ファン";
 "component.memory" = "メモリ";
 "component.battery" = "バッテリー";

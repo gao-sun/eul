@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C02715F25BD40EA006C54E6 /* SystemProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C02715E25BD40EA006C54E6 /* SystemProfiler.swift */; };
+		6C02716325BD55C4006C54E6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C02716225BD55C4006C54E6 /* String.swift */; };
+		6C02716625BD56AE006C54E6 /* GpuMenuBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C02716525BD56AE006C54E6 /* GpuMenuBlockView.swift */; };
+		6C02716925BD5719006C54E6 /* GpuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C02716825BD5719006C54E6 /* GpuView.swift */; };
+		6C02716C25BD6491006C54E6 /* GpuTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C02716B25BD6491006C54E6 /* GpuTextComponent.swift */; };
 		6C07E8A825167DBF00F728F9 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 6C07E8A725167DBF00F728F9 /* LaunchAtLogin */; };
 		6C15933F257241DB00FDE7EA /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C15933E257241DB00FDE7EA /* Collection.swift */; };
 		6C16BEEC2552EC9700CCF5B7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C58053F250CC6B8007F467A /* Localizable.strings */; };
@@ -327,6 +332,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6C02715E25BD40EA006C54E6 /* SystemProfiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProfiler.swift; sourceTree = "<group>"; };
+		6C02716225BD55C4006C54E6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		6C02716525BD56AE006C54E6 /* GpuMenuBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpuMenuBlockView.swift; sourceTree = "<group>"; };
+		6C02716825BD5719006C54E6 /* GpuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpuView.swift; sourceTree = "<group>"; };
+		6C02716B25BD6491006C54E6 /* GpuTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpuTextComponent.swift; sourceTree = "<group>"; };
 		6C05F2C725120517004A0F72 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		6C15933E257241DB00FDE7EA /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		6C16BF082552EFFF00CCF5B7 /* WidgetSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSectionView.swift; sourceTree = "<group>"; };
@@ -608,6 +618,7 @@
 				6C3A0033256FF7510030AB70 /* BatteryTextComponent.swift */,
 				6C3A0036256FFB330030AB70 /* DiskTextComponent.swift */,
 				6CC1EBBC25769E2400BC05CA /* FanTextComponent.swift */,
+				6C02716B25BD6491006C54E6 /* GpuTextComponent.swift */,
 			);
 			path = TextComponents;
 			sourceTree = "<group>";
@@ -622,6 +633,7 @@
 				6C7DB6D424E7A75E00133B06 /* NetworkView.swift */,
 				6CF28D0C251758EE00EBE9CB /* StatusBarView.swift */,
 				6C572D7C254EFB4E00EF9904 /* DiskView.swift */,
+				6C02716825BD5719006C54E6 /* GpuView.swift */,
 			);
 			path = StatusBar;
 			sourceTree = "<group>";
@@ -629,24 +641,25 @@
 		6C1FA40C24AA161900CA7F71 /* Schema */ = {
 			isa = PBXGroup;
 			children = (
-				6C192539256FE4D6006B0D73 /* TextComponents */,
+				6C321FC225BB12A600BFED76 /* BluetoothDevice.swift */,
 				6CC7385D256BEABA003A15AC /* Dict.swift */,
 				6C572D80254EFD5B00EF9904 /* DiskList.swift */,
 				6CDE6C7724F112D700463114 /* EulComponent.swift */,
 				6C7A8D8C255802FF00FF52ED /* EulComponentConfig.swift */,
 				6CDBB4C225447B7500D01EA0 /* EulMenuComponent.swift */,
+				6CC1EBB625769B1F00BC05CA /* FanData.swift */,
 				6CEF48A1255C33CE002E4D73 /* FramePreferenceKey.swift */,
 				6C19252E256D56BF006B0D73 /* JSONCodable.swift */,
+				6C19253E256FEBE5006B0D73 /* LocalizedStringConvertible.swift */,
 				6C7DB6E524E82C5A00133B06 /* Preference.swift */,
 				6C79AD352539EBE60033845C /* ProcessUsage.swift */,
 				6C1FA40D24AA162800CA7F71 /* Refreshable.swift */,
 				6CDE6C7324F0047600463114 /* SizeChangeView.swift */,
 				6CEF48A5255C366A002E4D73 /* SizePreferenceKey.swift */,
 				6C7DB6E724E82C7700133B06 /* StringEnum.swift */,
-				6C19253E256FEBE5006B0D73 /* LocalizedStringConvertible.swift */,
-				6CC1EBB625769B1F00BC05CA /* FanData.swift */,
+				6C02715E25BD40EA006C54E6 /* SystemProfiler.swift */,
 				6CC1EBB925769B4400BC05CA /* TemperatureData.swift */,
-				6C321FC225BB12A600BFED76 /* BluetoothDevice.swift */,
+				6C192539256FE4D6006B0D73 /* TextComponents */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -850,6 +863,7 @@
 				6C387DC4253AF46000CBB81B /* NSRunningApplication.swift */,
 				6C15933E257241DB00FDE7EA /* Collection.swift */,
 				6CC1EBBF2576A0E200BC05CA /* Array.swift */,
+				6C02716225BD55C4006C54E6 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -912,6 +926,7 @@
 				6C387DC8253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift */,
 				6C33CEC82517634400345977 /* StatusMenuView.swift */,
 				6CFAB7F825BC10E6002F5F48 /* DiskMenuBlockView.swift */,
+				6C02716525BD56AE006C54E6 /* GpuMenuBlockView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1316,6 +1331,7 @@
 				6C58053A250CAEC3007F467A /* StatusBarTextView.swift in Sources */,
 				6C7DB6E424E80F9400133B06 /* PreferenceDisplayView.swift in Sources */,
 				6C321FC325BB12A600BFED76 /* BluetoothDevice.swift in Sources */,
+				6C02716625BD56AE006C54E6 /* GpuMenuBlockView.swift in Sources */,
 				6CE33C7F25260E3D00831857 /* PreferenceRefreshRateView.swift in Sources */,
 				6C3A0034256FF7510030AB70 /* BatteryTextComponent.swift in Sources */,
 				6C993B8A2517868B00586C6B /* FanMenuBlockView.swift in Sources */,
@@ -1326,6 +1342,7 @@
 				6C16BF10255428EF00CCF5B7 /* StableWidth.swift in Sources */,
 				6C7DB6E624E82C5A00133B06 /* Preference.swift in Sources */,
 				6C993B8E2517909200586C6B /* MiniSectionView.swift in Sources */,
+				6C02716925BD5719006C54E6 /* GpuView.swift in Sources */,
 				6CC1EBC02576A0E200BC05CA /* Array.swift in Sources */,
 				6C1FA3F824A70DF300CA7F71 /* CpuView.swift in Sources */,
 				6C1FA40024A712AA00CA7F71 /* SmcControl.swift in Sources */,
@@ -1345,6 +1362,7 @@
 				6C7A8D8D255802FF00FF52ED /* EulComponentConfig.swift in Sources */,
 				6C192543256FF01E006B0D73 /* MemoryTextComponent.swift in Sources */,
 				6C192537256D5C39006B0D73 /* HorizontalOrganizingView.swift in Sources */,
+				6C02716C25BD6491006C54E6 /* GpuTextComponent.swift in Sources */,
 				6CDE6C7224F0007D00463114 /* StatusBarItem.swift in Sources */,
 				6C1FA40B24AA139300CA7F71 /* NSNotification.swift in Sources */,
 				6C5DAD0A2556B2FF005F67C3 /* NetworkWidget.intentdefinition in Sources */,
@@ -1360,6 +1378,7 @@
 				6CDBB4C325447B7500D01EA0 /* EulMenuComponent.swift in Sources */,
 				6CC1EBB725769B1F00BC05CA /* FanData.swift in Sources */,
 				6CDBB4C1254462B100D01EA0 /* PreferenceSectionView.swift in Sources */,
+				6C02716325BD55C4006C54E6 /* String.swift in Sources */,
 				6C7DB6E824E82C7700133B06 /* StringEnum.swift in Sources */,
 				6CC0798C250CD793000D7DAC /* PreferenceGeneralView.swift in Sources */,
 				6C572D81254EFD5B00EF9904 /* DiskList.swift in Sources */,
@@ -1385,6 +1404,7 @@
 				6CDBB4C525447D8B00D01EA0 /* ComponentsStore.swift in Sources */,
 				6C7DB6D124E0300E00133B06 /* NetworkStore.swift in Sources */,
 				6C33CEC92517634400345977 /* StatusMenuView.swift in Sources */,
+				6C02715F25BD40EA006C54E6 /* SystemProfiler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -96,6 +96,7 @@
 "component.available" = "Verfügbar";
 "component.click_to_append" = "Zum Hinzufügen anklicken";
 "component.cpu" = "CPU";
+"component.gpu" = "GPU";
 "component.fan" = "Lüfter";
 "component.memory" = "Speicher";
 "component.battery" = "Batterie";

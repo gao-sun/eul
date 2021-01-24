@@ -60,6 +60,9 @@ extension Preference {
                     if component == .CPU {
                         ComponentTextConfigView<CpuTextComponent>()
                     }
+                    if component == .GPU {
+                        ComponentTextConfigView<GpuTextComponent>()
+                    }
                     if component == .Memory {
                         ComponentTextConfigView<MemoryTextComponent>()
                     }

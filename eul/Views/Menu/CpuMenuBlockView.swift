@@ -20,11 +20,11 @@ struct CpuMenuBlockView: View {
                 Text("CPU")
                     .menuSection()
                 Spacer()
-                LineChart(points: cpuStore.usageHistory, frame: CGSize(width: 35, height: 20))
                 if preferenceStore.cpuMenuDisplay == .usagePercentage {
                     Text(cpuStore.usageString)
                         .displayText()
                 }
+                LineChart(points: cpuStore.usageHistory, frame: CGSize(width: 35, height: 20))
             }
             cpuStore.usageCPU.map { usageCPU in
                 Group {

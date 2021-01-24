@@ -14,9 +14,10 @@ import SwiftUI
 class DiskStore: ObservableObject, Refreshable {
     private var activeCancellable: AnyCancellable?
 
-    @Published var list: DiskList?
     @ObservedObject var componentsStore = SharedStore.components
     @ObservedObject var menuComponentsStore = SharedStore.menuComponents
+
+    @Published var list: DiskList?
 
     var ceilingBytes: UInt64? {
         list?.disks.reduce(0) { $0 + $1.size }
@@ -55,7 +56,10 @@ class DiskStore: ObservableObject, Refreshable {
     }
 
     @objc func refresh() {
-        guard componentsStore.activeComponents.contains(.Disk) else {
+        guard
+            componentsStore.activeComponents.contains(.Disk)
+            || menuComponentsStore.activeComponents.contains(.Disk)
+        else {
             return
         }
 
