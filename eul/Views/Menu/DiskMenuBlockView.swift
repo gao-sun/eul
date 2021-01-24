@@ -25,41 +25,43 @@ struct DiskRowView: View {
             Text(disk.name)
                 .secondaryDisplayText()
                 .lineLimit(1)
-            Spacer()
-            MenuInfoView(label: "U", text: disk.usedSizeString)
-            MenuInfoView(label: "F", text: disk.freeSizeString)
-            if isEjecting {
-                ActivityIndicatorView {
-                    $0.style = .spinning
-                    $0.controlSize = .mini
-                    $0.startAnimation(nil)
-                }
-            } else {
-                MenuActionButtonView(
-                    id: "disk-\(disk.name)-eject",
-                    imageName: "Eject",
-                    toolTip: "disk.eject"
-                ) {
-                    isEjecting = true
-                    DispatchQueue.global().async {
-                        do {
-                            try NSWorkspace.shared.unmountAndEjectDevice(at: URL(fileURLWithPath: disk.path, isDirectory: true))
-                        } catch {
-                            DispatchQueue.main.async {
-                                let alert = NSAlert()
-                                alert.messageText = error.localizedDescription
-                                alert.alertStyle = .informational
+            if disk.isEjectable {
+                if isEjecting {
+                    ActivityIndicatorView {
+                        $0.style = .spinning
+                        $0.controlSize = .mini
+                        $0.startAnimation(nil)
+                    }
+                } else {
+                    MenuActionButtonView(
+                        id: "disk-\(disk.name)-eject",
+                        imageName: "Eject",
+                        toolTip: "disk.eject"
+                    ) {
+                        isEjecting = true
+                        DispatchQueue.global().async {
+                            do {
+                                try NSWorkspace.shared.unmountAndEjectDevice(at: URL(fileURLWithPath: disk.path, isDirectory: true))
+                            } catch {
+                                DispatchQueue.main.async {
+                                    let alert = NSAlert()
+                                    alert.messageText = error.localizedDescription
+                                    alert.alertStyle = .informational
 
-                                NSApp.activate(ignoringOtherApps: true)
-                                alert.runModal()
+                                    NSApp.activate(ignoringOtherApps: true)
+                                    alert.runModal()
+                                }
                             }
-                        }
-                        DispatchQueue.main.async {
-                            refresh()
+                            DispatchQueue.main.async {
+                                refresh()
+                            }
                         }
                     }
                 }
             }
+            Spacer()
+            MenuInfoView(label: "U", text: disk.usedSizeString)
+            MenuInfoView(label: "F", text: disk.freeSizeString)
         }
     }
 }
