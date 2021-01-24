@@ -37,7 +37,7 @@ public struct ToolTip: ViewModifier {
                             .padding(.horizontal, 4)
                             .background(Color.controlBackground)
                             .cornerRadius(2)
-                            .position(x: 0, y: -15)
+                            .position(x: 5, y: -15)
                             .zIndex(1)
                     }
                 } else {

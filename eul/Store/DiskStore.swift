@@ -69,15 +69,25 @@ class DiskStore: ObservableObject, Refreshable {
         }
 
         list = DiskList(disks: volumes.compactMap {
+            let path = DiskList.pathForName($0)
+            let url = URL(fileURLWithPath: path)
+
             guard
-                let attributes = try? FileManager.default.attributesOfFileSystem(forPath: DiskList.pathForName($0)),
+                let attributes = try? FileManager.default.attributesOfFileSystem(forPath: path),
                 let size = attributes[FileAttributeKey.systemSize] as? UInt64,
                 let freeSize = attributes[FileAttributeKey.systemFreeSize] as? UInt64
             else {
                 return nil
             }
 
-            return DiskList.Disk(name: $0, size: size, freeSize: freeSize)
+            let isEjectable = !((try? url.resourceValues(forKeys: [.volumeIsInternalKey]))?.volumeIsInternal ?? false)
+
+            return DiskList.Disk(
+                name: $0,
+                size: size,
+                freeSize: freeSize,
+                isEjectable: isEjectable
+            )
         })
     }
 
