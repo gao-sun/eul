@@ -96,6 +96,7 @@
 "component.available" = "Боломжит";
 "component.click_to_append" = "нэгтгэх";
 "component.cpu" = "CPU";
+"component.gpu" = "GPU";
 "component.fan" = "Сэнс";
 "component.memory" = "Санах ой";
 "component.battery" = "Батaрей";
@@ -115,6 +116,9 @@
 
 // MARK: Bluetooth
 "bluetooth" = "Bluetooth";
+
+// MARK: Disk
+"disk.eject" = "Eject";
 
 // MARK: Language
 "language" = "Хэл";

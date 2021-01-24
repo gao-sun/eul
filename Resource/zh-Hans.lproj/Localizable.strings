@@ -96,6 +96,7 @@
 "component.available" = "可用";
 "component.click_to_append" = "单击以添加";
 "component.cpu" = "CPU";
+"component.gpu" = "GPU";
 "component.fan" = "风扇";
 "component.memory" = "内存";
 "component.battery" = "电池";
@@ -115,6 +116,9 @@
 
 // MARK: Bluetooth
 "bluetooth" = "蓝牙";
+
+// MARK: Disk
+"disk.eject" = "推出";
 
 // MARK: Language
 "language" = "语言";

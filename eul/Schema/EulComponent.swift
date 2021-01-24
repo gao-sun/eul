@@ -20,7 +20,7 @@ enum EulComponent: String, CaseIterable, Identifiable, Codable, JSONCodabble, Lo
     }
 
     var isGraphAvailable: Bool {
-        guard self == .CPU || self == .Memory else {
+        guard [.CPU, .Memory, .GPU].contains(self) else {
             return false
         }
         return true
@@ -40,6 +40,8 @@ enum EulComponent: String, CaseIterable, Identifiable, Codable, JSONCodabble, Lo
             return AnyView(NetworkView())
         case .Disk:
             return AnyView(DiskView())
+        case .GPU:
+            return AnyView(GpuView())
         }
     }
 
@@ -49,13 +51,18 @@ enum EulComponent: String, CaseIterable, Identifiable, Codable, JSONCodabble, Lo
     case Battery
     case Network
     case Disk
+    case GPU
 
     static var allCases: [EulComponent] {
-        [.CPU, .Memory]
+        [.CPU, .GPU, .Memory]
             .appending(.Fan, condition: SmcControl.shared.isFanValid)
             .appending(.Network)
             .appending(.Battery, condition: SharedStore.battery.isValid)
             .appending(.Disk)
+    }
+
+    static var defaultComponents: [EulComponent] {
+        allCases.filter { ![.Disk, .GPU].contains($0) }
     }
 }
 

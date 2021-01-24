@@ -13,7 +13,6 @@ import WidgetKit
 
 class CpuStore: ObservableObject, Refreshable {
     @Published var temp: Double?
-    @Published var gpuTemp: Double?
     @Published var usageCPU: (system: Double, user: Double, idle: Double, nice: Double)?
     @Published var loadAverage: [Double]?
     @Published var physicalCores = 0
@@ -73,7 +72,6 @@ class CpuStore: ObservableObject, Refreshable {
         temp = (SmcControl.shared.cpuDieTemperature ?? 0) > 0
             ? SmcControl.shared.cpuDieTemperature
             : SmcControl.shared.cpuProximityTemperature
-        gpuTemp = SmcControl.shared.gpuProximityTemperature
     }
 
     @objc func refresh() {

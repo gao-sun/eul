@@ -96,6 +96,7 @@
 "component.available" = "Доступно";
 "component.click_to_append" = "кликните чтобы добавить";
 "component.cpu" = "Процессор";
+"component.gpu" = "GPU";
 "component.fan" = "Кулер";
 "component.memory" = "Память";
 "component.battery" = "Батарея";
@@ -115,6 +116,9 @@
 
 // MARK: Bluetooth
 "bluetooth" = "Bluetooth";
+
+// MARK: Disk
+"disk.eject" = "Eject";
 
 // MARK: Language
 "language" = "Язык";

@@ -99,6 +99,7 @@
 "component.available" = "사용 가능";
 "component.click_to_append" = "클릭해서 배치";
 "component.cpu" = "CPU";
+"component.gpu" = "GPU";
 "component.fan" = "냉각 팬";
 "component.memory" = "메모리";
 "component.battery" = "배터리";
@@ -118,6 +119,9 @@
 
 // MARK: Bluetooth
 "bluetooth" = "Bluetooth";
+
+// MARK: Disk
+"disk.eject" = "Eject";
 
 // MARK: Language
 "language" = "언어";

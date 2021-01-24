@@ -96,6 +96,7 @@
 "component.available" = "متاح";
 "component.click_to_append" = "انقر للإلحاق";
 "component.cpu" = "وحدة المعالجة المركزية";
+"component.gpu" = "GPU";
 "component.fan" = "مروحة";
 "component.memory" = "ذاكرة";
 "component.battery" = "بطارية";
@@ -115,6 +116,9 @@
 
 // MARK: Bluetooth
 "bluetooth" = "Bluetooth";
+
+// MARK: Disk
+"disk.eject" = "Eject";
 
 // MARK: Language
 "language" = "اللغة";

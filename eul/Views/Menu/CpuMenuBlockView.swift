@@ -17,14 +17,14 @@ struct CpuMenuBlockView: View {
     var body: some View {
         VStack(spacing: 8) {
             HStack(alignment: .center) {
-                Text("CPU")
+                Text("component.cpu".localized())
                     .menuSection()
                 Spacer()
-                LineChart(points: cpuStore.usageHistory, frame: CGSize(width: 35, height: 20))
                 if preferenceStore.cpuMenuDisplay == .usagePercentage {
                     Text(cpuStore.usageString)
                         .displayText()
                 }
+                LineChart(points: cpuStore.usageHistory, frame: CGSize(width: 35, height: 20))
             }
             cpuStore.usageCPU.map { usageCPU in
                 Group {
@@ -48,12 +48,6 @@ struct CpuMenuBlockView: View {
                             Group {
                                 Spacer()
                                 MiniSectionView(title: "cpu.temperature", value: SmcControl.shared.formatTemp(temp))
-                            }
-                        }
-                        cpuStore.gpuTemp.map { temp in
-                            Group {
-                                Spacer()
-                                MiniSectionView(title: "gpu.temperature", value: SmcControl.shared.formatTemp(temp))
                             }
                         }
                     }

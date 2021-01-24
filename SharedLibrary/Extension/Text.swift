@@ -52,6 +52,11 @@ public extension Text {
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 
+    func placeholder() -> some View {
+        font(.system(size: 12, weight: .regular))
+            .foregroundColor(.secondary)
+    }
+
     func widgetTitle() -> some View {
         font(.system(size: 40, weight: .heavy))
             .scaledToFill()
