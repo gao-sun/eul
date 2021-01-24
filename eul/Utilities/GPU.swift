@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct GPU {
+struct GPU: Identifiable {
     var deviceId: String
     var model: String?
     var vendor: String?
+
+    var id: String {
+        deviceId
+    }
 }
 
 extension GPU {

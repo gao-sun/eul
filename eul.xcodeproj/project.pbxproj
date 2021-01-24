@@ -921,12 +921,12 @@
 				6C993B8F2517920600586C6B /* BatteryMenuBlockView.swift */,
 				6C321FBF25B5C8EF00BFED76 /* BluetoothMenuBlockView.swift */,
 				6C33CECC25177CE300345977 /* CpuMenuBlockView.swift */,
+				6CFAB7F825BC10E6002F5F48 /* DiskMenuBlockView.swift */,
 				6C993B892517868B00586C6B /* FanMenuBlockView.swift */,
+				6C02716525BD56AE006C54E6 /* GpuMenuBlockView.swift */,
 				6C993B8B25178D3B00586C6B /* MemoryMenuBlockView.swift */,
 				6C387DC8253B1A8000CBB81B /* NetworkMenuBlockMenuView.swift */,
 				6C33CEC82517634400345977 /* StatusMenuView.swift */,
-				6CFAB7F825BC10E6002F5F48 /* DiskMenuBlockView.swift */,
-				6C02716525BD56AE006C54E6 /* GpuMenuBlockView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";

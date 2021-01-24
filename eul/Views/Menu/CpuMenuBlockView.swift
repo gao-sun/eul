@@ -17,7 +17,7 @@ struct CpuMenuBlockView: View {
     var body: some View {
         VStack(spacing: 8) {
             HStack(alignment: .center) {
-                Text("CPU")
+                Text("component.cpu".localized())
                     .menuSection()
                 Spacer()
                 if preferenceStore.cpuMenuDisplay == .usagePercentage {
