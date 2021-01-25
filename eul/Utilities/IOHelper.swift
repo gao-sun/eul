@@ -46,7 +46,7 @@ enum IOHelper {
                 propertyList.append(properties)
             }
             IOObjectRelease(entry)
-            entry = IOIteratorNext(entry)
+            entry = IOIteratorNext(iterator)
         }
 
         return propertyList
