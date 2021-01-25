@@ -337,6 +337,7 @@
 		6C02716525BD56AE006C54E6 /* GpuMenuBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpuMenuBlockView.swift; sourceTree = "<group>"; };
 		6C02716825BD5719006C54E6 /* GpuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpuView.swift; sourceTree = "<group>"; };
 		6C02716B25BD6491006C54E6 /* GpuTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpuTextComponent.swift; sourceTree = "<group>"; };
+		6C02717B25BEEC42006C54E6 /* se */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = se; path = se.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C05F2C725120517004A0F72 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		6C15933E257241DB00FDE7EA /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		6C16BF082552EFFF00CCF5B7 /* WidgetSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSectionView.swift; sourceTree = "<group>"; };
@@ -1133,6 +1134,7 @@
 				ko,
 				ar,
 				uk,
+				se,
 			);
 			mainGroup = 6C5F8532249FACE000CF0EF8;
 			packageReferences = (
@@ -1492,6 +1494,7 @@
 				6CC738502566C140003A15AC /* ko */,
 				6C3A003B256FFEF20030AB70 /* ar */,
 				9CA22A43256ED0140065FC1A /* uk */,
+				6C02717B25BEEC42006C54E6 /* se */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
