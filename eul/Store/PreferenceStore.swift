@@ -6,6 +6,7 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
+import Cocoa
 import Combine
 import Foundation
 import Localize_Swift
@@ -21,7 +22,7 @@ class PreferenceStore: ObservableObject {
     private let userDefaultsKey = "preference"
     private let repo = "gao-sun/eul"
     private var cancellable: AnyCancellable?
-
+    private var appearanceCancellable: AnyCancellable?
     var repoURL: URL? {
         URL(string: "https://github.com/\(repo)")
     }
@@ -57,6 +58,7 @@ class PreferenceStore: ObservableObject {
     @Published var checkStatusItemVisibility = true
     @Published var isUpdateAvailable: Bool? = false
     @Published var checkUpdateFailed = true
+    @Published var appearanceMode = Preference.appearance.auto
 
     var json: JSON {
         JSON([
@@ -71,6 +73,7 @@ class PreferenceStore: ObservableObject {
             "showNetworkTopActivities": showNetworkTopActivities,
             "cpuMenuDisplay": cpuMenuDisplay.rawValue,
             "checkStatusItemVisibility": checkStatusItemVisibility,
+            "appearance": appearanceMode.rawValue,
         ])
     }
 
@@ -154,6 +157,9 @@ class PreferenceStore: ObservableObject {
                 }
                 if let value = data["checkStatusItemVisibility"].bool {
                     checkStatusItemVisibility = value
+                }
+                if let raw = data["appearance"].string, let value = Preference.appearance(rawValue: raw) {
+                    appearanceMode = value
                 }
             } catch {
                 print("Unable to get preference data from user defaults")

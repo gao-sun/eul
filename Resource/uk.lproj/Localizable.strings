@@ -90,6 +90,12 @@
 "font_design.default" = "звичайний";
 "font_design.monospaced" = "фіксованої ширини (monospaced)";
 
+// MARK: Appearance
+"appearance.mode" = "";
+"appearance.light" = "";
+"appearance.dark" = "";
+"appearance.auto" = "";
+
 // MARK: Component
 "component.status_bar" = "Смуга меню";
 "component.drag_to_reorder" = "перетягніть, щоб змінити порядок";

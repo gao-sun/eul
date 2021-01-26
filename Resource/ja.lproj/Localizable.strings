@@ -90,6 +90,12 @@
 "font_design.default" = "デフォルト";
 "font_design.monospaced" = "等幅";
 
+// MARK: Appearance
+"appearance.mode" = "";
+"appearance.light" = "";
+"appearance.dark" = "";
+"appearance.auto" = "";
+
 // MARK: Component
 "component.status_bar" = "メニューバーに表示";
 "component.drag_to_reorder" = "ドラッグして並べ替え";

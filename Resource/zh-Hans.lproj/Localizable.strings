@@ -90,6 +90,12 @@
 "font_design.default" = "默认";
 "font_design.monospaced" = "等宽";
 
+// MARK: Appearance
+"appearance.mode" = "外观";
+"appearance.light" = "浅色";
+"appearance.dark" = "深色";
+"appearance.auto" = "自动";
+
 // MARK: Component
 "component.status_bar" = "状态栏";
 "component.drag_to_reorder" = "拖拽以排序";

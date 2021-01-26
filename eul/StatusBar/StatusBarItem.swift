@@ -102,6 +102,11 @@ class StatusBarItem: NSObject, NSMenuDelegate {
         super.init()
 
         statusBarMenu.delegate = self
+        if preferenceStore.appearanceMode == .light {
+            statusBarMenu.appearance = NSAppearance(named: .aqua)
+        } else {
+            statusBarMenu.appearance = NSAppearance(named: .darkAqua)
+        }
         item.autosaveName = named
         item.isVisible = false
 

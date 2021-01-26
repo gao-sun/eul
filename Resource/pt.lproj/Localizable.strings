@@ -90,6 +90,12 @@
 "font_design.default" = "padrão";
 "font_design.monospaced" = "monoespaçado";
 
+// MARK: Appearance
+"appearance.mode" = "";
+"appearance.light" = "";
+"appearance.dark" = "";
+"appearance.auto" = "";
+
 // MARK: Component
 "component.status_bar" = "Barra de Estado";
 "component.drag_to_reorder" = "arrastar para reordenar";
