@@ -64,4 +64,12 @@ class StatusBarManager {
             self.item.isVisible = true
         }
     }
+
+    func changeNSWindowColorScheme(to color: NSAppearance.Name?) {
+        if let color = color {
+            item.changeNSWindowColorScheme(to: color)
+        } else {
+            item.changeNSWindowColorScheme(to: nil)
+        }
+    }
 }

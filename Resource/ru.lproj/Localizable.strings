@@ -91,10 +91,10 @@
 "font_design.monospaced" = "моноширный";
 
 // MARK: Appearance
-"appearance.mode" = "";
-"appearance.light" = "";
-"appearance.dark" = "";
-"appearance.auto" = "";
+"appearance.mode" = "Appearance";
+"appearance.light" = "light";
+"appearance.dark" = "dark";
+"appearance.auto" = "auto";
 
 // MARK: Component
 "component.status_bar" = "Статус Бар";

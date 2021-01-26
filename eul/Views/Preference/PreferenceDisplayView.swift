@@ -57,6 +57,10 @@ extension Preference {
                         }
                     }
                     .frame(width: 200)
+                    .onChange(of: preference.appearanceMode, perform: { _ in
+                        preference.changeColorScheme()
+
+                    })
 
                 } else {
                     Picker("appearance.mode".localized(), selection: $preference.appearanceMode) {

@@ -182,4 +182,22 @@ class PreferenceStore: ObservableObject {
             WidgetCenter.shared.reloadAllTimelines()
         }
     }
+
+    func changeColorScheme() {
+        let window = NSApplication.shared.mainWindow
+        if appearanceMode == .light {
+            let appearence = NSAppearance(named: .aqua)
+            window?.appearance = appearence
+            StatusBarManager.shared.changeNSWindowColorScheme(to: .aqua)
+
+        } else if appearanceMode == .dark {
+            let appearence = NSAppearance(named: .darkAqua)
+            window?.appearance = appearence
+            StatusBarManager.shared.changeNSWindowColorScheme(to: .darkAqua)
+
+        } else {
+            window?.appearance = nil
+            StatusBarManager.shared.changeNSWindowColorScheme(to: nil)
+        }
+    }
 }

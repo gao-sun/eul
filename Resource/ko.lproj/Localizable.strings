@@ -94,10 +94,10 @@
 "font_design.monospaced" = "고정폭";
 
 // MARK: Appearance
-"appearance.mode" = "";
-"appearance.light" = "";
-"appearance.dark" = "";
-"appearance.auto" = "";
+"appearance.mode" = "Appearance";
+"appearance.light" = "light";
+"appearance.dark" = "dark";
+"appearance.auto" = "auto";
 
 // MARK: Component
 "component.status_bar" = "상태바";

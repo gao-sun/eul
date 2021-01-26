@@ -74,6 +74,16 @@ class StatusBarItem: NSObject, NSMenuDelegate {
         })
     }
 
+    func changeNSWindowColorScheme(to color: NSAppearance.Name?) {
+        if let color = color {
+            statusBarMenu.appearance = NSAppearance(named: color)
+            menuView?.appearance = NSAppearance(named: color)
+        } else {
+            statusBarMenu.appearance = nil
+            menuView?.appearance = nil
+        }
+    }
+
     private func checkStatusItemVisibility() {
         if item.button?.window?.occlusionState.contains(.visible) == false {
             print("⚠️ status item hidden by system")

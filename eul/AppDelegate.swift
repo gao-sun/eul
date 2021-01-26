@@ -71,13 +71,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         window.standardWindowButton(.miniaturizeButton)?.isHidden = true
         window.delegate = self
 
-        if preferenceStore.appearanceMode == .light {
-            window.appearance = NSAppearance(named: .aqua)
-
-        } else if preferenceStore.appearanceMode == .dark {
-            window.appearance = NSAppearance(named: .darkAqua)
-        }
-
         // comment out for not showing window at login. no proper solution currently, tracking:
         // https://github.com/sindresorhus/LaunchAtLogin/issues/33
         // window.makeKeyAndOrderFront(nil)
