@@ -10,6 +10,7 @@ import SharedLibrary
 import SwiftUI
 
 struct MemoryMenuBlockView: View {
+    @EnvironmentObject var preferenceStore: PreferenceStore
     @EnvironmentObject var memoryStore: MemoryStore
     @EnvironmentObject var memoryTopStore: TopStore
 
@@ -49,34 +50,35 @@ struct MemoryMenuBlockView: View {
                     }
                 }
             }
-            SeparatorView()
-
-            VStack(spacing: 8) {
-                if !memoryTopStore.ramDataAvailable {
-                    Spacer()
-                    Text("cpu.waiting_status_report".localized())
-                        .secondaryDisplayText()
-                        .frame(maxWidth: .infinity, alignment: .center)
-                    Spacer()
-                } else {
-                    ForEach(memoryTopStore.ramTopProcesses) { process in
-                        ProcessRowView(section: "cpu", process: process) {
-                            AnyView(
-                                HStack {
-                                    Text("\(ByteUnit(megaBytes: process.usageAmount).readable)")
-                                        .displayText()
-                                        .frame(alignment: .trailing)
-                                    Text(process.value.toFixed(1) + "%")
-                                        .displayText()
-                                        .frame(width: 35, alignment: .trailing)
-                                }
-                            )
+            if preferenceStore.showRAMTopActivities {
+                SeparatorView()
+                VStack(spacing: 8) {
+                    if !memoryTopStore.ramDataAvailable {
+                        Spacer()
+                        Text("cpu.waiting_status_report".localized())
+                            .secondaryDisplayText()
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        Spacer()
+                    } else {
+                        ForEach(memoryTopStore.ramTopProcesses) { process in
+                            ProcessRowView(section: "cpu", process: process) {
+                                AnyView(
+                                    HStack {
+                                        Text("\(ByteUnit(megaBytes: process.usageAmount).readable)")
+                                            .displayText()
+                                            .frame(alignment: .trailing)
+                                        Text(process.value.toFixed(1) + "%")
+                                            .displayText()
+                                            .frame(width: 35, alignment: .trailing)
+                                    }
+                                )
+                            }
                         }
                     }
                 }
+                .frame(minWidth: 311)
+                .frame(height: 102)
             }
-            .frame(minWidth: 311)
-            .frame(height: 102)
         }
         .menuBlock()
     }

@@ -72,6 +72,7 @@
 "menu.preferences" = "Préférences";
 "menu.quit" = "Quitter eul";
 "menu.show_cpu_top_activities" = "Afficher les activités principales du CPU";
+"menu.show_ram_top_activities" = "Show RAM top activities";
 "menu.show_network_top_activities" = "Afficher les activités principales du réseau";
 
 // MARK: Temperature

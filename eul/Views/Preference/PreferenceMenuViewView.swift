@@ -28,9 +28,13 @@ extension Preference {
 
         var body: some View {
             VStack(alignment: .leading, spacing: 12) {
-                HStack(spacing: 12) {
+                Group {
                     Toggle(isOn: $preference.showCPUTopActivities) {
                         Text("menu.show_cpu_top_activities".localized())
+                            .inlineSection()
+                    }
+                    Toggle(isOn: $preference.showRAMTopActivities) {
+                        Text("menu.show_ram_top_activities".localized())
                             .inlineSection()
                     }
                     Toggle(isOn: $preference.showNetworkTopActivities) {
