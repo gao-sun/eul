@@ -8,12 +8,10 @@
 
 import SharedLibrary
 import SwiftUI
-import SystemKit
 
 struct MemoryMenuBlockView: View {
     @EnvironmentObject var memoryStore: MemoryStore
     @EnvironmentObject var memoryTopStore: TopStore
-    var memorySizeMB = System.physicalMemory() * 1000
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -65,10 +63,10 @@ struct MemoryMenuBlockView: View {
                         ProcessRowView(section: "cpu", process: process) {
                             AnyView(
                                 HStack {
-                                    Text("\(ByteUnit(process.usageAmount).readable)")
+                                    Text("\(ByteUnit(megaBytes: process.usageAmount).readable)")
                                         .displayText()
                                         .frame(alignment: .trailing)
-                                    Text(doubleToStringSingleDigit(for: process.percentage))
+                                    Text(process.value.toFixed(1) + "%")
                                         .displayText()
                                         .frame(width: 35, alignment: .trailing)
                                 }

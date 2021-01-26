@@ -13,7 +13,7 @@ protocol ProcessUsage: Identifiable {
     associatedtype T: CustomStringConvertible
     var pid: Int { get }
     var command: String { get }
-    var percentage: T { get }
+    var value: T { get }
     var displayName: String { get }
     var runningApp: NSRunningApplication? { get }
 }

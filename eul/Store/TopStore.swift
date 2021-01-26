@@ -62,7 +62,7 @@ class TopStore: ObservableObject {
                     return ProcessCpuUsage(
                         pid: pid,
                         command: Info.getProcessCommand(pid: pid) ?? row[2],
-                        percentage: cpu,
+                        value: cpu,
                         runningApp: runningApps.first(where: { $0.processIdentifier == pid })
                     )
                 }
@@ -92,7 +92,13 @@ class TopStore: ObservableObject {
 
                     let usage = 100 * (ram / self.memorySizeMB)
 
-                    return RamUsage(pid: pid, command: Info.getProcessCommand(pid: pid)!, percentage: usage, usageAmount: ram, runningApp: runningApps.first(where: { $0.processIdentifier == pid }))
+                    return RamUsage(
+                        pid: pid,
+                        command: Info.getProcessCommand(pid: pid)!,
+                        value: usage,
+                        usageAmount: ram,
+                        runningApp: runningApps.first(where: { $0.processIdentifier == pid })
+                    )
                 }
                 DispatchQueue.main.async { [self] in
                     ramTopProcesses = result.count <= 5 ? result.dropLast(0) : result.dropLast(1)
@@ -147,7 +153,7 @@ struct ProcessCpuUsage: ProcessUsage {
     typealias T = Double
     let pid: Int
     let command: String
-    let percentage: Double
+    let value: Double
     let runningApp: NSRunningApplication?
 }
 
@@ -155,7 +161,7 @@ struct RamUsage: ProcessUsage {
     typealias T = Double
     let pid: Int
     let command: String
-    var percentage: Double
+    var value: Double
     let usageAmount: Double
     let runningApp: NSRunningApplication?
 }
