@@ -22,7 +22,6 @@ class PreferenceStore: ObservableObject {
     private let userDefaultsKey = "preference"
     private let repo = "gao-sun/eul"
     private var cancellable: AnyCancellable?
-    private var appearanceCancellable: AnyCancellable?
     var repoURL: URL? {
         URL(string: "https://github.com/\(repo)")
     }
