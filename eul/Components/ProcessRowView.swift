@@ -24,7 +24,7 @@ struct ProcessRowView<Usage: ProcessUsage>: View {
             if let builder = valueViewBuilder {
                 builder()
             } else {
-                Text(process.percentage.description)
+                Text(process.value.description)
                     .displayText()
                     .frame(width: 35, alignment: .trailing)
             }
@@ -71,8 +71,4 @@ struct ProcessRowView<Usage: ProcessUsage>: View {
             .frame(width: 60, alignment: .trailing)
         }
     }
-}
-
-func doubleToStringSingleDigit(for number: Double) -> String {
-    return String(format: "%.1f", number)
 }

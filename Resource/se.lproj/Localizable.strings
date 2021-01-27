@@ -74,6 +74,7 @@ Copyright © 2020 Gao Sun. All rights reserved.
 "menu.preferences" = "Inställningar";
 "menu.quit" = "Avsluta eul";
 "menu.show_cpu_top_activities" = "Visa CPUs toppaktiviteter";
+"menu.show_ram_top_activities" = "Show RAM top activities";
 "menu.show_network_top_activities" = "Visa nätverkets toppaktiviteter";
 
 // MARK: Temperature

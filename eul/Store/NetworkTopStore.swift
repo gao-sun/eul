@@ -28,7 +28,7 @@ class NetworkTopStore: ObservableObject {
         typealias T = NetworkSpeed
         let pid: Int
         let command: String
-        let percentage: NetworkSpeed
+        let value: NetworkSpeed
         let runningApp: NSRunningApplication?
     }
 
@@ -46,8 +46,8 @@ class NetworkTopStore: ObservableObject {
 
     var totalSpeed: NetworkSpeed {
         processes.reduce(into: NetworkSpeed()) { result, usage in
-            result.inSpeedInByte += usage.percentage.inSpeedInByte
-            result.outSpeedInByte += usage.percentage.outSpeedInByte
+            result.inSpeedInByte += usage.value.inSpeedInByte
+            result.outSpeedInByte += usage.value.outSpeedInByte
         }
     }
 
@@ -121,11 +121,11 @@ class NetworkTopStore: ObservableObject {
             return ProcessNetworkUsage(
                 pid: pid,
                 command: Info.getProcessCommand(pid: pid) ?? splitted[0],
-                percentage: speed,
+                value: speed,
                 runningApp: runningApps.first(where: { $0.processIdentifier == pid })
             )
         }
-        .sorted(by: { $0.percentage.totalSpeedInByte > $1.percentage.totalSpeedInByte })
+        .sorted(by: { $0.value.totalSpeedInByte > $1.value.totalSpeedInByte })
     }
 
     func update(shouldStart: Bool) {

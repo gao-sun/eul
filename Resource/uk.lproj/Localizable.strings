@@ -72,6 +72,7 @@
 "menu.preferences" = "Налаштування";
 "menu.quit" = "Завершити eul";
 "menu.show_cpu_top_activities" = "Показувати топ-5 процесів ЦП";
+"menu.show_ram_top_activities" = "Show RAM top activities";
 "menu.show_network_top_activities" = "Показувати топ-3 процесів Мережі";
 
 // MARK: Temperature
