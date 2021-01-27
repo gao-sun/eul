@@ -135,7 +135,7 @@
 "language.ko" = "한국어";
 "language.dk" = "Dansk";
 "language.uk" = "Українська";
-"language.cz" = "Čeština";
+"language.cs" = "Čeština";
 
 // MARK: General UI
 "ui.app" = "Aplikace";
