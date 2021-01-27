@@ -72,6 +72,7 @@
 "menu.preferences" = "Тохиргоо";
 "menu.quit" = "eul -г гаргах";
 "menu.show_cpu_top_activities" = "CPU ихээр ашиглаж буй";
+"menu.show_ram_top_activities" = "Show RAM top activities";
 "menu.show_network_top_activities" = "Сүлжээ ихээр ашиглаж буй";
 
 // MARK: Temperature
@@ -161,7 +162,6 @@
 "ui.network" = "Сүлжээ";
 "ui.menu_view" = "Мэню";
 "ui.empty" = "Хоосон";
-"ui.hidden_by_system.title" = "eul status bar components are force hidden by system";
 "ui.hidden_by_system.title" = "eul статус мөрний нэгжүүдийг системээс хориглож байна";
 "ui.hidden_by_system.message" = "Тохиргоог нээж, нэгжүүдийг багасгана уу";
 "ui.hidden_by_system.open" = "Нээх";

@@ -72,6 +72,7 @@
 "menu.preferences" = "設定";
 "menu.quit" = "eul を終了";
 "menu.show_cpu_top_activities" = "CPU の上位アクティビティを表示";
+"menu.show_ram_top_activities" = "Show RAM top activities";
 "menu.show_network_top_activities" = "ネットワークの上位アクティビティを表示";
 
 // MARK: Temperature

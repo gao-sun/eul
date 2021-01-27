@@ -72,6 +72,7 @@
 "menu.preferences" = "Einstellungen";
 "menu.quit" = "eul beenden";
 "menu.show_cpu_top_activities" = "Top-CPU-Aktivitäten anzeigen";
+"menu.show_ram_top_activities" = "Top-RAM-Aktivitäten anzeigen";
 "menu.show_network_top_activities" = "Top-Netzwerk-Aktivitäten anzeigen";
 
 // MARK: Temperature
@@ -192,7 +193,7 @@
  "cpu_display_mode.load_average" = "⌀-Auslastung";
 
 //MARK: Widget
- "widget.not_available" = "eul läuft nicht";
+"widget.not_available" = "eul läuft nicht";
 "widget.cpu.title" = "CPU-Widget";
 "widget.cpu.description" = "CPU-Informationen anzeigen";
 "widget.memory.title" = "Speicher-Widget";

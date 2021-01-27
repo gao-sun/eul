@@ -35,9 +35,8 @@ public struct ByteUnit {
         self.kilo = kilo
     }
 
-    public init(_ megaBytes: Double) {
-        kilo = 1024
-        bytes = UInt64(megaBytes * Double(1024 * 1024))
+    public init(megaBytes: Double) {
+        self.init(megaBytes * Double(1024 * 1024))
     }
 
     public var readable: String {
