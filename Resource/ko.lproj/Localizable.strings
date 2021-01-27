@@ -75,6 +75,7 @@
 "menu.preferences" = "설정";
 "menu.quit" = "종료";
 "menu.show_cpu_top_activities" = "CPU 상위 사용 앱 보여주기";
+"menu.show_ram_top_activities" = "Show RAM top activities";
 "menu.show_network_top_activities" = "네트워크 상위 사용 앱 보여주기";
 
 // MARK: Temperature

@@ -72,6 +72,7 @@
 "menu.preferences" = "التفضيلات";
 "menu.quit" = "إنهاء eul";
 "menu.show_cpu_top_activities" = "اعرض أهم أنشطة وحدة المعالجة المركزية";
+"menu.show_ram_top_activities" = "Show RAM top activities";
 "menu.show_network_top_activities" = "عرض أهم أنشطة الشبكة";
 
 // MARK: Temperature

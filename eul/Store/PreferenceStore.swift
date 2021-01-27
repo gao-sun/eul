@@ -52,6 +52,7 @@ class PreferenceStore: ObservableObject {
     @Published var networkRefreshRate = 3
     @Published var showIcon = true
     @Published var showCPUTopActivities = true
+    @Published var showRAMTopActivities = false
     @Published var showNetworkTopActivities = false
     @Published var cpuMenuDisplay: Preference.CpuMenuDisplay = .usagePercentage
     @Published var checkStatusItemVisibility = true
@@ -68,6 +69,7 @@ class PreferenceStore: ObservableObject {
             "networkRefreshRate": networkRefreshRate,
             "showIcon": showIcon,
             "showCPUTopActivities": showCPUTopActivities,
+            "showRAMTopActivities": showRAMTopActivities,
             "showNetworkTopActivities": showNetworkTopActivities,
             "cpuMenuDisplay": cpuMenuDisplay.rawValue,
             "checkStatusItemVisibility": checkStatusItemVisibility,
@@ -145,6 +147,9 @@ class PreferenceStore: ObservableObject {
                 }
                 if let value = data["showCPUTopActivities"].bool {
                     showCPUTopActivities = value
+                }
+                if let value = data["showRAMTopActivities"].bool {
+                    showRAMTopActivities = value
                 }
                 if let value = data["showNetworkTopActivities"].bool {
                     showNetworkTopActivities = value
