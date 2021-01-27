@@ -68,6 +68,16 @@ Note:
     <td align="center"><a href="https://github.com/baptistecdr"><img src="https://avatars3.githubusercontent.com/u/11665396?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Baptiste C.</b></sub></a><br /><a href="#translation-baptistecdr" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/b3z"><img src="https://avatars2.githubusercontent.com/u/47346598?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Luca</b></sub></a><br /><a href="#translation-b3z" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/40uf411"><img src="https://avatars0.githubusercontent.com/u/29804103?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Ali AOUF &#124; علي عوف</b></sub></a><br /><a href="#translation-40uf411" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/sboh1214"><img src="https://avatars0.githubusercontent.com/u/30364442?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Seungbin Oh</b></sub></a><br /><a href="#translation-sboh1214" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/nrudnyk"><img src="https://avatars.githubusercontent.com/u/20221382?v=4?s=48" width="48px;" alt=""/><br /><sub><b>nrudnyk</b></sub></a><br /><a href="#translation-nrudnyk" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/kawarimidoll"><img src="https://avatars.githubusercontent.com/u/8146876?v=4?s=48" width="48px;" alt=""/><br /><sub><b>カワリミ人形</b></sub></a><br /><a href="https://github.com/gao-sun/eul/commits?author=kawarimidoll" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/ivyjsgit"><img src="https://avatars.githubusercontent.com/u/34287279?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Ivy Jackson</b></sub></a><br /><a href="https://github.com/gao-sun/eul/commits?author=ivyjsgit" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/J-rg"><img src="https://avatars.githubusercontent.com/u/4042863?v=4?s=48" width="48px;" alt=""/><br /><sub><b>J-rg</b></sub></a><br /><a href="#translation-J-rg" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/jevonmao"><img src="https://avatars.githubusercontent.com/u/64660730?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Jevon Mao</b></sub></a><br /><a href="https://github.com/gao-sun/eul/commits?author=jevonmao" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Tekrific"><img src="https://avatars.githubusercontent.com/u/68393566?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Tekrific</b></sub></a><br /><a href="#translation-Tekrific" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/nebeker"><img src="https://avatars.githubusercontent.com/u/8558191?v=4?s=48" width="48px;" alt=""/><br /><sub><b>nebeker</b></sub></a><br /><a href="#translation-nebeker" title="Translation">🌍</a></td>
   </tr>
 </table>
 
@@ -81,11 +91,13 @@ Note:
 - 简体中文
 - English
 - Arabic (credit [@40uf411](https://github.com/40uf411))
-- Deutsch (credit [@akeschmidi](https://github.com/akeschmidi) [@rfuehrer](https://github.com/rfuehrer))
+- Deutsch (credit [@akeschmidi](https://github.com/akeschmidi) [@rfuehrer](https://github.com/rfuehrer) [@J-rg](https://github.com/J-rg))
 - Русский (credit [@Nikolay](https://github.com/JiLiZART))
 - Español (credit [@JesusM](https://github.com/JesusM) [@kant](https://github.com/kant))
 - Português (credit [@nebeker](https://github.com/nebeker) [@jorgeclaro](https://github.com/jorgeclaro))
-- Монгол (credit [@Zorig](https://github.com/Zorig) [@AndyH0ng](https://github.com/AndyH0ng ))
+- Монгол (credit [@Zorig](https://github.com/Zorig) [@AndyH0ng](https://github.com/AndyH0ng))
 - 한국어 (credit [@AndyH0ng](https://github.com/AndyH0ng) [@sboh1214](https://github.com/sboh1214))
 - 日本語 (credit [@treastrain](https://github.com/treastrain))
 - Français (credit [@baptistecdr](https://github.com/baptistecdr))
+- Українська (credit [@nrudnyk](https://github.com/nrudnyk))
+- Svenska (credit [@Tekrific](https://github.com/Tekrific))
