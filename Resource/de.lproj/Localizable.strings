@@ -9,6 +9,7 @@
 // MARK: Battery
 "battery" = "Batterie";
 "battery.charge" = "Laden";
+"battery.time" = "Time left";
 "battery.power_source" = "Stromquelle";
 "battery.power_source.battery" = "Batterie";
 "battery.power_source.acPower" = "Netzteil";
@@ -181,6 +182,7 @@
 "text_component.loadAverage5Min" = "⌀-Auslastung (5 Min.)";
 "text_component.loadAverage15Min" = "⌀-Auslastung (15 Min.)";
 "text_component.average" = "Durchschnitt";
+"text_component.timeRemaining" = "Time Remaining";
 
 // MARK: CPU Display Mode
  "cpu_display_mode" = "CPU Display Mode:";

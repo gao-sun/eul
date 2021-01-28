@@ -9,6 +9,7 @@
 // MARK: Battery
 "battery" = "バッテリー";
 "battery.charge" = "充電";
+"battery.time" = "Time left";
 "battery.power_source" = "電源";
 "battery.power_source.battery" = "バッテリー";
 "battery.power_source.acPower" = "電源アダプタ";
@@ -181,6 +182,7 @@
 "text_component.loadAverage5Min" = "Load Average (5 min)";
 "text_component.loadAverage15Min" = "Load Average (15 min)";
 "text_component.average" = "Average";
+"text_component.timeRemaining" = "Time Remaining";
 
 // MARK: CPU Display Mode
 "cpu_display_mode" = "CPU Display Mode";
