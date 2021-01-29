@@ -1,0 +1,197 @@
+/* 
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery" = "Baterie";
+"battery.charge" = "Nabito";
+"battery.power_source" = "Zdroj Energie";
+"battery.power_source.battery" = "Baterie";
+"battery.power_source.acPower" = "Nápájen ze Sítě";
+"battery.power_source.unknown" = "Neznámý";
+"battery.is_charging" = "Nabíjí se";
+"battery.to_full_charge" = "do plného nabití";
+"battery.to_empty" = "do vybití";
+"battery.health" = "Zdraví";
+"battery.max_capacity" = "Max Kap.";
+"battery.design_capacity" = "Tovární Kap.";
+"battery.health_percentage" = "Procento Zdraví";
+"battery.cycle_count" = "Počet Cyklů";
+"battery.cycle" = "Cyklus";
+"battery.condition" = "Kondice";
+"battery.condition.good" = "Dobrá";
+"battery.condition.fair" = "Dostatečná";
+"battery.condition.poor" = "Špatná";
+
+// MARK: CPU / Info
+"cpu.usage" = "Využití";
+"cpu.idle" = "Nečiný";
+"cpu.temperature" = "Teplota";
+"gpu.temperature" = "Teplota GPU";
+"cpu.info" = "Informace";
+"cpu.physical_cores" = "Fyzická Jádra";
+"cpu.logical_cores" = "Logická Jádra";
+"cpu.up_time" = "V Provozu";
+"cpu.thermal_level" = "Teplotní Úroveň";
+"cpu.system" = "Systém";
+"cpu.user" = "Uživatel";
+"cpu.nice" = "Prioritní";
+"cpu.waiting_status_report" = "Čekání na první hlášení o stavu";
+
+// MARK: Fan
+"fan" = "Větrák";
+"fan.current" = "Momentální";
+"fan.min" = "Min";
+"fan.max" = "Max";
+
+// MARK: Memory
+"memory" = "Paměť";
+"memory.total" = "Celková";
+"memory.free" = "Volná";
+"memory.cached_files" = "Soubory v Cachi";
+"memory.temp" = "Teplota";
+"memory.usage" = "Využití";
+"memory.app" = "Aplikace";
+"memory.wired" = "Nepřesunutelná";
+"memory.compressed" = "Komprimovaná";
+
+// MARK: Network
+"network" = "Síť";
+"network.in" = "In";
+"network.out" = "Out";
+"network.no_activity" = "Žádná aktivita";
+
+// MARK: Menu
+"menu.summary" = "Souhrn";
+"menu.yes" = "Ano";
+"menu.no" = "Ne";
+"menu.preferences" = "Preference";
+"menu.quit" = "Vypnout eul";
+"menu.show_cpu_top_activities" = "Zobrazit hlavní aktivity CPU";
+"menu.show_network_top_activities" = "Zobrazit hlavní aktivity Sítě";
+
+// MARK: Temperature
+"temp.temperature" = "Teplota";
+"temp.celsius" = "celsius";
+"temp.fahrenheit" = "fahrenheit";
+"temp.kelvin" = "kelvin";
+
+// MARK: Text Display
+"text_display" = "Zobrazení Textu";
+"text_display.compact" = "kompaktní";
+"text_display.single_line" = "jednořádkové";
+
+// MARK: Font Design
+"font_design" = "Design Písma";
+"font_design.default" = "výchozí";
+"font_design.monospaced" = "monospaceové";
+
+// MARK: Component
+"component.status_bar" = "Stavový Řádek";
+"component.drag_to_reorder" = "táhnutím přeřadit";
+"component.available" = "K Dispozici";
+"component.click_to_append" = "kliknutím přidat";
+"component.cpu" = "CPU";
+"component.gpu" = "GPU";
+"component.fan" = "Větrák";
+"component.memory" = "Paměť";
+"component.battery" = "Baterie";
+"component.network" = "Síť";
+"component.disk" = "Disk";
+"component.bluetooth" = "Bluetooth";
+
+// MARK: Process
+"process" = "Proces";
+"process.bring_to_front" = "Přenést do popředí";
+"process.reveal_in_finder" = "Otevřít ve Finderu";
+"process.terminate" = "Zastavit";
+"process.force_terminate" = "Vynutit Zastavení";
+"process.terminate_alert.text.%@" = "Jste si jistý že chcete zastavit %@?";
+"process.terminate_alert.command.%@" = "Příkaz: %@";
+"process.terminate_alert.cancel" = "Zrušit";
+
+// MARK: Bluetooth
+"bluetooth" = "Bluetooth";
+
+// MARK: Disk
+"disk.eject" = "Vysunout";
+
+// MARK: Language
+"language" = "Language";
+"language.ar" = "العربية";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+"language.pt" = "Português";
+"language.ja" = "日本語";
+"language.fr" = "Français";
+"language.mn" = "Монгол";
+"language.ko" = "한국어";
+"language.dk" = "Dansk";
+"language.uk" = "Українська";
+"language.cs" = "Čeština";
+
+// MARK: General UI
+"ui.app" = "Aplikace";
+"ui.general" = "Obecké";
+"ui.version" = "verze";
+"ui.checking_update" = "hledám update";
+"ui.up_to_date" = "aktuální";
+"ui.new_version" = "objevena nová verze";
+"ui.download" = "stáhnout";
+"ui.launch_at_login" = "Zapnout při Přihlášení";
+"ui.display" = "Display";
+"ui.components" = "Komponenty";
+"ui.show_components_in_status_bar" = "Zobrazit komponenty na stavovém řádku";
+"ui.refresh_rate" = "Obnovovací Frekvence";
+"ui.smc" = "SMC";
+"ui.network" = "Síť";
+"ui.menu_view" = "Zobrazení Menu";
+"ui.empty" = "Prázdný";
+"ui.hidden_by_system.title" = "Komponenty stavového řídku eul sjsou systémem vynuceně schovány";
+"ui.hidden_by_system.message" = "Otevřete preference a zkuste snížit počet komponentů";
+"ui.hidden_by_system.open" = "Otevřít";
+"ui.hidden_by_system.dismiss" = "Zrušit";
+"ui.check_status_item_visibility" = "Zkontrolovat status zobrazení položky";
+
+// MARK: Component
+"component.show_icon" = "Zobrazit ikonu";
+"component.show_graph" = "Zobrazit graf";
+"component.show_text" = "Zobrazit text";
+
+// MARK: Text Component
+"text_component.free" = "Prázdné";
+"text_component.usage" = "Využití";
+"text_component.total" = "Celkem";
+"text_component.usagePercentage" = "Procento Využití";
+"text_component.temperature" = "Teplota";
+"text_component.upload" = "Nahrávání";
+"text_component.download" = "Stahování";
+"text_component.percentage" = "Procent";
+"text_component.mah" = "mAh";
+"text_component.loadAverage1Min" = "Průměrné zatížení (1 min)";
+"text_component.loadAverage5Min" = "Průměrné zatížení (5 min)";
+"text_component.loadAverage15Min" = "Průměrné zatížení (15 min)";
+"text_component.average" = "Průměr";
+
+// MARK: CPU Display Mode
+"cpu_display_mode" = "Režim zobrazení CPU ";
+"cpu_display_mode.usage_percentage" = "Vyuužití %";
+"cpu_display_mode.load_average" = "Průměrné Zatížení";
+
+//MARK: Widget
+"widget.not_available" = "eul nebeží";
+"widget.cpu.title" = "Widget CPU";
+"widget.cpu.description" = "Zobrazit informace o CPU";
+"widget.memory.title" = "Widget Paměťi";
+"widget.memory.description" = "Zobrazit informace o paměti";
+"widget.battery.title" = "Widget Baterie";
+"widget.battery.description" = "Zobrazit informace o baterii";
+"widget.network.title" = "Widget Sítě";
+"widget.network.description" = "Zobrazit informace o síti";
