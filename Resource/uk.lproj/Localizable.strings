@@ -9,7 +9,7 @@
 // MARK: Battery
 "battery" = "Акумулятор";
 "battery.charge" = "Заряд";
-"battery.time" = "Time left";
+"battery.timeRemaining" = "Time left";
 "battery.power_source" = "Джерело живлення";
 "battery.power_source.battery" = "Акумулятор";
 "battery.power_source.acPower" = "Електромережа";

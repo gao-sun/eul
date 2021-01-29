@@ -9,7 +9,7 @@
 // MARK: Battery
 "battery" = "Batterie";
 "battery.charge" = "Charge";
-"battery.time" = "Time left";
+"battery.timeRemaining" = "Time left";
 "battery.power_source" = "Source d'alimentation";
 "battery.power_source.battery" = "Batterie";
 "battery.power_source.acPower" = "Adaptateur secteur";

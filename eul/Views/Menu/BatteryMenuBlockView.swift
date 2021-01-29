@@ -78,7 +78,7 @@ struct BatteryMenuBlockView: View {
                 Spacer()
                 MiniSectionView(title: "battery.condition".localized(), value: io.condition.description)
                 Spacer()
-                MiniSectionView(title: "battery.time".localized(), value: batteryStore.timeRemaining)
+                MiniSectionView(title: "battery.timeRemaining".localized(), value: batteryStore.timeRemaining)
             }
         }
         .menuBlock()
