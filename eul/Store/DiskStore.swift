@@ -16,15 +16,21 @@ class DiskStore: ObservableObject, Refreshable {
 
     @ObservedObject var componentsStore = SharedStore.components
     @ObservedObject var menuComponentsStore = SharedStore.menuComponents
+    var config: EulComponentConfig {
+        SharedStore.componentConfig[EulComponent.Disk]
+    }
 
     @Published var list: DiskList?
+    @Published var selectedDisk: DiskList.Disk?
 
     var ceilingBytes: UInt64? {
-        list?.disks.reduce(0) { $0 + $1.size }
+        // list?.disks.reduce(0) { $0 + $1.size }
+        selectedDisk?.size
     }
 
     var freeBytes: UInt64? {
-        list?.disks.reduce(0) { $0 + $1.freeSize }
+        // list?.disks.reduce(0) { $0 + $1.freeSize }
+        selectedDisk?.freeSize
     }
 
     var usageString: String {
@@ -89,6 +95,9 @@ class DiskStore: ObservableObject, Refreshable {
                 isEjectable: isEjectable
             )
         })
+        if config.diskSelection != "", let list = list {
+            selectedDisk = list.disks.filter { $0.name == config.diskSelection }.first
+        }
     }
 
     init() {

@@ -120,6 +120,7 @@
 
 // MARK: Disk
 "disk.eject" = "Eject";
+"disk.select" = "Select disk";
 
 // MARK: Language
 "language" = "言語";

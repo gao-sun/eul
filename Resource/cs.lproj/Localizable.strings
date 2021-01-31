@@ -119,6 +119,7 @@
 
 // MARK: Disk
 "disk.eject" = "Vysunout";
+"disk.select" = "Select disk";
 
 // MARK: Language
 "language" = "Language";

@@ -36,6 +36,7 @@ extension Preference {
     struct ComponentConfigView: View {
         @EnvironmentObject var batteryStore: BatteryStore
         @EnvironmentObject var componentConfigStore: ComponentConfigStore
+        @EnvironmentObject var diskStore: DiskStore
 
         var component: EulComponent
         var config: Binding<EulComponentConfig> {
@@ -55,6 +56,16 @@ extension Preference {
                                 Text("component.show_graph".localized())
                                     .inlineSection()
                             }
+                        }
+                        if config.wrappedValue.component.isDiskSelectionAvailable {
+                            let disks = diskStore.list?.disks ?? []
+                            Picker(selection: config.diskSelection, label: Text("disk.select".localized()).inlineSection(), content: {
+                                ForEach(disks) {
+                                    Text($0.name)
+                                        .inlineSection()
+                                }
+                            })
+                                .frame(width: 200)
                         }
                     }
                     if component == .CPU {

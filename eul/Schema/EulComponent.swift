@@ -26,6 +26,13 @@ enum EulComponent: String, CaseIterable, Identifiable, Codable, JSONCodabble, Lo
         return true
     }
 
+    var isDiskSelectionAvailable: Bool {
+        guard [.Disk].contains(self) else {
+            return false
+        }
+        return true
+    }
+
     func getView() -> AnyView {
         switch self {
         case .Battery:
