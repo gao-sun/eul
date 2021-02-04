@@ -9,6 +9,7 @@
 // MARK: Battery
 "battery" = "البطارية";
 "battery.charge" = "شحن البطارية";
+"battery.time_remaining" = "Time Rem.";
 "battery.power_source" = "Power Source";
 "battery.power_source.battery" = "مصدر الطاقة";
 "battery.power_source.acPower" = "تيار مستمر";
@@ -126,6 +127,8 @@
 
 // MARK: Disk
 "disk.eject" = "Eject";
+"disk.select" = "Select disk";
+"disk.all" = "All Disks";
 
 // MARK: Language
 "language" = "اللغة";
@@ -144,6 +147,7 @@
 "language.uk" = "Українська";
 "language.se" = "Svenska";
 "language.cs" = "Čeština";
+"language.it" = "Italiano";
 
 // MARK: General UI
 "ui.app" = "تطبيق";
@@ -188,6 +192,7 @@
 "text_component.loadAverage5Min" = "Load Average (5 min)";
 "text_component.loadAverage15Min" = "Load Average (15 min)";
 "text_component.average" = "Average";
+"text_component.timeRemaining" = "Time Remaining";
 
 // MARK: CPU Display Mode
 "cpu_display_mode" = "CPU Display Mode";

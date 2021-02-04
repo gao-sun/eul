@@ -9,6 +9,7 @@
 // MARK: Battery
 "battery" = "电池";
 "battery.charge" = "电量";
+"battery.time_remaining" = "剩余时间";
 "battery.power_source" = "电源";
 "battery.power_source.battery" = "电池";
 "battery.power_source.acPower" = "电源适配器";
@@ -126,6 +127,8 @@
 
 // MARK: Disk
 "disk.eject" = "推出";
+"disk.select" = "选择存储";
+"disk.all" = "所有存储";
 
 // MARK: Language
 "language" = "语言";
@@ -144,6 +147,7 @@
 "language.uk" = "Українська";
 "language.se" = "Svenska";
 "language.cs" = "Čeština";
+"language.it" = "Italiano";
 
 // MARK: General UI
 "ui.app" = "App";
@@ -187,6 +191,8 @@
 "text_component.loadAverage5Min" = "平均负载 (5分钟)";
 "text_component.loadAverage15Min" = "平均负载 (15分钟)";
 "text_component.average" = "平均";
+"text_component.timeRemaining" = "剩余时间";
+
 
 // MARK: CPU Display Mode
 "cpu_display_mode" = "CPU 显示";

@@ -9,6 +9,7 @@
 // MARK: Battery
 "battery" = "Акумулятор";
 "battery.charge" = "Заряд";
+"battery.time_remaining" = "Time Rem.";
 "battery.power_source" = "Джерело живлення";
 "battery.power_source.battery" = "Акумулятор";
 "battery.power_source.acPower" = "Електромережа";
@@ -126,6 +127,8 @@
 
 // MARK: Disk
 "disk.eject" = "Eject";
+"disk.select" = "Select disk";
+"disk.all" = "All Disks";
 
 // MARK: Language
 "language" = "Мова";
@@ -144,6 +147,7 @@
 "language.uk" = "Українська";
 "language.se" = "Svenska";
 "language.cs" = "Čeština";
+"language.it" = "Italiano";
 
 // MARK: General UI
 "ui.app" = "Застосунок";
@@ -187,6 +191,7 @@
 "text_component.loadAverage5Min" = "Середнє навантаження (5 хв)";
 "text_component.loadAverage15Min" = "Середнє навантаження (15 хв)";
 "text_component.average" = "Середнє";
+"text_component.timeRemaining" = "Time Remaining";
 
 // MARK: CPU Display Mode
 "cpu_display_mode" = "Режим відображення ЦП";

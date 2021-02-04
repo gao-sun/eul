@@ -16,15 +16,25 @@ class DiskStore: ObservableObject, Refreshable {
 
     @ObservedObject var componentsStore = SharedStore.components
     @ObservedObject var menuComponentsStore = SharedStore.menuComponents
+    var config: EulComponentConfig {
+        SharedStore.componentConfig[EulComponent.Disk]
+    }
 
     @Published var list: DiskList?
 
+    var selectedDisk: DiskList.Disk? {
+        guard config.diskSelection != "" else {
+            return nil
+        }
+        return list?.disks.filter { $0.name == config.diskSelection }.first
+    }
+
     var ceilingBytes: UInt64? {
-        list?.disks.reduce(0) { $0 + $1.size }
+        selectedDisk?.size ?? list?.disks.reduce(0) { $0 + $1.size }
     }
 
     var freeBytes: UInt64? {
-        list?.disks.reduce(0) { $0 + $1.freeSize }
+        selectedDisk?.freeSize ?? list?.disks.reduce(0) { $0 + $1.freeSize }
     }
 
     var usageString: String {

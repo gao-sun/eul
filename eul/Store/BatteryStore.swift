@@ -25,6 +25,7 @@ class BatteryStore: ObservableObject, Refreshable {
     @Published var maxCapacity = 0
     @Published var designCapacity = 0
     @Published var cycleCount = 0
+    @Published var timeRemaining = "∞"
 
     var charge: Double {
         io.currentCharge
@@ -51,6 +52,7 @@ class BatteryStore: ObservableObject, Refreshable {
         maxCapacity = battery.maxCapactiy()
         designCapacity = battery.designCapacity()
         cycleCount = battery.cycleCount()
+        timeRemaining = io.powerSource == .battery ? battery.timeRemainingFormatted() : "∞"
         _ = battery.close()
         writeToContainer()
     }

@@ -9,6 +9,7 @@
 // MARK: Battery
 "battery" = "Batterie";
 "battery.charge" = "Charge";
+"battery.time_remaining" = "Time Rem.";
 "battery.power_source" = "Source d'alimentation";
 "battery.power_source.battery" = "Batterie";
 "battery.power_source.acPower" = "Adaptateur secteur";
@@ -126,6 +127,8 @@
 
 // MARK: Disk
 "disk.eject" = "Ejecter";
+"disk.select" = "Select disk";
+"disk.all" = "All Disks";
 
 // MARK: Language
 "language" = "Language";
@@ -144,6 +147,7 @@
 "language.uk" = "Українська";
 "language.se" = "Svenska";
 "language.cs" = "Čeština";
+"language.it" = "Italiano";
 
 // MARK: General UI
 "ui.app" = "Application";
@@ -187,6 +191,7 @@
 "text_component.loadAverage5Min" = "Charge moyenne (5 min)";
 "text_component.loadAverage15Min" = "Charge moyenne (15 min)";
 "text_component.average" = "Moyenne";
+"text_component.timeRemaining" = "Time Remaining";
 
 // MARK: CPU Display Mode
 "cpu_display_mode" = "Mode d'affichage du CPU";

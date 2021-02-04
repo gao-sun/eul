@@ -12,6 +12,7 @@ import SwiftyJSON
 enum BatteryTextComponent: String, CaseIterable, JSONCodabble, LocalizedTextComponent {
     case percentage
     case mah
+    case timeRemaining
 
     static var defaultComponents: [Self] {
         [.percentage]

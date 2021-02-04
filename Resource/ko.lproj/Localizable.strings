@@ -12,6 +12,7 @@
 // MARK: Battery
 "battery" = "배터리 사용중";
 "battery.charge" = "충전중";
+battery.timeRemaining = "Time Rem.";
 "battery.power_source" = "전원 공급원";
 "battery.power_source.battery" = "배터리";
 "battery.power_source.acPower" = "전원 어댑터";
@@ -129,6 +130,8 @@
 
 // MARK: Disk
 "disk.eject" = "Eject";
+"disk.select" = "Select disk";
+"disk.all" = "All Disks";
 
 // MARK: Language
 "language" = "언어";
@@ -147,6 +150,7 @@
 "language.uk" = "Українська";
 "language.se" = "Svenska";
 "language.cs" = "Čeština";
+"language.it" = "Italiano";
 
 // MARK: General UI
 "ui.app" = "애플리케이션";
@@ -190,6 +194,7 @@
 "text_component.loadAverage5Min" = "부하 평균 (5 분)";
 "text_component.loadAverage15Min" = "부하 평균 (15 분)";
 "text_component.average" = "평균";
+"text_component.timeRemaining" = "Time Remaining";
 
 // MARK: CPU Display Mode
 "cpu_display_mode" = "CPU 보기 모드";
