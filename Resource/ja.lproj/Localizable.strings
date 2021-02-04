@@ -9,7 +9,7 @@
 // MARK: Battery
 "battery" = "バッテリー";
 "battery.charge" = "充電";
-"battery.timeRemaining" = "Time Rem.";
+"battery.time_remaining" = "Time Rem.";
 "battery.power_source" = "電源";
 "battery.power_source.battery" = "バッテリー";
 "battery.power_source.acPower" = "電源アダプタ";

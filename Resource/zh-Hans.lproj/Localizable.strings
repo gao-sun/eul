@@ -9,7 +9,7 @@
 // MARK: Battery
 "battery" = "电池";
 "battery.charge" = "电量";
-"battery.timeRemaining" = "剩余时间";
+"battery.time_remaining" = "剩余时间";
 "battery.power_source" = "电源";
 "battery.power_source.battery" = "电池";
 "battery.power_source.acPower" = "电源适配器";

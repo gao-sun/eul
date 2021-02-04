@@ -9,7 +9,7 @@
 // MARK: Battery
 "battery" = "Батaрей";
 "battery.charge" = "Цэнэг";
-"battery.timeRemaining" = "Time Rem.";
+"battery.time_remaining" = "Time Rem.";
 "battery.power_source" = "Эх үүсвэр";
 "battery.power_source.battery" = "Батарей";
 "battery.power_source.acPower" = "Цэнэглэгч";

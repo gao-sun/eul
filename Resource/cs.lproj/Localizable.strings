@@ -9,7 +9,7 @@
 // MARK: Battery
 "battery" = "Baterie";
 "battery.charge" = "Nabito";
-"battery.timeRemaining" = "Time Rem.";
+"battery.time_remaining" = "Time Rem.";
 "battery.power_source" = "Zdroj Energie";
 "battery.power_source.battery" = "Baterie";
 "battery.power_source.acPower" = "Nápájen ze Sítě";
