@@ -78,6 +78,10 @@ Note:
     <td align="center"><a href="https://github.com/jevonmao"><img src="https://avatars.githubusercontent.com/u/64660730?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Jevon Mao</b></sub></a><br /><a href="https://github.com/gao-sun/eul/commits?author=jevonmao" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Tekrific"><img src="https://avatars.githubusercontent.com/u/68393566?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Tekrific</b></sub></a><br /><a href="#translation-Tekrific" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/nebeker"><img src="https://avatars.githubusercontent.com/u/8558191?v=4?s=48" width="48px;" alt=""/><br /><sub><b>nebeker</b></sub></a><br /><a href="#translation-nebeker" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/DMNerd"><img src="https://avatars.githubusercontent.com/u/7889445?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Adam</b></sub></a><br /><a href="#translation-DMNerd" title="Translation">🌍</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/stosumarte"><img src="https://avatars.githubusercontent.com/u/64950825?v=4?s=48" width="48px;" alt=""/><br /><sub><b>stosumarte</b></sub></a><br /><a href="#translation-stosumarte" title="Translation">🌍</a></td>
   </tr>
 </table>
 
@@ -101,3 +105,5 @@ Note:
 - Français (credit [@baptistecdr](https://github.com/baptistecdr))
 - Українська (credit [@nrudnyk](https://github.com/nrudnyk))
 - Svenska (credit [@Tekrific](https://github.com/Tekrific))
+- Čeština (credit [@DMNerd](https://github.com/DMNerd))
+- Italiano (credit [@stosumarte](https://github.com/stosumarte))
