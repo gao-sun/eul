@@ -141,6 +141,7 @@
 "language.uk" = "Українська";
 "language.se" = "Svenska";
 "language.cs" = "Čeština";
+"language.it" = "Italiano";
 
 // MARK: General UI
 "ui.app" = "Застосунок";
