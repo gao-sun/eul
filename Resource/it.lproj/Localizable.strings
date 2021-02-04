@@ -119,6 +119,8 @@
 
 // MARK: Disk
 "disk.eject" = "Espelli";
+"disk.select" = "Select disk";
+"disk.all" = "All Disks";
 
 // MARK: Language
 "language" = "Lingua";
