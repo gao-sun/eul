@@ -121,6 +121,8 @@
 
 // MARK: Disk
 "disk.eject" = "Eject";
+"disk.select" = "Select disk";
+"disk.all" = "All Disks";
 
 // MARK: Language
 "language" = "Language";

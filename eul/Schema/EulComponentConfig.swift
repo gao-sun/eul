@@ -13,12 +13,14 @@ struct EulComponentConfig: Codable {
     var component: EulComponent
     var showIcon: Bool = true
     var showGraph: Bool = false
+    var diskSelection: String = ""
 
     var json: JSON {
         JSON([
             "component": component.rawValue,
             "showIcon": showIcon,
             "showGraph": showGraph,
+            "diskSelection": diskSelection,
         ])
     }
 }
@@ -37,6 +39,10 @@ extension EulComponentConfig {
 
         if let bool = json["showGraph"].bool {
             showGraph = bool
+        }
+
+        if let string = json["diskSelection"].string {
+            diskSelection = string
         }
     }
 }
