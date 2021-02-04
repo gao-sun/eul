@@ -9,6 +9,7 @@
 // MARK: Battery
 "battery" = "电池";
 "battery.charge" = "电量";
+"battery.timeRemaining" = "剩余时间";
 "battery.power_source" = "电源";
 "battery.power_source.battery" = "电池";
 "battery.power_source.acPower" = "电源适配器";
@@ -181,6 +182,8 @@
 "text_component.loadAverage5Min" = "平均负载 (5分钟)";
 "text_component.loadAverage15Min" = "平均负载 (15分钟)";
 "text_component.average" = "平均";
+"text_component.timeRemaining" = "剩余时间";
+
 
 // MARK: CPU Display Mode
 "cpu_display_mode" = "CPU 显示";

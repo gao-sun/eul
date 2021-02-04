@@ -25,6 +25,8 @@ struct BatteryView: View {
                 return batteryStore.charge.percentageString
             case .mah:
                 return "\(batteryStore.capacity) mAh"
+            case .timeRemaining:
+                return batteryStore.timeRemaining
             }
         }
     }
