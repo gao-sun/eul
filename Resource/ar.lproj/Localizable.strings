@@ -9,7 +9,7 @@
 // MARK: Battery
 "battery" = "البطارية";
 "battery.charge" = "شحن البطارية";
-"battery.timeRemaining" = "Time left";
+"battery.timeRemaining" = "Time Rem.";
 "battery.power_source" = "Power Source";
 "battery.power_source.battery" = "مصدر الطاقة";
 "battery.power_source.acPower" = "تيار مستمر";
