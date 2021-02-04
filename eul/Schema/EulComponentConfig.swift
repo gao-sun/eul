@@ -13,7 +13,7 @@ struct EulComponentConfig: Codable {
     var component: EulComponent
     var showIcon: Bool = true
     var showGraph: Bool = false
-    var diskSelection: String = SharedStore.disk.list?.disks.first?.name ?? "N/A"
+    var diskSelection: String = ""
 
     var json: JSON {
         JSON([

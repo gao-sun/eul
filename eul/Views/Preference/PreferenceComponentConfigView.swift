@@ -57,15 +57,23 @@ extension Preference {
                                     .inlineSection()
                             }
                         }
-                        if config.wrappedValue.component.isDiskSelectionAvailable {
-                            let disks = diskStore.list?.disks ?? []
-                            Picker(selection: config.diskSelection, label: Text("disk.select".localized()).inlineSection(), content: {
+                        if
+                            config.wrappedValue.component.isDiskSelectionAvailable,
+                            let disks = diskStore.list?.disks
+                        {
+                            Picker(
+                                "disk.select".localized(),
+                                selection: config.diskSelection
+                            ) {
+                                Text("disk.all".localized())
+                                    .inlineSection()
+                                    .tag("")
                                 ForEach(disks) {
                                     Text($0.name)
                                         .inlineSection()
                                 }
-                            })
-                                .frame(width: 200)
+                            }
+                            .frame(width: 200)
                         }
                     }
                     if component == .CPU {

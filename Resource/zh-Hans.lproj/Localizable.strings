@@ -120,7 +120,8 @@
 
 // MARK: Disk
 "disk.eject" = "推出";
-"disk.select" = "Select disk";
+"disk.select" = "选择存储";
+"disk.all" = "所有存储";
 
 // MARK: Language
 "language" = "语言";

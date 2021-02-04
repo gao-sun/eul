@@ -21,16 +21,20 @@ class DiskStore: ObservableObject, Refreshable {
     }
 
     @Published var list: DiskList?
-    @Published var selectedDisk: DiskList.Disk?
+
+    var selectedDisk: DiskList.Disk? {
+        guard config.diskSelection != "" else {
+            return nil
+        }
+        return list?.disks.filter { $0.name == config.diskSelection }.first
+    }
 
     var ceilingBytes: UInt64? {
-        // list?.disks.reduce(0) { $0 + $1.size }
-        selectedDisk?.size
+        selectedDisk?.size ?? list?.disks.reduce(0) { $0 + $1.size }
     }
 
     var freeBytes: UInt64? {
-        // list?.disks.reduce(0) { $0 + $1.freeSize }
-        selectedDisk?.freeSize
+        selectedDisk?.freeSize ?? list?.disks.reduce(0) { $0 + $1.freeSize }
     }
 
     var usageString: String {
@@ -95,9 +99,6 @@ class DiskStore: ObservableObject, Refreshable {
                 isEjectable: isEjectable
             )
         })
-        if config.diskSelection != "", let list = list {
-            selectedDisk = list.disks.filter { $0.name == config.diskSelection }.first
-        }
     }
 
     init() {
