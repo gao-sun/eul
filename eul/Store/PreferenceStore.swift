@@ -58,7 +58,11 @@ class PreferenceStore: ObservableObject {
     @Published var checkStatusItemVisibility = true
     @Published var isUpdateAvailable: Bool? = false
     @Published var checkUpdateFailed = true
-    @Published var appearanceMode = Preference.appearance.auto
+    @Published var appearanceMode = Preference.appearance.auto {
+        didSet {
+            changeColorScheme()
+        }
+    }
 
     var json: JSON {
         JSON([

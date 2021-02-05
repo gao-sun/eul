@@ -49,28 +49,13 @@ extension Preference {
                     }
                 }
                 .frame(width: 200)
-                if #available(OSX 11.0, *) {
-                    Picker("appearance.mode".localized(), selection: $preference.appearanceMode) {
-                        ForEach(appearanceMode) {
-                            Text($0.description)
-                                .tag($0)
-                        }
+                Picker("appearance.mode".localized(), selection: $preference.appearanceMode) {
+                    ForEach(appearanceMode) {
+                        Text($0.description)
+                            .tag($0)
                     }
-                    .frame(width: 200)
-                    .onChange(of: preference.appearanceMode, perform: { _ in
-                        preference.changeColorScheme()
-
-                    })
-
-                } else {
-                    Picker("appearance.mode".localized(), selection: $preference.appearanceMode) {
-                        ForEach(appearanceMode) {
-                            Text($0.description)
-                                .tag($0)
-                        }
-                    }
-                    .frame(width: 200)
                 }
+                .frame(width: 200)
             }
             .padding(.vertical, 8)
         }
