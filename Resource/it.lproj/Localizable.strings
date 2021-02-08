@@ -73,6 +73,7 @@
 "menu.quit" = "Chiudi eul";
 "menu.show_cpu_top_activities" = "Mostra processi principali CPU";
 "menu.show_network_top_activities" = "Mostra processi principali rete";
+"menu.show_ram_top_activities" = "Mostra processi principali RAM";
 
 // MARK: Temperature
 "temp.temperature" = "Temperatura";
