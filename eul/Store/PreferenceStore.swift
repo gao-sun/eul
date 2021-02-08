@@ -56,6 +56,7 @@ class PreferenceStore: ObservableObject {
     @Published var showNetworkTopActivities = false
     @Published var cpuMenuDisplay: Preference.CpuMenuDisplay = .usagePercentage
     @Published var checkStatusItemVisibility = true
+    @Published var autoUpdate = false
     @Published var isUpdateAvailable: Bool? = false
     @Published var checkUpdateFailed = true
 
@@ -73,6 +74,7 @@ class PreferenceStore: ObservableObject {
             "showNetworkTopActivities": showNetworkTopActivities,
             "cpuMenuDisplay": cpuMenuDisplay.rawValue,
             "checkStatusItemVisibility": checkStatusItemVisibility,
+            "autoUpdate": autoUpdate,
         ])
     }
 
@@ -159,6 +161,9 @@ class PreferenceStore: ObservableObject {
                 }
                 if let value = data["checkStatusItemVisibility"].bool {
                     checkStatusItemVisibility = value
+                }
+                if let value = data["autoUpdate"].bool {
+                    autoUpdate = value
                 }
             } catch {
                 print("Unable to get preference data from user defaults")

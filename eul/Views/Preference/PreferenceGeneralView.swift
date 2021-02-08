@@ -67,6 +67,10 @@ extension Preference {
                     Text("ui.launch_at_login".localized())
                         .inlineSection()
                 }
+                Toggle(isOn: $preference.autoUpdate) {
+                    Text("ui.auto_update".localized())
+                        .inlineSection()
+                }
                 Toggle(isOn: $preference.checkStatusItemVisibility) {
                     Text("ui.check_status_item_visibility".localized())
                         .inlineSection()
