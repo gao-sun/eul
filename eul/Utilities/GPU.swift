@@ -63,6 +63,8 @@ extension GPU {
                 return nil
             }
 
+            Print("📊 statistics", statistics)
+
             return Statistic(
                 pciMatch: pciMatch,
                 usagePercentage: usagePercentage,
