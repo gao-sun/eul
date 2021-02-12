@@ -2235,7 +2235,7 @@
 			repositoryURL = "https://github.com/gao-sun/SystemKit";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.10;
+				minimumVersion = 0.0.12;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
