@@ -9,7 +9,7 @@
 // MARK: Battery
 "battery" = "Batterie";
 "battery.charge" = "Charge";
-"battery.time_remaining" = "Time Rem.";
+"battery.time_remaining" = "Temps restant";
 "battery.power_source" = "Source d'alimentation";
 "battery.power_source.battery" = "Batterie";
 "battery.power_source.acPower" = "Adaptateur secteur";
@@ -73,7 +73,7 @@
 "menu.preferences" = "Préférences";
 "menu.quit" = "Quitter eul";
 "menu.show_cpu_top_activities" = "Afficher les activités principales du CPU";
-"menu.show_ram_top_activities" = "Show RAM top activities";
+"menu.show_ram_top_activities" = "Afficher les activités principales de la RAM";
 "menu.show_network_top_activities" = "Afficher les activités principales du réseau";
 
 // MARK: Temperature
@@ -121,11 +121,11 @@
 
 // MARK: Disk
 "disk.eject" = "Ejecter";
-"disk.select" = "Select disk";
-"disk.all" = "All Disks";
+"disk.select" = "Sélectionnez un disque";
+"disk.all" = "Tout les disques";
 
 // MARK: Language
-"language" = "Language";
+"language" = "Langue";
 "language.ar" = "العربية";
 "language.en" = "English";
 "language.zh-Hans" = "简体中文";
@@ -165,13 +165,13 @@
 "ui.hidden_by_system.open" = "Ouvrir";
 "ui.hidden_by_system.dismiss" = "Ignorer";
 "ui.check_status_item_visibility" = "Vérifier la visibilité des composants";
-"ui.upgrade_method" = "Upgrade";
-"ui.upgrade_method.none" = "none";
-"ui.upgrade_method.none.description" = "eul will not check upgrade";
-"ui.upgrade_method.showInStatusBar" = "show in status bar";
-"ui.upgrade_method.showInStatusBar.description" = "Show upgrade icon when new version available";
-"ui.upgrade_method.autoUpdate" = "auto update";
-"ui.upgrade_method.autoUpdate.description" = "Perform upgrade automatically";
+"ui.upgrade_method" = "Mis à jour";
+"ui.upgrade_method.none" = "manuelle";
+"ui.upgrade_method.none.description" = "eul ne vérifiera pas la présence d'une nouvelle version";
+"ui.upgrade_method.showInStatusBar" = "afficher dans la barre des menus";
+"ui.upgrade_method.showInStatusBar.description" = "Affiche une icône quand une nouvelle version est disponible";
+"ui.upgrade_method.autoUpdate" = "automatique";
+"ui.upgrade_method.autoUpdate.description" = "Effectue la mise à jour automatiquement";
 
 // MARK: Component
 "component.show_icon" = "Afficher l'icône";
