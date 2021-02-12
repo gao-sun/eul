@@ -63,9 +63,9 @@ extension Preference {
                     }
                     .fixedSize()
                 }
-                Picker("ui.update_method".localized(), selection: $preference.updateMethod) {
-                    ForEach(PreferenceStore.UpdateMethod.allCases, id: \.self) {
-                        Text("ui.update_method.\($0)".localized())
+                Picker("ui.upgrade_method".localized(), selection: $preference.upgradeMethod) {
+                    ForEach(PreferenceStore.UpgradeMethod.allCases, id: \.self) {
+                        Text("ui.upgrade_method.\($0)".localized())
                             .tag($0)
                     }
                 }

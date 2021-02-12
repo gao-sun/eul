@@ -54,7 +54,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             print("🤩 woke up")
             self.wakeUp()
         }
-        updateMethodCancellable = preferenceStore.$updateMethod.sink { _ in
+        updateMethodCancellable = preferenceStore.$upgradeMethod.sink { _ in
             DispatchQueue.main.async {
                 self.checkUpdateRepeatedly()
             }
@@ -127,7 +127,7 @@ extension AppDelegate {
     }
 
     func checkUpdateRepeatedly() {
-        guard !isSleeping, preferenceStore.updateMethod != .none else {
+        guard !isSleeping, preferenceStore.upgradeMethod != .none else {
             return
         }
 

@@ -14,7 +14,7 @@ import SwiftyJSON
 import WidgetKit
 
 class PreferenceStore: ObservableObject {
-    enum UpdateMethod: String, CaseIterable {
+    enum UpgradeMethod: String, CaseIterable {
         case none
         case showInStatusBar
         case autoUpdate
@@ -62,7 +62,7 @@ class PreferenceStore: ObservableObject {
     @Published var showNetworkTopActivities = false
     @Published var cpuMenuDisplay: Preference.CpuMenuDisplay = .usagePercentage
     @Published var checkStatusItemVisibility = true
-    @Published var updateMethod = UpdateMethod.showInStatusBar
+    @Published var upgradeMethod = UpgradeMethod.showInStatusBar
     @Published var isUpdateAvailable: Bool? = false
     @Published var checkUpdateFailed = true
 
@@ -80,7 +80,7 @@ class PreferenceStore: ObservableObject {
             "showNetworkTopActivities": showNetworkTopActivities,
             "cpuMenuDisplay": cpuMenuDisplay.rawValue,
             "checkStatusItemVisibility": checkStatusItemVisibility,
-            "updateMethod": updateMethod.rawValue,
+            "upgradeMethod": upgradeMethod.rawValue,
         ])
     }
 
@@ -114,7 +114,7 @@ class PreferenceStore: ObservableObject {
                     {
                         self.isUpdateAvailable = true
 
-                        if self.updateMethod == .autoUpdate {
+                        if self.upgradeMethod == .autoUpdate {
                             AutoUpdate.run()
                         }
                     } else {
@@ -172,8 +172,8 @@ class PreferenceStore: ObservableObject {
                 if let value = data["checkStatusItemVisibility"].bool {
                     checkStatusItemVisibility = value
                 }
-                if let raw = data["updateMethod"].string, let value = UpdateMethod(rawValue: raw) {
-                    updateMethod = value
+                if let raw = data["updateMethod"].string, let value = UpgradeMethod(rawValue: raw) {
+                    upgradeMethod = value
                 }
             } catch {
                 print("Unable to get preference data from user defaults")
