@@ -172,7 +172,7 @@ class PreferenceStore: ObservableObject {
                 if let value = data["checkStatusItemVisibility"].bool {
                     checkStatusItemVisibility = value
                 }
-                if let raw = data["updateMethod"].string, let value = UpgradeMethod(rawValue: raw) {
+                if let raw = data["upgradeMethod"].string, let value = UpgradeMethod(rawValue: raw) {
                     upgradeMethod = value
                 }
             } catch {
