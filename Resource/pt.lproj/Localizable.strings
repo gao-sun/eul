@@ -165,6 +165,13 @@
 "ui.hidden_by_system.open" = "Open";
 "ui.hidden_by_system.dismiss" = "Dismiss";
 "ui.check_status_item_visibility" = "Check status item visibility";
+"ui.upgrade_method" = "Upgrade";
+"ui.upgrade_method.none" = "none";
+"ui.upgrade_method.none.description" = "eul will not check upgrade";
+"ui.upgrade_method.showInStatusBar" = "show in status bar";
+"ui.upgrade_method.showInStatusBar.description" = "Show upgrade icon when new version available";
+"ui.upgrade_method.autoUpdate" = "auto update";
+"ui.upgrade_method.autoUpdate.description" = "Perform upgrade automatically";
 
 // MARK: Component
 "component.show_icon" = "Mostrar ícone";

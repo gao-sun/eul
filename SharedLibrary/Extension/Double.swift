@@ -23,4 +23,8 @@ public extension Double {
     func toFixed(_ decimal: Int) -> String {
         String(format: "%.\(decimal)f", self)
     }
+
+    var zeroOrAbove: Double {
+        isNaN || isLess(than: 0) ? 0 : self
+    }
 }

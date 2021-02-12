@@ -104,6 +104,7 @@
 		6C5F8549249FACE200CF0EF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8547249FACE200CF0EF8 /* Main.storyboard */; };
 		6C5FBD4E253C7A060016F3A2 /* PreferenceMenuViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FBD4D253C7A060016F3A2 /* PreferenceMenuViewView.swift */; };
 		6C5FBD50253C83520016F3A2 /* MenuActionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FBD4F253C83520016F3A2 /* MenuActionTextView.swift */; };
+		6C76846F25D1884A00E987BB /* AutoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C76846E25D1884A00E987BB /* AutoUpdate.swift */; };
 		6C79AD362539EBE60033845C /* ProcessUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD352539EBE60033845C /* ProcessUsage.swift */; };
 		6C79AD382539F9030033845C /* MenuActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79AD372539F9030033845C /* MenuActionButtonView.swift */; };
 		6C7A8D8A25578F8100FF52ED /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A8D8925578F8100FF52ED /* LineChart.swift */; };
@@ -155,6 +156,8 @@
 		6C9A10CB2556C502000459E1 /* SharedLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; };
 		6C9A10CC2556C502000459E1 /* SharedLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6CAEED6524A62DF800C39597 /* SMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEED6424A62DF800C39597 /* SMC.swift */; };
+		6CB3D25425D69FFF008C6627 /* SelfUpdate.app in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEF06C25D69E8100B4C913 /* SelfUpdate.app */; };
+		6CB3D26125D6A859008C6627 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB3D26025D6A858008C6627 /* ContentView.swift */; };
 		6CC0798C250CD793000D7DAC /* PreferenceGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC0798B250CD793000D7DAC /* PreferenceGeneralView.swift */; };
 		6CC1EBB725769B1F00BC05CA /* FanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC1EBB625769B1F00BC05CA /* FanData.swift */; };
 		6CC1EBBA25769B4400BC05CA /* TemperatureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC1EBB925769B4400BC05CA /* TemperatureData.swift */; };
@@ -170,6 +173,10 @@
 		6CDE6C7624F10C8000463114 /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDE6C7524F10C8000463114 /* StatusBarManager.swift */; };
 		6CDE6C7824F112D700463114 /* EulComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDE6C7724F112D700463114 /* EulComponent.swift */; };
 		6CDE6C7D24F2AB8800463114 /* NSMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDE6C7C24F2AB8800463114 /* NSMenuItem.swift */; };
+		6CDEF06F25D69E8100B4C913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF06E25D69E8100B4C913 /* AppDelegate.swift */; };
+		6CDEF07325D69E8100B4C913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEF07225D69E8100B4C913 /* Assets.xcassets */; };
+		6CDEF07625D69E8100B4C913 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEF07525D69E8100B4C913 /* Preview Assets.xcassets */; };
+		6CDEF07925D69E8100B4C913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEF07725D69E8100B4C913 /* Main.storyboard */; };
 		6CE33C7F25260E3D00831857 /* PreferenceRefreshRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE33C7E25260E3D00831857 /* PreferenceRefreshRateView.swift */; };
 		6CE7969325166916008BEB2B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 6CE7969225166916008BEB2B /* SwiftyJSON */; };
 		6CEF48A2255C33CE002E4D73 /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEF48A1255C33CE002E4D73 /* FramePreferenceKey.swift */; };
@@ -249,6 +256,13 @@
 			remoteGlobalIDString = 6C2688ED2556762B00FB7306;
 			remoteInfo = SharedLibrary;
 		};
+		6CB3D25525D69FFF008C6627 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C5F8533249FACE000CF0EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CDEF06B25D69E8100B4C913;
+			remoteInfo = SelfUpdate;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -267,7 +281,7 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 16;
+			dstSubfolderSpec = 7;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +430,7 @@
 		6C68E07F2556643700595F83 /* PreferenceEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceEntry.swift; sourceTree = "<group>"; };
 		6C68E083255664F500595F83 /* SmcStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmcStruct.swift; sourceTree = "<group>"; };
 		6C739CC025544D7200B30B0D /* SharedEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedEntry.swift; sourceTree = "<group>"; };
+		6C76846E25D1884A00E987BB /* AutoUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoUpdate.swift; sourceTree = "<group>"; };
 		6C79AD352539EBE60033845C /* ProcessUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessUsage.swift; sourceTree = "<group>"; };
 		6C79AD372539F9030033845C /* MenuActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionButtonView.swift; sourceTree = "<group>"; };
 		6C7A8D8925578F8100FF52ED /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
@@ -463,6 +478,7 @@
 		6CB260AA250DE26900328DAA /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		6CB260AF250DF1A900328DAA /* BatteryIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryIconView.swift; sourceTree = "<group>"; };
 		6CB26F7824E8310900E809FE /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		6CB3D26025D6A858008C6627 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6CC0798B250CD793000D7DAC /* PreferenceGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceGeneralView.swift; sourceTree = "<group>"; };
 		6CC1EBB625769B1F00BC05CA /* FanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanData.swift; sourceTree = "<group>"; };
 		6CC1EBB925769B4400BC05CA /* TemperatureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureData.swift; sourceTree = "<group>"; };
@@ -480,6 +496,13 @@
 		6CDE6C7524F10C8000463114 /* StatusBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
 		6CDE6C7724F112D700463114 /* EulComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulComponent.swift; sourceTree = "<group>"; };
 		6CDE6C7C24F2AB8800463114 /* NSMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMenuItem.swift; sourceTree = "<group>"; };
+		6CDEF06C25D69E8100B4C913 /* SelfUpdate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfUpdate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CDEF06E25D69E8100B4C913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6CDEF07225D69E8100B4C913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6CDEF07525D69E8100B4C913 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6CDEF07825D69E8100B4C913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6CDEF07A25D69E8100B4C913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CDEF07B25D69E8100B4C913 /* SelfUpdate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SelfUpdate.entitlements; sourceTree = "<group>"; };
 		6CE33C7C252601BB00831857 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		6CE33C7E25260E3D00831857 /* PreferenceRefreshRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceRefreshRateView.swift; sourceTree = "<group>"; };
 		6CEF48A1255C33CE002E4D73 /* FramePreferenceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FramePreferenceKey.swift; sourceTree = "<group>"; };
@@ -563,6 +586,13 @@
 				6C26890A255676D300FB7306 /* SharedLibrary.framework in Frameworks */,
 				6C7E1F022552EB2600287D08 /* SwiftUI.framework in Frameworks */,
 				6C7E1F002552EB2600287D08 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CDEF06925D69E8100B4C913 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +748,7 @@
 			isa = PBXGroup;
 			children = (
 				6C2688EF2556762B00FB7306 /* SharedLibrary */,
+				6CDEF06D25D69E8100B4C913 /* SelfUpdate */,
 				6C16BEEB2552EC5800CCF5B7 /* Resource */,
 				6C5F853D249FACE000CF0EF8 /* eul */,
 				6C7E1F032552EB2600287D08 /* CpuWidget */,
@@ -739,6 +770,7 @@
 				6C45750525568DCB00A2AD84 /* MemoryWidgetExtension.appex */,
 				6C7CF46E25569B8100CEC263 /* BatteryWidgetExtension.appex */,
 				6C5DACFE2556B2FE005F67C3 /* NetworkWidgetExtension.appex */,
+				6CDEF06C25D69E8100B4C913 /* SelfUpdate.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -784,6 +816,7 @@
 				6C831368253DCF1F00914BB0 /* Print.swift */,
 				6CFAB80525BC526E002F5F48 /* GPU.swift */,
 				6CFAB80825BC55C6002F5F48 /* IOHelper.swift */,
+				6C76846E25D1884A00E987BB /* AutoUpdate.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -936,6 +969,28 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		6CDEF06D25D69E8100B4C913 /* SelfUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				6CDEF06E25D69E8100B4C913 /* AppDelegate.swift */,
+				6CB3D26025D6A858008C6627 /* ContentView.swift */,
+				6CDEF07225D69E8100B4C913 /* Assets.xcassets */,
+				6CDEF07725D69E8100B4C913 /* Main.storyboard */,
+				6CDEF07A25D69E8100B4C913 /* Info.plist */,
+				6CDEF07B25D69E8100B4C913 /* SelfUpdate.entitlements */,
+				6CDEF07425D69E8100B4C913 /* Preview Content */,
+			);
+			path = SelfUpdate;
+			sourceTree = "<group>";
+		};
+		6CDEF07425D69E8100B4C913 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6CDEF07525D69E8100B4C913 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -963,6 +1018,8 @@
 			dependencies = (
 			);
 			name = SharedLibrary;
+			packageProductDependencies = (
+			);
 			productName = SharedLibrary;
 			productReference = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1032,6 +1089,7 @@
 				6C45751325568DCC00A2AD84 /* PBXTargetDependency */,
 				6C7CF47C25569B8200CEC263 /* PBXTargetDependency */,
 				6C5DAD0C2556B2FF005F67C3 /* PBXTargetDependency */,
+				6CB3D25625D69FFF008C6627 /* PBXTargetDependency */,
 			);
 			name = eul;
 			packageProductDependencies = (
@@ -1089,13 +1147,32 @@
 			productReference = 6C7E1EFD2552EB2600287D08 /* CpuWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		6CDEF06B25D69E8100B4C913 /* SelfUpdate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CDEF07C25D69E8100B4C913 /* Build configuration list for PBXNativeTarget "SelfUpdate" */;
+			buildPhases = (
+				6CDEF06825D69E8100B4C913 /* Sources */,
+				6CDEF06925D69E8100B4C913 /* Frameworks */,
+				6CDEF06A25D69E8100B4C913 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SelfUpdate;
+			packageProductDependencies = (
+			);
+			productName = SelfUpdate;
+			productReference = 6CDEF06C25D69E8100B4C913 /* SelfUpdate.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6C5F8533249FACE000CF0EF8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1220;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Gao Sun";
 				TargetAttributes = {
@@ -1117,6 +1194,9 @@
 					};
 					6C7E1EFC2552EB2600287D08 = {
 						CreatedOnToolsVersion = 12.2;
+					};
+					6CDEF06B25D69E8100B4C913 = {
+						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
@@ -1158,6 +1238,7 @@
 				6C45750425568DCB00A2AD84 /* MemoryWidgetExtension */,
 				6C7CF46D25569B8100CEC263 /* BatteryWidgetExtension */,
 				6C5DACFD2556B2FE005F67C3 /* NetworkWidgetExtension */,
+				6CDEF06B25D69E8100B4C913 /* SelfUpdate */,
 			);
 		};
 /* End PBXProject section */
@@ -1196,6 +1277,7 @@
 			files = (
 				6C5F8549249FACE200CF0EF8 /* Main.storyboard in Resources */,
 				6C58053D250CC6B8007F467A /* Localizable.strings in Resources */,
+				6CB3D25425D69FFF008C6627 /* SelfUpdate.app in Resources */,
 				6C5F8543249FACE200CF0EF8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1217,6 +1299,16 @@
 				6C7E1F082552EB2700287D08 /* Assets.xcassets in Resources */,
 				6C16BF0C2552F21C00CCF5B7 /* Assets.xcassets in Resources */,
 				6C16BEEC2552EC9700CCF5B7 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CDEF06A25D69E8100B4C913 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CDEF07925D69E8100B4C913 /* Main.storyboard in Resources */,
+				6CDEF07625D69E8100B4C913 /* Preview Assets.xcassets in Resources */,
+				6CDEF07325D69E8100B4C913 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1411,6 +1503,7 @@
 				6C79AD362539EBE60033845C /* ProcessUsage.swift in Sources */,
 				6CDBB4C525447D8B00D01EA0 /* ComponentsStore.swift in Sources */,
 				6C7DB6D124E0300E00133B06 /* NetworkStore.swift in Sources */,
+				6C76846F25D1884A00E987BB /* AutoUpdate.swift in Sources */,
 				6C33CEC92517634400345977 /* StatusMenuView.swift in Sources */,
 				6C02715F25BD40EA006C54E6 /* SystemProfiler.swift in Sources */,
 			);
@@ -1431,6 +1524,15 @@
 			files = (
 				6C7E1F052552EB2600287D08 /* CpuWidget.swift in Sources */,
 				6C7E1F0B2552EB2700287D08 /* CpuWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CDEF06825D69E8100B4C913 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CB3D26125D6A859008C6627 /* ContentView.swift in Sources */,
+				6CDEF06F25D69E8100B4C913 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1482,6 +1584,11 @@
 			target = 6C2688ED2556762B00FB7306 /* SharedLibrary */;
 			targetProxy = 6C9A10CD2556C502000459E1 /* PBXContainerItemProxy */;
 		};
+		6CB3D25625D69FFF008C6627 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CDEF06B25D69E8100B4C913 /* SelfUpdate */;
+			targetProxy = 6CB3D25525D69FFF008C6627 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1514,6 +1621,14 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		6CDEF07725D69E8100B4C913 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CDEF07825D69E8100B4C913 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1524,7 +1639,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1538,7 +1653,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.SharedLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1555,7 +1670,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1569,7 +1684,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.SharedLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1587,7 +1702,7 @@
 				CODE_SIGN_ENTITLEMENTS = MemoryWidget/MemoryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = MemoryWidget/Info.plist;
@@ -1597,7 +1712,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.10;
+				MARKETING_VERSION = 1.5.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.MemoryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1613,7 +1728,7 @@
 				CODE_SIGN_ENTITLEMENTS = MemoryWidget/MemoryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = MemoryWidget/Info.plist;
@@ -1623,7 +1738,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.10;
+				MARKETING_VERSION = 1.5.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.MemoryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1639,7 +1754,7 @@
 				CODE_SIGN_ENTITLEMENTS = NetworkWidget/NetworkWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NetworkWidget/Info.plist;
@@ -1649,7 +1764,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.10;
+				MARKETING_VERSION = 1.5.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.NetworkWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1665,7 +1780,7 @@
 				CODE_SIGN_ENTITLEMENTS = NetworkWidget/NetworkWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NetworkWidget/Info.plist;
@@ -1675,7 +1790,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.10;
+				MARKETING_VERSION = 1.5.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.NetworkWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1810,7 +1925,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1822,7 +1937,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.5.10;
+				MARKETING_VERSION = 1.5.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1841,7 +1956,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1853,7 +1968,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.5.10;
+				MARKETING_VERSION = 1.5.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1869,7 +1984,7 @@
 				CODE_SIGN_ENTITLEMENTS = BatteryWidget/BatteryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BatteryWidget/Info.plist;
@@ -1879,7 +1994,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.10;
+				MARKETING_VERSION = 1.5.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.BatteryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1895,7 +2010,7 @@
 				CODE_SIGN_ENTITLEMENTS = BatteryWidget/BatteryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BatteryWidget/Info.plist;
@@ -1905,7 +2020,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.10;
+				MARKETING_VERSION = 1.5.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.BatteryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1921,7 +2036,7 @@
 				CODE_SIGN_ENTITLEMENTS = CpuWidget/CpuWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CpuWidget/Info.plist;
@@ -1931,7 +2046,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.10;
+				MARKETING_VERSION = 1.5.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.CpuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1947,7 +2062,7 @@
 				CODE_SIGN_ENTITLEMENTS = CpuWidget/CpuWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = M8G2RFZVFV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CpuWidget/Info.plist;
@@ -1957,8 +2072,56 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.10;
+				MARKETING_VERSION = 1.5.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.CpuWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6CDEF07D25D69E8100B4C913 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SelfUpdate/SelfUpdate.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"SelfUpdate/Preview Content\"";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SelfUpdate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.SelfUpdate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6CDEF07E25D69E8100B4C913 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SelfUpdate/SelfUpdate.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"SelfUpdate/Preview Content\"";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SelfUpdate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.SelfUpdate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -2027,6 +2190,15 @@
 			buildConfigurations = (
 				6C7E1F112552EB2700287D08 /* Debug */,
 				6C7E1F122552EB2700287D08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CDEF07C25D69E8100B4C913 /* Build configuration list for PBXNativeTarget "SelfUpdate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CDEF07D25D69E8100B4C913 /* Debug */,
+				6CDEF07E25D69E8100B4C913 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -165,6 +165,13 @@
 "ui.hidden_by_system.open" = "打开";
 "ui.hidden_by_system.dismiss" = "忽略";
 "ui.check_status_item_visibility" = "检查状态栏可见性";
+"ui.upgrade_method" = "升级";
+"ui.upgrade_method.none" = "无";
+"ui.upgrade_method.none.description" = "eul 将不会检查更新";
+"ui.upgrade_method.showInStatusBar" = "在状态栏展示";
+"ui.upgrade_method.showInStatusBar.description" = "当新版本可用时在状态栏显示图标";
+"ui.upgrade_method.autoUpdate" = "自动更新";
+"ui.upgrade_method.autoUpdate.description" = "自动进行升级";
 
 // MARK: Component
 "component.show_icon" = "显示图标";

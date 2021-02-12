@@ -14,6 +14,12 @@ import SwiftyJSON
 import WidgetKit
 
 class PreferenceStore: ObservableObject {
+    enum UpgradeMethod: String, CaseIterable {
+        case none
+        case showInStatusBar
+        case autoUpdate
+    }
+
     static var availableLanguages: [String] {
         Localize.availableLanguages().filter { $0 != "Base" }
     }
@@ -56,6 +62,7 @@ class PreferenceStore: ObservableObject {
     @Published var showNetworkTopActivities = false
     @Published var cpuMenuDisplay: Preference.CpuMenuDisplay = .usagePercentage
     @Published var checkStatusItemVisibility = true
+    @Published var upgradeMethod = UpgradeMethod.showInStatusBar
     @Published var isUpdateAvailable: Bool? = false
     @Published var checkUpdateFailed = true
 
@@ -73,6 +80,7 @@ class PreferenceStore: ObservableObject {
             "showNetworkTopActivities": showNetworkTopActivities,
             "cpuMenuDisplay": cpuMenuDisplay.rawValue,
             "checkStatusItemVisibility": checkStatusItemVisibility,
+            "upgradeMethod": upgradeMethod.rawValue,
         ])
     }
 
@@ -105,6 +113,10 @@ class PreferenceStore: ObservableObject {
                         "v\(version)".compare(tagName, options: .numeric) == .orderedAscending
                     {
                         self.isUpdateAvailable = true
+
+                        if self.upgradeMethod == .autoUpdate {
+                            AutoUpdate.run()
+                        }
                     } else {
                         self.isUpdateAvailable = false
                     }
@@ -160,6 +172,9 @@ class PreferenceStore: ObservableObject {
                 if let value = data["checkStatusItemVisibility"].bool {
                     checkStatusItemVisibility = value
                 }
+                if let raw = data["updateMethod"].string, let value = UpgradeMethod(rawValue: raw) {
+                    upgradeMethod = value
+                }
             } catch {
                 print("Unable to get preference data from user defaults")
             }
@@ -171,7 +186,7 @@ class PreferenceStore: ObservableObject {
             let data = try json.rawData()
             UserDefaults.standard.set(data, forKey: userDefaultsKey)
         } catch {
-            print("Unable to get preference data")
+            print("Unable to save preference")
         }
     }
 
