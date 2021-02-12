@@ -70,6 +70,9 @@ extension Preference {
                     }
                 }
                 .fixedSize()
+                Text("ui.upgrade_method.\(preference.upgradeMethod.rawValue).description".localized())
+                    .secondaryDisplayText()
+                    .padding(.bottom, 8)
                 Toggle(isOn: $launchAtLogin.isEnabled) {
                     Text("ui.launch_at_login".localized())
                         .inlineSection()
