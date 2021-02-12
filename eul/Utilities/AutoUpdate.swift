@@ -25,10 +25,10 @@ enum AutoUpdate {
 
                             do {
                                 if fileManager.fileExists(atPath: tempSelfUpdateUrl.path) {
-                                    print("trying to remove legacy update app at", tempSelfUpdateUrl)
+                                    Print("trying to remove legacy update app at", tempSelfUpdateUrl)
                                     try fileManager.removeItem(at: tempSelfUpdateUrl)
                                 }
-                                print("trying to copy self update from", selfUpdateUrl, "to", tempSelfUpdateUrl)
+                                Print("trying to copy self update from", selfUpdateUrl, "to", tempSelfUpdateUrl)
                                 try fileManager.copyItem(at: selfUpdateUrl, to: tempSelfUpdateUrl)
                             } catch {
                                 print("⚠️ error when copying self update", error)
@@ -44,7 +44,7 @@ enum AutoUpdate {
                             let options = NSWorkspace.OpenConfiguration()
                             options.arguments = arguments
 
-                            print("trying to run self update with arguments", tempSelfUpdateUrl, arguments)
+                            Print("trying to run self update with arguments", tempSelfUpdateUrl, arguments)
                             do {
                                 try NSWorkspace.shared.open(
                                     tempSelfUpdateUrl,
@@ -56,7 +56,7 @@ enum AutoUpdate {
                                 return
                             }
 
-                            print("started self update app")
+                            Print("started self update app")
                         }
                     }
                 }

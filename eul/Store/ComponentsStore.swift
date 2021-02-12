@@ -104,7 +104,7 @@ class ComponentsStore<Component: JSONCodabble & Equatable>: ObservableObject {
             let data = try json.rawData()
             UserDefaults.standard.set(data, forKey: userDefaultsKey)
         } catch {
-            print("Unable to get preference data")
+            print("Unable save components")
         }
     }
 }

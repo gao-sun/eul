@@ -63,12 +63,15 @@ extension Preference {
                     }
                     .fixedSize()
                 }
+                Picker("ui.update_method".localized(), selection: $preference.updateMethod) {
+                    ForEach(PreferenceStore.UpdateMethod.allCases, id: \.self) {
+                        Text("ui.update_method.\($0)".localized())
+                            .tag($0)
+                    }
+                }
+                .fixedSize()
                 Toggle(isOn: $launchAtLogin.isEnabled) {
                     Text("ui.launch_at_login".localized())
-                        .inlineSection()
-                }
-                Toggle(isOn: $preference.autoUpdate) {
-                    Text("ui.auto_update".localized())
                         .inlineSection()
                 }
                 Toggle(isOn: $preference.checkStatusItemVisibility) {
