@@ -6,6 +6,7 @@
 //  Copyright © 2021 Gao Sun. All rights reserved.
 //
 
+import Cocoa
 import Foundation
 
 enum AutoUpdate {
@@ -17,7 +18,47 @@ enum AutoUpdate {
         downloadLatest {
             if $0 {
                 unzip {
-                    print("???", $0)
+                    if $0 {
+                        if let resourceURL = Bundle.main.resourceURL {
+                            let selfUpdateUrl = resourceURL.appendingPathComponent("SelfUpdate.app")
+                            let tempSelfUpdateUrl = fileManager.temporaryDirectory.appendingPathComponent("SelfUpdate.app")
+
+                            do {
+                                if fileManager.fileExists(atPath: tempSelfUpdateUrl.path) {
+                                    print("trying to remove legacy update app at", tempSelfUpdateUrl)
+                                    try fileManager.removeItem(at: tempSelfUpdateUrl)
+                                }
+                                print("trying to copy self update from", selfUpdateUrl, "to", tempSelfUpdateUrl)
+                                try fileManager.copyItem(at: selfUpdateUrl, to: tempSelfUpdateUrl)
+                            } catch {
+                                print("⚠️ error when copying self update", error)
+                                return
+                            }
+
+                            let arguments: [String] = [
+                                fileManager.temporaryDirectory.path,
+                                Bundle.main.bundleURL.deletingLastPathComponent().path,
+                                NSRunningApplication.current.processIdentifier.description,
+                            ]
+
+                            let options = NSWorkspace.OpenConfiguration()
+                            options.arguments = arguments
+
+                            print("trying to run self update with arguments", tempSelfUpdateUrl, arguments)
+                            do {
+                                try NSWorkspace.shared.open(
+                                    tempSelfUpdateUrl,
+                                    options: .default,
+                                    configuration: [.arguments: arguments]
+                                )
+                            } catch {
+                                print("error when opening self update", error)
+                                return
+                            }
+
+                            print("started self update app")
+                        }
+                    }
                 }
             }
         }
@@ -32,7 +73,7 @@ enum AutoUpdate {
         let session = URLSession(configuration: .ephemeral)
         let task = session.downloadTask(with: url) { url, _, error in
             if let error = error {
-                print("⚠️ error when downloading latest zip file", error.localizedDescription)
+                print("⚠️ error when downloading latest zip file", error)
                 completion(false)
                 return
             }
@@ -53,7 +94,7 @@ enum AutoUpdate {
                 Print("Renaming file")
                 try fileManager.moveItem(at: url, to: zipUrl)
             } catch {
-                print("⚠️ error when setting up the new app", error.localizedDescription)
+                print("⚠️ error when setting up the new app", error)
                 completion(false)
                 return
             }
@@ -77,7 +118,7 @@ enum AutoUpdate {
                 return
             }
         } catch {
-            print("⚠️ error when unzipping the new app", error.localizedDescription)
+            print("⚠️ error when unzipping the new app", error)
             completion(false)
             return
         }
