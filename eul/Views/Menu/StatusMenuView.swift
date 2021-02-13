@@ -33,6 +33,10 @@ struct StatusMenuView: SizeChangeView {
                     .font(.system(size: 12, weight: .semibold))
                 Text("v\(preferenceStore.version ?? "?")")
                     .secondaryDisplayText()
+                if preferenceStore.isUpdateAvailable == true {
+                    Text("ui.new_version".localized())
+                        .secondaryDisplayText()
+                }
                 Spacer()
                 MenuActionTextView(id: "menu.preferences", text: "menu.preferences", action: AppDelegate.openPreferences)
                 MenuActionTextView(id: "menu.quit", text: "menu.quit", action: AppDelegate.quit)

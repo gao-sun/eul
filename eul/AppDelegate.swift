@@ -7,52 +7,18 @@
 //
 
 import Cocoa
+import Combine
 import Localize_Swift
 import SharedLibrary
 import SwiftUI
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
-    static var statusBarHeight: CGFloat {
-        NSStatusBar.system.thickness
-    }
-
-    static func openPreferences() {
-        (NSApp.delegate as! AppDelegate).window.makeKeyAndOrderFront(nil)
-        NSApp.activate(ignoringOtherApps: true)
-        NotificationCenter.default.post(name: .StatusBarMenuShouldClose, object: nil)
-    }
-
-    static func quit() {
-        NSApplication.shared.terminate(self)
-    }
-
     private var isSleeping = false
+    private var updateMethodCancellable: AnyCancellable?
 
     var window: NSWindow!
     @ObservedObject var preferenceStore = SharedStore.preference
-
-    func refreshSMCRepeatedly() {
-        guard !isSleeping else {
-            return
-        }
-
-        NotificationCenter.default.post(name: .SMCShouldRefresh, object: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + Double(preferenceStore.smcRefreshRate)) { [self] in
-            refreshSMCRepeatedly()
-        }
-    }
-
-    func refreshNetworkRepeatedly() {
-        guard !isSleeping else {
-            return
-        }
-
-        NotificationCenter.default.post(name: .NetworkShouldRefresh, object: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + Double(preferenceStore.networkRefreshRate)) { [self] in
-            refreshNetworkRepeatedly()
-        }
-    }
 
     func changeColorScheme() {
         switch preferenceStore.appearanceMode {
@@ -64,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             window.appearance = nil
         }
     }
-
+  
     func applicationDidFinishLaunching(_: Notification) {
         let contentView = ContentView()
         window = NSWindow(
@@ -100,6 +66,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             print("🤩 woke up")
             self.wakeUp()
         }
+        updateMethodCancellable = preferenceStore.$upgradeMethod.sink { _ in
+            DispatchQueue.main.async {
+                self.checkUpdateRepeatedly()
+            }
+        }
     }
 
     func applicationShouldTerminate(_: NSApplication) -> NSApplication.TerminateReply {
@@ -112,17 +83,69 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         isSleeping = false
         refreshSMCRepeatedly()
         refreshNetworkRepeatedly()
+        checkUpdateRepeatedly()
     }
 
     func sleep() {
         isSleeping = true
     }
 
-    func windowDidBecomeMain(_: Notification) {
-        preferenceStore.checkUpdate()
-    }
-
     func applicationWillTerminate(_: Notification) {
         // Insert code here to tear down your application
+    }
+}
+
+// MARK: Static Methods
+
+extension AppDelegate {
+    static var statusBarHeight: CGFloat {
+        NSStatusBar.system.thickness
+    }
+
+    static func openPreferences() {
+        (NSApp.delegate as! AppDelegate).window.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+        NotificationCenter.default.post(name: .StatusBarMenuShouldClose, object: nil)
+    }
+
+    static func quit() {
+        NSApplication.shared.terminate(self)
+    }
+}
+
+// MARK: Repeating Methods
+
+extension AppDelegate {
+    func refreshSMCRepeatedly() {
+        guard !isSleeping else {
+            return
+        }
+
+        NotificationCenter.default.post(name: .SMCShouldRefresh, object: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(preferenceStore.smcRefreshRate)) { [self] in
+            refreshSMCRepeatedly()
+        }
+    }
+
+    func refreshNetworkRepeatedly() {
+        guard !isSleeping else {
+            return
+        }
+
+        NotificationCenter.default.post(name: .NetworkShouldRefresh, object: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(preferenceStore.networkRefreshRate)) { [self] in
+            refreshNetworkRepeatedly()
+        }
+    }
+
+    func checkUpdateRepeatedly() {
+        guard !isSleeping, preferenceStore.upgradeMethod != .none else {
+            return
+        }
+
+        preferenceStore.checkUpdate()
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(60 * 60)) { [self] in
+            checkUpdateRepeatedly()
+        }
     }
 }

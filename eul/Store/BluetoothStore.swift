@@ -75,14 +75,23 @@ class BluetoothStore: NSObject, ObservableObject {
             }
 
         devices.forEach {
-            if let peripheral = $0.peripheral {
-                if peripheral.state == .disconnected {
-                    cbCenteralManager?.connect(peripheral, options: nil)
-                } else if peripheral.state == .connected {
-                    if let batteryCharacteristics = batteryCharacteristicsDict[peripheral.identifier] {
-                        peripheral.readValue(for: batteryCharacteristics)
-                    }
+            Print("🔵🦷 fetching peripheral for device", $0.displayName, $0.address)
+
+            guard let peripheral = $0.peripheral else {
+                Print("⚠️ peripheral not found")
+                return
+            }
+
+            if peripheral.state == .disconnected {
+                Print("⚠️ peripheral not connected, trying to connect")
+                cbCenteralManager?.connect(peripheral, options: nil)
+            } else if peripheral.state == .connected {
+                Print("🔵🦷 peripheral connected, reading battery characteristics")
+                guard let batteryCharacteristics = batteryCharacteristicsDict[peripheral.identifier] else {
+                    Print("⚠️ battery characteristics for \($0.displayName) not found")
+                    return
                 }
+                peripheral.readValue(for: batteryCharacteristics)
             }
         }
     }

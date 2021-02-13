@@ -17,6 +17,7 @@ class StatusBarItem: NSObject, NSMenuDelegate {
     static let launchTime = Date()
 
     @ObservedObject var preferenceStore = SharedStore.preference
+    @ObservedObject var componentsStore = SharedStore.components
 
     let config: StatusBarConfig
     private let statusBarMenu: NSMenu
@@ -25,6 +26,7 @@ class StatusBarItem: NSObject, NSMenuDelegate {
     private var menuView: NSHostingView<AnyView>?
     private var shouldCloseObserver: NSObjectProtocol?
     private var visibilityTimer: Timer?
+    private var statusBarSizeChanged = 0
 
     var isVisible: Bool {
         get { item.isVisible }
@@ -34,10 +36,13 @@ class StatusBarItem: NSObject, NSMenuDelegate {
     }
 
     func onSizeChange(size: CGSize) {
-        let width = size.width + (Info.isBigSur ? 8 : 12)
+        let width = size.width + (Info.isBigSur ? 8 : 12) + (componentsStore.showComponents ? 0 : -8)
 
-        item.length = width
-        statusView?.setFrameSize(NSSize(width: width, height: AppDelegate.statusBarHeight))
+        DispatchQueue.main.async { [self] in
+            statusBarSizeChanged += 1
+            item.length = width
+            statusView?.setFrameSize(NSSize(width: width, height: AppDelegate.statusBarHeight))
+        }
     }
 
     func onMenuSizeChange(size: CGSize) {
@@ -144,6 +149,15 @@ class StatusBarItem: NSObject, NSMenuDelegate {
         }
 
         refresh()
+
+        // Small trick to forcely trigger re-render
+        // Prevent wrong icon position when not showing status bar components
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
+            guard statusBarSizeChanged <= 1 else {
+                return
+            }
+            componentsStore.showComponents = componentsStore.showComponents
+        }
     }
 
     deinit {

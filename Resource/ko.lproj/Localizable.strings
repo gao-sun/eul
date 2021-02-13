@@ -174,6 +174,13 @@ battery.timeRemaining = "Time Rem.";
 "ui.hidden_by_system.open" = "열기";
 "ui.hidden_by_system.dismiss" = "취소";
 "ui.check_status_item_visibility" = "상태바 아이템이 보이는지 검사";
+"ui.upgrade_method" = "Upgrade";
+"ui.upgrade_method.none" = "none";
+"ui.upgrade_method.none.description" = "eul will not check upgrade";
+"ui.upgrade_method.showInStatusBar" = "show in status bar";
+"ui.upgrade_method.showInStatusBar.description" = "Show upgrade icon when new version available";
+"ui.upgrade_method.autoUpdate" = "auto update";
+"ui.upgrade_method.autoUpdate.description" = "Perform upgrade automatically";
 
 // MARK: Component
 "component.show_icon" = "아이콘 보기";

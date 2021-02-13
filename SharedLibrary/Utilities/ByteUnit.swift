@@ -31,12 +31,12 @@ public struct ByteUnit {
     }
 
     public init(_ bytes: Double, kilo: UInt64 = 1024) {
-        self.bytes = UInt64(bytes)
+        self.bytes = UInt64(bytes.zeroOrAbove)
         self.kilo = kilo
     }
 
     public init(megaBytes: Double) {
-        self.init(megaBytes * Double(1024 * 1024))
+        self.init(megaBytes.zeroOrAbove * Double(1024 * 1024))
     }
 
     public var readable: String {

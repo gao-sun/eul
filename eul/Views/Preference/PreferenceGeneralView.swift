@@ -63,6 +63,16 @@ extension Preference {
                     }
                     .fixedSize()
                 }
+                Picker("ui.upgrade_method".localized(), selection: $preference.upgradeMethod) {
+                    ForEach(PreferenceStore.UpgradeMethod.allCases, id: \.self) {
+                        Text("ui.upgrade_method.\($0)".localized())
+                            .tag($0)
+                    }
+                }
+                .fixedSize()
+                Text("ui.upgrade_method.\(preference.upgradeMethod.rawValue).description".localized())
+                    .secondaryDisplayText()
+                    .padding(.bottom, 8)
                 Toggle(isOn: $launchAtLogin.isEnabled) {
                     Text("ui.launch_at_login".localized())
                         .inlineSection()
