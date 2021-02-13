@@ -29,16 +29,7 @@ struct Preference {
         case light
 
         var description: String {
-            switch self {
-            case .auto:
-                return "appearance.auto".localized()
-
-            case .dark:
-                return "appearance.dark".localized()
-
-            case .light:
-                return "appearance.light".localized()
-            }
+            "appearance.\(rawValue)".localized()
         }
     }
 

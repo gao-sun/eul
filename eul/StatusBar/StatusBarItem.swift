@@ -84,6 +84,18 @@ class StatusBarItem: NSObject, NSMenuDelegate {
         }
     }
 
+    func changeColorScheme() {
+        let appearance = preferenceStore.appearanceMode
+        switch appearance {
+        case .dark:
+            changeNSWindowColorScheme(to: .darkAqua)
+        case .light:
+            changeNSWindowColorScheme(to: .aqua)
+        case .auto:
+            changeNSWindowColorScheme(to: nil)
+        }
+    }
+
     private func checkStatusItemVisibility() {
         if item.button?.window?.occlusionState.contains(.visible) == false {
             print("⚠️ status item hidden by system")
@@ -112,11 +124,7 @@ class StatusBarItem: NSObject, NSMenuDelegate {
         super.init()
 
         statusBarMenu.delegate = self
-        if preferenceStore.appearanceMode == .light {
-            statusBarMenu.appearance = NSAppearance(named: .aqua)
-        } else {
-            statusBarMenu.appearance = NSAppearance(named: .darkAqua)
-        }
+        changeColorScheme()
         item.autosaveName = named
         item.isVisible = false
 

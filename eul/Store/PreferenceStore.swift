@@ -58,11 +58,7 @@ class PreferenceStore: ObservableObject {
     @Published var checkStatusItemVisibility = true
     @Published var isUpdateAvailable: Bool? = false
     @Published var checkUpdateFailed = true
-    @Published var appearanceMode = Preference.appearance.auto {
-        didSet {
-            changeColorScheme()
-        }
-    }
+    @Published var appearanceMode = Preference.appearance.auto
 
     var json: JSON {
         JSON([
@@ -188,24 +184,6 @@ class PreferenceStore: ObservableObject {
         Container.set(PreferenceEntry(temperatureUnit: temperatureUnit))
         if #available(OSX 11, *) {
             WidgetCenter.shared.reloadAllTimelines()
-        }
-    }
-
-    func changeColorScheme() {
-        let window = NSApplication.shared.mainWindow
-        if appearanceMode == .light {
-            let appearence = NSAppearance(named: .aqua)
-            window?.appearance = appearence
-            StatusBarManager.shared.changeNSWindowColorScheme(to: .aqua)
-
-        } else if appearanceMode == .dark {
-            let appearence = NSAppearance(named: .darkAqua)
-            window?.appearance = appearence
-            StatusBarManager.shared.changeNSWindowColorScheme(to: .darkAqua)
-
-        } else {
-            window?.appearance = nil
-            StatusBarManager.shared.changeNSWindowColorScheme(to: nil)
         }
     }
 }
