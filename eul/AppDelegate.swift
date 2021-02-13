@@ -30,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             window.appearance = nil
         }
     }
-  
+
     func applicationDidFinishLaunching(_: Notification) {
         let contentView = ContentView()
         window = NSWindow(
