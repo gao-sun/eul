@@ -92,6 +92,12 @@
 "font_design.default" = "стандартно";
 "font_design.monospaced" = "моноширный";
 
+// MARK: Appearance
+"appearance.mode" = "Appearance";
+"appearance.light" = "light";
+"appearance.dark" = "dark";
+"appearance.auto" = "auto";
+
 // MARK: Component
 "component.status_bar" = "Статус Бар";
 "component.drag_to_reorder" = "перетащите, чтобы изменить порядок";

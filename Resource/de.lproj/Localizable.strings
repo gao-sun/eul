@@ -92,6 +92,12 @@
 "font_design.default" = "Standard";
 "font_design.monospaced" = "Dicktengleich";
 
+// MARK: Appearance
+"appearance.mode" = "Appearance";
+"appearance.light" = "light";
+"appearance.dark" = "dark";
+"appearance.auto" = "auto";
+
 // MARK: Component
 "component.status_bar" = "Menüleiste";
 "component.drag_to_reorder" = "Zum Ordnen bewegen";

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
+import Cocoa
 import Combine
 import Foundation
 import Localize_Swift
@@ -27,7 +28,6 @@ class PreferenceStore: ObservableObject {
     private let userDefaultsKey = "preference"
     private let repo = "gao-sun/eul"
     private var cancellable: AnyCancellable?
-
     var repoURL: URL? {
         URL(string: "https://github.com/\(repo)")
     }
@@ -65,6 +65,7 @@ class PreferenceStore: ObservableObject {
     @Published var upgradeMethod = UpgradeMethod.showInStatusBar
     @Published var isUpdateAvailable: Bool? = false
     @Published var checkUpdateFailed = true
+    @Published var appearanceMode = Preference.appearance.auto
 
     var json: JSON {
         JSON([
@@ -80,7 +81,9 @@ class PreferenceStore: ObservableObject {
             "showNetworkTopActivities": showNetworkTopActivities,
             "cpuMenuDisplay": cpuMenuDisplay.rawValue,
             "checkStatusItemVisibility": checkStatusItemVisibility,
+            "appearance": appearanceMode.rawValue,
             "upgradeMethod": upgradeMethod.rawValue,
+
         ])
     }
 
@@ -171,6 +174,9 @@ class PreferenceStore: ObservableObject {
                 }
                 if let value = data["checkStatusItemVisibility"].bool {
                     checkStatusItemVisibility = value
+                }
+                if let raw = data["appearance"].string, let value = Preference.appearance(rawValue: raw) {
+                    appearanceMode = value
                 }
                 if let raw = data["upgradeMethod"].string, let value = UpgradeMethod(rawValue: raw) {
                     upgradeMethod = value

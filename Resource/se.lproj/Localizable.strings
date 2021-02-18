@@ -93,6 +93,12 @@ Copyright © 2020 Gao Sun. All rights reserved.
 "font_design.default" = "standard";
 "font_design.monospaced" = "monospaced";
 
+// MARK: Appearance
+"appearance.mode" = "Appearance";
+"appearance.light" = "light";
+"appearance.dark" = "dark";
+"appearance.auto" = "auto";
+
 // MARK: Component
 "component.status_bar" = "Statusrad";
 "component.drag_to_reorder" = "Dra för att omordna";

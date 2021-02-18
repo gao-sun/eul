@@ -92,6 +92,12 @@
 "font_design.default" = "إفتراضي";
 "font_design.monospaced" = "أحادي المسافة";
 
+// MARK: Appearance
+"appearance.mode" = "Appearance";
+"appearance.light" = "light";
+"appearance.dark" = "dark";
+"appearance.auto" = "auto";
+
 // MARK: Component
 "component.status_bar" = "شريط الحالة";
 "component.drag_to_reorder" = "اسحب لإعادة ترتيب";

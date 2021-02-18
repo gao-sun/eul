@@ -92,6 +92,12 @@
 "font_design.default" = "өгөгдмөл";
 "font_design.monospaced" = "monospaced";
 
+// MARK: Appearance
+"appearance.mode" = "Appearance";
+"appearance.light" = "light";
+"appearance.dark" = "dark";
+"appearance.auto" = "auto";
+
 // MARK: Component
 "component.status_bar" = "Статус мөр";
 "component.drag_to_reorder" = "чирээд зөөнө";

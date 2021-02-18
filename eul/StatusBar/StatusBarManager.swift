@@ -19,6 +19,7 @@ class StatusBarManager {
     private var showComponentsCancellable: AnyCancellable?
     private var showIconCancellable: AnyCancellable?
     private var fontDesignCancellable: AnyCancellable?
+    private var appearanceModeCancellable: AnyCancellable?
     private let item = StatusBarItem()
 
     init() {
@@ -49,6 +50,9 @@ class StatusBarManager {
         fontDesignCancellable = preferenceStore.$fontDesign.sink { _ in
             self.refresh()
         }
+        appearanceModeCancellable = preferenceStore.$appearanceMode.sink { value in
+            self.changeColorScheme(to: Preference.appearance(rawValue: value.rawValue) ?? .auto)
+        }
     }
 
     func refresh() {
@@ -62,6 +66,32 @@ class StatusBarManager {
 
         DispatchQueue.main.async {
             self.item.isVisible = true
+        }
+    }
+
+    func changeNSWindowColorScheme(to color: NSAppearance.Name?) {
+        if let color = color {
+            item.changeNSWindowColorScheme(to: color)
+        } else {
+            item.changeNSWindowColorScheme(to: nil)
+        }
+    }
+
+    func changeColorScheme(to appearance: Preference.appearance) {
+        let window = NSApplication.shared.mainWindow
+        if appearance == .light {
+            let appearence = NSAppearance(named: .aqua)
+            window?.appearance = appearence
+            StatusBarManager.shared.changeNSWindowColorScheme(to: .aqua)
+
+        } else if appearance == .dark {
+            let appearence = NSAppearance(named: .darkAqua)
+            window?.appearance = appearence
+            StatusBarManager.shared.changeNSWindowColorScheme(to: .darkAqua)
+
+        } else {
+            window?.appearance = nil
+            StatusBarManager.shared.changeNSWindowColorScheme(to: nil)
         }
     }
 }

@@ -95,6 +95,12 @@ battery.timeRemaining = "Time Rem.";
 "font_design.default" = "기본";
 "font_design.monospaced" = "고정폭";
 
+// MARK: Appearance
+"appearance.mode" = "Appearance";
+"appearance.light" = "light";
+"appearance.dark" = "dark";
+"appearance.auto" = "auto";
+
 // MARK: Component
 "component.status_bar" = "상태바";
 "component.drag_to_reorder" = "드래그해서 재배치";

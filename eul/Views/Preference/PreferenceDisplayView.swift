@@ -15,7 +15,7 @@ extension Preference {
         let temperatureUnits: [TemperatureUnit] = [.celius, .fahrenheit]
         let textDisplays = TextDisplay.allCases
         let fontDesigns = FontDesign.allCases
-
+        let appearanceMode = appearance.allCases
         @EnvironmentObject var preference: PreferenceStore
 
         var body: some View {
@@ -44,6 +44,13 @@ extension Preference {
                 .frame(width: 200)
                 Picker("font_design".localized(), selection: $preference.fontDesign) {
                     ForEach(fontDesigns) {
+                        Text($0.description)
+                            .tag($0)
+                    }
+                }
+                .frame(width: 200)
+                Picker("appearance.mode".localized(), selection: $preference.appearanceMode) {
+                    ForEach(appearanceMode) {
                         Text($0.description)
                             .tag($0)
                     }

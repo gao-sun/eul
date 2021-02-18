@@ -15,6 +15,18 @@ struct StatusMenuView: SizeChangeView {
 
     var onSizeChange: ((CGSize) -> Void)?
     var body: some View {
+        if preferenceStore.appearanceMode == .light {
+            base
+                .environment(\.colorScheme, .light)
+        } else if preferenceStore.appearanceMode == .dark {
+            base
+                .environment(\.colorScheme, .dark)
+        } else {
+            base
+        }
+    }
+
+    var base: some View {
         VStack(spacing: 12) {
             HStack {
                 Text("eul")
@@ -44,5 +56,8 @@ struct StatusMenuView: SizeChangeView {
                 onSizeChange?(size)
             }
         })
+        .onAppear {
+            print(preferenceStore.appearanceMode)
+        }
     }
 }

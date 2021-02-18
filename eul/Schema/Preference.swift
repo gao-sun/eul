@@ -23,6 +23,16 @@ struct Preference {
         }
     }
 
+    enum appearance: String, StringEnum {
+        case auto
+        case dark
+        case light
+
+        var description: String {
+            "appearance.\(rawValue)".localized()
+        }
+    }
+
     enum FontDesign: String, StringEnum {
         case `default`
         case monospaced

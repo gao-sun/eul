@@ -15,6 +15,18 @@ struct ContentView: View {
     @EnvironmentObject var uiStore: UIStore
 
     var body: some View {
+        if preferenceStore.appearanceMode == .light {
+            base
+                .environment(\.colorScheme, .light)
+        } else if preferenceStore.appearanceMode == .dark {
+            base
+                .environment(\.colorScheme, .dark)
+        } else {
+            base
+        }
+    }
+
+    var base: some View {
         HStack {
             VStack(spacing: 4) {
                 ForEach(Preference.Section.allCases) {
