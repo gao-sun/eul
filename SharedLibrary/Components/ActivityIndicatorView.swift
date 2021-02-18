@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct ActivityIndicatorView: NSViewRepresentable {
     public init(configuration: @escaping (ActivityIndicatorView.NSViewType) -> Void = { (_: NSViewType) in }) {
-        self.configuration = configuration
+        print("I'm changed")
     }
 
     public typealias NSViewType = NSProgressIndicator

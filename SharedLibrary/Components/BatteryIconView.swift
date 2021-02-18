@@ -14,6 +14,7 @@ public struct BatteryIconView: View {
         self.isCharging = isCharging
         self.charge = charge
         self.acPowered = acPowered
+        print("I'm changed too")
     }
 
     public var size: CGFloat = 16
