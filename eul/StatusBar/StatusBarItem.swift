@@ -79,26 +79,8 @@ class StatusBarItem: NSObject, NSMenuDelegate {
         })
     }
 
-    func changeNSWindowColorScheme(to color: NSAppearance.Name?) {
-        if let color = color {
-            statusBarMenu.appearance = NSAppearance(named: color)
-            menuView?.appearance = NSAppearance(named: color)
-        } else {
-            statusBarMenu.appearance = nil
-            menuView?.appearance = nil
-        }
-    }
-
-    func changeColorScheme() {
-        let appearance = preferenceStore.appearanceMode
-        switch appearance {
-        case .dark:
-            changeNSWindowColorScheme(to: .darkAqua)
-        case .light:
-            changeNSWindowColorScheme(to: .aqua)
-        case .auto:
-            changeNSWindowColorScheme(to: nil)
-        }
+    func setAppearance(_ appearance: NSAppearance?) {
+        statusBarMenu.appearance = appearance
     }
 
     private func checkStatusItemVisibility() {
@@ -129,7 +111,6 @@ class StatusBarItem: NSObject, NSMenuDelegate {
         super.init()
 
         statusBarMenu.delegate = self
-        changeColorScheme()
         item.autosaveName = named
         item.isVisible = false
 

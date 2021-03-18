@@ -31,6 +31,28 @@ struct Preference {
         var description: String {
             "appearance.\(rawValue)".localized()
         }
+
+        var colorScheme: SwiftUI.ColorScheme? {
+            switch self {
+            case .auto:
+                return nil
+            case .light:
+                return .light
+            case .dark:
+                return .dark
+            }
+        }
+
+        var nsAppearance: NSAppearance? {
+            switch self {
+            case .auto:
+                return nil
+            case .light:
+                return NSAppearance(named: .aqua)
+            case .dark:
+                return NSAppearance(named: .darkAqua)
+            }
+        }
     }
 
     enum FontDesign: String, StringEnum {

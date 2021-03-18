@@ -16,20 +16,10 @@ import SwiftUI
 class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     private var isSleeping = false
     private var updateMethodCancellable: AnyCancellable?
+    private var appearanceCancellable: AnyCancellable?
 
     var window: NSWindow!
     @ObservedObject var preferenceStore = SharedStore.preference
-
-    func changeColorScheme() {
-        switch preferenceStore.appearanceMode {
-        case .light:
-            window.appearance = NSAppearance(named: .aqua)
-        case .dark:
-            window.appearance = NSAppearance(named: .darkAqua)
-        case .auto:
-            window.appearance = nil
-        }
-    }
 
     func applicationDidFinishLaunching(_: Notification) {
         let contentView = ContentView()
@@ -38,7 +28,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
             backing: .buffered, defer: false
         )
-        changeColorScheme()
         window.center()
         window.setFrameAutosaveName("Eul Preferences")
         window.contentView = NSHostingView(rootView: contentView.withGlobalEnvironmentObjects())
@@ -70,6 +59,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             DispatchQueue.main.async {
                 self.checkUpdateRepeatedly()
             }
+        }
+        appearanceCancellable = preferenceStore.$appearanceMode.sink {
+            self.window.appearance = $0.nsAppearance
         }
     }
 
