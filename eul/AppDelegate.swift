@@ -60,8 +60,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
                 self.checkUpdateRepeatedly()
             }
         }
-        appearanceCancellable = preferenceStore.$appearanceMode.sink {
-            self.window.appearance = $0.nsAppearance
+        appearanceCancellable = preferenceStore.$appearanceMode.sink { mode in
+            DispatchQueue.main.async {
+                self.window.appearance = mode.nsAppearance
+            }
         }
     }
 

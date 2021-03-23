@@ -51,7 +51,9 @@ class StatusBarManager {
             self.refresh()
         }
         appearanceModeCancellable = preferenceStore.$appearanceMode.sink { value in
-            self.item.setAppearance(value.nsAppearance)
+            DispatchQueue.main.async {
+                self.item.setAppearance(value.nsAppearance)
+            }
         }
     }
 
