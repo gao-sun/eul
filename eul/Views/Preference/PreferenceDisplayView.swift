@@ -49,13 +49,16 @@ extension Preference {
                     }
                 }
                 .frame(width: 200)
-                Picker("appearance.mode".localized(), selection: $preference.appearanceMode) {
-                    ForEach(appearanceMode) {
-                        Text($0.description)
-                            .tag($0)
+                // Disable in Catalina to avoid protential crash
+                if #available(OSX 11, *) {
+                    Picker("appearance.mode".localized(), selection: $preference.appearanceMode) {
+                        ForEach(appearanceMode) {
+                            Text($0.description)
+                                .tag($0)
+                        }
                     }
+                    .frame(width: 200)
                 }
-                .frame(width: 200)
             }
             .padding(.vertical, 8)
         }

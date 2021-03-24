@@ -50,9 +50,12 @@ class StatusBarManager {
         fontDesignCancellable = preferenceStore.$fontDesign.sink { _ in
             self.refresh()
         }
-        appearanceModeCancellable = preferenceStore.$appearanceMode.sink { value in
-            DispatchQueue.main.async {
-                self.item.setAppearance(value.nsAppearance)
+        // Disable in Catalina to avoid protential crash
+        if #available(OSX 11, *) {
+            appearanceModeCancellable = preferenceStore.$appearanceMode.sink { value in
+                DispatchQueue.main.async {
+                    self.item.setAppearance(value.nsAppearance)
+                }
             }
         }
     }

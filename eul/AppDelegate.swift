@@ -60,9 +60,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
                 self.checkUpdateRepeatedly()
             }
         }
-        appearanceCancellable = preferenceStore.$appearanceMode.sink { mode in
-            DispatchQueue.main.async {
-                self.window.appearance = mode.nsAppearance
+
+        // Disable in Catalina to avoid protential crash
+        if #available(OSX 11, *) {
+            appearanceCancellable = preferenceStore.$appearanceMode.sink { mode in
+                DispatchQueue.main.async {
+                    self.window.appearance = mode.nsAppearance
+                }
             }
         }
     }
