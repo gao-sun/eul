@@ -8,6 +8,7 @@
 
 import Foundation
 import IOKit.ps
+import Reachability
 import SharedLibrary
 import SystemKit
 
@@ -99,16 +100,17 @@ enum Info {
         }
     }
 
-    struct Network {
-        var interface: String
+    struct NetworkUsage {
         var inBytes: UInt64
         var outBytes: UInt64
+    }
 
-        init() {
-            interface = shell("route get 0.0.0.0 | grep interface | awk '{print $2}'")?
-                .trimmingCharacters(in: .whitespacesAndNewlines) ?? "en0"
-            inBytes = 0
-            outBytes = 0
+    static func getNetworkUsage(_ onData: @escaping (NetworkUsage) -> Void) {
+        shellAsync("route get 0.0.0.0 | grep interface | awk '{print $2}'") {
+            var inBytes: UInt64?
+            var outBytes: UInt64?
+
+            let interface = (($0?.contains("route:") ?? false) ? nil : $0)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "en0"
 
             if
                 let rows = shell("netstat -bI \(interface)")?.split(separator: "\n").map({ String($0) }),
@@ -124,6 +126,10 @@ enum Info {
                 if let raw = String.getValue(of: "obytes", in: values, of: headers), let bytes = UInt64(raw) {
                     outBytes = bytes
                 }
+            }
+
+            DispatchQueue.main.async {
+                onData(NetworkUsage(inBytes: inBytes ?? 0, outBytes: outBytes ?? 0))
             }
         }
     }

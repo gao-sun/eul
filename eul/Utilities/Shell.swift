@@ -48,6 +48,17 @@ func shell(_ args: String...) -> String? {
     return String(data: data, encoding: .utf8)
 }
 
+func shellAsync(_ args: String..., onFinish: @escaping (String?) -> Void) {
+    DispatchQueue.global().async {
+        guard let data = shellData(args) else {
+            onFinish(nil)
+            return
+        }
+
+        onFinish(String(data: data, encoding: .utf8))
+    }
+}
+
 @discardableResult
 func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminate: (() -> Void)? = nil) -> Process {
     let task = Process()

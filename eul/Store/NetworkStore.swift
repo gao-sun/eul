@@ -11,8 +11,10 @@ import SharedLibrary
 import WidgetKit
 
 class NetworkStore: ObservableObject, Refreshable {
-    private var network = Info.Network()
+    private var networkUsageHasBeenSet = true
     private var lastTimestamp: TimeInterval
+
+    @Published var networkUsage = Info.NetworkUsage(inBytes: 0, outBytes: 0)
 
     @Published var inSpeedInByte: Double = 0
     @Published var outSpeedInByte: Double = 0
@@ -26,24 +28,32 @@ class NetworkStore: ObservableObject, Refreshable {
     }
 
     @objc func refresh() {
-        let current = Info.Network()
-        let time = Date().timeIntervalSince1970
-
-        if current.inBytes >= network.inBytes {
-            inSpeedInByte = Double(current.inBytes - network.inBytes) / (time - lastTimestamp)
-        } else {
-            inSpeedInByte = 0
+        guard networkUsageHasBeenSet else {
+            return
         }
 
-        if current.outBytes >= network.outBytes {
-            outSpeedInByte = Double(current.outBytes - network.outBytes) / (time - lastTimestamp)
-        } else {
-            outSpeedInByte = 0
-        }
+        networkUsageHasBeenSet = false
 
-        lastTimestamp = time
-        network = current
-        writeToContainer()
+        Info.getNetworkUsage { [self] current in
+            let time = Date().timeIntervalSince1970
+
+            if networkUsage.inBytes > 0, current.inBytes >= networkUsage.inBytes {
+                inSpeedInByte = Double(current.inBytes - networkUsage.inBytes) / (time - lastTimestamp)
+            } else {
+                inSpeedInByte = 0
+            }
+
+            if networkUsage.outBytes > 0, current.outBytes >= networkUsage.outBytes {
+                outSpeedInByte = Double(current.outBytes - networkUsage.outBytes) / (time - lastTimestamp)
+            } else {
+                outSpeedInByte = 0
+            }
+
+            lastTimestamp = time
+            networkUsage = current
+            writeToContainer()
+            networkUsageHasBeenSet = true
+        }
     }
 
     func writeToContainer() {
