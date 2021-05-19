@@ -94,8 +94,8 @@
 
 // MARK: Appearance
 "appearance.mode" = "Appearance";
-"appearance.light" = "Light";
-"appearance.dark" = "Dark";
+"appearance.light" = "Claire";
+"appearance.dark" = "Sombre";
 "appearance.auto" = "Auto";
 
 // MARK: Component
