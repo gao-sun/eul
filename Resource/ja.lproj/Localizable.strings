@@ -9,14 +9,14 @@
 // MARK: Battery
 "battery" = "バッテリー";
 "battery.charge" = "充電";
-"battery.time_remaining" = "Time Rem.";
+"battery.time_remaining" = "残っている時間";
 "battery.power_source" = "電源";
 "battery.power_source.battery" = "バッテリー";
-"battery.power_source.acPower" = "電源アダプタ";
+"battery.power_source.acPower" = "コンセント";
 "battery.power_source.unknown" = "不明";
 "battery.is_charging" = "充電中";
 "battery.to_full_charge" = "で充電完了";
-"battery.to_empty" = "の残り時間";
+"battery.to_empty" = "残り使用時間";
 "battery.health" = "状態";
 "battery.max_capacity" = "最大容量";
 "battery.design_capacity" = "設計容量";
@@ -30,7 +30,7 @@
 
 // MARK: CPU / Info
 "cpu.usage" = "使用率";
-"cpu.idle" = "アイドル";
+"cpu.idle" = "使用していない";
 "cpu.temperature" = "温度";
 "gpu.temperature" = "GPU 温度";
 "cpu.info" = "情報";
@@ -71,15 +71,15 @@
 "menu.yes" = "はい";
 "menu.no" = "いいえ";
 "menu.preferences" = "設定";
-"menu.quit" = "eul を終了";
-"menu.show_cpu_top_activities" = "CPU の上位アクティビティを表示";
-"menu.show_ram_top_activities" = "Show RAM top activities";
+"menu.quit" = "eulを終了";
+"menu.show_cpu_top_activities" = "CPUの上位アクティビティを表示";
+"menu.show_ram_top_activities" = "メモリの上位アクティビティを表示";
 "menu.show_network_top_activities" = "ネットワークの上位アクティビティを表示";
 
 // MARK: Temperature
 "temp.temperature" = "温度単位";
-"temp.celsius" = "摂氏（℃）";
-"temp.fahrenheit" = "華氏（℉）";
+"temp.celsius" = "セルシウス（°C）";
+"temp.fahrenheit" = "華氏（°F）";
 "temp.kelvin" = "ケルビン";
 
 // MARK: Text Display
@@ -90,17 +90,17 @@
 // MARK: Font Design
 "font_design" = "フォント";
 "font_design.default" = "デフォルト";
-"font_design.monospaced" = "等幅";
+"font_design.monospaced" = "等幅フォント";
 
 // MARK: Appearance
-"appearance.mode" = "Appearance";
-"appearance.light" = "light";
-"appearance.dark" = "dark";
-"appearance.auto" = "auto";
+"appearance.mode" = "外観モード";
+"appearance.light" = "明るい";
+"appearance.dark" = "暗い";
+"appearance.auto" = "自動（システム設定）";
 
 // MARK: Component
 "component.status_bar" = "メニューバーに表示";
-"component.drag_to_reorder" = "ドラッグして並べ替え";
+"component.drag_to_reorder" = "ドラッグして並べ替えする";
 "component.available" = "追加できる項目";
 "component.click_to_append" = "クリックして追加";
 "component.cpu" = "CPU";
@@ -115,20 +115,20 @@
 // MARK: Process
 "process" = "プロセス";
 "process.bring_to_front" = "移動";
-"process.reveal_in_finder" = "Finder で表示";
+"process.reveal_in_finder" = "Finderで表示";
 "process.terminate" = "終了";
 "process.force_terminate" = "強制終了";
 "process.terminate_alert.text.%@" = "%@ を終了してもよろしいですか？";
-"process.terminate_alert.command.%@" = "%@";
+"process.terminate_alert.command.%@" = "コマンド: %@";
 "process.terminate_alert.cancel" = "キャンセル";
 
 // MARK: Bluetooth
 "bluetooth" = "Bluetooth";
 
 // MARK: Disk
-"disk.eject" = "Eject";
-"disk.select" = "Select disk";
-"disk.all" = "All Disks";
+"disk.eject" = "取り出す";
+"disk.select" = "ディスクの選択";
+"disk.all" = "全ディスク";
 
 // MARK: Language
 "language" = "言語";
@@ -150,34 +150,34 @@
 "language.it" = "Italiano";
 
 // MARK: General UI
-"ui.app" = "App";
+"ui.app" = "アプリ";
 "ui.general" = "一般";
 "ui.version" = "バージョン";
 "ui.checking_update" = "アップデートを確認中";
-"ui.up_to_date" = "最新です";
-"ui.new_version" = "新しいバージョンがあります";
+"ui.up_to_date" = "最新のバージョンです";
+"ui.new_version" = "新しいアップデートがあります";
 "ui.download" = "ダウンロード";
-"ui.launch_at_login" = "ログイン時に起動";
+"ui.launch_at_login" = "Macの起動時に開く";
 "ui.display" = "表示";
 "ui.components" = "コンポーネント";
 "ui.show_components_in_status_bar" = "メニューバーにコンポーネントを表示";
-"ui.refresh_rate" = "更新頻度";
+"ui.refresh_rate" = "リフレッシュレート";
 "ui.smc" = "SMC";
 "ui.network" = "ネットワーク";
 "ui.menu_view" = "メニュー表示";
-"ui.empty" = "何も表示しない";
-"ui.hidden_by_system.title" = "eul はシステムによって強制的に非表示になっています";
+"ui.empty" = "表示するアイテムがありません";
+"ui.hidden_by_system.title" = "eulはシステムによって強制的に非表示になっています";
 "ui.hidden_by_system.message" = "設定からメニューバーに表示するコンポーネントを減らしてみてください。";
 "ui.hidden_by_system.open" = "設定を開く";
 "ui.hidden_by_system.dismiss" = "閉じる";
-"ui.check_status_item_visibility" = "Check status item visibility";
-"ui.upgrade_method" = "Upgrade";
-"ui.upgrade_method.none" = "none";
-"ui.upgrade_method.none.description" = "eul will not check upgrade";
-"ui.upgrade_method.showInStatusBar" = "show in status bar";
-"ui.upgrade_method.showInStatusBar.description" = "Show upgrade icon when new version available";
-"ui.upgrade_method.autoUpdate" = "auto update";
-"ui.upgrade_method.autoUpdate.description" = "Perform upgrade automatically";
+"ui.check_status_item_visibility" = "コンポーネントが見えるかどうかをチェック";
+"ui.upgrade_method" = "アップデート";
+"ui.upgrade_method.none" = "なし";
+"ui.upgrade_method.none.description" = "eulはアップデートをチェックしません";
+"ui.upgrade_method.showInStatusBar" = "ステータスバーで表示する";
+"ui.upgrade_method.showInStatusBar.description" = "新しいアップデートをアイコンで示す";
+"ui.upgrade_method.autoUpdate" = "自動アップデート";
+"ui.upgrade_method.autoUpdate.description" = "自動的にアップデートする";
 
 // MARK: Component
 "component.show_icon" = "アイコンを表示";
@@ -194,21 +194,21 @@
 "text_component.download" = "受信";
 "text_component.percentage" = "割合（%）";
 "text_component.mah" = "mAh";
-"text_component.loadAverage1Min" = "Load Average (1 min)";
-"text_component.loadAverage5Min" = "Load Average (5 min)";
-"text_component.loadAverage15Min" = "Load Average (15 min)";
-"text_component.average" = "Average";
-"text_component.timeRemaining" = "Time Remaining";
+"text_component.loadAverage1Min" = "使用平均 (1分)";
+"text_component.loadAverage5Min" = "使用平均 (5分)";
+"text_component.loadAverage15Min" = "使用平均 (15分)";
+"text_component.average" = "平均";
+"text_component.timeRemaining" = "残り時間";
 
 // MARK: CPU Display Mode
-"cpu_display_mode" = "CPU Display Mode";
-"cpu_display_mode.usage_percentage" = "Usage %";
-"cpu_display_mode.load_average" = "Load Average";
+"cpu_display_mode" = "CPU表示モード";
+"cpu_display_mode.usage_percentage" = "使用率（%）";
+"cpu_display_mode.load_average" = "使用平均";
 
 //MARK: Widget
-"widget.not_available" = "eul は実行されていません";
+"widget.not_available" = "eulは実行されていません";
 "widget.cpu.title" = "CPU";
-"widget.cpu.description" = "CPU の情報を表示します。";
+"widget.cpu.description" = "CPUの情報を表示します。";
 "widget.memory.title" = "メモリ";
 "widget.memory.description" = "メモリの情報を表示します。";
 "widget.battery.title" = "バッテリー";

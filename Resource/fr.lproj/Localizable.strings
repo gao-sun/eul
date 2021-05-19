@@ -41,7 +41,7 @@
 "cpu.system" = "Système";
 "cpu.user" = "Utilisateur";
 "cpu.nice" = "Nice";
-"cpu.waiting_status_report" = "En attente du premier rapport d'état";
+"cpu.waiting_status_report" = "En attente de données sur l'état";
 
 // MARK: Fan
 "fan" = "Ventilateur";
@@ -80,29 +80,29 @@
 "temp.temperature" = "Température";
 "temp.celsius" = "Celsius";
 "temp.fahrenheit" = "Fahrenheit";
-"temp.kelvin" = "kelvin";
+"temp.kelvin" = "Kelvin";
 
 // MARK: Text Display
 "text_display" = "Affichage du texte";
-"text_display.compact" = "compact";
-"text_display.single_line" = "une seule ligne";
+"text_display.compact" = "Compact";
+"text_display.single_line" = "Une seule ligne";
 
 // MARK: Font Design
 "font_design" = "Police";
-"font_design.default" = "défaut";
-"font_design.monospaced" = "largeur fixe";
+"font_design.default" = "Défaut";
+"font_design.monospaced" = "Largeur fixe";
 
 // MARK: Appearance
 "appearance.mode" = "Appearance";
-"appearance.light" = "light";
-"appearance.dark" = "dark";
-"appearance.auto" = "auto";
+"appearance.light" = "Light";
+"appearance.dark" = "Dark";
+"appearance.auto" = "Auto";
 
 // MARK: Component
 "component.status_bar" = "Barre des menus";
-"component.drag_to_reorder" = "glissez pour réordonner";
+"component.drag_to_reorder" = "Glisser pour réordonner";
 "component.available" = "Disponible";
-"component.click_to_append" = "cliquez pour ajouter";
+"component.click_to_append" = "Cliquez pour ajouter";
 "component.cpu" = "CPU";
 "component.gpu" = "GPU";
 "component.fan" = "Ventilateur";
@@ -118,7 +118,7 @@
 "process.reveal_in_finder" = "Afficher dans le Finder";
 "process.terminate" = "Quitter";
 "process.force_terminate" = "Forcer à quitter";
-"process.terminate_alert.text.%@" = "Voulez-vous réellement quitter %@ ?";
+"process.terminate_alert.text.%@" = "Voulez-vous réellement quitter l'application %@ ?";
 "process.terminate_alert.command.%@" = "Commande : %@";
 "process.terminate_alert.cancel" = "Annuler";
 
@@ -198,7 +198,7 @@
 "text_component.loadAverage5Min" = "Charge moyenne (5 min)";
 "text_component.loadAverage15Min" = "Charge moyenne (15 min)";
 "text_component.average" = "Moyenne";
-"text_component.timeRemaining" = "Time Remaining";
+"text_component.timeRemaining" = "Temps restant";
 
 // MARK: CPU Display Mode
 "cpu_display_mode" = "Mode d'affichage du CPU";
