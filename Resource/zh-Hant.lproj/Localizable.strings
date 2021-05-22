@@ -1,0 +1,219 @@
+/* 
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery" = "電池";
+"battery.charge" = "電量";
+"battery.time_remaining" = "剩餘時間";
+"battery.power_source" = "電源";
+"battery.power_source.battery" = "電池";
+"battery.power_source.acPower" = "電源轉接器";
+"battery.power_source.unknown" = "未知";
+"battery.is_charging" = "充電中";
+"battery.to_full_charge" = "充滿";
+"battery.to_empty" = "電量耗盡";
+"battery.health" = "健康";
+"battery.max_capacity" = "最大容量";
+"battery.design_capacity" = "設計容量";
+"battery.health_percentage" = "健康度";
+"battery.cycle_count" = "循環次數";
+"battery.cycle" = "循環";
+"battery.condition" = "狀況";
+"battery.condition.good" = "好";
+"battery.condition.fair" = "尚可";
+"battery.condition.poor" = "差";
+
+// MARK: CPU / Info
+"cpu.usage" = "用量";
+"cpu.idle" = "空閒";
+"cpu.temperature" = "溫度";
+"gpu.temperature" = "GPU 溫度";
+"cpu.info" = "訊息";
+"cpu.physical_cores" = "物理核心";
+"cpu.logical_cores" = "邏輯核心";
+"cpu.up_time" = "執行時間";
+"cpu.thermal_level" = "溫度等級";
+"cpu.system" = "系統";
+"cpu.user" = "使用者";
+"cpu.nice" = "優";
+"cpu.waiting_status_report" = "正在等待狀態更新";
+
+// MARK: Fan
+"fan" = "風扇";
+"fan.current" = "目前";
+"fan.min" = "最小";
+"fan.max" = "最大";
+
+// MARK: Memory
+"memory" = "記憶體";
+"memory.total" = "總計";
+"memory.free" = "可用";
+"memory.cached_files" = "已快取";
+"memory.temp" = "溫度";
+"memory.usage" = "用量";
+"memory.app" = "App";
+"memory.wired" = "同步";
+"memory.compressed" = "被壓縮";
+
+// MARK: Network
+"network" = "網路";
+"network.in" = "下載";
+"network.out" = "上傳";
+"network.no_activity" = "無活動";
+
+// MARK: Menu
+"menu.summary" = "概覽";
+"menu.yes" = "是";
+"menu.no" = "否";
+"menu.preferences" = "偏好設定";
+"menu.quit" = "退出 eul";
+"menu.show_cpu_top_activities" = "顯示 CPU 活躍程序";
+"menu.show_ram_top_activities" = "顯示記憶體活躍程序";
+"menu.show_network_top_activities" = "顯示網路活躍程序";
+
+// MARK: Temperature
+"temp.temperature" = "溫度";
+"temp.celsius" = "攝氏度";
+"temp.fahrenheit" = "華氏度";
+"temp.kelvin" = "克耳文";
+
+// MARK: Text Display
+"text_display" = "文字顯示";
+"text_display.compact" = "緊湊";
+"text_display.single_line" = "單行";
+
+// MARK: Font Design
+"font_design" = "字體樣式";
+"font_design.default" = "預設";
+"font_design.monospaced" = "等寬";
+
+// MARK: Appearance
+"appearance.mode" = "外觀";
+"appearance.light" = "淺色";
+"appearance.dark" = "深色";
+"appearance.auto" = "自動";
+
+// MARK: Component
+"component.status_bar" = "狀態欄";
+"component.drag_to_reorder" = "拖曳以排序";
+"component.available" = "可用";
+"component.click_to_append" = "單擊以添加";
+"component.cpu" = "CPU";
+"component.gpu" = "GPU";
+"component.fan" = "風扇";
+"component.memory" = "記憶體";
+"component.battery" = "電池";
+"component.network" = "網路";
+"component.disk" = "儲存空間";
+"component.bluetooth" = "藍牙";
+
+// MARK: Process
+"process" = "程序";
+"process.bring_to_front" = "置於上方";
+"process.reveal_in_finder" = "在 Finder 中顯示";
+"process.terminate" = "終止";
+"process.force_terminate" = "強制終止";
+"process.terminate_alert.text.%@" = "確定要終止 %@？";
+"process.terminate_alert.command.%@" = "%@";
+"process.terminate_alert.cancel" = "取消";
+
+// MARK: Bluetooth
+"bluetooth" = "藍牙";
+
+// MARK: Disk
+"disk.eject" = "退出";
+"disk.select" = "選擇儲存空間";
+"disk.all" = "所有儲存空間";
+
+// MARK: Language
+"language" = "語言";
+"language.ar" = "العربية";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.zh-Hant" = "繁體中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+"language.pt" = "Português";
+"language.ja" = "日本語";
+"language.fr" = "Français";
+"language.mn" = "Монгол";
+"language.ko" = "한국어";
+"language.dk" = "Dansk";
+"language.uk" = "Українська";
+"language.se" = "Svenska";
+"language.cs" = "Čeština";
+"language.it" = "Italiano";
+
+// MARK: General UI
+"ui.app" = "App";
+"ui.general" = "一般";
+"ui.version" = "版本";
+"ui.checking_update" = "正在檢查更新";
+"ui.up_to_date" = "已是最新版本";
+"ui.new_version" = "偵測到新版本";
+"ui.download" = "下載";
+"ui.launch_at_login" = "登入時啟動";
+"ui.display" = "顯示";
+"ui.components" = "元件";
+"ui.show_components_in_status_bar" = "在狀態欄顯示元件";
+"ui.refresh_rate" = "重新整理頻率";
+"ui.smc" = "SMC";
+"ui.network" = "網路";
+"ui.menu_view" = "選單檢視";
+"ui.empty" = "空";
+"ui.hidden_by_system.title" = "eul 狀態欄元件被系統隱藏";
+"ui.hidden_by_system.message" = "打開偏好設定並嘗試減少狀態欄元件數量";
+"ui.hidden_by_system.open" = "打開";
+"ui.hidden_by_system.dismiss" = "忽略";
+"ui.check_status_item_visibility" = "檢查狀態欄可見性";
+"ui.upgrade_method" = "更新";
+"ui.upgrade_method.none" = "無";
+"ui.upgrade_method.none.description" = "eul 將不會檢查更新";
+"ui.upgrade_method.showInStatusBar" = "在狀態欄顯示";
+"ui.upgrade_method.showInStatusBar.description" = "當新版本可用時在狀態欄顯示圖示";
+"ui.upgrade_method.autoUpdate" = "自動更新";
+"ui.upgrade_method.autoUpdate.description" = "將會自動安裝版本更新";
+
+// MARK: Component
+"component.show_icon" = "顯示圖示";
+"component.show_graph" = "顯示圖表";
+"component.show_text" = "顯示文字";
+
+// MARK: Text Component
+"text_component.free" = "空閒";
+"text_component.usage" = "用量";
+"text_component.total" = "總計";
+"text_component.usagePercentage" = "用量百分比";
+"text_component.temperature" = "溫度";
+"text_component.upload" = "上傳";
+"text_component.download" = "下載";
+"text_component.percentage" = "百分比";
+"text_component.mah" = "mAh";
+"text_component.loadAverage1Min" = "平均負載 (1分鐘)";
+"text_component.loadAverage5Min" = "平均負載 (5分鐘)";
+"text_component.loadAverage15Min" = "平均負載 (15分鐘)";
+"text_component.average" = "平均";
+"text_component.timeRemaining" = "剩餘時間";
+
+
+// MARK: CPU Display Mode
+"cpu_display_mode" = "CPU 顯示";
+"cpu_display_mode.usage_percentage" = "百分比";
+"cpu_display_mode.load_average" = "平均負載";
+
+//MARK: Widget
+"widget.not_available" = "eul 尚未啟動";
+"widget.cpu.title" = "CPU 小工具";
+"widget.cpu.description" = "顯示 CPU 相關訊息";
+"widget.memory.title" = "記憶體小工具";
+"widget.memory.description" = "顯示記憶體相關訊息";
+"widget.battery.title" = "電池小工具";
+"widget.battery.description" = "顯示電池相關訊息";
+"widget.network.title" = "網路小工具";
+"widget.network.description" = "顯示網路相關訊息";
