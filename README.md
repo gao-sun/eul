@@ -107,3 +107,4 @@ Note:
 - Svenska (credit [@Tekrific](https://github.com/Tekrific))
 - Čeština (credit [@DMNerd](https://github.com/DMNerd))
 - Italiano (credit [@stosumarte](https://github.com/stosumarte))
+- 繁體中文 (credit [@gnehs](https://github.com/gnehs))
