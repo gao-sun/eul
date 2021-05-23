@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(macOSApplicationExtension 11, *)
 public struct BatteryEntry: SharedWidgetEntry {
     public init(date: Date = Date(), outdated: Bool = false, isCharging: Bool = false, acPowered: Bool = false, charge: Double? = nil, capacity: Int = 0, maxCapacity: Int = 0, designCapacity: Int = 0, cycleCount: Int = 0, condition: BatteryEntry.BatteryCondition = BatteryCondition.good) {
         self.date = date

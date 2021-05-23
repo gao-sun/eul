@@ -9,6 +9,7 @@
 import Foundation
 import WidgetKit
 
+@available(macOSApplicationExtension 11, *)
 public protocol SharedWidgetEntry: SharedEntry, TimelineEntry {
     static var kind: String { get }
     static var sample: Self { get }
@@ -20,6 +21,7 @@ public protocol SharedWidgetEntry: SharedEntry, TimelineEntry {
     init(outdated: Bool)
 }
 
+@available(macOSApplicationExtension 11, *)
 public extension SharedWidgetEntry {
     init(outdated: Bool) {
         self.init(date: Date(), outdated: outdated)

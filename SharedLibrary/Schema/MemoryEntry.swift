@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(macOSApplicationExtension 11, *)
 public struct MemoryEntry: SharedWidgetEntry {
     public init(date: Date = Date(), outdated: Bool = false, used: Double = 0, total: Double = 0, temp: Double? = nil) {
         self.date = date

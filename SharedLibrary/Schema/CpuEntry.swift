@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(macOSApplicationExtension 11, *)
 public struct CpuEntry: SharedWidgetEntry {
     public init(date: Date = Date(), outdated: Bool = false, temp: Double? = nil, usageSystem: Double? = nil, usageUser: Double? = nil, usageNice: Double? = nil) {
         self.date = date
