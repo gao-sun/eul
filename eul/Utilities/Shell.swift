@@ -21,6 +21,7 @@ func shellData(_ args: [String]) -> Data? {
     task.standardError = error
     task.executableURL = URL(fileURLWithPath: "/bin/bash")
     task.arguments = ["-c"] + args
+    task.environment = ["LC_ALL": "en_US.UTF-8"]
 
     do {
         try task.run()
@@ -69,6 +70,7 @@ func shellPipe(_ args: String..., onData: ((String) -> Void)? = nil, didTerminat
     task.standardOutput = pipe
     task.executableURL = URL(fileURLWithPath: "/bin/bash")
     task.arguments = ["-c"] + args
+    task.environment = ["LC_ALL": "en_US.UTF-8"]
 
     var buffer = Data()
     let outHandle = pipe.fileHandleForReading
