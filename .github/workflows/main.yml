@@ -17,14 +17,11 @@ jobs:
           key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-spm-
-      - name: Install SwiftFormat
-        run: brew install gao-sun/core/swiftformat@0.46.2
-        env:
-          HOMEBREW_NO_AUTO_UPDATE: 1
       - name: Install xcpretty
         run: gem install xcpretty
       - name: SwiftFormat # this is necessary since we'll format files in build phase
-        run: swiftformat --lint .
+        run: swift run -c release swiftformat ../ --lint
+        working-directory: ./BuildTools
       - name: Switch Xcode version
         run: sudo xcode-select -s /Applications/Xcode_12.2.app
       - name: Build

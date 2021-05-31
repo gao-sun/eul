@@ -44,3 +44,7 @@ Carthage/Checkouts
 
 Carthage/Build/
 
+# BuildTools
+BuildTools/.build
+BuildTools/.swiftpm
+
