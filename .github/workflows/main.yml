@@ -23,6 +23,6 @@ jobs:
         run: swift run -c release swiftformat ../ --lint
         working-directory: ./BuildTools
       - name: Switch Xcode version
-        run: sudo xcode-select -s /Applications/Xcode_12.2.app
+        run: sudo xcode-select -s /Applications/Xcode_12.5.app
       - name: Build
         run: xcodebuild -scheme eul -project ./eul.xcodeproj -sdk macosx build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO" | xcpretty && exit ${PIPESTATUS[0]}
