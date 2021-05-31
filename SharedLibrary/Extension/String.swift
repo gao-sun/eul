@@ -44,4 +44,12 @@ public extension String {
     var numericOnly: String {
         filter("0123456789.".contains)
     }
+
+    func firstMatch(_ pattern: String) -> NSTextCheckingResult? {
+        let range = NSRange(location: 0, length: utf16.count)
+        guard let regex = try? NSRegularExpression(pattern: pattern) else {
+            return nil
+        }
+        return regex.firstMatch(in: self, options: [], range: range)
+    }
 }

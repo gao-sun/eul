@@ -104,12 +104,62 @@ enum Info {
         var outBytes: UInt64
     }
 
+    struct InterfaceStatus {
+        var name: String
+        var status: String?
+    }
+
+    static func findPort(_ string: String) -> String? {
+        guard string.hasPrefix("("), string.hasSuffix(")") else {
+            return nil
+        }
+
+        let trimmed = String(string.dropFirst().dropLast())
+
+        guard let matched = trimmed.firstMatch("Device: ([^,]+)")?.range(at: 1), let range = Range(matched, in: trimmed) else {
+            return nil
+        }
+
+        return String(trimmed[range])
+    }
+
+    static func getActiveInterfaces() -> [String] {
+        shell("ifconfig")?.split(separator: "\n").map { String($0) }.reduce([InterfaceStatus]()) {
+            // new interface
+            if !$1.hasPrefix("\t") {
+                guard let colonIndex = $1.firstIndex(of: ":") else {
+                    return $0
+                }
+                return $0.appending(InterfaceStatus(name: String($1[..<colonIndex])))
+            }
+
+            let splitted = $1.split(separator: ":").map { $0.trimmingCharacters(in: CharacterSet(charactersIn: " \t")) }
+
+            guard splitted.count == 2, splitted[0] == "status", let lastInterface = $0.last else {
+                return $0
+            }
+
+            return $0.dropLast().appending(InterfaceStatus(name: lastInterface.name, status: splitted[1]))
+        }.compactMap {
+            $0.status == "active" ? $0.name : nil
+        } ?? []
+    }
+
     static func getNetworkUsage(_ onData: @escaping (NetworkUsage) -> Void) {
-        shellAsync("route get 0.0.0.0 | grep interface | awk '{print $2}'") {
+        // TO-DO: use Combine
+        shellAsync("networksetup -listnetworkserviceorder") {
+            let services = $0?.split(separator: "\n").map(String.init).compactMap(Info.findPort) ?? []
+            let activeInterfaces = Info.getActiveInterfaces()
+            let currentActiveInterface = services.first(where: activeInterfaces.contains)
+
+            Print("network services order", services)
+            Print("network active interfaces", activeInterfaces)
+            Print("network current active interfaces", currentActiveInterface ?? "N/A")
+
             var inBytes: UInt64?
             var outBytes: UInt64?
 
-            let interface = (($0?.contains("route:") ?? false) ? nil : $0)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "en0"
+            let interface = currentActiveInterface ?? "en0"
 
             if
                 let rows = shell("netstat -bI \(interface)")?.split(separator: "\n").map({ String($0) }),
