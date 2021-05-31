@@ -1,0 +1,219 @@
+/* 
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery" = "ဘက်ထရီ";
+"battery.charge" = "အား";
+"battery.time_remaining" = "ကျန်ရှိချိန်";
+"battery.power_source" = "ပါဝါရင်းမြစ်";
+"battery.power_source.battery" = "ဘက်ထရီ";
+"battery.power_source.acPower" = "AC ပါဝါ";
+"battery.power_source.unknown" = "မသိပါ";
+"battery.is_charging" = "အားသွင်းနေ";
+"battery.to_full_charge" = "အားပြည့်ရန်";
+"battery.to_empty" = "အားကုန်ရန်";
+"battery.health" = "ကျန်းမာမှု";
+"battery.max_capacity" = "အမြင့်ဆုံးသိုလှောင်စွမ်းအား";
+"battery.design_capacity" = "မူလသိုလှောင်စွမ်းအား";
+"battery.health_percentage" = "ကျန်းမာမှုရာခိုင်နှုန်း";
+"battery.cycle_count" = "အသုံးပြုမှုအရေအတွက်";
+"battery.cycle" = "အသုံးပြုမှု";
+"battery.condition" = "အခြေအနေ";
+"battery.condition.good" = "ကောင်း";
+"battery.condition.fair" = "အသင့်အတင့်";
+"battery.condition.poor" = "ဆိုး";
+
+// MARK: CPU / Info
+"cpu.usage" = "အသုံးပြုမှု";
+"cpu.idle" = "တည်ငြိမ်နေ";
+"cpu.temperature" = "အပူချိန်";
+"gpu.temperature" = "GPU အပူချိန်";
+"cpu.info" = "အချက်အလက်";
+"cpu.physical_cores" = "Physical Cores";
+"cpu.logical_cores" = "Logical Cores";
+"cpu.up_time" = "Up Time";
+"cpu.thermal_level" = "အပူအဆင့်";
+"cpu.system" = "စနစ်";
+"cpu.user" = "အသုံးပြုသူ";
+"cpu.nice" = "ကောင်း";
+"cpu.waiting_status_report" = "ပထမဆုံးအကြိမ်အချက်အလက်ရယူနေသည်";
+
+// MARK: Fan
+"fan" = "ပန်ကာ";
+"fan.current" = "လက်ရှိ";
+"fan.min" = "အနိမ့်ဆုံး";
+"fan.max" = "အမြင့်ဆုံး";
+
+// MARK: Memory
+"memory" = "မမ်မိုရီ";
+"memory.total" = "စုစုပေါင်း";
+"memory.free" = "အလွတ်";
+"memory.cached_files" = "သိုလှောင်ထားသောဖိုင်များ";
+"memory.temp" = "အပူချိန်";
+"memory.usage" = "အသုံးပြုမှု";
+"memory.app" = "အက်ပ်";
+"memory.wired" = "Wired";
+"memory.compressed" = "Compressed";
+
+// MARK: Network
+"network" = "ကွန်ယက်";
+"network.in" = "ဝင်";
+"network.out" = "ထွက်";
+"network.no_activity" = "Activity မရှိပါ";
+
+// MARK: Menu
+"menu.summary" = "အကျဉ်းချုပ်";
+"menu.yes" = "Yes";
+"menu.no" = "No";
+"menu.preferences" = "ရွေးချယ်စရာများ";
+"menu.quit" = "eul မှထွက်မည်";
+"menu.show_cpu_top_activities" = "CPU top activities ကိုပြပါ";
+"menu.show_ram_top_activities" = "RAM top activities ကိုပြပါ";
+"menu.show_network_top_activities" = "network top activities ကိုပြပါ";
+
+// MARK: Temperature
+"temp.temperature" = "အပူချိန်";
+"temp.celsius" = "celsius";
+"temp.fahrenheit" = "fahrenheit";
+"temp.kelvin" = "kelvin";
+
+// MARK: Text Display
+"text_display" = "စာသားပြသမှုပုံစံ";
+"text_display.compact" = "သိပ်သည်းစွာ";
+"text_display.single_line" = "တကြောင်းစီ";
+
+// MARK: Font Design
+"font_design" = "Font ပုံစံ";
+"font_design.default" = "မူလ";
+"font_design.monospaced" = "monospaced";
+
+// MARK: Appearance
+"appearance.mode" = "နည်းလမ်း";
+"appearance.light" = "လင်း";
+"appearance.dark" = "မှောင်";
+"appearance.auto" = "အော်တို";
+
+// MARK: Component
+"component.status_bar" = "စတေးတပ်ဘား";
+"component.drag_to_reorder" = "ဆွဲပြီးစီပါ";
+"component.available" = "ရနိုင်သော";
+"component.click_to_append" = "ထည့်ရန်နှိပ်ပါ";
+"component.cpu" = "CPU";
+"component.gpu" = "GPU";
+"component.fan" = "ပန်ကာ";
+"component.memory" = "မမ်မိုရီ";
+"component.battery" = "ဘက်ထရီ";
+"component.network" = "ကွန်ယက်";
+"component.disk" = "ဒစ်က်";
+"component.bluetooth" = "ဘလူးတုသ်";
+
+// MARK: Process
+"process" = "လုပ်ငန်းစဉ်";
+"process.bring_to_front" = "ပြပါ";
+"process.reveal_in_finder" = "Finder တွင်ပြပါ";
+"process.terminate" = "ရပ်မည်";
+"process.force_terminate" = "အတင်းအကျပ်ရပ်မည်";
+"process.terminate_alert.text.%@" = "%@? ကိုရပ်ခိုင်းမှာသေချာပြီလား";
+"process.terminate_alert.command.%@" = "Command: %@";
+"process.terminate_alert.cancel" = "ပယ်ဖျက်မည်";
+
+// MARK: Bluetooth
+"bluetooth" = "ဘလူးတုသ်";
+
+// MARK: Disk
+"disk.eject" = "ထုတ်မည်";
+"disk.select" = "ဒစ်က် ရွေးပါ";
+"disk.all" = "ဒစ်က် အားလုံး";
+
+// MARK: Language
+"language" = "ဘာသာစကား";
+"language.ar" = "العربية";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.zh-Hant" = "繁體中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+"language.pt" = "Português";
+"language.ja" = "日本語";
+"language.fr" = "Français";
+"language.mn" = "Монгол";
+"language.ko" = "한국어";
+"language.dk" = "Dansk";
+"language.uk" = "Українська";
+"language.se" = "Svenska";
+"language.cs" = "Čeština";
+"language.it" = "Italiano";
+"language.my" = "မြန်မာဘာသာ";
+
+// MARK: General UI
+"ui.app" = "အက်ပ်";
+"ui.general" = "အထွေထွေ";
+"ui.version" = "ဗားရှင်း";
+"ui.checking_update" = "Update စစ်နေပါသည်";
+"ui.up_to_date" = "နောက်ဆုံးထွက်";
+"ui.new_version" = "ဗားရှင်းအသစ်ထွက်နေပါပြီ";
+"ui.download" = "Download";
+"ui.launch_at_login" = "Login ဝင်ပြီးတာနှင့်ဖွင့်ပါ";
+"ui.display" = "ပြသမှု";
+"ui.components" = "အစိတ်အပိုင်းများ";
+"ui.show_components_in_status_bar" = "အစိတ်အပိုင်းများကို status bar တွင်ပြပါ";
+"ui.refresh_rate" = "Refresh Rate";
+"ui.smc" = "SMC";
+"ui.network" = "ကွန်ယက်";
+"ui.menu_view" = "ဇယား";
+"ui.empty" = "အလွတ်";
+"ui.hidden_by_system.title" = "eul status bar အစိတ်အပိုင်းများကို system မှပိတ်ထားပါသည်";
+"ui.hidden_by_system.message" = "ရွေးချယ်စရာများကိုဖွင့်ပြီးအစိတ်အပိုင်းအရေအတွက်ကိုလျှော့ပါ";
+"ui.hidden_by_system.open" = "ဖွင့်ပါ";
+"ui.hidden_by_system.dismiss" = "ကျော်သွားမည်";
+"ui.check_status_item_visibility" = "Status bar ပေါ်တွင်မြင်ရမှုကိုစစ်နေပါ";
+"ui.upgrade_method" = "မြှင့်တင်ခြင်း";
+"ui.upgrade_method.none" = "မရှိပါ";
+"ui.upgrade_method.none.description" = "eul သည်မြှင့်တင်ရန်စစ်ဆေးမည်မဟုတ်ပါ";
+"ui.upgrade_method.showInStatusBar" = "status bar တွင်ပြပါ";
+"ui.upgrade_method.showInStatusBar.description" = "ဗားရှင်းအသစ်ထွက်လာလျှင်မြှင့်တင်ရန် icon ပြပါ";
+"ui.upgrade_method.autoUpdate" = "အော်တို update";
+"ui.upgrade_method.autoUpdate.description" = "အော်တို မြှင့်တင်ခြင်းပြုလုပ်ပါ";
+
+// MARK: Component
+"component.show_icon" = "icon ကိုပြပါ";
+"component.show_graph" = "graph ကိုပြပါ";
+"component.show_text" = "text ကိုပြပါ";
+
+// MARK: Text Component
+"text_component.free" = "အလွတ်";
+"text_component.usage" = "အသုံးပြုမှု";
+"text_component.total" = "စုစုပေါင်း";
+"text_component.usagePercentage" = "အသုံးပြုမှုရာခိုင်နှုန်း";
+"text_component.temperature" = "အပူချိန်";
+"text_component.upload" = "Upload";
+"text_component.download" = "Download";
+"text_component.percentage" = "ရာခိုင်နှုန်း";
+"text_component.mah" = "mAh";
+"text_component.loadAverage1Min" = "ပျမ်းမျှဝန် (1 min)";
+"text_component.loadAverage5Min" = "ပျမ်းမျှဝန် (5 min)";
+"text_component.loadAverage15Min" = "ပျမ်းမျှဝန် (15 min)";
+"text_component.average" = "ပျမ်းမျှ";
+"text_component.timeRemaining" = "ကျန်ရှိချိန်";
+
+// MARK: CPU Display Mode
+"cpu_display_mode" = "CPU ပြသမှုပုံစံ";
+"cpu_display_mode.usage_percentage" = "အသုံးပြုမှု %";
+"cpu_display_mode.load_average" = "ပျမ်းမျှဝန်";
+
+//MARK: Widget
+"widget.not_available" = "eul မဖွင့်ရသေးပါ";
+"widget.cpu.title" = "CPU Widget";
+"widget.cpu.description" = "CPU အချက်အလက်များပြပါ";
+"widget.memory.title" = "Memory Widget";
+"widget.memory.description" = "မမ်မိုရီ အချက်အလက်များပြပါ";
+"widget.battery.title" = "Battery Widget";
+"widget.battery.description" = "ဘက်ထရီ အချက်အလက်များပြပါ";
+"widget.network.title" = "Network Widget";
+"widget.network.description" = "ကွန်ယက် အချက်အလက်များပြပါ";
