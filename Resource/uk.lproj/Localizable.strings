@@ -149,6 +149,7 @@
 "language.se" = "Svenska";
 "language.cs" = "Čeština";
 "language.it" = "Italiano";
+"language.my" = "မြန်မာဘာသာ";
 
 // MARK: General UI
 "ui.app" = "Застосунок";
