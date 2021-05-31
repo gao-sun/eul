@@ -84,6 +84,7 @@ Note:
     <td align="center"><a href="https://github.com/stosumarte"><img src="https://avatars.githubusercontent.com/u/64950825?v=4?s=48" width="48px;" alt=""/><br /><sub><b>stosumarte</b></sub></a><br /><a href="#translation-stosumarte" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/gnehs"><img src="https://avatars.githubusercontent.com/u/16719720?v=4?s=48" width="48px;" alt=""/><br /><sub><b>gnehs</b></sub></a><br /><a href="#translation-gnehs" title="Translation">🌍</a></td>
     <td align="center"><a href="https://www.youtube.com/channel/UC-Jk9ugzjuOUrMnmJZzLeiw?gl=JP"><img src="https://avatars.githubusercontent.com/u/40539549?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Animenosekai</b></sub></a><br /><a href="#translation-Animenosekai" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/soewaiyanmyowin"><img src="https://avatars.githubusercontent.com/u/38293630?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Soe Wai Yan Myo Win</b></sub></a><br /><a href="#translation-soewaiyanmyowin" title="Translation">🌍</a></td>
   </tr>
 </table>
 
@@ -110,3 +111,4 @@ Note:
 - Čeština (credit [@DMNerd](https://github.com/DMNerd))
 - Italiano (credit [@stosumarte](https://github.com/stosumarte))
 - 繁體中文 (credit [@gnehs](https://github.com/gnehs))
+- မြန်မာဘာသာ (credit [@soewaiyanmyowin](https://github.com/soewaiyanmyowin))
