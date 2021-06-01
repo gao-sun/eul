@@ -150,6 +150,7 @@
 "language.cs" = "Čeština";
 "language.it" = "Italiano";
 "language.my" = "မြန်မာဘာသာ";
+"language.hu" = "Magyar";
 
 // MARK: General UI
 "ui.app" = "تطبيق";
