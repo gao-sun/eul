@@ -137,7 +137,6 @@ Copyright © 2020 Gao Sun. All rights reserved.
 "language.ko" = "한국어";
 "language.dk" = "Dansk";
 "language.se" = "Svenska";
-"language.hu" = "Magyar";
 
 // MARK: General UI
 "ui.app" = "App";
