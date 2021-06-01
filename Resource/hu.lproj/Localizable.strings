@@ -1,0 +1,220 @@
+/*
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery" = "Akkumulátor";
+"battery.charge" = "Töltöttség";
+"battery.time_remaining" = "Hátral. idő";
+"battery.power_source" = "Forrás";
+"battery.power_source.battery" = "Akkumulátor";
+"battery.power_source.acPower" = "Kábel";
+"battery.power_source.unknown" = "Ismeretlen";
+"battery.is_charging" = "Töltődik";
+"battery.to_full_charge" = "Feltöltve";
+"battery.to_empty" = "Merül";
+"battery.health" = "Egészség";
+"battery.max_capacity" = "Teljes kap.";
+"battery.design_capacity" = "Design kap.";
+"battery.health_percentage" = "Eg. százalék";
+"battery.cycle_count" = "ciklusok száma";
+"battery.cycle" = "Ciklus";
+"battery.condition" = "Állapot";
+"battery.condition.good" = "Jó";
+"battery.condition.fair" = "Közepes";
+"battery.condition.poor" = "Rossz";
+
+// MARK: CPU / Info
+"cpu.usage" = "Használat";
+"cpu.idle" = "Tétlen";
+"cpu.temperature" = "Hőm.";
+"gpu.temperature" = "GPU Hőm.";
+"cpu.info" = "Infó";
+"cpu.physical_cores" = "Fizikai magok";
+"cpu.logical_cores" = "Logikai magok";
+"cpu.up_time" = "üzemidő";
+"cpu.thermal_level" = "Hőm. szint";
+"cpu.system" = "Rendszer";
+"cpu.user" = "Felhaszn.";
+"cpu.nice" = "Nice";
+"cpu.waiting_status_report" = "Várakozás az első jelentésre";
+
+// MARK: Fan
+"fan" = "Vent.";
+"fan.current" = "Jelenleg";
+"fan.min" = "Min.";
+"fan.max" = "Max.";
+
+// MARK: Memory
+"memory" = "Memória";
+"memory.total" = "Összes";
+"memory.free" = "Szabad";
+"memory.cached_files" = "Gyorsítótár";
+"memory.temp" = "Hőm.";
+"memory.usage" = "Használat";
+"memory.app" = "App";
+"memory.wired" = "Vezetékes";
+"memory.compressed" = "Tömörített";
+
+// MARK: Network
+"network" = "Hálózat";
+"network.in" = "Be";
+"network.out" = "Ki";
+"network.no_activity" = "Tétlen";
+
+// MARK: Menu
+"menu.summary" = "Összefoglaló";
+"menu.yes" = "Igen";
+"menu.no" = "Nem";
+"menu.preferences" = "Beállítások";
+"menu.quit" = "Kilépés";
+"menu.show_cpu_top_activities" = "CPU Aktivitás";
+"menu.show_ram_top_activities" = "RAM Aktivitás";
+"menu.show_network_top_activities" = "Hálózat Aktivitás";
+
+// MARK: Temperature
+"temp.temperature" = "Hőmérséklet";
+"temp.celsius" = "celsius";
+"temp.fahrenheit" = "fahrenheit";
+"temp.kelvin" = "kelvin";
+
+// MARK: Text Display
+"text_display" = "Szövegmegjelenítés";
+"text_display.compact" = "Kompakt";
+"text_display.single_line" = "Egysoros";
+
+// MARK: Font Design
+"font_design" = "Betűtípus";
+"font_design.default" = "Alapértelmezett";
+"font_design.monospaced" = "Monospaced";
+
+// MARK: Appearance
+"appearance.mode" = "Mód";
+"appearance.light" = "Világos";
+"appearance.dark" = "Sötét";
+"appearance.auto" = "Automatikus";
+
+// MARK: Component
+"component.status_bar" = "Állapotsor";
+"component.drag_to_reorder" = "húzza az átrendezéshez";
+"component.available" = "Elérhető";
+"component.click_to_append" = "Kattintson a hozzáadáshoz";
+"component.cpu" = "CPU";
+"component.gpu" = "GPU";
+"component.fan" = "Vent.";
+"component.memory" = "Memória";
+"component.battery" = "Akku.";
+"component.network" = "Hálózat";
+"component.disk" = "Meghajtó";
+"component.bluetooth" = "Bluetooth";
+
+// MARK: Process
+"process" = "Folyamat";
+"process.bring_to_front" = "Előre hozás";
+"process.reveal_in_finder" = "Megjelenítés Finderben";
+"process.terminate" = "Leállítás";
+"process.force_terminate" = "Kényszerleállítás";
+"process.terminate_alert.text.%@" = "Biztos a(z) %@ leállításában？";
+"process.terminate_alert.command.%@" = "Parancs: %@";
+"process.terminate_alert.cancel" = "Mégsem";
+
+// MARK: Bluetooth
+"bluetooth" = "Bluetooth";
+
+// MARK: Disk
+"disk.eject" = "Kiadás";
+"disk.select" = "Kiválasztás";
+"disk.all" = "Összes meghajtó";
+
+// MARK: Language
+"language" = "語言";
+"language.ar" = "العربية";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.zh-Hant" = "繁體中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+"language.pt" = "Português";
+"language.ja" = "日本語";
+"language.fr" = "Français";
+"language.mn" = "Монгол";
+"language.ko" = "한국어";
+"language.dk" = "Dansk";
+"language.uk" = "Українська";
+"language.se" = "Svenska";
+"language.cs" = "Čeština";
+"language.it" = "Italiano";
+"language.hu" = "Magyar";
+
+// MARK: General UI
+"ui.app" = "App";
+"ui.general" = "Általános";
+"ui.version" = "verzió";
+"ui.checking_update" = "frissítés(ek) keresése";
+"ui.up_to_date" = "naprakész";
+"ui.new_version" = "új verzió található";
+"ui.download" = "letöltés";
+"ui.launch_at_login" = "Indítás bekapcsoláskor";
+"ui.display" = "Kijelző";
+"ui.components" = "Komponensek";
+"ui.show_components_in_status_bar" = "Komponensek mutatása az állapotsorban";
+"ui.refresh_rate" = "Frissítési arány";
+"ui.smc" = "SMC";
+"ui.network" = "Hálózat";
+"ui.menu_view" = "Menü nézet";
+"ui.empty" = "Üres";
+"ui.hidden_by_system.title" = "eul állapotsor a rendszer által elrejtve";
+"ui.hidden_by_system.message" = "Nyissa meg a beállításokat és próbálja lecsökkenteni az elemek számát";
+"ui.hidden_by_system.open" = "Megnyitás";
+"ui.hidden_by_system.dismiss" = "Bezárás";
+"ui.check_status_item_visibility" = "Elem láthatóságának ellenőrzése";
+"ui.upgrade_method" = "Frissítés";
+"ui.upgrade_method.none" = "nincs";
+"ui.upgrade_method.none.description" = "Az eul nem ellenőrzi a frissítést ";
+"ui.upgrade_method.showInStatusBar" = "Mutatás az állapotsorban";
+"ui.upgrade_method.showInStatusBar.description" = "Mutassa a frissítés ikont új verzió megjelenésekor";
+"ui.upgrade_method.autoUpdate" = "Automatikus frissítés";
+"ui.upgrade_method.autoUpdate.description" = "Automatikusan frissítsen";
+
+// MARK: Component
+"component.show_icon" = "Ikon mutatása";
+"component.show_graph" = "Grafikon mutatása";
+"component.show_text" = "Szöveg mutatása";
+
+// MARK: Text Component
+"text_component.free" = "Szabad";
+"text_component.usage" = "Használt";
+"text_component.total" = "Összes";
+"text_component.usagePercentage" = "Felhasznált százalék";
+"text_component.temperature" = "Hőmérséklet";
+"text_component.upload" = "Feltöltés";
+"text_component.download" = "Letöltés";
+"text_component.percentage" = "Százalék";
+"text_component.mah" = "mAh";
+"text_component.loadAverage1Min" = "Átlagos terhelés (1 perc)";
+"text_component.loadAverage5Min" = "Átlagos terhelés (5 perc)";
+"text_component.loadAverage15Min" = "Átlagos terhelés (15 perc)";
+"text_component.average" = "Átlag";
+"text_component.timeRemaining" = "Hátralevő idő";
+
+
+// MARK: CPU Display Mode
+"cpu_display_mode" = "CPU megjelenítési mód";
+"cpu_display_mode.usage_percentage" = "Felhasznált %";
+"cpu_display_mode.load_average" = "Átlag terhelés";
+
+//MARK: Widget
+"widget.not_available" = "Az eul nem fut";
+"widget.cpu.title" = "CPU Widget";
+"widget.cpu.description" = "CPU információ megjelenítése";
+"widget.memory.title" = "Memória Widget";
+"widget.memory.description" = "Memória információ megjelenítése";
+"widget.battery.title" = "Akku Widget";
+"widget.battery.description" = "Akku információ megjelenítése";
+"widget.network.title" = "Hálózat";
+"widget.network.description" = "Hálózati információ megjelenítése";

@@ -129,6 +129,7 @@
 "language.mn" = "Монгол";
 "language.ko" = "한국어";
 "language.dk" = "Dansk";
+"language.hu" = "Magyar";
 
 // MARK: General UI
 "ui.app" = "App";
