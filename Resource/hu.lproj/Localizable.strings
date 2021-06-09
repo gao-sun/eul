@@ -131,7 +131,7 @@
 "disk.all" = "Összes meghajtó";
 
 // MARK: Language
-"language" = "語言";
+"language" = "Nyelv";
 "language.ar" = "العربية";
 "language.en" = "English";
 "language.zh-Hans" = "简体中文";
@@ -150,6 +150,7 @@
 "language.cs" = "Čeština";
 "language.it" = "Italiano";
 "language.hu" = "Magyar";
+"language.th" = "ไทย";
 
 // MARK: General UI
 "ui.app" = "App";
