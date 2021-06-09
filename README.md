@@ -86,6 +86,10 @@ Note:
     <td align="center"><a href="https://github.com/Animenosekai"><img src="https://avatars.githubusercontent.com/u/40539549?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Animenosekai</b></sub></a><br /><a href="#translation-Animenosekai" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/soewaiyanmyowin"><img src="https://avatars.githubusercontent.com/u/38293630?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Soe Wai Yan Myo Win</b></sub></a><br /><a href="#translation-soewaiyanmyowin" title="Translation">🌍</a></td>
     <td align="center"><a href="http://www.studio83.cz/"><img src="https://avatars.githubusercontent.com/u/9982805?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Vojtěch Kaizr</b></sub></a><br /><a href="#translation-wojtishek" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/thewqer"><img src="https://avatars.githubusercontent.com/u/64782240?v=4?s=48" width="48px;" alt=""/><br /><sub><b>wqer</b></sub></a><br /><a href="#translation-thewqer" title="Translation">🌍</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/sn0wmem0ry"><img src="https://avatars.githubusercontent.com/u/84455611?v=4?s=48" width="48px;" alt=""/><br /><sub><b>sn0wmem0ry</b></sub></a><br /><a href="#translation-sn0wmem0ry" title="Translation">🌍</a></td>
   </tr>
 </table>
 
