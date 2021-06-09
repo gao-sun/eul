@@ -62,7 +62,7 @@ Note:
     <td align="center"><a href="https://github.com/lill74"><img src="https://avatars2.githubusercontent.com/u/12353597?v=4?s=48" width="48px;" alt=""/><br /><sub><b>lill74</b></sub></a><br /><a href="#translation-lill74" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/strafe"><img src="https://avatars0.githubusercontent.com/u/15663890?v=4?s=48" width="48px;" alt=""/><br /><sub><b>strafe</b></sub></a><br /><a href="#translation-strafe" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/AndyH0ng"><img src="https://avatars0.githubusercontent.com/u/60703412?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Andy Hong</b></sub></a><br /><a href="#translation-AndyH0ng" title="Translation">🌍</a></td>
-    <td align="center"><a href="https://treastrain.jp/"><img src="https://avatars2.githubusercontent.com/u/13805382?v=4?s=48" width="48px;" alt=""/><br /><sub><b>treastrain / Tanaka Ryoga</b></sub></a><br /><a href="#translation-treastrain" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://treastrain.jp/"><img src="https://avatars2.githubusercontent.com/u/13805382?v=4?s=48" width="48px;" alt=""/><br /><sub><b>treastrain, Tanaka Ryoga</b></sub></a><br /><a href="#translation-treastrain" title="Translation">🌍</a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/baptistecdr"><img src="https://avatars3.githubusercontent.com/u/11665396?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Baptiste C.</b></sub></a><br /><a href="#translation-baptistecdr" title="Translation">🌍</a></td>
@@ -100,20 +100,14 @@ Note:
 
 ## Language Support
 
-- 简体中文
-- English
-- Arabic (credit [@40uf411](https://github.com/40uf411))
-- Deutsch (credit [@akeschmidi](https://github.com/akeschmidi) [@rfuehrer](https://github.com/rfuehrer) [@J-rg](https://github.com/J-rg))
-- Русский (credit [@Nikolay](https://github.com/JiLiZART))
-- Español (credit [@JesusM](https://github.com/JesusM) [@kant](https://github.com/kant))
-- Português (credit [@nebeker](https://github.com/nebeker) [@jorgeclaro](https://github.com/jorgeclaro))
-- Монгол (credit [@Zorig](https://github.com/Zorig) [@AndyH0ng](https://github.com/AndyH0ng))
-- 한국어 (credit [@AndyH0ng](https://github.com/AndyH0ng) [@sboh1214](https://github.com/sboh1214))
-- 日本語 (credit [@treastrain](https://github.com/treastrain))
-- Français (credit [@baptistecdr](https://github.com/baptistecdr))
-- Українська (credit [@nrudnyk](https://github.com/nrudnyk))
-- Svenska (credit [@Tekrific](https://github.com/Tekrific))
-- Čeština (credit [@DMNerd](https://github.com/DMNerd))
-- Italiano (credit [@stosumarte](https://github.com/stosumarte))
-- 繁體中文 (credit [@gnehs](https://github.com/gnehs))
-- မြန်မာဘာသာ (credit [@soewaiyanmyowin](https://github.com/soewaiyanmyowin))
+```swift
+let languages = [
+  "简体中文", "English", "Arabic",
+  "Deutsch", "Русский", "Español",
+  "Português", "Монгол", "한국어",
+  "日本語", "Français", "Українська",
+  "Svenska", "Čeština", "Italiano",
+  "繁體中文", "မြန်မာဘာသာ", "Magyar",
+  "ไทย"
+];
+```
