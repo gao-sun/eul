@@ -154,6 +154,7 @@ battery.timeRemaining = "Time Rem.";
 "language.it" = "Italiano";
 "language.my" = "မြန်မာဘာသာ";
 "language.hu" = "Magyar";
+"language.th" = "ไทย";
 
 // MARK: General UI
 "ui.app" = "애플리케이션";
