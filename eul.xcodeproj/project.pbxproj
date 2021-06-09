@@ -483,6 +483,8 @@
 		6CB260AF250DF1A900328DAA /* BatteryIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryIconView.swift; sourceTree = "<group>"; };
 		6CB26F7824E8310900E809FE /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		6CB3D26025D6A858008C6627 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6CBF97AB26711A59003C2F2B /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6CBF97AC26711A60003C2F2B /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6CC0798B250CD793000D7DAC /* PreferenceGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceGeneralView.swift; sourceTree = "<group>"; };
 		6CC1EBB625769B1F00BC05CA /* FanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanData.swift; sourceTree = "<group>"; };
 		6CC1EBB925769B4400BC05CA /* TemperatureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureData.swift; sourceTree = "<group>"; };
@@ -1227,6 +1229,8 @@
 				it,
 				"zh-Hant",
 				my,
+				hu,
+				th,
 			);
 			mainGroup = 6C5F8532249FACE000CF0EF8;
 			packageReferences = (
@@ -1620,6 +1624,8 @@
 				6C8731BD25CC41F100170CF8 /* it */,
 				153727D22659346C006D94B3 /* zh-Hant */,
 				07580066265EA20F00D8ACB6 /* my */,
+				6CBF97AB26711A59003C2F2B /* hu */,
+				6CBF97AC26711A60003C2F2B /* th */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
