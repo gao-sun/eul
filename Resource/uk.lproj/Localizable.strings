@@ -65,6 +65,8 @@
 "network.in" = "Отримано/c";
 "network.out" = "Відправлено/c";
 "network.no_activity" = "Немає активності";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
 
 // MARK: Menu
 "menu.summary" = "Підсумок";

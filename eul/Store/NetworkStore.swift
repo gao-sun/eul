@@ -15,9 +15,15 @@ class NetworkStore: ObservableObject, Refreshable {
     private var lastTimestamp: TimeInterval
 
     @Published var networkUsage = Info.NetworkUsage(inBytes: 0, outBytes: 0)
+    @Published var ports = [Info.NetworkPort]()
+    @Published var currentActivePort: Info.NetworkPort?
 
     @Published var inSpeedInByte: Double = 0
     @Published var outSpeedInByte: Double = 0
+
+    var config: EulComponentConfig {
+        SharedStore.componentConfig[EulComponent.Network]
+    }
 
     var inSpeed: String {
         ByteUnit(inSpeedInByte).readable + "/s"
@@ -27,6 +33,14 @@ class NetworkStore: ObservableObject, Refreshable {
         ByteUnit(outSpeedInByte).readable + "/s"
     }
 
+    var autoPortDesscription: String {
+        guard let currentActivePort = currentActivePort else {
+            return "network.port.auto".localized()
+        }
+
+        return "\("network.port.auto".localized()) (\(currentActivePort.device))"
+    }
+
     @objc func refresh() {
         guard networkUsageHasBeenSet else {
             return
@@ -34,7 +48,7 @@ class NetworkStore: ObservableObject, Refreshable {
 
         networkUsageHasBeenSet = false
 
-        Info.getNetworkUsage { [self] current in
+        Info.getNetworkUsage(forDevice: config.networkPortSelection.nilIfEmpty) { [self] current, ports, currentActivePort in
             let time = Date().timeIntervalSince1970
 
             if networkUsage.inBytes > 0, current.inBytes >= networkUsage.inBytes {
@@ -51,6 +65,8 @@ class NetworkStore: ObservableObject, Refreshable {
 
             lastTimestamp = time
             networkUsage = current
+            self.ports = ports
+            self.currentActivePort = currentActivePort
             writeToContainer()
             networkUsageHasBeenSet = true
         }

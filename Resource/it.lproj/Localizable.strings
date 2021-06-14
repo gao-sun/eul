@@ -64,6 +64,8 @@
 "network.in" = "Download";
 "network.out" = "Upload";
 "network.no_activity" = "Inattiva";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
 
 // MARK: Menu
 "menu.summary" = "Sommario";

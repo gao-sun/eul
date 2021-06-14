@@ -65,6 +65,8 @@
 "network.in" = "Recebido";
 "network.out" = "Enviado";
 "network.no_activity" = "Sem atividade";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
 
 // MARK: Menu
 "menu.summary" = "Sumário";

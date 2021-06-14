@@ -65,6 +65,8 @@
 "network.in" = "Оролт";
 "network.out" = "Гаралт";
 "network.no_activity" = "Идэвхигүй";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
 
 // MARK: Menu
 "menu.summary" = "Summary";

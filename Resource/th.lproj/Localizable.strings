@@ -65,6 +65,8 @@
 "network.in" = "ได้รับ";
 "network.out" = "ส่ง";
 "network.no_activity" = "ไม่มีกิจกรรม";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
 
 // MARK: Menu
 "menu.summary" = "สรุป";

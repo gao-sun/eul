@@ -65,6 +65,8 @@
 "network.in" = "受信";
 "network.out" = "送信";
 "network.no_activity" = "アクティビティなし";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
 
 // MARK: Menu
 "menu.summary" = "サマリー";

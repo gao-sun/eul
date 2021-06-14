@@ -65,6 +65,8 @@
 "network.in" = "داخل";
 "network.out" = "خارج";
 "network.no_activity" = "لا يوجد نشاط";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
 
 // MARK: Menu
 "menu.summary" = "Summary";

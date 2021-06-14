@@ -68,6 +68,8 @@ battery.timeRemaining = "Time Rem.";
 "network.in" = "수신된 바이트";
 "network.out" = "송신된 바이트";
 "network.no_activity" = "활동 없음";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
 
 // MARK: Menu
 "menu.summary" = "요약";

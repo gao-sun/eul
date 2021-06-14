@@ -65,6 +65,8 @@
 "network.in" = "Be";
 "network.out" = "Ki";
 "network.no_activity" = "Tétlen";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
 
 // MARK: Menu
 "menu.summary" = "Összefoglaló";

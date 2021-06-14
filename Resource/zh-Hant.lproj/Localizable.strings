@@ -65,6 +65,8 @@
 "network.in" = "下載";
 "network.out" = "上傳";
 "network.no_activity" = "無活動";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
 
 // MARK: Menu
 "menu.summary" = "概覽";

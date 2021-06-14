@@ -65,6 +65,8 @@
 "network.in" = "Входящ.";
 "network.out" = "Исходящ.";
 "network.no_activity" = "Нет активности";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
 
 // MARK: Menu
 "menu.summary" = "Суммарно";

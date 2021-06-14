@@ -45,6 +45,10 @@ public extension String {
         filter("0123456789.".contains)
     }
 
+    var nilIfEmpty: String? {
+        trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? nil : self
+    }
+
     func firstMatch(_ pattern: String) -> NSTextCheckingResult? {
         let range = NSRange(location: 0, length: utf16.count)
         guard let regex = try? NSRegularExpression(pattern: pattern) else {

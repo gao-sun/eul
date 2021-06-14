@@ -65,6 +65,8 @@
 "network.in" = "ဝင်";
 "network.out" = "ထွက်";
 "network.no_activity" = "Activity မရှိပါ";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
 
 // MARK: Menu
 "menu.summary" = "အကျဉ်းချုပ်";

@@ -65,6 +65,8 @@
 "network.in" = "下载";
 "network.out" = "上传";
 "network.no_activity" = "无活动";
+"network.port.auto" = "自动检测";
+"network.port.select" = "选择端口";
 
 // MARK: Menu
 "menu.summary" = "概览";

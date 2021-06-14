@@ -30,6 +30,10 @@ enum EulComponent: String, CaseIterable, Identifiable, Codable, JSONCodabble, Lo
         self == .Disk
     }
 
+    var isNetworkInterfaceSelectionAvailable: Bool {
+        self == .Network
+    }
+
     func getView() -> AnyView {
         switch self {
         case .Battery:

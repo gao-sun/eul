@@ -37,6 +37,7 @@ extension Preference {
         @EnvironmentObject var batteryStore: BatteryStore
         @EnvironmentObject var componentConfigStore: ComponentConfigStore
         @EnvironmentObject var diskStore: DiskStore
+        @EnvironmentObject var networkStore: NetworkStore
 
         var component: EulComponent
         var config: Binding<EulComponentConfig> {
@@ -74,6 +75,23 @@ extension Preference {
                                 }
                             }
                             .frame(width: 200)
+                        }
+                        if
+                            config.wrappedValue.component.isNetworkInterfaceSelectionAvailable
+                        {
+                            Picker(
+                                "network.port.select".localized(),
+                                selection: config.networkPortSelection
+                            ) {
+                                Text(networkStore.autoPortDesscription)
+                                    .inlineSection()
+                                    .tag("")
+                                ForEach(networkStore.ports) {
+                                    Text($0.description)
+                                        .inlineSection()
+                                }
+                            }
+                            .fixedSize()
                         }
                     }
                     if component == .CPU {
