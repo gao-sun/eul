@@ -34,14 +34,14 @@
 "cpu.temperature" = "อุณหภูมิ";
 "gpu.temperature" = "อุณหภูมิ GPU";
 "cpu.info" = "ข้อมูล";
-"cpu.physical_cores" = "แกนประมาลผลทางกายภาพ";
-"cpu.logical_cores" = "แกนประมาลผลทางตรรกะ";
+"cpu.physical_cores" = "แกนประมวลผลทางกายภาพ";
+"cpu.logical_cores" = "แกนประมวลผลทางตรรกะ";
 "cpu.up_time" = "เวลาทำงาน";
 "cpu.thermal_level" = "ระดับความร้อน";
 "cpu.system" = "ระบบ";
 "cpu.user" = "ผู้ใช้";
 "cpu.nice" = "Nice";
-"cpu.waiting_status_report" = "กำลังรอสถานะที่จะรายงานครั้งแรก";
+"cpu.waiting_status_report" = "กำลังรอที่จะรายงานครั้งแรก";
 
 // MARK: Fan
 "fan" = "พัดลม";
@@ -62,11 +62,11 @@
 
 // MARK: Network
 "network" = "เครือข่าย";
-"network.in" = "ได้รับ";
+"network.in" = "รับ";
 "network.out" = "ส่ง";
 "network.no_activity" = "ไม่มีกิจกรรม";
-"network.port.auto" = "Auto-detect";
-"network.port.select" = "Port";
+"network.port.auto" = "ตรวจหาอัตโนมัติ";
+"network.port.select" = "พอร์ต";
 
 // MARK: Menu
 "menu.summary" = "สรุป";
@@ -116,8 +116,8 @@
 
 // MARK: Process
 "process" = "กระบวนการ";
-"process.bring_to_front" = "Bring to front";
-"process.reveal_in_finder" = "Reveal in Finder";
+"process.bring_to_front" = "นำมาด้านหน้า";
+"process.reveal_in_finder" = "แสดงใน Finder";
 "process.terminate" = "หยุด";
 "process.force_terminate" = "บังคับหยุด";
 "process.terminate_alert.text.%@" = "คุณแน่ใจหรือไม่ว่าต้องการหยุด %@?";
@@ -172,11 +172,11 @@
 "ui.network" = "เครือข่าย";
 "ui.menu_view" = "มุมมองเมนู";
 "ui.empty" = "ว่างเปล่า";
-"ui.hidden_by_system.title" = "ส่วนประกอบ eul บนแถบเมนูสถานะถูกบังคับซ่อนโดยระบบ";
+"ui.hidden_by_system.title" = "ส่วนประกอบของ eul บนแถบเมนูสถานะถูกบังคับซ่อนโดยระบบ";
 "ui.hidden_by_system.message" = "เปิดการตั้งค่าและลองลดจำนวนส่วนประกอบ";
 "ui.hidden_by_system.open" = "เปิด";
 "ui.hidden_by_system.dismiss" = "ไม่สนใจ";
-"ui.check_status_item_visibility" = "ตรวจสอบสถานะรายการการมองเห็น";
+"ui.check_status_item_visibility" = "ตรวจสอบรายการการมองเห็นของสถานะ";
 "ui.upgrade_method" = "การอัพเดท";
 "ui.upgrade_method.none" = "ไม่";
 "ui.upgrade_method.none.description" = "eul จะไม่ตรวจสอบการอัพเดท";
