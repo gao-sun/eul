@@ -65,8 +65,8 @@
 "network.in" = "Entrée";
 "network.out" = "Sortie";
 "network.no_activity" = "Aucune activité";
-"network.port.auto" = "Auto-detect";
-"network.port.select" = "Port";
+"network.port.auto" = "Détection automatique";
+"network.port.select" = "Interface";
 
 // MARK: Menu
 "menu.summary" = "Sommaire";
