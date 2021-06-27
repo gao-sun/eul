@@ -128,7 +128,7 @@
 "bluetooth" = "บลูทูธ";
 
 // MARK: Disk
-"disk.eject" = "เลือกเชื่อมต่อ";
+"disk.eject" = "เลิกเชื่อมต่อ";
 "disk.select" = "เลือกดิสก์";
 "disk.all" = "ทุกดิสก์";
 
