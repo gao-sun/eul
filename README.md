@@ -62,7 +62,7 @@ Note:
     <td align="center"><a href="https://github.com/lill74"><img src="https://avatars2.githubusercontent.com/u/12353597?v=4?s=48" width="48px;" alt=""/><br /><sub><b>lill74</b></sub></a><br /><a href="#translation-lill74" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/strafe"><img src="https://avatars0.githubusercontent.com/u/15663890?v=4?s=48" width="48px;" alt=""/><br /><sub><b>strafe</b></sub></a><br /><a href="#translation-strafe" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/AndyH0ng"><img src="https://avatars0.githubusercontent.com/u/60703412?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Andy Hong</b></sub></a><br /><a href="#translation-AndyH0ng" title="Translation">🌍</a></td>
-    <td align="center"><a href="https://treastrain.jp/"><img src="https://avatars2.githubusercontent.com/u/13805382?v=4?s=48" width="48px;" alt=""/><br /><sub><b>treastrain, Tanaka Ryoga</b></sub></a><br /><a href="#translation-treastrain" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://treastrain.jp/"><img src="https://avatars2.githubusercontent.com/u/13805382?v=4?s=48" width="48px;" alt=""/><br /><sub><b>treastrain / Tanaka Ryoga</b></sub></a><br /><a href="#translation-treastrain" title="Translation">🌍</a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/baptistecdr"><img src="https://avatars3.githubusercontent.com/u/11665396?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Baptiste C.</b></sub></a><br /><a href="#translation-baptistecdr" title="Translation">🌍</a></td>
@@ -90,6 +90,7 @@ Note:
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/sn0wmem0ry"><img src="https://avatars.githubusercontent.com/u/84455611?v=4?s=48" width="48px;" alt=""/><br /><sub><b>sn0wmem0ry</b></sub></a><br /><a href="#translation-sn0wmem0ry" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/daimajia"><img src="https://avatars.githubusercontent.com/u/2503423?v=4?s=48" width="48px;" alt=""/><br /><sub><b>代码家</b></sub></a><br /><a href="https://github.com/gao-sun/eul/commits?author=daimajia" title="Code">💻</a></td>
   </tr>
 </table>
 
