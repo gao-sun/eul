@@ -79,6 +79,8 @@ class DiskStore: ObservableObject, Refreshable {
         }
 
         list = DiskList(disks: volumes.compactMap {
+            if $0.starts(with: ".") || $0.contains("com.apple") { return nil }
+
             let path = DiskList.pathForName($0)
             let url = URL(fileURLWithPath: path)
 
