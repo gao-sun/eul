@@ -65,8 +65,8 @@
 "network.in" = "Входящ.";
 "network.out" = "Исходящ.";
 "network.no_activity" = "Нет активности";
-"network.port.auto" = "Auto-detect";
-"network.port.select" = "Port";
+"network.port.auto" = "Автоматически";
+"network.port.select" = "Порт";
 
 // MARK: Menu
 "menu.summary" = "Суммарно";
@@ -75,7 +75,7 @@
 "menu.preferences" = "Настройки";
 "menu.quit" = "Выход";
 "menu.show_cpu_top_activities" = "Показать максимальную активность ЦП";
-"menu.show_ram_top_activities" = "Show RAM top activities";
+"menu.show_ram_top_activities" = "Показать главную активность в ОЗУ";
 "menu.show_network_top_activities" = "Показать максимальную активность Сети";
 
 // MARK: Temperature
@@ -95,10 +95,10 @@
 "font_design.monospaced" = "моноширный";
 
 // MARK: Appearance
-"appearance.mode" = "Appearance";
-"appearance.light" = "light";
-"appearance.dark" = "dark";
-"appearance.auto" = "auto";
+"appearance.mode" = "Внешний вид";
+"appearance.light" = "светлая";
+"appearance.dark" = "темная";
+"appearance.auto" = "автоматически";
 
 // MARK: Component
 "component.status_bar" = "Статус Бар";
@@ -111,7 +111,7 @@
 "component.memory" = "Память";
 "component.battery" = "Батарея";
 "component.network" = "Сеть";
-"component.disk" = "Disk";
+"component.disk" = "Диск";
 "component.bluetooth" = "Bluetooth";
 
 // MARK: Process
@@ -128,9 +128,9 @@
 "bluetooth" = "Bluetooth";
 
 // MARK: Disk
-"disk.eject" = "Eject";
-"disk.select" = "Select disk";
-"disk.all" = "All Disks";
+"disk.eject" = "Отмонтировать";
+"disk.select" = "Выбрать диск";
+"disk.all" = "Все диски";
 
 // MARK: Language
 "language" = "Язык";
@@ -172,44 +172,44 @@
 "ui.network" = "Сеть";
 "ui.menu_view" = "Вид Меню";
 "ui.empty" = "Пусто";
-"ui.hidden_by_system.title" = "eul menu components are force hidden by system";
-"ui.hidden_by_system.message" = "Open preference and try to reduce component count";
-"ui.hidden_by_system.open" = "Open";
-"ui.hidden_by_system.dismiss" = "Dismiss";
-"ui.check_status_item_visibility" = "Check status item visibility";
-"ui.upgrade_method" = "Upgrade";
-"ui.upgrade_method.none" = "none";
-"ui.upgrade_method.none.description" = "eul will not check upgrade";
-"ui.upgrade_method.showInStatusBar" = "show in status bar";
+"ui.hidden_by_system.title" = "eul компоненты меню принудительно скрыты системой";
+"ui.hidden_by_system.message" = "Откройте настройки и уменьшите количество компонентов";
+"ui.hidden_by_system.open" = "Открыть";
+"ui.hidden_by_system.dismiss" = "Отмена";
+"ui.check_status_item_visibility" = "Проверить видимость элемента";
+"ui.upgrade_method" = "Обновление";
+"ui.upgrade_method.none" = "Отсутствует";
+"ui.upgrade_method.none.description" = "eul не будет проверять обновления";
+"ui.upgrade_method.showInStatusBar" = "показать в статус баре";
 "ui.upgrade_method.showInStatusBar.description" = "Show upgrade icon when new version available";
-"ui.upgrade_method.autoUpdate" = "auto update";
-"ui.upgrade_method.autoUpdate.description" = "Perform upgrade automatically";
+"ui.upgrade_method.autoUpdate" = "Автообновление";
+"ui.upgrade_method.autoUpdate.description" = "Проводить обновления автоматически";
 
 // MARK: Component
 "component.show_icon" = "Показать иконки";
-"component.show_graph" = "Show graph";
-"component.show_text" = "Show text";
+"component.show_graph" = "Показать граф";
+"component.show_text" = "Показать текст";
 
 // MARK: Text Component
-"text_component.free" = "Free";
-"text_component.usage" = "Usage";
-"text_component.total" = "Total";
-"text_component.usagePercentage" = "Usage Percentage";
-"text_component.temperature" = "Temperature";
-"text_component.upload" = "Upload";
-"text_component.download" = "Download";
-"text_component.percentage" = "Percentage";
+"text_component.free" = "Свободно";
+"text_component.usage" = "Использовано";
+"text_component.total" = "Всего";
+"text_component.usagePercentage" = "Проценты использования";
+"text_component.temperature" = "Температура";
+"text_component.upload" = "Выгрузка";
+"text_component.download" = "Загрузка";
+"text_component.percentage" = "Проценты";
 "text_component.mah" = "mAh";
-"text_component.loadAverage1Min" = "Load Average (1 min)";
-"text_component.loadAverage5Min" = "Load Average (5 min)";
-"text_component.loadAverage15Min" = "Load Average (15 min)";
-"text_component.average" = "Average";
-"text_component.timeRemaining" = "Time Remaining";
+"text_component.loadAverage1Min" = "Средняя нагрузка (1 мин)";
+"text_component.loadAverage5Min" = "Средняя нагрузка (5 мин)";
+"text_component.loadAverage15Min" = "Средняя нагрузка (15 мин)";
+"text_component.average" = "Среднее";
+"text_component.timeRemaining" = "Оставшееся время";
 
 // MARK: CPU Display Mode
-"cpu_display_mode" = "CPU Display Mode";
-"cpu_display_mode.usage_percentage" = "Usage %";
-"cpu_display_mode.load_average" = "Load Average";
+"cpu_display_mode" = "Режим Отображения CPU";
+"cpu_display_mode.usage_percentage" = "Использовано %";
+"cpu_display_mode.load_average" = "Средняя нагрузка";
 
 //MARK: Widget
 "widget.not_available" = "eul еще не готов";
