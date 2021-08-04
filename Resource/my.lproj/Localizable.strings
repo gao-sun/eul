@@ -153,6 +153,7 @@
 "language.it" = "Italiano";
 "language.my" = "မြန်မာဘာသာ";
 "language.th" = "ไทย";
+"language.tr" = "Türkçe";
 
 // MARK: General UI
 "ui.app" = "အက်ပ်";
