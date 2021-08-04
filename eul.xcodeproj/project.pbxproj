@@ -511,6 +511,7 @@
 		6CDEF07B25D69E8100B4C913 /* SelfUpdate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SelfUpdate.entitlements; sourceTree = "<group>"; };
 		6CE33C7C252601BB00831857 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		6CE33C7E25260E3D00831857 /* PreferenceRefreshRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceRefreshRateView.swift; sourceTree = "<group>"; };
+		6CEE85AD26BADC24005D81AF /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6CEF48A1255C33CE002E4D73 /* FramePreferenceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FramePreferenceKey.swift; sourceTree = "<group>"; };
 		6CEF48A5255C366A002E4D73 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
 		6CEF771124DD94C8007C3640 /* BatteryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryStore.swift; sourceTree = "<group>"; };
@@ -1231,6 +1232,7 @@
 				my,
 				hu,
 				th,
+				tr,
 			);
 			mainGroup = 6C5F8532249FACE000CF0EF8;
 			packageReferences = (
@@ -1626,6 +1628,7 @@
 				07580066265EA20F00D8ACB6 /* my */,
 				6CBF97AB26711A59003C2F2B /* hu */,
 				6CBF97AC26711A60003C2F2B /* th */,
+				6CEE85AD26BADC24005D81AF /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

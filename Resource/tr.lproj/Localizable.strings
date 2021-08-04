@@ -1,0 +1,224 @@
+/* 
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery" = "Pil";
+"battery.charge" = "Doluluk";
+"battery.time_remaining" = "Kalan süre";
+"battery.power_source" = "Güç kaynağı";
+"battery.power_source.battery" = "Pil";
+"battery.power_source.acPower" = "Şebeke";
+"battery.power_source.unknown" = "Bilinmeyen";
+"battery.is_charging" = "Doluyor";
+"battery.to_full_charge" = "sonra tamamen dolacak";
+"battery.to_empty" = "sonra tamamen boşalacak";
+"battery.health" = "Sağlık";
+"battery.max_capacity" = "Kullanılabilir kapasite";
+"battery.design_capacity" = "Fabrika çıkış kapasitesi";
+"battery.health_percentage" = "Sağlık yüzdesi";
+"battery.cycle_count" = "Çevrim sayısı";
+"battery.cycle" = "Çevrim";
+"battery.condition" = "Durum";
+"battery.condition.good" = "İyi";
+"battery.condition.fair" = "Orta";
+"battery.condition.poor" = "Zayıf";
+
+// MARK: CPU / Info
+"cpu.usage" = "Kullanım";
+"cpu.idle" = "Boşta";
+"cpu.temperature" = "Sıcaklık";
+"gpu.temperature" = "GPU sıcaklığı";
+"cpu.info" = "Bilgi";
+"cpu.physical_cores" = "Fiziksel çekirdekler";
+"cpu.logical_cores" = "Mantıksal çekirdekler";
+"cpu.up_time" = "Çalışma süresi";
+"cpu.thermal_level" = "Termal düzey";
+"cpu.system" = "Sistem";
+"cpu.user" = "Kullanıcı";
+"cpu.nice" = "Öncelik";
+"cpu.waiting_status_report" = "İlk durum raporu bekleniyor";
+
+// MARK: Fan
+"fan" = "Fan";
+"fan.current" = "Geçerli";
+"fan.min" = "En az";
+"fan.max" = "En çok";
+
+// MARK: Memory
+"memory" = "Bellek";
+"memory.total" = "Toplam";
+"memory.free" = "Kullanılabilir";
+"memory.cached_files" = "Önbellekteki dosyalar";
+"memory.temp" = "Sıcaklık";
+"memory.usage" = "Kullanılan";
+"memory.app" = "Uygulama";
+"memory.wired" = "Bağlı";
+"memory.compressed" = "Sıkıştırılmış";
+
+// MARK: Network
+"network" = "Ağ";
+"network.in" = "Giriş";
+"network.out" = "Çıkış";
+"network.no_activity" = "Etkinlik yok";
+"network.port.auto" = "Kendiliğinden algıla";
+"network.port.select" = "Kapı";
+
+// MARK: Menu
+"menu.summary" = "Özet";
+"menu.yes" = "Evet";
+"menu.no" = "Hayır";
+"menu.preferences" = "Tercihler";
+"menu.quit" = "eul'dan çık";
+"menu.show_cpu_top_activities" = "CPU'yu en çok kullananları göster";
+"menu.show_ram_top_activities" = "RAM'i en çok kullananları göster";
+"menu.show_network_top_activities" = "Ağı en çok kullananları göster";
+
+// MARK: Temperature
+"temp.temperature" = "Sıcaklık";
+"temp.celsius" = "celsius";
+"temp.fahrenheit" = "fahrenheit";
+"temp.kelvin" = "kelvin";
+
+// MARK: Text Display
+"text_display" = "Metin";
+"text_display.compact" = "kompakt";
+"text_display.single_line" = "tek satır";
+
+// MARK: Font Design
+"font_design" = "Yazıtipi";
+"font_design.default" = "öntanımlı";
+"font_design.monospaced" = "eş aralıklı";
+
+// MARK: Appearance
+"appearance.mode" = "Tema";
+"appearance.light" = "açık";
+"appearance.dark" = "koyu";
+"appearance.auto" = "sistem";
+
+// MARK: Component
+"component.status_bar" = "Durum çubuğu";
+"component.drag_to_reorder" = "sıralamak için sürükle";
+"component.available" = "Kullanılabilir";
+"component.click_to_append" = "iliştirmek için tıkla";
+"component.cpu" = "CPU";
+"component.gpu" = "GPU";
+"component.fan" = "Fan";
+"component.memory" = "Bellek";
+"component.battery" = "Pil";
+"component.network" = "Ağ";
+"component.disk" = "Disk";
+"component.bluetooth" = "Bluetooth";
+
+// MARK: Process
+"process" = "İşlem";
+"process.bring_to_front" = "Öne getir";
+"process.reveal_in_finder" = "Finder'da göster";
+"process.terminate" = "Sonlandır";
+"process.force_terminate" = "Zorla sonlandır";
+"process.terminate_alert.text.%@" = "%@ işlemini sonlandırmak istediğinizden emin misiniz?";
+"process.terminate_alert.command.%@" = "Komut: %@";
+"process.terminate_alert.cancel" = "İptal";
+
+// MARK: Bluetooth
+"bluetooth" = "Bluetooth";
+
+// MARK: Disk
+"disk.eject" = "Çıkar";
+"disk.select" = "Disk seç";
+"disk.all" = "Tüm diskler";
+
+// MARK: Language
+"language" = "Dil";
+"language.ar" = "العربية";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.zh-Hant" = "繁體中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+"language.pt" = "Português";
+"language.ja" = "日本語";
+"language.fr" = "Français";
+"language.mn" = "Монгол";
+"language.ko" = "한국어";
+"language.dk" = "Dansk";
+"language.uk" = "Українська";
+"language.se" = "Svenska";
+"language.cs" = "Čeština";
+"language.it" = "Italiano";
+"language.my" = "မြန်မာဘာသာ";
+"language.hu" = "Magyar";
+"language.th" = "ไทย";
+"language.tr" = "Türkçe";
+
+// MARK: General UI
+"ui.app" = "Uygulama";
+"ui.general" = "Genel";
+"ui.version" = "sürüm";
+"ui.checking_update" = "güncellemeler denetleniyor";
+"ui.up_to_date" = "güncel";
+"ui.new_version" = "yeni sürüm kullanılabilir";
+"ui.download" = "indir";
+"ui.launch_at_login" = "Açılışta başlat";
+"ui.display" = "Görünüm";
+"ui.components" = "Bileşenler";
+"ui.show_components_in_status_bar" = "Durum çubuğunda bileşenleri göster";
+"ui.refresh_rate" = "Yenileme hızı";
+"ui.smc" = "SMC";
+"ui.network" = "Ağ";
+"ui.menu_view" = "Menü görünümü";
+"ui.empty" = "Boş";
+"ui.hidden_by_system.title" = "eul durum çubuğu ögeleri yer yoksa sistem tarafından gizlenir";
+"ui.hidden_by_system.message" = "Tercihleri açın ve bileşen sayısını azaltmayı deneyin";
+"ui.hidden_by_system.open" = "Aç";
+"ui.hidden_by_system.dismiss" = "Kapat";
+"ui.check_status_item_visibility" = "Durum ögesi görünürlüğünü denetle";
+"ui.upgrade_method" = "Güncellemeler";
+"ui.upgrade_method.none" = "bir şey yapma";
+"ui.upgrade_method.none.description" = "eul, güncellemeleri denetlemez";
+"ui.upgrade_method.showInStatusBar" = "durum çubuğunda göster";
+"ui.upgrade_method.showInStatusBar.description" = "Yeni sürüm çıktığında güncelleme simgesini gösterir";
+"ui.upgrade_method.autoUpdate" = "kendiliğinden güncelle";
+"ui.upgrade_method.autoUpdate.description" = "Güncellemeleri kendiliğinden uygular";
+
+// MARK: Component
+"component.show_icon" = "Simgeyi göster";
+"component.show_graph" = "Grafiği göster";
+"component.show_text" = "Metni göster";
+
+// MARK: Text Component
+"text_component.free" = "Boş";
+"text_component.usage" = "Kullanım";
+"text_component.total" = "Toplam";
+"text_component.usagePercentage" = "Kullanım yüzdesi";
+"text_component.temperature" = "Sıcaklık";
+"text_component.upload" = "Yükleme";
+"text_component.download" = "İndirme";
+"text_component.percentage" = "Yüzde";
+"text_component.mah" = "mAh";
+"text_component.loadAverage1Min" = "Yükleme ortalaması (1 dak)";
+"text_component.loadAverage5Min" = "Yükleme ortalaması (5 dak)";
+"text_component.loadAverage15Min" = "Yükleme ortalaması (15 dak)";
+"text_component.average" = "Ortalama";
+"text_component.timeRemaining" = "Kalan süre";
+
+// MARK: CPU Display Mode
+"cpu_display_mode" = "CPU görüntüleme kipi";
+"cpu_display_mode.usage_percentage" = "Kullanım yüzdesi";
+"cpu_display_mode.load_average" = "Yükleme ortalaması";
+
+//MARK: Widget
+"widget.not_available" = "eul şu anda çalışmıyor";
+"widget.cpu.title" = "CPU araç takımı";
+"widget.cpu.description" = "CPU bilgisini görüntüle";
+"widget.memory.title" = "Bellek araç takımı";
+"widget.memory.description" = "Bellek bilgisini görüntüle";
+"widget.battery.title" = "Pil araç takımı";
+"widget.battery.description" = "Pil bilgisini görüntüle";
+"widget.network.title" = "Ağ araç takımı";
+"widget.network.description" = "Ağ bilgisini görüntüle";

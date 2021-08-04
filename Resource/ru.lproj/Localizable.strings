@@ -154,6 +154,7 @@
 "language.my" = "မြန်မာဘာသာ";
 "language.hu" = "Magyar";
 "language.th" = "ไทย";
+"language.tr" = "Türkçe";
 
 // MARK: General UI
 "ui.app" = "Приложение";
