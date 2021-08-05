@@ -91,6 +91,7 @@ Note:
   <tr>
     <td align="center"><a href="https://github.com/sn0wmem0ry"><img src="https://avatars.githubusercontent.com/u/84455611?v=4?s=48" width="48px;" alt=""/><br /><sub><b>sn0wmem0ry</b></sub></a><br /><a href="#translation-sn0wmem0ry" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/daimajia"><img src="https://avatars.githubusercontent.com/u/2503423?v=4?s=48" width="48px;" alt=""/><br /><sub><b>代码家</b></sub></a><br /><a href="https://github.com/gao-sun/eul/commits?author=daimajia" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/bitigchi"><img src="https://avatars.githubusercontent.com/u/2769571?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Emir Sarı</b></sub></a><br /><a href="#translation-bitigchi" title="Translation">🌍</a></td>
   </tr>
 </table>
 
