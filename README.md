@@ -110,6 +110,6 @@ let languages = [
   "日本語", "Français", "Українська",
   "Svenska", "Čeština", "Italiano",
   "繁體中文", "မြန်မာဘာသာ", "Magyar",
-  "ไทย"
+  "ไทย", "Türkçe"
 ];
 ```
