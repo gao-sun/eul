@@ -4,6 +4,8 @@
 
   Created by Gao Sun on 2020/9/12.
   Copyright © 2020 Gao Sun. All rights reserved.
+  
+  Translation by @stosumarte / www.marte.ee
 */
 
 // MARK: Battery
@@ -43,8 +45,8 @@
 "cpu.waiting_status_report" = "In attesa...";
 
 // MARK: Fan
-"fan" = "Ventole";
-"fan.current" = "Current";
+"fan" = "Ventola";
+"fan.current" = "Attuale";
 "fan.min" = "Min";
 "fan.max" = "Max";
 
@@ -65,7 +67,7 @@
 "network.out" = "Upload";
 "network.no_activity" = "Inattiva";
 "network.port.auto" = "Auto-detect";
-"network.port.select" = "Port";
+"network.port.select" = "Porta";
 
 // MARK: Menu
 "menu.summary" = "Sommario";
@@ -93,6 +95,12 @@
 "font_design.default" = "predefinito";
 "font_design.monospaced" = "monospaced";
 
+// MARK: Appearance
+"appearance.mode" = "Tema";
+"appearance.light" = "chiaro";
+"appearance.dark" = "scuro";
+"appearance.auto" = "automatico";
+
 // MARK: Component
 "component.status_bar" = "Barra di stato";
 "component.drag_to_reorder" = "trascina per riorganizzare";
@@ -113,7 +121,7 @@
 "process.reveal_in_finder" = "Mostra nel Finder";
 "process.terminate" = "Termina";
 "process.force_terminate" = "Uscita Forzata";
-"process.terminate_alert.text.%@" = "Sei sicur* di voler chiudere il processo %@?";
+"process.terminate_alert.text.%@" = "Sei sicurə di voler chiudere il processo %@?";
 "process.terminate_alert.command.%@" = "Command: %@";
 "process.terminate_alert.cancel" = "Annulla";
 
@@ -122,8 +130,8 @@
 
 // MARK: Disk
 "disk.eject" = "Espelli";
-"disk.select" = "Select disk";
-"disk.all" = "All Disks";
+"disk.select" = "Seleziona dischi";
+"disk.all" = "Tutti i dischi";
 
 // MARK: Language
 "language" = "Lingua";
@@ -166,17 +174,17 @@
 "ui.menu_view" = "Visualizzazione menu";
 "ui.empty" = "Vuoto";
 "ui.hidden_by_system.title" = "eul è nascosto dalla status bar a causa del sistema";
-"ui.hidden_by_system.message" = "Open preference and try to reduce component count";
-"ui.hidden_by_system.open" = "Aperto";
+"ui.hidden_by_system.message" = "Apri le preferenze e prova a ridurre il numero dei componenti";
+"ui.hidden_by_system.open" = "Apri";
 "ui.hidden_by_system.dismiss" = "Chiudi";
 "ui.check_status_item_visibility" = "Verifica visibilità nella barra dei menù";
-"ui.upgrade_method" = "Upgrade";
-"ui.upgrade_method.none" = "none";
-"ui.upgrade_method.none.description" = "eul will not check upgrade";
-"ui.upgrade_method.showInStatusBar" = "show in status bar";
-"ui.upgrade_method.showInStatusBar.description" = "Show upgrade icon when new version available";
-"ui.upgrade_method.autoUpdate" = "auto update";
-"ui.upgrade_method.autoUpdate.description" = "Perform upgrade automatically";
+"ui.upgrade_method" = "Aggiornamenti";
+"ui.upgrade_method.none" = "disabilita";
+"ui.upgrade_method.none.description" = "eul non verificherà la disponibilità di aggiornamenti";
+"ui.upgrade_method.showInStatusBar" = "mostra nella status bar";
+"ui.upgrade_method.showInStatusBar.description" = "Mostra un'icona quando una nuova versione è disponibile";
+"ui.upgrade_method.autoUpdate" = "automatici";
+"ui.upgrade_method.autoUpdate.description" = "Gli aggiornamenti verranno eseguiti automaticamente";
 
 // MARK: Component
 "component.show_icon" = "Mostra icona";
@@ -197,6 +205,7 @@
 "text_component.loadAverage5Min" = "Media carico (5 min)";
 "text_component.loadAverage15Min" = "Media carico (15 min)";
 "text_component.average" = "Media";
+"text_component.timeRemaining" = "Tempo rimanente";
 
 // MARK: CPU Display Mode
 "cpu_display_mode" = "Visualizzazione CPU";
