@@ -62,7 +62,7 @@ extension GPU {
             else {
                 return nil
             }
-            
+
             var temperature: Double? = statistics["Temperature(C)"] as? Double ?? nil
 
             if temperature == nil || temperature == 0 {
