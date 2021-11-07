@@ -62,13 +62,19 @@ extension GPU {
             else {
                 return nil
             }
+            
+            var temperature: Double? = statistics["Temperature(C)"] as? Double ?? nil
+
+            if temperature == nil || temperature == 0 {
+                temperature = SmcControl.shared.gpuProximityTemperature
+            }
 
             Print("📊 statistics", statistics)
 
             return Statistic(
                 pciMatch: pciMatch,
                 usagePercentage: usagePercentage,
-                temperature: statistics["Temperature(C)"] as? Double ?? SmcControl.shared.gpuProximityTemperature,
+                temperature: temperature,
                 coreClock: statistics["Core Clock(MHz)"] as? Int,
                 memoryClock: statistics["Memory Clock(MHz)"] as? Int
             )
