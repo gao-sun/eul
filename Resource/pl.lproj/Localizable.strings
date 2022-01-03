@@ -29,8 +29,8 @@
 "battery.condition.poor" = "Słaba";
 
 // MARK: CPU / Info
-"cpu.usage" = "Usage";
-"cpu.idle" = "Idle";
+"cpu.usage" = "Zużycie";
+"cpu.idle" = "Bezczynny";
 "cpu.temperature" = "Temp";
 "gpu.temperature" = "GPU Temp";
 "cpu.info" = "Info";
@@ -41,7 +41,7 @@
 "cpu.system" = "System";
 "cpu.user" = "User";
 "cpu.nice" = "Nice";
-"cpu.waiting_status_report" = "Waiting for the first status report";
+"cpu.waiting_status_report" = "Czekam na pierwszy raport o stanie";
 
 // MARK: Fan
 "fan" = "Wentylator";
@@ -56,27 +56,27 @@
 "memory.cached_files" = "Pamięć podręczna";
 "memory.temp" = "Temp";
 "memory.usage" = "Użycie";
-"memory.app" = "App";
+"memory.app" = "Aplikacja";
 "memory.wired" = "Wired";
 "memory.compressed" = "Skompresowana";
 
 // MARK: Network
 "network" = "Sieć";
-"network.in" = "In";
-"network.out" = "Out";
-"network.no_activity" = "No activity";
-"network.port.auto" = "Auto-detect";
+"network.in" = "Przychodzące";
+"network.out" = "Wychodzące";
+"network.no_activity" = "Brak aktywności";
+"network.port.auto" = "Automatyczne wykrywanie";
 "network.port.select" = "Port";
 
 // MARK: Menu
-"menu.summary" = "Summary";
-"menu.yes" = "Yes";
-"menu.no" = "No";
-"menu.preferences" = "Preferences";
-"menu.quit" = "Quit eul";
-"menu.show_cpu_top_activities" = "Show CPU top activities";
-"menu.show_ram_top_activities" = "Show RAM top activities";
-"menu.show_network_top_activities" = "Show network top activities";
+"menu.summary" = "Podsumowanie";
+"menu.yes" = "Tak";
+"menu.no" = "Nie";
+"menu.preferences" = "Preferencje";
+"menu.quit" = "Zakończ eul";
+"menu.show_cpu_top_activities" = "Pokaż najczęstsze aktywności procesora";
+"menu.show_ram_top_activities" = "Pokaż najważniejsze aktywności RAM";
+"menu.show_network_top_activities" = "Pokaż najważniejsze aktywności w sieci";
 
 // MARK: Temperature
 "temp.temperature" = "Temperatura";
@@ -85,9 +85,9 @@
 "temp.kelvin" = "kelvina";
 
 // MARK: Text Display
-"text_display" = "Text Display";
-"text_display.compact" = "compact";
-"text_display.single_line" = "single line";
+"text_display" = "Wyświetlany tekst";
+"text_display.compact" = "kompaktowy";
+"text_display.single_line" = "pojedyncza linia";
 
 // MARK: Font Design
 "font_design" = "Typ czcionki";
@@ -101,36 +101,36 @@
 "appearance.auto" = "auto";
 
 // MARK: Component
-"component.status_bar" = "Status Bar";
-"component.drag_to_reorder" = "drag to reorder";
-"component.available" = "Available";
-"component.click_to_append" = "click to append";
+"component.status_bar" = "Pasek stanu";
+"component.drag_to_reorder" = "Przeciągnij, aby zmienić kolejność";
+"component.available" = "Dostępne";
+"component.click_to_append" = "kliknij, aby dołączyć";
 "component.cpu" = "CPU";
 "component.gpu" = "GPU";
-"component.fan" = "Fan";
-"component.memory" = "Memory";
-"component.battery" = "Battery";
-"component.network" = "Network";
-"component.disk" = "Disk";
+"component.fan" = "Wentylator";
+"component.memory" = "Pamięć";
+"component.battery" = "Bateria";
+"component.network" = "Sieć";
+"component.disk" = "Dysk";
 "component.bluetooth" = "Bluetooth";
 
 // MARK: Process
-"process" = "Process";
-"process.bring_to_front" = "Bring to front";
-"process.reveal_in_finder" = "Reveal in Finder";
-"process.terminate" = "Terminate";
-"process.force_terminate" = "Force Terminate";
-"process.terminate_alert.text.%@" = "Are you sure want to terminate %@?";
-"process.terminate_alert.command.%@" = "Command: %@";
-"process.terminate_alert.cancel" = "Cancel";
+"process" = "Proces";
+"process.bring_to_front" = "Przesuń na wierzch";
+"process.reveal_in_finder" = "Pokaż w Finderze";
+"process.terminate" = "Zakończyć";
+"process.force_terminate" = "Wymuś zakończenie";
+"process.terminate_alert.text.%@" = "Czy na pewno chcesz zakończyć %@?";
+"process.terminate_alert.command.%@" = "Komenda: %@";
+"process.terminate_alert.cancel" = "Anuluj";
 
 // MARK: Bluetooth
 "bluetooth" = "Bluetooth";
 
 // MARK: Disk
-"disk.eject" = "Eject";
-"disk.select" = "Select disk";
-"disk.all" = "All Disks";
+"disk.eject" = "Wysuń";
+"disk.select" = "Wybierz napęd";
+"disk.all" = "Wszystkie napędy";
 
 // MARK: Language
 "language" = "Language";
@@ -155,70 +155,71 @@
 "language.hu" = "Magyar";
 "language.th" = "ไทย";
 "language.tr" = "Türkçe";
+"language.pl" = "Polski";
 
 // MARK: General UI
-"ui.app" = "App";
-"ui.general" = "General";
-"ui.version" = "version";
-"ui.checking_update" = "checking update";
-"ui.up_to_date" = "up-to-date";
-"ui.new_version" = "new version detected";
-"ui.download" = "download";
-"ui.launch_at_login" = "Launch at login";
-"ui.display" = "Display";
+"ui.app" = "Aplikacja";
+"ui.general" = "Ogólne";
+"ui.version" = "wersja";
+"ui.checking_update" = "sprawdzam aktualizację";
+"ui.up_to_date" = "aktualna";
+"ui.new_version" = "Nowsza wersja dostępna";
+"ui.download" = "pobierz";
+"ui.launch_at_login" = "Uruchom przy logowaniu";
+"ui.display" = "Wyświetlanie";
 "ui.components" = "Components";
 "ui.show_components_in_status_bar" = "Show components in status bar";
 "ui.refresh_rate" = "Refresh Rate";
 "ui.smc" = "SMC";
-"ui.network" = "Network";
-"ui.menu_view" = "Menu View";
-"ui.empty" = "Empty";
+"ui.network" = "Sieć";
+"ui.menu_view" = "Widok menu";
+"ui.empty" = "Pusty";
 "ui.hidden_by_system.title" = "eul status bar components are force hidden by system";
-"ui.hidden_by_system.message" = "Open preference and try to reduce component count";
-"ui.hidden_by_system.open" = "Open";
-"ui.hidden_by_system.dismiss" = "Dismiss";
-"ui.check_status_item_visibility" = "Check status item visibility";
+"ui.hidden_by_system.message" = "Otwórz preferencje i spróbuj zmniejszyć liczbę komponentów";
+"ui.hidden_by_system.open" = "Otwórz";
+"ui.hidden_by_system.dismiss" = "Odrzuć";
+"ui.check_status_item_visibility" = "Sprawdź widoczność pozycji statusu";
 "ui.upgrade_method" = "Upgrade";
 "ui.upgrade_method.none" = "none";
-"ui.upgrade_method.none.description" = "eul will not check upgrade";
-"ui.upgrade_method.showInStatusBar" = "show in status bar";
-"ui.upgrade_method.showInStatusBar.description" = "Show upgrade icon when new version available";
-"ui.upgrade_method.autoUpdate" = "auto update";
-"ui.upgrade_method.autoUpdate.description" = "Perform upgrade automatically";
+"ui.upgrade_method.none.description" = "eul nie sprawdzi aktualizacji";
+"ui.upgrade_method.showInStatusBar" = "pokaż na pasku stanu";
+"ui.upgrade_method.showInStatusBar.description" = "Pokaż ikonę aktualizacji, gdy dostępna jest nowa wersja";
+"ui.upgrade_method.autoUpdate" = "automatyczna aktualizacja";
+"ui.upgrade_method.autoUpdate.description" = "Wykonaj aktualizację automatycznie";
 
 // MARK: Component
-"component.show_icon" = "Show icon";
-"component.show_graph" = "Show graph";
-"component.show_text" = "Show text";
+"component.show_icon" = "Pokaż ikonę";
+"component.show_graph" = "Pokaż wykres";
+"component.show_text" = "Pokaż tekst";
 
 // MARK: Text Component
-"text_component.free" = "Free";
-"text_component.usage" = "Usage";
-"text_component.total" = "Total";
-"text_component.usagePercentage" = "Usage Percentage";
-"text_component.temperature" = "Temperature";
-"text_component.upload" = "Upload";
-"text_component.download" = "Download";
-"text_component.percentage" = "Percentage";
+"text_component.free" = "Dostępne";
+"text_component.usage" = "Użycie";
+"text_component.total" = "Całkowite";
+"text_component.usagePercentage" = "Procent użycia";
+"text_component.temperature" = "Temperatura";
+"text_component.upload" = "Wyślij";
+"text_component.download" = "Pobierz";
+"text_component.percentage" = "Procent";
 "text_component.mah" = "mAh";
-"text_component.loadAverage1Min" = "Load Average (1 min)";
-"text_component.loadAverage5Min" = "Load Average (5 min)";
-"text_component.loadAverage15Min" = "Load Average (15 min)";
-"text_component.average" = "Average";
-"text_component.timeRemaining" = "Time Remaining";
+"text_component.loadAverage1Min" = "Średnie obciążenie (1 min)";
+"text_component.loadAverage5Min" = "Średnie obciążenie (5 min)";
+"text_component.loadAverage15Min" = "Średnie obciążenie (15 min)";
+"text_component.average" = "Średni";
+"text_component.timeRemaining" = "Pozostały czas";
 
 // MARK: CPU Display Mode
-"cpu_display_mode" = "CPU Display Mode";
-"cpu_display_mode.usage_percentage" = "Usage %";
-"cpu_display_mode.load_average" = "Load Average";
+"cpu_display_mode" = "Tryb wyświetlania procesora";
+"cpu_display_mode.usage_percentage" = "Zużycie %";
+"cpu_display_mode.load_average" = "Średnie obciążenie";
 
 //MARK: Widget
-"widget.not_available" = "eul isn't running";
-"widget.cpu.title" = "CPU Widget";
-"widget.cpu.description" = "Display CPU information";
-"widget.memory.title" = "Memory Widget";
-"widget.memory.description" = "Display memory information";
-"widget.battery.title" = "Battery Widget";
-"widget.battery.description" = "Display battery information";
-"widget.network.title" = "Network Widget";
-"widget.network.description" = "Display network information";
+"widget.not_available" = "eul nie pracuje";
+"widget.cpu.title" = "Widget CPU";
+"widget.cpu.description" = "Wyświetl informacje o CPU";
+"widget.memory.title" = "Widget pamięci";
+"widget.memory.description" = "Wyświetl informacje o pamięci";
+"widget.battery.title" = "Widget baterii";
+"widget.battery.description" = "Wyświetl informacje o baterii";
+"widget.network.title" = "Widget Sieci";
+"widget.network.description" = "Wyświetl informacje o sieci";
