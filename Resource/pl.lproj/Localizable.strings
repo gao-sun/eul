@@ -39,7 +39,7 @@
 "cpu.up_time" = "Up Time";
 "cpu.thermal_level" = "Thermal Lv.";
 "cpu.system" = "System";
-"cpu.user" = "User";
+"cpu.user" = "Użytkownik";
 "cpu.nice" = "Nice";
 "cpu.waiting_status_report" = "Czekam na pierwszy raport o stanie";
 
@@ -55,7 +55,7 @@
 "memory.free" = "Dostępna";
 "memory.cached_files" = "Pamięć podręczna";
 "memory.temp" = "Temp";
-"memory.usage" = "Użycie";
+"memory.usage" = "Użyta";
 "memory.app" = "Aplikacja";
 "memory.wired" = "Wired";
 "memory.compressed" = "Skompresowana";
@@ -95,7 +95,7 @@
 "font_design.monospaced" = "monospaced";
 
 // MARK: Appearance
-"appearance.mode" = "Wygląd";
+"appearance.mode" = "Motyw";
 "appearance.light" = "jasny";
 "appearance.dark" = "ciemny";
 "appearance.auto" = "auto";
@@ -133,7 +133,7 @@
 "disk.all" = "Wszystkie napędy";
 
 // MARK: Language
-"language" = "Language";
+"language" = "Język programu";
 "language.ar" = "العربية";
 "language.en" = "English";
 "language.zh-Hans" = "简体中文";
@@ -167,23 +167,23 @@
 "ui.download" = "pobierz";
 "ui.launch_at_login" = "Uruchom przy logowaniu";
 "ui.display" = "Wyświetlanie";
-"ui.components" = "Components";
-"ui.show_components_in_status_bar" = "Show components in status bar";
-"ui.refresh_rate" = "Refresh Rate";
+"ui.components" = "Komponenty";
+"ui.show_components_in_status_bar" = "Pokaż komponenty na pasku stanu";
+"ui.refresh_rate" = "Czas odświeżania";
 "ui.smc" = "SMC";
 "ui.network" = "Sieć";
 "ui.menu_view" = "Widok menu";
 "ui.empty" = "Pusty";
-"ui.hidden_by_system.title" = "eul status bar components are force hidden by system";
+"ui.hidden_by_system.title" = "Komponenty paska stanu eul są na siłę ukryte przez system";
 "ui.hidden_by_system.message" = "Otwórz preferencje i spróbuj zmniejszyć liczbę komponentów";
 "ui.hidden_by_system.open" = "Otwórz";
 "ui.hidden_by_system.dismiss" = "Odrzuć";
 "ui.check_status_item_visibility" = "Sprawdź widoczność pozycji statusu";
-"ui.upgrade_method" = "Upgrade";
-"ui.upgrade_method.none" = "none";
+"ui.upgrade_method" = "Aktualizacja";
+"ui.upgrade_method.none" = "brak";
 "ui.upgrade_method.none.description" = "eul nie sprawdzi aktualizacji";
 "ui.upgrade_method.showInStatusBar" = "pokaż na pasku stanu";
-"ui.upgrade_method.showInStatusBar.description" = "Pokaż ikonę aktualizacji, gdy dostępna jest nowa wersja";
+"ui.upgrade_method.showInStatusBar.description" = "Pokaż ikonę gdy dostępna jest nowa wersja";
 "ui.upgrade_method.autoUpdate" = "automatyczna aktualizacja";
 "ui.upgrade_method.autoUpdate.description" = "Wykonaj aktualizację automatycznie";
 
