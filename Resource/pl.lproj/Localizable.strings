@@ -1,0 +1,224 @@
+/* 
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery" = "Bateria";
+"battery.charge" = "Ładowanie";
+"battery.time_remaining" = "Time Rem.";
+"battery.power_source" = "Power Source";
+"battery.power_source.battery" = "Bateria";
+"battery.power_source.acPower" = "Zasilacz";
+"battery.power_source.unknown" = "Nieznane";
+"battery.is_charging" = "Ładuję";
+"battery.to_full_charge" = "do pełnego naładowania";
+"battery.to_empty" = "to empty";
+"battery.health" = "Kondycja";
+"battery.max_capacity" = "Max Cap.";
+"battery.design_capacity" = "Design Cap.";
+"battery.health_percentage" = "Procent kondycji";
+"battery.cycle_count" = "Ilość cykli";
+"battery.cycle" = "Cykle";
+"battery.condition" = "Kondycja";
+"battery.condition.good" = "Dobre";
+"battery.condition.fair" = "W normie";
+"battery.condition.poor" = "Słaba";
+
+// MARK: CPU / Info
+"cpu.usage" = "Usage";
+"cpu.idle" = "Idle";
+"cpu.temperature" = "Temp";
+"gpu.temperature" = "GPU Temp";
+"cpu.info" = "Info";
+"cpu.physical_cores" = "Physical Cores";
+"cpu.logical_cores" = "Logical Cores";
+"cpu.up_time" = "Up Time";
+"cpu.thermal_level" = "Thermal Lv.";
+"cpu.system" = "System";
+"cpu.user" = "User";
+"cpu.nice" = "Nice";
+"cpu.waiting_status_report" = "Waiting for the first status report";
+
+// MARK: Fan
+"fan" = "Wentylator";
+"fan.current" = "Aktualny";
+"fan.min" = "Min";
+"fan.max" = "Maks";
+
+// MARK: Memory
+"memory" = "Pamięć";
+"memory.total" = "Łącznie";
+"memory.free" = "Dostępna";
+"memory.cached_files" = "Pamięć podręczna";
+"memory.temp" = "Temp";
+"memory.usage" = "Użycie";
+"memory.app" = "App";
+"memory.wired" = "Wired";
+"memory.compressed" = "Skompresowana";
+
+// MARK: Network
+"network" = "Sieć";
+"network.in" = "In";
+"network.out" = "Out";
+"network.no_activity" = "No activity";
+"network.port.auto" = "Auto-detect";
+"network.port.select" = "Port";
+
+// MARK: Menu
+"menu.summary" = "Summary";
+"menu.yes" = "Yes";
+"menu.no" = "No";
+"menu.preferences" = "Preferences";
+"menu.quit" = "Quit eul";
+"menu.show_cpu_top_activities" = "Show CPU top activities";
+"menu.show_ram_top_activities" = "Show RAM top activities";
+"menu.show_network_top_activities" = "Show network top activities";
+
+// MARK: Temperature
+"temp.temperature" = "Temperatura";
+"temp.celsius" = "celsjusza";
+"temp.fahrenheit" = "fahrenheita";
+"temp.kelvin" = "kelvina";
+
+// MARK: Text Display
+"text_display" = "Text Display";
+"text_display.compact" = "compact";
+"text_display.single_line" = "single line";
+
+// MARK: Font Design
+"font_design" = "Typ czcionki";
+"font_design.default" = "domyślny";
+"font_design.monospaced" = "monospaced";
+
+// MARK: Appearance
+"appearance.mode" = "Wygląd";
+"appearance.light" = "jasny";
+"appearance.dark" = "ciemny";
+"appearance.auto" = "auto";
+
+// MARK: Component
+"component.status_bar" = "Status Bar";
+"component.drag_to_reorder" = "drag to reorder";
+"component.available" = "Available";
+"component.click_to_append" = "click to append";
+"component.cpu" = "CPU";
+"component.gpu" = "GPU";
+"component.fan" = "Fan";
+"component.memory" = "Memory";
+"component.battery" = "Battery";
+"component.network" = "Network";
+"component.disk" = "Disk";
+"component.bluetooth" = "Bluetooth";
+
+// MARK: Process
+"process" = "Process";
+"process.bring_to_front" = "Bring to front";
+"process.reveal_in_finder" = "Reveal in Finder";
+"process.terminate" = "Terminate";
+"process.force_terminate" = "Force Terminate";
+"process.terminate_alert.text.%@" = "Are you sure want to terminate %@?";
+"process.terminate_alert.command.%@" = "Command: %@";
+"process.terminate_alert.cancel" = "Cancel";
+
+// MARK: Bluetooth
+"bluetooth" = "Bluetooth";
+
+// MARK: Disk
+"disk.eject" = "Eject";
+"disk.select" = "Select disk";
+"disk.all" = "All Disks";
+
+// MARK: Language
+"language" = "Language";
+"language.ar" = "العربية";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.zh-Hant" = "繁體中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+"language.pt" = "Português";
+"language.ja" = "日本語";
+"language.fr" = "Français";
+"language.mn" = "Монгол";
+"language.ko" = "한국어";
+"language.dk" = "Dansk";
+"language.uk" = "Українська";
+"language.se" = "Svenska";
+"language.cs" = "Čeština";
+"language.it" = "Italiano";
+"language.my" = "မြန်မာဘာသာ";
+"language.hu" = "Magyar";
+"language.th" = "ไทย";
+"language.tr" = "Türkçe";
+
+// MARK: General UI
+"ui.app" = "App";
+"ui.general" = "General";
+"ui.version" = "version";
+"ui.checking_update" = "checking update";
+"ui.up_to_date" = "up-to-date";
+"ui.new_version" = "new version detected";
+"ui.download" = "download";
+"ui.launch_at_login" = "Launch at login";
+"ui.display" = "Display";
+"ui.components" = "Components";
+"ui.show_components_in_status_bar" = "Show components in status bar";
+"ui.refresh_rate" = "Refresh Rate";
+"ui.smc" = "SMC";
+"ui.network" = "Network";
+"ui.menu_view" = "Menu View";
+"ui.empty" = "Empty";
+"ui.hidden_by_system.title" = "eul status bar components are force hidden by system";
+"ui.hidden_by_system.message" = "Open preference and try to reduce component count";
+"ui.hidden_by_system.open" = "Open";
+"ui.hidden_by_system.dismiss" = "Dismiss";
+"ui.check_status_item_visibility" = "Check status item visibility";
+"ui.upgrade_method" = "Upgrade";
+"ui.upgrade_method.none" = "none";
+"ui.upgrade_method.none.description" = "eul will not check upgrade";
+"ui.upgrade_method.showInStatusBar" = "show in status bar";
+"ui.upgrade_method.showInStatusBar.description" = "Show upgrade icon when new version available";
+"ui.upgrade_method.autoUpdate" = "auto update";
+"ui.upgrade_method.autoUpdate.description" = "Perform upgrade automatically";
+
+// MARK: Component
+"component.show_icon" = "Show icon";
+"component.show_graph" = "Show graph";
+"component.show_text" = "Show text";
+
+// MARK: Text Component
+"text_component.free" = "Free";
+"text_component.usage" = "Usage";
+"text_component.total" = "Total";
+"text_component.usagePercentage" = "Usage Percentage";
+"text_component.temperature" = "Temperature";
+"text_component.upload" = "Upload";
+"text_component.download" = "Download";
+"text_component.percentage" = "Percentage";
+"text_component.mah" = "mAh";
+"text_component.loadAverage1Min" = "Load Average (1 min)";
+"text_component.loadAverage5Min" = "Load Average (5 min)";
+"text_component.loadAverage15Min" = "Load Average (15 min)";
+"text_component.average" = "Average";
+"text_component.timeRemaining" = "Time Remaining";
+
+// MARK: CPU Display Mode
+"cpu_display_mode" = "CPU Display Mode";
+"cpu_display_mode.usage_percentage" = "Usage %";
+"cpu_display_mode.load_average" = "Load Average";
+
+//MARK: Widget
+"widget.not_available" = "eul isn't running";
+"widget.cpu.title" = "CPU Widget";
+"widget.cpu.description" = "Display CPU information";
+"widget.memory.title" = "Memory Widget";
+"widget.memory.description" = "Display memory information";
+"widget.battery.title" = "Battery Widget";
+"widget.battery.description" = "Display battery information";
+"widget.network.title" = "Network Widget";
+"widget.network.description" = "Display network information";
