@@ -1,0 +1,225 @@
+/* 
+  Localizable.strings
+  eul
+
+  Created by Gao Sun on 2020/9/12.
+  Copyright © 2020 Gao Sun. All rights reserved.
+*/
+
+// MARK: Battery
+"battery" = "Bateria";
+"battery.charge" = "Ładowanie";
+"battery.time_remaining" = "Time Rem.";
+"battery.power_source" = "Power Source";
+"battery.power_source.battery" = "Bateria";
+"battery.power_source.acPower" = "Zasilacz";
+"battery.power_source.unknown" = "Nieznane";
+"battery.is_charging" = "Ładuję";
+"battery.to_full_charge" = "do pełnego naładowania";
+"battery.to_empty" = "to empty";
+"battery.health" = "Kondycja";
+"battery.max_capacity" = "Max Cap.";
+"battery.design_capacity" = "Design Cap.";
+"battery.health_percentage" = "Procent kondycji";
+"battery.cycle_count" = "Ilość cykli";
+"battery.cycle" = "Cykle";
+"battery.condition" = "Kondycja";
+"battery.condition.good" = "Dobre";
+"battery.condition.fair" = "W normie";
+"battery.condition.poor" = "Słaba";
+
+// MARK: CPU / Info
+"cpu.usage" = "Zużycie";
+"cpu.idle" = "Bezczynny";
+"cpu.temperature" = "Temp";
+"gpu.temperature" = "GPU Temp";
+"cpu.info" = "Info";
+"cpu.physical_cores" = "Physical Cores";
+"cpu.logical_cores" = "Logical Cores";
+"cpu.up_time" = "Up Time";
+"cpu.thermal_level" = "Thermal Lv.";
+"cpu.system" = "System";
+"cpu.user" = "Użytkownik";
+"cpu.nice" = "Nice";
+"cpu.waiting_status_report" = "Czekam na pierwszy raport o stanie";
+
+// MARK: Fan
+"fan" = "Wentylator";
+"fan.current" = "Aktualny";
+"fan.min" = "Min";
+"fan.max" = "Maks";
+
+// MARK: Memory
+"memory" = "Pamięć";
+"memory.total" = "Łącznie";
+"memory.free" = "Dostępna";
+"memory.cached_files" = "Pamięć podręczna";
+"memory.temp" = "Temp";
+"memory.usage" = "Użyta";
+"memory.app" = "Aplikacja";
+"memory.wired" = "Wired";
+"memory.compressed" = "Skompresowana";
+
+// MARK: Network
+"network" = "Sieć";
+"network.in" = "Przychodzące";
+"network.out" = "Wychodzące";
+"network.no_activity" = "Brak aktywności";
+"network.port.auto" = "Automatyczne wykrywanie";
+"network.port.select" = "Port";
+
+// MARK: Menu
+"menu.summary" = "Podsumowanie";
+"menu.yes" = "Tak";
+"menu.no" = "Nie";
+"menu.preferences" = "Preferencje";
+"menu.quit" = "Zakończ eul";
+"menu.show_cpu_top_activities" = "Pokaż najczęstsze aktywności procesora";
+"menu.show_ram_top_activities" = "Pokaż najważniejsze aktywności RAM";
+"menu.show_network_top_activities" = "Pokaż najważniejsze aktywności w sieci";
+
+// MARK: Temperature
+"temp.temperature" = "Temperatura";
+"temp.celsius" = "celsjusza";
+"temp.fahrenheit" = "fahrenheita";
+"temp.kelvin" = "kelvina";
+
+// MARK: Text Display
+"text_display" = "Wyświetlany tekst";
+"text_display.compact" = "kompaktowy";
+"text_display.single_line" = "pojedyncza linia";
+
+// MARK: Font Design
+"font_design" = "Typ czcionki";
+"font_design.default" = "domyślny";
+"font_design.monospaced" = "monospaced";
+
+// MARK: Appearance
+"appearance.mode" = "Motyw";
+"appearance.light" = "jasny";
+"appearance.dark" = "ciemny";
+"appearance.auto" = "auto";
+
+// MARK: Component
+"component.status_bar" = "Pasek stanu";
+"component.drag_to_reorder" = "Przeciągnij, aby zmienić kolejność";
+"component.available" = "Dostępne";
+"component.click_to_append" = "kliknij, aby dołączyć";
+"component.cpu" = "CPU";
+"component.gpu" = "GPU";
+"component.fan" = "Wentylator";
+"component.memory" = "Pamięć";
+"component.battery" = "Bateria";
+"component.network" = "Sieć";
+"component.disk" = "Dysk";
+"component.bluetooth" = "Bluetooth";
+
+// MARK: Process
+"process" = "Proces";
+"process.bring_to_front" = "Przesuń na wierzch";
+"process.reveal_in_finder" = "Pokaż w Finderze";
+"process.terminate" = "Zakończyć";
+"process.force_terminate" = "Wymuś zakończenie";
+"process.terminate_alert.text.%@" = "Czy na pewno chcesz zakończyć %@?";
+"process.terminate_alert.command.%@" = "Komenda: %@";
+"process.terminate_alert.cancel" = "Anuluj";
+
+// MARK: Bluetooth
+"bluetooth" = "Bluetooth";
+
+// MARK: Disk
+"disk.eject" = "Wysuń";
+"disk.select" = "Wybierz napęd";
+"disk.all" = "Wszystkie napędy";
+
+// MARK: Language
+"language" = "Język programu";
+"language.ar" = "العربية";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.zh-Hant" = "繁體中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+"language.pt" = "Português";
+"language.ja" = "日本語";
+"language.fr" = "Français";
+"language.mn" = "Монгол";
+"language.ko" = "한국어";
+"language.dk" = "Dansk";
+"language.uk" = "Українська";
+"language.se" = "Svenska";
+"language.cs" = "Čeština";
+"language.it" = "Italiano";
+"language.my" = "မြန်မာဘာသာ";
+"language.hu" = "Magyar";
+"language.th" = "ไทย";
+"language.tr" = "Türkçe";
+"language.pl" = "Polski";
+
+// MARK: General UI
+"ui.app" = "Aplikacja";
+"ui.general" = "Ogólne";
+"ui.version" = "wersja";
+"ui.checking_update" = "sprawdzam aktualizację";
+"ui.up_to_date" = "aktualna";
+"ui.new_version" = "Nowsza wersja dostępna";
+"ui.download" = "pobierz";
+"ui.launch_at_login" = "Uruchom przy logowaniu";
+"ui.display" = "Wyświetlanie";
+"ui.components" = "Komponenty";
+"ui.show_components_in_status_bar" = "Pokaż komponenty na pasku stanu";
+"ui.refresh_rate" = "Czas odświeżania";
+"ui.smc" = "SMC";
+"ui.network" = "Sieć";
+"ui.menu_view" = "Widok menu";
+"ui.empty" = "Pusty";
+"ui.hidden_by_system.title" = "Komponenty paska stanu eul są na siłę ukryte przez system";
+"ui.hidden_by_system.message" = "Otwórz preferencje i spróbuj zmniejszyć liczbę komponentów";
+"ui.hidden_by_system.open" = "Otwórz";
+"ui.hidden_by_system.dismiss" = "Odrzuć";
+"ui.check_status_item_visibility" = "Sprawdź widoczność pozycji statusu";
+"ui.upgrade_method" = "Aktualizacja";
+"ui.upgrade_method.none" = "brak";
+"ui.upgrade_method.none.description" = "eul nie sprawdzi aktualizacji";
+"ui.upgrade_method.showInStatusBar" = "pokaż na pasku stanu";
+"ui.upgrade_method.showInStatusBar.description" = "Pokaż ikonę gdy dostępna jest nowa wersja";
+"ui.upgrade_method.autoUpdate" = "automatyczna aktualizacja";
+"ui.upgrade_method.autoUpdate.description" = "Wykonaj aktualizację automatycznie";
+
+// MARK: Component
+"component.show_icon" = "Pokaż ikonę";
+"component.show_graph" = "Pokaż wykres";
+"component.show_text" = "Pokaż tekst";
+
+// MARK: Text Component
+"text_component.free" = "Dostępne";
+"text_component.usage" = "Użycie";
+"text_component.total" = "Całkowite";
+"text_component.usagePercentage" = "Procent użycia";
+"text_component.temperature" = "Temperatura";
+"text_component.upload" = "Wyślij";
+"text_component.download" = "Pobierz";
+"text_component.percentage" = "Procent";
+"text_component.mah" = "mAh";
+"text_component.loadAverage1Min" = "Średnie obciążenie (1 min)";
+"text_component.loadAverage5Min" = "Średnie obciążenie (5 min)";
+"text_component.loadAverage15Min" = "Średnie obciążenie (15 min)";
+"text_component.average" = "Średni";
+"text_component.timeRemaining" = "Pozostały czas";
+
+// MARK: CPU Display Mode
+"cpu_display_mode" = "Tryb wyświetlania procesora";
+"cpu_display_mode.usage_percentage" = "Zużycie %";
+"cpu_display_mode.load_average" = "Średnie obciążenie";
+
+//MARK: Widget
+"widget.not_available" = "eul nie pracuje";
+"widget.cpu.title" = "Widget CPU";
+"widget.cpu.description" = "Wyświetl informacje o CPU";
+"widget.memory.title" = "Widget pamięci";
+"widget.memory.description" = "Wyświetl informacje o pamięci";
+"widget.battery.title" = "Widget baterii";
+"widget.battery.description" = "Wyświetl informacje o baterii";
+"widget.network.title" = "Widget Sieci";
+"widget.network.description" = "Wyświetl informacje o sieci";
