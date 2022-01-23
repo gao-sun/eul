@@ -296,6 +296,9 @@ public enum SMCKit {
         /// - parameter kIOReturn: I/O Kit error code
         /// - parameter SMCResult: SMC specific return code
         case unknown(kIOReturn: kern_return_t, SMCResult: UInt8)
+
+        /// SMCParamStruct size is not desired
+        case paramStructSizeMismatched
     }
 
     /// Connection to the SMC driver
@@ -380,7 +383,9 @@ public enum SMCKit {
                                   selector: SMCParamStruct.Selector = .kSMCHandleYPCEvent)
         throws -> SMCParamStruct
     {
-        assert(MemoryLayout<SMCParamStruct>.stride == 80, "SMCParamStruct size is != 80")
+        guard MemoryLayout<SMCParamStruct>.stride == 80 else {
+            throw SMCError.paramStructSizeMismatched
+        }
 
         var outputStruct = SMCParamStruct()
         let inputStructSize = MemoryLayout<SMCParamStruct>.stride
