@@ -1,0 +1,227 @@
+/* 
+  Localizable.strings
+  eul
+
+  Created by mohammad jamalianpour on 10/2/22.
+  Copyright © 2022 Gao Sun. All rights reserved.
+  Translation of Fa.
+  jamalianm21@yahoo.com / github.com/Jamalianpour
+*/
+
+// MARK: Battery
+"battery" = "باتری";
+"battery.charge" = "شارژ";
+"battery.time_remaining" = "زمان باقیمانده";
+"battery.power_source" = "منبع برق";
+"battery.power_source.battery" = "باتری";
+"battery.power_source.acPower" = "برق مستقیم";
+"battery.power_source.unknown" = "ناشناس";
+"battery.is_charging" = "در حال شارژ";
+"battery.to_full_charge" = "تا شارژ کامل";
+"battery.to_empty" = "تا خالی شدن";
+"battery.health" = "سلامت";
+"battery.max_capacity" = "حداکثر کارایی";
+"battery.design_capacity" = "مقدار اولیه";
+"battery.health_percentage" = "درصد سلامتی";
+"battery.cycle_count" = "تعداد شارژ";
+"battery.cycle" = "تعداد";
+"battery.condition" = "وضعیت";
+"battery.condition.good" = "خوب";
+"battery.condition.fair" = "مناسب";
+"battery.condition.poor" = "ضعیف";
+
+// MARK: CPU / Info
+"cpu.usage" = "استفاده";
+"cpu.idle" = "بیکار";
+"cpu.temperature" = "دما";
+"gpu.temperature" = "دما گرافیک";
+"cpu.info" = "اطلاعات";
+"cpu.physical_cores" = "هسته فیزیکی";
+"cpu.logical_cores" = "هسته منطقی";
+"cpu.up_time" = "زمان کار";
+"cpu.thermal_level" = "درجه حرارت";
+"cpu.system" = "سیستم";
+"cpu.user" = "کاربر";
+"cpu.nice" = "خوب";
+"cpu.waiting_status_report" = "در انتظار اولین گزارش وضعیت";
+
+// MARK: Fan
+"fan" = "فن";
+"fan.current" = "کنونی";
+"fan.min" = "حداقل";
+"fan.max" = "حداکثر";
+
+// MARK: Memory
+"memory" = "مموری";
+"memory.total" = "مجموع";
+"memory.free" = "آزاد";
+"memory.cached_files" = "فایل های کش";
+"memory.temp" = "موقت";
+"memory.usage" = "استفاده";
+"memory.app" = "نرم افزار";
+"memory.wired" = "مخابره";
+"memory.compressed" = "فشرده";
+
+// MARK: Network
+"network" = "شبکه";
+"network.in" = "ورود";
+"network.out" = "خروج";
+"network.no_activity" = "بدون فعالیت";
+"network.port.auto" = "شناسایی خودکار";
+"network.port.select" = "پورت";
+
+// MARK: Menu
+"menu.summary" = "خلاصه";
+"menu.yes" = "بله";
+"menu.no" = "خیر";
+"menu.preferences" = "تنظیمات";
+"menu.quit" = "خروج";
+"menu.show_cpu_top_activities" = "نمایش فعالیت های CPU";
+"menu.show_ram_top_activities" = "نمایش فعالیت های مموری";
+"menu.show_network_top_activities" = "نمایش فعالیت های شبکه";
+
+// MARK: Temperature
+"temp.temperature" = "دما";
+"temp.celsius" = "سانتیگراد";
+"temp.fahrenheit" = "فارنهایت";
+"temp.kelvin" = "کلوین";
+
+// MARK: Text Display
+"text_display" = "متن نمایش";
+"text_display.compact" = "فشرده";
+"text_display.single_line" = "تک خطی";
+
+// MARK: Font Design
+"font_design" = "فونت";
+"font_design.default" = "پیشفرض";
+"font_design.monospaced" = "monospaced";
+
+// MARK: Appearance
+"appearance.mode" = "تم";
+"appearance.light" = "روشن";
+"appearance.dark" = "تیره";
+"appearance.auto" = "خودکار";
+
+// MARK: Component
+"component.status_bar" = "Status Bar";
+"component.drag_to_reorder" = "برای سفارش مجدد بکشید";
+"component.available" = "در دسترس";
+"component.click_to_append" = "برای افزودن کلیک کنید";
+"component.cpu" = "CPU";
+"component.gpu" = "گرافیک";
+"component.fan" = "فن";
+"component.memory" = "مموری";
+"component.battery" = "باتری";
+"component.network" = "شبکه";
+"component.disk" = "هارد";
+"component.bluetooth" = "بلوتوث";
+
+// MARK: Process
+"process" = "پردازش";
+"process.bring_to_front" = "ارسال به جلو";
+"process.reveal_in_finder" = "بازکردن در منیجر";
+"process.terminate" = "بستن";
+"process.force_terminate" = "بستن اجباری";
+"process.terminate_alert.text.%@" = "آیا از بستن مطمئن هستید %@?";
+"process.terminate_alert.command.%@" = "دستور: %@";
+"process.terminate_alert.cancel" = "انصراف";
+
+// MARK: Bluetooth
+"bluetooth" = "بلوتوث";
+
+// MARK: Disk
+"disk.eject" = "Eject";
+"disk.select" = "انتخاب حافظه";
+"disk.all" = "تمامی حافظه ها";
+
+// MARK: Language
+"language" = "Language";
+"language.ar" = "العربية";
+"language.en" = "English";
+"language.zh-Hans" = "简体中文";
+"language.zh-Hant" = "繁體中文";
+"language.de" = "Deutsch";
+"language.ru" = "Русский";
+"language.es" = "Español";
+"language.pt" = "Português";
+"language.ja" = "日本語";
+"language.fa" = "فارسی";
+"language.fr" = "Français";
+"language.mn" = "Монгол";
+"language.ko" = "한국어";
+"language.dk" = "Dansk";
+"language.uk" = "Українська";
+"language.se" = "Svenska";
+"language.cs" = "Čeština";
+"language.it" = "Italiano";
+"language.my" = "မြန်မာဘာသာ";
+"language.hu" = "Magyar";
+"language.th" = "ไทย";
+"language.tr" = "Türkçe";
+
+// MARK: General UI
+"ui.app" = "برنامه";
+"ui.general" = "General";
+"ui.version" = "ورژن";
+"ui.checking_update" = "بررسی آپدیت";
+"ui.up_to_date" = "به روز";
+"ui.new_version" = "نسخه جدید یافت شد";
+"ui.download" = "دانلود";
+"ui.launch_at_login" = "اجرا در ورود";
+"ui.display" = "نمایش";
+"ui.components" = "اجزاء";
+"ui.show_components_in_status_bar" = "نمایش اجزاء در نوار وضعیت";
+"ui.refresh_rate" = "نرخ تازه سازی";
+"ui.smc" = "SMC";
+"ui.network" = "شبکه";
+"ui.menu_view" = "منو";
+"ui.empty" = "خالی";
+"ui.hidden_by_system.title" = "eul اجزای نوار وضعیت به زور توسط سیستم پنهان می شوند";
+"ui.hidden_by_system.message" = "تنظیمات را باز کنید و سعی کنید تعداد مؤلفه ها را کاهش دهید";
+"ui.hidden_by_system.open" = "بازکردن";
+"ui.hidden_by_system.dismiss" = "رد";
+"ui.check_status_item_visibility" = "بررسی وضعیت نمایان بودن مورد";
+"ui.upgrade_method" = "آپدیت";
+"ui.upgrade_method.none" = "هیچ";
+"ui.upgrade_method.none.description" = "عدم بررسی آپدیت";
+"ui.upgrade_method.showInStatusBar" = "نمایش در نوار وضعیت";
+"ui.upgrade_method.showInStatusBar.description" = "هنگامی که نسخه جدید در دسترس است، نماد ارتقا را نشان دهید";
+"ui.upgrade_method.autoUpdate" = "آپدیت خودکار";
+"ui.upgrade_method.autoUpdate.description" = "انجام آپدیت به صورت خودکار";
+
+// MARK: Component
+"component.show_icon" = "نمایش نماد";
+"component.show_graph" = "نمایش نمودار";
+"component.show_text" = "نمایش متن";
+
+// MARK: Text Component
+"text_component.free" = "آزاد";
+"text_component.usage" = "استفاده شده";
+"text_component.total" = "مجموع";
+"text_component.usagePercentage" = "درصد مصرف";
+"text_component.temperature" = "دما";
+"text_component.upload" = "آپلود";
+"text_component.download" = "دانلود";
+"text_component.percentage" = "درصد";
+"text_component.mah" = "mAh";
+"text_component.loadAverage1Min" = "میانگین بار (1 دقیقه)";
+"text_component.loadAverage5Min" = "میانگین بار (5 دقیقه)";
+"text_component.loadAverage15Min" = "میانگین بار (15 دقیقه)";
+"text_component.average" = "میانگین";
+"text_component.timeRemaining" = "زمان باقیمانده";
+
+// MARK: CPU Display Mode
+"cpu_display_mode" = "مد نمایش CPU";
+"cpu_display_mode.usage_percentage" = "مصرف %";
+"cpu_display_mode.load_average" = "میانگین بار";
+
+//MARK: Widget
+"widget.not_available" = "eul اجرا نیست";
+"widget.cpu.title" = "CPU ویجت";
+"widget.cpu.description" = "نمایش اطلاعات CPU";
+"widget.memory.title" = "ویجت مموری";
+"widget.memory.description" = "نمایش اطلاعات مموری";
+"widget.battery.title" = "ویجت باتری";
+"widget.battery.description" = "نمایش اطلاعات باتری";
+"widget.network.title" = "ویجت شبکه";
+"widget.network.description" = "نمایش اطلاعات شبکه";
